@@ -12,7 +12,7 @@ import '../styles/trace-start.css';
 <label for="title-entry">What’s your job title?</label><input id="title-entry" type="text" maxlength="120" required placeholder="e.g. ICU registered nurse" autocomplete="off"/>
 <button class="primary trace-submit" type="submit">Trace my career <span aria-hidden="true">↗</span></button>
 </form><p class="privacy-line">Entries stay in this tab until you choose a source search. Shared cards omit your personal details.</p>
-<div class="trace-example"><span>Try an example</span><button id="try-trace" type="button">Nurse at Howard University Hospital ↗</button><button id="try-live" type="button">Research a software engineer at Apple ↗</button></div>
+<div class="trace-example"><span>Try an example</span><button id="try-trace" type="button">Nurse at Howard University Hospital ↗</button><button id="try-live" type="button">Research an Atlanta Public Schools teacher ↗</button></div>
 <div id="match-result" hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
 <SourceLookup/>
 <div id="manual-choice" hidden><label for="manual-profession">Choose a profession to explore</label><select id="manual-profession"><option value="">Select a profession…</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select><button type="button" id="manual-open" class="secondary" disabled>Trace this profession →</button></div>
@@ -74,7 +74,7 @@ form.addEventListener('input',()=>{
 });
 reset.addEventListener('click',()=>{clearTrace();form.reset();clearResults();reset.hidden=true;employer.focus()});
 document.querySelector('#try-trace')!.addEventListener('click',()=>{employer.value='Howard University Hospital';job.value='Registered nurse';reset.hidden=false;form.requestSubmit()});
-document.querySelector('#try-live')!.addEventListener('click',()=>{employer.value='Apple';job.value='Software engineer';reset.hidden=false;form.requestSubmit()});
+document.querySelector('#try-live')!.addEventListener('click',()=>{employer.value='Atlanta Public Schools';job.value='K–12 teacher';reset.hidden=false;form.requestSubmit()});
 savedFields();
 window.addEventListener('pageshow',event=>{if(event.persisted){savedFields();clearResults()}});
 </script>

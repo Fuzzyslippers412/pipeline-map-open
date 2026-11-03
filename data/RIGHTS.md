@@ -19,3 +19,7 @@ Source publishers retain any rights they hold in their original material. The pr
 | Institutional histories and workplace sources | Project-authored descriptions with citations to the original publications. | Follow the individual references for publisher terms. |
 
 The same distinctions apply to the CSV, JSON, SQLite and generated web copies. Source-specific provenance and notices accompany the record in the source register or source JSON and travel through the stable source ID on exports. The code and its documentation use the [MIT License](../LICENSE). Third-party packages and fonts retain their own licenses.
+
+## Live workplace research and discovery index
+
+The dated discovery index contains bibliographic metadata, record identifiers and project-derived classifications. Its links point to original [NSF awards](https://www.nsf.gov/awardsearch/), [USAspending awards](https://www.usaspending.gov/) and [ERIC education research](https://eric.ed.gov/). Live results may also link to [Europe PMC](https://europepmc.org/) or publishers indexed by [GDELT](https://www.gdeltproject.org/). Individual publishers retain their rights in publications and abstracts. The project’s license covers its own code and editorial work.

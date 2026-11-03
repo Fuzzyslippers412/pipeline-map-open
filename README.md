@@ -16,7 +16,9 @@ The build validates five relational tables, writes a SQLite database and CSV, ge
 
 ## Workplace source search
 
-Enter any workplace and a job title, then choose **Look up sources**. The same-origin research handler sends an employer query to institutional publishers, filters the returned passages against the role, and links back to the originals. Unmapped titles can use the lookup directly on the landing page. A research lead is not an independently verified hiring or training history. See [the methodology](https://pipeline-map.fuzzyslipper.chatgpt.site/method/#source-discovery).
+Enter any workplace and a job title, then choose **Look up sources**. The same-origin research handler searches education, government awards, health literature and recent news, filters results against the role, and links to the originals. Results distinguish live lookups from matches in a dated public-record index. Unmapped titles can use the lookup directly on the landing page. A research lead is not an independently verified hiring or training history. See [the methodology](https://pipeline-map.fuzzyslipper.chatgpt.site/method/#source-discovery).
+
+Refresh the discovery index with `python3 loaders/build-discovery-index.py` when preparing a new research edition. It queries topics and programs across publishers without a roster of employer names.
 
 Start the complete local UI and research endpoint with `npm run dev`. For a Worker deployment run `npm run build:hosted`, then serve the artifact with Wrangler using the checked-in configuration. The original `npm run build` remains a portable static export; a host serving only static files depends on the publisher's browser-access policy. The Worker uses no account keys or persistent data stores.
 

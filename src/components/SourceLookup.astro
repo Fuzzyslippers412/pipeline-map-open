@@ -3,17 +3,17 @@ import '../styles/source-lookup.css';
 ---
 <pipeline-source-lookup class="source-lookup" hidden>
   <div class="source-lookup__title">
-    <span class="source-lookup__eyebrow">LIVE SOURCE SEARCH</span>
+    <span class="source-lookup__eyebrow">WORKPLACE SOURCE SEARCH</span>
     <h3>Find a workplace connection</h3>
   </div>
   <p class="source-lookup__intro">
-    Search public institutional records for Black professional pathways at <strong data-employer></strong>.
+    Check current publisher records and previously indexed publications for Black professional pathways at <strong data-employer></strong>.
   </p>
   <dl class="source-lookup__terms">
     <div><dt>Employer sent to sources</dt><dd data-employer-term></dd></div>
     <div><dt>Role used by Pipeline Map</dt><dd data-title-term></dd></div>
   </dl>
-  <p class="source-lookup__help">When you click, Pipeline Map uses your employer and role for this lookup. Publisher searches receive only the employer name. Your entries are not saved by Pipeline Map’s search service.</p>
+  <p class="source-lookup__help">When you click, Pipeline Map receives your employer and role to find relevant publications. External publishers receive the employer name only. Pipeline Map’s search service does not save your entries.</p>
   <button class="primary source-lookup__search" data-search type="button">Look up sources</button>
   <p class="source-lookup__status" data-status role="status" aria-live="polite" aria-atomic="true"></p>
   <div data-results class="source-lookup__results" aria-label="Workplace search results"></div>
@@ -26,8 +26,23 @@ import '../styles/source-lookup.css';
 
 <script>
   type LookupContext = { employer: string; title: string; profession?: string };
-  type Result = { title: string; url: string; publisher: string; excerpt: string; kind: 'documented' | 'lead' };
-  type Report = { status: 'complete' | 'partial' | 'unavailable'; results: Result[]; providers: { name: string; status: 'ok' | 'unavailable' }[] };
+  type Result = {
+    title: string; url: string; publisher: string; excerpt: string; kind: 'documented' | 'lead';
+    mode?: 'live' | 'indexed'; indexedOn?: string; publishedOn?: string;
+  };
+  type Provider = { name: string; status: 'ok' | 'unavailable'; indexedDocuments?: number; indexedOn?: string };
+  type Report = {
+    status: 'complete' | 'partial' | 'unavailable'; results: Result[]; providers: Provider[];
+    index?: {asOf: string; records: number; publishers: number | string[] | Record<string, number>};
+  };
+
+  function displayDate(value?: string) {
+    if (!value || !/^\d{4}-\d{2}-\d{2}/.test(value)) return '';
+    const date = new Date(value.slice(0,10) + 'T00:00:00Z');
+    return Number.isFinite(date.getTime()) ? date.toLocaleDateString('en-US', {
+      year:'numeric', month:'short', day:'numeric', timeZone:'UTC'
+    }) : '';
+  }
 
   function publicLink(raw: string) {
     try {
@@ -130,30 +145,57 @@ import '../styles/source-lookup.css';
       const leads = matches.filter(r => r.kind === 'lead');
       const status = this.part('status');
       const groups = this.part('results');
-      if (report.status === 'unavailable') {
-        status.textContent = 'The public sources could not be reached. Try again in a moment.';
-      } else if (matches.length) {
-        status.textContent = matches.length + (matches.length === 1 ? ' source record found.' : ' source records found.');
-      } else {
-        status.textContent = (report.status === 'partial' ? 'The sources that responded' : 'The sources checked') +
-          ' returned no matching record. A connection may still exist.';
+      if (!report.providers.length) {
+        status.textContent = 'Enter a more specific employer name, such as the full name of your hospital, company or school. No search was run.';
+        const edit = document.createElement('a');
+        edit.href = document.querySelector('#workplace-entry') ? '#workplace-entry' : '/#trace';
+        edit.textContent = 'Edit employer name';
+        groups.append(edit);
+        return;
       }
+      const indexed = matches.filter(r => r.mode === 'indexed').length;
+      const live = matches.length - indexed;
+      const indexSize = report.index?.records || 0;
+      const outcome = [];
+      if (matches.length) {
+        outcome.push(matches.length + (matches.length === 1 ? ' matching record' : ' matching records') +
+          ' (' + live + ' live, ' + indexed + ' indexed).');
+      } else if (report.status === 'unavailable') {
+        outcome.push(indexSize ? 'No matching publication appeared in the dated index.' : 'No live results are available.');
+      } else {
+        outcome.push(indexSize ? 'The completed searches and dated index returned no matching record.' : 'The completed searches returned no matching record.');
+      }
+      if (report.status === 'unavailable') outcome.push('Live publisher searches were unavailable.');
+      if (report.status === 'partial') outcome.push('Some live publisher checks were incomplete.');
+      if (!matches.length) outcome.push('A connection may still exist.');
+      status.textContent = outcome.join(' ');
       if (documented.length) {
-        groups.append(this.resultGroup('Source passages', 'These published passages matched the employer, field and pathway terms. Read the original for the full context.', documented));
+        groups.append(this.resultGroup('Documented institutional records', 'These sources name the employer and connect a program or award to this field. Open the original to check its scope and date.', documented));
       }
       if (leads.length) {
         groups.append(this.resultGroup('Leads to investigate', 'These records may help your search. A lead alone does not document a workplace connection.', leads));
+      }
+      if (report.index?.records) {
+        const edition = document.createElement('p');
+        edition.className = 'source-lookup__coverage';
+        const date = displayDate(report.index.asOf);
+        const totals = report.index.publishers;
+        const publishers = Array.isArray(totals) ? totals.length : typeof totals === 'number' ? totals : Object.values(totals || {}).filter(count=>count>0).length;
+        edition.textContent = 'Index edition' + (date ? ' of ' + date : '') + ' covers ' +
+          report.index.records.toLocaleString('en-US') + ' publications' +
+          (publishers ? ' from ' + publishers + (publishers === 1 ? ' publisher' : ' publishers') : '') + '.';
+        groups.append(edition);
       }
       if (available.length || missing.length) {
         const coverage = document.createElement('p');
         coverage.className = 'source-lookup__coverage';
         const lines = [];
-        if (available.length) lines.push('Checked: ' + available.join(', ') + '.');
-        if (missing.length) lines.push('Unavailable this time: ' + missing.join(', ') + '.');
+        if (available.length) lines.push('Live sources checked: ' + available.join(', ') + '.');
+        if (missing.length) lines.push('Live checks incomplete: ' + missing.join(', ') + '.');
         coverage.textContent = lines.join(' ');
         groups.append(coverage);
       }
-      if (!documented.length || report.status === 'partial') this.showWiderSearch();
+      if (!documented.length || report.status !== 'complete') this.showWiderSearch();
     }
 
     private resultGroup(label: string, note: string, records: Result[]) {
@@ -169,12 +211,20 @@ import '../styles/source-lookup.css';
         const publisher = document.createElement('span');
         publisher.className = 'source-lookup__publisher';
         publisher.textContent = record.publisher;
+        const timing = document.createElement('span');
+        timing.className = 'source-lookup__timing';
+        const indexed = record.mode === 'indexed';
+        timing.dataset.mode = indexed ? 'indexed' : 'live';
+        const date = displayDate(record.indexedOn);
+        timing.textContent = indexed ? 'Indexed publication' + (date ? ' · ' + date : '') : 'Retrieved live';
+        const published = displayDate(record.publishedOn);
+        if (published) timing.textContent += ' · Published ' + published;
         const link = document.createElement('a');
         link.href = publicLink(record.url)!;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.textContent = record.title + ' ↗';
-        item.append(publisher, link);
+        item.append(publisher, timing, link);
         if (record.excerpt) {
           const excerpt = document.createElement('p');
           excerpt.className = 'source-lookup__excerpt';

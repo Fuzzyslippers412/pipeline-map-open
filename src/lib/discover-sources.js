@@ -1,14 +1,14 @@
 import { ericSources } from './eric-sources.js';
+import { newsSources } from './news-sources.js';
+import { europePmcSources } from './europe-pmc-sources.js';
+import { usaSpendingSources } from './usa-spending-sources.js';
+import catalog from '../../data/discovery-index.json' with {type:'json'};
 
-// Public publisher APIs are fixed here. A reader's input never chooses a host.
-const publishers = {
-  tmcf: {name:'Thurgood Marshall College Fund',host:'tmcf.org',collections:['posts','pages']},
-  uncf: {name:'UNCF',host:'uncf.org',collections:['posts']},
-  engineers: {name:'National Society of Black Engineers',host:'nsbe.org',collections:['article','program']},
-  medical: {name:'National Medical Association',host:'nmanet.org',collections:['posts','pages']},
-};
-const engineering = ['engineer','software-engineer'];
-const healthcare = ['physician','dentist','pharmacist','registered-nurse'];
+const NSF='U.S. National Science Foundation';
+const ERIC='ERIC · U.S. Department of Education';
+const USA='USAspending · federal awards';
+const NEWS='GDELT · recent news';
+const healthcare=['physician','dentist','pharmacist','registered-nurse'];
 const fields = {
   physician:/\b(physicians?|medical students?|medical school|residenc(?:y|ies)|doctors?)\b/i,
   lawyer:/\b(lawyers?|attorneys?|law school|legal profession|law students?)\b/i,
@@ -31,166 +31,108 @@ const fields = {
   'pro-athlete':/\b(professional athletes?|professional sports|NFL|NBA)\b/i,
   musician:/\b(musicians?|music industry|performing arts|singers?)\b/i,
 };
-const blackPath = /\b(HBCUs?|historically Black|African[- ]American|Black (?:students?|graduates?|professionals?|engineers?|physicians?|schools?|colleges?|universit(?:y|ies)|workers?|communities|nurs(?:es|ing))|Thurgood Marshall College Fund|United Negro College Fund|National Society of Black Engineers)\b/i;
-const opportunity = /\b(internships?|interns?|scholarships?|apprentice\w*|residen(?:cy|cies)|training|fellowships?|career development|mentorship|recruitment|hiring|hired|pipeline|placement|career opportunities|education program|professional development|research grants?|grants? to support)\b/i;
-const actor = /^(?:(?:plc|llc|inc|company|corporation|also|recently|jointly|will|has|have|announced|new|is|the|and|tmcf|uncf) ){0,4}(?:partner(?:ed|s|ship)?|sponsor(?:ed|s)?|fund(?:ed|s)?|launch(?:ed|es)?|offer(?:ed|s)?|support(?:ed|s)?|establish(?:ed|es)?|collaborat(?:e|ed|es)|hired|host(?:ed|s)?|provid(?:e|ed|es)|award(?:ed|s)?|creat(?:e|ed|es)|scholarships?|internships?|fellowships?|apprenticeships?|hbcu scholars?)\b/;
-const partner = /(?:in partnership with|partnership between|partner(?:ed|s)? with|collaborat(?:ed|es|e) with|fund(?:ed|ing) (?:by|from)|support (?:of|from)|support(?:ed)? by|sponsored by|internships? (?:at|with)|mentors? (?:at|from)|hired by|grants? from|presented by|training (?:at|through))$/;
-const negative = /\b(no longer|never|not|denied|unrelated|unaffiliated|propos(?:ed|al)|could|considering|seeking sponsors?|seeking partners?)\b/i;
-const profile = /\b(obituar\w*|biograph\w*|spotlight|meet the|alumnus|alumna|student story|honoree|finds confidence|in memoriam|appoints?|life story|comments on|response on|reverend|student [‘’“”]|scholar (?:who|aspires|discovered|earns)|graduates? reflect|student (?:learns|discovered|shares|reflects|wins|aspires|finds)|journey of|super excited)\b/i;
-const entities = {amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',rsquo:'’',lsquo:'‘',rdquo:'”',ldquo:'“',ndash:'–',mdash:'—',hellip:'…'};
 
-function decode(raw) {
-  return String(raw || '').replace(/&(#x[0-9a-f]+|#\d+|\w+);/gi, (original, code)=>{
-    if (code[0] !== '#') return entities[code] ?? original;
-    const number = code[1]?.toLowerCase()==='x' ? parseInt(code.slice(2),16) : Number(code.slice(1));
-    return number > 0 && number <= 0x10ffff ? String.fromCodePoint(number) : ' ';
-  });
+const blackPath=/\b(?:HBCUs?|historically[- ]Black|African[- ]American|Black (?:students?|graduates?|professionals?|engineers?|physicians?|schools?|colleges?|universit(?:y|ies)|workers?|communities|nurs(?:es|ing)))\b/i;
+const opportunity=/\b(?:internships?|apprentice\w*|training|workforce|career\w*|fellowships?|mentorship|professional development|scholarships?|recruitment|hiring|teacher preparation|faculty development)\b/i;
+const normalize=s=>String(s||'').normalize('NFKD').replace(/\p{M}/gu,'').toLowerCase().replace(/&/g,' and ').replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+const alias=s=>normalize(s).replace(/^(?:the )/,'').replace(/ (?:incorporated|corporation|inc|llc|plc)$/,'').trim();
+const mentions=(body,name)=>(' '+normalize(body)+' ').includes(' '+normalize(name)+' ');
+const plain=s=>String(s||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+
+function roleMatches(text,{profession,title}){
+  const slug=typeof profession==='object'?profession?.slug:profession;
+  if(Object.hasOwn(fields,slug))return fields[slug].test(text);
+  const role=normalize(title).replace(/^(?:(?:senior|junior|lead|principal) )+/,'');
+  return role.length>2 && [role,role+'s'].some(t=>mentions(text,t));
 }
-const plain = value => decode(String(value || '').replace(/<[^>]*>/g,' ')).replace(/\s+/g,' ').trim();
-function paragraphs(html) {
-  return String(html || '').slice(0,180000).replace(/<(script|style|nav|footer)\b[^>]*>[\s\S]*?<\/\1>/gi,' ')
-    .split(/<\/(?:p|li|h[1-6]|tr|section|div)>|<br\s*\/?>/i).map(plain).filter(p=>p.length>12 && p.length<2400);
+function grantDescription(record,documented){
+  const kind=record.publisher===NSF?'National Science Foundation':'federal';
+  const detail=documented?'Its published program description connects Black access or HBCUs with career development in this field.':'The award description concerns Black access or HBCUs and career development. Check the original for the connection to your role.';
+  return record.issuer+' is the listed recipient of '+kind+' award '+record.awardId+'. '+detail;
 }
-const normalized = value => String(value||'').normalize('NFKD').replace(/\p{M}/gu,'').toLowerCase()
-  .replace(/&/g,' and ').replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
-const contains = (text,phrase) => (' '+normalized(text)+' ').includes(' '+normalized(phrase)+' ');
-function localRole(input) {
-  const slug=typeof input.profession==='object' ? input.profession?.slug : input.profession;
-  if(Object.hasOwn(fields,slug)) return text=>fields[slug].test(text);
-  const title=normalized(input.title).replace(/^(?:(?:senior|junior|lead|principal) )+/,'');
-  const variants=[title,title+'s'];
-  if (/[^aeiou]y$/.test(title)) variants.push(title.slice(0,-1)+'ies');
-  return text=>title.length>2 && variants.some(variant=>contains(text,variant));
+// The publisher is the recipient's authoritative funding record. A grant match
+// documents funding for the program, not a hiring outcome or a person's history.
+export function matchIndex(index,input,providers){
+  const name=alias(input.employer);
+  if(!name)return [];
+  const slug=typeof input.profession==='object'?input.profession?.slug:input.profession;
+  return index.records.flatMap(record=>{
+    if(!providers.has(record.publisher))return [];
+    const recipient=record.issuer && alias(record.issuer)===name;
+    const institution=(record.mentions||[]).some(entity=>alias(entity)===name);
+    if(!recipient&&!institution&&!mentions(record.title,input.employer))return [];
+    const documented=!!recipient && (record.fundedFields||[]).includes(slug);
+    let excerpt;
+    if(recipient)excerpt=grantDescription(record,documented);
+    else if(record.publisher===NEWS)excerpt='The indexed headline contains the entered employer name and a career-access topic. Confirm the employer identity and the relationship to your field in the publisher’s report.';
+    else excerpt='The education research record names the institution and discusses Black access or HBCUs and career development. Check the original for the connection to your specific role.';
+    return [{title:record.title,url:record.url,publisher:record.outlet||record.publisher,excerpt,kind:documented?'documented':'lead',mode:'indexed',indexedOn:record.indexedOn||index.asOf,publishedOn:record.publishedOn,roleMatch:(record.fields||[]).includes(slug)}];
+  }).sort((a,b)=>Number(b.kind==='documented')-Number(a.kind==='documented')||Number(b.roleMatch)-Number(a.roleMatch)||b.publishedOn.localeCompare(a.publishedOn)||a.title.localeCompare(b.title));
 }
-function shortPassage(text,employer) {
-  const words=text.split(/\s+/);
-  if(words.length<=23) return text;
-  const first=normalized(employer).split(' ')[0];
-  const index=words.findIndex(word=>normalized(word)===first);
-  const start=Math.max(0,Math.min(index-4,words.length-23));
-  return (start?'… ':'')+words.slice(start,start+23).join(' ')+(start+23<words.length?' …':'');
-}
-function isProfilePassage(p) {
-  return /[“”]|\b(?:she|he|her|his|said|my|I was|I am)\b/i.test(p);
-}
-function classify(article,input) {
-  const {employer}=input, role=localRole(input);
-  const title=plain(article.title);
-  if(!title||profile.test(title)||!article.body.length) return null;
-  const headerMatch=contains(title,employer);
-  const nearby=article.body.filter(p=>contains(p,employer) && !isProfilePassage(p));
-  if(!nearby.length && !headerMatch) return null;
-  // Use one short passage or its own headline, never distant parts of a roundup.
-  const relevant=nearby.find(p=>blackPath.test(title+' '+p) && opportunity.test(title+' '+p));
-  const titleProgram=headerMatch && blackPath.test(title) && opportunity.test(title);
-  const candidateParagraphs=titleProgram?article.body.slice(0,4):nearby;
-  const candidatePassages=candidateParagraphs.flatMap(p=>p.split(/(?<=[.!?])\s+(?=[A-Z“])/));
-  const confirmed=candidatePassages.find(p=>{
-    if(p.length>1100||isProfilePassage(p)||negative.test(p+' '+title))return false;
-    const context=title+'. '+p;
-    if(!role(context)||!blackPath.test(context)||!opportunity.test(context))return false;
-    // Both the named employer and a participation verb must occur together in the source.
-    // A program named for the employer can also be explicit in the headline.
-    return (titleProgram && (contains(p,employer)||/\b(this|the|our) (program|scholarship|internship|fellowship|opportunity)\b/i.test(p))) || (contains(p,employer) && namesAction(p,employer)) ||
-      (headerMatch && namesAction(title,employer) && contains(p,employer));
-  });
-  if(confirmed)return {...article.result,title,excerpt:shortPassage(confirmed,employer),kind:'documented'};
-  if(!relevant && !titleProgram)return null;
-  return {...article.result,title,excerpt:'This publisher discusses the employer and an access program. Its connection to the entered job needs review.',kind:'lead'};
-}
-function namesAction(line,employer){
-  const text=normalized(line), term=normalized(employer), index=(' '+text+' ').indexOf(' '+term+' ');
-  if(index<0)return false;
-  const before=text.slice(Math.max(0,index-85),index).trim();
-  const after=text.slice(index+term.length).trim();
-  return actor.test(after) || partner.test(before);
-}
-function officialUrl(value,host) {
-  try{
-    const url=new URL(value);
-    return url.protocol==='https:' && !url.username && !url.password && !url.port &&
-      [host,'www.'+host].includes(url.hostname) ? url.href : '';
-  }catch{return ''}
-}
-async function fetchJson(url,context) {
-  const response=await context.fetchImpl(url.href,{signal:context.signal,credentials:'omit',referrerPolicy:'no-referrer',redirect:'error',headers:{Accept:'application/json'}});
-  if(!response.ok)throw Error('Publisher request failed');
-  if(!response.headers.get('content-type')?.includes('json'))throw Error('Publisher did not return JSON');
-  // Large WordPress pages can embed unrelated media; keep each fetch bounded.
-  const limit=1_500_000;
-  if(Number(response.headers.get('content-length'))>limit)throw Error('Publisher response too large');
-  const reader=response.body?.getReader();
-  if(!reader)throw Error('Publisher returned an empty body');
-  const decoder=new TextDecoder();
-  let size=0, text='';
-  try{
-    while(true){
-      const {value,done}=await reader.read();
-      if(done)break;
-      size+=value.byteLength;
-      if(size>limit){await reader.cancel();throw Error('Publisher response too large');}
-      text+=decoder.decode(value,{stream:true});
-    }
-  }finally{reader.releaseLock()}
-  return JSON.parse(text+decoder.decode());
-}
-async function wordpress(publisher,collection,input) {
-  const url=new URL('https://'+publisher.host+'/wp-json/wp/v2/'+collection);
-  url.search=new URLSearchParams({search:input.employer,per_page:'10',orderby:'relevance',_fields:'title,link,content'}).toString();
-  const records=await fetchJson(url,input);
-  if(!Array.isArray(records))throw Error('Unexpected publisher response');
-  return records.flatMap(row=>{
-    const url=officialUrl(row.link,publisher.host);
-    if(!url||!row.content?.rendered)return [];
-    const result=classify({title:row.title?.rendered,body:paragraphs(row.content.rendered),result:{publisher:publisher.name,url}},input);
-    return result?[result]:[];
-  });
-}
-async function nsf(input) {
+async function nsf(input){
   const url=new URL('https://api.nsf.gov/services/v1/awards.json');
-  url.search=new URLSearchParams({awardeeName:input.employer,keyword:'HBCU',printFields:'id,title,awardeeName,abstractText'}).toString();
-  const json=await fetchJson(url,input);
-  if(!Array.isArray(json.response?.award))throw Error('Unexpected awards response');
-  return json.response.award.flatMap(a=>{
-    if(!/^\d{5,10}$/.test(String(a.id))||normalized(a.awardeeName)!==normalized(input.employer))return [];
-    const body=plain(a.abstractText);
-    if(!blackPath.test(body+' '+a.title)||!opportunity.test(body+' '+a.title)||!localRole(input)(body+' '+a.title)||profile.test(a.title))return [];
-    return [{title:plain(a.title),url:'https://www.nsf.gov/awardsearch/showAward?AWD_ID='+a.id,publisher:'U.S. National Science Foundation',kind:'lead',excerpt:'The award names this institution as recipient. Its project abstract describes intended activities; outcomes require a separate source.'}];
+  url.search=new URLSearchParams({awardeeName:input.employer,keyword:'HBCU',printFields:'id,title,awardeeName,abstractText,date'}).toString();
+  const response=await input.fetchImpl(url.href,{signal:input.signal,credentials:'omit',referrerPolicy:'no-referrer',redirect:'manual',headers:{Accept:'application/json'}});
+  if(!response.ok||!response.headers.get('content-type')?.includes('json'))throw Error('NSF unavailable');
+  const json=await response.json();const records=json.response?.award;
+  if(!Array.isArray(records)){
+    if(json.response?.notification?.code==='AwardAPI-004')return [];
+    throw Error('Unexpected NSF response');
+  }
+  return records.flatMap(a=>{
+    if(!/^\d{5,10}$/.test(String(a.id))||alias(a.awardeeName)!==alias(input.employer))return [];
+    const title=plain(a.title),body=plain(a.abstractText), context=title+' '+body;
+    if(!blackPath.test(context)||!opportunity.test(context))return [];
+    const fieldTitle=title.replace(/science[, ]+technology[, ]+(?:and )?engineering[, ]+(?:and |or )?mathematics/gi,'STEM');
+    const documented=roleMatches(fieldTitle,input)&&body.split(/(?<=[.!?])\s+(?=[A-Z])/).some(line=>{
+      const passage=title+'. '+line;
+      return line.length<=1200&&blackPath.test(passage)&&opportunity.test(passage)&&roleMatches(passage,input);
+    });
+    return [{title,url:'https://www.nsf.gov/awardsearch/showAward?AWD_ID='+a.id,publisher:NSF,kind:documented?'documented':'lead',excerpt:grantDescription({issuer:plain(a.awardeeName),awardId:a.id,publisher:NSF},documented)}];
   });
 }
-
-async function collect(group,input) {
+async function collect(group,input){
   const outcomes=await Promise.allSettled(group.tasks.map(task=>task(input)));
-  if(input.signal.aborted && input.parentSignal?.aborted) throw input.parentSignal.reason;
-  return {name:group.name,status:outcomes.every(v=>v.status==='fulfilled')?'ok':'unavailable',
-    hadResponse:outcomes.some(v=>v.status==='fulfilled'),
-    results:outcomes.flatMap(v=>v.status==='fulfilled'?v.value:[])};
+  if(input.parentSignal?.aborted)throw input.parentSignal.reason;
+  return {name:group.name,status:outcomes.every(x=>x.status==='fulfilled')?'ok':'unavailable',hadResponse:outcomes.some(x=>x.status==='fulfilled'),results:outcomes.flatMap(x=>x.status==='fulfilled'?x.value:[])};
 }
 export async function discoverSources({employer,title='',profession='',signal,fetchImpl=globalThis.fetch}){
   const name=String(employer||'').trim().replace(/\s+/g,' ').slice(0,160);
-  if(normalized(name).length<2 || /^(?:workplace|company|hospital|university|school|employer|self employed|n a|none)$/i.test(normalized(name))){
-    return {status:'complete',results:[],providers:[]};
-  }
-  if(signal?.aborted)throw signal.reason ?? new DOMException('Cancelled','AbortError');
-  const timeout=new AbortController();
-  const abort=()=>timeout.abort(signal?.reason);
+  const populated=Object.fromEntries(Object.entries(catalog.publishers).filter(([,count])=>count>0));
+  const index={asOf:catalog.asOf,records:catalog.records.length,publishers:populated};
+  if(normalize(name).length<2||/^(?:workplace|company|hospital|university|school|employer|self employed|n a|none)$/.test(normalize(name)))return {status:'complete',results:[],providers:[],counts:{live:0,indexed:0},index};
+  if(signal?.aborted)throw signal.reason??new DOMException('Cancelled','AbortError');
+  const timeout=new AbortController(),abort=()=>timeout.abort(signal?.reason);
   signal?.addEventListener('abort',abort,{once:true});
-  const timer=setTimeout(()=>timeout.abort(new DOMException('Publisher timeout','TimeoutError')),10500);
+  const timer=setTimeout(()=>timeout.abort(new DOMException('Publisher timeout','TimeoutError')),10000);
   const input={employer:name,title:String(title||'').slice(0,120),profession,signal:timeout.signal,parentSignal:signal,fetchImpl};
   const slug=typeof profession==='object'?profession?.slug:profession;
-  const chosen=[publishers.tmcf,publishers.uncf];
-  if(engineering.includes(slug)||/\b(engineer|engineering|developer)\b/i.test(title))chosen.push(publishers.engineers);
-  if(healthcare.includes(slug)||/\b(physician|nurse|healthcare|pharmacist|dentist)\b/i.test(title))chosen.push(publishers.medical);
-  const groups=chosen.map(pub=>({name:pub.name,tasks:pub.collections.map(c=>ctx=>wordpress(pub,c,ctx))}));
-  groups.push({name:'ERIC · U.S. Department of Education',tasks:[ericSources]});
-  if(/\b(university|college|polytechnic|institute of technology)\b/i.test(name))groups.push({name:'U.S. National Science Foundation',tasks:[nsf]});
+  const groups=[{name:ERIC,tasks:[ericSources]},{name:USA,tasks:[ctx=>usaSpendingSources(ctx,'grants'),ctx=>usaSpendingSources(ctx,'contracts')]},{name:NEWS,tasks:[newsSources]},{name:NSF,tasks:[nsf]}];
+  if(healthcare.includes(slug)||/\b(?:medical|physician|nurse|hospital|healthcare|clinical|pharmacist|dentist)\b/i.test(title))groups.push({name:'Europe PMC · health research',tasks:[europePmcSources]});
   try{
     const checked=await Promise.all(groups.map(group=>collect(group,input)));
-    if(signal?.aborted)throw signal.reason ?? new DOMException('Cancelled','AbortError');
-    const merged=checked.flatMap(c=>c.results).sort((a,b)=>Number(b.kind==='documented')-Number(a.kind==='documented'));
-    const seen=new Set();
-    const unique=merged.filter(result=>{if(seen.has(result.url))return false;seen.add(result.url);return true}).slice(0,10);
-    const status=checked.every(c=>c.status==='ok')?'complete':checked.some(c=>c.hadResponse)?'partial':'unavailable';
-    return {status,results:unique,providers:checked.map(({name,status})=>({name,status}))};
+    if(signal?.aborted)throw signal.reason??new DOMException('Cancelled','AbortError');
+    const live=checked.flatMap(c=>c.results).map(r=>({...r,mode:'live'}));
+    const fallbackProviders=new Set(checked.filter(c=>c.status!=='ok'||!c.results.length).map(c=>c.name));
+    const indexed=matchIndex(catalog,input,fallbackProviders);
+    const sorted=[...live.filter(r=>r.kind==='documented'),...indexed.filter(r=>r.kind==='documented'),...live.filter(r=>r.kind==='lead'),...indexed.filter(r=>r.kind==='lead')];
+    const seen=new Map();
+    for(const item of sorted){
+      const prior=seen.get(item.url);
+      if(!prior || (item.mode==='live'&&prior.mode==='indexed'))seen.set(item.url,item);
+    }
+    // Keep room for leads just returned by a live publisher even when there
+    // are many historically indexed awards at the same research institution.
+    const all=[...seen.values()], shortlist=all.slice(0,10);
+    for(const entry of all.filter(r=>r.mode==='live').slice(0,2)){
+      if(!shortlist.includes(entry)){
+        const slot=shortlist.findLastIndex(r=>r.mode==='indexed');
+        if(slot>=0)shortlist[slot]=entry;
+      }
+    }
+    const n=shortlist.filter(r=>r.mode==='live').length;
+    return {status:checked.every(c=>c.status==='ok')?'complete':checked.some(c=>c.hadResponse)?'partial':'unavailable',
+      results:shortlist,counts:{live:n,indexed:shortlist.length-n},index,providers:checked.map(c=>({name:c.name,status:c.status,
+        ...(populated[c.name]?{indexedOn:catalog.records.find(r=>r.publisher===c.name)?.indexedOn||catalog.asOf,indexedDocuments:populated[c.name]}:{})}))};
   }finally{clearTimeout(timer);signal?.removeEventListener('abort',abort)}
 }

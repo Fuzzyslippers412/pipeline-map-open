@@ -33,3 +33,6 @@
  .source-lookup { padding: 14px; }
  .source-lookup__query button { min-height: 42px; }
 }
+
+.source-lookup__timing { display: table; font: 10px/1.5 var(--mono); margin: 4px 0; padding: 1px 5px; color: var(--teal); border: 1px solid #466752; border-radius: 3px; }
+.source-lookup__timing[data-mode=indexed] { color: #dfd4af; border-color: #6c684e; }
