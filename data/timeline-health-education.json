@@ -1,0 +1,182 @@
+{
+  "physician": [
+    {
+      "dateLabel": "1868",
+      "sortYear": 1868,
+      "title": "Howard opens its medical classrooms",
+      "description": "Howard’s first medical class in Washington included seven Black students. Evening instruction let students attend after a day’s work.",
+      "sourceTitle": "Howard University College of Medicine · History",
+      "url": "https://medicine.howard.edu/about/history"
+    },
+    {
+      "dateLabel": "1876",
+      "sortYear": 1876,
+      "title": "Meharry opens a medical school in Nashville",
+      "description": "The medical department of Central Tennessee College, later Meharry Medical College, admitted its first students. It offered medical training to Black students in the South after emancipation.",
+      "sourceTitle": "Meharry Medical College · History",
+      "url": "https://meharry.edu/meet-meharry/history/"
+    }
+  ],
+  "registered-nurse": [
+    {
+      "dateLabel": "1892",
+      "sortYear": 1892,
+      "title": "Tuskegee registers a nurse training school",
+      "description": "Tuskegee Institute registered its hospital-based school with Alabama’s nursing board to train Black men and women in nursing.",
+      "sourceTitle": "Tuskegee University · Nursing student handbook, program history",
+      "url": "https://www.tuskegee.edu/Content/Uploads/Tuskegee/Images/NURSING/STUDENT-NURSING-HANDBOOK-1.11.241.pdf"
+    },
+    {
+      "dateLabel": "1901",
+      "sortYear": 1901,
+      "title": "A Jacksonville hospital opens a school for Black nurses",
+      "description": "The Methodist Episcopal Church established Brewster Hospital and its nursing school. Black women could train there while the hospital served Jacksonville’s Black community.",
+      "sourceTitle": "UF Health Jacksonville · History of the Brewster School of Nurse Training",
+      "url": "https://openlines.ufhealthjax.org/2020/12/17/the-founding-of-the-george-a-brewster-school-of-nurse-training/"
+    }
+  ],
+  "dentist": [
+    {
+      "dateLabel": "1881",
+      "sortYear": 1881,
+      "title": "Howard establishes a dental school",
+      "description": "Howard created a college where dental students could learn through instruction and patient care. It built a route into dentistry at a historically Black university.",
+      "sourceTitle": "Howard University College of Dentistry · About the college",
+      "url": "https://dentistry.howard.edu/index.php/about"
+    },
+    {
+      "dateLabel": "1886",
+      "sortYear": 1886,
+      "title": "Meharry adds dental education in Nashville",
+      "description": "Meharry established a dental school at the institution that had opened to train Black physicians a decade earlier. The new school provided a separate route into dentistry.",
+      "sourceTitle": "Meharry Medical College · History",
+      "url": "https://meharry.edu/meet-meharry/history/"
+    }
+  ],
+  "pharmacist": [
+    {
+      "dateLabel": "1868",
+      "sortYear": 1868,
+      "title": "Howard starts teaching pharmacy in the evenings",
+      "description": "Howard’s medical department offered evening instruction in pharmacy. The program graduated its first pharmacist in 1870.",
+      "sourceTitle": "Howard University College of Pharmacy · About the college",
+      "url": "https://pharmacy.howard.edu/about"
+    },
+    {
+      "dateLabel": "1927",
+      "sortYear": 1927,
+      "title": "Xavier opens a college of pharmacy",
+      "description": "Xavier University of Louisiana established its pharmacy college for Black men and women who faced barriers to professional training.",
+      "sourceTitle": "Xavier University of Louisiana · College of Pharmacy handbook, program history",
+      "url": "https://www.xula.edu/_blocks/navigation/sub-navs/final-2021-academic--ethical-policies-handbook-8-24-2021.pdf"
+    }
+  ],
+  "k12-teacher": [
+    {
+      "dateLabel": "1868",
+      "sortYear": 1868,
+      "title": "Hampton opens a teacher training school",
+      "description": "Hampton Normal and Agricultural Institute opened in Virginia. Its student teachers practiced in the nearby Butler School, which served Black children.",
+      "sourceTitle": "Hampton University · Institutional history",
+      "url": "https://home.hamptonu.edu/about/history/"
+    },
+    {
+      "dateLabel": "1873",
+      "sortYear": 1873,
+      "title": "Alabama sponsors higher education for Black teachers",
+      "description": "The school that became Alabama State University gained state support for training Black teachers. It grew from the Lincoln Normal School that formerly enslaved founders had opened in Marion in 1867.",
+      "sourceTitle": "Alabama State University · History and traditions",
+      "url": "https://www.alasu.edu/about/history-tradition.php"
+    }
+  ],
+  "professor": [
+    {
+      "dateLabel": "1930",
+      "sortYear": 1930,
+      "title": "Fisk gains regional accreditation",
+      "description": "Fisk University became the first African American institution accredited by the Southern Association of Colleges and Schools. Recognition of its degrees helped graduates enter advanced study, one route toward faculty work.",
+      "sourceTitle": "Fisk University · Institutional history",
+      "url": "https://www.fisk.edu/about/history/"
+    },
+    {
+      "dateLabel": "1994",
+      "sortYear": 1994,
+      "title": "The PhD Project starts a route into business faculties",
+      "description": "The KPMG Foundation and partner organizations launched the PhD Project. Its conferences connected prospective doctoral students with the route from a business career into business-school teaching.",
+      "sourceTitle": "The PhD Project · Our history",
+      "url": "https://phdproject.org/our-history/"
+    }
+  ],
+  "lawyer": [
+    {
+      "dateLabel": "1869",
+      "sortYear": 1869,
+      "title": "Howard opens a law department",
+      "description": "Howard began training lawyers to help Black Americans defend their rights after emancipation. Early students took evening classes in their instructors’ homes and offices.",
+      "sourceTitle": "Howard University School of Law · Our history",
+      "url": "https://law.howard.edu/about/our-history"
+    },
+    {
+      "dateLabel": "1950",
+      "sortYear": 1950,
+      "title": "A Supreme Court ruling opens Texas’s law school to a Black applicant",
+      "description": "The U.S. Supreme Court required the University of Texas to admit a Black applicant. It found that the separate law school the state offered did not provide equal legal education.",
+      "sourceTitle": "U.S. Supreme Court · 339 U.S. 629 (1950)",
+      "url": "https://www.govinfo.gov/content/pkg/USREPORTS-339/pdf/USREPORTS-339-629.pdf"
+    }
+  ],
+  "engineer": [
+    {
+      "dateLabel": "1907",
+      "sortYear": 1907,
+      "title": "Howard approves engineering degree programs",
+      "description": "Howard’s trustees approved bachelor’s programs in civil, electrical and mechanical engineering. The subjects entered its curriculum over the next several years.",
+      "sourceTitle": "Howard University College of Engineering and Architecture · Our history",
+      "url": "https://cea.howard.edu/index.php/about-us/our-history"
+    },
+    {
+      "dateLabel": "1975",
+      "sortYear": 1975,
+      "title": "Black engineering students form a national society",
+      "description": "A Purdue student group working on recruitment and retention brought Black engineering students together from campuses across the country. They established the National Society of Black Engineers.",
+      "sourceTitle": "National Society of Black Engineers · History in the convention media kit",
+      "url": "https://convention.nsbe.org/wp-content/uploads/2025/03/NSBE_mediakit_V3-2.pdf"
+    }
+  ],
+  "software-engineer": [
+    {
+      "dateLabel": "1970–1980",
+      "sortYear": 1970,
+      "title": "Howard adds computer science to its engineering school",
+      "description": "Howard dates the start of its computer science program to this period. It gave students at a historically Black university a route to formal study in computing; the source does not specify a single founding year.",
+      "sourceTitle": "Howard University College of Engineering and Architecture · Our history",
+      "url": "https://cea.howard.edu/index.php/about-us/our-history"
+    },
+    {
+      "dateLabel": "1986",
+      "sortYear": 1986,
+      "title": "BDPA creates a student route into programming",
+      "description": "Black Data Processing Associates began a student technology education and scholarship program. Its national high-school computer competition gave students hands-on experience writing code and developing applications.",
+      "sourceTitle": "BDPA · Our history",
+      "url": "https://bdpa.org/about-us/"
+    }
+  ],
+  "journalist": [
+    {
+      "dateLabel": "1827",
+      "sortYear": 1827,
+      "title": "Freedom’s Journal creates a Black-controlled newsroom",
+      "description": "The newspaper began publishing in New York. Its editors set out to let Black Americans speak for themselves in print, establishing an outlet outside newspapers that spoke about them.",
+      "sourceTitle": "Library of Congress · The free African American press",
+      "url": "https://www.loc.gov/exhibits/african-american-odyssey/free-blacks-in-the-antebellum-period.html"
+    },
+    {
+      "dateLabel": "1976",
+      "sortYear": 1976,
+      "title": "Berkeley hosts a summer training program for journalists",
+      "description": "The Summer Program for Minority Journalists enrolled its first class at the University of California, Berkeley. The Maynard Institute traces this training effort to demands for more representative newsrooms.",
+      "sourceTitle": "Maynard Institute · Our history",
+      "url": "https://mije.org/about-us/our-work/"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {sourceDate} from './source-date.js';
 // Health literature is a research lead. Authors' affiliations by themselves do
 // not establish an employer's training, recruitment or admissions practices.
 const fieldTerms={
@@ -29,6 +30,6 @@ export async function europePmcSources({employer,title,profession='',signal,fetc
        !headline||!abstract||/\b(obituary|biography|the life of|in memoriam)\b|\(\d{4}[-–]\d{4}\)/i.test(headline)||
        !(' '+norm(text)+' ').includes(' '+company+' ')||!blackContext.test(text)||!workforce.test(text)||!role.test(text))return [];
     return [{title:headline,url:'https://europepmc.org/article/'+r.source+'/'+r.id,publisher:'Europe PMC · health research',
-      excerpt:'The publication mentions this institution, the field and Black professional education or workforce topics. Review the abstract for its scope.',kind:'lead'}];
+      excerpt:'The publication mentions this institution, the field and Black professional education or workforce topics. Review the abstract for its scope.',kind:'lead',...sourceDate(r.firstPublicationDate||r.pubYear,'publication','Publication date')}];
   }).slice(0,3);
 }

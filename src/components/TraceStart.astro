@@ -1,11 +1,12 @@
 ---
 import {professions} from '../lib/model';
 import SourceLookup from './SourceLookup.astro';
+import CareerTimeline from './CareerTimeline.astro';
 import '../styles/trace-start.css';
 ---
 <section class="trace-front" id="trace" aria-labelledby="trace-heading">
-<div class="trace-lead"><div class="eyebrow"><i></i> BLACK CAREER PATHWAYS <b>/</b> UNITED STATES</div><h1 id="trace-heading">Who opened the door to <em>your career?</em></h1><p>A field guide for Black professionals. Start with the job you do today and trace it back to the institutions that opened the field to Black Americans.</p>
-<div class="trace-mini" aria-hidden="true"><span>Your job</span><i></i><span>Today’s gate</span><i></i><span>Historical roots</span></div></div>
+<div class="trace-lead"><div class="eyebrow"><i></i> BLACK CAREER PATHWAYS <b>/</b> UNITED STATES</div><h1 id="trace-heading">Who opened the door to <em>your career?</em></h1><p>A field guide for Black professionals. Enter your job and employer to see a timeline of the institutions that opened your field to Black Americans, with sources and gaps along the way.</p>
+<div class="trace-mini" aria-hidden="true"><span>Field history</span><i></i><span>Workplace</span><i></i><span>Your job</span></div></div>
 <div class="trace-box"><div class="trace-box-title"><span class="eyebrow">YOUR STARTING POINT</span><button id="reset-trace" type="button" hidden>Clear entries</button></div>
 <form id="job-trace-form" autocomplete="off" aria-label="Trace my career">
 <label for="workplace-entry">Where do you work? <small>Optional</small></label><input id="workplace-entry" type="text" maxlength="160" placeholder="Employer or organization" autocomplete="off"/>
@@ -13,7 +14,8 @@ import '../styles/trace-start.css';
 <button class="primary trace-submit" type="submit">Trace my career <span aria-hidden="true">↗</span></button>
 </form><p class="privacy-line">Entries stay in this tab until you choose a source search. Shared cards omit your personal details.</p>
 <div class="trace-example"><span>Try an example</span><button id="try-trace" type="button">Nurse at Howard University Hospital ↗</button><button id="try-live" type="button">Research an Atlanta Public Schools teacher ↗</button></div>
-<div id="match-result" hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
+<div id="match-result" data-timeline-scope hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
+<CareerTimeline/>
 <SourceLookup/>
 <div id="manual-choice" hidden><label for="manual-profession">Choose a profession to explore</label><select id="manual-profession"><option value="">Select a profession…</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select><button type="button" id="manual-open" class="secondary" disabled>Trace this profession →</button></div>
 </div><noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript></div></section>
@@ -31,12 +33,16 @@ const heading=document.querySelector<HTMLHeadingElement>('#match-heading')!;
 const message=document.querySelector<HTMLElement>('#match-message')!;
 const choices=document.querySelector<HTMLElement>('#suggested-paths')!;
 const lookup=result.querySelector('pipeline-source-lookup');
-const researchHere=(profession='')=>bindLookup(lookup,{employer:employer.value,title:job.value,profession});
+const timeline=result.querySelector('pipeline-career-timeline');
+function researchHere(profession='',related=false){
+ const context={employer:employer.value.trim(),title:job.value.trim(),profession,related};
+ bindLookup(timeline,context);bindLookup(lookup,{...context,profession:related?'':profession});
+}
 const manual=document.querySelector<HTMLElement>('#manual-choice')!;
 const select=document.querySelector<HTMLSelectElement>('#manual-profession')!;
 const manualOpen=document.querySelector<HTMLButtonElement>('#manual-open')!;
 const savedFields=()=>{const saved=readTrace();employer.value=saved?.workplace||'';job.value=saved?.title||'';reset.hidden=!saved};
-function clearResults(){bindLookup(lookup,null);result.hidden=true;manual.hidden=true;select.value='';manualOpen.disabled=true;choices.replaceChildren();job.setCustomValidity('')}
+function clearResults(){bindLookup(timeline,null);bindLookup(lookup,null);result.hidden=true;manual.hidden=true;select.value='';manualOpen.disabled=true;choices.replaceChildren();job.setCustomValidity('')}
 function showResult(title:string,description:string){
  result.hidden=false;heading.textContent=title;message.textContent=description;heading.focus();
 }
@@ -46,7 +52,7 @@ function openRecord(slug:string,match='title'){
  const url='/p/'+record.slug+'/';
  if(saveTrace({title:job.value,workplace:employer.value,slug:record.slug,match})){location.assign(url);return}
  choices.replaceChildren();manual.hidden=true;
- showResult('Your profession is '+record.name,'You can research this workplace here or open the public profession record.');researchHere(match==='related'?'':record.slug);
+ showResult('Your profession is '+record.name,'You can research this workplace here or open the public profession record.');researchHere(record.slug,match==='related');
  const link=document.createElement('a');link.className='secondary';link.href=url;link.textContent='Open '+record.name+' →';choices.append(link);
 }
 form.addEventListener('submit',event=>{
@@ -60,7 +66,7 @@ form.addEventListener('submit',event=>{
   }
   showResult('Which path fits your work?','This job title can belong to more than one profession. Choose the field whose history you want to trace.');
  }else{
-  showResult('Research your job title',employer.value.trim()?'This title has no national profession card yet. Search published sources for your actual workplace and title below.':'Add an employer above to research this title, or explore a related profession.');
+  showResult('Research your job title',employer.value.trim()?'This title has no national profession card yet. Your timeline shows the missing links; you can search for sources about your workplace below.':'Add an employer above to research this title, or explore a related profession.');
  }
  researchHere();manual.hidden=false;
 });

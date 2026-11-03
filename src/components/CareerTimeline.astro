@@ -1,0 +1,130 @@
+---
+import '../styles/career-timeline.css';
+---
+<pipeline-career-timeline id="career-timeline" class="career-timeline" hidden>
+  <header class="timeline-head">
+    <div class="eyebrow"><i></i> CAREER TIMELINE</div>
+    <h2>From the first openings to your job</h2>
+    <p data-person></p>
+  </header>
+  <p class="timeline-note">Read from the earliest documented event to today. Each source explains one step; a gap marks a connection the evidence doesn’t establish.</p>
+  <p class="timeline-status" data-status role="status"></p>
+  <nav class="timeline-jumps" aria-label="Jump through your timeline"><a data-jump="timeline-history">Field history ↓</a><a data-jump="timeline-workplace">Workplace ↓</a><a data-jump="timeline-today">Your job ↓</a><a data-search-jump href="#workplace-lookup">Find more sources ↓</a></nav>
+  <button class="secondary timeline-retry" data-retry type="button" hidden>Retry profession history</button>
+  <ol class="timeline-steps" data-steps aria-label="Chronological steps"></ol>
+</pipeline-career-timeline>
+
+<script>
+import {buildCareerTimeline} from '../lib/career-timeline.js';
+
+type Context={employer:string,title:string,profession?:string,related?:boolean};
+const cache=new Map<string,Promise<any>>();
+function loadField(slug:string) {
+  if(!/^[a-z0-9-]+$/.test(slug))return Promise.reject(new Error('Invalid profession'));
+  let promise=cache.get(slug);
+  if(!promise){
+    promise=fetch('/data/pathways/'+slug+'.json'+(import.meta.env.DEV?'/':''),{credentials:'omit'}).then(async response=>{
+      if(!response.ok)throw new Error('Profession history unavailable');
+      const field=await response.json();
+      if(field.slug!==slug||!Array.isArray(field.historical))throw new Error('Invalid profession history');
+      return field;
+    }).catch(e=>{cache.delete(slug);throw e});
+    cache.set(slug,promise);
+  }
+  return promise;
+}
+function part(tag:string,className:string,text:string){
+  const item=document.createElement(tag);item.className=className;item.textContent=text;return item;
+}
+class CareerTimeline extends HTMLElement{
+  private context:Context|null=null;
+  private field:any=null;
+  private report:any=null;
+  private loading=false;
+  private failed=false;
+  private scope:Element|null=null;
+  connectedCallback(){
+    this.scope=this.closest('[data-timeline-scope]');
+    this.scope?.addEventListener('pipeline:research-results',this.onReport);
+    this.querySelector('[data-retry]')?.addEventListener('click',this.retry);
+  }
+  disconnectedCallback(){
+    this.scope?.removeEventListener('pipeline:research-results',this.onReport);
+    this.querySelector('[data-retry]')?.removeEventListener('click',this.retry);
+  }
+  reset(){
+    this.context=null;this.field=null;this.report=null;this.loading=false;this.failed=false;this.hidden=true;
+    this.querySelector('[data-person]')!.textContent='';
+    this.querySelector('[data-status]')!.textContent='';
+    this.querySelector('[data-steps]')!.replaceChildren();
+  }
+  setContext(next:Context){
+    if(!next?.title){this.reset();return}
+    if(this.context && ['title','employer','profession','related'].every(k=>this.context![k as keyof Context]===next[k as keyof Context]))return;
+    this.reset();this.context={...next};this.hidden=false;
+    this.querySelector<HTMLElement>('[data-search-jump]')!.hidden=!next.employer;
+    this.querySelector('[data-person]')!.textContent=next.title+(next.employer?' at '+next.employer:'');
+    this.retry();
+  }
+  private retry=async()=>{
+    const context=this.context;if(!context)return;
+    if(!context.profession){this.render();return}
+    this.failed=false;this.loading=true;this.render();
+    try{
+      const field=await loadField(context.profession);
+      if(this.context===context)this.field=field;
+    }catch{if(this.context===context)this.failed=true}
+    finally{if(this.context===context){this.loading=false;this.render()}}
+  };
+  private onReport=(event:Event)=>{
+    const {context,report}=(event as CustomEvent).detail;
+    if(!this.context||context.employer!==this.context.employer||context.title!==this.context.title||
+      (context.profession||'')!==(this.context.related?'':this.context.profession||''))return;
+    this.report=report;this.render();
+  };
+  private render(){
+    if(!this.context)return;
+    const list=this.querySelector<HTMLOListElement>('[data-steps]')!;
+    const status=this.querySelector<HTMLElement>('[data-status]')!;
+    this.querySelector<HTMLButtonElement>('[data-retry]')!.hidden=!this.failed;
+    list.setAttribute('aria-busy',String(this.loading));
+    if(this.loading){list.replaceChildren();status.textContent='Loading the field history…';return}
+    const steps=buildCareerTimeline({context:this.context,field:this.field,report:this.report,loadFailed:this.failed});
+    const rows=steps.map(step=>{
+      const li=document.createElement('li');li.className='timeline-step';li.dataset.kind=step.type;
+      li.append(part('span','timeline-date',step.date));
+      const content=document.createElement('div');content.className='timeline-content';
+      content.append(part('span','timeline-category',step.label),part('h3','',step.title),part('p','',step.detail));
+      if(step.bridge)content.append(part('p','timeline-bridge',step.bridge));
+      if(step.meta)content.append(part('small','timeline-meta',step.meta));
+      if(step.sources.length){
+        const refs=document.createElement('div');refs.className='timeline-sources';
+        for(const source of step.sources){
+          const a=document.createElement('a');a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';
+          a.textContent=source.title+' ↗';refs.append(a);
+        }
+        content.append(refs);
+      }else if(step.type==='self'){content.append(part('small','timeline-meta','Source: the job details you entered in this tab.'))}
+      li.append(content);return li;
+    });
+    const workplaceIndex=steps.findIndex(step=>step.type==='employer'||step.type==='award');
+    const gapIndex=steps.findIndex((step,i)=>i>0&&step.type==='gap');
+    const targets={
+      'timeline-history':rows[0],
+      'timeline-workplace':rows[workplaceIndex>=0?workplaceIndex:gapIndex],
+      'timeline-today':rows.at(-1)
+    };
+    for(const [id,row] of Object.entries(targets)){
+      const jump=this.querySelector<HTMLAnchorElement>('[data-jump="'+id+'"]')!;
+      jump.hidden=!row;
+      if(row){const marker=document.createElement('span');marker.id=id;marker.className='timeline-anchor';row.append(marker);jump.href='#'+id}
+    }
+    list.replaceChildren(...rows);
+    const documented=steps.filter(s=>['history','employer','award'].includes(s.type)).length;
+    const gaps=steps.filter(s=>s.type==='gap').length;
+    const summary=documented+' sourced '+(documented===1?'milestone':'milestones')+' · '+gaps+(gaps===1?' open connection':' open connections');
+    status.textContent=this.report?'Workplace search applied. '+summary:summary;
+  }
+}
+if(!customElements.get('pipeline-career-timeline'))customElements.define('pipeline-career-timeline',CareerTimeline);
+</script>

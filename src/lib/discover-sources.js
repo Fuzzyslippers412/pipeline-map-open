@@ -1,3 +1,5 @@
+import {sourceDate} from './source-date.js';
+import {employerKey as alias, normalizeEmployerText as normalize} from './employer-key.js';
 import { ericSources } from './eric-sources.js';
 import { newsSources } from './news-sources.js';
 import { europePmcSources } from './europe-pmc-sources.js';
@@ -34,8 +36,6 @@ const fields = {
 
 const blackPath=/\b(?:HBCUs?|historically[- ]Black|African[- ]American|Black (?:students?|graduates?|professionals?|engineers?|physicians?|schools?|colleges?|universit(?:y|ies)|workers?|communities|nurs(?:es|ing)))\b/i;
 const opportunity=/\b(?:internships?|apprentice\w*|training|workforce|career\w*|fellowships?|mentorship|professional development|scholarships?|recruitment|hiring|teacher preparation|faculty development)\b/i;
-const normalize=s=>String(s||'').normalize('NFKD').replace(/\p{M}/gu,'').toLowerCase().replace(/&/g,' and ').replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
-const alias=s=>normalize(s).replace(/^(?:the )/,'').replace(/ (?:incorporated|corporation|inc|llc|plc)$/,'').trim();
 const mentions=(body,name)=>(' '+normalize(body)+' ').includes(' '+normalize(name)+' ');
 const plain=s=>String(s||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 
@@ -52,6 +52,14 @@ function grantDescription(record,documented){
 }
 // The publisher is the recipient's authoritative funding record. A grant match
 // documents funding for the program, not a hiring outcome or a person's history.
+function indexDate(record){
+  if (record.publisher===NSF) return sourceDate(record.publishedOn,'award','NSF award date');
+  if (record.publisher===USA) return sourceDate(record.publishedOn,'award','Award period start');
+  if (record.publisher===ERIC) return sourceDate(record.publishedOn,'publication','Publication date');
+  // A news index's first-seen date is distinct from the publication date.
+  return {dateBasis:'unknown'};
+}
+
 export function matchIndex(index,input,providers){
   const name=alias(input.employer);
   if(!name)return [];
@@ -66,12 +74,12 @@ export function matchIndex(index,input,providers){
     if(recipient)excerpt=grantDescription(record,documented);
     else if(record.publisher===NEWS)excerpt='The indexed headline contains the entered employer name and a career-access topic. Confirm the employer identity and the relationship to your field in the publisher’s report.';
     else excerpt='The education research record names the institution and discusses Black access or HBCUs and career development. Check the original for the connection to your specific role.';
-    return [{title:record.title,url:record.url,publisher:record.outlet||record.publisher,excerpt,kind:documented?'documented':'lead',mode:'indexed',indexedOn:record.indexedOn||index.asOf,publishedOn:record.publishedOn,roleMatch:(record.fields||[]).includes(slug)}];
-  }).sort((a,b)=>Number(b.kind==='documented')-Number(a.kind==='documented')||Number(b.roleMatch)-Number(a.roleMatch)||b.publishedOn.localeCompare(a.publishedOn)||a.title.localeCompare(b.title));
+    return [{title:record.title,url:record.url,publisher:record.outlet||record.publisher,excerpt,kind:documented?'documented':'lead',mode:'indexed',indexedOn:record.indexedOn||index.asOf,...indexDate(record),roleMatch:(record.fields||[]).includes(slug)}];
+  }).sort((a,b)=>Number(b.kind==='documented')-Number(a.kind==='documented')||Number(b.roleMatch)-Number(a.roleMatch)||(b.publishedOn||'').localeCompare(a.publishedOn||'')||a.title.localeCompare(b.title));
 }
 async function nsf(input){
   const url=new URL('https://api.nsf.gov/services/v1/awards.json');
-  url.search=new URLSearchParams({awardeeName:input.employer,keyword:'HBCU',printFields:'id,title,awardeeName,abstractText,date'}).toString();
+  url.search=new URLSearchParams({awardeeName:input.employer,keyword:'HBCU',printFields:'id,title,awardeeName,abstractText,date,initAmendmentDate'}).toString();
   const response=await input.fetchImpl(url.href,{signal:input.signal,credentials:'omit',referrerPolicy:'no-referrer',redirect:'manual',headers:{Accept:'application/json'}});
   if(!response.ok||!response.headers.get('content-type')?.includes('json'))throw Error('NSF unavailable');
   const json=await response.json();const records=json.response?.award;
@@ -88,7 +96,7 @@ async function nsf(input){
       const passage=title+'. '+line;
       return line.length<=1200&&blackPath.test(passage)&&opportunity.test(passage)&&roleMatches(passage,input);
     });
-    return [{title,url:'https://www.nsf.gov/awardsearch/showAward?AWD_ID='+a.id,publisher:NSF,kind:documented?'documented':'lead',excerpt:grantDescription({issuer:plain(a.awardeeName),awardId:a.id,publisher:NSF},documented)}];
+    return [{title,url:'https://www.nsf.gov/awardsearch/showAward?AWD_ID='+a.id,publisher:NSF,kind:documented?'documented':'lead',...sourceDate(a.date||a.initAmendmentDate,'award','NSF award date'),excerpt:grantDescription({issuer:plain(a.awardeeName),awardId:a.id,publisher:NSF},documented)}];
   });
 }
 async function collect(group,input){
@@ -112,7 +120,7 @@ export async function discoverSources({employer,title='',profession='',signal,fe
   try{
     const checked=await Promise.all(groups.map(group=>collect(group,input)));
     if(signal?.aborted)throw signal.reason??new DOMException('Cancelled','AbortError');
-    const live=checked.flatMap(c=>c.results).map(r=>({...r,mode:'live'}));
+    const live=checked.flatMap(c=>c.results).map(r=>({dateBasis:'unknown',...r,mode:'live'}));
     const fallbackProviders=new Set(checked.filter(c=>c.status!=='ok'||!c.results.length).map(c=>c.name));
     const indexed=matchIndex(catalog,input,fallbackProviders);
     const sorted=[...live.filter(r=>r.kind==='documented'),...indexed.filter(r=>r.kind==='documented'),...live.filter(r=>r.kind==='lead'),...indexed.filter(r=>r.kind==='lead')];

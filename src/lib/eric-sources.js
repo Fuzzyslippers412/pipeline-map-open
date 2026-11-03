@@ -1,3 +1,4 @@
+import {sourceDate} from './source-date.js';
 // ERIC indexes education and workforce research from many publishers. Its
 // abstracts can point readers to evidence, but do not establish employment.
 const ignored = new Set('and at of for the in to plc llc inc incorporated corporation company senior junior chief lead assistant associate staff manager director specialist level'.split(' '));
@@ -41,7 +42,7 @@ export async function ericSources({employer,title,profession='',signal,fetchImpl
     if(!hay.includes(' '+company+' ')||!blackAccess.test(text)||!careerPath.test(text))continue;
     const match=roles.filter(t=>hay.includes(' '+t+' ')||hay.includes(' '+t+'s ')).length;
     if(!match)continue;
-    results.push({rank:match, item:{title:headline,url:'https://eric.ed.gov/?id='+record.id,publisher:'ERIC · education research index',excerpt:excerptFrom(description,company),kind:'lead'}});
+    results.push({rank:match, item:{title:headline,url:'https://eric.ed.gov/?id='+record.id,publisher:'ERIC · education research index',excerpt:excerptFrom(description,company),kind:'lead',...sourceDate(record.publicationdateyear,'publication','Publication date')}});
   }
   return results.sort((a,b)=>b.rank-a.rank).slice(0,3).map(x=>x.item);
 }

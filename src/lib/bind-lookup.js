@@ -9,5 +9,5 @@ export function bindLookup(element, context) {
     else element.reset();
   };
   if (typeof element.setContext === 'function') apply();
-  else customElements.whenDefined('pipeline-source-lookup').then(apply);
+  else customElements.whenDefined(element.localName).then(apply);
 }

@@ -14,6 +14,10 @@ Use Node 22.23 or compatible, npm, and Python 3.12+. From a clean checkout run:
 
 The build validates five relational tables, writes a SQLite database and CSV, generates static Astro pages and renders share images. It reads committed derived data and needs no source-publisher network access. The output is in dist/. For an alternate host, change the site origin in astro.config.mjs and rebuild so all social URLs are absolute.
 
+## Career timelines
+
+Entering a workplace and job title creates a chronological trace. Field openings come from the cited event records in `data/timeline-health-education.json` and `data/timeline-civic-trades.json`. Reviewed workplace relationships and documented awards are dated separately. A source's publication date or the index refresh date cannot stand in for the date of an event. Gaps and self-reported details have explicit labels. Source lookup adds qualifying records to the current trace and keeps unverified leads below it. Personal entries remain out of shared links and preview images.
+
 ## Workplace source search
 
 Enter any workplace and a job title, then choose **Look up sources**. The same-origin research handler searches education, government awards, health literature and recent news, filters results against the role, and links to the originals. Results distinguish live lookups from matches in a dated public-record index. Unmapped titles can use the lookup directly on the landing page. A research lead is not an independently verified hiring or training history. See [the methodology](https://pipeline-map.fuzzyslipper.chatgpt.site/method/#source-discovery).

@@ -1,3 +1,4 @@
+import {sourceDate} from './source-date.js';
 // USAspending records identify a legal award recipient. They can substantiate
 // funding for named activities, never the employment history of an individual.
 const codes={grants:['02','03','04','05'],contracts:['A','B','C','D']};
@@ -32,7 +33,7 @@ export async function usaSpendingSources({employer,title,profession='',signal,fe
   const date=String(row['Start Date']||'').slice(0,10);
   const award=String(row['Award ID']||id);
   matches.push({title:'Federal award '+award+' to '+org,url:'https://www.usaspending.gov/award/'+encodeURIComponent(id),
-   publisher:'USAspending · federal awards',kind:explicit?'documented':'lead',publishedOn:/^\d{4}-\d{2}-\d{2}$/.test(date)?date:undefined,
+   publisher:'USAspending · federal awards',kind:explicit?'documented':'lead',...sourceDate(date,'award','Award period start'),
    excerpt:explicit?'The record names this employer as the award recipient. Its description connects Black institutional access, training and the profession. The award documents funding; it does not establish who participated.':'The award names this employer as recipient. Read the award description to check the connection to the entered role.'});
  }
  return matches.sort((a,b)=>Number(b.kind==='documented')-Number(a.kind==='documented')).slice(0,4);
