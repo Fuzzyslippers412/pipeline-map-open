@@ -5,7 +5,7 @@ import '../styles/career-timeline.css';
   <header class="timeline-head">
     <div class="eyebrow"><i></i> CAREER TIMELINE</div>
     <h2>From the first openings to your job</h2>
-    <p data-person></p>
+    <p data-person></p><p class="timeline-workplace-info" data-workplace-info hidden></p>
   </header>
   <p class="timeline-note">Read from the earliest documented event to today. Each source explains one step; a gap marks a connection the evidence doesn’t establish.</p>
   <p class="timeline-status" data-status role="status"></p>
@@ -17,7 +17,7 @@ import '../styles/career-timeline.css';
 <script>
 import {buildCareerTimeline} from '../lib/career-timeline.js';
 
-type Context={employer:string,title:string,profession?:string,related?:boolean};
+type Context={employer:string,title:string,profession?:string,related?:boolean,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string}|null};
 const cache=new Map<string,Promise<any>>();
 function loadField(slug:string) {
   if(!/^[a-z0-9-]+$/.test(slug))return Promise.reject(new Error('Invalid profession'));
@@ -56,14 +56,19 @@ class CareerTimeline extends HTMLElement{
     this.context=null;this.field=null;this.report=null;this.loading=false;this.failed=false;this.hidden=true;
     this.querySelector('[data-person]')!.textContent='';
     this.querySelector('[data-status]')!.textContent='';
+    this.querySelector('[data-workplace-info]')!.textContent='';
     this.querySelector('[data-steps]')!.replaceChildren();
   }
   setContext(next:Context){
     if(!next?.title){this.reset();return}
-    if(this.context && ['title','employer','profession','related'].every(k=>this.context![k as keyof Context]===next[k as keyof Context]))return;
+    if(this.context && ['title','employer','profession','related'].every(k=>this.context![k as keyof Context]===next[k as keyof Context])&&JSON.stringify(this.context.workplaceInfo)===JSON.stringify(next.workplaceInfo))return;
     this.reset();this.context={...next};this.hidden=false;
     this.querySelector<HTMLElement>('[data-search-jump]')!.hidden=!next.employer;
     this.querySelector('[data-person]')!.textContent=next.title+(next.employer?' at '+next.employer:'');
+    const hint=this.querySelector<HTMLElement>('[data-workplace-info]')!;
+    const info=next.workplaceInfo?.workplace===next.employer?next.workplaceInfo:null;
+    hint.textContent=info?[info.parent?(info.relation||'Parent organization')+': '+info.parent:'',info.location].filter(Boolean).join(' · '):'';
+    hint.hidden=!hint.textContent;
     this.retry();
   }
   private retry=async()=>{

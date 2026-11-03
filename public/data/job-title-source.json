@@ -1,0 +1,31 @@
+{
+  "source": "O*NET® 31.0 Database",
+  "publisher": "U.S. Department of Labor, Employment and Training Administration",
+  "database": "https://www.onetcenter.org/database.html",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "https://www.onetcenter.org/license_db.html",
+  "files": [
+    {
+      "file": "sample_of_reported_titles.csv",
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/sample_of_reported_titles.csv",
+      "sha256": "5d76040b7b0602ea217660648f8363e7980edd1870f96574a2eeaa6a822d2666",
+      "sourceRows": 8189,
+      "columnsUsed": [
+        "Reported Job Title"
+      ]
+    },
+    {
+      "file": "job_titles.csv",
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/job_titles.csv",
+      "sha256": "75a3b46d6edc5996117c10c9ed488c9a06f7495d02969e9d12873ab14a21540c",
+      "sourceRows": 54269,
+      "columnsUsed": [
+        "Job Title",
+        "Short Title"
+      ]
+    }
+  ],
+  "titleCount": 48330,
+  "changes": "Pipeline Map selects job, short and reported titles, removes duplicate spellings, and combines them with its own curated terms at search time. Project labels and profession matches are its own. USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA."
+}

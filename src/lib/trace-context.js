@@ -11,9 +11,14 @@ function cleanTrace(value) {
   const title = boundedText(value.title, 120);
   const workplace = boundedText(value.workplace, 160);
   const slug = boundedText(value.slug, 80);
-  if (!title || !allowedSlug.test(slug)) return null;
-  const match = value.match === 'related' ? 'related' : 'title';
-  return { title, workplace, slug, match };
+  const unmapped=value.match==='unmapped' && slug==='';
+  if (!title || (!unmapped && !allowedSlug.test(slug))) return null;
+  const match = unmapped ? 'unmapped' : value.match === 'related' ? 'related' : 'title';
+  const info=value.workplaceInfo;
+  const workplaceInfo=workplace && info?.workplace===workplace ? {
+    workplace,parent:boundedText(info.parent,200),relation:boundedText(info.relation,70),location:boundedText(info.location,160)
+  } : null;
+  return { title, workplace, slug, match, workplaceInfo };
 }
 
 export function readTrace() {

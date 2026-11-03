@@ -23,3 +23,7 @@ The same distinctions apply to the CSV, JSON, SQLite and generated web copies. S
 ## Live workplace research and discovery index
 
 The dated discovery index contains bibliographic metadata, record identifiers and project-derived classifications. Its links point to original [NSF awards](https://www.nsf.gov/awardsearch/), [USAspending awards](https://www.usaspending.gov/) and [ERIC education research](https://eric.ed.gov/). Live results may also link to [Europe PMC](https://europepmc.org/) or publishers indexed by [GDELT](https://www.gdeltproject.org/). Individual publishers retain their rights in publications and abstracts. The project’s license covers its own code and editorial work.
+
+## Workplace and title suggestions
+
+Workplace names, locations and reported institutional relationships are attributed in [the workplace directory notes](WORKPLACES.md). Job-title vocabulary is adapted from the O*NET® 31.0 Database under CC BY 4.0. [Title sources and attribution](JOB-TITLES.md) · [O*NET license](https://www.onetcenter.org/license_db.html).

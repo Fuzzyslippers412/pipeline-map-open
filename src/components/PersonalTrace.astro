@@ -26,7 +26,7 @@ if(panel){
     const trace=readTrace();
     panel.hidden=!trace||trace.slug!==panel.dataset.profession;
     if(!trace||panel.hidden){bindLookup(timeline,null);bindLookup(lookup,null);return}
-    const context={employer:trace.workplace,title:trace.title,profession:trace.slug,related:trace.match==='related'};
+    const context={employer:trace.workplace,title:trace.title,profession:trace.slug,related:trace.match==='related',workplaceInfo:trace.workplaceInfo};
     bindLookup(timeline,context);
     bindLookup(lookup,{...context,profession:context.related?'':trace.slug});
   };

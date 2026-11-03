@@ -22,3 +22,10 @@
 @media(max-width:680px){.trace-front{display:block;padding:22px 0}.trace-lead h1{font-size:clamp(40px,9.8vw,55px);max-width:16ch;line-height:1;margin:11px 0}.trace-lead>p{font-size:14px}.trace-mini{display:none}.trace-box{margin-top:18px;padding:13px 15px}.trace-box-title{min-height:18px}.trace-example button{min-height:36px}}
 
 .trace-front:has(#match-result:not([hidden])){align-items:start}.trace-example{column-gap:12px}
+
+.entry-help,.entry-affiliation,.more-workplaces p{font-size:12px;color:var(--muted);margin:3px 0}
+.entry-affiliation{color:var(--teal);font-weight:600}.entry-help{margin:5px 0 0}
+.more-workplaces{border-top:1px solid var(--edge);margin-top:10px;padding-top:5px}.more-workplaces summary{color:var(--teal);font-size:12px}
+.more-workplaces .secondary,.registry-result{font-size:12px;margin-top:6px}
+.registry-result{display:block;color:var(--teal);min-height:34px;text-align:left;text-decoration:underline}
+.timeline-head .timeline-workplace-info{color:var(--muted);font-size:13px;font-weight:500;margin-top:3px}

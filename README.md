@@ -14,6 +14,12 @@ Use Node 22.23 or compatible, npm, and Python 3.12+. From a clean checkout run:
 
 The build validates five relational tables, writes a SQLite database and CSV, generates static Astro pages and renders share images. It reads committed derived data and needs no source-publisher network access. The output is in dist/. For an alternate host, change the site origin in astro.config.mjs and rebuild so all social URLs are absolute.
 
+## Finding a workplace and job title
+
+The trace form suggests exact worksites and job titles after two characters. It searches site-hosted directory snapshots in a Web Worker. Parent organizations, districts and systems are displayed only where identified by the source and are not substituted for the chosen employer in research. Keyboard or pointer selections are optional. Both fields accept the reader’s own words, including titles outside the profession index. A separate, explicitly requested federal-recipient search sends the workplace term to USAspending.
+
+See [workplace directory sources](data/WORKPLACES.md) and [O*NET® job-title sources and attribution](data/JOB-TITLES.md).
+
 ## Career timelines
 
 Entering a workplace and job title creates a chronological trace. Field openings come from the cited event records in `data/timeline-health-education.json` and `data/timeline-civic-trades.json`. Reviewed workplace relationships and documented awards are dated separately. A source's publication date or the index refresh date cannot stand in for the date of an event. Gaps and self-reported details have explicit labels. Source lookup adds qualifying records to the current trace and keeps unverified leads below it. Personal entries remain out of shared links and preview images.

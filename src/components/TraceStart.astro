@@ -1,25 +1,40 @@
 ---
 import {professions} from '../lib/model';
+import workplaces from '../../data/workplace-directory.json';
+import {normalizeEmployerText} from '../lib/employer-key.js';
+const featured=workplaces.records.filter(row=>row.source?.startsWith('verified-'));
+const featuredParents=new Set(featured.filter(row=>row.parent).map(row=>normalizeEmployerText(row.parent)));
+const quickWorkplaces=workplaces.records.filter(row=>row.source?.startsWith('verified-')||featuredParents.has(normalizeEmployerText(row.name)))
+  .map(row=>({...row,priority:row.source?.startsWith('verified-')?2:1}));
 import SourceLookup from './SourceLookup.astro';
 import CareerTimeline from './CareerTimeline.astro';
 import '../styles/trace-start.css';
+import '../styles/trace-combobox.css';
 ---
 <section class="trace-front" id="trace" aria-labelledby="trace-heading">
 <div class="trace-lead"><div class="eyebrow"><i></i> BLACK CAREER PATHWAYS <b>/</b> UNITED STATES</div><h1 id="trace-heading">Who opened the door to <em>your career?</em></h1><p>A field guide for Black professionals. Enter your job and employer to see a timeline of the institutions that opened your field to Black Americans, with sources and gaps along the way.</p>
 <div class="trace-mini" aria-hidden="true"><span>Field history</span><i></i><span>Workplace</span><i></i><span>Your job</span></div></div>
 <div class="trace-box"><div class="trace-box-title"><span class="eyebrow">YOUR STARTING POINT</span><button id="reset-trace" type="button" hidden>Clear entries</button></div>
 <form id="job-trace-form" autocomplete="off" aria-label="Trace my career">
-<label for="workplace-entry">Where do you work? <small>Optional</small></label><input id="workplace-entry" type="text" maxlength="160" placeholder="Employer or organization" autocomplete="off"/>
-<label for="title-entry">What’s your job title?</label><input id="title-entry" type="text" maxlength="120" required placeholder="e.g. ICU registered nurse" autocomplete="off"/>
-<button class="primary trace-submit" type="submit" disabled>Trace my career <span aria-hidden="true">↗</span></button>
-</form><p class="privacy-line">Entries stay in this tab until you choose a source search. Shared cards omit your personal details.</p>
+<label for="workplace-entry">Where do you work? <small>Optional</small></label>
+<div class="trace-combobox-wrap"><input id="workplace-entry" type="text" maxlength="160" placeholder="Start typing your workplace" autocomplete="off"/><div id="workplace-suggestions" hidden></div></div><span id="workplace-announcements"></span>
+<p id="workplace-affiliation" class="entry-affiliation" hidden></p>
+<label for="title-entry">What’s your job title?</label>
+<div class="trace-combobox-wrap"><input id="title-entry" type="text" maxlength="120" required placeholder="e.g. ICU registered nurse" autocomplete="off"/><div id="title-suggestions" hidden></div></div><span id="title-announcements"></span>
+<p id="title-affiliation" class="entry-affiliation" hidden></p>
+<p class="entry-help">Suggestions start after two characters. You can always keep your own wording.</p>
+<button class="primary trace-submit" type="submit" disabled>Trace my path <span aria-hidden="true">↗</span></button>
+</form><p class="privacy-line">Typing searches downloaded directories in this tab. Shared cards omit your entries.</p>
+<details id="more-workplaces" class="more-workplaces"><summary>Search more workplaces</summary><p>Search the U.S. Treasury’s federal award recipient directory. Only clicking the button sends the workplace text to USAspending.</p><button id="search-federal-workplaces" type="button" class="secondary" disabled>Search federal recipients</button><p id="federal-status" role="status"></p><div id="federal-results"></div></details>
 <div class="trace-example"><span>Try an example</span><button id="try-trace" type="button" disabled>Nurse at Howard University Hospital ↗</button><button id="try-live" type="button" disabled>Research an Atlanta Public Schools teacher ↗</button></div>
 <div id="match-result" data-timeline-scope hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
 <CareerTimeline/>
 <SourceLookup/>
 <div id="manual-choice" hidden><label for="manual-profession">Choose a profession to explore</label><select id="manual-profession"><option value="">Select a profession…</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select><button type="button" id="manual-open" class="secondary" disabled>Trace this profession →</button></div>
 </div><noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript></div></section>
+<script type="application/json" id="quick-workplaces" set:html={JSON.stringify(quickWorkplaces).replace(/</g,'\\u003c')}></script>
 <script>
+import {setupTraceEntryFields} from '../lib/trace-entry-fields.js';
 import {bindLookup} from '../lib/bind-lookup.js';
 import {matchJobTitle} from '../lib/job-match.js';
 import {saveTrace,readTrace,clearTrace} from '../lib/trace-context.js';
@@ -34,8 +49,10 @@ const message=document.querySelector<HTMLElement>('#match-message')!;
 const choices=document.querySelector<HTMLElement>('#suggested-paths')!;
 const lookup=result.querySelector('pipeline-source-lookup');
 const timeline=result.querySelector('pipeline-career-timeline');
+const quickWorkplaces=JSON.parse(document.querySelector('#quick-workplaces')!.textContent!);
+const entries=setupTraceEntryFields(form,catalog,quickWorkplaces);
 function researchHere(profession='',related=false){
- const context={employer:employer.value.trim(),title:job.value.trim(),profession,related};
+ const context={employer:employer.value.trim(),title:job.value.trim(),profession,related,workplaceInfo:entries.workplaceInfo};
  bindLookup(timeline,context);bindLookup(lookup,{...context,profession:related?'':profession});
 }
 const manual=document.querySelector<HTMLElement>('#manual-choice')!;
@@ -45,7 +62,9 @@ const savedFields=(restoring=false)=>{
  const saved=readTrace();
  if(restoring||!employer.value)employer.value=saved?.workplace||'';
  if(restoring||!job.value)job.value=saved?.title||'';
+ entries.restore(saved?.workplaceInfo);
  reset.hidden=!employer.value&&!job.value;
+ if(saved?.match==='unmapped' && saved.title===job.value && saved.workplace===employer.value){showUnmapped();researchHere();manual.hidden=false}
 };
 function clearResults(){bindLookup(timeline,null);bindLookup(lookup,null);result.hidden=true;manual.hidden=true;select.value='';manualOpen.disabled=true;choices.replaceChildren();job.setCustomValidity('')}
 function showResult(title:string,description:string){
@@ -55,10 +74,13 @@ function openRecord(slug:string,match='title'){
  const record=catalog.find((p:any)=>p.slug===slug);
  if(!record||!job.value.trim())return;
  const url='/p/'+record.slug+'/';
- if(saveTrace({title:job.value,workplace:employer.value,slug:record.slug,match})){location.assign(url);return}
+ if(saveTrace({title:job.value,workplace:employer.value,slug:record.slug,match,workplaceInfo:entries.workplaceInfo})){location.assign(url);return}
  choices.replaceChildren();manual.hidden=true;
  showResult('Your profession is '+record.name,'You can research this workplace here or open the public profession record.');researchHere(record.slug,match==='related');
  const link=document.createElement('a');link.className='secondary';link.href=url;link.textContent='Open '+record.name+' →';choices.append(link);
+}
+function showUnmapped(){
+ showResult('Your path from this job',employer.value.trim()?'This title has no national profession card yet. Your timeline keeps the job and workplace you entered and shows where evidence is missing.':'Add a workplace to research this title, or explore a related profession.');
 }
 form.addEventListener('submit',event=>{
  event.preventDefault();clearResults();const text=job.value.trim();
@@ -71,7 +93,8 @@ form.addEventListener('submit',event=>{
   }
   showResult('Which path fits your work?','This job title can belong to more than one profession. Choose the field whose history you want to trace.');
  }else{
-  showResult('Research your job title',employer.value.trim()?'This title has no national profession card yet. Your timeline shows the missing links; you can search for sources about your workplace below.':'Add an employer above to research this title, or explore a related profession.');
+  showUnmapped();
+  saveTrace({title:job.value,workplace:employer.value,slug:'',match:'unmapped',workplaceInfo:entries.workplaceInfo});
  }
  researchHere();manual.hidden=false;
 });
@@ -83,11 +106,11 @@ form.addEventListener('input',()=>{
  if(saved&&(saved.title!==job.value.trim()||saved.workplace!==employer.value.trim()))clearTrace();
  reset.hidden=!job.value&&!employer.value;
 });
-reset.addEventListener('click',()=>{clearTrace();form.reset();clearResults();reset.hidden=true;employer.focus()});
-document.querySelector('#try-trace')!.addEventListener('click',()=>{employer.value='Howard University Hospital';job.value='Registered nurse';reset.hidden=false;form.requestSubmit()});
-document.querySelector('#try-live')!.addEventListener('click',()=>{employer.value='Atlanta Public Schools';job.value='K–12 teacher';reset.hidden=false;form.requestSubmit()});
+reset.addEventListener('click',()=>{clearTrace();form.reset();entries.clear();clearResults();reset.hidden=true;employer.focus()});
+document.querySelector('#try-trace')!.addEventListener('click',()=>{entries.example('Howard University Hospital');job.value='Registered nurse';reset.hidden=false;form.requestSubmit()});
+document.querySelector('#try-live')!.addEventListener('click',()=>{entries.example('Atlanta Public Schools');job.value='K–12 teacher';reset.hidden=false;form.requestSubmit()});
 savedFields();
 for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-submit,#try-trace,#try-live'))button.disabled=false;
-window.addEventListener('pageshow',event=>{if(event.persisted){savedFields(true);clearResults()}});
+window.addEventListener('pageshow',event=>{if(event.persisted){clearResults();savedFields(true)}});
 
 </script>

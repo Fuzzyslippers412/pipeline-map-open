@@ -43,14 +43,18 @@ const specializations = {
 const rank = /^(?:(?:senior|sr|junior|jr|lead|principal|staff|associate|adjunct|licensed|certified|board certified) )+/;
 const level = / (?:i{1,3}|iv|[1-5])$/;
 
-function normalize(value) {
+export function normalizeJobTitle(value) {
   return String(value ?? '').normalize('NFKD').replace(/\p{M}/gu, '')
     .toLowerCase().replace(/[’']/g, '').replace(/\./g, '').replace(/&/g,' and ')
     .replace(/[^a-z0-9]+/g,' ').trim();
 }
 
+export function jobTerms(profession) {
+  return [profession.name,...(profession.aliases||[]),...(titles[profession.slug]||[])];
+}
+
 function findOne(title, professions) {
-  const raw = normalize(title);
+  const raw = normalizeJobTitle(title);
   if (!raw) return [];
   const base = raw.replace(rank,'').replace(level,'');
   const choices = ambiguous[raw] || ambiguous[base];
@@ -63,12 +67,12 @@ function findOne(title, professions) {
 
   const matches = [];
   for (const p of professions) {
-    const terms = [p.name,...(p.aliases||[]),...(titles[p.slug]||[])];
-    const known = new Map(terms.map(t=>[normalize(t),t]));
+    const terms = jobTerms(p);
+    const known = new Map(terms.map(t=>[normalizeJobTitle(t),t]));
     let term = known.get(raw) || known.get(base);
     if (!term) {
       for (const qualifier of specializations[p.slug] || []) {
-        const q = normalize(qualifier);
+        const q = normalizeJobTitle(qualifier);
         const stem = base.startsWith(q+' ') ? base.slice(q.length+1) :
           base.endsWith(' '+q) ? base.slice(0,-q.length-1) : '';
         term = known.get(stem);
