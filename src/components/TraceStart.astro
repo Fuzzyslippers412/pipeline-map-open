@@ -11,9 +11,9 @@ import '../styles/trace-start.css';
 <form id="job-trace-form" autocomplete="off" aria-label="Trace my career">
 <label for="workplace-entry">Where do you work? <small>Optional</small></label><input id="workplace-entry" type="text" maxlength="160" placeholder="Employer or organization" autocomplete="off"/>
 <label for="title-entry">What’s your job title?</label><input id="title-entry" type="text" maxlength="120" required placeholder="e.g. ICU registered nurse" autocomplete="off"/>
-<button class="primary trace-submit" type="submit">Trace my career <span aria-hidden="true">↗</span></button>
+<button class="primary trace-submit" type="submit" disabled>Trace my career <span aria-hidden="true">↗</span></button>
 </form><p class="privacy-line">Entries stay in this tab until you choose a source search. Shared cards omit your personal details.</p>
-<div class="trace-example"><span>Try an example</span><button id="try-trace" type="button">Nurse at Howard University Hospital ↗</button><button id="try-live" type="button">Research an Atlanta Public Schools teacher ↗</button></div>
+<div class="trace-example"><span>Try an example</span><button id="try-trace" type="button" disabled>Nurse at Howard University Hospital ↗</button><button id="try-live" type="button" disabled>Research an Atlanta Public Schools teacher ↗</button></div>
 <div id="match-result" data-timeline-scope hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
 <CareerTimeline/>
 <SourceLookup/>
@@ -41,7 +41,12 @@ function researchHere(profession='',related=false){
 const manual=document.querySelector<HTMLElement>('#manual-choice')!;
 const select=document.querySelector<HTMLSelectElement>('#manual-profession')!;
 const manualOpen=document.querySelector<HTMLButtonElement>('#manual-open')!;
-const savedFields=()=>{const saved=readTrace();employer.value=saved?.workplace||'';job.value=saved?.title||'';reset.hidden=!saved};
+const savedFields=(restoring=false)=>{
+ const saved=readTrace();
+ if(restoring||!employer.value)employer.value=saved?.workplace||'';
+ if(restoring||!job.value)job.value=saved?.title||'';
+ reset.hidden=!employer.value&&!job.value;
+};
 function clearResults(){bindLookup(timeline,null);bindLookup(lookup,null);result.hidden=true;manual.hidden=true;select.value='';manualOpen.disabled=true;choices.replaceChildren();job.setCustomValidity('')}
 function showResult(title:string,description:string){
  result.hidden=false;heading.textContent=title;message.textContent=description;heading.focus();
@@ -82,5 +87,7 @@ reset.addEventListener('click',()=>{clearTrace();form.reset();clearResults();res
 document.querySelector('#try-trace')!.addEventListener('click',()=>{employer.value='Howard University Hospital';job.value='Registered nurse';reset.hidden=false;form.requestSubmit()});
 document.querySelector('#try-live')!.addEventListener('click',()=>{employer.value='Atlanta Public Schools';job.value='K–12 teacher';reset.hidden=false;form.requestSubmit()});
 savedFields();
-window.addEventListener('pageshow',event=>{if(event.persisted){savedFields();clearResults()}});
+for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-submit,#try-trace,#try-live'))button.disabled=false;
+window.addEventListener('pageshow',event=>{if(event.persisted){savedFields(true);clearResults()}});
+
 </script>
