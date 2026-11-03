@@ -161,3 +161,11 @@
 .match-gap { margin-block:12px; color:var(--muted); }
 
 #match-result { scroll-margin-top:12px; }
+
+.paper-edition .start-options { display:flex; align-items:stretch; flex-wrap:wrap; gap:5px 12px; margin:15px 0; }
+.paper-edition .start-options a { display:inline-flex; align-items:center; gap:9px; min-height:44px; padding:8px 11px; border:1px solid var(--action); border-radius:3px; color:var(--action); font-weight:650; font-size:.95rem; }
+.paper-edition .start-options .start-trace { background:var(--action); color:var(--panel); }
+.paper-edition .start-options a:hover { text-decoration:underline; text-underline-offset:.17em; }
+@media (max-width:420px) { .paper-edition .start-options { gap:6px; } .paper-edition .start-options a { font-size:.87rem; padding:8px; gap:5px; } }
+
+.paper-edition .trace-guides { display:flex; flex-wrap:wrap; gap:0 16px; }

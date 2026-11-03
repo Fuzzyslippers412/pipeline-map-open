@@ -1,0 +1,85 @@
+---
+import Layout from '../../../components/Layout.astro';
+const sessions = [
+  {
+    id:'worker', title:'I’m thinking about my next job', place:'IT career map', link:'/career-map/',
+    brief:'Compare two directions from support. Find one that interests you, one responsibility that changes, and the evidence for that move.',
+    prompts:['Which move fits the work you want to do, and why?', 'Which requirement would you still need to check at your workplace?', 'What is one next step you could take?']
+  },
+  {
+    id:'student', title:'I’m exploring what I could do', place:'Career explorer', link:'/explore/',
+    brief:'Try the activity picker. Compare two jobs and open a Door Note. Choose an experiment you could do this week.',
+    prompts:['Which two jobs did you find, and why did they appear?', 'Whose story did you find? What did you learn from the source?', 'Which activity would you try first?']
+  }
+];
+---
+<Layout title="Try a career route" desc="Explore two possible directions, find a Door Note, and explain a next step in your own words.">
+  <div class="frame route-test">
+    <a class="back" href="/try/">← Reader tests</a>
+    <header><p class="kicker">Reader test</p><h1>Try a career route</h1>
+      <p>Choose the activity that fits you. The guide opens in a new tab. Return here to write what you found.</p></header>
+    {sessions.map(session=><details class="session" id={session.id}>
+      <summary>{session.title}</summary>
+      <p>{session.brief}</p>
+      <a class="open-guide" href={session.link} target="_blank" rel="noopener">Open the {session.place.toLowerCase()} ↗</a>
+      {session.prompts.map(prompt=><label><span>{prompt}</span><textarea rows="2" maxlength="1000"/></label>)}
+      <p class="privacy">Your notes stay in this tab. You can copy them for the person who invited you. Use public examples.</p>
+      <button data-copy hidden type="button" class="secondary">Copy my notes</button>
+      <p role="status" data-status></p>
+      <textarea hidden readonly data-manual aria-label="Notes ready to copy"></textarea>
+    </details>)}
+  </div>
+</Layout>
+<script>
+  const panels = [...document.querySelectorAll<HTMLDetailsElement>('.session')];
+  function openLinkedSession() {
+    const selected = panels.find(panel => '#'+panel.id === location.hash);
+    if (selected) selected.open = true;
+  }
+  openLinkedSession();
+  window.addEventListener('hashchange',openLinkedSession);
+  for (const panel of panels) {
+    const copy = panel.querySelector<HTMLButtonElement>('[data-copy]')!;
+    const status = panel.querySelector<HTMLElement>('[data-status]')!;
+    const manual = panel.querySelector<HTMLTextAreaElement>('[data-manual]')!;
+    const fields = [...panel.querySelectorAll('label textarea')] as HTMLTextAreaElement[];
+    copy.hidden = false;
+    const update = () => {
+      copy.disabled = !fields.some(field => field.value.trim());
+      manual.hidden = true;
+      status.textContent = '';
+    };
+    panel.addEventListener('input',update);
+    update();
+    copy.addEventListener('click',async () => {
+      const answers = fields.filter(field => field.value.trim())
+        .map(field => field.labels?.[0].querySelector('span')?.textContent+'\n'+field.value.trim());
+      const text = ['Door Notes · '+panel.querySelector('summary')?.textContent,...answers].join('\n\n');
+      try {
+        await navigator.clipboard.writeText(text);
+        status.textContent = 'Notes copied.';
+      } catch {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+        status.textContent = 'Select Copy to copy your notes.';
+      }
+    });
+  }
+</script>
+<style>
+.route-test { max-width:760px; padding-block:clamp(22px,4vw,52px) 64px; }
+.back,.open-guide { display:inline-flex; align-items:center; min-height:44px; font-weight:650; color:var(--action); text-decoration:underline; text-underline-offset:.18em; }
+header { margin:20px 0; }
+.kicker { color:var(--rust); font:600 .75rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.08em; }
+h1 { margin:8px 0; font:500 clamp(41px,6vw,69px)/1.02 var(--serif); letter-spacing:-.045em; }
+header > p:last-child,.session > p { color:var(--muted); max-width:62ch; }
+.session { border-top:1px solid var(--edge); padding-block:5px 12px; }
+.session summary { min-height:48px; align-content:center; font:500 clamp(22px,3vw,28px)/1.2 var(--serif); }
+.session label { display:grid; gap:5px; margin-block:14px; font-weight:650; }
+.session textarea { width:100%; background:var(--panel); color:var(--text); border:1px solid var(--soft); border-radius:3px; padding:10px; font:400 16px/1.45 var(--sans); }
+.privacy { font-size:.91rem; margin-block:8px 12px; }
+.session button { min-height:44px; }
+.session [data-status] { margin-top:6px; }
+</style>

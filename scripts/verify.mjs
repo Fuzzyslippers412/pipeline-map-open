@@ -126,6 +126,22 @@ assert.equal(val(expectEl(docHome,'id','try-teacher'),'href'),'/p/k12-teacher/?e
 assert.ok(docHome.some(n=>n.tagName==='body' && val(n,'class')?.includes('paper-edition')),'Missing paper homepage');
 const paths=await readPage('/paths/');
 const readerTest=await readPage('/try/');
+const explorer=await readPage('/explore/');
+const careerMap=await readPage('/career-map/');
+const pilotTest=await readPage('/try/routes/');
+for (const [route,page] of [['/explore/',explorer],['/career-map/',careerMap]]) {
+  assert.ok(hasHref(docHome,route) && hasHref(paths,route),'Missing entry point for '+route);
+  const card=route+'cover.png';
+  metadata(page,route,card);
+  await verifyImage(card);
+}
+expectEl(explorer,'id','explore-form');
+expectEl(explorer,'id','explore-results');
+expectEl(careerMap,'id','responsibility');
+expectEl(careerMap,'id','compare-moves');
+expectEl(careerMap,'id','door-note');
+assert.ok(hasHref(readerTest,'/try/routes/') && hasHref(pilotTest,'/explore/') && hasHref(pilotTest,'/career-map/'),'Missing pilot feedback route');
+
 const nomination=await readPage('/suggest/');
 assert.ok(hasHref(paths,'/suggest/') && hasHref(readerTest,'/suggest/'),'Workplace nomination missing from a reader entry point');
 assert.ok(hasHref(readerTest,'/?exercise=unlisted#trace'),'Missing unlisted-school exercise');

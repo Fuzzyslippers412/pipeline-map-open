@@ -19,7 +19,11 @@ import '../styles/trace-combobox.css';
   <div class="trace-lead">
     <div class="eyebrow">BLACK CAREER PATHWAYS</div>
     <h1 id="trace-heading">Who opened the door to your <em>career?</em></h1>
-    <p>Trace the people and decisions that opened your field to Black workers.</p>
+    <p>Trace the people and decisions that opened your field to Black workers. Or start with something you enjoy and see where it leads.</p>
+    <nav class="start-options" aria-label="Choose a starting point">
+      <a class="start-trace" href="#job-trace-form">Trace my job <span aria-hidden="true">↓</span></a>
+      <a class="start-explore" href="/explore/">Explore what I could do <span aria-hidden="true">→</span></a>
+    </nav>
     <aside class="field-note" aria-label="From the teacher record">
       <div class="field-note-caption">FROM THE TEACHER RECORD</div>
       <div class="field-note-entry">
@@ -66,7 +70,10 @@ import '../styles/trace-combobox.css';
         ))}
       </div>
     </details>
-    <a class="library-link" href="/paths/">Explore the workplace library <span aria-hidden="true">→</span></a>
+    <div class="trace-guides">
+      <a class="library-link" href="/paths/">Explore the workplace library <span aria-hidden="true">→</span></a>
+      <a class="library-link" href="/career-map/">Compare next moves in IT <span aria-hidden="true">→</span></a>
+    </div>
     <p class="privacy-line">Typing stays in this tab. You can use your own wording.</p>
     <details id="more-workplaces" class="more-workplaces" data-contextual hidden>
       <summary>Look for this workplace in federal records</summary>

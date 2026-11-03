@@ -209,6 +209,32 @@ function coverImage() {
     txt(200,526,teacherOpening.place+'  /  '+teacherOpening.sourceTitle.split(' · ')[0],16,paper.muted)+
     paperFooter('A field guide for Black professionals'));
 }
+const guideIllustrations = [
+  {
+    route: 'career-map',
+    label: 'IT CAREER MAP',
+    title: 'Where could I go from support?',
+    description: 'See how the daily work and responsibility can change.',
+    start: 'Computer support', upper: 'Run systems and networks', lower: 'Lead a support team',
+    footer: 'Possible moves from one kind of work'
+  },
+  {
+    route: 'explore',
+    label: 'CAREER EXPLORER',
+    title: 'What could I do?',
+    description: 'Begin with something you enjoy. Find a job and a story to explore.',
+    start: 'I like explaining things', upper: 'Help someone use technology', lower: 'Write instructions they can follow',
+    footer: 'Try a small activity and discover a Door Note'
+  }
+];
+function guideIllustration(record) {
+  const branch = '<g fill="none" stroke="'+paper.indigo+'" stroke-width="3"><path d="M402 410 H475 V349 H539 M475 410 V471 H539"/></g>'+
+    [349,471].map(y=>'<circle cx="539" cy="'+y+'" r="5" fill="'+paper.rust+'"/>').join('');
+  return wrap(paperHeader(record.label)+
+    txt(48,187,record.title,65,paper.ink,serif)+txt(49,239,record.description,24,paper.muted)+paperRule(285)+
+    txt(48,363,'START HERE',14,paper.muted)+txt(48,419,record.start,32,paper.ink,serif)+branch+
+    txt(564,360,record.upper,34,paper.indigo,serif)+txt(564,481,record.lower,34,paper.indigo,serif)+paperFooter(record.footer));
+}
 function paperWorkplaceImage({location, title, workplace, records, gap}) {
   const entries = records.map(([year, heading, place, publisher], index) => {
     const y = 322 + index * 132;
@@ -294,6 +320,9 @@ async function render() {
   const out=sample?process.argv[3]:'dist';
   if (!out||sample&&path.resolve(out)===path.resolve('dist')) throw Error('Supply a separate sample directory');
   let bytes=await writeImage(coverImage(),path.join(out,'cover.png'));
+  for (const guide of guideIllustrations) {
+    bytes+=await writeImage(guideIllustration(guide),path.join(out,guide.route,'cover.png'));
+  }
   const all=sample?professions.slice(0,1):professions;
   for(const [i,p] of all.entries()) bytes+=await writeImage(p.slug === 'k12-teacher' ? teacherImage() : await professionImage(p,i),path.join(out,'p',p.slug,'og.png'));
   for (const [slug, record] of Object.entries(publicSampleCards)) {

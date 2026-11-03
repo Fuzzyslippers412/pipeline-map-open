@@ -1,0 +1,137 @@
+---
+import Layout from '../../components/Layout.astro';
+import {activities} from '../../lib/explorer-matching.js';
+import {explorerRecords} from '../../lib/explorer-records.js';
+import '../../styles/explore.css';
+
+const questions = [
+  {id:'known', title:'What do people ask you to help with?', hint:'Think about home, school, or time with friends.'},
+  {id:'curious', title:'What would you like to try?', hint:'Include things you’ve never had the chance to do.'}
+];
+---
+<Layout title="Explore what I could do" active="Explore" desc="Start with what you do or want to try. Explore jobs, meet Black workers in the historical record, and try a ten-minute activity.">
+  <div class="frame explorer">
+    <header class="explore-head">
+      <div><p class="explore-kicker">Career explorer</p>
+        <h1>Explore what I could do</h1>
+        <p>Start with something familiar. Find a few jobs to explore, a Black worker’s story, and a ten-minute activity you can try.</p>
+      </div>
+      <p class="explore-aside">Already working?<br/><a href="/career-map/">Explore a career move <span aria-hidden="true">→</span></a></p>
+    </header>
+
+    <noscript><p class="explore-noscript">Open any of the jobs below to read its Door Note and try the activity.</p></noscript>
+    <form class="explore-form" id="explore-form" hidden>
+      {questions.map((q,index) => <section class="pick-step" data-step={index} hidden={index>0}>
+        <div class="pick-copy">
+          <p class="step-number">Question {index+1} of 2</p>
+          <h2 id={'pick-'+q.id} tabindex="-1">{q.title}</h2>
+          <p>{q.hint} Pick any that fit, or skip this question.</p>
+        </div>
+        <div class="pick-controls">
+          <fieldset aria-labelledby={'pick-'+q.id}>
+            <div class="pick-options">{activities.map(activity => <label>
+              <input type="checkbox" name={q.id} value={activity.id}/>
+              <span><strong>{activity.label}</strong><small>{activity.detail}</small></span>
+            </label>)}</div>
+          </fieldset>
+          <div class="pick-actions">
+            <button class="explore-primary" type="button" data-next>{index ? 'Show my paths' : 'Next question'} <span aria-hidden="true">→</span></button>
+            <button class="explore-text" type="button" data-skip>Skip this question</button>
+            {index > 0 && <button class="explore-text" type="button" data-back>Back</button>}
+          </div>
+        </div>
+      </section>)}
+      <p class="explore-privacy">Your choices stay in this tab.</p>
+    </form>
+
+    <section id="explore-results" aria-labelledby="result-heading">
+      <div class="results-head">
+        <div><p class="explore-kicker">Paths to explore</p>
+          <h2 id="result-heading" tabindex="-1">Jobs you can try</h2>
+          <p id="result-subtitle">Open a job to see the work and a Door Note.</p></div>
+        <button type="button" id="change-answers" class="explore-text" hidden>Change my activities</button>
+      </div>
+      <div class="explore-paths">{explorerRecords.map(record => <details class="explore-path" data-path={record.id} data-tags={record.tags.join(' ')}>
+        <summary>
+          <span class="path-identity"><strong>{record.title}</strong><span class="suggestion-why" data-why></span><span class="task-preview">{record.task}</span></span>
+          <span class="open-sign" aria-hidden="true"></span>
+        </summary>
+        <div class="path-body">
+          <div class="path-duties">
+            <h3>Explore the work</h3>
+            <a class="record-source" href={record.taskSource.url} target="_blank" rel="noopener noreferrer">{record.taskSource.title} <span aria-hidden="true">↗</span></a>
+            <div class="try-it"><h3>Try it in 10 minutes</h3><p>{record.experiment}</p></div>
+          </div>
+          <div class="explore-door">
+            <p class="note-kicker">A Door Note</p>
+            <h3>{record.door.person}</h3><p class="door-year">{record.door.year}</p>
+            <p>{record.door.story}</p>
+            <a class="record-source" href={record.door.source.url} target="_blank" rel="noopener noreferrer">{record.door.source.title} <span aria-hidden="true">↗</span></a>
+            {record.door.artifact && <a class="record-source" href={record.door.artifact.url} target="_blank" rel="noopener noreferrer">{record.door.artifact.title} <span aria-hidden="true">↗</span></a>}
+            <p class="door-limit"><strong>Still open</strong> {record.door.limit}</p>
+          </div>
+          <div class="path-next"><h3>One step further</h3><p>{record.next}</p>
+            {record.pathUrl && <a href={record.pathUrl}>{record.pathUrl === '/career-map/' ? 'Open the IT career map' : 'Read the workplace record'} <span aria-hidden="true">→</span></a>}
+          </div>
+        </div>
+      </details>)}</div>
+    </section>
+    <footer class="explore-foot"><a href="/paths/">Explore workplace histories <span aria-hidden="true">→</span></a></footer>
+  </div>
+</Layout>
+<script>
+import {exploreActivities} from '../../lib/explorer-matching.js';
+
+const form = document.querySelector<HTMLFormElement>('#explore-form')!;
+const steps = [...form.querySelectorAll<HTMLElement>('[data-step]')];
+const results = document.querySelector<HTMLElement>('#explore-results')!;
+const heading = results.querySelector<HTMLElement>('#result-heading')!;
+const cards = [...results.querySelectorAll<HTMLDetailsElement>('[data-path]')];
+const change = results.querySelector<HTMLButtonElement>('#change-answers')!;
+const records = cards.map(card => ({id:card.dataset.path!,tags:card.dataset.tags!.split(' ')}));
+const selected = (name:string) => [...form.querySelectorAll<HTMLInputElement>('input[name="'+name+'"]:checked')].map(input => input.value);
+function focusPanel(panel:HTMLElement, title:HTMLElement) {
+  title.focus({preventScroll:true});
+  panel.scrollIntoView({block:'start',behavior:'instant'});
+}
+function showStep(index:number) {
+  results.hidden = true;
+  form.hidden = false;
+  steps.forEach((step,i) => { step.hidden = i !== index; });
+  focusPanel(form,steps[index].querySelector('h2')!);
+}
+function showPaths() {
+  const known = selected('known');
+  const curious = selected('curious');
+  const picks = exploreActivities(records,known,curious);
+  for (const card of cards) { card.open=false; card.hidden=true; }
+  const parent = results.querySelector('.explore-paths')!;
+  for (const item of picks) {
+    const card = cards.find(card => card.dataset.path===item.id)!;
+    card.querySelector('[data-why]')!.textContent=item.why;
+    card.hidden=false;
+    parent.append(card);
+  }
+  heading.textContent = picks.length===2 ? 'Two paths to try' : 'Three paths to try';
+  results.querySelector('#result-subtitle')!.textContent = known.length || curious.length
+    ? 'Open a job to see how the work connects, read its Door Note, and try an activity.'
+    : 'Here are different kinds of work you can sample. Open one, or go back to choose activities.';
+  form.hidden = true;
+  change.hidden = false;
+  results.hidden = false;
+  focusPanel(results,heading);
+}
+steps.forEach((step,index) => {
+  function advance() { if(index===0) showStep(1); else showPaths(); }
+  step.querySelector('[data-next]')!.addEventListener('click', advance);
+  step.querySelector('[data-skip]')!.addEventListener('click',()=>{
+    for(const input of step.querySelectorAll<HTMLInputElement>('input')) input.checked=false;
+    advance();
+  });
+  step.querySelector('[data-back]')?.addEventListener('click',()=>showStep(0));
+});
+change.addEventListener('click',()=>showStep(0));
+form.addEventListener('submit',event=>event.preventDefault());
+results.hidden = true;
+form.hidden = false;
+</script>

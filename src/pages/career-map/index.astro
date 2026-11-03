@@ -1,0 +1,190 @@
+---
+import Layout from '../../components/Layout.astro';
+import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
+---
+<Layout title="IT career map" active="Career map" desc="Compare technical and people-management moves from IT support and systems work. See what changes, read the sources and identify a next step at your workplace.">
+  <div class="frame career-map">
+    <header class="map-intro">
+      <div>
+        <p class="map-label">Career map <span aria-hidden="true">/</span> Information technology</p>
+        <h1>What’s your next move in IT?</h1>
+        <p class="map-deck">Start with the work you do. Compare a route into deeper technical work with one into managing people.</p>
+      </div>
+      <figure class="fork" aria-label="One starting role can lead toward technical work or people management">
+        <div class="fork-root">Your work</div>
+        <svg viewBox="0 0 80 82" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 41 H18 C38 41 38 15 58 15 H80" />
+          <path d="M0 41 H18 C38 41 38 67 58 67 H80" />
+        </svg>
+        <div class="fork-branches"><span>Technical work</span><span>People management</span></div>
+      </figure>
+    </header>
+
+    <div class="work-bench">
+      <div class="controls" id="responsibility" hidden>
+        <fieldset>
+          <legend id="work-title">What kind of work do you do?</legend>
+          <div class="work-options">
+            {startingPoints.map((start,i) => <label><input type="radio" name="work" value={start.id} checked={i===0}/>
+              <span><strong>{start.name}</strong><small>{start.example}</small></span>
+            </label>)}
+          </div>
+        </fieldset>
+        <div class="level-field">
+          <label for="map-level">Which responsibility do you want to explore?</label>
+          <select id="map-level">{responsibilities.map(role=><option value={role.id} selected={role.id==='unsure'}>{role.name}</option>)}</select>
+          <div class="level-notes" aria-live="polite">
+            {responsibilities.map(role=><div data-level={role.id} hidden={role.id!=='unsure'}>
+              <p>{role.description}</p>
+              {startingPoints.map(start=><div class="level-example" data-work-example={start.id} hidden={start.id!=='support'}>
+                {role.id!=='unsure' && <p><strong>Roles to look for at this level</strong><span class="example-title">{role.titles[start.id]}</span></p>}
+                <p>{role.examples[start.id]}</p>
+                {role.id!=='unsure' && <small>Illustrative title. Check the actual duties at your workplace.</small>}
+              </div>)}
+            </div>)}
+          </div>
+          <details class="level-source"><summary>What are these titles based on?</summary>
+            <p>Door Notes groups examples by responsibility. BLS describes how IT managers’ titles and duties vary by employer. O*NET documents the work of support specialists and systems administrators.</p>
+            <a href="https://www.bls.gov/ooh/management/computer-and-information-systems-managers.htm#tab-2">BLS · IT management roles <span aria-hidden="true">↗</span></a>
+          </details>
+        </div>
+      </div>
+
+      <div id="compare-moves" class="comparison">
+        <p class="map-label">Possible moves</p>
+        <h2>Compare the work</h2>
+        <noscript><p>Explore both starting roles below.</p></noscript>
+        <div role="status" aria-live="polite" class="sr" data-start-status></div>
+        {startingPoints.map(start=><section class="route" data-start={start.id} aria-labelledby={'from-'+start.id}>
+          <div class="route-from"><h3 id={'from-'+start.id}>From {start.name.toLowerCase()}</h3>
+            <a href={start.source.url}>{start.source.label} <span aria-hidden="true">↗</span></a></div>
+          <div class="routes">
+            {start.moves.map((move,i)=><article class="move" data-branch={i}>
+              <p class="branch"><span class="line" aria-hidden="true"></span>{move.branch}</p>
+              <h4>{move.name}</h4>
+              <dl>
+                <dt>What changes</dt><dd>{move.change}</dd>
+                <dt>Try a small assignment</dt><dd>{move.practice}</dd>
+                <dt>Ask at your workplace</dt><dd>{move.local}</dd>
+              </dl>
+              <a href={move.evidence.url}>{move.evidence.label} <span aria-hidden="true">↗</span></a>
+            </article>)}
+          </div>
+          <p class="transition-source">The U.S. Bureau of Labor Statistics describes both possible moves from this kind of work. <a href={start.transition.url}>{start.transition.label} <span aria-hidden="true">↗</span></a></p>
+        </section>)}
+      </div>
+
+      <aside class="workplace-question" aria-labelledby="local-criteria">
+        <p class="map-label">At your workplace</p>
+        <h2 id="local-criteria">Who can open the next door?</h2>
+        <p>Look for an internal posting, job description or union agreement that names the requirements and who decides. Your employer’s grade, pay and promotion process are still open.</p>
+        {responsibilities.map(role=><p class="conversation" data-level={role.id} hidden={role.id!=='unsure'}><strong>A question to take with you</strong>{role.question}</p>)}
+        <a href="/#trace">Trace my actual job <span aria-hidden="true">→</span></a>
+      </aside>
+
+      <article id="door-note" class="door-note" aria-labelledby="archive-title">
+        <div class="note-year"><p class="map-label">Door Note</p><time datetime="1951">1951</time></div>
+        <div>
+          <p class="map-label">Cambridge, Massachusetts</p>
+          <h2 id="archive-title">Joseph Thompson gets a shift on Whirlwind.</h2>
+          <p>MIT recruited Thompson from high school. Working nights on its Whirlwind computer helped him pay his way through college. He later became a branch head and mentored teenagers.</p>
+          <p>His oral history records how he entered computer operations. The route from that work to a role at your own employer still needs a local record.</p>
+          <div class="note-links">
+            <a href="https://archive.computerhistory.org/resources/access/text/2019/02/102738731-05-01-acc.pdf#page=8">Read Thompson’s account, pp. 8–10 <span aria-hidden="true">↗</span></a>
+            <a href="https://computerhistory.org/stories/trailblazers-and-change-agents/#joethompson">Computer History Museum profile <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</Layout>
+<script>
+  const map = document.querySelector<HTMLElement>('.career-map')!;
+  const controls = map.querySelector<HTMLElement>('#responsibility')!;
+  const level = controls.querySelector<HTMLSelectElement>('#map-level')!;
+  const status = map.querySelector<HTMLElement>('[data-start-status]')!;
+  function renderSelection(announce=false) {
+    const work = controls.querySelector<HTMLInputElement>('input[name="work"]:checked')!.value;
+    for (const route of map.querySelectorAll<HTMLElement>('[data-start]')) {
+      route.hidden=route.dataset.start!==work;
+      if (!route.hidden && announce) status.textContent=route.querySelector('h3')!.textContent+'. Two possible moves shown.';
+    }
+    for (const example of controls.querySelectorAll<HTMLElement>('[data-work-example]')) {
+      example.hidden=example.dataset.workExample!==work;
+    }
+    for (const note of map.querySelectorAll<HTMLElement>('[data-level]')) {
+      note.hidden=note.dataset.level!==level.value;
+    }
+  }
+  controls.addEventListener('change',event=>renderSelection(event.target instanceof HTMLInputElement));
+  function restore() { renderSelection(); controls.hidden=false; }
+  restore();
+  window.addEventListener('pageshow',restore);
+</script>
+<style>
+.career-map { padding-block: clamp(26px,5vw,64px) clamp(44px,7vw,92px); }
+.map-label { color:var(--muted); font:650 .74rem/1.4 var(--sans); letter-spacing:.1em; text-transform:uppercase; }
+.map-label span { margin-inline:.3em; color:var(--rust,var(--lime)); }
+.map-intro { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(220px,.9fr); gap:30px; align-items:center; padding-bottom:clamp(24px,4vw,48px); border-bottom:1px solid var(--text); }
+.map-intro h1,.work-bench h2,.work-bench h3,.work-bench h4 { font-family:var(--serif); font-weight:500; }
+.map-intro h1 { margin:11px 0; font-size:clamp(42px,6.4vw,76px); line-height:1; letter-spacing:-.055em; max-width:15ch; }
+.map-deck { max-width:46ch; font-size:clamp(1.02rem,1.4vw,1.2rem); color:var(--muted); line-height:1.5; }
+.fork { align-self:center; display:grid; grid-template-columns:max-content minmax(22px,72px) auto; align-items:center; justify-self:end; margin:0; width:min(100%,320px); color:var(--action,var(--teal)); }
+.fork-root { padding-right:8px; font:500 1.1rem/1.15 var(--serif); color:var(--text); }
+.fork svg { display:block; width:100%; height:82px; fill:none; stroke:currentColor; stroke-width:2; }
+.fork svg path:last-child { stroke:var(--rust,var(--lime)); }
+.fork-branches { display:flex; flex-direction:column; justify-content:space-between; height:82px; padding-block:5px; }
+.fork-branches span { display:inline-flex; align-items:center; height:20px; padding-left:8px; font:600 .87rem/1.2 var(--sans); }
+.fork-branches span:last-child { color:var(--rust,var(--lime)); }
+.work-bench a { color:var(--action,var(--teal)); text-decoration:underline; text-underline-offset:.2em; display:inline-flex; align-items:center; gap:5px; min-height:44px; font-weight:650; }
+.controls { display:grid; grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr); gap:clamp(22px,5vw,60px); padding-block:26px; border-bottom:1px solid var(--edge); }
+.controls fieldset { min-width:0; border:0; padding:0; margin:0; }
+.controls legend,.level-field label { display:block; padding:0; font-weight:700; font-size:1.05rem; margin-bottom:9px; }
+.work-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.work-options label { display:flex; align-items:flex-start; gap:8px; padding:10px; border:1px solid var(--edge); border-radius:3px; cursor:pointer; min-height:48px; }
+.work-options label:has(input:checked) { border-color:var(--action,var(--teal)); background:var(--panel); }
+.work-options label:focus-within { outline:2px solid var(--action,var(--teal)); outline-offset:2px; }
+.work-options input { flex:none; width:16px; height:16px; margin:3px 0 0; accent-color:var(--action,var(--teal)); }
+.work-options strong,.work-options small { display:block; }.work-options small { margin-top:3px; font-size:.84rem; color:var(--muted); }
+.level-field select { width:100%; padding:9px 11px; background:var(--panel); color:var(--text); border:1px solid var(--soft); border-radius:3px; font:inherit; min-height:44px; }
+.level-notes p,.transition-source { color:var(--muted); font-size:.92rem; line-height:1.5; }
+.level-notes p { margin:7px 0 0; }.level-example { margin-top:8px; padding-left:10px; border-left:2px solid var(--rust,var(--lime)); }
+.level-example strong,.level-example small { display:block; font-size:.8rem; }
+.level-example .example-title { display:block; font-weight:700; color:var(--text); font-size:1rem; }
+.level-example small { margin-top:5px; color:var(--muted); }
+.level-source summary { display:flex; align-items:center; min-height:44px; width:fit-content; color:var(--action,var(--teal)); font-size:.85rem; cursor:pointer; }
+.level-source p,.level-source a { font-size:.87rem; }
+.comparison { padding-top:clamp(22px,3vw,36px); }
+.work-bench h2 { margin:3px 0; font-size:clamp(30px,4vw,46px); line-height:1.1; letter-spacing:-.04em; }
+.route-from { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0 18px; margin-top:8px; }
+.route-from h3 { margin:0; font-size:clamp(21px,2.3vw,28px); line-height:1.2; }
+.route-from a,.transition-source a,.move > a { font-size:.9rem; }
+.routes { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(14px,2.8vw,32px); }
+.move { display:flex; flex-direction:column; align-items:flex-start; padding:16px clamp(14px,2.2vw,27px) 8px; border:1px solid var(--edge); border-top:2px solid var(--action,var(--teal)); background:var(--panel); }
+.move[data-branch="1"] { border-top-color:var(--rust,var(--lime)); }
+.branch { display:flex; align-items:center; gap:7px; font:650 .8rem/1.4 var(--sans); color:var(--action,var(--teal)); }
+.move[data-branch="1"] .branch { color:var(--rust,var(--lime)); }
+.line { width:18px; border-top:2px solid currentColor; }.move[data-branch="1"] .line { border-top-style:dashed; }
+.move h4 { margin:5px 0; font-size:clamp(27px,3vw,38px); line-height:1.1; letter-spacing:-.035em; }
+.move dl { margin:0; }.move dt,.conversation strong { display:block; margin:12px 0 2px; font-size:.77rem; font-weight:700; }
+.move dd { margin:0; line-height:1.5; }.move > a { margin-top:auto; }
+.transition-source { margin:6px 0 16px; }.transition-source a { margin-left:4px; }
+.workplace-question { margin-block:26px; padding-block:20px; border-block:1px solid var(--edge); }
+.workplace-question > p:not(.map-label),.door-note p:not(.map-label) { max-width:65ch; line-height:1.55; margin:7px 0; }
+.conversation { border-left:2px solid var(--rust,var(--lime)); padding:3px 12px; }.conversation strong { margin:0 0 2px; }
+.door-note { display:grid; grid-template-columns:minmax(92px,.35fr) minmax(0,2fr); gap:18px; padding-block:14px; }
+.note-year time { display:block; font:500 clamp(35px,5vw,66px)/1.05 var(--serif); color:var(--rust,var(--lime)); }
+.note-links { display:flex; flex-wrap:wrap; gap:0 18px; }.note-links a { font-size:.92rem; }
+.career-map [hidden] { display:none!important; }.career-map { overflow-wrap:break-word; }
+@media(max-width:760px) {
+  .map-intro { grid-template-columns:1fr; gap:15px; }.fork { justify-self:start; max-width:300px; }
+  .controls { grid-template-columns:1fr; gap:16px; }
+}
+@media(max-width:600px) {
+  .career-map { padding-block:24px 40px; }.map-intro { padding-bottom:15px; }.map-intro h1 { font-size:clamp(40px,9.2vw,54px); }
+  .fork { display:none; }.controls { padding-block:19px; }.work-options label { padding:8px 6px; gap:4px; }.work-options small { font-size:.8rem; }
+  .routes { grid-template-columns:minmax(0,1fr); gap:12px; }.move { padding:12px 14px 6px; }
+  .door-note { grid-template-columns:minmax(0,1fr); gap:6px; }.note-year { display:flex; align-items:baseline; gap:12px; }.note-year time { font-size:30px; }
+  .route-from { margin-bottom:6px; }.transition-source a { margin-left:0; }
+}
+</style>

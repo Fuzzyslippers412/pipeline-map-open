@@ -10,7 +10,7 @@ const studyPath = '/study/original/';
 const original = Astro.url.pathname.startsWith(studyPath);
 const preview = Astro.url.pathname.startsWith('/preview/p/');
 const readerPath = original ? '/' + Astro.url.pathname.slice(studyPath.length) : preview ? Astro.url.pathname.slice('/preview'.length) : Astro.url.pathname;
-const paper = !original && (preview || ['/', '/p/k12-teacher/', '/try/', '/paths/', '/suggest/'].includes(readerPath));
+const paper = !original && (preview || ['/', '/p/k12-teacher/', '/try/', '/try/routes/', '/paths/', '/suggest/', '/explore/', '/career-map/'].includes(readerPath));
 const home = original ? studyPath : '/';
 const mark = paper ? '/mark-paper.svg' : '/mark.svg';
 const {
@@ -22,18 +22,22 @@ const {
 } = Astro.props;
 const pageTitle = title + ' · ' + brand;
 const canonicalURL = new URL(canonical, Astro.site).href;
-const imageAsset = new URL(preview ? Astro.url.pathname + 'sample.png' : og, Astro.site);
-if (['/cover.png', '/p/k12-teacher/og.png'].includes(og)) imageAsset.searchParams.set('edition', 'paper');
+const guideCard = {
+  '/explore/': {file:'/explore/cover.png', alt:'Door Notes career explorer. Start with something you enjoy and discover jobs to try.'},
+  '/career-map/': {file:'/career-map/cover.png', alt:'Door Notes IT career map. From computer support, explore systems work or leading a support team.'},
+}[readerPath];
+const imageAsset = new URL(preview ? Astro.url.pathname + 'sample.png' : guideCard?.file || og, Astro.site);
+if (!guideCard && ['/cover.png', '/p/k12-teacher/og.png'].includes(og)) imageAsset.searchParams.set('edition', 'paper');
 const imageURL = imageAsset.href;
 const imageAlt = preview
   ? (readerPath.includes('registered-nurse') ? 'Anna B. Coles became Howard’s first nursing dean in 1968. Howard University Hospital succeeded Freedmen’s in 1975. An individual nurse’s route into a job is unknown.' : 'Sam Taylor started his Chicago company in 1922. Taylor Electric listed Soldier Field in its portfolio in 2017. The crew and hiring route are unknown.')
-  : og === '/cover.png'
+  : guideCard ? guideCard.alt : og === '/cover.png'
   ? 'Door Notes. Who opened the door to your career?'
   : og === '/p/k12-teacher/og.png'
     ? 'Door Notes. Atlanta teacher example with two independent records, from 1867 and 1924. Their connection is unknown.'
     : brand + ' research card for ' + title;
 const previewTitle = preview ? (readerPath.includes('registered-nurse') ? 'The Howard nursing path' : 'The Taylor Electric path') + ' · ' + brand : pageTitle;
-const navItems = [['Index', home], ...(paper ? [['Paths', '/paths/']] : []), ['Compare', '/compare/'], ['Sources', '/sources/'], ['Method', '/method/']];
+const navItems = [['Index', home], ...(paper ? [['Explore','/explore/'], ['Career map','/career-map/'], ['Paths', '/paths/']] : []), ['Compare', '/compare/'], ['Sources', '/sources/'], ['Method', '/method/']];
 ---
 <!doctype html>
 <html lang="en" class:list={[paper && 'paper-page']}>
