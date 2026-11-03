@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "id": "bls-table11-2025",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "table_name": "CPS annual averages, Table 11 · Employed people by detailed occupation, sex, race, and Hispanic or Latino ethnicity · 2025",
+      "url": "https://www.bls.gov/cps/cpsaat11.htm",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "professions": [
+        "electrician",
+        "software-engineer",
+        "musician",
+        "lawyer"
+      ],
+      "definition": "The CPS reports the percentages of all workers in each occupation who are women and who are Black or African American in separate columns. It does not report Black men or Black women separately for each detailed occupation.",
+      "locator": "Annual averages; percent of total employed columns. Context only."
+    }
+  ],
+  "series": [],
+  "notes": [
+    "The CPS reports the percentages of all workers in each occupation who are women and who are Black or African American in separate columns. It does not report Black men or Black women separately for each detailed occupation."
+  ]
+}

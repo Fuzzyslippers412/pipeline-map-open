@@ -1,0 +1,1120 @@
+[
+  {
+    "id": "physician",
+    "name": "Physician",
+    "slug": "physician",
+    "soc_code": "29-1210",
+    "sector": "Health",
+    "aliases": [
+      "doctor",
+      "MD",
+      "DO",
+      "medical doctor",
+      "medicine"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu"
+      ],
+      "era": "Reconstruction through the mid-20th century",
+      "rationale": "Howard and Meharry opened medical schools after emancipation. Howard’s institutional history identifies the two schools as the educators of most Black physicians in the country across much of the segregation era.",
+      "citations": [
+        {
+          "title": "Howard University · History of the College of Medicine",
+          "url": "https://medicine.howard.edu/about/history"
+        },
+        {
+          "title": "Meharry Medical College · Institutional history",
+          "url": "https://meharry.edu/meet-meharry/history/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": 1868,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "university_dei",
+        "licensing_board"
+      ],
+      "era": "Current U.S. entry pathway",
+      "rationale": "Medical schools select a class. State medical boards decide who can practice after training and examinations. The sources identify admissions committees and licensing boards as decision makers. A separate national role for diversity offices in selecting physicians is unverified.",
+      "citations": [
+        {
+          "title": "AAMC · How medical schools review applications",
+          "url": "https://students-residents.aamc.org/applying-medical-school/how-medical-schools-review-applications"
+        },
+        {
+          "title": "Federation of State Medical Boards · Physician licensure",
+          "url": "https://www.fsmb.org/guide-to-medical-regulation-in-the-united-states/about-physician-licensure"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "lawyer",
+    "name": "Lawyer",
+    "slug": "lawyer",
+    "soc_code": "23-1011",
+    "sector": "Law & civic life",
+    "aliases": [
+      "attorney",
+      "counsel",
+      "JD",
+      "law",
+      "barrister"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu",
+        "civil_rights_law"
+      ],
+      "era": "Reconstruction through desegregation",
+      "rationale": "Howard established a law school to train lawyers to defend newly secured rights. Its graduates and faculty took part in litigation against segregation. Court decisions also opened previously segregated state graduate and professional schools to Black applicants.",
+      "citations": [
+        {
+          "title": "Howard University School of Law · Our history",
+          "url": "https://law.howard.edu/about/our-history"
+        },
+        {
+          "title": "National Park Service · Court decisions in school desegregation",
+          "url": "https://www.nps.gov/brvb/learn/historyculture/decisions.htm"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": 1869,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "university_dei",
+        "licensing_board"
+      ],
+      "era": "Current U.S. entry pathway",
+      "rationale": "Law schools set their own application requirements. Each jurisdiction sets the conditions for admission to its bar. The proposed university label describes the education stage. The cited rules do not assign a national admissions or licensing power to diversity offices.",
+      "citations": [
+        {
+          "title": "Law School Admission Council · JD application requirements",
+          "url": "https://www.lsac.org/applying-law-school/jd-application-process/jd-application-requirements"
+        },
+        {
+          "title": "National Conference of Bar Examiners · Bar admission requirements by jurisdiction",
+          "url": "https://reports.ncbex.org/"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "engineer",
+    "name": "Engineer",
+    "slug": "engineer",
+    "soc_code": "17-2000",
+    "sector": "Science & technology",
+    "aliases": [
+      "engineering",
+      "civil engineer",
+      "electrical engineer",
+      "mechanical engineer",
+      "chemical engineer"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu",
+        "civil_rights_law"
+      ],
+      "era": "Early 20th century through desegregation",
+      "rationale": "Howard developed degree programs in civil, electrical and mechanical engineering. Federal civil rights law later extended protections against race discrimination to federally funded education. The two labels describe different contributions to access to engineering education.",
+      "citations": [
+        {
+          "title": "Howard University · History of engineering and architecture",
+          "url": "https://cea.howard.edu/index.php/about-us/our-history"
+        },
+        {
+          "title": "U.S. Department of Education · Education and Title VI",
+          "url": "https://www.ed.gov/laws-and-policy/civil-rights-laws/title-vi/education-and-title-vi"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": 1907,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "university_dei"
+      ],
+      "era": "Current U.S. entry pathway",
+      "rationale": "A degree is the usual starting point for civil and electrical engineers. Employers hire graduates, and some work requires a professional license. University admissions shape access to those degrees. The proposed diversity-office label needs evidence about who actually selects applicants.",
+      "citations": [
+        {
+          "title": "Bureau of Labor Statistics · Civil engineers",
+          "url": "https://www.bls.gov/ooh/architecture-and-engineering/civil-engineers.htm"
+        },
+        {
+          "title": "Bureau of Labor Statistics · Electrical and electronics engineers",
+          "url": "https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "dentist",
+    "name": "Dentist",
+    "slug": "dentist",
+    "soc_code": "29-1021",
+    "sector": "Health",
+    "aliases": [
+      "dental surgeon",
+      "DDS",
+      "DMD",
+      "general dentist",
+      "dentistry"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu"
+      ],
+      "era": "Late 19th century",
+      "rationale": "Howard and Meharry established dental schools serving Black students during segregation. Their training programs gave students direct access to clinical instruction and credentials that other institutions often denied them.",
+      "citations": [
+        {
+          "title": "Howard University College of Dentistry · About the college",
+          "url": "https://dentistry.howard.edu/index.php/about"
+        },
+        {
+          "title": "Meharry Medical College · Institutional history",
+          "url": "https://meharry.edu/meet-meharry/history/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": 1881,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "university_dei",
+        "licensing_board"
+      ],
+      "era": "Current U.S. entry pathway",
+      "rationale": "Dental schools evaluate applicants for admission. State boards separately determine eligibility to practice, including education and examination requirements. The evidence supports those two stages. The proposed role for diversity offices has not been established.",
+      "citations": [
+        {
+          "title": "American Dental Education Association · Admissions process",
+          "url": "https://www.adea.org/godental/apply/admissions-process"
+        },
+        {
+          "title": "American Dental Association · Licensure overview",
+          "url": "https://www.ada.org/resources/careers/licensure"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "pharmacist",
+    "name": "Pharmacist",
+    "slug": "pharmacist",
+    "soc_code": "29-1051",
+    "sector": "Health",
+    "aliases": [
+      "pharmacy",
+      "PharmD",
+      "hospital pharmacist",
+      "community pharmacist"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu"
+      ],
+      "era": "Late 19th and early 20th centuries",
+      "rationale": "Howard began pharmacy instruction in its medical department after the Civil War. Xavier later established a pharmacy college to train Black students who faced restricted access elsewhere. Both histories document HBCUs building a route into pharmacy.",
+      "citations": [
+        {
+          "title": "Howard University College of Pharmacy · About the college",
+          "url": "https://pharmacy.howard.edu/about"
+        },
+        {
+          "title": "Xavier University of Louisiana · College of Pharmacy handbook, program history",
+          "url": "https://www.xula.edu/_blocks/navigation/sub-navs/2023-24-academic-ethical-policies-handbook-8-15-23-final.pdf"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": 1868,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "university_dei",
+        "licensing_board"
+      ],
+      "era": "Current U.S. entry pathway",
+      "rationale": "Pharmacy schools issue admissions offers. A state board then reviews a graduate’s qualifications for licensure, including examination requirements. Pennsylvania provides one worked example. The sources establish school and board decisions, while a separate diversity-office role remains unverified.",
+      "citations": [
+        {
+          "title": "American Association of Colleges of Pharmacy · Cooperative admissions guidelines",
+          "url": "https://www.aacp.org/resources/students/cooperative-admissions-guidelines"
+        },
+        {
+          "title": "Pennsylvania Department of State · Pharmacist licensure guide",
+          "url": "https://www.pa.gov/agencies/dos/resources/professional-licensing-resources/licensure-processing-guides-and-timelines/pharmacist-guide"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "registered-nurse",
+    "name": "Registered nurse",
+    "slug": "registered-nurse",
+    "soc_code": "29-1141",
+    "sector": "Health",
+    "aliases": [
+      "RN",
+      "registered nursing",
+      "nurse",
+      "nursing"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu",
+        "black_church"
+      ],
+      "era": "Late 19th and early 20th centuries",
+      "rationale": "Tuskegee trained Black nurses through a hospital school. In Jacksonville a Methodist church mission also founded a nursing school for Black women. The Jacksonville example documents church sponsorship, but it does not establish the proposed Black-church classification nationwide.",
+      "citations": [
+        {
+          "title": "Tuskegee University · Nursing student handbook, program history",
+          "url": "https://www.tuskegee.edu/Content/Uploads/Tuskegee/Images/NURSING/STUDENT-NURSING-HANDBOOK-1.11.241.pdf"
+        },
+        {
+          "title": "UF Health Jacksonville · History of nurse training in Jacksonville",
+          "url": "https://openlines.ufhealthjax.org/2020/12/17/the-founding-of-the-george-a-brewster-school-of-nurse-training/"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "university_dei",
+        "licensing_board"
+      ],
+      "era": "Current U.S. entry pathway",
+      "rationale": "Students may qualify through bachelor’s, associate degree or diploma programs. State nursing regulators license graduates who meet their requirements and pass the examination. A university-only account would miss other routes, and the cited sources do not establish a diversity office as the licensing authority.",
+      "citations": [
+        {
+          "title": "Bureau of Labor Statistics · Registered nurses",
+          "url": "https://www.bls.gov/ooh/healthcare/registered-nurses.htm"
+        },
+        {
+          "title": "National Council of State Boards of Nursing · Licensure",
+          "url": "https://www.ncsbn.org/nursing-regulation/licensure.page"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "k12-teacher",
+    "name": "K–12 teacher",
+    "slug": "k12-teacher",
+    "soc_code": "25-2000",
+    "sector": "Education",
+    "aliases": [
+      "teacher",
+      "educator",
+      "elementary teacher",
+      "secondary teacher",
+      "high school teacher",
+      "schoolteacher"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu"
+      ],
+      "era": "Reconstruction and the early normal schools",
+      "rationale": "Today’s Alabama State and Hampton universities trained teachers for Black schools. Their normal-school programs gave aspiring teachers formal instruction that they could take back to classrooms in their communities.",
+      "citations": [
+        {
+          "title": "Alabama State University · History and traditions",
+          "url": "https://www.alasu.edu/about/history-tradition.php"
+        },
+        {
+          "title": "Hampton University · Institutional history",
+          "url": "https://home.hamptonu.edu/about/history/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "university_dei",
+        "licensing_board"
+      ],
+      "era": "Current public-school pathway",
+      "rationale": "Public-school teachers generally need state certification. Teacher preparation and alternative routes vary, and a school or district hires the teacher. University programs are one route. The evidence does not establish diversity offices as the authorities granting teaching credentials.",
+      "citations": [
+        {
+          "title": "Bureau of Labor Statistics · Kindergarten and elementary school teachers",
+          "url": "https://www.bls.gov/ooh/education-training-and-library/kindergarten-and-elementary-school-teachers.htm"
+        },
+        {
+          "title": "Bureau of Labor Statistics · Middle school teachers",
+          "url": "https://www.bls.gov/ooh/education-training-and-library/middle-school-teachers.htm"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "professor",
+    "name": "Professor",
+    "slug": "professor",
+    "soc_code": "25-1000",
+    "sector": "Education",
+    "aliases": [
+      "college professor",
+      "faculty",
+      "lecturer",
+      "university professor",
+      "postsecondary teacher",
+      "academic"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu",
+        "civil_rights_law"
+      ],
+      "era": "Reconstruction through desegregation",
+      "rationale": "Historically Black universities such as Fisk created places to teach and pursue scholarship while segregation restricted academic opportunities. Federal civil rights protections later applied to federally funded colleges. These histories support distinct institutional and legal routes into higher education.",
+      "citations": [
+        {
+          "title": "Fisk University · Institutional history",
+          "url": "https://www.fisk.edu/about/history/"
+        },
+        {
+          "title": "U.S. Department of Education · Education and Title VI",
+          "url": "https://www.ed.gov/laws-and-policy/civil-rights-laws/title-vi/education-and-title-vi"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "university_dei"
+      ],
+      "era": "Current academic hiring",
+      "rationale": "Colleges hire faculty by discipline and institution. Academic governance standards give faculty substantial responsibility for appointments. Graduate training and hiring are distinct decisions. The cited sources do not establish that a diversity office has final authority over faculty appointments.",
+      "citations": [
+        {
+          "title": "Bureau of Labor Statistics · Postsecondary teachers",
+          "url": "https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm"
+        },
+        {
+          "title": "American Association of University Professors · Governance and academic appointments",
+          "url": "https://www.aaup.org/reports-publications/aaup-policies-reports/topical-reports/statement-government-colleges-and"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "journalist",
+    "name": "Journalist / pundit",
+    "slug": "journalist",
+    "soc_code": "27-3023",
+    "sector": "Media & culture",
+    "aliases": [
+      "reporter",
+      "news analyst",
+      "pundit",
+      "broadcast journalist",
+      "news correspondent"
+    ],
+    "origin": {
+      "builder": [
+        "civil_rights_law"
+      ],
+      "era": "Black press before the Civil War through the civil rights era",
+      "rationale": "Black communities published newspapers well before the modern civil rights movement. Publishers, editors and readers sustained that route into reporting. The proposed civil-rights-law category captures a later legal context but misses the Black press itself as an institution.",
+      "citations": [
+        {
+          "title": "Library of Congress · African American newspapers",
+          "url": "https://guides.loc.gov/african-american-newspapers"
+        },
+        {
+          "title": "Library of Congress · Press and publishing",
+          "url": "https://guides.loc.gov/african-americans-in-business/businesses-industries/press-and-publishing"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "legacy_media",
+        "foundation_nonprofit"
+      ],
+      "era": "Current newsroom hiring",
+      "rationale": "News organizations hire reporters. Foundation grants also support nonprofit newsrooms, a subset tracked by the Institute for Nonprofit News. A grant decision can affect whether a newsroom can afford a position. Editors and employers make the individual hiring decisions.",
+      "citations": [
+        {
+          "title": "Bureau of Labor Statistics · News analysts, reporters and journalists",
+          "url": "https://www.bls.gov/ooh/media-and-communication/reporters-correspondents-and-broadcast-news-analysts.htm"
+        },
+        {
+          "title": "Institute for Nonprofit News · INN Index report",
+          "url": "https://inn.org/our-work/index-about/inn-index-report/"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "nonprofit-executive",
+    "name": "Nonprofit executive",
+    "slug": "nonprofit-executive",
+    "soc_code": "11-9151",
+    "sector": "Law & civic life",
+    "aliases": [
+      "nonprofit director",
+      "nonprofit CEO",
+      "nonprofit leadership",
+      "charity director",
+      "social services manager"
+    ],
+    "origin": {
+      "builder": [
+        "black_church",
+        "civil_rights_law"
+      ],
+      "era": "Mutual aid through the civil rights movement",
+      "rationale": "Black communities organized mutual aid through churches and voluntary associations. Church networks later supported civil rights organizations with staff and elected leaders. The sources document organizing and leadership more directly than they establish civil rights law as the origin of nonprofit executive careers.",
+      "citations": [
+        {
+          "title": "National Museum of American History · Free African American communities",
+          "url": "https://www.americanhistory.si.edu/explore/exhibitions/american-democracy/online/great-leap/great-debates/free-african-american-communities"
+        },
+        {
+          "title": "National Park Service · Southern Christian Leadership Conference",
+          "url": "https://www.nps.gov/subjects/civilrights/sclc.htm"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "foundation_nonprofit"
+      ],
+      "era": "Current nonprofit governance",
+      "rationale": "The nonprofit’s own board selects and oversees its chief executive. A grantmaker may support the organization financially. The proposed category groups funders and nonprofit boards together, although the authority to appoint usually sits with the board.",
+      "citations": [
+        {
+          "title": "BoardSource · Board responsibilities and structures",
+          "url": "https://boardsource.org/resources/board-responsibilities-structures-faqs/"
+        },
+        {
+          "title": "Internal Revenue Service · Foundation grants to organizations",
+          "url": "https://www.irs.gov/charities-non-profits/private-foundations/grants-to-organizations"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "elected-official",
+    "name": "Elected official",
+    "slug": "elected-official",
+    "soc_code": null,
+    "sector": "Law & civic life",
+    "aliases": [
+      "legislator",
+      "councilmember",
+      "mayor",
+      "representative",
+      "politician",
+      "elected office"
+    ],
+    "origin": {
+      "builder": [
+        "black_church",
+        "electorate"
+      ],
+      "era": "Reconstruction through the voting rights movement",
+      "rationale": "Black voters elected representatives during Reconstruction. In later voting rights campaigns, church networks helped organize voter registration. The classification separates the institutions that mobilized communities from the electorate that selected officeholders.",
+      "citations": [
+        {
+          "title": "U.S. House of Representatives · Black Americans in Congress",
+          "url": "https://history.house.gov/Exhibitions-and-Publications/BAIC/Black-Americans-in-Congress/"
+        },
+        {
+          "title": "National Park Service · Southern Christian Leadership Conference",
+          "url": "https://www.nps.gov/subjects/civilrights/sclc.htm"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "electorate"
+      ],
+      "era": "Current contested elections",
+      "rationale": "Voters choose representatives in congressional, state and local elections under the rules of each office. The classification follows the final election. Nominations, eligibility rules and appointments to fill vacancies are separate stages.",
+      "citations": [
+        {
+          "title": "USAGov · Congressional, state and local elections",
+          "url": "https://www.usa.gov/midterm-state-and-local-elections"
+        },
+        {
+          "title": "USAGov · State and local elections",
+          "url": "https://www.usa.gov/state-local-elections"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "pastor",
+    "name": "Pastor",
+    "slug": "pastor",
+    "soc_code": "21-2011",
+    "sector": "Law & civic life",
+    "aliases": [
+      "clergy",
+      "minister",
+      "pastoral ministry",
+      "preacher",
+      "church pastor"
+    ],
+    "origin": {
+      "builder": [
+        "black_church"
+      ],
+      "era": "Independent Black congregations and denominations",
+      "rationale": "Black congregations built places to worship and sustain their own ministerial leadership. The African Methodist Episcopal Church is one documented example of a denomination that created an institutional route to the pulpit.",
+      "citations": [
+        {
+          "title": "Pew Research Center · A brief overview of Black religious history",
+          "url": "https://www.pewresearch.org/religion/2021/02/16/a-brief-overview-of-black-religious-history-in-the-u-s/"
+        },
+        {
+          "title": "African Methodist Episcopal Church · The AME name",
+          "url": "https://www.ame-church.com/our-church/our-name/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "black_church"
+      ],
+      "era": "Current Black church ministry",
+      "rationale": "In the African Methodist Episcopal Church, a presiding elder recommends a pastor and a bishop makes the appointment. Pastors interviewed by Pew describe diverse congregational settings. This label covers ministry in Black churches, where appointment practices vary by denomination.",
+      "citations": [
+        {
+          "title": "African Methodist Episcopal Church · Church structure",
+          "url": "https://www.ame-church.com/our-church/our-structure/"
+        },
+        {
+          "title": "Pew Research Center · Interviews with Black pastors",
+          "url": "https://www.pewresearch.org/religion/2021/02/16/interviews-with-black-pastors/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "military-officer",
+    "name": "Military officer",
+    "slug": "military-officer",
+    "soc_code": null,
+    "sector": "Law & civic life",
+    "aliases": [
+      "commissioned officer",
+      "armed forces officer",
+      "army officer",
+      "naval officer",
+      "ROTC"
+    ],
+    "origin": {
+      "builder": [
+        "military"
+      ],
+      "era": "World War I through service integration",
+      "rationale": "The Army’s training camp at Fort Des Moines prepared Black officers during World War I. The armed services later integrated under federal policy. Training and commissioning remained military functions as the rules governing access changed.",
+      "citations": [
+        {
+          "title": "National Park Service · Officer training at Fort Des Moines",
+          "url": "https://www.nps.gov/articles/000/fort-des-moines-a-series-of-firsts-in-wartime-service.htm"
+        },
+        {
+          "title": "Army Center of Military History · Integration of the Armed Forces",
+          "url": "https://history.army.mil/portals/143/Images/Publications/catalog/50-1-1.pdf"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "military"
+      ],
+      "era": "Current commissioned service",
+      "rationale": "Officer candidates enter through several routes, including service academies, ROTC and officer candidate schools. The service sets training and eligibility requirements and awards the commission. College admission alone does not confer officer status.",
+      "citations": [
+        {
+          "title": "U.S. Army · Paths to an officer commission",
+          "url": "https://www.goarmy.com/careers-and-jobs/find-your-path/army-officers"
+        },
+        {
+          "title": "U.S. Army · Officer Candidate School",
+          "url": "https://www.goarmy.com/careers-and-jobs/find-your-path/army-officers/ocs"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "police-officer",
+    "name": "Police officer",
+    "slug": "police-officer",
+    "soc_code": "33-3051",
+    "sector": "Law & civic life",
+    "aliases": [
+      "police",
+      "patrol officer",
+      "law enforcement officer",
+      "sheriff’s patrol officer",
+      "cop"
+    ],
+    "origin": {
+      "builder": [
+        "civil_rights_law"
+      ],
+      "era": "Civil rights enforcement in public employment",
+      "rationale": "Black officers served in municipal departments before federal employment protections reached state and local government. Federal law subsequently provided a way to challenge discriminatory hiring. This label describes that opening and omits earlier barriers and locally organized recruitment.",
+      "citations": [
+        {
+          "title": "Miami Black Police Precinct and Courthouse Museum · Overview and history",
+          "url": "https://historicalblackprecinct.org/about_us/history/"
+        },
+        {
+          "title": "EEOC · History of the 1970s",
+          "url": "https://www.eeoc.gov/history/eeoc-history-1970-1979"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "licensing_board",
+        "electorate"
+      ],
+      "era": "Current state and local hiring",
+      "rationale": "State standards bodies and employing agencies screen candidates. California, for example, sets minimum selection standards for peace officers. Some sheriffs stand for election. Most patrol officers are hired, so the proposed electorate label applies only indirectly to their entry.",
+      "citations": [
+        {
+          "title": "California Commission on Peace Officer Standards and Training · Candidate selection",
+          "url": "https://post.ca.gov/peace-officer-candidate-selection-standards"
+        },
+        {
+          "title": "Bureau of Labor Statistics · Police and detectives",
+          "url": "https://www.bls.gov/ooh/protective-service/police-and-detectives.htm"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "electrician",
+    "name": "Electrician / trades",
+    "slug": "electrician",
+    "soc_code": "47-2111",
+    "sector": "Trades & enterprise",
+    "aliases": [
+      "electrician",
+      "electrical apprentice",
+      "journeyman electrician",
+      "electrical trades",
+      "IBEW"
+    ],
+    "origin": {
+      "builder": [
+        "union_or_trade"
+      ],
+      "era": "20th-century joint apprenticeships",
+      "rationale": "Electrical workers and contractors built a joint apprenticeship system that paired paid work with technical instruction. This is a documented route into the electrician trade. These sources do not establish how accessible individual programs were to Black applicants across regions.",
+      "citations": [
+        {
+          "title": "Electrical Training Alliance · History of joint apprenticeship training",
+          "url": "https://electricaltrainingalliance.org/content/images/electr_lh_press7-23-14_fin.pdf"
+        },
+        {
+          "title": "Bureau of Labor Statistics · Electricians",
+          "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "union_or_trade"
+      ],
+      "era": "Current electrical apprenticeships",
+      "rationale": "Unions and contractors sponsor apprenticeship programs, and some employers train electricians through other routes. States and localities often require a license. The trade label identifies an important training gate, with the legal permission to work determined separately.",
+      "citations": [
+        {
+          "title": "Bureau of Labor Statistics · Electricians",
+          "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm"
+        },
+        {
+          "title": "Electrical Training Alliance · History of joint apprenticeship training",
+          "url": "https://electricaltrainingalliance.org/content/images/electr_lh_press7-23-14_fin.pdf"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "software-engineer",
+    "name": "Software engineer",
+    "slug": "software-engineer",
+    "soc_code": "15-1252",
+    "sector": "Science & technology",
+    "aliases": [
+      "software developer",
+      "programmer",
+      "application developer",
+      "software engineering",
+      "coder"
+    ],
+    "origin": {
+      "builder": [
+        "market"
+      ],
+      "era": "Commercial software in the 20th century",
+      "rationale": "The growth of packaged software created jobs in firms that sold code and services. Computing also grew inside research institutions and public agencies. Commercial demand is one documented route. Its weight in the history of Black software careers needs further review.",
+      "citations": [
+        {
+          "title": "Computer History Museum · Software and the computer industry",
+          "url": "https://www.computerhistory.org/brochures/software/"
+        },
+        {
+          "title": "Computer History Museum · Trailblazers and change agents",
+          "url": "https://computerhistory.org/stories/trailblazers-and-change-agents/"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "market"
+      ],
+      "era": "Current software hiring",
+      "rationale": "Employers across industries hire software developers, usually looking for technical preparation and often a degree. The market label refers to selection by employers. Large firms, small contractors and public employers make separate hiring decisions.",
+      "citations": [
+        {
+          "title": "Bureau of Labor Statistics · Software developers",
+          "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm"
+        },
+        {
+          "title": "O*NET · Software developers",
+          "url": "https://www.onetonline.org/link/details/15-1252.00"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "corporate-executive",
+    "name": "Corporate executive",
+    "slug": "corporate-executive",
+    "soc_code": "11-1011",
+    "sector": "Trades & enterprise",
+    "aliases": [
+      "chief executive",
+      "CEO",
+      "corporate officer",
+      "executive leadership",
+      "business executive"
+    ],
+    "origin": {
+      "builder": [
+        "civil_rights_law"
+      ],
+      "era": "Civil rights protections in employment",
+      "rationale": "Federal employment law gave workers a way to contest race discrimination in hiring and promotion. It helps explain a change in access to corporate careers. Establishing the origins of Black executive leadership also calls for evidence on advancement inside firms and earlier Black-owned businesses.",
+      "citations": [
+        {
+          "title": "EEOC · History of federal employment law",
+          "url": "https://www.eeoc.gov/history/eeoc-history-law"
+        },
+        {
+          "title": "Library of Congress · African Americans in business and entrepreneurship",
+          "url": "https://guides.loc.gov/african-americans-in-business/businesses-industries/small-business"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "foundation_nonprofit"
+      ],
+      "era": "Current corporate governance",
+      "rationale": "Corporate boards manage or oversee company affairs. Officers are selected under corporate bylaws or board decisions, as Delaware law illustrates. The proposed foundation label has no demonstrated appointment authority over corporate executives in these sources.",
+      "citations": [
+        {
+          "title": "Delaware Code · Directors and officers",
+          "url": "https://delcode.delaware.gov/title8/c001/sc04/"
+        },
+        {
+          "title": "Bureau of Labor Statistics · Top executives",
+          "url": "https://www.bls.gov/ooh/management/top-executives.htm"
+        }
+      ],
+      "status": "draft",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "entrepreneur",
+    "name": "Entrepreneur",
+    "slug": "entrepreneur",
+    "soc_code": null,
+    "sector": "Trades & enterprise",
+    "aliases": [
+      "founder",
+      "small business owner",
+      "business owner",
+      "self-employed",
+      "entrepreneurship"
+    ],
+    "origin": {
+      "builder": [
+        "market",
+        "nation_of_islam"
+      ],
+      "era": "Black business districts and 20th-century enterprises",
+      "rationale": "Black-owned shops and firms supplied goods and services in urban business districts. The Nation of Islam later built businesses of its own, including enterprises in Chicago. These are distinct histories. Entrepreneurship among Black Americans long predates that organization.",
+      "citations": [
+        {
+          "title": "National Park Service · Chicago’s Black Metropolis",
+          "url": "https://www.nps.gov/articles/chicago-s-black-metropolis-understanding-history-through-a-historic-place-teaching-with-historic-places.htm"
+        },
+        {
+          "title": "Encyclopedia of Chicago · Nation of Islam",
+          "url": "https://www.encyclopedia.chicagohistory.org/pages/869.html"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "market"
+      ],
+      "era": "Current business formation",
+      "rationale": "Founders choose a market, raise funds and start serving customers. Registration and licensing depend on the business and its location. Customer demand is central to keeping a firm open, while access to capital and permits affects whether it can launch.",
+      "citations": [
+        {
+          "title": "U.S. Small Business Administration · Plan your business",
+          "url": "https://www.sba.gov/counseling/plan-your-business/"
+        },
+        {
+          "title": "U.S. Small Business Administration · Launch your business",
+          "url": "https://www.sba.gov/counseling/launch-your-business/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "pro-athlete",
+    "name": "Pro athlete (NFL / NBA)",
+    "slug": "pro-athlete",
+    "soc_code": "27-2021",
+    "sector": "Media & culture",
+    "aliases": [
+      "professional athlete",
+      "NFL",
+      "NBA",
+      "football player",
+      "basketball player",
+      "athlete"
+    ],
+    "origin": {
+      "builder": [
+        "market"
+      ],
+      "era": "Mid-20th-century league integration",
+      "rationale": "Pro football teams resumed signing Black athletes after an exclusionary period, and NBA teams began integrating around the same era. The market label refers to paid roster places offered by teams. League histories document racial exclusion alongside commercial demand.",
+      "citations": [
+        {
+          "title": "Pro Football Hall of Fame · Reintegration of pro football",
+          "url": "https://www.profootballhof.com/news/permanent-reintegration-of-pro-football"
+        },
+        {
+          "title": "National Basketball Association · League integration anniversary",
+          "url": "https://www.nba.com/news/nba-celebrates-75th-anniversary-integration"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "market"
+      ],
+      "era": "Current NFL and NBA entry",
+      "rationale": "League rules and labor agreements determine who is eligible for a draft. Teams then select and sign players for a limited number of roster places. The market classification refers to team selection under those rules. The card covers these two leagues only.",
+      "citations": [
+        {
+          "title": "NFL Football Operations · Draft rules",
+          "url": "https://operations.nfl.com/calendar-events/nfl-draft/nfl-draft-rules"
+        },
+        {
+          "title": "National Basketball Players Association · Collective bargaining agreement",
+          "url": "https://www.nbpa.com/cba/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    }
+  },
+  {
+    "id": "musician",
+    "name": "Musician / entertainer",
+    "slug": "musician",
+    "soc_code": "27-2042",
+    "sector": "Media & culture",
+    "aliases": [
+      "performer",
+      "singer",
+      "recording artist",
+      "musician",
+      "instrumentalist",
+      "entertainer"
+    ],
+    "origin": {
+      "builder": [
+        "market"
+      ],
+      "era": "Early commercial recording era",
+      "rationale": "Black-owned record labels created paid recording opportunities for Black performers. Black Swan is one documented example. The category names the commercial route into recording. Churches, community ensembles and other institutions also sustained musicians outside that market.",
+      "citations": [
+        {
+          "title": "National Endowment for the Humanities · Black Swan recording history",
+          "url": "https://www.neh.gov/humanities/2010/novemberdecember/feature/black-swan-rising"
+        },
+        {
+          "title": "Library of Congress · Early African American music",
+          "url": "https://guides.loc.gov/african-american-music-bibliography"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": null,
+      "era_end": null
+    },
+    "gate": {
+      "gatekeeper": [
+        "market"
+      ],
+      "era": "Current paid performance",
+      "rationale": "Artists secure work through auditions, bookings, ensembles and recorded releases. Venues and ensembles choose performers while audiences sustain demand. The orchestral audition program linked here illustrates one selection process within a much larger music economy.",
+      "citations": [
+        {
+          "title": "Bureau of Labor Statistics · Musicians and singers",
+          "url": "https://www.bls.gov/ooh/entertainment-and-sports/musicians-and-singers.htm"
+        },
+        {
+          "title": "Sphinx Organization · Orchestral Partners Auditions",
+          "url": "https://www.sphinxmusic.org/sphinx-orchestral-partners-auditions"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    }
+  }
+]

@@ -1,0 +1,439 @@
+{
+  "sources": [
+    {
+      "id": "dod-corps-2014",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2014 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://www.cna.org/pop-rep/2014/appendixb/b_25.html",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2015",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2015 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://www.cna.org/pop-rep/2015/appendixb/b_25.html",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2016",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2016 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://www.cna.org/pop-rep/2016/appendixb/b_25.html",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2017",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2017 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://www.cna.org/pop-rep/2017/appendixb/b_25.html",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2018",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2018 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://www.cna.org/pop-rep/2018/appendixb/b_25.html",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2019",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2019 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://www.cna.org/pop-rep/2019/appendixb/b_25.html",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2020",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2020 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://docs.opa.mil/opa.mil-production1/population-representation/Appendix%20B_Active%20Component%20Enlisted%20Accessions%2C%20Enlisted%20Force%2C%20Officer%20Accessions%2C%20and%20Officer%20Corps%20Tables/Table%20B-25.%20Active%20Component%20Commissioned%20Officer%20Gains%20and%20Corps%2C%20FY20-%20By%20Service%2C%20Gender%2C%20and%20Race_Ethnicity%20with%20Civilian%20Comparison%20Groups.pdf",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2021",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2021 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://docs.opa.mil/opa.mil-production1/population-representation-21/Appendix%20B.%20Active%20Component%20Enlisted%20Accessions%2C%20Enlisted%20Force%2C%20Officer%20Accessions%2C%20and%20Officer%20Corps%20Tables/Table%20B-25.%20Active%20Component%20Commissioned%20Officer%20Gains%20and%20Corps%2C%20FY21-%20By%20Service%2C%20Gender%2C%20and%20Race_Ethnicity%20with%20Civilian%20Comparison%20Groups.pdf",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2022",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2022 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://docs.opa.mil/opa.mil-production1/population-representation-22/Appendix%20B.%20Active%20Component%20Enlisted%20Accessions%2C%20Enlisted%20Force%2C%20Officer%20Accessions%2C%20and%20Officer%20Corps%20Tables/Table%20B-25.%20Active%20Component%20Commissioned%20Officer%20Gains%20and%20Corps%2C%20FY22%3A%20By%20Service%2C%20Gender%2C%20and%20Race_Ethnicity%20with%20Civilian%20Comparison%20Groups.pdf",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps, Air Force and Space Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    },
+    {
+      "id": "dod-corps-2023",
+      "publisher": "U.S. Department of Defense",
+      "table_name": "Population Representation in the Military Services · FY 2023 · Table B-25, Active Component Commissioned Officer Gains and Corps",
+      "url": "https://docs.opa.mil/opa.mil-production1/population-representation-23/Appendix%20B.%20Active%20Component%20Enlisted%20Accessions%2C%20Enlisted%20Force%2C%20Officer%20Accessions%2C%20and%20Officer%20Corps%20Tables/Table%20B-25.%20Active%20Component%20Commissioned%20Officer%20Gains%20and%20Corps%2C%20FY23-%20By%20Service%2C%20Sex%2C%20and%20Race_Ethnicity%20with%20Civilian%20Comparison%20Groups.pdf",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government statistical table.",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps, Air Force and Space Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army reports multiracial officers separately in this edition.",
+      "professions": [
+        "military-officer"
+      ],
+      "locator": "Officer Corps panels (not Officer Gains), Total DoD number column. Use unadjusted Black rows for men/women and the combined corps total."
+    }
+  ],
+  "series": [
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2014,
+      "value": 5.788027,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2014",
+      "series_id": "dod-four-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 12507,
+      "denominator": 216084
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2014,
+      "value": 2.737361,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2014",
+      "series_id": "dod-four-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5915,
+      "denominator": 216084
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2015,
+      "value": 5.6665,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2015",
+      "series_id": "dod-four-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 12014,
+      "denominator": 212018
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2015,
+      "value": 2.690809,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2015",
+      "series_id": "dod-four-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5705,
+      "denominator": 212018
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2016,
+      "value": 5.600122,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2016",
+      "series_id": "dod-four-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 11770,
+      "denominator": 210174
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2016,
+      "value": 2.665411,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2016",
+      "series_id": "dod-four-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5602,
+      "denominator": 210174
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2017,
+      "value": 5.568315,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2017",
+      "series_id": "dod-four-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 11759,
+      "denominator": 211177
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2017,
+      "value": 2.637124,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2017",
+      "series_id": "dod-four-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5569,
+      "denominator": 211177
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2018,
+      "value": 5.56302,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2018",
+      "series_id": "dod-four-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 11842,
+      "denominator": 212870
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2018,
+      "value": 2.631183,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2018",
+      "series_id": "dod-four-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5601,
+      "denominator": 212870
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2019,
+      "value": 5.602077,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2019",
+      "series_id": "dod-four-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 12042,
+      "denominator": 214956
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2019,
+      "value": 2.641471,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2019",
+      "series_id": "dod-four-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5678,
+      "denominator": 214956
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2020,
+      "value": 5.64371,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2020",
+      "series_id": "dod-four-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 12203,
+      "denominator": 216223
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2020,
+      "value": 2.702303,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2020",
+      "series_id": "dod-four-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5843,
+      "denominator": 216223
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2021,
+      "value": 5.6712,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2021",
+      "series_id": "dod-four-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 12290,
+      "denominator": 216709
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2021,
+      "value": 2.704548,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps and Air Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2021",
+      "series_id": "dod-four-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5861,
+      "denominator": 216709
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2022,
+      "value": 5.713839,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps, Air Force and Space Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2022",
+      "series_id": "dod-five-services-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 12438,
+      "denominator": 217682
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2022,
+      "value": 2.724617,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps, Air Force and Space Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army did not report a multiracial category.",
+      "source_id": "dod-corps-2022",
+      "series_id": "dod-five-services-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5931,
+      "denominator": 217682
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "year": 2023,
+      "value": 5.729489,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps, Air Force and Space Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army reports multiracial officers separately in this edition.",
+      "source_id": "dod-corps-2023",
+      "series_id": "dod-army-multiracial-black_male",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 12307,
+      "denominator": 214801
+    },
+    {
+      "profession_id": "military-officer",
+      "family": "dod-officers",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "year": 2023,
+      "value": 2.754177,
+      "unit": "percent",
+      "definition": "Black is the published race category, with Hispanic ethnicity tabulated separately. Men or women divided by all active-component commissioned officers in the Army, Navy, Marine Corps, Air Force and Space Force at fiscal year-end. Reserve, warrant and Coast Guard officers are outside the denominator. The Army reports multiracial officers separately in this edition.",
+      "source_id": "dod-corps-2023",
+      "series_id": "dod-army-multiracial-black_female",
+      "measure_label": "Active-duty commissioned officers",
+      "numerator": 5916,
+      "denominator": 214801
+    }
+  ],
+  "notes": [
+    "DoD reports the active-component commissioned corps separately from warrant officers, new officer gains, reserve officers and the Coast Guard. The Space Force is shown separately from 2022. The Army begins reporting the multiracial category in the 2023 edition."
+  ]
+}

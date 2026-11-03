@@ -1,0 +1,493 @@
+{
+  "sources": [
+    {
+      "id": "census-eeo-1990-physician",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Physicians” (PDF page 22)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=22",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Physicians. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "physician"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-lawyer",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Lawyers” (PDF page 23)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=23",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Lawyers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "lawyer"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-engineer",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Engineers” (PDF page 22)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=22",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Engineers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "engineer"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-dentist",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Dentists” (PDF page 22)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=22",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Dentists. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "dentist"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-pharmacist",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Pharmacists” (PDF page 22)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=22",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Pharmacists. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "pharmacist"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-registered-nurse",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Registered nurses” (PDF page 22)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=22",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Registered nurses. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "registered-nurse"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-professor",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Teachers, postsecondary” (PDF page 23)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=23",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Teachers, postsecondary. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "professor"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-k12-teacher",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Teachers, elementary school + Teachers, secondary school” (PDF page 23)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=23",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Teachers, elementary school + Teachers, secondary school. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates. This elementary and secondary subset excludes separately classified school teachers.",
+      "professions": [
+        "k12-teacher"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-journalist",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Editors and reporters” (PDF page 23)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=23",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Editors and reporters. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "journalist"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-musician",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Musicians and composers” (PDF page 23)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=23",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Musicians and composers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "musician"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    },
+    {
+      "id": "census-eeo-1990-electrician",
+      "publisher": "U.S. Census Bureau",
+      "table_name": "1990 Census EEO CP-S-1-1, Table 2, “Electricians, except apprentices + Electrician apprentices” (PDF page 27)",
+      "url": "https://www2.census.gov/library/publications/decennial/1990/cp-s-1-1.pdf#page=27",
+      "retrieved_on": "2026-11-03",
+      "license": "U.S. government public-use data",
+      "definition": "Electricians, except apprentices + Electrician apprentices. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "professions": [
+        "electrician"
+      ],
+      "file_sha256": "7b68e8dc76a0de1ec35f83a34673957ff0f65a746ae0edbc2b6f965d1820193b",
+      "limits": "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+    }
+  ],
+  "series": [
+    {
+      "profession_id": "physician",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 2.408324,
+      "definition": "Physicians. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-physician",
+      "series_id": "eeo-1990-labor-force-physician-black_male",
+      "weighted_numerator": 14130,
+      "weighted_denominator": 586715
+    },
+    {
+      "profession_id": "physician",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 1.262623,
+      "definition": "Physicians. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-physician",
+      "series_id": "eeo-1990-labor-force-physician-black_female",
+      "weighted_numerator": 7408,
+      "weighted_denominator": 586715
+    },
+    {
+      "profession_id": "lawyer",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 1.922158,
+      "definition": "Lawyers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-lawyer",
+      "series_id": "eeo-1990-labor-force-lawyer-black_male",
+      "weighted_numerator": 14360,
+      "weighted_denominator": 747077
+    },
+    {
+      "profession_id": "lawyer",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 1.5139,
+      "definition": "Lawyers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-lawyer",
+      "series_id": "eeo-1990-labor-force-lawyer-black_female",
+      "weighted_numerator": 11310,
+      "weighted_denominator": 747077
+    },
+    {
+      "profession_id": "engineer",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 2.845437,
+      "definition": "Engineers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-engineer",
+      "series_id": "eeo-1990-labor-force-engineer-black_male",
+      "weighted_numerator": 48607,
+      "weighted_denominator": 1708244
+    },
+    {
+      "profession_id": "engineer",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 0.68386,
+      "definition": "Engineers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-engineer",
+      "series_id": "eeo-1990-labor-force-engineer-black_female",
+      "weighted_numerator": 11682,
+      "weighted_denominator": 1708244
+    },
+    {
+      "profession_id": "dentist",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 2.317253,
+      "definition": "Dentists. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-dentist",
+      "series_id": "eeo-1990-labor-force-dentist-black_male",
+      "weighted_numerator": 3604,
+      "weighted_denominator": 155529
+    },
+    {
+      "profession_id": "dentist",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 0.811424,
+      "definition": "Dentists. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-dentist",
+      "series_id": "eeo-1990-labor-force-dentist-black_female",
+      "weighted_numerator": 1262,
+      "weighted_denominator": 155529
+    },
+    {
+      "profession_id": "pharmacist",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 1.918063,
+      "definition": "Pharmacists. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-pharmacist",
+      "series_id": "eeo-1990-labor-force-pharmacist-black_male",
+      "weighted_numerator": 3487,
+      "weighted_denominator": 181798
+    },
+    {
+      "profession_id": "pharmacist",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 2.392216,
+      "definition": "Pharmacists. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-pharmacist",
+      "series_id": "eeo-1990-labor-force-pharmacist-black_female",
+      "weighted_numerator": 4349,
+      "weighted_denominator": 181798
+    },
+    {
+      "profession_id": "registered-nurse",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 0.559643,
+      "definition": "Registered nurses. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-registered-nurse",
+      "series_id": "eeo-1990-labor-force-registered-nurse-black_male",
+      "weighted_numerator": 10550,
+      "weighted_denominator": 1885129
+    },
+    {
+      "profession_id": "registered-nurse",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 8.355662,
+      "definition": "Registered nurses. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-registered-nurse",
+      "series_id": "eeo-1990-labor-force-registered-nurse-black_female",
+      "weighted_numerator": 157515,
+      "weighted_denominator": 1885129
+    },
+    {
+      "profession_id": "professor",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 2.4232,
+      "definition": "Teachers, postsecondary. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-professor",
+      "series_id": "eeo-1990-labor-force-professor-black_male",
+      "weighted_numerator": 19052,
+      "weighted_denominator": 786233
+    },
+    {
+      "profession_id": "professor",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 2.478782,
+      "definition": "Teachers, postsecondary. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-professor",
+      "series_id": "eeo-1990-labor-force-professor-black_female",
+      "weighted_numerator": 19489,
+      "weighted_denominator": 786233
+    },
+    {
+      "profession_id": "k12-teacher",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Elementary and secondary teachers (1990)",
+      "family": "eeo-1990-school-teachers",
+      "unit": "percent",
+      "year": 1990,
+      "value": 1.979423,
+      "definition": "Teachers, elementary school + Teachers, secondary school. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates. This elementary and secondary subset excludes separately classified school teachers.",
+      "source_id": "census-eeo-1990-k12-teacher",
+      "series_id": "eeo-1990-school-teachers-k12-teacher-black_male",
+      "weighted_numerator": 72221,
+      "weighted_denominator": 3648589
+    },
+    {
+      "profession_id": "k12-teacher",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Elementary and secondary teachers (1990)",
+      "family": "eeo-1990-school-teachers",
+      "unit": "percent",
+      "year": 1990,
+      "value": 7.755957,
+      "definition": "Teachers, elementary school + Teachers, secondary school. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates. This elementary and secondary subset excludes separately classified school teachers.",
+      "source_id": "census-eeo-1990-k12-teacher",
+      "series_id": "eeo-1990-school-teachers-k12-teacher-black_female",
+      "weighted_numerator": 282983,
+      "weighted_denominator": 3648589
+    },
+    {
+      "profession_id": "journalist",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 2.207524,
+      "definition": "Editors and reporters. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-journalist",
+      "series_id": "eeo-1990-labor-force-journalist-black_male",
+      "weighted_numerator": 5884,
+      "weighted_denominator": 266543
+    },
+    {
+      "profession_id": "journalist",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 3.088432,
+      "definition": "Editors and reporters. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-journalist",
+      "series_id": "eeo-1990-labor-force-journalist-black_female",
+      "weighted_numerator": 8232,
+      "weighted_denominator": 266543
+    },
+    {
+      "profession_id": "musician",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 6.059316,
+      "definition": "Musicians and composers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-musician",
+      "series_id": "eeo-1990-labor-force-musician-black_male",
+      "weighted_numerator": 8969,
+      "weighted_denominator": 148020
+    },
+    {
+      "profession_id": "musician",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 1.484259,
+      "definition": "Musicians and composers. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-musician",
+      "series_id": "eeo-1990-labor-force-musician-black_female",
+      "weighted_numerator": 2197,
+      "weighted_denominator": 148020
+    },
+    {
+      "profession_id": "electrician",
+      "measure": "share_of_profession",
+      "group": "black_male",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 5.681928,
+      "definition": "Electricians, except apprentices + Electrician apprentices. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-electrician",
+      "series_id": "eeo-1990-labor-force-electrician-black_male",
+      "weighted_numerator": 36966,
+      "weighted_denominator": 650589
+    },
+    {
+      "profession_id": "electrician",
+      "measure": "share_of_profession",
+      "group": "black_female",
+      "measure_label": "Civilian labor force (1990)",
+      "family": "eeo-1990-labor-force",
+      "unit": "percent",
+      "year": 1990,
+      "value": 0.33754,
+      "definition": "Electricians, except apprentices + Electrician apprentices. People age 16+ in the U.S. civilian labor force classified in the named occupation, including experienced unemployed. Black, single reported race, any Hispanic origin or birthplace. Share of all people in those rows, male and female combined. Published decennial sample estimates.",
+      "source_id": "census-eeo-1990-electrician",
+      "series_id": "eeo-1990-labor-force-electrician-black_female",
+      "weighted_numerator": 2196,
+      "weighted_denominator": 650589
+    }
+  ],
+  "notes": [
+    "The 1990 census used a single reported race. This civilian labor force table includes people looking for work with a recent occupation. Occupation groups and the employment universe differ from the ACS workforce series."
+  ]
+}

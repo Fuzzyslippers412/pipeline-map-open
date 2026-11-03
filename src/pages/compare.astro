@@ -1,0 +1,35 @@
+---
+import Layout from '../components/Layout.astro';
+import {professions} from '../lib/model';
+---
+<Layout title="Compare professions" active="Compare"><div class="frame"><div class="page-head"><div class="eyebrow"><i></i> COMPARISON <b>/</b> SHARED MEASURES</div><h1>Compare professions</h1><p>Choose up to three professions. The chart uses one measure and source family across all selections.</p></div>
+<div class="subbody"><div class="comparison-controls">{[0,1,2].map(i=><label>Profession 0{i+1}<select class="fieldselect" data-pick={i}><option value="">Choose a profession</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select></label>)}<button class="primary" id="share-comparison">Copy comparison link</button></div><output id="compare-message" aria-live="polite"></output><div id="compare-results" class="compare-result" aria-live="polite">Loading the data…</div><noscript>Turn on JavaScript to compare professions, or open <a href="/">the profession index</a> for static cards.</noscript></div></div></Layout>
+<script>
+import {compareModel} from '../lib/compare';
+import {chartSVG,safe} from '../lib/plot';
+const picks=[...document.querySelectorAll<HTMLSelectElement>('select[data-pick]')], result=document.querySelector<HTMLElement>('#compare-results')!, msg=document.querySelector<HTMLOutputElement>('#compare-message')!, share=document.querySelector<HTMLButtonElement>('#share-comparison')!;
+let data:any;
+function selected(){return [...new Set(picks.map(p=>p.value).filter(Boolean))]}
+function previewPath(ids:string[]){return ids.length?'/comparisons/'+[...ids].sort().join('~')+'/':'/compare/'}
+function syncFromURL(){
+ const query=new URLSearchParams(location.search).get('p');
+ const pathIds=location.pathname.startsWith('/comparisons/')?location.pathname.split('/')[2].split('~'):[];
+ const ids=[...new Set((query===null?pathIds:query.split(',')).filter(id=>data.professions.some((p:any)=>p.slug===id)))].slice(0,3);
+ picks.forEach((p,i)=>p.value=ids[i]||'');
+ const canonical=previewPath(ids);
+ if(location.pathname+location.search!==canonical)history.replaceState(null,'',canonical);
+ render();
+}
+function render(){
+ const ids=selected();picks.forEach(p=>{for(const o of p.options)o.disabled=!!o.value&&ids.includes(o.value)&&p.value!==o.value});share.disabled=!ids.length;
+ if(!ids.length){result.innerHTML='<div class="eyebrow">SHARED CHART</div><h2>Choose a profession to begin</h2><p class="muted">Add another field to see their reported estimates together.</p>';return}
+ const {chosen,traces,latest,unavailable}=compareModel(ids,data);
+ if(!chosen){result.innerHTML='<div class="eyebrow">SHARED CHART</div><h2>Series not yet verified</h2><p class="muted">No matched race-by-sex series is available for this selection.</p>';return}
+ const pct=['percent','%','percentage'].includes(chosen.unit);
+ const rows=latest.map(({name,point:r})=>{const source=data.sources.find((s:any)=>s.id===r.source_id);return '<tr><td>'+safe(name)+'</td><td>'+safe(r.group==='black_male'?'Black male':'Black female')+'</td><td>'+r.year+'</td><td><a href="/sources/#'+safe(r.source_id)+'">'+r.value.toFixed(pct?1:0)+(pct?'%':'')+'</a></td><td><a href="/sources/#'+safe(r.source_id)+'">'+safe(source.table_name)+'</a></td></tr>'}).join('');
+ result.innerHTML='<div class="eyebrow">SHARED CHART</div><h2>'+safe(chosen.label)+'</h2><div class="legend">'+traces.map(t=>'<span style="--key:'+t.colour+'"><i class="'+(t.dash?'dash':'')+'"></i>'+safe(t.label)+'</span>').join('')+'</div><div class="plotbox">'+chartSVG(traces,{percent:pct,title:chosen.label})+'</div>'+(unavailable.length?'<p class="notice">No comparable series for '+unavailable.map(p=>safe(p.name)).join(', ')+'.</p>':'')+'<h3>Latest available observations</h3><div class="tablewrap"><table><thead><tr><th>Profession</th><th>Group</th><th>Year</th><th>Estimate</th><th>Source table</th></tr></thead><tbody>'+rows+'</tbody></table></div><details class="reading"><summary>Definitions used in this chart</summary>'+[...new Set(chosen.rows.map((r:any)=>r.definition))].map(d=>'<p>'+safe(d)+'</p>').join('')+'</details>';
+}
+async function init(){try{const response=await fetch('/data/compare.json');if(!response.ok)throw Error();data=await response.json();syncFromURL()}catch{result.textContent='The comparison data could not load. Refresh this page to try again.';share.disabled=true}}
+picks.forEach(p=>p.addEventListener('change',()=>{if(!data)return;const ids=selected();history.pushState(null,'',previewPath(ids));msg.textContent='';render()}));window.addEventListener('popstate',()=>data&&syncFromURL());
+share.addEventListener('click',async()=>{const ids=selected().sort();if(!ids.length)return;const url=new URL('/comparisons/'+ids.join('~')+'/',location.origin).href;try{await navigator.clipboard.writeText(url);msg.textContent='Comparison link copied.'}catch{msg.textContent=url}});init();
+</script>

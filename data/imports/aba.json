@@ -1,0 +1,406 @@
+{
+  "sources": [
+    {
+      "id": "aba-509-jd1-2017",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2017 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2017&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 202 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    },
+    {
+      "id": "aba-509-jd1-2018",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2018 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2018&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 203 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    },
+    {
+      "id": "aba-509-jd1-2019",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2019 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2019&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 203 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    },
+    {
+      "id": "aba-509-jd1-2020",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2020 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2020&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 197 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    },
+    {
+      "id": "aba-509-jd1-2021",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2021 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2021&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 197 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    },
+    {
+      "id": "aba-509-jd1-2022",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2022 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2022&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 196 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    },
+    {
+      "id": "aba-509-jd1-2023",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2023 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2023&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 196 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    },
+    {
+      "id": "aba-509-jd1-2024",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2024 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2024&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. Beginning in 2024, U.S. nonresidents are classified by race and ethnicity.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 196 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    },
+    {
+      "id": "aba-509-jd1-2025",
+      "publisher": "American Bar Association",
+      "table_name": "Standard 509 · JD Enrollment and Ethnicity · 2025 all-schools compilation",
+      "url": "https://backend.abarequireddisclosures.org/api/AnnualQuestionnaire/GetAllCompilationData?year=2025&scetionName=JD+Enrollment+and+Ethnicity",
+      "retrieved_on": "2026-11-03",
+      "license": "© American Bar Association. Public disclosure. Calculations use aggregate counts.",
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. Beginning in 2024, U.S. nonresidents are classified by race and ethnicity.",
+      "professions": [
+        "lawyer"
+      ],
+      "reference_url": "https://www.americanbar.org/content/dam/aba/administrative/legal_education_and_admissions_to_the_bar/2025/council-meeting/12-generic-std-509-info-report-2025-clean-version.pdf",
+      "locator": "Sum each column over 196 school rows in the worksheet. Numerators: Black or African American 1L Men/Women (2017) or BlackMenJD1/BlackWomenJD1. Denominator: Total 1L Total (2017) or TotalJD1Total."
+    }
+  ],
+  "series": [
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-separate-black_male",
+      "year": 2017,
+      "value": 3.13227,
+      "unit": "percent",
+      "numerator": 1279,
+      "denominator": 40833,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2017"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-separate-black_female",
+      "year": 2017,
+      "value": 5.493106,
+      "unit": "percent",
+      "numerator": 2243,
+      "denominator": 40833,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2017"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-separate-black_male",
+      "year": 2018,
+      "value": 2.903922,
+      "unit": "percent",
+      "numerator": 1144,
+      "denominator": 39395,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2018"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-separate-black_female",
+      "year": 2018,
+      "value": 5.145323,
+      "unit": "percent",
+      "numerator": 2027,
+      "denominator": 39395,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2018"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-separate-black_male",
+      "year": 2019,
+      "value": 2.607499,
+      "unit": "percent",
+      "numerator": 1023,
+      "denominator": 39233,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2019"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-separate-black_female",
+      "year": 2019,
+      "value": 5.090103,
+      "unit": "percent",
+      "numerator": 1997,
+      "denominator": 39233,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2019"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-separate-black_male",
+      "year": 2020,
+      "value": 2.725297,
+      "unit": "percent",
+      "numerator": 1066,
+      "denominator": 39115,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2020"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-separate-black_female",
+      "year": 2020,
+      "value": 5.243513,
+      "unit": "percent",
+      "numerator": 2051,
+      "denominator": 39115,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2020"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-separate-black_male",
+      "year": 2021,
+      "value": 2.773987,
+      "unit": "percent",
+      "numerator": 1179,
+      "denominator": 42502,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2021"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-separate-black_female",
+      "year": 2021,
+      "value": 5.289163,
+      "unit": "percent",
+      "numerator": 2248,
+      "denominator": 42502,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2021"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-separate-black_male",
+      "year": 2022,
+      "value": 2.789159,
+      "unit": "percent",
+      "numerator": 1096,
+      "denominator": 39295,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2022"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-separate-black_female",
+      "year": 2022,
+      "value": 5.311108,
+      "unit": "percent",
+      "numerator": 2087,
+      "denominator": 39295,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2022"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-separate-black_male",
+      "year": 2023,
+      "value": 2.638013,
+      "unit": "percent",
+      "numerator": 1025,
+      "denominator": 38855,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2023"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-separate-black_female",
+      "year": 2023,
+      "value": 5.20139,
+      "unit": "percent",
+      "numerator": 2021,
+      "denominator": 38855,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. U.S. nonresidents were classified separately.",
+      "source_id": "aba-509-jd1-2023"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-inclusive-black_male",
+      "year": 2024,
+      "value": 2.337611,
+      "unit": "percent",
+      "numerator": 949,
+      "denominator": 40597,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. Beginning in 2024, U.S. nonresidents are classified by race and ethnicity.",
+      "source_id": "aba-509-jd1-2024"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-inclusive-black_female",
+      "year": 2024,
+      "value": 5.32059,
+      "unit": "percent",
+      "numerator": 2160,
+      "denominator": 40597,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. Beginning in 2024, U.S. nonresidents are classified by race and ethnicity.",
+      "source_id": "aba-509-jd1-2024"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_male",
+      "series_id": "aba-jd1-inclusive-black_male",
+      "year": 2025,
+      "value": 2.387814,
+      "unit": "percent",
+      "numerator": 1044,
+      "denominator": 43722,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. Beginning in 2024, U.S. nonresidents are classified by race and ethnicity.",
+      "source_id": "aba-509-jd1-2025"
+    },
+    {
+      "profession_id": "lawyer",
+      "family": "aba-first-year",
+      "measure": "entrants",
+      "measure_label": "First-year J.D. enrollment",
+      "group": "black_female",
+      "series_id": "aba-jd1-inclusive-black_female",
+      "year": 2025,
+      "value": 5.17131,
+      "unit": "percent",
+      "numerator": 2261,
+      "denominator": 43722,
+      "definition": "Black or African American, with Hispanic and multiracial students classified separately. Men or women divided by all students in the first-year J.D. cohort (JD1) at schools in the ABA compilation. This includes continuing first-year students. Beginning in 2024, U.S. nonresidents are classified by race and ethnicity.",
+      "source_id": "aba-509-jd1-2025"
+    }
+  ],
+  "notes": [
+    "Each annual compilation covers its reporting schools. The JD1 cohort includes all first-year students and differs from the separate ABA count of newly entering law students.",
+    "Beginning in 2024, U.S. nonresident students are reported by race/ethnicity instead of in a separate category. The chart starts a new segment."
+  ]
+}

@@ -1,0 +1,10 @@
+---
+import '../styles/site.css';
+import '@fontsource-variable/manrope';
+import '@fontsource/newsreader/latin-500.css';
+import '@fontsource/ibm-plex-mono/latin-400.css';
+const { title,desc='A field guide for Black professionals. Trace your job back to the institutions that opened the field, and explore Black representation using public sources.',active='',og='/cover.png',canonical=Astro.url.pathname }=Astro.props;
+const absolute = path=>new URL(path,Astro.site).href;
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title} · Pipeline Map</title><meta name="description" content={desc}/><link rel="canonical" href={absolute(canonical)}/><link rel="icon" href="/mark.svg"/><meta name="theme-color" content="#101716"/><meta property="og:type" content="website"/><meta property="og:title" content={title+' · Pipeline Map'}/><meta property="og:description" content={desc}/><meta property="og:url" content={absolute(canonical)}/><meta property="og:image" content={absolute(og)}/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image:alt" content={title+' — Pipeline Map research card'}/></head>
+<body><a class="skip" href="#content">Skip to content</a><header class="mast"><div class="frame mastrow"><a class="wordmark" href="/" aria-label="Pipeline Map home"><img src="/mark.svg" width="33" height="33" alt=""/>Pipeline Map</a><nav aria-label="Primary">{[['Index','/'],['Compare','/compare/'],['Sources','/sources/'],['Method','/method/']].map(([t,url])=><a href={url} aria-current={active===t?'page':undefined}>{t}</a>)}</nav></div></header><main id="content"><slot/></main><footer class="frame foot"><a class="wordmark" href="/"><img src="/mark.svg" alt="" width="24" height="24"/>Pipeline Map</a><span>Black professional pathways in the U.S.</span><a href="https://github.com/Fuzzyslippers412/pipeline-map-open">Code & data ↗</a><a href="/method/">Methodology ↗</a></footer></body></html>

@@ -1,0 +1,18 @@
+---
+import {groups,measures,isPct,amount,variants,src} from '../lib/model';
+import {chartSVG,colours} from '../lib/plot';
+const {p,rows}=Astro.props;
+const choices=variants(rows);
+const optionLabel=(v)=>v.rows[0].measure_label||measures[v.measure];
+---
+<section class="panel trend" id="trend"><div class="num">03</div><div class="panelmain"><div class="eyebrow">TREND <b>/</b> MEASURED</div><h2>Representation over time</h2>
+{choices.length>0?<>{choices.length>1&&<label class="selector">Measure <select id="variant">{choices.map((v,i)=><option value={i}>{optionLabel(v)}</option>)}</select></label>}
+{choices.map((v,i)=>{const traces=['black_male','black_female'].map((g,i)=>({rows:v.rows.filter(r=>r.group===g),label:groups[g],colour:colours[i],dash:i===1}));
+const defs=[...new Set(v.rows.map(r=>r.definition))];const grouped=defs.map(d=>{const yrs=v.rows.filter(r=>r.definition===d).map(r=>r.year);const low=Math.min(...yrs),high=Math.max(...yrs);return {definition:d,span:low===high?String(low):low+'–'+high};});const refs=[...new Set(v.rows.map(r=>r.source_id))];const years=v.rows.map(r=>r.year);
+return <div data-chart={i} hidden={i!==0}><h3>{optionLabel(v)}</h3><div class="legend">{traces.filter(t=>t.rows.length).map(t=><span style={'--key:'+t.colour}><i class={t.dash?'dash':''}></i>{t.label}</span>)}</div><div class="plotbox" set:html={chartSVG(traces,{percent:isPct(v.unit),title:p.name+' · '+optionLabel(v)})}></div><p class="caption">Coverage {Math.min(...years)}–{Math.max(...years)}. Dots mark reported years. Gaps stay open.</p>
+<div class="definitions">{grouped.map(d=><p class="definition"><strong>{d.span} definition.</strong> {d.definition}</p>)}</div><div class="caption">{refs.length>0&&<a href={'/sources/#'+refs[0]}>{src(refs[0])?.table_name} ↗</a>}</div><details class="reading"><summary>All definitions & source tables</summary>{defs.map(d=><p>{d}</p>)}<ul>{refs.map(id=><li><a href={'/sources/#'+id}>{src(id)?.table_name} ↗</a></li>)}</ul></details>
+<details class="reading"><summary>View the numbers</summary><div class="tablewrap"><table><thead><tr><th>Year</th><th>Group</th><th>Estimate</th><th>Source table</th></tr></thead><tbody>{[...v.rows].sort((a,b)=>b.year-a.year||a.group.localeCompare(b.group)).map(r=><tr><td>{r.year}</td><td>{groups[r.group]}</td><td><a href={'/sources/#'+r.source_id}>{amount(r)}</a>{typeof r.moe90_pp==='number'&&<small class="moe">±{r.moe90_pp.toFixed(1)} pp (90% margin)</small>}</td><td><a href={'/sources/#'+r.source_id}>{src(r.source_id)?.table_name}</a></td></tr>)}</tbody></table></div></details></div>})}</>:<div class="nodata"><b>Series not yet verified</b><p>No matched race-by-sex series is published for this profession in this edition. A missing observation is distinct from a zero.</p><a href="/sources/">Browse the source register ↗</a></div>}</div></section>
+<script>
+const select=document.querySelector<HTMLSelectElement>('#variant');
+select?.addEventListener('change',()=>document.querySelectorAll<HTMLElement>('[data-chart]').forEach(el=>el.hidden=el.dataset.chart!==select.value));
+</script>

@@ -1,0 +1,36 @@
+---
+import Layout from '../components/Layout.astro';
+import TraceStart from '../components/TraceStart.astro';
+import {professions,idFor} from '../lib/model';
+const filters=[...new Set(professions.map(p=>p.sector))];
+const searchIndex=professions.map(({slug,name,aliases,sector})=>({slug,name,aliases,sector}));
+---
+<Layout title="Trace your Black career pathway" active="Index"><div class="frame">
+<TraceStart/>
+<section class="directory" id="directory"><div class="section-head"><div><div class="eyebrow">DIRECTORY <b>/</b> 01</div><h2>Profession index</h2></div><span class="indexcount" aria-live="polite" id="result-count">{professions.length} professions</span></div>
+<div class="searchwrap"><label for="occupation" class="sr">Search the profession index</label><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="occupation" type="search" autocomplete="off" placeholder="Search the profession index" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions"/><kbd>/</kbd><div id="suggestions" class="suggestions" role="listbox" hidden></div></div>
+<div class="filters" aria-label="Filter professions"><button class="pill selected" data-sector="" aria-pressed="true">All fields</button>{filters.map(s=><button class="pill" data-sector={s} aria-pressed="false">{s}</button>)}</div>
+<div class="tiles" id="tiles">{professions.map(p=><a class="tile" data-id={p.slug} href={'/p/'+p.slug+'/'}><span class="tile-id">{idFor(p.slug)}</span><span class="tile-body"><strong>{p.name}</strong><small>{p.sector}</small></span><span class="tile-arrow" aria-hidden="true">↗</span></a>)}</div><div id="empty" hidden><p>No matching professions.</p><button id="reset" class="pill">Clear search and filters</button></div></section></div></Layout>
+<script type="application/json" id="search-index" set:html={JSON.stringify(searchIndex).replace(/</g,'\\u003c')}></script>
+<script>
+const all=JSON.parse(document.querySelector('#search-index')!.textContent!);
+const input=document.querySelector<HTMLInputElement>('#occupation')!, box=document.querySelector<HTMLElement>('#suggestions')!;
+const tiles=[...document.querySelectorAll<HTMLElement>('.tile')], buttons=[...document.querySelectorAll<HTMLButtonElement>('[data-sector]')];
+let sector='', active=-1;
+const hide=()=>{box.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');active=-1};
+function filter(suggest=false){
+ const q=input.value.trim().toLowerCase();
+ const matches=all.filter((p:any)=>(!sector||p.sector===sector)&&[p.name,...p.aliases].some(n=>n.toLowerCase().includes(q)));
+ const ids=new Set(matches.map((p:any)=>p.slug)); tiles.forEach(t=>t.hidden=!ids.has(t.dataset.id));
+ document.querySelector('#result-count')!.textContent=matches.length+' profession'+(matches.length===1?'':'s'); (document.querySelector('#empty')! as HTMLElement).hidden=!!matches.length;
+ box.replaceChildren();hide();
+ if(suggest&&q&&matches.length){ for(const [i,p] of matches.slice(0,5).entries()){let a=document.createElement('a'); a.href='/p/'+p.slug+'/'; a.id='suggest-'+i;a.setAttribute('role','option'); a.textContent=p.name; a.tabIndex=-1;box.append(a)}box.hidden=false;input.setAttribute('aria-expanded','true'); }
+}
+buttons.forEach(b=>b.addEventListener('click',()=>{sector=b.dataset.sector!;buttons.forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b))});filter()}));
+input.addEventListener('input',()=>filter(true));input.addEventListener('focus',()=>filter(true));input.addEventListener('blur',()=>setTimeout(hide,140));
+input.addEventListener('keydown',e=>{const list=[...box.querySelectorAll('a')];if(e.key==='Escape'){hide();return}if(!list.length||box.hidden)return;
+ if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();active=(active+(e.key==='ArrowDown'?1:-1)+list.length)%list.length; list.forEach((a,i)=>a.setAttribute('aria-selected',String(i===active))); input.setAttribute('aria-activedescendant',list[active].id)}
+ if(e.key==='Enter'){e.preventDefault();location.assign(list[Math.max(0,active)].href)}});
+document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement?.tagName||'')&&!e.ctrlKey&&!e.metaKey){e.preventDefault();input.focus()}});
+document.querySelector('#reset')?.addEventListener('click',()=>{input.value='';buttons[0].click();input.focus()});
+</script>

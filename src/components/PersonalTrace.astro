@@ -1,0 +1,130 @@
+---
+import { labelList } from '../lib/model';
+import SourceLookup from './SourceLookup.astro';
+import workplaceLinks from '../../data/workplace-links.json';
+import '../styles/personal-trace.css';
+
+const { p } = Astro.props;
+const references = workplaceLinks.filter(item => item.professions.includes(p.slug));
+---
+
+<section
+  class="personal-trace"
+  id="personal-trace"
+  aria-labelledby="personal-trace-heading"
+  data-profession={p.slug}
+  data-references={JSON.stringify(references)}
+  hidden
+>
+  <div class="personal-trace__header">
+    <div>
+      <p class="eyebrow"><i></i> YOUR CAREER TRACE</p>
+      <h2 id="personal-trace-heading">Follow your role back</h2>
+    </div>
+    <div class="personal-trace__tools">
+      <a href="/#trace">Edit details</a>
+      <button type="button" data-clear-trace>Clear trace</button>
+    </div>
+  </div>
+
+  <p class="personal-trace__intro">Trace the institutions that shaped entry for Black professionals in this field.</p>
+
+  <ol class="personal-trace__steps">
+    <li>
+      <span class="personal-trace__label">Your job</span>
+      <strong data-trace-title></strong>
+      <span class="personal-trace__workplace" data-trace-workplace></span>
+      <span class="personal-trace__note"><span data-field-label>Profession record</span> · {p.name}</span>
+    </li>
+    <li>
+      <span class="personal-trace__label">Entry today</span>
+      <a href="#gate" data-open-rationale>{labelList(p.gate.gatekeeper)}</a>
+      <span class="personal-trace__note">{p.gate.status === 'draft' ? 'Editorial · proposed' : 'Editorial'}</span>
+    </li>
+    <li>
+      <span class="personal-trace__label">Who opened the path</span>
+      <a href="#origin" data-open-rationale>{labelList(p.origin.builder)}</a>
+      <span class="personal-trace__note">{p.origin.status === 'draft' ? 'Editorial · proposed' : 'Editorial'} · {p.origin.era}</span>
+    </li>
+  </ol>
+
+  <div class="personal-trace__evidence">
+    <h3>Workplace connection</h3>
+    <p data-trace-gap>There is no editor-reviewed workplace entry for this employer and field yet. Use the live search below to check for published evidence.</p>
+    <ul data-trace-references hidden></ul>
+  </div>
+  <SourceLookup/>
+  <div class="personal-trace__foot">
+    <a href="#trend">See Black representation in this profession <span aria-hidden="true">↓</span></a>
+    <span>Shared links open the public profession card.</span>
+  </div>
+</section>
+
+<script>
+  import { bindLookup } from '../lib/bind-lookup.js';
+  import { readTrace, clearTrace, findWorkplaceLinks } from '../lib/trace-context.js';
+
+  const panel = document.querySelector<HTMLElement>('#personal-trace');
+  if (panel) {
+    const title = panel.querySelector<HTMLElement>('[data-trace-title]')!;
+    const workplace = panel.querySelector<HTMLElement>('[data-trace-workplace]')!;
+    const missing = panel.querySelector<HTMLElement>('[data-trace-gap]')!;
+    const list = panel.querySelector<HTMLElement>('[data-trace-references]')!;
+    const references = JSON.parse(panel.dataset.references!);
+
+    const tracePanel = panel;
+    function renderTrace() {
+      const trace = readTrace();
+      title.textContent = '';
+      workplace.textContent = '';
+      list.replaceChildren();
+      tracePanel.hidden = !trace || trace.slug !== tracePanel.dataset.profession;
+      const lookup=tracePanel.querySelector('pipeline-source-lookup');
+      if (!trace || tracePanel.hidden) { bindLookup(lookup,null); return; }
+      bindLookup(lookup,{employer:trace.workplace,title:trace.title,profession:trace.match==='related'?'':tracePanel.dataset.profession});
+
+      tracePanel.querySelector<HTMLElement>('[data-field-label]')!.textContent = trace.match === 'related' ? 'Related field you selected' : 'Profession record';
+      title.textContent = trace.title;
+      workplace.textContent = trace.workplace ? 'at ' + trace.workplace : '';
+      workplace.hidden = !trace.workplace;
+      const matches = findWorkplaceLinks(trace.workplace, trace.slug, references);
+      missing.hidden = matches.length > 0;
+      missing.textContent = trace.workplace
+        ? 'There is no editor-reviewed workplace entry for this employer and field yet. Use the live search below to check for published evidence.'
+        : 'Add a workplace to check for a documented connection to this profession.';
+      list.hidden = !matches.length;
+      for (const item of matches) {
+        const row = document.createElement('li');
+        const heading = document.createElement('strong');
+        heading.textContent = item.headline;
+        const description = document.createElement('p');
+        description.textContent = item.description;
+        const source = document.createElement('a');
+        source.href = item.url;
+        source.textContent = item.sourceTitle + ' ↗';
+        row.append(heading, description, source);
+        list.append(row);
+      }
+    }
+
+    panel.querySelector('[data-clear-trace]')!.addEventListener('click', () => {
+      clearTrace();
+      renderTrace();
+      const heading = document.querySelector<HTMLElement>('.record-head h1');
+      if (heading) {
+        heading.tabIndex = -1;
+        heading.focus({ preventScroll: true });
+      }
+    });
+
+    for (const link of panel.querySelectorAll<HTMLAnchorElement>('[data-open-rationale]')) {
+      link.addEventListener('click', () => {
+        const details = document.querySelector<HTMLDetailsElement>(link.hash + ' details');
+        if (details) details.open = true;
+      });
+    }
+
+    renderTrace();
+    window.addEventListener('pageshow', renderTrace);
+  }
+</script>

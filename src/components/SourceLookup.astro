@@ -1,0 +1,222 @@
+---
+import '../styles/source-lookup.css';
+---
+<pipeline-source-lookup class="source-lookup" hidden>
+  <div class="source-lookup__title">
+    <span class="source-lookup__eyebrow">LIVE SOURCE SEARCH</span>
+    <h3>Find a workplace connection</h3>
+  </div>
+  <p class="source-lookup__intro">
+    Search public institutional records for Black professional pathways at <strong data-employer></strong>.
+  </p>
+  <dl class="source-lookup__terms">
+    <div><dt>Employer sent to sources</dt><dd data-employer-term></dd></div>
+    <div><dt>Role used by Pipeline Map</dt><dd data-title-term></dd></div>
+  </dl>
+  <p class="source-lookup__help">When you click, Pipeline Map uses your employer and role for this lookup. Publisher searches receive only the employer name. Your entries are not saved by Pipeline Map’s search service.</p>
+  <button class="primary source-lookup__search" data-search type="button">Look up sources</button>
+  <p class="source-lookup__status" data-status role="status" aria-live="polite" aria-atomic="true"></p>
+  <div data-results class="source-lookup__results" aria-label="Workplace search results"></div>
+  <div class="source-lookup__wider" data-wider hidden>
+    <p>For a wider search, open Google with the employer, role and pathway terms below. Google receives those terms only if you open the search.</p>
+    <div class="source-lookup__query"><code data-terms></code><button type="button" data-web>Search the wider web ↗</button><button type="button" data-copy>Copy search terms</button></div>
+    <span class="source-lookup__copy-status" data-copy-status role="status"></span>
+  </div>
+</pipeline-source-lookup>
+
+<script>
+  type LookupContext = { employer: string; title: string; profession?: string };
+  type Result = { title: string; url: string; publisher: string; excerpt: string; kind: 'documented' | 'lead' };
+  type Report = { status: 'complete' | 'partial' | 'unavailable'; results: Result[]; providers: { name: string; status: 'ok' | 'unavailable' }[] };
+
+  function publicLink(raw: string) {
+    try {
+      const u = new URL(raw);
+      return u.protocol === 'https:' && !u.username && !u.password ? u.href : null;
+    } catch {
+      return null;
+    }
+  }
+
+  class PipelineSourceLookup extends HTMLElement {
+    private context: LookupContext | null = null;
+    private pending: AbortController | null = null;
+
+    private part<T extends HTMLElement = HTMLElement>(key: string) {
+      return this.querySelector<T>('[data-' + key + ']')!;
+    }
+
+    connectedCallback() {
+      this.part('search').addEventListener('click', this.search);
+      this.part('copy').addEventListener('click', this.copyTerms);
+      this.part('web').addEventListener('click', this.widerSearch);
+    }
+
+    disconnectedCallback() {
+      this.pending?.abort();
+      this.pending = null;
+      this.part('search').removeEventListener('click', this.search);
+      this.part('copy').removeEventListener('click', this.copyTerms);
+      this.part('web').removeEventListener('click', this.widerSearch);
+    }
+
+    reset() {
+      this.pending?.abort();
+      this.pending = null;
+      this.context = null;
+      this.hidden = true;
+      this.part('search').removeAttribute('aria-disabled');
+      this.part('search').textContent = 'Look up sources';
+      this.part('status').textContent = '';
+      this.part('results').removeAttribute('aria-busy');
+      this.part('results').replaceChildren();
+      this.part('wider').hidden = true;
+      for (const key of ['employer', 'employer-term', 'title-term', 'terms', 'copy-status']) {
+        this.part(key).textContent = '';
+      }
+    }
+
+    setContext(value: LookupContext | null) {
+      const employer = value?.employer?.trim() || '';
+      const title = value?.title?.trim() || '';
+      const profession = value?.profession?.trim() || '';
+      if (!employer || !title) { this.reset(); return; }
+      if (this.context?.employer === employer && this.context.title === title && this.context.profession === profession) return;
+      this.reset();
+      this.context = { employer, title, profession };
+      this.part('employer').textContent = employer;
+      this.part('employer-term').textContent = employer;
+      this.part('title-term').textContent = title;
+      this.hidden = false;
+    }
+
+    private search = async () => {
+      if (!this.context || this.pending) return;
+      const controller = new AbortController();
+      this.pending = controller;
+      const context = this.context;
+      const button = this.part<HTMLButtonElement>('search');
+      button.setAttribute('aria-disabled', 'true');
+      button.textContent = 'Searching…';
+      this.part('results').setAttribute('aria-busy', 'true');
+      this.part('results').replaceChildren();
+      this.part('wider').hidden = true;
+      this.part('copy-status').textContent = '';
+      this.part('status').textContent = 'Checking public records for ' + context.employer + '…';
+      try {
+        const { requestResearch } = await import('../lib/request-research.js');
+        const report: Report = await requestResearch({ ...context, signal: controller.signal });
+        if (controller.signal.aborted || this.pending !== controller) return;
+        this.showReport(report);
+      } catch {
+        if (controller.signal.aborted || this.pending !== controller) return;
+        this.part('status').textContent = 'The search could not finish. Try again or copy the search terms below.';
+        this.showWiderSearch();
+      } finally {
+        if (this.pending === controller) {
+          this.pending = null;
+          button.removeAttribute('aria-disabled');
+          button.textContent = 'Search again';
+          this.part('results').removeAttribute('aria-busy');
+        }
+      }
+    };
+
+    private showReport(report: Report) {
+      const available = report.providers.filter(p => p.status === 'ok').map(p => p.name);
+      const missing = report.providers.filter(p => p.status === 'unavailable').map(p => p.name);
+      const matches = report.results.filter(r => r.title && publicLink(r.url));
+      const documented = matches.filter(r => r.kind === 'documented');
+      const leads = matches.filter(r => r.kind === 'lead');
+      const status = this.part('status');
+      const groups = this.part('results');
+      if (report.status === 'unavailable') {
+        status.textContent = 'The public sources could not be reached. Try again in a moment.';
+      } else if (matches.length) {
+        status.textContent = matches.length + (matches.length === 1 ? ' source record found.' : ' source records found.');
+      } else {
+        status.textContent = (report.status === 'partial' ? 'The sources that responded' : 'The sources checked') +
+          ' returned no matching record. A connection may still exist.';
+      }
+      if (documented.length) {
+        groups.append(this.resultGroup('Source passages', 'These published passages matched the employer, field and pathway terms. Read the original for the full context.', documented));
+      }
+      if (leads.length) {
+        groups.append(this.resultGroup('Leads to investigate', 'These records may help your search. A lead alone does not document a workplace connection.', leads));
+      }
+      if (available.length || missing.length) {
+        const coverage = document.createElement('p');
+        coverage.className = 'source-lookup__coverage';
+        const lines = [];
+        if (available.length) lines.push('Checked: ' + available.join(', ') + '.');
+        if (missing.length) lines.push('Unavailable this time: ' + missing.join(', ') + '.');
+        coverage.textContent = lines.join(' ');
+        groups.append(coverage);
+      }
+      if (!documented.length || report.status === 'partial') this.showWiderSearch();
+    }
+
+    private resultGroup(label: string, note: string, records: Result[]) {
+      const section = document.createElement('section');
+      const heading = document.createElement('h4');
+      heading.textContent = label;
+      const description = document.createElement('p');
+      description.className = 'source-lookup__help';
+      description.textContent = note;
+      const list = document.createElement('ul');
+      for (const record of records) {
+        const item = document.createElement('li');
+        const publisher = document.createElement('span');
+        publisher.className = 'source-lookup__publisher';
+        publisher.textContent = record.publisher;
+        const link = document.createElement('a');
+        link.href = publicLink(record.url)!;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = record.title + ' ↗';
+        item.append(publisher, link);
+        if (record.excerpt) {
+          const excerpt = document.createElement('p');
+          excerpt.className = 'source-lookup__excerpt';
+          excerpt.textContent = record.excerpt;
+          item.append(excerpt);
+        }
+        list.append(item);
+      }
+      section.append(heading, description, list);
+      return section;
+    }
+
+    private showWiderSearch() {
+      if (!this.context) return;
+      const { employer, title } = this.context;
+      this.part('terms').textContent = '"' + employer + '" ' + title + ' (HBCU OR "Black professionals") training';
+      this.part('wider').hidden = false;
+    }
+
+    private widerSearch = () => {
+      const terms = this.part('terms').textContent;
+      if (!this.context || !terms) return;
+      const destination = new URL('https://www.google.com/search');
+      destination.searchParams.set('q', terms);
+      window.open(destination.href, '_blank', 'noopener,noreferrer');
+    };
+
+    private copyTerms = async () => {
+      const terms = this.part('terms').textContent || '';
+      const context = this.context;
+      let status = 'Search terms copied.';
+      try {
+        if (!navigator.clipboard || !terms) throw Error();
+        await navigator.clipboard.writeText(terms);
+      } catch {
+        status = 'Select and copy the search terms shown above.';
+      }
+      if (this.context === context) this.part('copy-status').textContent = status;
+    };
+  }
+
+  if (!customElements.get('pipeline-source-lookup')) {
+    customElements.define('pipeline-source-lookup', PipelineSourceLookup);
+  }
+</script>

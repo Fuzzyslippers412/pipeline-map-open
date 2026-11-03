@@ -1,0 +1,26 @@
+{
+  "name": "pipeline-map",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "python3 scripts/compile-data.py",
+    "build": "astro build && node scripts/share-images.mjs && node scripts/verify.mjs",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "build:hosted": "npm run build && node scripts/prepare-worker.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.2.0",
+    "@fontsource/ibm-plex-mono": "^5.2.0",
+    "@fontsource/newsreader": "^5.2.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "astro": "^5.16.0",
+    "satori": "^0.18.0",
+    "sharp": "0.34.5"
+  },
+  "devDependencies": {
+    "esbuild": "0.27.7",
+    "parse5": "7.3.0"
+  }
+}
