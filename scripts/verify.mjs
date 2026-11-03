@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {parse} from 'parse5';
 import config from '../astro.config.mjs';
+import {pmRoleRecords} from '../src/lib/pm-role-records.js';
 import {professions, sources, series, amount, roleFor} from '../src/lib/model.js';
 import {singleChart} from '../src/lib/plot.js';
 import {compareModel} from '../src/lib/compare.js';
@@ -141,9 +142,18 @@ expectEl(careerMap,'id','responsibility');
 expectEl(careerMap,'id','compare-moves');
 expectEl(careerMap,'id','door-note');
 expectEl(careerMap,'id','career-hub');
-for(const slug of [...slugs,'project-manager','technical-writing']){
+for(const slug of [...slugs,'project-manager','technical-writing',...Object.keys(pmRoleRecords)]){
   const guide=await readPage('/career-map/'+slug+'/');
   expectEl(guide,'id','conversation');
+  const role=pmRoleRecords[slug];
+  if(role){
+    for(const record of [role.first,role.second]){
+      for(const page of [guide,docHome]){
+        assert.ok(page.some(node=>['h2','h3'].includes(node.tagName)&&text(node)===record.person),slug+' history');
+        for(const [,url] of record.sources)assert.ok(hasHref(page,url),slug+' source '+url);
+      }
+    }
+  }
   if(slug==='project-manager'){
     for(const person of ['Asya Watkins','Zena Howard','Joseph Hunt','Bayard Rustin']){
       assert.ok(guide.some(node=>node.tagName==='h2' && text(node)===person),'Missing PM history: '+person);

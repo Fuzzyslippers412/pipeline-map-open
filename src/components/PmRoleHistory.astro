@@ -1,0 +1,41 @@
+---
+import {pmRoleRecords} from '../lib/pm-role-records.js';
+const {role,inTrace=false}=Astro.props;
+const record=pmRoleRecords[role];
+const {first,second}=record;
+---
+<section class="role-history" data-pm-history={role} data-in-trace={inTrace?'true':'false'} hidden={inTrace} aria-label={record.name+' field history'}>
+  <p class="eyebrow">Who opened the door · {record.name}</p>
+  <article>
+    <small>{first.date} · {first.place}</small>
+    <h2>{first.person}</h2><p>{first.story}</p><p>{first.opened}</p>
+    <div class="sources">{first.sources.map(([label,url])=><a href={url}>{label} ↗</a>)}</div>
+  </article>
+  <aside class="gap"><strong data-pm-gap-label>Workplace not entered</strong><p data-pm-gap-text>Add your workplace in the trace to check for a local connection.</p><p>{record.next}</p></aside>
+  <details><summary>Another Door Note · {second.place}</summary><small>{second.date}</small><h3>{second.person}</h3><p>{second.story}</p>
+    <div class="sources">{second.sources.map(([label,url])=><a href={url}>{label} ↗</a>)}</div>
+  </details>
+  <a href={inTrace?'/career-map/'+role+'/':'/#trace'}>{inTrace?'Open the '+record.name.toLowerCase()+' guide':'Trace my workplace and title'} →</a>
+</section>
+<style>
+.role-history{max-width:69ch;margin:14px 0;padding:14px 0;border-block:1px solid var(--edge);overflow-wrap:anywhere}
+article{margin:10px 0;padding:12px 15px;border-left:3px solid var(--rust);background:var(--panel)}
+small{color:var(--rust)}h2,h3{font:500 clamp(25px,4vw,35px)/1.1 var(--serif);margin:4px 0}
+p{margin:7px 0}.gap{padding:6px 0}.sources{display:flex;gap:0 14px;flex-wrap:wrap}
+a,summary{min-height:44px;align-content:center}a{display:inline-block;color:var(--action);text-decoration:underline;text-underline-offset:.18em}
+details{border-top:1px solid var(--edge)}summary{cursor:pointer;color:var(--action)}
+</style>
+<script>
+import {readTrace} from '../lib/trace-context.js';
+import {resolveTitle} from '../lib/title-resolver.js';
+import {showPmWorkplace} from '../lib/pm-role-panel.js';
+function restorePublicGuide(){
+  const panel=document.querySelector<HTMLElement>('[data-pm-history][data-in-trace="false"]');
+  if(!panel)return;
+  const trace=readTrace();
+  let match=trace && resolveTitle(trace.lookupTitle||trace.title,[]);
+  for(const choice of trace?.choicePath||[])match=match?.choices?.find(item=>item.label===choice)?.result;
+  showPmWorkplace(panel,match?.pmRole===panel.dataset.pmHistory?trace?.workplace:'');
+}
+restorePublicGuide();window.addEventListener('pageshow',restorePublicGuide);
+</script>

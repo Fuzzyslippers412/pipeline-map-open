@@ -116,3 +116,26 @@ test('project managers get a sector history, independently of title directory av
     for(const other of ['Product manager','Program manager','Project manager recruiter'])assert.equal(resolveTitle(other,catalog,index).projectSector,undefined);
   }
 });
+
+test('PM selections and typed product/program titles open the same reviewed role history',()=>{
+  for(const data of [null,directory]){
+    const pm=resolveTitle('PM',catalog,data);
+    for(const [name,slug,alias] of [['Product manager','product-manager','Senior product manager'],['Program manager','program-manager','Technical program manager']]){
+      assert.equal(pm.choices.find(row=>row.label===name)?.result.pmRole,slug);
+      assert.equal(resolveTitle(name,catalog,data).pmRole,slug);
+      assert.equal(resolveTitle(alias,catalog,data).pmRole,slug);
+    }
+    for(const other of ['project manager','product manager recruiter','program coordinator']){
+      assert.equal(resolveTitle(other,catalog,data).pmRole,undefined);
+    }
+  }
+});
+
+test('PM workplace evidence distinguishes an exact site from its parent or a similar name',async()=>{
+  const {pmWorkplaceRecord}=await import('../src/lib/pm-role-records.js');
+  assert.match(pmWorkplaceRecord('program-manager','NASA Langley Research Center').text,/appointment at Langley/);
+  assert.match(pmWorkplaceRecord('program-manager','NASA').label,/Still open/);
+  assert.match(pmWorkplaceRecord('product-manager','Google Nest').text,/interview/);
+  assert.match(pmWorkplaceRecord('product-manager','Google Nest Clinic').label,/Still open/);
+  assert.match(pmWorkplaceRecord('program-manager','').label,/not entered/);
+});

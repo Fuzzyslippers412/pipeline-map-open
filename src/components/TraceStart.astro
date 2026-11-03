@@ -11,6 +11,7 @@ import SourceLookup from './SourceLookup.astro';
 import ClassicTraceEntry from './ClassicTraceEntry.astro';
 const originalEdition = Astro.url.pathname.startsWith('/study/original/');
 import CareerTimeline from './CareerTimeline.astro';
+import PmRoleHistory from './PmRoleHistory.astro';
 import ProjectWork from './ProjectWork.astro';
 import ComputingContext from './ComputingContext.astro';
 import '../styles/trace-start.css';
@@ -93,6 +94,8 @@ import '../styles/trace-combobox.css';
   <div id="suggested-paths"></div>
   <button type="button" id="change-duty" class="edit-trace-entry" hidden>Change my answer</button>
   <ProjectWork inTrace/>
+  <PmRoleHistory role="product-manager" inTrace/>
+  <PmRoleHistory role="program-manager" inTrace/>
   <ComputingContext/>
   <CareerTimeline/>
   <SourceLookup/>
@@ -106,6 +109,7 @@ import '../styles/trace-combobox.css';
 </section>
 <script type="application/json" id="quick-workplaces" set:html={JSON.stringify(quickWorkplaces).replace(/</g,'\\u003c')}></script>
 <script>
+import {showPmWorkplace} from '../lib/pm-role-panel.js';
 import {setProjectSector} from '../lib/project-panel.js';
 import {setupTraceEntryFields} from '../lib/trace-entry-fields.js';
 import {bindLookup,revealTimelinePreview} from '../lib/bind-lookup.js';
@@ -132,6 +136,7 @@ type Resolution = {
   slug?: string;
   occupation?: string;
   projectSector?: string;
+  pmRole?: string;
   occupations?: {code:string}[];
   computing?: boolean;
   contextKey?: string;
@@ -155,6 +160,7 @@ function clearResults() {
   bindLookup(lookup,null);
   showComputingContext(note,null);
   result.querySelector<HTMLElement>('[data-project-work]')!.hidden=true;
+  for(const panel of result.querySelectorAll<HTMLElement>('[data-pm-history]')) panel.hidden=true;
   result.hidden = true;
   manual.hidden = true;
   manual.open = false;
@@ -253,6 +259,14 @@ function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, dir
     }
     case 'related':
     case 'recognized': {
+      if(resolution.pmRole){
+        showResult(draft,'Career path',resolution.occupation+' · Documented field history',focus);
+        const panel=result.querySelector<HTMLElement>('[data-pm-history="'+resolution.pmRole+'"]')!;
+        showPmWorkplace(panel,workplace);
+        panel.querySelector('details')!.open=false;
+        panel.hidden=false;
+        break;
+      }
       if(resolution.projectSector) {
         showResult(draft,'Career path','Project managers coordinate schedules, resources and delivery across fields.',focus);
         const panel=result.querySelector<HTMLElement>('[data-project-work]')!;

@@ -2,7 +2,7 @@
 import {questions} from '../lib/field-guides.js';
 import {professions} from '../lib/model.js';
 import directory from '../../public/data/job-occupations.json';
-const featured=[['project-manager','Project management','Schedules, budgets and delivery'],['k12-teacher','Teaching','Classrooms and mentoring'],['registered-nurse','Nursing','Patient care and unit leadership'],['electrician','Electrical trades','Licensing and crew leadership'],['support','Computer user support','Helping people use technology'],['systems','Systems and networks','Operating shared infrastructure']];
+const featured=[['project-manager','Project management','Schedules, budgets and delivery'],['product-manager','Product management','Product decisions and access to teams'],['program-manager','Program management','Programs, sponsors and opportunity'],['k12-teacher','Teaching','Classrooms and mentoring'],['registered-nurse','Nursing','Patient care and unit leadership'],['electrician','Electrical trades','Licensing and crew leadership'],['support','Computer user support','Helping people use technology'],['systems','Systems and networks','Operating shared infrastructure']];
 ---
 <div class="frame hub" id="career-hub">
   <header><p class="eyebrow">Door Notes / Career map</p><h1>Where could your work take you?</h1><p>Choose your work to find a Door Note, explore responsibilities and bring a question back to your workplace.</p></header>
@@ -10,7 +10,7 @@ const featured=[['project-manager','Project management','Schedules, budgets and 
   <form id="guide-find" action="/career-map/"><h2>Find another career</h2>
     <label>Filter by name <input type="search" id="guide-filter" placeholder="e.g. designer"/></label>
     <label>Choose a field or occupation<select name="occupation" id="guide-choice" required><option value="">Choose your work</option>
-    <optgroup label="Door Notes fields">{professions.map(p=><option value={p.slug}>{p.name}</option>)}</optgroup>
+    <optgroup label="Door Notes fields"><option value="product-manager">Product manager</option><option value="program-manager">Program manager</option><option value="project-manager">Project manager</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</optgroup>
     <optgroup label="Occupation directory">{directory.occupations.map(([code,name])=><option value={code}>{name}</option>)}</optgroup></select></label>
     <button class="primary">Open career guide</button>
     <p id="guide-count" role="status"></p>

@@ -1,24 +1,27 @@
 ---
 import Layout from '../../components/Layout.astro';
+import PmRoleHistory from '../../components/PmRoleHistory.astro';
+import {pmRoleRecords} from '../../lib/pm-role-records.js';
 import ProjectWork from '../../components/ProjectWork.astro';
 import {professions} from '../../lib/model.js';
 import {guides,questions} from '../../lib/field-guides.js';
 import {explorerRecords} from '../../lib/explorer-records.js';
 import credentials from '../../../data/credential-records.json';
 export function getStaticPaths(){
-  return [...professions.map(p=>p.slug),'project-manager','technical-writing'].map(field=>({params:{field}}));
+  return [...professions.map(p=>p.slug),'project-manager','technical-writing',...Object.keys(pmRoleRecords)].map(field=>({params:{field}}));
 }
 const field=Astro.params.field;
 const profession=professions.find(p=>p.slug===field);
 const guide=guides[field];
 const explorer=explorerRecords.find(e=>e.id===(field==='k12-teacher'?'public-school-teacher':field));
 const credential=credentials.find(c=>c.slug===field);
-const name=guide?.name||profession?.name||explorer?.title||'Technical writer';
+const pm=pmRoleRecords[field];
+const name=pm?.name||guide?.name||profession?.name||explorer?.title||'Technical writer';
 ---
 <Layout title={name+' career map'} active="Career map" desc={'Explore the history of '+name.toLowerCase()+', the responsibilities people take on and the evidence behind possible next steps.'}>
 <div class="frame field-map"><a href="/career-map/">← All careers</a>
-<header><p class="eyebrow">Career map</p><h1>{name}</h1><p>{guide?.intro||explorer?.task||'Explore the published field record and identify a question about the work you want to take on.'}</p></header>
-{field==='project-manager'? <ProjectWork/> :
+<header><p class="eyebrow">Career map</p><h1>{name}</h1><p>{pm?.intro||guide?.intro||explorer?.task||'Explore the published field record and identify a question about the work you want to take on.'}</p></header>
+{pm ? <PmRoleHistory role={field}/> : field==='project-manager'? <ProjectWork/> :
 <section class="field-history"><p class="eyebrow">Field history</p>
 {explorer?<><h2>{explorer.door.person}</h2><p>{explorer.door.story}</p><a href={explorer.door.source.url}>{explorer.door.source.title} ↗</a><p>{explorer.door.limit}</p><a href={explorer.taskSource.url}>{explorer.taskSource.title} ↗</a></> :
  credential?<><h2>{credential.name}</h2><p>{credential.record}</p><a href={credential.sources[0].url}>{credential.sources[0].label} ↗</a></> :
@@ -32,8 +35,8 @@ const name=guide?.name||profession?.name||explorer?.title||'Technical writer';
 <label for="responsibility">Which responsibility interests you?</label><select id="responsibility">{questions.map(([label,value])=><option value={value}>{label}</option>)}</select>
 </section>
 <section class="conversation" id="conversation" tabindex="-1"><p class="eyebrow">Take to work · {name}</p><h2>My conversation note</h2>
-<div aria-live="polite"><h3 data-destination>{guide?.moves[0][0]||'Explore an assignment'}</h3><p><strong>Try this</strong><span data-practice>{guide?.moves[0][2]||'Find a local job posting or assignment description and mark the decisions the role owns.'}</span></p>
-<p><strong>Ask at work</strong><span data-question>{guide?.moves[0][3]||'What requirements are documented for this assignment?'}</span></p>
+<div aria-live="polite"><h3 data-destination>{guide?.moves[0][0]||'Explore an assignment'}</h3><p><strong>Try this</strong><span data-practice>{pm?.practice||guide?.moves[0][2]||'Find a local job posting or assignment description and mark the decisions the role owns.'}</span></p>
+<p><strong>Ask at work</strong><span data-question>{pm?.question||guide?.moves[0][3]||'What requirements are documented for this assignment?'}</span></p>
 <p><strong>About the responsibility</strong><span data-level>{questions[0][1]}</span></p></div>
 <p>Check the local posting, contract or assignment record for the actual requirements and decision-maker.</p>
 <button class="primary" type="button" data-copy>Copy my note</button> <button class="secondary" type="button" data-print>Print my note</button><p data-feedback role="status"></p><textarea aria-label="Note ready to copy" readonly hidden></textarea>

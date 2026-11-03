@@ -108,6 +108,6 @@ export function suggestJobTitles(value, professions, supplementalTitles=EMPTY, l
       recognized:'Occupation recognized · workplace research available',
       unknown:'Workplace research available',
     };
-    return {title,label:title,subtitle:result.projectSector?'Black project management history available':labels[result.kind],slug:result.kind==='exact' ? result.slug : null};
+    return {title,label:title,subtitle:result.pmRole?'Black '+result.occupation.toLowerCase()+' history available':result.projectSector?'Black project management history available':labels[result.kind],slug:result.kind==='exact' ? result.slug : null};
   });
 }

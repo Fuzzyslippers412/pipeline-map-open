@@ -41,13 +41,17 @@ export const sectorQuestions = {
 export function projectResult(sector='general') {
   return {kind:'recognized', title:'Project manager', occupation:'Project management',projectSector:sector};
 }
+function roleResult(title,name){
+  return {kind:'recognized',title,occupation:name,pmRole:name==='Product manager'?'product-manager':'program-manager'};
+}
 export function projectTitle(title,key) {
   if(key==='pm') return {kind:'choices',title,occupation:'PM',question:'What does PM mean in your title?',choices:[
     {label:'Project manager',result:projectResult()},
-    ...['Product manager','Program manager'].map(name=>({label:name,result:{kind:'recognized',title:name,occupation:name}})),
+    ...['Product manager','Program manager'].map(name=>({label:name,result:roleResult(title,name)})),
     {label:'Something else',result:{kind:'unknown',title}}
   ]};
-  if(['product manager','program manager'].includes(key))return {kind:'recognized',title,occupation:key==='product manager'?'Product manager':'Program manager'};
+  const role=/^(?:(?:associate|technical|group|digital|principal|senior|lead) )*(product|program) (?:manager|mgr)(?: pm)?$/.exec(key);
+  if(role)return roleResult(title,role[1]==='product'?'Product manager':'Program manager');
   if(/^(?:project manager(?: pm)?|project mg[r]|project management specialists?)$/.test(key)) return projectResult();
   const sectorPatterns = [
     ['construction',/^(?:(?:commercial )?construction|architectural|civil) (?:project manager|pm)$/],
