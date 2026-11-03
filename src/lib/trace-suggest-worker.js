@@ -6,8 +6,7 @@ const started=new Map(),complete=new Set(),failed=new Set();
 const last={workplace:null,title:null};
 const resources={
   main:'/data/workplaces/main.json'+(import.meta.env.DEV?'/':''),
-  schools:'/data/workplaces/schools.json'+(import.meta.env.DEV?'/':''),
-  titles:'/data/job-titles.json'
+  schools:'/data/workplaces/schools.json'+(import.meta.env.DEV?'/':'')
 };
 
 function respond(field){
@@ -25,14 +24,11 @@ function load(key,field){
   const job=fetch(resources[key],{credentials:'omit'}).then(async response=>{
     if(!response.ok)throw new Error('Directory unavailable');
     const records=await response.json();
-    if(field==='title')titles=records;
-    else{
-      // Yield between batches so typing in the title field need not wait for
-      // the complete national schools catalog to finish indexing.
-      for(let i=0;i<records.rows.length;i+=3000){
-        workplace.add({...records,rows:records.rows.slice(i,i+3000)});
-        if(i+3000<records.rows.length)await new Promise(resolve=>setTimeout(resolve,0));
-      }
+    // Yield between batches so typing in the title field need not wait for
+    // the complete national schools catalog to finish indexing.
+    for(let i=0;i<records.rows.length;i+=3000){
+      workplace.add({...records,rows:records.rows.slice(i,i+3000)});
+      if(i+3000<records.rows.length)await new Promise(resolve=>setTimeout(resolve,0));
     }
     complete.add(key);respond(field);
   }).catch(()=>{failed.add(key);respond(field)});
@@ -40,10 +36,21 @@ function load(key,field){
 }
 self.onmessage=({data})=>{
   if(data.type==='configure'){professions=data.professions;return}
+  if(data.type==='title-directory'){
+    titles=data.directory || [];
+    (data.directory ? complete : failed).add('titles');
+    respond('title');return;
+  }
   const {field}=data;
   if(!Object.hasOwn(last,field))return;
   if(typeof data.query==='string'){last[field]=data.query;respond(field)}
-  if(field==='title'){load('titles',field);return}
+  if(field==='title'){
+    if(!started.has('titles')){
+      started.set('titles',true);
+      self.postMessage({type:'request-title-directory'});
+    }
+    return;
+  }
   // The catalog URLs are fixed, independent of characters the reader types.
   load('main','workplace').then(()=>load('schools','workplace'));
 };

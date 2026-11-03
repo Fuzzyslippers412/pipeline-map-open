@@ -17,7 +17,9 @@ const publicTrace=demo && {workplace:demo.workplace,title:demo.title,slug:demo.s
     <span data-copy-status role="status" class="example-copy-status"></span>
   </div>
   {alternate && !preview && <div class="personal-edition-switch"><a data-switch-edition data-route={alternate} href={alternate+'#path-preview'}>Try the new reading layout <span aria-hidden="true">→</span></a></div>}
-  <CareerTimeline profession={p.slug}/>
+  <CareerTimeline profession={p.slug}>
+    <p slot="field-scope" data-related-scope hidden class="related-scope"><strong>Related field history</strong> You chose the {p.name.toLowerCase()} record. Each milestone below describes that field. A link to your specific role or workplace needs its own source.</p>
+  </CareerTimeline>
   <SourceLookup/>
   <div class="personal-trace__foot">
     {alternate && preview && <a data-switch-edition data-route={alternate} href={alternate+'#path-preview'}>Open the original layout <span aria-hidden="true">→</span></a>}
@@ -50,6 +52,10 @@ if(panel){
   const render=()=>{
     const trace=isExample ? sample : readTrace();
     panel.hidden=!trace||trace.slug!==panel.dataset.profession;
+    const related = !panel.hidden && trace?.match === 'related';
+    panel.querySelector<HTMLElement>('[data-related-scope]')!.hidden = !related;
+    const chartNote = document.querySelector<HTMLElement>('[data-chart-scope]');
+    if (chartNote) chartNote.hidden = !related;
     if(!trace||panel.hidden){bindLookup(timeline,null);bindLookup(lookup,null);return}
     panel.querySelector('[data-edit-trace]')!.textContent=isExample?'Trace your own job':'Edit details';
     panel.querySelector<HTMLElement>('[data-clear-trace]')!.hidden=isExample;

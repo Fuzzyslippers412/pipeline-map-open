@@ -149,3 +149,15 @@
 
 .exercise-prompt { margin-bottom:14px; padding:10px 12px; border-left:3px solid var(--rust); color:var(--muted); font-size:.93rem; line-height:1.45; }
 .exercise-prompt strong { display:block; color:var(--text); }
+
+#match-kicker { color:var(--muted); font-size:.75rem; margin-bottom:8px; }
+.paper-edition #match-heading { margin:0; color:var(--text); font:500 clamp(31px,4vw,48px)/1.05 var(--serif); }
+#match-site { margin:5px 0; color:var(--muted); font-size:.95rem; }
+#match-message { max-width:62ch; line-height:1.5; }
+.paper-edition .trace-choice { color:var(--action); text-align:left; font-weight:650; padding:10px 14px; background:var(--panel); }
+.paper-edition .trace-choice:hover { background:var(--lift); }
+#manual-choice summary { width:fit-content; min-height:44px; color:var(--teal); cursor:pointer; }
+#manual-choice[open] label { margin-block:4px; }
+.match-gap { margin-block:12px; color:var(--muted); }
+
+#match-result { scroll-margin-top:12px; }

@@ -21,6 +21,7 @@ const hasAuthorityShortcut = ['/p/registered-nurse/','/p/electrician/'].includes
       <div class="eyebrow"><i></i> <span data-preview-kicker>CAREER PATH</span></div>
       <h2 id="path-preview-heading" class="path-preview-title" tabindex="-1">Your path at a glance</h2>
       <p class="path-preview-person" data-person></p><p class="path-preview-affiliation" data-workplace-info hidden></p>
+      <slot name="field-scope"/>
     </header>
     <div class="path-preview-sections" data-preview-sections hidden>
       {[

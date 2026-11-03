@@ -8,6 +8,7 @@ const seriesColours = paper ? ['#293d80', '#874536'] : colours;
 const optionLabel=(v)=>v.rows[0].measure_label||measures[v.measure];
 ---
 <section class="panel trend" id="trend"><div class="num">03</div><div class="panelmain"><div class="eyebrow">TREND <b>/</b> MEASURED</div><h2>Representation over time</h2>
+<p hidden class="related-scope" data-chart-scope>These figures describe the published {p.name.toLowerCase()} occupation. A separate measure would be needed for your specific job title.</p>
 {choices.length>0?<>{choices.length>1&&<label class="selector">Measure <select id="variant">{choices.map((v,i)=><option value={i}>{optionLabel(v)}</option>)}</select></label>}
 {choices.map((v,i)=>{const traces=['black_male','black_female'].map((g,i)=>({rows:v.rows.filter(r=>r.group===g),label:groups[g],colour:seriesColours[i],dash:i===1}));
 const defs=[...new Set(v.rows.map(r=>r.definition))];const grouped=defs.map(d=>{const yrs=v.rows.filter(r=>r.definition===d).map(r=>r.year);const low=Math.min(...yrs),high=Math.max(...yrs);return {definition:d,span:low===high?String(low):low+'–'+high};});const refs=[...new Set(v.rows.map(r=>r.source_id))];const years=v.rows.map(r=>r.year);

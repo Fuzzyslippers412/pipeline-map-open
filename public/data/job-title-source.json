@@ -12,6 +12,8 @@
       "sha256": "5d76040b7b0602ea217660648f8363e7980edd1870f96574a2eeaa6a822d2666",
       "sourceRows": 8189,
       "columnsUsed": [
+        "O*NET-SOC Code",
+        "Title",
         "Reported Job Title"
       ]
     },
@@ -21,11 +23,15 @@
       "sha256": "75a3b46d6edc5996117c10c9ed488c9a06f7495d02969e9d12873ab14a21540c",
       "sourceRows": 54269,
       "columnsUsed": [
+        "O*NET-SOC Code",
+        "Title",
         "Job Title",
-        "Short Title"
+        "Short Title",
+        "Source(s)"
       ]
     }
   ],
   "titleCount": 48330,
-  "changes": "Door Notes selects job, short and reported titles, removes duplicate spellings, and combines them with its own curated terms at search time. Project labels and profession matches are its own. USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA."
+  "occupationCount": 1016,
+  "changes": "Door Notes deduplicates title spellings, retaining all occupation links, title origins and source codes. Historical coverage and related-field labels are Door Notes editorial decisions. USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA."
 }

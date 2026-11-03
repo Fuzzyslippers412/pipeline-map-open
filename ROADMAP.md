@@ -2,6 +2,31 @@
 
 The useful test is personal: can someone name a person who opened access for Black workers, find the record, and tell how far it reaches toward the job they have today?
 
+## Matching the job people actually type
+
+One reader reported trouble tracing DevOps, site reliability, IT, and systems administration. On November 3, 2026, the live index returned zero professions for “devops eng”, “Site Reliability engineer”, and “system admin”. “IT” returned six unrelated profession cards. The job form suggested “Site Reliability Engineer”, then displayed “No field matched this job title” after selection. The index found the software card for “software Eng”, while the submitted abbreviation alone did not resolve.
+
+**1. Use one title resolver.** Keep the occupation codes, full titles, abbreviations, and source from the two O*NET files already imported. Retain every occupation associated with each title. The current 48,330-string autocomplete list drops those relationships. For example, O*NET lists DevOps Engineer under Software Developers, but Site Reliability Engineer under three occupations. Its short title “SRE” can also mean Software Requirements Engineer. These are classification facts, separate from historical evidence. Use the same resolver for the profession index, suggestions, and the submitted job form, including a compact local fallback for common titles. Keep the reader’s original title and exact workplace separate from the selected occupation. [O*NET job-title schema](https://www.onetcenter.org/dictionary/31.0/json/job_titles.html)
+
+**2. Give readers a useful result at each level of coverage.** An exact, supported job opens its history. A recognized occupation with only related history shows the occupation, labels the available history, and lets the reader choose whether to open it. A broad term prompts one question about duties. An uncovered title stays on screen with an explicit research gap and the existing workplace-source search. Only attach an employer milestone or a workforce chart when its own evidence supports the occupation and scope shown.
+
+| Reader types | Expected experience |
+| --- | --- |
+| devops eng / DevOps engineer | Recognize DevOps, retain the reader’s wording, and identify any reviewed computing history as related unless the event specifically names the specialty. |
+| Site Reliability engineer / SRE | Recognize the full title. O*NET associates it with several occupations. Ask about the work if the distinction changes the suggested path. For the initials, also allow other meanings. |
+| system admin / sysadmin | Recognize the shorthand and keep the title visible. If needed, ask whether they manage systems and networks or primarily administer databases. Both occupations occur under the O*NET alias. |
+| IT / regular IT | Ask which type of work they do: support people, run systems or networks, build software, secure systems, or something else. |
+| software Eng / software engineer | Open the existing software engineering path by typing, submitting, or selecting the suggestion. |
+| security engineer / software engineer recruiter | Clarify digital versus physical security when the title alone is ambiguous. A recruiting title must never inherit a software engineering trace on word overlap alone. |
+
+**3. Research the first missing IT paths.** Start with systems administration and software reliability. Identify a named Black worker, training program, or institutional decision with a primary source. Label broader computing history with its actual scope. Keep links to a particular specialty and workplace open until a record establishes them. One starting point is Joseph Thompson operating MIT’s Whirlwind computer in 1951. Use it as a documented example of Black work in computer operations. A connection to a modern SRE role or a particular employer needs its own source. [Computer History Museum account and oral history](https://computerhistory.org/stories/trailblazers-and-change-agents/)
+
+**Release gate.** Use the table as a fixture. Verify raw submission, keyboard selection, tapping a suggestion, and the index on a phone. All four reported misses must lead to an appropriate recognized role or a useful choice. No unrelated profession may be silently selected. Check that known roles such as registered nurse and electrician still resolve and that an unavailable autocomplete index leaves the typed title usable. Re-run the tester’s phrases with the tester after release. Record outcomes for the fixed fixtures and voluntarily shared test responses without logging visitors’ raw searches.
+
+The title resolver, duty choices, and computing operations record have been implemented. The next reader check is to repeat the reported searches on a phone and ask whether the reader can distinguish a field record from a documented workplace connection.
+
+## Research and reader testing
+
 | Priority | What to build or learn | Ready to advance when |
 | --- | --- | --- |
 | 1. Read the three workplace histories on a phone | Use the Atlanta teacher, Howard nurse, and Chicago electrician examples. Give five readers a link, no tour. Ask them to name someone, say what changed, open the source, and say what the source cannot tell them. Have each try an unlisted workplace, too. | At least four of five can complete those four tasks without prompting, and nobody mistakes a field milestone or a project listing for proof of their own hiring. Record where they hesitate; revise that step before promoting the previews. |

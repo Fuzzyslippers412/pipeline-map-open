@@ -59,7 +59,7 @@ test('exact-site funding can appear, parent awards and unverified leads cannot',
 
 test('unknown title, related field, employer omitted and load failure retain distinct boundaries',()=>{
  const noField=preview({title:'Bench technician',employer:'Workshop'},null);
- assert.match(noField.opening.title,/No field matched/);
+ assert.match(noField.opening.title,/history for this title is still open/);
  assert.deepEqual(noField.opening.sources,[]);assert.equal(noField.gaps.items.length,3);
  const failed=preview({title:'Nurse',employer:'Workshop',profession:'registered-nurse'},null,null,true);
  assert.match(failed.opening.detail,/could not be loaded/);

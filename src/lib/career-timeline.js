@@ -73,7 +73,7 @@ export function buildCareerTimeline({context,field,report=null,loadFailed=false,
     (a.order??Infinity)-(b.order??Infinity)||a.title.localeCompare(b.title));
   if(!history.length){
     events.unshift(gap('The opening of this field is undocumented here',
-      loadFailed?'The profession record could not be loaded.':field?'This edition has no verified historical milestone for this field.':'There is no matched profession history for the title you entered.'));
+      loadFailed?'The profession record could not be loaded.':field?'This edition has no verified historical milestone for this field.':'Door Notes hasn’t yet linked a reviewed field history to your title.'));
   }
   const hasWorkplace=employerEvents.length+awards.length>0;
   const leadCount=(report?.results||[]).filter(r=>r.kind==='lead').length;

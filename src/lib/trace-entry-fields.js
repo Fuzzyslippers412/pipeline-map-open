@@ -1,6 +1,8 @@
 import {attachTraceCombobox} from './trace-combobox.js';
 import {WorkplaceSearch,packDirectory} from './workplace-search.js';
 import {searchRecipientNames} from './recipient-directory.js';
+import {suggestJobTitles} from './title-suggestions.js';
+import {loadTitleDirectory,resolveTitle} from './title-resolver.js';
 
 export function setupTraceEntryFields(form,catalog,quickWorkplaces){
   const quick=new WorkplaceSearch();quick.add(packDirectory(quickWorkplaces));
@@ -13,7 +15,7 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
   const titleHint=document.querySelector('#title-affiliation');
   const more=document.querySelector('#more-workplaces'),moreButton=document.querySelector('#search-federal-workplaces');
   const moreStatus=document.querySelector('#federal-status'),moreRows=document.querySelector('#federal-results');
-  let selected=null,worker=null,external=null;
+  let selected=null,selectedTitle=null,worker=null,external=null,titleDirectory=null;
 
   function hint(node,text){node.textContent=text||'';node.hidden=!text}
   function updateFederalVisibility(){
@@ -39,6 +41,14 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
     }catch{state.workplace=state.title='unavailable';return null}
     worker.postMessage({type:'configure',professions:catalog});
     worker.onmessage=({data})=>{
+      if(data.type==='request-title-directory'){
+        const requestingWorker=worker;
+        loadTitleDirectory().then(directory=>{
+          titleDirectory=directory;
+          requestingWorker?.postMessage({type:'title-directory',directory});
+        });
+        return;
+      }
       if(data.type!=='matches'||data.query!==current[data.field])return;
       cache[data.field]=data.options;state[data.field]=data.state;
       if(data.field==='workplace')updateFederalVisibility();
@@ -55,15 +65,23 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
       ensureWorker()?.postMessage({field,query:text});
     }
     if(field==='workplace' && state[field]!=='ready' && !cache[field]?.length)return quick.search(text);
+    if(field==='title' && state.title!=='ready' && !cache.title?.length){
+      return suggestJobTitles(text,catalog).map(row=>({key:row.title,value:row.title,label:row.label,detail:row.subtitle,slug:row.slug}));
+    }
     return cache[field]||[];
   }
   for(const [field,input] of Object.entries(fields)){
     controls[field]=attachTraceCombobox({
       input,popup:form.querySelector('#'+field+'-suggestions'),status:form.querySelector('#'+field+'-announcements'),
       getOptions:text=>options(field,text),getState:()=>state[field],
-      onPick:option=>{
+      onPick:(option,committed,typed)=>{
         if(field==='workplace')setWorkplace(option);
-        else hint(titleHint,option?.detail||'');
+        else {
+          const original=typed.trim();
+          const recognized=option && resolveTitle(original,catalog,titleDirectory).kind!=='unknown';
+          selectedTitle=option ? {typed:recognized ? original : committed.trim(),lookup:committed.trim()} : null;
+          hint(titleHint,option?.detail||'');
+        }
       },
     });
     input.addEventListener('focus',()=>{
@@ -76,7 +94,7 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
     moreButton.disabled=fields.workplace.value.trim().length<2;
   }
   fields.workplace.addEventListener('input',()=>{setWorkplace(null);clearExternal()});
-  fields.title.addEventListener('input',()=>hint(titleHint,''));
+  fields.title.addEventListener('input',()=>{selectedTitle=null;hint(titleHint,'')});
   more.addEventListener('toggle',()=>{if(!more.open)clearExternal()});
   moreButton.addEventListener('click',async()=>{
     clearExternal();
@@ -104,6 +122,12 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
   });
   return {
     get workplaceInfo(){return selected},
+    get titleSelection(){return selectedTitle},
+    selectTitle(typed,lookup){
+      selectedTitle=lookup ? {typed,lookup} : null;
+      hint(titleHint,lookup && lookup!==typed ? 'Selected title: '+lookup : '');
+      controls.title.close();
+    },
     example(name,site=null){
       this.clear();fields.workplace.value=name;
       if(site && site.name===name){setWorkplace({...site,value:name});return}
@@ -119,7 +143,7 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
       clearExternal();
     },
     clear(){
-      setWorkplace(null);hint(titleHint,'');controls.workplace.close();controls.title.close();clearExternal();
+      selectedTitle=null;setWorkplace(null);hint(titleHint,'');controls.workplace.close();controls.title.close();clearExternal();
     },
   };
 }

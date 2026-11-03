@@ -18,6 +18,8 @@ The build validates five relational tables, writes a SQLite database and CSV, ge
 
 The trace form suggests exact worksites and job titles after two characters. It searches site-hosted directory snapshots in a Web Worker. Parent organizations, districts and systems are displayed only where identified by the source and are not substituted for the chosen employer in research. Keyboard or pointer selections are optional. Both fields accept the reader’s own words, including titles outside the profession index. A separate, explicitly requested federal-recipient search sends the workplace term to USAspending.
 
+The trace form and profession index use the same occupation resolver. The local O*NET title directory retains multiple occupation codes for one spelling. Recognized titles can open a published record, point to a related field, ask a clarifying question about duties, or show the limits of historical coverage. Computing results include a credited historical record and a source specific to the work selected. Personal entries and decisions stay in the tab.
+
 See [workplace directory sources](data/WORKPLACES.md) and [O*NET® job-title sources and attribution](data/JOB-TITLES.md).
 
 ## Career timelines

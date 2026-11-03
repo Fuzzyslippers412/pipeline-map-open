@@ -33,3 +33,22 @@ test('unmapped entries survive refresh with their exact employer, never the pare
  assert.equal(readTrace().workplaceInfo,null);
  clearTrace();assert.equal(readTrace(),null);delete globalThis.window;
 });
+
+test('a selected occupation and its clarification survive a round trip to related history',()=>{
+ const values = new Map();
+ globalThis.window = {sessionStorage:{getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)}};
+ try {
+  const choicePath = ['Keeping software services reliable'];
+  const draft = {title:'SRE',lookupTitle:'Site Reliability Engineer',choicePath,workplace:'An unlisted office'};
+  for(const [match,slug] of [['unmapped',''],['related','software-engineer']]){
+   assert.equal(saveTrace({...draft,match,slug}),true);
+   const trace = readTrace();
+   assert.equal(trace.title,'SRE');
+   assert.equal(trace.lookupTitle,'Site Reliability Engineer');
+   assert.deepEqual(trace.choicePath,choicePath);
+   assert.equal(trace.workplace,draft.workplace);
+  }
+ } finally {
+  delete globalThis.window;
+ }
+});

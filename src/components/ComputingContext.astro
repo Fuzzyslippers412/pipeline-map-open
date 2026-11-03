@@ -1,0 +1,42 @@
+<section class="computing-record" data-computing-context hidden aria-labelledby="computing-record-title">
+  <p class="record-label">From the history of Black workers in computing</p>
+  <h3 id="computing-record-title">Joseph Thompson runs MIT’s Whirlwind computer</h3>
+  <div class="field-record">
+    <p class="record-date"><time datetime="1951">1951</time><span>Cambridge, Massachusetts</span></p>
+    <div>
+      <p>MIT interviewed students from nearby high schools and chose Joseph Thompson to operate Whirlwind. Jack Gilmore trained him to run programs from punched tape. Thompson worked nights and studied at MIT.</p>
+      <div class="record-links">
+        <a href="https://archive.computerhistory.org/resources/access/text/2019/02/102738731-05-01-acc.pdf#page=8" target="_blank" rel="noopener noreferrer">Thompson’s oral history, pp. 8–10 ↗</a>
+        <a href="https://computerhistory.org/stories/trailblazers-and-change-agents/#joethompson" target="_blank" rel="noopener noreferrer">Computer History Museum profile ↗</a>
+      </div>
+    </div>
+  </div>
+  <section class="present-record" data-computing-role hidden>
+    <h4 data-role-heading></h4>
+    <p data-role-detail></p>
+    <a data-role-source target="_blank" rel="noopener noreferrer"></a>
+  </section>
+  <p class="record-gap"><strong>The open question</strong><span data-computing-gap></span></p>
+</section>
+<style>
+  .computing-record { margin-block:18px 12px; padding:clamp(12px,2.2vw,22px); border-block:1px solid var(--edge); overflow-wrap:anywhere; color:var(--text); }
+  .computing-record[hidden], .computing-record [hidden] { display:none; }
+  .record-label { margin:0 0 5px; color:var(--muted); font:650 .76rem/1.4 var(--sans); letter-spacing:.045em; text-transform:uppercase; }
+  .computing-record h3 { margin:0; color:var(--text); font:500 clamp(1.45rem,3vw,2rem)/1.1 var(--serif); letter-spacing:-.025em; }
+  .field-record { display:grid; grid-template-columns:minmax(95px,145px) minmax(0,1fr); align-items:start; gap:10px 24px; margin-top:12px; }
+  .computing-record p { max-width:67ch; }
+  .field-record p, .present-record p { margin:0; line-height:1.5; }
+  .field-record .record-date { display:grid; gap:2px; color:var(--muted); font:.83rem/1.45 var(--sans); }
+  .record-date time { color:var(--rust,var(--teal)); font:500 1.65rem/1.1 var(--serif); }
+  .record-links { display:flex; flex-wrap:wrap; gap:0 18px; }
+  .computing-record a { display:inline-flex; align-items:center; min-height:44px; color:var(--action,var(--teal)); font-size:.9rem; font-weight:650; text-decoration:underline; text-underline-offset:.17em; }
+  .computing-record a:focus-visible { outline:2px solid currentColor; outline-offset:2px; }
+  .present-record { border-top:1px solid var(--edge); padding-top:10px; margin-top:7px; }
+  .present-record h4 { margin:0 0 3px; color:var(--text); font:650 1rem/1.35 var(--sans); }
+  .record-gap { border-left:2px dotted var(--soft); margin:10px 0 0; padding-left:12px; font-size:.94rem; line-height:1.45; color:var(--muted); }
+  .record-gap strong { display:block; color:var(--text); }
+  @media(max-width:550px) {
+    .field-record { grid-template-columns:1fr; row-gap:6px; }
+    .field-record .record-date { display:flex; flex-wrap:wrap; align-items:baseline; column-gap:10px; }
+  }
+</style>

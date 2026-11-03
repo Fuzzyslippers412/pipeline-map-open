@@ -11,6 +11,7 @@ import SourceLookup from './SourceLookup.astro';
 import ClassicTraceEntry from './ClassicTraceEntry.astro';
 const originalEdition = Astro.url.pathname.startsWith('/study/original/');
 import CareerTimeline from './CareerTimeline.astro';
+import ComputingContext from './ComputingContext.astro';
 import '../styles/trace-start.css';
 import '../styles/trace-combobox.css';
 ---
@@ -76,17 +77,29 @@ import '../styles/trace-combobox.css';
     <noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript>
   </div>
 </section>}
-<section id="match-result" data-timeline-scope aria-label="Career path result" hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
-<CareerTimeline/>
-<SourceLookup/>
-<div id="manual-choice" hidden><label for="manual-profession">Choose a profession to explore</label><select id="manual-profession"><option value="">Select a profession…</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select><button type="button" id="manual-open" class="secondary" disabled>Trace this profession →</button></div>
-<a href="#trace" class="edit-trace-entry">Edit workplace or title ↑</a>
+<section id="match-result" data-timeline-scope aria-labelledby="match-heading" hidden>
+  <p id="match-kicker" class="eyebrow"></p>
+  <h2 id="match-heading" tabindex="-1"></h2>
+  <p id="match-site" hidden></p>
+  <p id="match-message"></p>
+  <div id="suggested-paths"></div>
+  <ComputingContext/>
+  <CareerTimeline/>
+  <SourceLookup/>
+  <details id="manual-choice" hidden>
+    <summary>Explore another field’s history</summary>
+    <label for="manual-profession">Choose a published field</label>
+    <select id="manual-profession"><option value="">Select a field…</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select>
+    <button type="button" id="manual-open" class="secondary" disabled>Read this related history →</button>
+  </details>
+  <a href="#trace" class="edit-trace-entry">Edit workplace or title ↑</a>
 </section>
 <script type="application/json" id="quick-workplaces" set:html={JSON.stringify(quickWorkplaces).replace(/</g,'\\u003c')}></script>
 <script>
 import {setupTraceEntryFields} from '../lib/trace-entry-fields.js';
 import {bindLookup,revealTimelinePreview} from '../lib/bind-lookup.js';
-import {matchJobTitle} from '../lib/job-match.js';
+import {resolveTitle,loadTitleDirectory} from '../lib/title-resolver.js';
+import {showComputingContext} from '../lib/computing-context.js';
 import {saveTrace,readTrace,clearTrace} from '../lib/trace-context.js';
 const catalog=JSON.parse(document.querySelector('#search-index')!.textContent!);
 const form=document.querySelector<HTMLFormElement>('#job-trace-form')!;
@@ -101,64 +114,221 @@ const lookup=result.querySelector('pipeline-source-lookup');
 const timeline=result.querySelector('pipeline-career-timeline');
 const quickWorkplaces=JSON.parse(document.querySelector('#quick-workplaces')!.textContent!);
 const entries=setupTraceEntryFields(form,catalog,quickWorkplaces);
-function researchHere(profession='',related=false){
- const context={employer:employer.value.trim(),title:job.value.trim(),profession,related,workplaceInfo:entries.workplaceInfo};
- bindLookup(timeline,context);bindLookup(lookup,{...context,profession:related?'':profession});
-}
-const manual=document.querySelector<HTMLElement>('#manual-choice')!;
-const select=document.querySelector<HTMLSelectElement>('#manual-profession')!;
-const manualOpen=document.querySelector<HTMLButtonElement>('#manual-open')!;
-const savedFields=(restoring=false)=>{
- const saved=readTrace();
- if(restoring||!employer.value)employer.value=saved?.workplace||'';
- if(restoring||!job.value)job.value=saved?.title||'';
- entries.restore(saved?.workplaceInfo);
- reset.hidden=!employer.value&&!job.value;
- if(saved?.match==='unmapped' && saved.title===job.value && saved.workplace===employer.value){showUnmapped();researchHere();manual.hidden=false}
+type Resolution = {
+  kind: 'exact'|'choices'|'related'|'recognized'|'unknown';
+  title: string;
+  slug?: string;
+  occupation?: string;
+  computing?: boolean;
+  contextKey?: string;
+  question?: string;
+  choices?: {label:string;result:Resolution}[];
 };
-function clearResults(){bindLookup(timeline,null);bindLookup(lookup,null);result.hidden=true;manual.hidden=true;select.value='';manualOpen.disabled=true;choices.replaceChildren();job.setCustomValidity('')}
-function showResult(title:string,description:string){
- result.hidden=false;heading.textContent=title;message.textContent=description;heading.focus();
+type Draft = {title:string;lookupTitle:string;choicePath:string[]};
+const kicker = document.querySelector<HTMLElement>('#match-kicker')!;
+const siteLabel = document.querySelector<HTMLElement>('#match-site')!;
+const manual = document.querySelector<HTMLDetailsElement>('#manual-choice')!;
+const select = document.querySelector<HTMLSelectElement>('#manual-profession')!;
+const manualOpen = document.querySelector<HTMLButtonElement>('#manual-open')!;
+const note = result.querySelector<HTMLElement>('[data-computing-context]');
+let generation = 0;
+let activeDraft: Draft | null = null;
+
+function clearResults() {
+  generation++;
+  activeDraft = null;
+  bindLookup(timeline,null);
+  bindLookup(lookup,null);
+  showComputingContext(note,null);
+  result.hidden = true;
+  manual.hidden = true;
+  manual.open = false;
+  select.value = '';
+  manualOpen.disabled = true;
+  choices.replaceChildren();
+  result.querySelector('[data-match-gap]')?.remove();
+  job.setCustomValidity('');
 }
-function openRecord(slug:string,match='title'){
- const record=catalog.find((p:any)=>p.slug===slug);
- if(!record||!job.value.trim())return;
- const originalTeacher=location.pathname.startsWith('/study/original/') && record.slug==='k12-teacher';
- const url=(originalTeacher?'/study/original/p/':'/p/')+record.slug+'/';
- if(saveTrace({title:job.value,workplace:employer.value,slug:record.slug,match,workplaceInfo:entries.workplaceInfo})){location.assign(url+'#path-preview');return}
- choices.replaceChildren();manual.hidden=true;
- showResult('Your profession is '+record.name,'You can research this workplace here or open the public profession record.');researchHere(record.slug,match==='related');revealTimelinePreview(timeline);
- const link=document.createElement('a');link.className='secondary';link.href=url;link.textContent='Open '+record.name+' →';choices.append(link);
+
+function currentDraft(): Draft {
+  const selection = entries.titleSelection;
+  const value = job.value.trim();
+  return {title:selection?.typed || value, lookupTitle:selection?.lookup || value, choicePath:[]};
 }
-function showUnmapped(){
- showResult('Your path from this job',employer.value.trim()?'This title has no national profession card yet. Your timeline keeps the job and workplace you entered and shows where evidence is missing.':'Add a workplace to research this title, or explore a related profession.');
+
+function contextFor(draft:Draft, profession='', related=false) {
+  return {title:draft.title, employer:employer.value.trim(), profession, related, workplaceInfo:entries.workplaceInfo};
 }
-form.addEventListener('submit',event=>{
- event.preventDefault();clearResults();const text=job.value.trim();
- if(!text){job.setCustomValidity('Enter your job title.');job.reportValidity();return}
- const matches=matchJobTitle(text,catalog);
- if(matches.length===1){openRecord(matches[0].slug);return}
- if(matches.length){
-  for(const match of matches){
-   const button=document.createElement('button');button.type='button';button.className='trace-choice';button.textContent=match.name+' →';button.title=match.reason;button.addEventListener('click',()=>openRecord(match.slug));choices.append(button);
+
+function remember(draft:Draft, slug='', match='unmapped') {
+  return saveTrace({...draft, workplace:employer.value.trim(), workplaceInfo:entries.workplaceInfo, slug, match});
+}
+
+function showResult(draft:Draft, badge:string, description:string, focus:boolean) {
+  result.hidden = false;
+  kicker.textContent = badge;
+  heading.textContent = draft.title;
+  siteLabel.hidden = !employer.value.trim();
+  siteLabel.textContent = siteLabel.hidden ? '' : 'At ' + employer.value.trim();
+  message.textContent = description;
+  if(focus) {
+    heading.focus({preventScroll:true});
+    result.scrollIntoView({block:'start',behavior:'instant'});
   }
-  showResult('Which path fits your work?','This job title can belong to more than one profession. Choose the field whose history you want to trace.');
- }else{
-  showUnmapped();
-  saveTrace({title:job.value,workplace:employer.value,slug:'',match:'unmapped',workplaceInfo:entries.workplaceInfo});
- }
- researchHere();manual.hidden=false;
- if(matches.length===0)revealTimelinePreview(timeline);
+}
+
+function addChoice(label:string, action:()=>void) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'trace-choice';
+  button.textContent = label;
+  button.addEventListener('click', action);
+  choices.append(button);
+}
+
+function openRecord(draft:Draft, slug:string, match='title') {
+  const record = catalog.find((row:{slug:string}) => row.slug===slug);
+  if(!record) return;
+  const originalTeacher = location.pathname.startsWith('/study/original/') && slug==='k12-teacher';
+  const url = (originalTeacher ? '/study/original/p/' : '/p/') + slug + '/';
+  if(remember(draft,slug,match)) {
+    location.assign(url+'#path-preview');
+    return;
+  }
+
+  // Storage can be blocked. The same trace and evidence stay available in this tab.
+  clearResults();
+  activeDraft = draft;
+  showResult(draft, match==='related' ? 'Related field' : 'Matched profession', 'Read the '+record.name+' history below.', true);
+  const context = contextFor(draft,slug,match==='related');
+  bindLookup(timeline,context);
+  bindLookup(lookup,{...context,profession:context.related ? '' : slug});
+  revealTimelinePreview(timeline);
+  const link = document.createElement('a');
+  link.href = url;
+  link.className = 'trace-choice';
+  link.textContent = 'Open the public '+record.name+' record →';
+  choices.append(link);
+}
+
+function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, directoryUnavailable=false) {
+  clearResults();
+  activeDraft = draft;
+  if(focus) remember(draft);
+  const workplace = employer.value.trim();
+  const context = contextFor(draft);
+  switch(resolution.kind) {
+    case 'exact': {
+      const record = catalog.find((row:{slug:string}) => row.slug===resolution.slug);
+      if(record && focus) { openRecord(draft,record.slug); return; }
+      showResult(draft,'Matched profession','This title matches a published profession.',focus);
+      if(record) addChoice('Open '+record.name+' →',()=>openRecord(draft,record.slug));
+      return;
+    }
+    case 'choices': {
+      showResult(draft,'Choose a path',resolution.question || 'Which kind of work do you do?',focus);
+      for(const option of resolution.choices || []) {
+        addChoice(option.label,()=>{
+          renderResolution(option.result,{...draft,choicePath:[...draft.choicePath,option.label]},true);
+        });
+      }
+      return;
+    }
+    case 'related':
+    case 'recognized': {
+      const occupation = resolution.occupation || resolution.title;
+      const record = catalog.find((row:{slug:string}) => row.slug===resolution.slug);
+      const fieldName = record?.slug==='software-engineer' ? 'software engineering' : record?.name.toLowerCase();
+      const detail = record ? 'Explore '+fieldName+' as a related field.' : 'Door Notes hasn’t published a history specific to this role yet.';
+      showResult(draft,'Occupation recognized',occupation + '. ' + detail,focus);
+      if(record) addChoice('Read the '+fieldName+' history →',()=>openRecord(draft,record.slug,'related'));
+      if(resolution.computing) {
+        showComputingContext(note,{...context,computing:true,contextKey:resolution.contextKey,canonicalTitle:resolution.title,occupation});
+      } else if(workplace) {
+        const gap = document.createElement('p');
+        gap.className = 'match-gap';
+        gap.textContent = 'A connection to '+workplace+' still needs a source.';
+        choices.after(gap);
+        gap.dataset.matchGap = '';
+      }
+      break;
+    }
+    default:
+      showResult(draft,'Your job title',directoryUnavailable
+        ? 'The full title directory is unavailable. You can still use your wording, search workplace sources, or select a related field.'
+        : 'Door Notes hasn’t matched this title to a reviewed history. You can explore a related field or look for a workplace source.',focus);
+      bindLookup(timeline,context);
+  }
+
+  bindLookup(lookup,context);
+  manual.hidden = false;
+}
+
+async function resolveDraft(draft:Draft, focus=true) {
+  clearResults();
+  const request = generation;
+  let directoryUnavailable = false;
+  let resolution = resolveTitle(draft.lookupTitle,catalog) as Resolution;
+  if(resolution.kind==='unknown') {
+    showResult(draft,'Checking the title directory','Looking up this occupation…',false);
+    const directory = await loadTitleDirectory();
+    if(request!==generation) return;
+    directoryUnavailable = !directory;
+    resolution = resolveTitle(draft.lookupTitle,catalog,directory) as Resolution;
+  }
+  const restoredPath:string[] = [];
+  for(const label of draft.choicePath) {
+    const option = resolution.choices?.find(row=>row.label===label);
+    if(!option) break;
+    restoredPath.push(label);
+    resolution = option.result;
+  }
+  renderResolution(resolution,{...draft,choicePath:restoredPath},focus,directoryUnavailable);
+}
+
+function savedFields(restoring=false) {
+  const saved = readTrace();
+  if(restoring || !employer.value) employer.value = saved?.workplace || '';
+  if(restoring || !job.value) job.value = saved?.title || '';
+  entries.restore(saved?.workplaceInfo);
+  entries.selectTitle(job.value,saved?.lookupTitle || '');
+  reset.hidden = !employer.value && !job.value;
+  const hadInlineResult = saved && (saved.match==='unmapped' || saved.match==='related' || saved.choicePath?.length);
+  if(hadInlineResult && saved.title===job.value && saved.workplace===employer.value) {
+    void resolveDraft({title:saved.title,lookupTitle:saved.lookupTitle || saved.title,choicePath:saved.choicePath || []},false);
+  }
+}
+
+form.addEventListener('submit',event=>{
+  event.preventDefault();
+  if(!job.value.trim()) {
+    job.setCustomValidity('Enter your job title.');
+    job.reportValidity();
+    return;
+  }
+  void resolveDraft(currentDraft());
 });
 select.addEventListener('change',()=>manualOpen.disabled=!select.value);
-manualOpen.addEventListener('click',()=>openRecord(select.value,'related'));
+manualOpen.addEventListener('click',()=>openRecord(activeDraft || currentDraft(),select.value,'related'));
 form.addEventListener('input',()=>{
- clearResults();
- const saved=readTrace();
- if(saved&&(saved.title!==job.value.trim()||saved.workplace!==employer.value.trim()))clearTrace();
- reset.hidden=!job.value&&!employer.value;
+  clearResults();
+  const saved = readTrace();
+  if(saved && (saved.title!==job.value.trim() || saved.workplace!==employer.value.trim())) clearTrace();
+  reset.hidden = !job.value && !employer.value;
 });
-reset.addEventListener('click',()=>{document.querySelector<HTMLElement>('#exercise-prompt')?.setAttribute('hidden','');clearTrace();form.reset();entries.clear();clearResults();reset.hidden=true;employer.focus()});
+document.addEventListener('doornotes:trace-title',event=>{
+  const detail = (event as CustomEvent).detail;
+  if(typeof detail?.title!=='string' || !detail.title.trim()) return;
+  job.value = detail.title.trim().slice(0,120);
+  job.dispatchEvent(new Event('input',{bubbles:true}));
+  entries.selectTitle(job.value,typeof detail.lookupTitle==='string' ? detail.lookupTitle.trim().slice(0,120) : '');
+  form.requestSubmit();
+});
+reset.addEventListener('click',()=>{
+  document.querySelector<HTMLElement>('#exercise-prompt')?.setAttribute('hidden','');
+  clearTrace(); form.reset(); entries.clear(); clearResults();
+  reset.hidden=true; employer.focus();
+});
 for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-example [data-example]')){
   button.disabled=false;
   button.addEventListener('click',()=>{

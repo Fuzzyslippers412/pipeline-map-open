@@ -10,3 +10,6 @@
 .example-copy-status:empty { display:none; }
 
 .personal-edition-switch a { display:inline-flex; align-items:center; gap:5px; min-height:44px; color:var(--teal); text-decoration:underline; text-underline-offset:3px; font-size:.9rem; }
+
+.related-scope { margin:8px 0; padding:8px 12px; border-inline-start:2px solid var(--teal); font-size:.94rem; line-height:1.45; color:var(--muted); }
+.related-scope strong { display:block; color:var(--text); }

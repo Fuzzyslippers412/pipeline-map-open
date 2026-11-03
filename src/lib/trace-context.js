@@ -18,7 +18,14 @@ function cleanTrace(value) {
   const workplaceInfo=workplace && info?.workplace===workplace ? {
     workplace,parent:boundedText(info.parent,200),relation:boundedText(info.relation,70),location:boundedText(info.location,160)
   } : null;
-  return { title, workplace, slug, match, workplaceInfo };
+  const trace = {title, workplace, slug, match, workplaceInfo};
+  const lookupTitle = boundedText(value.lookupTitle, 120);
+  if (lookupTitle && lookupTitle !== title) trace.lookupTitle = lookupTitle;
+  if (Array.isArray(value.choicePath)) {
+    const path = value.choicePath.slice(0, 4).map(label => boundedText(label, 120)).filter(Boolean);
+    if (path.length) trace.choicePath = path;
+  }
+  return trace;
 }
 
 export function readTrace() {

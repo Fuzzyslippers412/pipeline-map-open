@@ -6,7 +6,7 @@ function openingPreview(steps,context,loadFailed) {
   const opening=steps.find(step=>step.type==='history' && step.sources.length);
   if(!opening){
     if(loadFailed)return {title:'Field history unavailable',detail:'The profession record could not be loaded.',date:'',sources:[]};
-    if(!context.profession)return {title:'No field matched this job title',detail:'This title has no profession history in this edition.',date:'',sources:[]};
+    if(!context.profession)return {title:'A history for this title is still open',detail:'Door Notes hasn’t yet linked a published field history to your title.',date:'',sources:[]};
     return {title:'No sourced opening in this field yet',detail:'The profession record contains no verified historical milestone.',date:'',sources:[]};
   }
   const sentence=firstSentence(opening.detail);
@@ -77,7 +77,7 @@ export function buildTimelinePreview({steps,context,loadFailed=false,report=null
   const workplace=localPair ? reviewedWorkplace(localWorkplace,steps.filter(step=>step.type==='employer')) :
     workplacePreview(steps,context,loadFailed,report);
   const gaps={};
-  if(!opening.sources.length)gaps.opening=loadFailed?'Field history could not be checked.':'An opening for this job title is undocumented.';
+  if(!opening.sources.length)gaps.opening=loadFailed?'Field history could not be checked.':'A source is still needed for who opened access to this role.';
   if(!context.employer)gaps.workplace='No workplace was entered for this trace.';
   else{
     gaps.workplace=workplace.sources.length?

@@ -102,6 +102,14 @@ metadata(docHome,'/','/cover.png');
 await verifyImage('/cover.png');
 expectEl(docHome,'role','combobox','Missing profession search');
 const search=JSON.parse(text(expectEl(docHome,'id','search-index')));
+expectEl(docHome,'id','index-search');
+expectEl(docHome,'id','directory-match');
+expectEl(docHome,'id','computing-record-title');
+const directoryPath='/data/job-occupations.json';
+assert.ok(files.has(directoryPath),'Missing job occupations in the published build');
+const occupationalData=JSON.parse(await fs.readFile(disk(directoryPath),'utf8'));
+assert.equal(occupationalData.version,1);
+assert.ok(occupationalData.entries.length>40000 && occupationalData.occupations.length>900,'Incomplete occupational directory');
 assert.equal(search.length,20);
 for(const p of professions) {
   assert.ok(hasHref(docHome,'/p/'+p.slug+'/'),p.slug+' missing index link');

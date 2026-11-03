@@ -109,6 +109,7 @@ export function attachTraceCombobox({input, popup, status, getOptions, onPick, g
   function choose(index) {
     if (index < 0 || index > matches.length || popup.hidden) return;
     const option = matches[index] || null;
+    const previouslyTypedText = input.value;
     if (option) input.value = option.value;
     selected = optionKey(option);
     const exactText = input.value;
@@ -119,7 +120,7 @@ export function attachTraceCombobox({input, popup, status, getOptions, onPick, g
     } finally {
       committing = false;
     }
-    onPick?.(option, exactText);
+    onPick?.(option, exactText, previouslyTypedText);
     announce(option ? (option.label || option.value) + ' selected.' : 'Using the text you entered.');
   }
 
