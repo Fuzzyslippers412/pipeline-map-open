@@ -11,7 +11,7 @@ function openingPreview(steps,context,loadFailed) {
   }
   const sentence=firstSentence(opening.detail);
   const detail=context.related ? 'From the related field you selected. '+sentence : sentence;
-  return {title:opening.title,detail,date:opening.date,sources:opening.sources};
+  return {title:opening.title,detail,date:opening.date,place:opening.place,sources:opening.sources};
 }
 
 // Keep a complete source-backed sentence; dates and proper names must not be
@@ -42,7 +42,7 @@ function reviewedWorkplace(step,matches) {
     Number.isFinite(row.order) && row.order<step.order &&
     (' '+normalizeEmployerText(row.title+' '+row.detail)+' ').includes(' '+predecessor+' '));
   const sources=prior ? [...new Map([...step.sources,...prior.sources].map(source=>[source.url,source])).values()] : step.sources;
-  return {title:step.title,detail:firstSentence(prior ? prior.detail : step.detail),date:step.date,sources};
+  return {title:step.title,detail:firstSentence(prior ? prior.detail : step.detail),date:step.date,place:step.place,scope:step.scope,sources};
 }
 
 function workplacePreview(steps,context,loadFailed,report) {
@@ -83,4 +83,33 @@ export function buildTimelinePreview({steps,context,loadFailed=false,report=null
     title:items.length+(items.length===1?' gap':' gaps')+' in the record',
     detail:'',items,kinds:Object.keys(gaps),
   }};
+}
+
+// The paper edition shortens a dated record only when its title and place
+// already describe the event. Preserve the date basis of funding records and
+// the diagnostic text for unavailable, partial or inconclusive searches.
+export function schoolRecordPreview(preview,context,{report=null,loadFailed=false}={}) {
+  const {opening,workplace,gaps}=preview;
+  const hasSchool=Boolean(context.employer);
+  const hasWorkplaceRecord=workplace.sources.length>0;
+  const hasGap=hasSchool && !hasWorkplaceRecord;
+  const schoolGap='We haven’t found a record connecting this history to your school.';
+  const district=workplace.scope==='district';
+  const schoolTitle=hasGap ? (loadFailed?'School records unavailable':schoolGap) : workplace.title;
+  const statements={
+    workplace: hasWorkplaceRecord
+      ? (district?'A district record does not establish what happened at a particular school.':'No source here connects the two records.')
+      : (!hasSchool?'No school was entered.':(loadFailed?'The school records could not be checked.':'A board decision or staff record could help establish the school connection.')),
+    route:'Your own training and hiring route is still unknown.'
+  };
+  return {
+    opening:{...opening,detail:opening.place?'':opening.detail},
+    workplace:{
+      ...workplace,title:schoolTitle,
+      detail:(workplace.place && workplace.scope==='school') || (hasGap && !report && !loadFailed) ? '' : workplace.detail,
+      label:district?'District record':workplace.scope==='school'?'At your school':hasWorkplaceRecord?'Workplace funding':'Your school',
+      showSearch:hasGap && !loadFailed,
+    },
+    gaps:{...gaps,items:gaps.items.map((item,index)=>statements[gaps.kinds[index]]??item)}
+  };
 }

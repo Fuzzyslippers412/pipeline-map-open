@@ -10,7 +10,7 @@ const publicTrace=demo && {workplace:demo.workplace,title:demo.title,slug:demo.s
 ---
 <section class="personal-trace" id="personal-trace" data-timeline-scope data-profession={p.slug} data-public-example={publicTrace && JSON.stringify(publicTrace)} aria-label="Your career timeline" hidden>
   <div class="personal-trace__tools">
-    <a href="/#trace" data-edit-trace>Edit details</a><button type="button" data-clear-trace>Clear trace</button>
+    <a href={Astro.url.pathname.startsWith('/study/original/') ? '/study/original/#trace' : '/#trace'} data-edit-trace>Edit details</a><button type="button" data-clear-trace>Clear trace</button>
   </div>
   <CareerTimeline profession={p.slug}/>
   <SourceLookup/>

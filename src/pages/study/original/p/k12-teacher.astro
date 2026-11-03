@@ -1,0 +1,6 @@
+---
+import Profession from '../../../p/[slug].astro';
+import { professions } from '../../../../lib/model';
+const teacher = professions.find(item => item.slug === 'k12-teacher');
+---
+<Profession p={teacher}/>

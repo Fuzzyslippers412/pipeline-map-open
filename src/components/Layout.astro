@@ -1,27 +1,38 @@
 ---
 import '../styles/site.css';
+import '../styles/paper-edition.css';
 import '@fontsource-variable/manrope';
 import '@fontsource/newsreader/latin-500.css';
 import '@fontsource/ibm-plex-mono/latin-400.css';
 
 const brand = 'Door Notes';
+const studyPath = '/study/original/';
+const original = Astro.url.pathname.startsWith(studyPath);
+const readerPath = original ? '/' + Astro.url.pathname.slice(studyPath.length) : Astro.url.pathname;
+const paper = !original && ['/', '/p/k12-teacher/', '/try/'].includes(readerPath);
+const home = original ? studyPath : '/';
+const mark = paper ? '/mark-paper.svg' : '/mark.svg';
 const {
   title,
   desc = 'A field guide for Black professionals. Trace your job back to the institutions that opened the field, and explore Black representation using public sources.',
   active = '',
   og = '/cover.png',
-  canonical = Astro.url.pathname
+  canonical = readerPath
 } = Astro.props;
 const pageTitle = title + ' · ' + brand;
 const canonicalURL = new URL(canonical, Astro.site).href;
-const imageURL = new URL(og, Astro.site).href;
+const imageAsset = new URL(og, Astro.site);
+if (['/cover.png', '/p/k12-teacher/og.png'].includes(og)) imageAsset.searchParams.set('edition', 'paper');
+const imageURL = imageAsset.href;
 const imageAlt = og === '/cover.png'
   ? 'Door Notes. Who opened the door to your career?'
-  : brand + ' research card for ' + title;
-const navItems = [['Index', '/'], ['Compare', '/compare/'], ['Sources', '/sources/'], ['Method', '/method/']];
+  : og === '/p/k12-teacher/og.png'
+    ? 'Door Notes. Atlanta teacher example with two independent records, from 1867 and 1924. Their connection is unknown.'
+    : brand + ' research card for ' + title;
+const navItems = [['Index', home], ['Compare', '/compare/'], ['Sources', '/sources/'], ['Method', '/method/']];
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" class:list={[paper && 'paper-page']}>
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -29,8 +40,9 @@ const navItems = [['Index', '/'], ['Compare', '/compare/'], ['Sources', '/source
     <meta name="description" content={desc}/>
     <meta name="application-name" content={brand}/>
     <link rel="canonical" href={canonicalURL}/>
-    <link rel="icon" href="/mark.svg"/>
-    <meta name="theme-color" content="#101716"/>
+    <link rel="icon" href={mark}/>
+    {original && <meta name="robots" content="noindex,follow"/>}
+    <meta name="theme-color" content={paper ? '#f8f5ef' : '#101716'}/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content={brand}/>
     <meta property="og:title" content={pageTitle}/>
@@ -47,22 +59,42 @@ const navItems = [['Index', '/'], ['Compare', '/compare/'], ['Sources', '/source
     <meta name="twitter:image" content={imageURL}/>
     <meta name="twitter:image:alt" content={imageAlt}/>
   </head>
-  <body>
+  <body class:list={[paper && 'paper-edition']}>
     <a class="skip" href="#content">Skip to content</a>
     <header class="mast">
       <div class="frame mastrow">
-        <a class="wordmark" href="/" aria-label={brand + ' home'}><img src="/mark.svg" width="33" height="33" alt=""/>{brand}</a>
-        <nav aria-label="Primary">
+        <a class="wordmark" href={home} aria-label={brand + ' home'}><img src={mark} width="33" height="33" alt=""/>{brand}</a>
+        <nav class="desk-nav" aria-label="Primary">
           {navItems.map(([label, href]) => <a href={href} aria-current={active === label ? 'page' : undefined}>{label}</a>)}
         </nav>
+        {paper && <details class="paper-nav">
+          <summary>Browse</summary>
+          <nav aria-label="Browse Door Notes">
+            {navItems.map(([label, href]) => <a href={href} aria-current={active === label ? 'page' : undefined}>{label}</a>)}
+          </nav>
+        </details>}
       </div>
     </header>
     <main id="content"><slot/></main>
     <footer class="frame foot">
-      <a class="wordmark" href="/" aria-label={brand + ' home'}><img src="/mark.svg" alt="" width="24" height="24"/>{brand}</a>
+      <a class="wordmark" href={home} aria-label={brand + ' home'}><img src={mark} alt="" width="24" height="24"/>{brand}</a>
       <span>Black professional pathways in the U.S.</span>
       <a href="https://github.com/Fuzzyslippers412/pipeline-map-open">Code &amp; data ↗</a>
       <a href="/method/">Methodology ↗</a>
     </footer>
   </body>
 </html>
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.paper-nav');
+  if (menu) {
+    document.addEventListener('pointerdown', event => {
+      if (menu.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
+    });
+    menu.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        menu.open = false;
+        menu.querySelector('summary')?.focus();
+      }
+    });
+  }
+</script>

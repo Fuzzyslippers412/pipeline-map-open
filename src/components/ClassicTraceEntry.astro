@@ -1,0 +1,22 @@
+---
+import {pathExamples} from '../lib/path-examples.js';
+import originalStyles from '../styles/trace-start-original.css?raw';
+---
+<style is:inline set:html={originalStyles}></style>
+<section class="trace-front" id="trace" aria-labelledby="trace-heading">
+<div class="trace-lead"><div class="eyebrow"><i></i> BLACK CAREER PATHWAYS <b>/</b> UNITED STATES</div><h1 id="trace-heading">Who opened the door to <em>your career?</em></h1><p>A field guide for Black professionals. Enter your job and employer to see a timeline of the institutions that opened your field to Black Americans, with sources and gaps along the way.</p>
+<div class="trace-mini" aria-hidden="true"><span>Field history</span><i></i><span>Workplace</span><i></i><span>Your job</span></div></div>
+<div class="trace-box"><div class="trace-box-title"><span class="eyebrow">YOUR STARTING POINT</span><button id="reset-trace" type="button" hidden>Clear entries</button></div>
+<form id="job-trace-form" autocomplete="off" aria-label="Trace my career">
+<label for="workplace-entry">Where do you work? <small>Optional</small></label>
+<div class="trace-combobox-wrap"><input id="workplace-entry" type="text" maxlength="160" placeholder="Start typing your workplace" autocomplete="off"/><div id="workplace-suggestions" hidden></div></div><span id="workplace-announcements"></span>
+<p id="workplace-affiliation" class="entry-affiliation" hidden></p>
+<label for="title-entry">What’s your job title?</label>
+<div class="trace-combobox-wrap"><input id="title-entry" type="text" maxlength="120" required placeholder="e.g. ICU registered nurse" autocomplete="off"/><div id="title-suggestions" hidden></div></div><span id="title-announcements"></span>
+<p id="title-affiliation" class="entry-affiliation" hidden></p>
+<p class="entry-help">Suggestions start after two characters. You can always keep your own wording.</p>
+<button class="primary trace-submit" type="submit" disabled>Trace my path <span aria-hidden="true">↗</span></button>
+</form><p class="privacy-line">Typing searches downloaded directories in this tab. Shared cards omit your entries.</p>
+<details id="more-workplaces" class="more-workplaces"><summary>Search more workplaces</summary><p>Search the U.S. Treasury’s federal award recipient directory. Only clicking the button sends the workplace text to USAspending.</p><button id="search-federal-workplaces" type="button" class="secondary" disabled>Search federal recipients</button><p id="federal-status" role="status"></p><div id="federal-results"></div></details>
+<div class="trace-example"><span>Try an example</span>{pathExamples.map(example=><button id={example.id} data-example={JSON.stringify(example)} type="button" disabled>{example.label} ↗</button>)}</div>
+<noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript></div></section>

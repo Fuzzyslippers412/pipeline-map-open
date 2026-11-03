@@ -22,13 +22,13 @@ function dateForAward(record){
 }
 function historyStep(item){
   return {type:'history',label:'Field history',date:item.dateLabel,order:dateKey(item.sortYear),
-    title:item.title,detail:item.description,sources:sources([{title:item.sourceTitle,url:item.url}])};
+    title:item.title,detail:item.description,place:item.place,sources:sources([{title:item.sourceTitle,url:item.url}])};
 }
 function workplaceStep(row){
   const bridge=row.fromInstitution&&row.toInstitution?row.fromInstitution+' → '+row.toInstitution:'';
   const label=({contractor:'Contractor history',union:'Union history',jobsite:'Jobsite record',program:'Training program'})[row.scope] || 'Workplace history';
   return {type:'employer',label,date:row.eventDateLabel||'Date undocumented',order:dateKey(row.eventYear),
-    title:row.headline,detail:row.description,bridge,sources:sources([{title:row.sourceTitle,url:row.url}])};
+    title:row.headline,detail:row.description,place:row.site?.location,scope:row.scope,bridge,sources:sources([{title:row.sourceTitle,url:row.url}])};
 }
 function awardStep(row){
   const when=dateForAward(row);

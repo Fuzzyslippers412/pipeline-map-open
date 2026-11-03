@@ -39,3 +39,19 @@
 .trace-combobox-status { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (hover: hover) { .trace-combobox-option:hover { background: #2b392d; } }
 @media (forced-colors: active) { .trace-combobox-option.is-active { outline: 2px solid Highlight; } }
+
+.paper-edition .trace-combobox-popup {
+  background: #fffefa;
+  border-color: #817d75;
+  border-radius: 3px;
+  box-shadow: 0 6px 16px #20212424;
+}
+.paper-edition .trace-combobox-option strong { font-size: 16px; }
+.paper-edition .trace-combobox-option span { font-size: 14px; }
+.paper-edition .trace-combobox-option.is-active {
+  background: #e7ebf7;
+  border-color: var(--lime);
+}
+@media (hover: hover) {
+  .paper-edition .trace-combobox-option:hover { background: #eef1f8; }
+}

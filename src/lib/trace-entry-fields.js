@@ -16,12 +16,20 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
   let selected=null,worker=null,external=null;
 
   function hint(node,text){node.textContent=text||'';node.hidden=!text}
+  function updateFederalVisibility(){
+    if(!more.hasAttribute('data-contextual'))return;
+    const query=fields.workplace.value.trim().toLowerCase();
+    const listed=cache.workplace?.some(option=>option.value.toLowerCase()===query);
+    more.hidden=query.length<2 || !!selected || !!listed;
+    if(more.hidden)more.open=false;
+  }
   function setWorkplace(option){
     selected=option&&option.value===fields.workplace.value?{
       workplace:option.value,parent:option.parent||'',relation:option.relation||'',location:option.location||''
     }:null;
     const text=selected?[selected.parent?(selected.relation||'Parent organization')+': '+selected.parent:'',selected.location].filter(Boolean).join(' · '):'';
     hint(workplaceHint,text);
+    updateFederalVisibility();
   }
   function ensureWorker(){
     if(worker)return worker;
@@ -33,6 +41,7 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
     worker.onmessage=({data})=>{
       if(data.type!=='matches'||data.query!==current[data.field])return;
       cache[data.field]=data.options;state[data.field]=data.state;
+      if(data.field==='workplace')updateFederalVisibility();
       controls[data.field]?.refresh();
     };
     // Both controls remain ordinary editable fields if a catalog is unavailable.

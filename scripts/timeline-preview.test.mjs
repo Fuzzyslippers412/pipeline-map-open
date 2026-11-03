@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {buildCareerTimeline} from '../src/lib/career-timeline.js';
-import {buildTimelinePreview} from '../src/lib/timeline-preview.js';
+import {buildTimelinePreview,schoolRecordPreview} from '../src/lib/timeline-preview.js';
 
 const load=file=>JSON.parse(readFileSync(new URL('../data/'+file,import.meta.url)));
 const history=load('timeline-health-education.json'), reviewers=load('workplace-links.json');
@@ -74,4 +74,43 @@ test('undated reviewed programs are preserved without inventing a start date',()
  const view=preview(context,{slug:'dentist',historical:history.dentist,reviewers,awards:[]});
  assert.equal(view.workplace.date,'Start date undocumented');
  assert.equal(view.workplace.sources.length,1);
+});
+
+test('teacher edition keeps independently sourced places distinct, including schools with the same name',()=>{
+ const field={slug:'k12-teacher',historical:history['k12-teacher'],reviewers,awards:[]};
+ const context={title:'Public school teacher',profession:'k12-teacher',employer:'Booker T. Washington High School',workplaceInfo:{
+   workplace:'Booker T. Washington High School',parent:'Atlanta Public Schools',location:'Atlanta, GA'
+ }};
+ const atlanta=schoolRecordPreview(preview(context,field),context);
+ assert.equal(atlanta.opening.place,'Marion, Alabama');
+ assert.equal(atlanta.workplace.place,'Atlanta, GA');
+ assert.match(atlanta.workplace.title,/Charles Lincoln Harper/);
+ assert.match(atlanta.workplace.sources[0].url,/#page=7$/);
+ assert.match(atlanta.gaps.items.join(' '),/No source here connects the two records/);
+ const ambiguous={...context,workplaceInfo:null};
+ const unlisted=schoolRecordPreview(preview(ambiguous,field),ambiguous);
+ assert.equal(unlisted.workplace.showSearch,true);
+ assert.equal(unlisted.workplace.place,undefined);
+ assert.match(unlisted.workplace.title,/connecting this history to your school/);
+ assert.deepEqual(unlisted.workplace.sources,[]);
+ const district={...context,employer:'Atlanta Public Schools',workplaceInfo:null};
+ const districtView=schoolRecordPreview(preview(district,field),district);
+ assert.equal(districtView.workplace.label,'District record');
+ assert.match(districtView.gaps.items[0],/district record/);
+});
+
+test('teacher edition preserves failed checks, live leads, and the date basis of funding',()=>{
+ const context={title:'Teacher',employer:'Unlisted School',profession:'k12-teacher'};
+ const field={slug:context.profession,historical:history['k12-teacher'],reviewers,awards:[]};
+ const failed=schoolRecordPreview(preview(context,null,null,true),context,{loadFailed:true});
+ assert.match(failed.workplace.title,/unavailable/);
+ const report={status:'partial',results:[{kind:'lead'}]};
+ const withLead=schoolRecordPreview(preview(context,field,report),context,{report});
+ assert.match(withLead.workplace.detail,/research lead/);
+ const award={kind:'documented',issuer:context.employer,title:'Local education award',excerpt:'Teacher training funding.',
+   dateBasis:'award',publishedOn:'2022',indexedOn:'2026-11-03',dateDetail:'Award year',publisher:'Public award register',url:'https://example.org/award'};
+ const funded=schoolRecordPreview(preview(context,{...field,awards:[award]}),context);
+ assert.equal(funded.workplace.label,'Workplace funding');
+ assert.match(funded.workplace.detail,/Award year · Indexed 2026-11-03/);
+ assert.equal(funded.workplace.place,undefined);
 });

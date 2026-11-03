@@ -1,0 +1,158 @@
+html.paper-page, body.paper-edition {
+  color-scheme: light;
+  background: #f8f5ef;
+}
+body.paper-edition {
+  --bg: #f8f5ef;
+  --panel: #fffdf8;
+  --lift: #ece7dc;
+  --edge: #cdc6ba;
+  --text: #202124;
+  --muted: #545354;
+  --soft: #665f5b;
+  --action: #293d80;
+  --rust: #874536;
+  --lime: var(--action);
+  --teal: var(--action);
+  color: var(--text);
+  font-size: 16px;
+}
+.paper-edition .mast { border-color: var(--edge); }
+.paper-edition .wordmark {
+  gap: 9px;
+  font: 500 32px/1 var(--serif);
+  letter-spacing: -.045em;
+}
+.paper-edition .mast nav a { color: var(--muted); }
+.paper-edition .mast nav a[aria-current], .paper-edition .mast nav a:hover { color: var(--action); }
+.paper-edition .foot .wordmark { font-size: 23px; }
+.paper-edition .foot a:not(.wordmark), .paper-edition .caption a {
+  color: var(--action);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.paper-edition .primary { background: var(--action); color: #fff; }
+.paper-edition .primary:hover { background: #1b2c66; }
+.paper-edition .secondary { border-color: #918c87; color: var(--action); }
+.paper-edition .directory { padding-block: 30px 52px; }
+.paper-edition .section-head h2, .paper-edition .page-head h1,
+.paper-edition .record-head h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -.045em;
+}
+.paper-edition .section-head h2 { font-size: clamp(33px,4vw,48px); }
+.paper-edition .searchwrap {
+  background: var(--panel);
+  border-color: #918c87;
+}
+.paper-edition .searchwrap input::placeholder { color: var(--soft); }
+.paper-edition .searchwrap:focus-within { border-color: var(--action); outline: 2px solid var(--action); }
+.paper-edition .suggestions {
+  border-color: #918c87;
+  background: var(--panel);
+  box-shadow: 0 8px 20px #35291914;
+}
+.paper-edition .suggestions a:hover, .paper-edition .suggestions a[aria-selected=true] {
+  background: #eceefa;
+  color: var(--action);
+}
+.paper-edition .pill { border-radius: 3px; }
+.paper-edition .pill.selected { color: var(--panel); background: var(--action); border-color: var(--action); }
+.paper-edition .tiles { border-inline: 0; border-radius: 0; }
+.paper-edition .tile {
+  color: var(--text); background: transparent;
+  border-right: 0; border-bottom-color: var(--edge);
+}
+.paper-edition .tile:hover { background: var(--lift); }
+.paper-edition .tile-id { color: var(--rust); }
+.paper-edition .tile-arrow { color: var(--action); }
+.paper-edition .personal-trace {
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid var(--edge);
+  border-radius: 0;
+  padding: 0 0 24px;
+}
+.paper-edition .personal-trace__foot span { font-size: 13px; }
+.paper-edition .personal-trace__tools a,
+.paper-edition .personal-trace__tools button,
+.paper-edition .personal-trace__foot a {
+  font-size: 14px;
+}
+.paper-edition .source-lookup {
+  border: 1px solid var(--edge);
+  border-top: 2px solid var(--action);
+  border-radius: 2px;
+  background: var(--panel);
+}
+.paper-edition .source-lookup__title h3 {
+  font: 500 clamp(24px,3vw,32px)/1.12 var(--serif);
+}
+.paper-edition .source-lookup__intro, .paper-edition .source-lookup__help,
+.paper-edition .source-lookup__status, .paper-edition .source-lookup__excerpt,
+.paper-edition .source-lookup__wider p { font-size: 15px; }
+.paper-edition .source-lookup__timing { color: var(--action); border-color: var(--edge); }
+.paper-edition .source-lookup__timing[data-mode=indexed] { color: var(--rust); }
+.paper-edition .panel { border-radius: 2px; }
+.paper-edition .edit-tag { color: var(--rust); border-color: var(--edge); }
+.paper-edition .rolepanel { background: var(--bg); border-color: var(--edge); }
+.paper-edition .selector select, .paper-edition .fieldselect, .paper-edition .textfilter {
+  border-color: #918c87;
+  background: var(--panel);
+  color: var(--text);
+}
+.paper-edition .nodata { border-color: var(--edge); }
+.paper-edition dialog { border-color: var(--edge); }
+.paper-edition dialog::backdrop { background: #20212499; }
+@media (max-width: 680px) {
+  .paper-edition .mastrow { min-height: 60px; }
+  .paper-edition .wordmark { font-size: 25px; }
+  .paper-edition .mast nav { gap: 12px; }
+  .paper-edition .mast nav a { font-size: 12px; }
+  .paper-edition .record-head h1 { font-size: 43px; }
+  .paper-edition .directory { padding-block: 23px 36px; }
+  .paper-edition .timeline-note { font-size: 14px; }
+  .paper-edition .foot { flex-wrap: wrap; }
+}
+@media (max-width: 360px) {
+  .paper-edition .mast nav { gap: 8px; }
+  .paper-edition .mastrow { gap: 8px; flex-wrap: wrap; }
+  .paper-edition .wordmark { font-size: 22px; }
+}
+
+.paper-edition .paper-nav { display: none; position: relative; }
+@media (max-width: 680px) {
+  .paper-edition .mast .desk-nav { display: none; }
+  .paper-edition .paper-nav { display: block; }
+  .paper-edition .paper-nav summary {
+    display: flex; align-items: center; gap: 9px;
+    min-height: 44px; padding: 6px 2px 6px 12px;
+    color: var(--action); font: 650 14px/1.4 var(--sans);
+  }
+  .paper-edition .paper-nav summary::before { content: none; }
+  .paper-edition .paper-nav summary::after {
+    content: ''; width: 7px; height: 7px;
+    border: solid currentColor; border-width: 0 1.5px 1.5px 0;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  .paper-edition .paper-nav[open] summary::after { transform: translateY(2px) rotate(225deg); }
+  .paper-edition .paper-nav nav {
+    position: absolute; z-index: 5; top: 100%; right: 0;
+    display: grid; gap: 0; width: 11rem; padding: 4px 12px;
+    border: 1px solid var(--edge); background: var(--panel);
+    box-shadow: 0 5px 15px #20212412;
+  }
+  .paper-edition .paper-nav nav a { padding: 12px 4px; font-size: 14px; }
+  .paper-edition .paper-nav nav a + a { border-top: 1px solid var(--edge); }
+  .paper-edition .paper-nav a[aria-current]::after { content: none; }
+}
+/* The reading heading receives focus after a trace so keyboard and screen-reader
+   users land at the result. Mark it like text, rather than an editable field. */
+.paper-edition .path-preview-title:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-decoration-color: var(--action);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}

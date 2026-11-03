@@ -8,27 +8,72 @@ const featuredParents=new Set(featured.filter(row=>row.parent).map(row=>normaliz
 const quickWorkplaces=workplaces.records.filter(row=>row.source?.startsWith('verified-')||featuredParents.has(normalizeEmployerText(row.name)))
   .map(row=>({...row,priority:row.source?.startsWith('verified-')?2:1}));
 import SourceLookup from './SourceLookup.astro';
+import ClassicTraceEntry from './ClassicTraceEntry.astro';
+const originalEdition = Astro.url.pathname.startsWith('/study/original/');
 import CareerTimeline from './CareerTimeline.astro';
 import '../styles/trace-start.css';
 import '../styles/trace-combobox.css';
 ---
-<section class="trace-front" id="trace" aria-labelledby="trace-heading">
-<div class="trace-lead"><div class="eyebrow"><i></i> BLACK CAREER PATHWAYS <b>/</b> UNITED STATES</div><h1 id="trace-heading">Who opened the door to <em>your career?</em></h1><p>A field guide for Black professionals. Enter your job and employer to see a timeline of the institutions that opened your field to Black Americans, with sources and gaps along the way.</p>
-<div class="trace-mini" aria-hidden="true"><span>Field history</span><i></i><span>Workplace</span><i></i><span>Your job</span></div></div>
-<div class="trace-box"><div class="trace-box-title"><span class="eyebrow">YOUR STARTING POINT</span><button id="reset-trace" type="button" hidden>Clear entries</button></div>
-<form id="job-trace-form" autocomplete="off" aria-label="Trace my career">
-<label for="workplace-entry">Where do you work? <small>Optional</small></label>
-<div class="trace-combobox-wrap"><input id="workplace-entry" type="text" maxlength="160" placeholder="Start typing your workplace" autocomplete="off"/><div id="workplace-suggestions" hidden></div></div><span id="workplace-announcements"></span>
-<p id="workplace-affiliation" class="entry-affiliation" hidden></p>
-<label for="title-entry">What’s your job title?</label>
-<div class="trace-combobox-wrap"><input id="title-entry" type="text" maxlength="120" required placeholder="e.g. ICU registered nurse" autocomplete="off"/><div id="title-suggestions" hidden></div></div><span id="title-announcements"></span>
-<p id="title-affiliation" class="entry-affiliation" hidden></p>
-<p class="entry-help">Suggestions start after two characters. You can always keep your own wording.</p>
-<button class="primary trace-submit" type="submit" disabled>Trace my path <span aria-hidden="true">↗</span></button>
-</form><p class="privacy-line">Typing searches downloaded directories in this tab. Shared cards omit your entries.</p>
-<details id="more-workplaces" class="more-workplaces"><summary>Search more workplaces</summary><p>Search the U.S. Treasury’s federal award recipient directory. Only clicking the button sends the workplace text to USAspending.</p><button id="search-federal-workplaces" type="button" class="secondary" disabled>Search federal recipients</button><p id="federal-status" role="status"></p><div id="federal-results"></div></details>
-<div class="trace-example"><span>Try an example</span>{pathExamples.map(example=><button id={example.id} data-example={JSON.stringify(example)} type="button" disabled>{example.label} ↗</button>)}</div>
-<noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript></div></section>
+{originalEdition ? <ClassicTraceEntry/> : <section class="trace-front" id="trace" aria-labelledby="trace-heading">
+  <div class="trace-lead">
+    <div class="eyebrow">BLACK CAREER PATHWAYS</div>
+    <h1 id="trace-heading">Who opened the door to your <em>career?</em></h1>
+    <p>Trace the people and decisions that opened your field to Black workers.</p>
+    <aside class="field-note" aria-label="From the teacher record">
+      <div class="field-note-caption">FROM THE TEACHER RECORD</div>
+      <div class="field-note-entry">
+        <span class="field-note-year">1867</span>
+        <div><strong>The Marion Nine open Lincoln Normal School.</strong>
+          <span>Marion, Alabama</span>
+          <a href="https://www.alasu.edu/about/history-tradition.php" target="_blank" rel="noopener noreferrer">Alabama State University <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <div class="trace-box">
+    <form id="job-trace-form" autocomplete="off" aria-label="Trace my career">
+      <div class="trace-field">
+        <div class="trace-field-heading">
+          <label for="workplace-entry">Where do you work? <small>Optional</small></label>
+          <button id="reset-trace" type="button" hidden>Clear entries</button>
+        </div>
+        <div class="trace-combobox-wrap">
+          <input id="workplace-entry" type="text" maxlength="160" placeholder="Start typing your workplace" autocomplete="off"/>
+          <div id="workplace-suggestions" hidden></div>
+        </div>
+        <span id="workplace-announcements"></span>
+        <p id="workplace-affiliation" class="entry-affiliation" hidden></p>
+      </div>
+      <div class="trace-field">
+        <label for="title-entry">What’s your job title?</label>
+        <div class="trace-combobox-wrap">
+          <input id="title-entry" type="text" maxlength="120" required placeholder="e.g. Public school teacher" autocomplete="off"/>
+          <div id="title-suggestions" hidden></div>
+        </div>
+        <span id="title-announcements"></span>
+        <p id="title-affiliation" class="entry-affiliation" hidden></p>
+      </div>
+      <button class="primary trace-submit" type="submit" disabled>Trace my path <span aria-hidden="true">→</span></button>
+    </form>
+    <a id="try-teacher" class="featured-example" href="/p/k12-teacher/?example=1#path-preview">Try the Atlanta teacher example <span aria-hidden="true">→</span></a>
+    <details class="other-examples">
+      <summary>More examples</summary>
+      <div class="other-example-links">
+        {pathExamples.filter(example => example.slug !== 'k12-teacher').map(example => (
+          <a id={example.id} href={'/p/'+example.slug+'/?example=1#path-preview'}>{example.label} <span aria-hidden="true">→</span></a>
+        ))}
+      </div>
+    </details>
+    <p class="privacy-line">Typing stays in this tab. You can use your own wording.</p>
+    <details id="more-workplaces" class="more-workplaces" data-contextual hidden>
+      <summary>Look for this workplace in federal records</summary>
+      <p>Search the U.S. Treasury’s award recipient directory. Only the button below sends the workplace name to USAspending.</p>
+      <button id="search-federal-workplaces" type="button" class="secondary" disabled>Search federal recipients</button>
+      <p id="federal-status" role="status"></p><div id="federal-results"></div>
+    </details>
+    <noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript>
+  </div>
+</section>}
 <section id="match-result" data-timeline-scope aria-label="Career path result" hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
 <CareerTimeline/>
 <SourceLookup/>
@@ -76,7 +121,8 @@ function showResult(title:string,description:string){
 function openRecord(slug:string,match='title'){
  const record=catalog.find((p:any)=>p.slug===slug);
  if(!record||!job.value.trim())return;
- const url='/p/'+record.slug+'/';
+ const originalTeacher=location.pathname.startsWith('/study/original/') && record.slug==='k12-teacher';
+ const url=(originalTeacher?'/study/original/p/':'/p/')+record.slug+'/';
  if(saveTrace({title:job.value,workplace:employer.value,slug:record.slug,match,workplaceInfo:entries.workplaceInfo})){location.assign(url+'#path-preview');return}
  choices.replaceChildren();manual.hidden=true;
  showResult('Your profession is '+record.name,'You can research this workplace here or open the public profession record.');researchHere(record.slug,match==='related');revealTimelinePreview(timeline);
@@ -112,13 +158,14 @@ form.addEventListener('input',()=>{
 });
 reset.addEventListener('click',()=>{clearTrace();form.reset();entries.clear();clearResults();reset.hidden=true;employer.focus()});
 for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-example [data-example]')){
+  button.disabled=false;
   button.addEventListener('click',()=>{
     const example=JSON.parse(button.dataset.example!);
     entries.example(example.workplace,example.site);job.value=example.title;reset.hidden=false;form.requestSubmit();
   });
 }
 savedFields();
-for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-submit,.trace-example button'))button.disabled=false;
+form.querySelector<HTMLButtonElement>('.trace-submit')!.disabled=false;
 window.addEventListener('pageshow',event=>{if(event.persisted){clearResults();savedFields(true)}});
 
 </script>

@@ -81,7 +81,9 @@ function metadata(list,route,imagePath) {
   const canonical=val(list.find(n=>n.tagName==='link'&&val(n,'rel')==='canonical'),'href');
   assert.equal(canonical,new URL(route,site).href,route+' canonical');
   assert.equal(meta('og:url'),canonical,route+' og:url');
-  assert.equal(meta('og:image'),new URL(imagePath,site).href,route+' image URL');
+  const expectedImage=new URL(imagePath,site);
+  if(['/cover.png','/p/k12-teacher/og.png'].includes(imagePath)) expectedImage.searchParams.set('edition','paper');
+  assert.equal(meta('og:image'),expectedImage.href,route+' image URL');
   assert.equal(meta('og:image:width'),'1200'); assert.equal(meta('og:image:height'),'630');
   assert.ok(meta('og:title')?.trim()&&meta('og:description')?.trim()&&meta('og:image:alt')?.trim(),route+' social copy');
   assert.equal(meta('twitter:card'),'summary_large_image',route+' X card');
@@ -105,6 +107,16 @@ for(const p of professions) {
   assert.ok(hasHref(docHome,'/p/'+p.slug+'/'),p.slug+' missing index link');
   assert.deepEqual(search.find(s=>s.slug===p.slug)?.aliases,p.aliases);
 }
+const classicHome=await readPage('/study/original/');
+const classicTeacher=await readPage('/study/original/p/k12-teacher/');
+for(const page of [classicHome,classicTeacher]) {
+  assert.ok(page.some(n=>val(n,'name')==='robots' && val(n,'content')?.includes('noindex')),'Study controls must not be indexed');
+  assert.ok(!page.some(n=>n.tagName==='body' && val(n,'class')?.includes('paper-edition')),'Study controls must retain the classic theme');
+}
+assert.equal(expectEl(classicHome,'id','try-teacher').tagName,'button');
+assert.equal(val(expectEl(docHome,'id','try-teacher'),'href'),'/p/k12-teacher/?example=1#path-preview');
+assert.ok(docHome.some(n=>n.tagName==='body' && val(n,'class')?.includes('paper-edition')),'Missing paper homepage');
+await readPage('/try/');
 const registry=await readPage('/sources/');
 const sourceIds=new Set(sources.map(s=>s.id));
 assert.equal(sourceIds.size,sources.length);

@@ -1,48 +1,186 @@
 ---
 import Layout from '../../components/Layout.astro';
 import {pathExamples} from '../../lib/path-examples.js';
-const questions=['Who opened a door, and what did they do?', 'Which decision changed something for workers? Which source shows it?', 'Where does the evidence stop?'];
+
+const questions = [
+  'Who opened a door, and what did they do?',
+  'Which decision changed something for workers? Which source shows it?',
+  'Where does the evidence stop?'
+];
+const steps = ['First', 'Second'];
 ---
 <Layout title="Try a path" desc="Test a public career path and compare what the sources establish with what remains unknown.">
-<div class="frame trial">
-  <div class="eyebrow"><i></i> READER TEST</div>
-  <h1>Try a path.</h1>
-  <p>Pick one example. Give yourself a minute to find a person, a decision and a missing link. The example opens in a new tab.</p>
-  <nav aria-label="Public examples">
-    {pathExamples.map(example=><a target="_blank" rel="noopener" href={'/p/'+example.slug+'/?example=1#path-preview'}>{example.label} <span aria-hidden="true">↗</span></a>)}
-  </nav>
-  <h2>What did you find?</h2>
-  <p>Write your answers here, then copy them back to whoever sent you this test. Your notes stay in this tab.</p>
-  {questions.map((question,i)=><label><span>{i+1}. {question}</span><textarea rows="2" maxlength="1400" data-answer={question}></textarea></label>)}
-  <button type="button" class="secondary" data-copy disabled>Copy my answers</button>
-  <span role="status" data-copy-status></span>
-  <textarea readonly hidden aria-label="Answers ready to copy" data-copy-fallback></textarea>
-</div>
+  <div class="frame trial">
+    <div class="eyebrow"><i></i> READER TEST</div>
+    <section id="single-path" aria-labelledby="single-title">
+      <h1 id="single-title">Try a path.</h1>
+      <p>Pick one example. Give yourself a minute to find a person, a decision and a missing link. The example opens in a new tab.</p>
+      <nav class="examples" aria-label="Public examples">
+        {pathExamples.map(example => (
+          <a target="_blank" rel="noopener" href={'/p/' + example.slug + '/?example=1#path-preview'}>
+            {example.label}<span aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </nav>
+      <h2>What did you find?</h2>
+      <p>Write your answers here, then copy them back to whoever sent you this test. Your notes stay in this tab.</p>
+      {questions.map((question, i) => (
+        <label class="answer"><span>{i + 1}. {question}</span><textarea rows="2" maxlength="1400" data-answer={question}></textarea></label>
+      ))}
+    </section>
+
+    <section id="reader-study" aria-labelledby="study-title" hidden>
+      <h1 id="study-title">Read the same path twice.</h1>
+      <p>Try two versions of the Atlanta teacher path, in the order below. Give each one a minute or two. Open a source in each version, then return to this tab to jot down what you found.</p>
+      {steps.map((name, i) => (
+        <section class="study-step" data-step={i} aria-labelledby={'step-' + i}>
+          <h2 id={'step-' + i}>{name} version</h2>
+          <p>Start on the homepage and try the Atlanta teacher example. If you get stuck, use the direct link and tell us where.</p>
+          <div class="study-links">
+            <a data-view="home" href="/" target="_blank" rel="noopener">{name} homepage <span aria-hidden="true">↗</span></a>
+            <a data-view="trace" href="/p/k12-teacher/?example=1#path-preview" target="_blank" rel="noopener">Direct teacher result <span aria-hidden="true">↗</span></a>
+          </div>
+          {questions.map(question => (
+            <label class="answer"><span>{question}</span><textarea rows="2" maxlength="1400" data-answer={question}></textarea></label>
+          ))}
+        </section>
+      ))}
+      <fieldset class="preference">
+        <legend>Which version was easier to read?</legend>
+        {['First version', 'Second version', 'Both felt the same'].map(choice => (
+          <label><input type="radio" name="preference" value={choice}/>{choice}</label>
+        ))}
+      </fieldset>
+      <label class="answer">
+        <span>About how long did each version take? <small>Optional</small></span>
+        <input type="text" maxlength="100" data-time placeholder="For example, one minute each"/>
+      </label>
+      <label class="answer">
+        <span>What made it easier or harder? <small>Optional</small></span>
+        <textarea rows="2" maxlength="1400" data-comment placeholder="A color, a label, a hard-to-tap source, or somewhere you got stuck"></textarea>
+      </label>
+      <p>Your answers stay in this tab. Copy them back to the person who sent you the test.</p>
+    </section>
+
+    <button type="button" class="secondary" data-copy disabled>Copy my answers</button>
+    <span role="status" data-copy-status></span>
+    <textarea readonly hidden aria-label="Answers ready to copy" data-copy-fallback></textarea>
+    <aside class="study-switch" id="study-invite">
+      <a href="/try/?first=original">Compare two designs of the Atlanta teacher path →</a>
+    </aside>
+  </div>
 </Layout>
+
 <script>
-const fields=[...document.querySelectorAll<HTMLTextAreaElement>('[data-answer]')];
-const copy=document.querySelector<HTMLButtonElement>('[data-copy]')!;
-const status=document.querySelector<HTMLElement>('[data-copy-status]')!;
-const fallback=document.querySelector<HTMLTextAreaElement>('[data-copy-fallback]')!;
-const changed=()=>{copy.disabled=fields.every(f=>!f.value.trim());status.textContent='';fallback.hidden=true;};
-fields.forEach(f=>f.addEventListener('input',changed));
-changed();
-copy.addEventListener('click',async()=>{
-  const note=fields.filter(f=>f.value.trim()).map(f=>f.dataset.answer+'\n'+f.value.trim()).join('\n\n');
-  try{await navigator.clipboard.writeText(note);status.textContent='Answers copied.';}
-  catch{fallback.hidden=false;fallback.value=note;fallback.focus();fallback.select();status.textContent='Select Copy to copy your answers.';}
+const single = document.querySelector<HTMLElement>('#single-path')!;
+const study = document.querySelector<HTMLElement>('#reader-study')!;
+const first = new URLSearchParams(location.search).get('first');
+const order = first === 'original' || first === 'paper'
+  ? [first, first === 'original' ? 'paper' : 'original']
+  : [];
+const isStudy = order.length > 0;
+const versionName = (version: string) => version === 'paper' ? 'Paper and indigo' : 'Original';
+let firstOpened = '';
+const directResults = new Set<string>();
+
+if (isStudy) {
+  single.hidden = true;
+  study.hidden = false;
+  document.querySelector<HTMLElement>('#study-invite')!.hidden = true;
+  study.querySelectorAll<HTMLElement>('[data-step]').forEach((step, i) => {
+    const base = order[i] === 'original' ? '/study/original/' : '/';
+    step.querySelectorAll<HTMLAnchorElement>('a[data-view]').forEach(link => {
+      link.href = link.dataset.view === 'home' ? base : base + 'p/k12-teacher/?example=1#path-preview';
+      link.addEventListener('click', () => {
+        const version = versionName(order[i]);
+        if (!firstOpened) firstOpened = version;
+        if (link.dataset.view === 'trace') directResults.add(version);
+      });
+    });
+  });
+}
+
+const container = isStudy ? study : single;
+const fields = [...container.querySelectorAll<HTMLTextAreaElement>('[data-answer]')];
+const copy = document.querySelector<HTMLButtonElement>('[data-copy]')!;
+const status = document.querySelector<HTMLElement>('[data-copy-status]')!;
+const fallback = document.querySelector<HTMLTextAreaElement>('[data-copy-fallback]')!;
+const preference = () => study.querySelector<HTMLInputElement>('input[name=preference]:checked')?.value;
+const time = study.querySelector<HTMLInputElement>('[data-time]')!;
+const comment = study.querySelector<HTMLTextAreaElement>('[data-comment]')!;
+
+function onEdit() {
+  const hasStudyFeedback = isStudy && (preference() || time.value.trim() || comment.value.trim());
+  copy.disabled = !fields.some(field => field.value.trim()) && !hasStudyFeedback;
+  status.textContent = '';
+  fallback.hidden = true;
+}
+container.addEventListener('input', onEdit);
+onEdit();
+
+function answersFrom(scope: HTMLElement) {
+  return [...scope.querySelectorAll<HTMLTextAreaElement>('[data-answer]')]
+    .filter(field => field.value.trim())
+    .map(field => field.dataset.answer + '\n' + field.value.trim())
+    .join('\n\n');
+}
+
+function studyAnswers() {
+  const sections = [
+    'Door Notes · Atlanta teacher reader test',
+    'Assigned order: ' + order.map(versionName).join(' → '),
+    firstOpened && 'First version opened from the test: ' + firstOpened,
+    directResults.size > 0 && 'Used the direct result link: ' + [...directResults].join(', ')
+  ];
+  study.querySelectorAll<HTMLElement>('[data-step]').forEach((step, index) => {
+    const answers = answersFrom(step);
+    if (answers) sections.push((index + 1) + '. ' + versionName(order[index]) + '\n' + answers);
+  });
+  const easier = preference();
+  if (easier) sections.push('Easier to read: ' + easier);
+  if (time.value.trim()) sections.push('Approximate reading time: ' + time.value.trim());
+  if (comment.value.trim()) sections.push('Reading experience\n' + comment.value.trim());
+  return sections.filter(Boolean).join('\n\n');
+}
+
+copy.addEventListener('click', async () => {
+  const note = isStudy ? studyAnswers() : answersFrom(single);
+  try {
+    await navigator.clipboard.writeText(note);
+    status.textContent = 'Answers copied.';
+  } catch {
+    fallback.hidden = false;
+    fallback.value = note;
+    fallback.focus();
+    fallback.select();
+    status.textContent = 'Select Copy to copy your answers.';
+  }
 });
 </script>
+
 <style>
-.trial{max-width:680px;padding-block:clamp(24px,5vw,58px);color:var(--text)}
-.trial h1{font:500 clamp(42px,6vw,65px)/1.03 var(--serif);margin:10px 0}
-.trial h2{font:600 24px/1.2 var(--sans);margin:24px 0 6px}
-.trial p{color:var(--muted);max-width:56ch;margin:0 0 13px}
-.trial nav{display:grid;border-block:1px solid var(--edge);margin:17px 0 10px}
-.trial nav a{display:flex;justify-content:space-between;gap:8px;padding:12px 0;min-height:44px;align-items:center;color:var(--teal);font-weight:650}
-.trial nav a+a{border-top:1px solid var(--edge)}
-.trial label{display:grid;gap:5px;font-size:14px;font-weight:650;margin:15px 0}
-.trial textarea{width:100%;min-height:54px;resize:vertical;border:1px solid var(--edge);border-radius:4px;background:var(--panel);color:var(--text);font:16px/1.4 var(--sans);padding:8px}
-.trial [role=status]{font-size:13px;color:var(--muted);margin-left:8px}
-.trial button:disabled{opacity:.55}
+.trial { max-width: 680px; padding-block: clamp(24px, 5vw, 58px); color: var(--text); }
+.trial [hidden] { display: none !important; }
+.trial h1 { margin: 10px 0; font: 500 clamp(42px, 6vw, 65px)/1.03 var(--serif); }
+.trial h2, .preference legend { margin: 24px 0 6px; font: 600 24px/1.2 var(--sans); }
+.trial p { max-width: 56ch; margin: 0 0 13px; color: var(--muted); }
+.examples { display: grid; border-block: 1px solid var(--edge); margin: 17px 0 10px; }
+.examples a { display: flex; justify-content: space-between; gap: 8px; }
+.examples a + a { border-top: 1px solid var(--edge); }
+.examples a, .study-links a, .study-switch a { align-items: center; min-height: 44px; padding-block: 10px; color: var(--teal); font-weight: 650; }
+.study-links, .study-switch a { display: flex; flex-wrap: wrap; column-gap: 22px; }
+.study-links a { display: inline-flex; gap: 5px; align-items: center; }
+.study-links a, .study-switch a { text-decoration: underline; text-underline-offset: .18em; }
+.study-step, .study-switch { margin-top: 22px; border-top: 1px solid var(--edge); }
+.study-switch { padding-top: 5px; }
+.trial .answer { display: grid; gap: 5px; margin: 15px 0; font-size: 16px; font-weight: 650; }
+.answer small { margin-inline-start: .35em; font-size: 13px; color: var(--muted); font-weight: 500; }
+.trial textarea, .trial input[type=text] { width: 100%; border: 1px solid var(--edge); border-radius: 4px; background: var(--panel); color: var(--text); font: 16px/1.4 var(--sans); padding: 8px; }
+.trial textarea { min-height: 54px; resize: vertical; }
+.trial input[type=text] { min-height: 44px; }
+.preference { padding: 0; margin: 0; border: 0; }
+.preference label { display: inline-flex; gap: 6px; align-items: center; min-height: 44px; margin-inline-end: 15px; }
+.preference input { accent-color: var(--teal); }
+.trial [role=status] { font-size: 14px; color: var(--muted); margin-inline-start: 8px; }
+.trial button:disabled { opacity: .55; }
 </style>

@@ -129,6 +129,8 @@
     "site": {"id": "nces-school-130012004174", "name": "Booker T. Washington High School", "location": "Atlanta, GA", "parent": "Atlanta Public Schools"},
     "professions": ["k12-teacher"],
     "headline": "Charles Lincoln Harper hires the school’s teachers",
+    "excerpt": "The first principal of Booker T. Washington High School was Charles L. Harper",
+    "excerptLocator": "National Register nomination, PDF p. 7",
     "description": "Charles Lincoln Harper, the first principal, hired teachers for Atlanta’s first public high school for Black students.",
     "sourceTitle": "Georgia Historic Preservation Section · National Register nomination",
     "url": "https://npgallery.nps.gov/GetAsset/9814b816-e5bd-4513-8b58-415d397c5297#page=7",

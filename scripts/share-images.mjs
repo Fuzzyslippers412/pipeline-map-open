@@ -23,7 +23,11 @@ const mono = 'IBM Plex Mono', serif = 'Newsreader';
 const fontSpec = [[mono,'ibm-plex-mono',400],[serif,'newsreader',500]];
 const fontFiles = [], satoriFonts = [];
 const brandMark = (await fs.readFile('public/mark.svg','utf8')).replace('<svg ','<svg x="48" y="28" ');
-const atlas = await fs.readFile('public/atlas.svg','utf8');
+const paperMark = (await fs.readFile('public/mark-paper.svg','utf8')).replace('<svg ', '<svg x="48" y="28" ');
+const schoolHistory = JSON.parse(await fs.readFile('data/timeline-health-education.json', 'utf8'));
+const schoolRecords = JSON.parse(await fs.readFile('data/workplace-links.json', 'utf8'));
+const teacherOpening = schoolHistory['k12-teacher'][0];
+const atlanta = schoolRecords.find(row => row.site?.id === 'nces-school-130012004174');
 
 // Resvg accepts OpenType files. Reconstruct the SFNT directory of the same bundled
 // WOFF fonts used by Satori so the host's installed fonts cannot change the image.
@@ -185,14 +189,36 @@ function comparisonImage(model) {
     contentLines(d.definition,{x:494,y:504,limit:77,step:21,size:14,colour:palette.muted})+
     footer(chosen,d));
 }
+const paper = { background: '#f8f5ef', ink: '#202124', indigo: '#293d80', rust: '#874536', muted: '#545354', border: '#cdc6ba' };
+const paperRule = y => '<path d="M48 '+y+' H1152" stroke="'+paper.border+'"/>';
+function paperHeader(label) {
+  return '<rect width="1200" height="630" fill="'+paper.background+'"/>'+paperMark+
+    txt(102,58,brand,36,paper.ink,serif)+txt(1152,56,label,15,paper.muted,mono,'text-anchor="end"')+paperRule(88);
+}
+function paperFooter(label) {
+  return paperRule(551)+txt(48,598,label,17,paper.muted)+
+    txt(1152,598,new URL(config.site).hostname,18,paper.indigo,mono,'text-anchor="end"');
+}
 function coverImage() {
-  return wrap(framing('A SOURCE-LINKED PROFESSION INDEX')+
-    txt(48,176,'Who opened the door to your career?',64,palette.ink,serif)+
-    txt(48,222,'Trace the institutions that opened U.S. professions to Black Americans.',22,palette.muted)+
-    nested(atlas,521,260,624,283)+line(48,565,1152,565)+
-    txt(48,602,'Compare professions   /   Trace every measured point to a public table',16,palette.muted)+
-    txt(1152,602,new URL(config.site).hostname,16,palette.teal,mono,'text-anchor="end"')+
-    txt(48,326,'01    ORIGIN',20,palette.mint)+txt(48,389,'02    GATE',20,palette.teal)+txt(48,452,'03    TREND',20,palette.ink));
+  return wrap(paperHeader('BLACK CAREER PATHWAYS')+
+    txt(48,198,'Who opened the door',85,paper.ink,serif)+
+    txt(48,292,'to your career?',87,paper.indigo,serif)+
+    txt(50,350,'Trace the people and decisions that opened your field to Black workers.',22,paper.muted)+
+    paperRule(404)+txt(48,447,'FROM THE TEACHER RECORD',15,paper.muted)+
+    txt(48,511,teacherOpening.dateLabel,46,paper.rust,serif)+txt(200,497,teacherOpening.title,36,paper.ink,serif)+
+    txt(200,526,teacherOpening.place+'  /  '+teacherOpening.sourceTitle.split(' · ')[0],16,paper.muted)+
+    paperFooter('A field guide for Black professionals'));
+}
+function teacherImage() {
+  const record = (y, year, heading, place, source) =>
+    txt(48,y,year,54,paper.rust,serif)+txt(220,y-5,heading,36,paper.ink,serif)+
+    txt(220,y+30,place+'  /  '+source.split(' · ')[0],18,paper.muted);
+  return wrap(paperHeader('PUBLIC EXAMPLE  /  ATLANTA, GEORGIA')+
+    txt(48,180,'Public school teacher',76,paper.ink,serif)+
+    txt(50,222,'Booker T. Washington High School',25,paper.muted)+paperRule(248)+
+    record(322,teacherOpening.dateLabel,teacherOpening.title,teacherOpening.place,teacherOpening.sourceTitle)+paperRule(385)+
+    record(454,atlanta.eventDateLabel,atlanta.headline,atlanta.site.location,atlanta.sourceTitle)+
+    paperFooter('Still unknown: whether these records connect.'));
 }
 async function writeImage(svg,file) {
   const image = new Resvg(svg,resvgOptions).render();
@@ -232,7 +258,7 @@ async function render() {
   if (!out||sample&&path.resolve(out)===path.resolve('dist')) throw Error('Supply a separate sample directory');
   let bytes=await writeImage(coverImage(),path.join(out,'cover.png'));
   const all=sample?professions.slice(0,1):professions;
-  for(const [i,p] of all.entries()) bytes+=await writeImage(await professionImage(p,i),path.join(out,'p',p.slug,'og.png'));
+  for(const [i,p] of all.entries()) bytes+=await writeImage(p.slug === 'k12-teacher' ? teacherImage() : await professionImage(p,i),path.join(out,'p',p.slug,'og.png'));
   const sorted=professions.map(p=>p.slug).sort();
   const picks=sample?[['engineer','physician','registered-nurse']]:combinations(sorted);
   let count=0;
