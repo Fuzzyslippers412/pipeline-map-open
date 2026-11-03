@@ -1,4 +1,5 @@
 ---
+import credentials from '../../../data/credential-records.json';
 import Layout from '../../components/Layout.astro';
 import {pathExamples, examplePath} from '../../lib/path-examples.js';
 import {howardNursingDecisions} from '../../lib/howard-nursing-decisions.js';
@@ -86,6 +87,10 @@ const entries = records.map(record => {
         </li>
       ))}
     </ol>
+    <section id="credentials" class="credentials" aria-labelledby="credentials-title">
+      <p class="section-label">Degrees, training and licenses</p><h2 id="credentials-title">Who earned the credential?</h2>
+      <ul>{credentials.map(r=><li><a href={'/p/'+r.slug+'/#credential-record'}><time>{r.year}</time><span><strong>{r.name}</strong><small>{r.credential}</small></span><span aria-hidden="true">→</span></a></li>)}</ul>
+    </section>
     <section class="library-next" aria-labelledby="path-choice-title">
       <div><h2 id="path-choice-title">Choose a direction to explore</h2><p>Start with something you enjoy, or compare the kind of responsibility you want next.</p></div>
       <div class="library-options"><a class="read" href="/explore/">Explore my interests →</a><a class="read" href="/career-map/">Open the IT career map →</a></div>
@@ -150,4 +155,12 @@ const entries = records.map(record => {
   .record { grid-template-columns: 4.15rem minmax(0,1fr); gap: 6px 12px; }
   .evidence { grid-column: 1/-1; }
 }
+.credentials {padding:22px 0;border-bottom:1px solid var(--edge)}
+.credentials h2 {font:500 clamp(28px,4vw,40px)/1.1 var(--serif);margin:6px 0 12px}
+.credentials ul {list-style:none;margin:0;padding:0}
+.credentials li {border-top:1px solid var(--edge)}
+.credentials a {display:grid;grid-template-columns:3rem 1fr auto;align-items:center;gap:10px;min-height:52px;text-decoration:none;padding:7px 0}
+.credentials a strong {text-decoration:underline;text-underline-offset:.18em}
+.credentials small {display:block;color:var(--muted)}
+.credentials time {color:var(--rust);font:500 1.35rem var(--serif)}
 </style>

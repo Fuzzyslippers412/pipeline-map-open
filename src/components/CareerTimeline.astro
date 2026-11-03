@@ -1,4 +1,5 @@
 ---
+import credentials from '../../data/credential-records.json';
 import PathDecisions from './PathDecisions.astro';
 import WorkplaceAuthority from './WorkplaceAuthority.astro';
 import {howardNursingDecisions} from '../lib/howard-nursing-decisions.js';
@@ -7,6 +8,7 @@ import {electricianDecisions} from '../lib/electrician-decisions.js';
 import '../styles/career-timeline.css';
 import '../styles/timeline-preview.css';
 const {profession}=Astro.props;
+const credential = credentials.find(row=>row.slug===profession);
 const hasAuthorityView = [
   '/p/k12-teacher/',
   '/preview/p/registered-nurse/',
@@ -52,6 +54,7 @@ const hasAuthorityShortcut = ['/p/registered-nurse/','/p/electrician/'].includes
     <p class="path-preview-status" data-status role="status"></p>
     <button class="secondary timeline-retry" data-retry type="button" hidden>Retry profession history</button>
   </section>
+  {credential && <a class="credential-jump" href="#credential-record">Field history · {credential.year} · {credential.name} <span aria-hidden="true">↓</span></a>}
   {hasAuthorityView && <WorkplaceAuthority/>}
   {hasAuthorityShortcut && <a class="authority-shortcut" data-authority-shortcut href={'/preview'+Astro.url.pathname+'#who-decides'} hidden>
     See who decides today <span aria-hidden="true">→</span>
@@ -432,4 +435,8 @@ if(!customElements.get('pipeline-career-timeline'))customElements.define('pipeli
     color: var(--teal); font-size: .94rem; font-weight: 650;
     text-decoration: underline; text-underline-offset: .18em;
   }
+</style>
+
+<style>
+.credential-jump {display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--action);text-decoration:underline;text-underline-offset:.18em}
 </style>
