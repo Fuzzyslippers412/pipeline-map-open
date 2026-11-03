@@ -43,7 +43,7 @@ function gap(title,detail){
 export function buildCareerTimeline({context,field,report=null,loadFailed=false}){
   const {employer='',title,related=false}=context;
   const history=(field?.historical||[]).map(historyStep).filter(step=>step.sources.length);
-  const verified=field&&!related?findWorkplaceLinks(employer,field.slug,field.reviewers||[]):[];
+  const verified=field&&!related?findWorkplaceLinks(employer,field.slug,field.reviewers||[],context.workplaceInfo):[];
   const employerEvents=verified.map(workplaceStep).filter(step=>step.sources.length);
   const funding=new Map();
   if(employer && !related){

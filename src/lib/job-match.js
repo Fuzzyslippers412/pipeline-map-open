@@ -6,7 +6,7 @@ const titles = {
   dentist: ['pediatric dentist', 'orthodontist', 'endodontist', 'periodontist', 'oral surgeon'],
   pharmacist: ['staff pharmacist', 'clinical pharmacist', 'retail pharmacist', 'pharmacist in charge'],
   'registered-nurse': ['registered professional nurse', 'staff nurse', 'charge nurse', 'travel nurse', 'bedside nurse'],
-  'k12-teacher': ['classroom teacher', 'middle school teacher', 'elementary school teacher', 'secondary school teacher', 'K-12 educator'],
+  'k12-teacher': ['public school teacher', 'public school educator', 'classroom teacher', 'middle school teacher', 'elementary school teacher', 'secondary school teacher', 'K-12 educator'],
   professor: ['assistant professor', 'associate professor', 'adjunct professor', 'adjunct faculty', 'clinical professor', 'professor of practice', 'teaching professor'],
   journalist: ['journalist', 'staff reporter', 'news reporter', 'investigative reporter', 'investigative journalist', 'sports reporter', 'political reporter', 'columnist'],
   'nonprofit-executive': ['nonprofit executive director', 'charity executive director', 'foundation executive director'],
@@ -34,7 +34,7 @@ const ambiguous = {
 
 const specializations = {
   'registered-nurse': ['critical care','intensive care','ICU','NICU','PICU','ER','ED','emergency department','emergency room','medical surgical','med surg','oncology','pediatric','pediatrics','labor and delivery','perioperative','operating room','telemetry','dialysis','RN BSN','BSN'],
-  'k12-teacher': ['math','mathematics','science','english','biology','history','social studies','special education','physical education','art','music','middle school','high school','elementary school'],
+  'k12-teacher': ['public school', 'math','mathematics','science','english','biology','history','social studies','special education','physical education','art','music','middle school','high school','elementary school'],
   professor: ['of biology','of engineering','of history','of mathematics','of medicine','of law','of english','of computer science','of physics','of chemistry'],
   'software-engineer': ['backend','back end','frontend','front end','full stack','payments','platform','infrastructure','applications','mobile','iOS','Android','developer tools','distributed systems'],
   lawyer: ['litigation','employment','immigration','civil rights','tax','patent','family law','associate'],

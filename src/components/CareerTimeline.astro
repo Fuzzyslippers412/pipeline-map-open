@@ -1,8 +1,10 @@
 ---
-import HowardNursingDecisions from './HowardNursingDecisions.astro';
+import PathDecisions from './PathDecisions.astro';
+import {howardNursingDecisions} from '../lib/howard-nursing-decisions.js';
+import {teacherDecisions} from '../lib/teacher-decisions.js';
 import '../styles/career-timeline.css';
 import '../styles/timeline-preview.css';
-const {includeHoward=false}=Astro.props;
+const {profession}=Astro.props;
 ---
 <pipeline-career-timeline id="career-timeline" class="career-timeline" hidden>
   <section class="path-preview" id="path-preview" aria-labelledby="path-preview-heading">
@@ -26,7 +28,8 @@ const {includeHoward=false}=Astro.props;
     <p class="path-preview-status" data-status role="status"></p>
     <button class="secondary timeline-retry" data-retry type="button" hidden>Retry profession history</button>
   </section>
-  {includeHoward && <HowardNursingDecisions/>}
+  {(!profession || profession==='registered-nurse') && <PathDecisions profession="registered-nurse" workplace="Howard University Hospital" subtitle="Anna B. Coles, Howard’s trustees and Congress" label="Decisions and leadership in Howard nursing" records={howardNursingDecisions}/>}
+  {(!profession || profession==='k12-teacher') && <PathDecisions profession="k12-teacher" subtitle="Black teacher training, pay and your school" label="Decisions in Black public-school teaching" records={teacherDecisions}/>}
   <details class="path-full-timeline" data-full hidden>
     <summary>Explore the full timeline and sources</summary>
     <div class="path-full-timeline-body">
@@ -42,6 +45,7 @@ const {includeHoward=false}=Astro.props;
 import {buildCareerTimeline} from '../lib/career-timeline.js';
 import {buildTimelinePreview} from '../lib/timeline-preview.js';
 import {findWorkplaceLinks} from '../lib/trace-context.js';
+import {teacherSchoolConnection} from '../lib/teacher-school-connection.js';
 
 type Context={employer:string,title:string,profession?:string,related?:boolean,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string}|null};
 const cache=new Map<string,Promise<any>>();
@@ -87,8 +91,9 @@ class CareerTimeline extends HTMLElement{
     this.querySelector<HTMLElement>('[data-preview-sections]')!.hidden=true;
     const full=this.querySelector<HTMLDetailsElement>('[data-full]')!;
     full.open=false;full.hidden=true;
-    const decisions=this.querySelector<HTMLDetailsElement>('[data-nursing-decisions]');
-    if(decisions){decisions.open=false;decisions.hidden=true}
+    for(const panel of this.querySelectorAll<HTMLDetailsElement>('[data-decisions-for]')){
+      panel.open=false;panel.hidden=true;
+    }
   }
   setContext(next:Context){
     if(!next?.title){this.reset();return}
@@ -157,11 +162,24 @@ class CareerTimeline extends HTMLElement{
       }
     }
     sections.hidden=false;
-    const decisions=this.querySelector<HTMLDetailsElement>('[data-nursing-decisions]');
-    if(decisions){
-      const {employer,profession,related}=this.context;
-      decisions.hidden=related || profession!=='registered-nurse' ||
-        !findWorkplaceLinks(employer,profession,this.field?.reviewers).some(row=>row.workplace===decisions.dataset.workplace);
+    const panel=this.querySelector<HTMLDetailsElement>('[data-decisions-for="'+(this.context.profession||'')+'"]');
+    if(panel && !this.context.related){
+      const matches=findWorkplaceLinks(this.context.employer,this.context.profession,this.field?.reviewers,this.context.workplaceInfo);
+      panel.hidden=!!panel.dataset.workplace && !matches.some(row=>row.workplace===panel.dataset.workplace);
+      if(panel.dataset.decisionsFor==='k12-teacher'){
+        const info=teacherSchoolConnection(this.context,this.field?.reviewers,matches,this.failed);
+        panel.querySelector('[data-school-label]')!.textContent=info.label;
+        panel.querySelector('[data-school-name]')!.textContent=info.name;
+        panel.querySelector('[data-school-gap]')!.textContent=info.gap;
+        const change=panel.querySelector<HTMLElement>('[data-school-change]')!;
+        change.textContent=info.record?.description||'';change.hidden=!info.record;
+        const link=panel.querySelector<HTMLAnchorElement>('[data-school-source]')!;
+        link.hidden=!info.record;
+        if(info.record){
+          link.href=info.record.url;link.textContent=info.record.sourceTitle.split(' · ').at(-1)+' ↗';
+          link.setAttribute('aria-label','Source: '+info.record.sourceTitle);
+        }else link.removeAttribute('href');
+      }
     }
     const full=this.querySelector<HTMLDetailsElement>('[data-full]')!;
     full.hidden=false;

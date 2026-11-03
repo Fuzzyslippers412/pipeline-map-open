@@ -95,8 +95,9 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
   });
   return {
     get workplaceInfo(){return selected},
-    example(name){
+    example(name,site=null){
       this.clear();fields.workplace.value=name;
+      if(site && site.name===name){setWorkplace({...site,value:name});return}
       const exact=quick.search(name).filter(row=>row.value===name);
       if(exact.length===1)setWorkplace(exact[0]);
     },

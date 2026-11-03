@@ -1,6 +1,8 @@
 ---
 import {professions} from '../lib/model';
 import workplaces from '../../data/workplace-directory.json';
+import schools from '../../data/workplace-schools.json';
+const teacherSchool=schools.records.find(row=>row.id==='nces-school-130012004174')!;
 import {normalizeEmployerText} from '../lib/employer-key.js';
 const featured=workplaces.records.filter(row=>row.source?.startsWith('verified-'));
 const featuredParents=new Set(featured.filter(row=>row.parent).map(row=>normalizeEmployerText(row.parent)));
@@ -26,10 +28,10 @@ import '../styles/trace-combobox.css';
 <button class="primary trace-submit" type="submit" disabled>Trace my path <span aria-hidden="true">↗</span></button>
 </form><p class="privacy-line">Typing searches downloaded directories in this tab. Shared cards omit your entries.</p>
 <details id="more-workplaces" class="more-workplaces"><summary>Search more workplaces</summary><p>Search the U.S. Treasury’s federal award recipient directory. Only clicking the button sends the workplace text to USAspending.</p><button id="search-federal-workplaces" type="button" class="secondary" disabled>Search federal recipients</button><p id="federal-status" role="status"></p><div id="federal-results"></div></details>
-<div class="trace-example"><span>Try an example</span><button id="try-trace" type="button" disabled>Nurse at Howard University Hospital ↗</button><button id="try-live" type="button" disabled>Research an Atlanta Public Schools teacher ↗</button></div>
+<div class="trace-example"><span>Try an example</span><button id="try-trace" type="button" disabled>Nurse at Howard University Hospital ↗</button><button id="try-teacher" data-school={JSON.stringify(teacherSchool)} type="button" disabled>Teacher at Booker T. Washington High, Atlanta ↗</button></div>
 <noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript></div></section>
 <section id="match-result" data-timeline-scope aria-label="Career path result" hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
-<CareerTimeline includeHoward/>
+<CareerTimeline/>
 <SourceLookup/>
 <div id="manual-choice" hidden><label for="manual-profession">Choose a profession to explore</label><select id="manual-profession"><option value="">Select a profession…</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select><button type="button" id="manual-open" class="secondary" disabled>Trace this profession →</button></div>
 <a href="#trace" class="edit-trace-entry">Edit workplace or title ↑</a>
@@ -111,9 +113,13 @@ form.addEventListener('input',()=>{
 });
 reset.addEventListener('click',()=>{clearTrace();form.reset();entries.clear();clearResults();reset.hidden=true;employer.focus()});
 document.querySelector('#try-trace')!.addEventListener('click',()=>{entries.example('Howard University Hospital');job.value='Registered nurse';reset.hidden=false;form.requestSubmit()});
-document.querySelector('#try-live')!.addEventListener('click',()=>{entries.example('Atlanta Public Schools');job.value='K–12 teacher';reset.hidden=false;form.requestSubmit()});
+const teacherExample=document.querySelector<HTMLButtonElement>('#try-teacher')!;
+teacherExample.addEventListener('click',()=>{
+ const school=JSON.parse(teacherExample.dataset.school!);
+ entries.example(school.name,school);job.value='Public school teacher';reset.hidden=false;form.requestSubmit();
+});
 savedFields();
-for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-submit,#try-trace,#try-live'))button.disabled=false;
+for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-submit,#try-trace,#try-teacher'))button.disabled=false;
 window.addEventListener('pageshow',event=>{if(event.persisted){clearResults();savedFields(true)}});
 
 </script>

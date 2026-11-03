@@ -1,15 +1,29 @@
 ---
-import {howardNursingDecisions} from '../lib/howard-nursing-decisions.js';
+interface Props {
+  profession: string;
+  workplace?: string;
+  subtitle: string;
+  label: string;
+  records: {date:string; title:string; actor:string; change:string; sources:{title:string; url:string}[]}[];
+}
+const {profession, workplace, subtitle, label, records}=Astro.props;
 ---
-<details class="decision-panel" data-nursing-decisions data-workplace="Howard University Hospital" hidden>
+<details class="decision-panel" data-decisions-for={profession} data-workplace={workplace} hidden>
   <summary>
     <span class="decision-intro">
       <strong>Decisions behind this path</strong>
-      <small>Anna B. Coles, Howard’s trustees and Congress</small>
+      <small>{subtitle}</small>
     </span>
   </summary>
-  <ol aria-label="Decisions and leadership in Howard nursing">
-    {howardNursingDecisions.map(record=><li>
+  {profession==='k12-teacher' && <section class="school-connection" aria-labelledby="school-decision-title">
+    <small data-school-label></small>
+    <h3 id="school-decision-title" data-school-name></h3>
+    <p data-school-change hidden></p>
+    <a data-school-source hidden target="_blank" rel="noopener noreferrer"></a>
+    <p data-school-gap></p>
+  </section>}
+  <ol aria-label={label}>
+    {records.map(record=><li>
       <span class="decision-date">{record.date}</span>
       <div class="decision-content">
         <h3>{record.title}</h3>
@@ -38,10 +52,17 @@ import {howardNursingDecisions} from '../lib/howard-nursing-decisions.js';
   .decision-actor > span { margin-right: 3px; color: var(--muted); font: 10px var(--mono); text-transform: uppercase; }
   .decision-sources { display: flex; flex-wrap: wrap; gap: 0 12px; }
   .decision-sources a { display: inline-flex; gap: 3px; align-items: center; min-height: 32px; color: var(--teal); text-decoration: underline; text-underline-offset: 3px; font-size: 12px; }
+  .school-connection { max-width: 760px; border-top: 1px solid var(--edge); padding: 9px 0; overflow-wrap: anywhere; }
+  .school-connection small { color: var(--teal); font: 10px/1.4 var(--mono); text-transform: uppercase; }
+  .school-connection h3 { margin: 3px 0 0; font: 650 15px/1.3 var(--sans); }
+  .school-connection p { margin: 4px 0 0; color: var(--muted); font: 13px/1.4 var(--sans); }
+  .school-connection a { display: inline-flex; align-items: center; min-height: 32px; text-decoration: underline; color: var(--teal); font-size: 12px; }
   @media(max-width:680px) {
     .decision-panel { margin-top: 4px; }
     .decision-panel > summary { padding-block: 6px; }
     .decision-panel li { grid-template-columns: minmax(0, 1fr); gap: 3px; }
     .decision-sources a { min-height: 36px; }
+    [data-decisions-for="k12-teacher"] li { padding-block: 8px; gap: 1px; }
+    [data-decisions-for="k12-teacher"] .decision-sources a { min-height: 32px; }
   }
 </style>

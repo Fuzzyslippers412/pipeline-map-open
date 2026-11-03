@@ -7,13 +7,13 @@ const catalog=JSON.parse(readFileSync(new URL('../data/professions.json',import.
 const slugs = title=>matchJobTitle(title,catalog).map(p=>p.slug);
 
 test('whole titles, abbreviations, ranks and specialties resolve to the matching profession',()=>{
-  for(const [title,slug] of [['Senior Software Engineer II','software-engineer'],['Senior Full-Stack Developer','software-engineer'],['ICU RN','registered-nurse'],['R.N., B.S.N.','registered-nurse'],['Assistant Professor of Biology','professor'],['Civil Engineer','engineer'],['Master Electrician','electrician'],['Software Engineer — Payments','software-engineer']]){
+  for(const [title,slug] of [['Senior Software Engineer II','software-engineer'],['Senior Full-Stack Developer','software-engineer'],['ICU RN','registered-nurse'],['Public-school teacher','k12-teacher'],['Public school classroom teacher','k12-teacher'],['R.N., B.S.N.','registered-nurse'],['Assistant Professor of Biology','professor'],['Civil Engineer','engineer'],['Master Electrician','electrician'],['Software Engineer — Payments','software-engineer']]){
     assert.deepEqual(slugs(title),[slug],title);
   }
 });
 
 test('adjacent occupations cannot inherit a pipeline through a keyword or employer',()=>{
-  for(const title of ['Physician Assistant','Pharmacy Technician','Paralegal','Medical Assistant','Engineering Recruiter','Medical Coder','Executive Assistant to the CEO','Amazon','Security Officer','Assistant to the Professor','software engineer recruiter','surgical technician','traveler','constructor','']){
+  for(const title of ['Physician Assistant','Pharmacy Technician','Paralegal','Medical Assistant','Public school teacher assistant','Engineering Recruiter','Medical Coder','Executive Assistant to the CEO','Amazon','Security Officer','Assistant to the Professor','software engineer recruiter','surgical technician','traveler','constructor','']){
     assert.deepEqual(slugs(title),[],title);
   }
   assert.deepEqual(slugs('Warehouse associate at an engineering company'),[]);

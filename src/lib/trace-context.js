@@ -49,9 +49,23 @@ function workplaceKey(value) {
     .replace(/&/g, ' and ').replace(/[’']/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 }
 
-export function findWorkplaceLinks(workplace, slug, links) {
+export function findWorkplaceLinks(workplace, slug, links, workplaceInfo = null) {
   const key = workplaceKey(workplace);
   if (!key || !Array.isArray(links)) return [];
-  return links.filter(item => item.professions.includes(slug) &&
-    [item.workplace, ...item.aliases].some(alias => workplaceKey(alias) === key));
+  return links.filter(item => {
+    if (!item.professions.includes(slug)) return false;
+    const names = [item.workplace, ...item.aliases].map(workplaceKey);
+    if (!item.site) return names.includes(key);
+
+    // School names recur across districts. A selected directory row must match
+    // both its location and its district. Bare free text cannot establish a site.
+    const info = workplaceInfo?.workplace === workplace ? workplaceInfo : null;
+    if (info && (info.location || info.parent)) {
+      const location = workplaceKey(item.site.location);
+      if (workplaceKey(info.location) !== location ||
+          workplaceKey(info.parent) !== workplaceKey(item.site.parent)) return false;
+      if (names.includes(key + ' ' + location)) return true;
+    }
+    return names.includes(key); // Every stored school alias includes its city and state.
+  });
 }

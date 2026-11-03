@@ -96,5 +96,43 @@
     "eventYear": 1975,
     "fromInstitution": "Freedmen’s Hospital",
     "toInstitution": "Howard University Hospital"
+  },
+  {
+    "workplace": "Atlanta Public Schools",
+    "aliases": ["Atlanta Public Schools, Atlanta, GA", "Atlanta Public Schools, Atlanta, Georgia"],
+    "scope": "district",
+    "professions": ["k12-teacher"],
+    "headline": "Atlanta’s school board replaces separate pay schedules",
+    "description": "After William H. Reeves challenged teacher pay in 1942, Atlanta’s school board abolished its separate salary schedules and called for one plan. A later lawsuit challenged whether Black teachers actually received equal pay.",
+    "sourceTitle": "Fifth Circuit · Cook v. Davis",
+    "url": "https://openjurist.org/178/f2d/595/cook-v-davis",
+    "eventDateLabel": "1942",
+    "eventYear": 1942
+  },
+  {
+    "workplace": "Booker T. Washington High School, Norfolk, VA",
+    "aliases": ["Booker T Washington High, Norfolk, VA", "Booker T Washington High School, Norfolk, Virginia", "Booker T Washington High, Norfolk, Virginia"],
+    "scope": "school",
+    "site": {"id": "nces-school-510267001079", "name": "Booker T Washington High", "location": "Norfolk, VA", "parent": "Norfolk City Public Schools"},
+    "professions": ["k12-teacher"],
+    "headline": "Melvin O. Alston challenges Norfolk’s racial pay gap",
+    "description": "Alston taught at Norfolk’s Booker T. Washington High School and joined the Norfolk Teachers’ Association in challenging lower pay for Black teachers. The Fourth Circuit reversed the dismissal and sent the case back for further proceedings.",
+    "sourceTitle": "Fourth Circuit · Alston v. School Board of City of Norfolk",
+    "url": "https://law.justia.com/cases/federal/appellate-courts/F2/112/992/1498702/",
+    "eventDateLabel": "June 18, 1940",
+    "eventYear": 1940
+  },
+  {
+    "workplace": "Booker T. Washington High School, Atlanta, GA",
+    "aliases": ["Booker T Washington High, Atlanta, GA", "Booker T Washington High School, Atlanta, Georgia", "Booker T Washington High, Atlanta, Georgia"],
+    "scope": "school",
+    "site": {"id": "nces-school-130012004174", "name": "Booker T. Washington High School", "location": "Atlanta, GA", "parent": "Atlanta Public Schools"},
+    "professions": ["k12-teacher"],
+    "headline": "Charles Lincoln Harper hires the school’s teachers",
+    "description": "Charles Lincoln Harper, the first principal, hired teachers for Atlanta’s first public high school for Black students.",
+    "sourceTitle": "Georgia Historic Preservation Section · National Register nomination",
+    "url": "https://npgallery.nps.gov/GetAsset/9814b816-e5bd-4513-8b58-415d397c5297#page=7",
+    "eventDateLabel": "1924",
+    "eventYear": 1924
   }
 ]

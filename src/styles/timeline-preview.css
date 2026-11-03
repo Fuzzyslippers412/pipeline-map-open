@@ -143,12 +143,12 @@
 
 /* Keep the decision disclosure in reach beneath the three answers on a phone. */
 @media(max-width:480px) {
-  .career-timeline:has([data-nursing-decisions]:not([hidden])) .path-preview {
+  .career-timeline:has([data-decisions-for]:not([hidden])) .path-preview {
     scroll-margin-block-start: 0;
   }
-  .career-timeline:has([data-nursing-decisions]:not([hidden])) .path-preview-header { margin-bottom: 6px; }
-  .career-timeline:has([data-nursing-decisions]:not([hidden])) .path-preview-cell { padding-block: 6px; }
-  .career-timeline:has([data-nursing-decisions]:not([hidden])) .path-preview-status {
+  .career-timeline:has([data-decisions-for]:not([hidden])) .path-preview-header { margin-bottom: 6px; }
+  .career-timeline:has([data-decisions-for]:not([hidden])) .path-preview-cell { padding-block: 6px; }
+  .career-timeline:has([data-decisions-for]:not([hidden])) .path-preview-status {
     position: absolute;
     width: 1px;
     height: 1px;

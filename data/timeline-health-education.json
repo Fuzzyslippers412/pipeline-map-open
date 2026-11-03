@@ -73,6 +73,14 @@
   ],
   "k12-teacher": [
     {
+      "dateLabel": "1867",
+      "sortYear": 1867,
+      "title": "The Marion Nine open Lincoln Normal School",
+      "description": "Nine formerly enslaved founders and their neighbors opened a school in Marion, Alabama, that later trained Black teachers.",
+      "sourceTitle": "Alabama State University · History and traditions",
+      "url": "https://www.alasu.edu/about/history-tradition.php"
+    },
+    {
       "dateLabel": "1868",
       "sortYear": 1868,
       "title": "Hampton opens a teacher training school",

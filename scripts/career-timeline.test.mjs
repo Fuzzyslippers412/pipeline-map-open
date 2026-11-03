@@ -32,3 +32,24 @@ test('documented funding is chronological, leads cannot fill a gap, retrieval da
  const related=buildCareerTimeline({context:{...context,related:true},field});
  assert.ok(!related.some(r=>r.type==='employer'));assert.match(related.at(-1).meta,/related field/);
 });
+
+test('teacher decisions distinguish exact campuses, district and qualified free text',()=>{
+ const field={slug:'k12-teacher',historical:historic['k12-teacher'],reviewers,awards:[]};
+ const matches=(employer,workplaceInfo)=>buildCareerTimeline({
+  context:{employer,title:'Public school teacher',profession:field.slug,workplaceInfo},field
+ }).filter(row=>row.type==='employer').map(row=>row.title);
+ const norfolk='Booker T Washington High',atlanta='Booker T. Washington High School';
+ const info=(workplace,location,parent)=>({workplace,location,parent});
+ const alston='Melvin O. Alston challenges Norfolk’s racial pay gap';
+ const harper='Charles Lincoln Harper hires the school’s teachers';
+ assert.deepEqual(matches(norfolk,info(norfolk,'Norfolk, VA','Norfolk City Public Schools')),[alston]);
+ assert.deepEqual(matches(atlanta,info(atlanta,'Atlanta, GA','Atlanta Public Schools')),[harper]);
+ assert.deepEqual(matches(atlanta+', Norfolk, Virginia'),[alston]);
+ assert.deepEqual(matches(norfolk+', Atlanta, GA'),[harper]);
+ assert.deepEqual(matches(atlanta),[]);
+ assert.deepEqual(matches(norfolk,info(norfolk,'Tuskegee, AL','Macon County')),[]);
+ assert.deepEqual(matches(norfolk,info(norfolk,'Norfolk, VA','Other district')),[]);
+ assert.deepEqual(matches('Norfolk City Public Schools'),[]);
+ assert.deepEqual(matches('Atlanta Public Schools'),['Atlanta’s school board replaces separate pay schedules']);
+ assert.deepEqual(matches('Atlanta Classical Academy',info('Atlanta Classical Academy','Atlanta, GA','Atlanta Public Schools')),[]);
+});
