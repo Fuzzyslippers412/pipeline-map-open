@@ -27,15 +27,17 @@ import '../styles/trace-combobox.css';
 </form><p class="privacy-line">Typing searches downloaded directories in this tab. Shared cards omit your entries.</p>
 <details id="more-workplaces" class="more-workplaces"><summary>Search more workplaces</summary><p>Search the U.S. Treasury’s federal award recipient directory. Only clicking the button sends the workplace text to USAspending.</p><button id="search-federal-workplaces" type="button" class="secondary" disabled>Search federal recipients</button><p id="federal-status" role="status"></p><div id="federal-results"></div></details>
 <div class="trace-example"><span>Try an example</span><button id="try-trace" type="button" disabled>Nurse at Howard University Hospital ↗</button><button id="try-live" type="button" disabled>Research an Atlanta Public Schools teacher ↗</button></div>
-<div id="match-result" data-timeline-scope hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
+<noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript></div></section>
+<section id="match-result" data-timeline-scope aria-label="Career path result" hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
 <CareerTimeline/>
 <SourceLookup/>
 <div id="manual-choice" hidden><label for="manual-profession">Choose a profession to explore</label><select id="manual-profession"><option value="">Select a profession…</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select><button type="button" id="manual-open" class="secondary" disabled>Trace this profession →</button></div>
-</div><noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript></div></section>
+<a href="#trace" class="edit-trace-entry">Edit workplace or title ↑</a>
+</section>
 <script type="application/json" id="quick-workplaces" set:html={JSON.stringify(quickWorkplaces).replace(/</g,'\\u003c')}></script>
 <script>
 import {setupTraceEntryFields} from '../lib/trace-entry-fields.js';
-import {bindLookup} from '../lib/bind-lookup.js';
+import {bindLookup,revealTimelinePreview} from '../lib/bind-lookup.js';
 import {matchJobTitle} from '../lib/job-match.js';
 import {saveTrace,readTrace,clearTrace} from '../lib/trace-context.js';
 const catalog=JSON.parse(document.querySelector('#search-index')!.textContent!);
@@ -74,9 +76,9 @@ function openRecord(slug:string,match='title'){
  const record=catalog.find((p:any)=>p.slug===slug);
  if(!record||!job.value.trim())return;
  const url='/p/'+record.slug+'/';
- if(saveTrace({title:job.value,workplace:employer.value,slug:record.slug,match,workplaceInfo:entries.workplaceInfo})){location.assign(url);return}
+ if(saveTrace({title:job.value,workplace:employer.value,slug:record.slug,match,workplaceInfo:entries.workplaceInfo})){location.assign(url+'#path-preview');return}
  choices.replaceChildren();manual.hidden=true;
- showResult('Your profession is '+record.name,'You can research this workplace here or open the public profession record.');researchHere(record.slug,match==='related');
+ showResult('Your profession is '+record.name,'You can research this workplace here or open the public profession record.');researchHere(record.slug,match==='related');revealTimelinePreview(timeline);
  const link=document.createElement('a');link.className='secondary';link.href=url;link.textContent='Open '+record.name+' →';choices.append(link);
 }
 function showUnmapped(){
@@ -97,6 +99,7 @@ form.addEventListener('submit',event=>{
   saveTrace({title:job.value,workplace:employer.value,slug:'',match:'unmapped',workplaceInfo:entries.workplaceInfo});
  }
  researchHere();manual.hidden=false;
+ if(matches.length===0)revealTimelinePreview(timeline);
 });
 select.addEventListener('change',()=>manualOpen.disabled=!select.value);
 manualOpen.addEventListener('click',()=>openRecord(select.value,'related'));

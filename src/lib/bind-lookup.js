@@ -11,3 +11,12 @@ export function bindLookup(element, context) {
   if (typeof element.setContext === 'function') apply();
   else customElements.whenDefined(element.localName).then(apply);
 }
+
+// Focusing is reserved for a submitted trace. Re-rendering after research or
+// restoring a saved draft should never pull a reader away from their place.
+export function revealTimelinePreview(element){
+  if(!element)return;
+  customElements.whenDefined(element.localName).then(()=>requestAnimationFrame(()=>{
+    if(element.isConnected&&!element.hidden)element.focusPreview();
+  }));
+}

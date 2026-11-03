@@ -203,7 +203,7 @@ import '../styles/source-lookup.css';
         groups.append(coverage);
       }
       if(this.closest('[data-timeline-scope]')?.querySelector('pipeline-career-timeline:not([hidden])')){
-        const link=document.createElement('a');link.href='#career-timeline';link.textContent='View updated timeline ↑';groups.append(link);
+        const link=document.createElement('a');link.href='#path-preview';link.textContent='View updated path preview ↑';groups.append(link);
       }
       if (!documented.length || report.status !== 'complete') this.showWiderSearch();
     }

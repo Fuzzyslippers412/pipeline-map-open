@@ -1,0 +1,142 @@
+/* The preview must travel with the trace, including in the narrower entry form. */
+.path-preview {
+  min-width: 0;
+  container: path-preview / inline-size;
+  overflow-wrap: anywhere;
+  scroll-margin-block-start: 12px;
+}
+
+.path-preview-header { min-width: 0; margin: 0 0 12px; }
+.path-preview-header .eyebrow { color: var(--lime); }
+.path-preview-title {
+  margin: 5px 0 3px;
+  color: var(--text);
+  font: 500 clamp(25px, 3vw, 35px)/1.08 var(--serif);
+  letter-spacing: -.035em;
+}
+.path-preview-person { margin: 0; font: 650 15px/1.35 var(--sans); color: var(--text); }
+.path-preview-affiliation { margin: 2px 0 0; font: 12px/1.4 var(--sans); color: var(--muted); }
+
+.path-preview-sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid var(--edge);
+}
+.path-preview-cell {
+  --point: var(--lime);
+  position: relative;
+  min-width: 0;
+  padding: 10px 0 9px 18px;
+}
+.path-preview-cell + .path-preview-cell { border-top: 1px solid var(--edge); }
+.path-preview-cell[data-part='workplace'] { --point: var(--teal); }
+.path-preview-cell[data-part='gaps'] { --point: var(--muted); }
+.path-preview-cell::before {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--point);
+  background: var(--point);
+  content: '';
+}
+.path-preview-cell[data-part='gaps']::before { background: transparent; border-style: dashed; }
+.path-preview-label {
+  display: block;
+  margin: 0 0 3px;
+  color: var(--point);
+  font: 500 10px/1.4 var(--mono);
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+.path-preview .path-preview-headline {
+  margin: 0;
+  color: var(--text);
+  font: 650 clamp(16px, 1.8vw, 19px)/1.24 var(--sans);
+  letter-spacing: -.025em;
+}
+.path-preview .path-preview-copy {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font: 13px/1.4 var(--sans);
+}
+.path-preview-source { display: flex; flex-wrap: wrap; gap: 0 12px; }
+.path-preview-source a {
+  display: inline-block;
+  max-width: 100%;
+  min-height: 24px;
+  padding-block: 5px 3px;
+  font: 12px/1.35 var(--sans);
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.path-preview-gap-list {
+  display: grid;
+  gap: 4px;
+  margin: 5px 0 0;
+  padding-inline-start: 15px;
+  color: var(--muted);
+  font: 13px/1.4 var(--sans);
+}
+.path-preview-gap-list li::marker { color: var(--soft); }
+.path-preview-status {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font: 11px/1.45 var(--mono);
+}
+.path-preview-status:empty, .path-preview-affiliation:empty { display: none; }
+.path-preview-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 3px 15px; }
+.path-preview-actions a, .path-preview-actions button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  color: var(--teal);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.path-full-timeline { margin-top: 6px; }
+.path-full-timeline > summary {
+  width: fit-content;
+  min-width: min(100%, 160px);
+  padding: 10px 0;
+  color: var(--text);
+  font: 650 14px/1.45 var(--sans);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.path-full-timeline > summary::before { font-family: var(--mono); }
+.path-full-timeline > summary:hover { color: var(--lime); }
+.path-full-timeline-body { min-width: 0; border-top: 1px solid var(--edge); padding-top: 13px; }
+
+/* Use the component width so an unlisted title in the desktop form doesn't
+   inherit a wide-screen layout intended for a full profession record. */
+@container path-preview (min-width: 640px) {
+  .path-preview-sections { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .path-preview-cell { padding: 13px 14px 12px 20px; }
+  .path-preview-cell::before { top: 17px; }
+  .path-preview-cell + .path-preview-cell {
+    border-top: 0;
+    border-left: 1px solid var(--edge);
+    padding-inline-start: 30px;
+  }
+  .path-preview-cell + .path-preview-cell::before { left: 12px; }
+}
+@media (pointer: coarse) {
+  .path-preview a.path-preview-source, .path-preview-source a {
+    min-height: 32px;
+    padding-block: 7px;
+  }
+  .path-full-timeline > summary, .path-preview-actions a, .path-preview-actions button { min-height: 44px; }
+}
+@media (forced-colors: active) {
+  .path-preview-cell::before { border: 2px solid CanvasText; }
+  .path-preview-cell[data-part='gaps']::before { border-style: dashed; }
+}

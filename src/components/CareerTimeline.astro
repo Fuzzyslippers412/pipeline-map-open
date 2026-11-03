@@ -1,21 +1,43 @@
 ---
 import '../styles/career-timeline.css';
+import '../styles/timeline-preview.css';
 ---
 <pipeline-career-timeline id="career-timeline" class="career-timeline" hidden>
-  <header class="timeline-head">
-    <div class="eyebrow"><i></i> CAREER TIMELINE</div>
-    <h2>From the first openings to your job</h2>
-    <p data-person></p><p class="timeline-workplace-info" data-workplace-info hidden></p>
-  </header>
-  <p class="timeline-note">Read from the earliest documented event to today. Each source explains one step; a gap marks a connection the evidence doesn’t establish.</p>
-  <p class="timeline-status" data-status role="status"></p>
-  <nav class="timeline-jumps" aria-label="Jump through your timeline"><a data-jump="timeline-history">Field history ↓</a><a data-jump="timeline-workplace">Workplace ↓</a><a data-jump="timeline-today">Your job ↓</a><a data-search-jump href="#workplace-lookup">Find more sources ↓</a></nav>
-  <button class="secondary timeline-retry" data-retry type="button" hidden>Retry profession history</button>
-  <ol class="timeline-steps" data-steps aria-label="Chronological steps"></ol>
+  <section class="path-preview" id="path-preview" aria-labelledby="path-preview-heading">
+    <header class="path-preview-header">
+      <div class="eyebrow"><i></i> CAREER PATH</div>
+      <h2 id="path-preview-heading" class="path-preview-title" tabindex="-1">Your path at a glance</h2>
+      <p class="path-preview-person" data-person></p><p class="path-preview-affiliation" data-workplace-info hidden></p>
+    </header>
+    <div class="path-preview-sections" data-preview-sections hidden>
+      {[
+        ['opening','Who opened the door'],
+        ['workplace','Your workplace connection'],
+        ['gaps','What’s still unknown']
+      ].map(([part,label])=><section class="path-preview-cell" data-part={part}>
+        <h3 class="path-preview-label">{label}</h3>
+        <p class="path-preview-headline" data-headline></p>
+        <p class="path-preview-copy" data-copy hidden></p>
+        {part==='gaps'?<ul class="path-preview-gap-list" data-gap-items></ul>:<div class="path-preview-source" data-preview-sources></div>}
+      </section>)}
+    </div>
+    <p class="path-preview-status" data-status role="status"></p>
+    <button class="secondary timeline-retry" data-retry type="button" hidden>Retry profession history</button>
+  </section>
+  <details class="path-full-timeline" data-full hidden>
+    <summary>Explore the full timeline and sources</summary>
+    <div class="path-full-timeline-body">
+      <p class="timeline-note">Read from the earliest documented event to today. Each source explains one step. A gap marks a connection the evidence doesn’t establish.</p>
+      <nav class="timeline-jumps" aria-label="Jump through your timeline"><a data-jump="timeline-history">Field history ↓</a><a data-jump="timeline-workplace">Workplace ↓</a><a data-jump="timeline-today">Your job ↓</a></nav>
+      <ol class="timeline-steps" data-steps aria-label="Chronological steps"></ol>
+    </div>
+  </details>
+  <div class="path-preview-actions"><a data-search-jump href="#workplace-lookup">Look for more workplace sources ↓</a></div>
 </pipeline-career-timeline>
 
 <script>
 import {buildCareerTimeline} from '../lib/career-timeline.js';
+import {buildTimelinePreview} from '../lib/timeline-preview.js';
 
 type Context={employer:string,title:string,profession?:string,related?:boolean,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string}|null};
 const cache=new Map<string,Promise<any>>();
@@ -58,6 +80,9 @@ class CareerTimeline extends HTMLElement{
     this.querySelector('[data-status]')!.textContent='';
     this.querySelector('[data-workplace-info]')!.textContent='';
     this.querySelector('[data-steps]')!.replaceChildren();
+    this.querySelector<HTMLElement>('[data-preview-sections]')!.hidden=true;
+    const full=this.querySelector<HTMLDetailsElement>('[data-full]')!;
+    full.open=false;full.hidden=true;
   }
   setContext(next:Context){
     if(!next?.title){this.reset();return}
@@ -70,6 +95,13 @@ class CareerTimeline extends HTMLElement{
     hint.textContent=info?[info.parent?(info.relation||'Parent organization')+': '+info.parent:'',info.location].filter(Boolean).join(' · '):'';
     hint.hidden=!hint.textContent;
     this.retry();
+  }
+  focusPreview(){
+    if(!this.context||this.hidden)return;
+    const target=this.querySelector<HTMLElement>('#path-preview-heading')!;
+    target.focus({preventScroll:true});
+    const preview=this.querySelector<HTMLElement>('#path-preview')!;
+    preview.scrollIntoView({block:'start',behavior:'instant'});
   }
   private retry=async()=>{
     const context=this.context;if(!context)return;
@@ -95,6 +127,32 @@ class CareerTimeline extends HTMLElement{
     list.setAttribute('aria-busy',String(this.loading));
     if(this.loading){list.replaceChildren();status.textContent='Loading the field history…';return}
     const steps=buildCareerTimeline({context:this.context,field:this.field,report:this.report,loadFailed:this.failed});
+    const preview=buildTimelinePreview({steps,context:this.context,loadFailed:this.failed,report:this.report});
+    const sections=this.querySelector<HTMLElement>('[data-preview-sections]')!;
+    for(const key of ['opening','workplace','gaps'] as const){
+      const cell=sections.querySelector<HTMLElement>('[data-part="'+key+'"]')!;
+      const entry=preview[key];
+      const date='date' in entry&&entry.date?entry.date+' · ':'';
+      cell.querySelector<HTMLElement>('[data-headline]')!.textContent=date+entry.title;
+      const copy=cell.querySelector<HTMLElement>('[data-copy]')!;
+      copy.textContent=entry.detail;copy.hidden=!entry.detail;
+      if('sources' in entry){
+        const refs=cell.querySelector<HTMLElement>('[data-preview-sources]')!;
+        refs.replaceChildren(...entry.sources.map((source:{title:string,url:string})=>{
+          const link=document.createElement('a');link.href=source.url;link.target='_blank';link.rel='noopener noreferrer';
+          const [publisher,subject]=source.title.split(' · ');
+          const samePublisher=entry.sources.some((other:{title:string})=>other!==source && other.title.split(' · ')[0]===publisher);
+          link.textContent=((samePublisher&&subject)?subject:publisher)+' ↗';
+          link.setAttribute('aria-label','Source: '+source.title);link.title=source.title;
+          return link;
+        }));
+      }else{
+        cell.querySelector('[data-gap-items]')!.replaceChildren(...entry.items.map((text:string)=>part('li','',text)));
+      }
+    }
+    sections.hidden=false;
+    const full=this.querySelector<HTMLDetailsElement>('[data-full]')!;
+    full.hidden=false;
     const rows=steps.map(step=>{
       const li=document.createElement('li');li.className='timeline-step';li.dataset.kind=step.type;
       li.append(part('span','timeline-date',step.date));
@@ -126,9 +184,11 @@ class CareerTimeline extends HTMLElement{
     }
     list.replaceChildren(...rows);
     const documented=steps.filter(s=>['history','employer','award'].includes(s.type)).length;
-    const gaps=steps.filter(s=>s.type==='gap').length;
-    const summary=documented+' sourced '+(documented===1?'milestone':'milestones')+' · '+gaps+(gaps===1?' open connection':' open connections');
-    status.textContent=this.report?'Workplace search applied. '+summary:summary;
+    const summary=documented+' sourced '+(documented===1?'milestone':'milestones')+' in the full timeline.';
+    status.textContent=this.report?'Preview updated from workplace search. '+summary:summary;
+    if(['#timeline-history','#timeline-workplace','#timeline-today'].includes(location.hash)&&!this.report){
+      full.open=true;requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView({block:'start',behavior:'instant'}));
+    }
   }
 }
 if(!customElements.get('pipeline-career-timeline'))customElements.define('pipeline-career-timeline',CareerTimeline);

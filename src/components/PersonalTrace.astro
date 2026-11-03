@@ -16,7 +16,7 @@ const {p}=Astro.props;
   </div>
 </section>
 <script>
-import {bindLookup} from '../lib/bind-lookup.js';
+import {bindLookup,revealTimelinePreview} from '../lib/bind-lookup.js';
 import {readTrace,clearTrace} from '../lib/trace-context.js';
 const panel=document.querySelector<HTMLElement>('#personal-trace');
 if(panel){
@@ -35,6 +35,8 @@ if(panel){
     const heading=document.querySelector<HTMLElement>('.record-head h1');
     if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true})}
   });
-  render();window.addEventListener('pageshow',render);
+  render();
+  if(location.hash==='#path-preview'&&!panel.hidden)revealTimelinePreview(timeline);
+  window.addEventListener('pageshow',render);
 }
 </script>

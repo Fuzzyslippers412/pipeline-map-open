@@ -22,7 +22,7 @@ See [workplace directory sources](data/WORKPLACES.md) and [O*NET® job-title sou
 
 ## Career timelines
 
-Entering a workplace and job title creates a chronological trace. Field openings come from the cited event records in `data/timeline-health-education.json` and `data/timeline-civic-trades.json`. Reviewed workplace relationships and documented awards are dated separately. A source's publication date or the index refresh date cannot stand in for the date of an event. Gaps and self-reported details have explicit labels. Source lookup adds qualifying records to the current trace and keeps unverified leads below it. Personal entries remain out of shared links and preview images.
+Entering a workplace and job title opens a three-part preview of the earliest sourced field opening in the record, the workplace connection, and the gaps. The full chronological trace and its citations expand below the preview. Field openings come from the cited event records in `data/timeline-health-education.json` and `data/timeline-civic-trades.json`. Reviewed workplace relationships and documented awards are dated separately. A source's publication date or the index refresh date cannot stand in for the date of an event. Gaps and self-reported details have explicit labels. Source lookup adds qualifying records to the current trace and keeps unverified leads below it. Personal entries remain out of shared links and preview images.
 
 ## Workplace source search
 
