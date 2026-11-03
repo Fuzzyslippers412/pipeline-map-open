@@ -31,6 +31,7 @@ import '../styles/trace-combobox.css';
     </aside>
   </div>
   <div class="trace-box">
+    <p id="exercise-prompt" class="exercise-prompt" hidden><strong>Reader exercise</strong> These fields contain a fictional school and a teacher’s title. Choose “Trace my path” to see what the records can tell you.</p>
     <form id="job-trace-form" autocomplete="off" aria-label="Trace my career">
       <div class="trace-field">
         <div class="trace-field-heading">
@@ -157,7 +158,7 @@ form.addEventListener('input',()=>{
  if(saved&&(saved.title!==job.value.trim()||saved.workplace!==employer.value.trim()))clearTrace();
  reset.hidden=!job.value&&!employer.value;
 });
-reset.addEventListener('click',()=>{clearTrace();form.reset();entries.clear();clearResults();reset.hidden=true;employer.focus()});
+reset.addEventListener('click',()=>{document.querySelector<HTMLElement>('#exercise-prompt')?.setAttribute('hidden','');clearTrace();form.reset();entries.clear();clearResults();reset.hidden=true;employer.focus()});
 for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-example [data-example]')){
   button.disabled=false;
   button.addEventListener('click',()=>{
@@ -165,7 +166,16 @@ for(const button of document.querySelectorAll<HTMLButtonElement>('.trace-example
     entries.example(example.workplace,example.site);job.value=example.title;reset.hidden=false;form.requestSubmit();
   });
 }
-savedFields();
+const exercisePrompt = document.querySelector<HTMLElement>('#exercise-prompt');
+const readerExercise = exercisePrompt && new URL(location.href).searchParams.get('exercise') === 'unlisted';
+if (readerExercise) {
+  exercisePrompt.hidden = false;
+  entries.example('Door Notes Practice School (fictional)');
+  job.value = 'Public school teacher';
+  reset.hidden = false;
+} else {
+  savedFields();
+}
 form.querySelector<HTMLButtonElement>('.trace-submit')!.disabled=false;
 window.addEventListener('pageshow',event=>{if(event.persisted){clearResults();savedFields(true)}});
 

@@ -24,9 +24,18 @@ const steps = ['First', 'Second'];
       </nav>
       <h2>What did you find?</h2>
       <p>Write your answers here, then copy them back to whoever sent you this test. Your notes stay in this tab.</p>
-      {[...questions, 'Where, if anywhere, did you get stuck? (Optional)'].map((question, i) => (
+      {[...questions, 'Which institution makes a decision affecting workers today? What can it decide?'].map((question, i) => (
         <label class="answer"><span>{i + 1}. {question}</span><textarea rows="2" maxlength="1400" data-answer={question}></textarea></label>
       ))}
+      <div class="practice-step">
+        <h2>Now try an unlisted school</h2>
+        <p>Open the practice form in a new tab. It uses a fictional school so you can test the trace without entering your workplace.</p>
+        <a href="/?exercise=unlisted#trace" target="_blank" rel="noopener">Open the practice form <span aria-hidden="true">↗</span></a>
+        <label class="answer"><span>What can you trace for the teacher, and what is missing about this school?</span>
+          <textarea rows="2" maxlength="1400" data-answer="Unlisted school: what could you trace and what was missing?"></textarea></label>
+      </div>
+      <label class="answer"><span>Where, if anywhere, did you get stuck? <small>Optional</small></span>
+        <textarea rows="2" maxlength="1400" data-answer="Where did you get stuck?"></textarea></label>
     </section>
 
     <section id="reader-study" aria-labelledby="study-title" hidden>
@@ -66,6 +75,7 @@ const steps = ['First', 'Second'];
     <span role="status" data-copy-status></span>
     <textarea readonly hidden aria-label="Answers ready to copy" data-copy-fallback></textarea>
     <aside class="study-switch" id="study-invite">
+      <a href="/suggest/">Suggest a workplace for Door Notes →</a>
       <a href="/try/?first=original">Compare two designs of the Atlanta teacher path →</a>
     </aside>
   </div>
@@ -176,6 +186,8 @@ copy.addEventListener('click', async () => {
 .examples a { display: flex; justify-content: space-between; gap: 8px; }
 .examples a + a { border-top: 1px solid var(--edge); }
 .examples a, .study-links a, .study-switch a { align-items: center; min-height: 44px; padding-block: 10px; color: var(--teal); font-weight: 650; }
+.practice-step { margin-top:22px; border-top:1px solid var(--edge); }
+.practice-step > a { display:inline-flex; gap:6px; align-items:center; min-height:44px; color:var(--action); font-weight:650; text-decoration:underline; text-underline-offset:.18em; }
 .study-links, .study-switch a { display: flex; flex-wrap: wrap; column-gap: 22px; }
 .study-links a { display: inline-flex; gap: 5px; align-items: center; }
 .study-links a, .study-switch a { text-decoration: underline; text-underline-offset: .18em; }

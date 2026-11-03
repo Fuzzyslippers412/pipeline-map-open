@@ -1,0 +1,163 @@
+---
+import Layout from '../../components/Layout.astro';
+import {trackerForm} from '../../lib/workplace-nomination.js';
+const publicRequests = new URL('https://github.com/Fuzzyslippers412/pipeline-map-corrections/issues');
+publicRequests.searchParams.set('q', 'is:issue in:title "[Workplace]"');
+---
+<Layout title="Suggest a workplace" desc="Request a workplace history for Door Notes. Review the exact site, location, profession and optional public source before sharing.">
+  <div class="frame suggest">
+    <a class="back" href="/paths/"><span aria-hidden="true">←</span> Workplace library</a>
+    <header>
+      <p class="kicker">Research requests</p>
+      <h1>Suggest a workplace</h1>
+      <p>Which workplace should Door Notes research next? Name the exact site and the job you’d like to trace.</p>
+      <a class="requests" href={publicRequests.href} target="_blank" rel="noopener noreferrer">Browse public workplace requests <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <noscript>
+      <p><a href={trackerForm} target="_blank" rel="noopener noreferrer">Open the workplace request form on GitHub ↗</a>. Enter the public site name, city, state and profession. Your request becomes public if you post it.</p>
+    </noscript>
+    <div id="nomination" hidden>
+      <form id="workplace-form" autocomplete="off">
+        <div class="field">
+          <label for="site">Exact workplace or site</label>
+          <input id="site" required maxlength="120" aria-describedby="site-hint" placeholder="School, hospital, company, or facility"/>
+          <small id="site-hint">Use the local workplace name, even if it belongs to a larger organization.</small>
+        </div>
+        <div class="location-row">
+          <div class="field">
+            <label for="city">City or town</label>
+            <input id="city" required maxlength="80" placeholder="e.g. Atlanta"/>
+          </div>
+          <div class="field">
+            <label for="state">State or territory</label>
+            <input id="state" required maxlength="60" placeholder="e.g. Georgia"/>
+          </div>
+        </div>
+        <div class="field">
+          <label for="profession">Profession or job title</label>
+          <input id="profession" required maxlength="100" placeholder="e.g. Public school teacher"/>
+        </div>
+        <div class="field">
+          <label for="source">Public source link <small>Optional</small></label>
+          <input id="source" type="url" maxlength="400" autocomplete="off" inputmode="url" placeholder="https://" aria-describedby="source-hint"/>
+          <small id="source-hint">An official workplace page or a public record is a useful starting point.</small>
+        </div>
+        <p class="privacy">Use public workplace details only. Leave out names of employees and your personal work history. Your entries stay in this tab while you review them.</p>
+        <button class="primary" type="submit">Review request <span aria-hidden="true">→</span></button>
+      </form>
+      <section id="nomination-review" hidden aria-labelledby="review-title">
+        <p class="kicker">Your draft</p>
+        <h2 tabindex="-1" id="review-title">Review your request</h2>
+        <p id="public-note">Opening GitHub sends these details to its issue form. The request becomes public under your GitHub account only if you submit it there.</p>
+        <dl>
+          <div><dt>Workplace</dt><dd data-value="site"></dd></div>
+          <div><dt>Location</dt><dd data-value="location"></dd></div>
+          <div><dt>Profession</dt><dd data-value="profession"></dd></div>
+          <div id="source-row"><dt>Public source</dt><dd data-value="source"></dd></div>
+        </dl>
+        <div class="actions">
+          <a id="open-draft" class="primary" target="_blank" rel="noopener noreferrer" aria-describedby="public-note">Open GitHub draft <span aria-hidden="true">↗</span></a>
+          <button id="copy-request" class="secondary" type="button">Copy request</button>
+          <button id="edit-request" class="link-button" type="button">Edit details</button>
+        </div>
+        <p class="helper">You can also copy this request to share it yourself.</p>
+        <p id="copy-status" role="status"></p>
+        <textarea id="copy-fallback" hidden readonly rows="6" aria-label="Request text to copy"></textarea>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<script>
+import {prepareNomination} from '../../lib/workplace-nomination.js';
+
+const form = document.querySelector<HTMLFormElement>('#workplace-form')!;
+const review = document.querySelector<HTMLElement>('#nomination-review')!;
+const title = document.querySelector<HTMLElement>('#review-title')!;
+const openDraft = document.querySelector<HTMLAnchorElement>('#open-draft')!;
+const fallback = document.querySelector<HTMLTextAreaElement>('#copy-fallback')!;
+const status = document.querySelector<HTMLElement>('#copy-status')!;
+const inputs = [...form.querySelectorAll('input')];
+let summary = '';
+
+form.addEventListener('input', event => {
+  if (event.target instanceof HTMLInputElement) event.target.setCustomValidity('');
+});
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  const draft = prepareNomination(Object.fromEntries(inputs.map(input => [input.id, input.value])));
+  if (draft.error) {
+    const invalid = inputs.find(input => input.id === draft.error)!;
+    invalid.setCustomValidity(draft.error === 'source' ? 'Use a public http or https link without sign-in details.' : 'Enter a value for this field.');
+    invalid.reportValidity();
+    return;
+  }
+  const values = {...draft.fields, location: draft.fields.city + ', ' + draft.fields.state};
+  review.querySelectorAll<HTMLElement>('[data-value]').forEach(field => {
+    field.textContent = values[field.dataset.value!];
+  });
+  document.querySelector<HTMLElement>('#source-row')!.hidden = !values.source;
+  summary = draft.summary!;
+  openDraft.href = draft.github!;
+  form.hidden = true;
+  review.hidden = false;
+  title.focus();
+});
+document.querySelector('#edit-request')!.addEventListener('click', () => {
+  review.hidden = true;
+  form.hidden = false;
+  status.textContent = '';
+  fallback.hidden = true;
+  openDraft.removeAttribute('href');
+  inputs[0].focus();
+});
+document.querySelector('#copy-request')!.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(summary);
+    status.textContent = 'Request copied.';
+  } catch {
+    fallback.value = summary;
+    fallback.hidden = false;
+    fallback.focus();
+    fallback.select();
+    status.textContent = 'The request text is selected. Use Copy to share it.';
+  }
+});
+document.querySelector<HTMLElement>('#nomination')!.hidden = false;
+</script>
+
+<style>
+.suggest { max-width:740px; margin-inline:auto; padding-block:25px 60px; }
+.back,.requests,.link-button { display:inline-flex; align-items:center; min-height:44px; color:var(--action,var(--teal)); text-decoration:underline; text-underline-offset:.18em; font-weight:650; }
+.back { gap:6px; }
+.suggest header { padding:24px 0; margin-bottom:24px; border-bottom:1px solid var(--edge); }
+.kicker { color:var(--rust,var(--teal)); font:550 .78rem/1.4 var(--mono); letter-spacing:.06em; text-transform:uppercase; }
+h1,h2 { margin:6px 0 10px; font:500 clamp(39px,6vw,62px)/1.05 var(--serif); letter-spacing:-.045em; }
+h2 { font-size:clamp(28px,4vw,38px); }
+.requests { gap:5px; font-size:.94rem; }
+header > p:not(.kicker),.privacy,.helper,#public-note { max-width:59ch; color:var(--muted); }
+form { display:grid; gap:20px; }
+.field { display:grid; gap:4px; min-width:0; }
+.field label,dt { font-weight:650; }
+.field small,.helper { font-size:.87rem; color:var(--muted); font-weight:400; }
+.field label small { margin-left:5px; }
+.field input,textarea { background:var(--panel); border:1px solid var(--soft); border-radius:3px; color:var(--text); font:inherit; width:100%; min-width:0; padding:10px 12px; }
+.field input { min-height:46px; }
+.location-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.privacy { font-size:.95rem; border-left:2px solid var(--rust,var(--teal)); padding-left:12px; }
+.actions { display:flex; flex-wrap:wrap; align-items:center; gap:6px 15px; }
+.primary,.secondary { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:44px; width:fit-content; }
+dl { margin:18px 0; }
+dl > div { display:grid; grid-template-columns:7.5rem minmax(0,1fr); gap:12px; border-top:1px solid var(--edge); padding:10px 0; }
+dd { margin:0; overflow-wrap:anywhere; }
+.helper { margin-top:8px; }
+#copy-status { margin-top:10px; }
+noscript a { text-decoration:underline; }
+@media(max-width:480px) {
+  .suggest { padding-top:12px; }
+  .suggest header { padding-top:15px; }
+  .location-row { gap:10px; }
+  dl > div { grid-template-columns:minmax(0,1fr); gap:0; }
+}
+</style>

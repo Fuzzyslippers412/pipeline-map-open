@@ -146,3 +146,6 @@
 }
 
 .paper-edition .library-link { display:flex; align-items:center; gap:8px; width:fit-content; min-height:44px; color:var(--action); font-size:.95rem; font-weight:650; text-decoration:underline; text-underline-offset:.18em; }
+
+.exercise-prompt { margin-bottom:14px; padding:10px 12px; border-left:3px solid var(--rust); color:var(--muted); font-size:.93rem; line-height:1.45; }
+.exercise-prompt strong { display:block; color:var(--text); }

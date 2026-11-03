@@ -1,0 +1,37 @@
+name: Suggest a workplace
+description: Request research into the history of a particular workplace and profession.
+title: "[Workplace] "
+body:
+  - type: markdown
+    attributes:
+      value: "This request will be public. Use public workplace details. Leave out names of employees, contact details, and personal work histories."
+  - type: input
+    id: site
+    attributes:
+      label: Exact workplace or site
+      description: Name the school, hospital, office, company, or facility.
+    validations:
+      required: true
+  - type: input
+    id: city
+    attributes:
+      label: City or town
+    validations:
+      required: true
+  - type: input
+    id: state
+    attributes:
+      label: State or territory
+    validations:
+      required: true
+  - type: input
+    id: profession
+    attributes:
+      label: Profession or job title to research
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Public source URL (optional)
+      description: A public document or official workplace page can help identify the right site.

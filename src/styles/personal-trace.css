@@ -8,3 +8,5 @@
 
 .personal-trace__tools .example-copy-status { color:var(--muted); font-size:.82rem; }
 .example-copy-status:empty { display:none; }
+
+.personal-edition-switch a { display:inline-flex; align-items:center; gap:5px; min-height:44px; color:var(--teal); text-decoration:underline; text-underline-offset:3px; font-size:.9rem; }

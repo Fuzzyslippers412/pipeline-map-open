@@ -118,6 +118,16 @@ assert.equal(val(expectEl(docHome,'id','try-teacher'),'href'),'/p/k12-teacher/?e
 assert.ok(docHome.some(n=>n.tagName==='body' && val(n,'class')?.includes('paper-edition')),'Missing paper homepage');
 const paths=await readPage('/paths/');
 const readerTest=await readPage('/try/');
+const nomination=await readPage('/suggest/');
+assert.ok(hasHref(paths,'/suggest/') && hasHref(readerTest,'/suggest/'),'Workplace nomination missing from a reader entry point');
+assert.ok(hasHref(readerTest,'/?exercise=unlisted#trace'),'Missing unlisted-school exercise');
+expectEl(docHome,'id','exercise-prompt');
+expectEl(nomination,'id','workplace-form');
+for(const slug of ['k12-teacher','registered-nurse','electrician']) {
+  const path=(slug==='k12-teacher' ? '/p/' : '/preview/p/')+slug+'/';
+  assert.ok(hasHref(paths,path+'?example=1#who-decides'), 'Library missing current authority link for '+slug);
+  expectEl(await readPage(path),'id','who-decides', 'Missing current authority section for '+slug);
+}
 for (const slug of ['registered-nurse','electrician']) {
   const sampleRoute='/preview/p/'+slug+'/';
   const sampleLink=sampleRoute+'?example=1#path-preview';

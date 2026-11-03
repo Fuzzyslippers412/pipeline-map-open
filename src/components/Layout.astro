@@ -10,7 +10,7 @@ const studyPath = '/study/original/';
 const original = Astro.url.pathname.startsWith(studyPath);
 const preview = Astro.url.pathname.startsWith('/preview/p/');
 const readerPath = original ? '/' + Astro.url.pathname.slice(studyPath.length) : preview ? Astro.url.pathname.slice('/preview'.length) : Astro.url.pathname;
-const paper = !original && (preview || ['/', '/p/k12-teacher/', '/try/', '/paths/'].includes(readerPath));
+const paper = !original && (preview || ['/', '/p/k12-teacher/', '/try/', '/paths/', '/suggest/'].includes(readerPath));
 const home = original ? studyPath : '/';
 const mark = paper ? '/mark-paper.svg' : '/mark.svg';
 const {

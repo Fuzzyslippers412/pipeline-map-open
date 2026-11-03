@@ -1,12 +1,20 @@
 ---
 import PathDecisions from './PathDecisions.astro';
+import WorkplaceAuthority from './WorkplaceAuthority.astro';
 import {howardNursingDecisions} from '../lib/howard-nursing-decisions.js';
 import {teacherDecisions} from '../lib/teacher-decisions.js';
 import {electricianDecisions} from '../lib/electrician-decisions.js';
 import '../styles/career-timeline.css';
 import '../styles/timeline-preview.css';
 const {profession}=Astro.props;
+const hasAuthorityView = [
+  '/p/k12-teacher/',
+  '/preview/p/registered-nurse/',
+  '/preview/p/electrician/',
+].includes(Astro.url.pathname);
+const hasAuthorityShortcut = ['/p/registered-nurse/','/p/electrician/'].includes(Astro.url.pathname);
 ---
+
 <pipeline-career-timeline id="career-timeline" class="career-timeline" hidden>
   <section class="path-preview" id="path-preview" aria-labelledby="path-preview-heading">
     <header class="path-preview-header">
@@ -37,11 +45,16 @@ const {profession}=Astro.props;
           <p data-source-explanation></p>
         </details>}
         {part==='workplace' && <a class="record-search" href="#workplace-lookup" data-workplace-search hidden>Look for a workplace source <span aria-hidden="true">↓</span></a>}
+        {hasAuthorityView && part==='workplace' && <a class="record-search" href="/suggest/" data-suggest-workplace hidden>Suggest a workplace for research</a>}
       </section>)}
     </div>
     <p class="path-preview-status" data-status role="status"></p>
     <button class="secondary timeline-retry" data-retry type="button" hidden>Retry profession history</button>
   </section>
+  {hasAuthorityView && <WorkplaceAuthority/>}
+  {hasAuthorityShortcut && <a class="authority-shortcut" data-authority-shortcut href={'/preview'+Astro.url.pathname+'#who-decides'} hidden>
+    See who decides today <span aria-hidden="true">→</span>
+  </a>}
   {(!profession || profession==='registered-nurse') && <PathDecisions anchor={!!profession} profession="registered-nurse" workplace="Howard University Hospital" subtitle="Anna B. Coles, Howard’s trustees and Congress" label="Decisions and leadership in Howard nursing" records={howardNursingDecisions}/>}
   {(!profession || profession==='k12-teacher') && <PathDecisions anchor={!!profession} profession="k12-teacher" subtitle="Black teacher training, pay and your school" label="Decisions in Black public-school teaching" records={teacherDecisions}/>}
   {(!profession || profession==='electrician') && <PathDecisions anchor={!!profession} profession="electrician" subtitle="Apprenticeships, contractors and jobsites" label="Decisions in the electrical trade" records={electricianDecisions}/>}
@@ -64,6 +77,11 @@ import {findWorkplaceLinks} from '../lib/trace-context.js';
 import {teacherSchoolConnection} from '../lib/teacher-school-connection.js';
 import {electricianConnection} from '../lib/electrician-connection.js';
 import {currentDecisionRecord} from '../lib/decision-today.js';
+import {findWorkplaceAuthority,authorityReadingHref} from '../lib/workplace-authority.js';
+
+const sourceDate = new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
+type Authority = NonNullable<ReturnType<typeof findWorkplaceAuthority>>;
+
 
 type Context={employer:string,title:string,profession?:string,related?:boolean,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string}|null};
 const cache=new Map<string,Promise<any>>();
@@ -105,6 +123,13 @@ class CareerTimeline extends HTMLElement{
   private followFragment=()=>{
     if(!this.context || this.hidden) return;
     if(location.hash==='#path-preview'){this.focusPreview();return}
+    if(location.hash==='#who-decides'){
+      const panel=this.querySelector<HTMLElement>('#who-decides:not([hidden])');
+      if(!panel)return;
+      panel.querySelector<HTMLElement>('#authority-heading')!.focus({preventScroll:true});
+      panel.scrollIntoView({block:'start',behavior:'instant'});
+      return;
+    }
     if(location.hash!=='#decisions') return;
     const panel=this.querySelector<HTMLDetailsElement>('#decisions:not([hidden])');
     if(!panel)return;
@@ -118,6 +143,9 @@ class CareerTimeline extends HTMLElement{
   };
   reset(){
     this.context=null;this.field=null;this.report=null;this.loading=false;this.failed=false;this.hidden=true;
+    this.renderAuthority(null);
+    const shortcut=this.querySelector<HTMLAnchorElement>('[data-authority-shortcut]');
+    if(shortcut)shortcut.hidden=true;
     this.removeAttribute('data-record-edition');
     this.removeAttribute('data-school-edition');
     this.querySelector<HTMLDetailsElement>('[data-gap-options]')!.open=false;
@@ -176,6 +204,42 @@ class CareerTimeline extends HTMLElement{
       (context.profession||'')!==(this.context.related?'':this.context.profession||''))return;
     this.report=report;this.render();
   };
+  private renderAuthority(authority:Authority | null){
+    const panel=this.querySelector<HTMLElement>('#who-decides');
+    if(!panel)return;
+    const list=panel.querySelector<HTMLUListElement>('[data-authority-entries]')!;
+    if(!authority){
+      panel.hidden=true;
+      list.replaceChildren();
+      return;
+    }
+    // A source lookup for the same workplace should preserve disclosure and keyboard focus.
+    if(!panel.hidden)return;
+    panel.querySelector('[data-authority-place]')!.textContent=authority.place;
+    const template=panel.querySelector<HTMLTemplateElement>('[data-authority-template]')!;
+    for(const entry of authority.entries){
+      const row=template.content.cloneNode(true) as DocumentFragment;
+      row.querySelector('[data-authority-role]')!.textContent=entry.role;
+      row.querySelector('[data-authority-actor]')!.textContent=entry.actor;
+      row.querySelector('[data-authority-decision]')!.textContent=entry.decision;
+      const citation=row.querySelector<HTMLAnchorElement>('[data-authority-source]')!;
+      citation.href=entry.source.url;
+      citation.textContent=entry.source.title+' ↗';
+      if('localSource' in entry && entry.localSource){
+        const local=row.querySelector<HTMLAnchorElement>('[data-authority-local-source]')!;
+        local.href=entry.localSource.url;
+        local.textContent=entry.localSource.title+' ↗';
+        local.hidden=false;
+      }
+      list.append(row);
+    }
+    panel.querySelector('[data-authority-note]')!.textContent=authority.note;
+    const checked=panel.querySelector<HTMLTimeElement>('[data-authority-date]')!;
+    checked.dateTime=authority.checked;
+    checked.textContent=sourceDate.format(new Date(authority.checked+'T00:00:00Z'));
+    panel.hidden=false;
+    if(location.hash==='#who-decides')this.followFragment();
+  }
   private render(){
     if(!this.context)return;
     const list=this.querySelector<HTMLOListElement>('[data-steps]')!;
@@ -253,14 +317,26 @@ class CareerTimeline extends HTMLElement{
       }
     }
     sections.hidden=false;
+    const matches=findWorkplaceLinks(this.context.employer,this.context.profession,this.field?.reviewers,this.context.workplaceInfo);
+    const shortcut=this.querySelector<HTMLAnchorElement>('[data-authority-shortcut]');
+    const record=findWorkplaceAuthority(this.context,matches);
+    const authority=paperEdition && this.querySelector('#who-decides') ? record : null;
+    this.renderAuthority(authority);
+    if(shortcut){
+      const publicExample=new URLSearchParams(location.search).get('example')==='1';
+      const href=authorityReadingHref(record,publicExample);
+      shortcut.hidden=!href;
+      if(href)shortcut.href=href;
+    }
+    const suggestion=sections.querySelector<HTMLAnchorElement>('[data-suggest-workplace]');
+    if(suggestion)suggestion.hidden=!paperEdition || !this.field || !this.context.employer || matches.length>0;
     const panel=this.querySelector<HTMLDetailsElement>('[data-decisions-for="'+(this.context.profession||'')+'"]');
     if(panel && !this.context.related){
-      const matches=findWorkplaceLinks(this.context.employer,this.context.profession,this.field?.reviewers,this.context.workplaceInfo);
       const firstRender=panel.hidden;
       panel.hidden=!!panel.dataset.workplace && !matches.some(row=>row.workplace===panel.dataset.workplace);
       if(!panel.hidden){
         panel.id='decisions';
-        const today=currentDecisionRecord(this.context,matches);
+        const today=authority ? null : currentDecisionRecord(this.context,matches);
         panel.querySelector<HTMLElement>('[data-today]')!.hidden=!today;
         if(today){
           panel.querySelector('[data-today-title]')!.textContent=today.title;
@@ -348,3 +424,11 @@ class CareerTimeline extends HTMLElement{
 }
 if(!customElements.get('pipeline-career-timeline'))customElements.define('pipeline-career-timeline',CareerTimeline);
 </script>
+
+<style>
+  .authority-shortcut {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 44px;
+    color: var(--teal); font-size: .94rem; font-weight: 650;
+    text-decoration: underline; text-underline-offset: .18em;
+  }
+</style>

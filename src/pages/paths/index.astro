@@ -73,7 +73,9 @@ const entries = records.map(record => {
               <h2>{entry.title}</h2>
               <p class="workplace">{entry.workplace}</p>
               <p class="place">{entry.place}</p>
-              <a class="read" href={entry.href}>{entry.linkLabel} <span aria-hidden="true">→</span></a>
+              <div class="record-links"><a class="read" href={entry.href}>{entry.linkLabel} <span aria-hidden="true">→</span></a>
+                <a class="current-link" href={entry.href.replace('#path-preview','#who-decides')} aria-label={'Who decides today for the ' + entry.title.toLowerCase() + ' path?'}>Who decides today?</a>
+              </div>
             </div>
             <div class="evidence">
               <p>{entry.note}</p>
@@ -84,6 +86,11 @@ const entries = records.map(record => {
         </li>
       ))}
     </ol>
+    <section class="library-next" aria-labelledby="library-next-title">
+      <div><h2 id="library-next-title">Which workplace should we research next?</h2>
+        <p>A school, hospital, contractor, or another place you want to trace.</p></div>
+      <a class="read" href="/suggest/">Suggest a workplace <span aria-hidden="true">→</span></a>
+    </section>
   </div>
 </Layout>
 <style>
@@ -112,7 +119,11 @@ const entries = records.map(record => {
 .record h2 { margin: 0 0 4px; font-size: clamp(27px,3.25vw,43px); letter-spacing: -.04em; line-height: 1.12; }
 .workplace { font-weight: 650; line-height: 1.4; }
 .place { color: var(--muted); font-size: .94rem; }
-.read { margin-top: 5px; }
+.record-links { display:flex; flex-wrap:wrap; align-items:center; gap:0 18px; margin-top:5px; }
+.current-link { display:inline-flex; align-items:center; min-height:44px; font-size:.89rem; }
+.library-next { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px 24px; padding-block:24px; }
+.library-next h2 { margin:0 0 4px; font:500 clamp(25px,3vw,35px)/1.15 var(--serif); }
+.library-next p { color:var(--muted); }
 .evidence { max-width: 58ch; }
 .evidence > p { line-height: 1.48; }
 .sources { display: flex; flex-wrap: wrap; column-gap: 15px; }

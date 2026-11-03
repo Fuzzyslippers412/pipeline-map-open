@@ -16,10 +16,11 @@ const publicTrace=demo && {workplace:demo.workplace,title:demo.title,slug:demo.s
     {demo && !Astro.url.pathname.startsWith('/study/original/') && <button type="button" data-copy-example hidden data-url={new URL(examplePath(p.slug),Astro.site).href}>Copy example link</button>}
     <span data-copy-status role="status" class="example-copy-status"></span>
   </div>
+  {alternate && !preview && <div class="personal-edition-switch"><a data-switch-edition data-route={alternate} href={alternate+'#path-preview'}>Try the new reading layout <span aria-hidden="true">→</span></a></div>}
   <CareerTimeline profession={p.slug}/>
   <SourceLookup/>
   <div class="personal-trace__foot">
-    {alternate && <a data-switch-edition data-route={alternate} href={alternate+'#path-preview'}>{preview?'Open the original layout':'Try the new reading layout'} <span aria-hidden="true">→</span></a>}
+    {alternate && preview && <a data-switch-edition data-route={alternate} href={alternate+'#path-preview'}>Open the original layout <span aria-hidden="true">→</span></a>}
     <a href="#trend">See Black representation in this profession ↓</a>
     <span data-share-note>Shared links open the public profession card.</span>
     {demo && <a data-example-link hidden href={new URL(examplePath(p.slug).replace('#path-preview','#decisions'),Astro.site).href}>Public link to this example ↗</a>}
