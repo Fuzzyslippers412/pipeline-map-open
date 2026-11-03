@@ -1,0 +1,47 @@
+---
+import {howardNursingDecisions} from '../lib/howard-nursing-decisions.js';
+---
+<details class="decision-panel" data-nursing-decisions data-workplace="Howard University Hospital" hidden>
+  <summary>
+    <span class="decision-intro">
+      <strong>Decisions behind this path</strong>
+      <small>Anna B. Coles, Howard’s trustees and Congress</small>
+    </span>
+  </summary>
+  <ol aria-label="Decisions and leadership in Howard nursing">
+    {howardNursingDecisions.map(record=><li>
+      <span class="decision-date">{record.date}</span>
+      <div class="decision-content">
+        <h3>{record.title}</h3>
+        <p class="decision-actor"><span>Who</span> {record.actor}</p>
+        <p class="decision-change">{record.change}</p>
+        <div class="decision-sources">{record.sources.map(source=>
+          <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} <span aria-hidden="true">↗</span></a>)}</div>
+      </div>
+    </li>)}
+  </ol>
+</details>
+
+<style>
+  .decision-panel { margin: 11px 0 6px; border-block: 1px solid var(--edge); color: var(--text); }
+  .decision-panel > summary { display: flex; align-items: center; gap: 12px; padding: 10px 2px; min-height: 48px; overflow-wrap: anywhere; }
+  .decision-panel > summary::before { flex: 0 0 19px; width: 19px; font: 20px/1 var(--mono); text-align: center; }
+  .decision-intro strong { display: block; font: 650 16px/1.3 var(--sans); }
+  .decision-intro small { display: block; margin-top: 2px; color: var(--muted); font: 12px/1.4 var(--sans); }
+  .decision-panel > summary:hover strong { color: var(--lime); }
+  .decision-panel ol { max-width: 760px; margin: 0; padding: 0; list-style: none; }
+  .decision-panel li { display: grid; grid-template-columns: minmax(4rem, 7rem) minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--edge); }
+  .decision-date { padding-top: 2px; color: var(--lime); font: 11px/1.4 var(--mono); }
+  .decision-content h3 { margin: 0; color: var(--text); font: 650 16px/1.3 var(--sans); }
+  .decision-actor, .decision-change { margin: 4px 0 0; color: var(--muted); font: 13px/1.45 var(--sans); }
+  .decision-actor { color: var(--text); }
+  .decision-actor > span { margin-right: 3px; color: var(--muted); font: 10px var(--mono); text-transform: uppercase; }
+  .decision-sources { display: flex; flex-wrap: wrap; gap: 0 12px; }
+  .decision-sources a { display: inline-flex; gap: 3px; align-items: center; min-height: 32px; color: var(--teal); text-decoration: underline; text-underline-offset: 3px; font-size: 12px; }
+  @media(max-width:680px) {
+    .decision-panel { margin-top: 4px; }
+    .decision-panel > summary { padding-block: 6px; }
+    .decision-panel li { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+    .decision-sources a { min-height: 36px; }
+  }
+</style>

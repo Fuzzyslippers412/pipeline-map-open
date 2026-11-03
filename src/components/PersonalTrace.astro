@@ -8,7 +8,7 @@ const {p}=Astro.props;
   <div class="personal-trace__tools">
     <a href="/#trace">Edit details</a><button type="button" data-clear-trace>Clear trace</button>
   </div>
-  <CareerTimeline/>
+  <CareerTimeline includeHoward={p.slug==='registered-nurse'}/>
   <SourceLookup/>
   <div class="personal-trace__foot">
     <a href="#trend">See Black representation in this profession ↓</a>

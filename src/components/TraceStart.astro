@@ -29,7 +29,7 @@ import '../styles/trace-combobox.css';
 <div class="trace-example"><span>Try an example</span><button id="try-trace" type="button" disabled>Nurse at Howard University Hospital ↗</button><button id="try-live" type="button" disabled>Research an Atlanta Public Schools teacher ↗</button></div>
 <noscript><p>Browse the <a href="#directory">profession index</a> below to follow a field’s history.</p></noscript></div></section>
 <section id="match-result" data-timeline-scope aria-label="Career path result" hidden><h2 id="match-heading" tabindex="-1"></h2><p id="match-message"></p><div id="suggested-paths"></div>
-<CareerTimeline/>
+<CareerTimeline includeHoward/>
 <SourceLookup/>
 <div id="manual-choice" hidden><label for="manual-profession">Choose a profession to explore</label><select id="manual-profession"><option value="">Select a profession…</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select><button type="button" id="manual-open" class="secondary" disabled>Trace this profession →</button></div>
 <a href="#trace" class="edit-trace-entry">Edit workplace or title ↑</a>

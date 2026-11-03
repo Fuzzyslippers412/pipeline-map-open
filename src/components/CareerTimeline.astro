@@ -1,6 +1,8 @@
 ---
+import HowardNursingDecisions from './HowardNursingDecisions.astro';
 import '../styles/career-timeline.css';
 import '../styles/timeline-preview.css';
+const {includeHoward=false}=Astro.props;
 ---
 <pipeline-career-timeline id="career-timeline" class="career-timeline" hidden>
   <section class="path-preview" id="path-preview" aria-labelledby="path-preview-heading">
@@ -24,6 +26,7 @@ import '../styles/timeline-preview.css';
     <p class="path-preview-status" data-status role="status"></p>
     <button class="secondary timeline-retry" data-retry type="button" hidden>Retry profession history</button>
   </section>
+  {includeHoward && <HowardNursingDecisions/>}
   <details class="path-full-timeline" data-full hidden>
     <summary>Explore the full timeline and sources</summary>
     <div class="path-full-timeline-body">
@@ -38,6 +41,7 @@ import '../styles/timeline-preview.css';
 <script>
 import {buildCareerTimeline} from '../lib/career-timeline.js';
 import {buildTimelinePreview} from '../lib/timeline-preview.js';
+import {findWorkplaceLinks} from '../lib/trace-context.js';
 
 type Context={employer:string,title:string,profession?:string,related?:boolean,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string}|null};
 const cache=new Map<string,Promise<any>>();
@@ -83,6 +87,8 @@ class CareerTimeline extends HTMLElement{
     this.querySelector<HTMLElement>('[data-preview-sections]')!.hidden=true;
     const full=this.querySelector<HTMLDetailsElement>('[data-full]')!;
     full.open=false;full.hidden=true;
+    const decisions=this.querySelector<HTMLDetailsElement>('[data-nursing-decisions]');
+    if(decisions){decisions.open=false;decisions.hidden=true}
   }
   setContext(next:Context){
     if(!next?.title){this.reset();return}
@@ -151,6 +157,12 @@ class CareerTimeline extends HTMLElement{
       }
     }
     sections.hidden=false;
+    const decisions=this.querySelector<HTMLDetailsElement>('[data-nursing-decisions]');
+    if(decisions){
+      const {employer,profession,related}=this.context;
+      decisions.hidden=related || profession!=='registered-nurse' ||
+        !findWorkplaceLinks(employer,profession,this.field?.reviewers).some(row=>row.workplace===decisions.dataset.workplace);
+    }
     const full=this.querySelector<HTMLDetailsElement>('[data-full]')!;
     full.hidden=false;
     const rows=steps.map(step=>{
