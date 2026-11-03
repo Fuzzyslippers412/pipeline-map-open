@@ -1,4 +1,5 @@
 ---
+import PmEmployerSearch from './PmEmployerSearch.astro';
 import {projectStories,projectSectors,sectorQuestions} from '../lib/project-work.js';
 const {inTrace=false}=Astro.props;
 ---
@@ -14,6 +15,8 @@ const {inTrace=false}=Astro.props;
   <p data-pm-scope hidden>This record covers project management across fields. A historical connection to this sector is still open.</p>
   <a href="https://www.onetonline.org/link/details/13-1082.00">O*NET · project management duties ↗</a>
   <p class="gap"><strong data-pm-workplace>Still open at your workplace</strong><span data-pm-question>{sectorQuestions.general}</span></p>
+  <PmEmployerSearch role="project-manager"/>
+  {!inTrace && <a href="/#trace">Trace my workplace and title →</a>}
   {inTrace && <a data-pm-map href="/career-map/project-manager/">Explore project management responsibilities →</a>}
 </section>
 <style>

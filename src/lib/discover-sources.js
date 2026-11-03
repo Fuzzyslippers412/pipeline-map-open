@@ -1,3 +1,4 @@
+import {isPmRole,pmTitles,boardProvider,pmBoardSources,reviewedPmSources,describePmRecord} from './pm-employer-sources.js';
 import {sourceDate} from './source-date.js';
 import {employerKey as alias, normalizeEmployerText as normalize} from './employer-key.js';
 import { ericSources } from './eric-sources.js';
@@ -112,10 +113,13 @@ export async function discoverSources({employer,title='',profession='',signal,fe
   if(signal?.aborted)throw signal.reason??new DOMException('Cancelled','AbortError');
   const timeout=new AbortController(),abort=()=>timeout.abort(signal?.reason);
   signal?.addEventListener('abort',abort,{once:true});
-  const timer=setTimeout(()=>timeout.abort(new DOMException('Publisher timeout','TimeoutError')),10000);
-  const input={employer:name,title:String(title||'').slice(0,120),profession,signal:timeout.signal,parentSignal:signal,fetchImpl};
   const slug=typeof profession==='object'?profession?.slug:profession;
+  const timer=setTimeout(()=>timeout.abort(new DOMException('Publisher timeout','TimeoutError')),isPmRole(slug)?6500:10000);
+  const input={employer:name,title:String(title||'').slice(0,120),profession,signal:timeout.signal,parentSignal:signal,fetchImpl};
+  const pm=isPmRole(slug);
+  if(pm){input.title=pmTitles[slug]; input.profession=slug;}
   const groups=[{name:ERIC,tasks:[ericSources]},{name:USA,tasks:[ctx=>usaSpendingSources(ctx,'grants'),ctx=>usaSpendingSources(ctx,'contracts')]},{name:NEWS,tasks:[newsSources]},{name:NSF,tasks:[nsf]}];
+  if(pm)groups.push({name:boardProvider,tasks:[pmBoardSources]});
   if(healthcare.includes(slug)||/\b(?:medical|physician|nurse|hospital|healthcare|clinical|pharmacist|dentist)\b/i.test(title))groups.push({name:'Europe PMC · health research',tasks:[europePmcSources]});
   try{
     const checked=await Promise.all(groups.map(group=>collect(group,input)));
@@ -138,9 +142,16 @@ export async function discoverSources({employer,title='',profession='',signal,fe
         if(slot>=0)shortlist[slot]=entry;
       }
     }
+    if(pm){
+      const records=[...reviewedPmSources(name,slug),...all.map(describePmRecord)];
+      const priority={history:0,role:1,funding:2,lead:3};
+      const unique=new Map();for(const record of records)if(!unique.has(record.url))unique.set(record.url,record);
+      const ranked=[...unique.values()].sort((a,b)=>priority[a.scope]-priority[b.scope]);
+      shortlist.splice(0,shortlist.length,...ranked.slice(0,10));
+    }
     const n=shortlist.filter(r=>r.mode==='live').length;
     return {status:checked.every(c=>c.status==='ok')?'complete':checked.some(c=>c.hadResponse)?'partial':'unavailable',
-      results:shortlist,counts:{live:n,indexed:shortlist.length-n},index,providers:checked.map(c=>({name:c.name,status:c.status,
+      results:shortlist,counts:{live:n,indexed:shortlist.filter(r=>r.mode==='indexed').length,...(pm?{reviewed:shortlist.filter(r=>r.mode==='reviewed').length}:{})},index,providers:checked.map(c=>({name:c.name,status:c.status,
         ...(populated[c.name]?{indexedOn:catalog.records.find(r=>r.publisher===c.name)?.indexedOn||catalog.asOf,indexedDocuments:populated[c.name]}:{})}))};
   }finally{clearTimeout(timer);signal?.removeEventListener('abort',abort)}
 }

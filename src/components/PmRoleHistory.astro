@@ -1,4 +1,5 @@
 ---
+import PmEmployerSearch from './PmEmployerSearch.astro';
 import {pmRoleRecords} from '../lib/pm-role-records.js';
 const {role,inTrace=false}=Astro.props;
 const record=pmRoleRecords[role];
@@ -12,6 +13,7 @@ const {first,second}=record;
     <div class="sources">{first.sources.map(([label,url])=><a href={url}>{label} ↗</a>)}</div>
   </article>
   <aside class="gap"><strong data-pm-gap-label>Workplace not entered</strong><p data-pm-gap-text>Add your workplace in the trace to check for a local connection.</p><p>{record.next}</p></aside>
+  <PmEmployerSearch role={role}/>
   <details><summary>Another Door Note · {second.place}</summary><small>{second.date}</small><h3>{second.person}</h3><p>{second.story}</p>
     <div class="sources">{second.sources.map(([label,url])=><a href={url}>{label} ↗</a>)}</div>
   </details>
@@ -26,16 +28,12 @@ a,summary{min-height:44px;align-content:center}a{display:inline-block;color:var(
 details{border-top:1px solid var(--edge)}summary{cursor:pointer;color:var(--action)}
 </style>
 <script>
-import {readTrace} from '../lib/trace-context.js';
-import {resolveTitle} from '../lib/title-resolver.js';
+import {currentPmWorkplace} from '../lib/pm-role-panel.js';
 import {showPmWorkplace} from '../lib/pm-role-panel.js';
 function restorePublicGuide(){
   const panel=document.querySelector<HTMLElement>('[data-pm-history][data-in-trace="false"]');
   if(!panel)return;
-  const trace=readTrace();
-  let match=trace && resolveTitle(trace.lookupTitle||trace.title,[]);
-  for(const choice of trace?.choicePath||[])match=match?.choices?.find(item=>item.label===choice)?.result;
-  showPmWorkplace(panel,match?.pmRole===panel.dataset.pmHistory?trace?.workplace:'');
+  showPmWorkplace(panel,currentPmWorkplace(panel.dataset.pmHistory));
 }
 restorePublicGuide();window.addEventListener('pageshow',restorePublicGuide);
 </script>
