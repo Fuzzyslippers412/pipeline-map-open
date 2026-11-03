@@ -27,5 +27,5 @@
     }
   ],
   "titleCount": 48330,
-  "changes": "Pipeline Map selects job, short and reported titles, removes duplicate spellings, and combines them with its own curated terms at search time. Project labels and profession matches are its own. USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA."
+  "changes": "Door Notes selects job, short and reported titles, removes duplicate spellings, and combines them with its own curated terms at search time. Project labels and profession matches are its own. USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA."
 }

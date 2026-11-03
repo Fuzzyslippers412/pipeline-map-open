@@ -48,7 +48,7 @@ QUERIES = {
 
 def get(url, query=None, body=None):
     if query: url+='?'+parse.urlencode(query)
-    headers={'User-Agent':'PipelineMap metadata research (https://github.com/Fuzzyslippers412/pipeline-map)','Accept':'application/json'}
+    headers={'User-Agent':'DoorNotes/1.0 (metadata research; +https://doornotes.org/method/)','Accept':'application/json'}
     data=None
     if body is not None:
         headers['Content-Type']='application/json';data=json.dumps(body).encode()

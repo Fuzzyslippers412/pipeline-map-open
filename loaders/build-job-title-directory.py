@@ -49,7 +49,7 @@ def build(local_files):
         'database': 'https://www.onetcenter.org/database.html', 'license': 'CC BY 4.0',
         'licenseUrl': 'https://creativecommons.org/licenses/by/4.0/',
         'attribution': 'https://www.onetcenter.org/license_db.html', 'files': sources, 'titleCount': len(titles),
-        'changes': 'Pipeline Map selects job, short and reported titles, removes duplicate spellings, and combines them with its own curated terms at search time. Project labels and profession matches are its own. USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA.'
+        'changes': 'Door Notes selects job, short and reported titles, removes duplicate spellings, and combines them with its own curated terms at search time. Project labels and profession matches are its own. USDOL/ETA has not approved, endorsed, or tested these modifications. O*NET® is a trademark of USDOL/ETA.'
     }
     (target / 'job-title-source.json').write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + '\n')
     print(f'{len(titles):,} unique titles written to {output.name}')

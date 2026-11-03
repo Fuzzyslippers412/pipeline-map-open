@@ -3,7 +3,7 @@ import datetime
 import urllib.request
 
 TODAY = datetime.date.today().isoformat()
-HEADERS = {"User-Agent": "PipelineMap/1.0 (public education data research)"}
+HEADERS = {"User-Agent": "DoorNotes/1.0 (public education data research)"}
 
 
 def get_bytes(url, max_bytes=16_000_000):

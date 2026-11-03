@@ -15,9 +15,10 @@ const require = createRequire(import.meta.url);
 const WIDTH = 1200, HEIGHT = 630;
 const palette = { bg:'#101614', panel:'#18221d', mint:'#d6ec8c', teal:'#75c5bc', ink:'#f1f3e6', muted:'#b2c0b4', line:'#38483b' };
 const url = route => new URL(route,config.site).href;
+const brand = 'Door Notes';
 const sourceIndex = new Map(sources.map(s => [s.id,s]));
 const data = {professions,series};
-const fontDir = await fs.mkdtemp(path.join(tmpdir(),'pipeline-map-fonts-'));
+const fontDir = await fs.mkdtemp(path.join(tmpdir(),'door-notes-fonts-'));
 const mono = 'IBM Plex Mono', serif = 'Newsreader';
 const fontSpec = [[mono,'ibm-plex-mono',400],[serif,'newsreader',500]];
 const fontFiles = [], satoriFonts = [];
@@ -85,7 +86,7 @@ function words(body,limit) {
 const contentLines = (body,{x,y,limit,step,size,colour,face=mono}) => words(body,limit).map((part,i)=>txt(x,y+i*step,part,size,colour,face)).join('');
 function framing(tag) {
   return '<rect width="1200" height="630" fill="'+palette.bg+'"/>'+brandMark+
-    txt(103,57,'Pipeline Map',34,palette.ink,serif)+
+    txt(103,57,brand,34,palette.ink,serif)+
     txt(1152,53,tag,16,palette.muted,mono,'text-anchor="end" letter-spacing="1.4"')+
     line(48,88,1152,88);
 }
@@ -136,7 +137,7 @@ function footer(chosen,d) {
     if(!latest.has(row.profession_id)||latest.get(row.profession_id).year<row.year) latest.set(row.profession_id,row);
   }
   const ids=[...new Set([...latest.values()].map(r=>r.source_id))].join('  /  ');
-  return line(48,573,1152,573)+txt(48,596,(d.source||'Pipeline Map · Source register')+(d.years?'   ·   '+d.years:''),15,palette.muted)+
+  return line(48,573,1152,573)+txt(48,596,(d.source||brand+' · Source register')+(d.years?'   ·   '+d.years:''),15,palette.muted)+
     (ids?txt(48,617,'LATEST TABLE ID   '+ids,12,palette.muted):'');
 }
 function pointChart(traces,x,y,w,h,unit,title) {
@@ -186,10 +187,11 @@ function comparisonImage(model) {
 }
 function coverImage() {
   return wrap(framing('A SOURCE-LINKED PROFESSION INDEX')+
-    txt(48,176,'Origin. Gate. Trend.',72,palette.ink,serif)+
+    txt(48,176,'Who opened the door to your career?',64,palette.ink,serif)+
     txt(48,222,'Trace the institutions that opened U.S. professions to Black Americans.',22,palette.muted)+
     nested(atlas,521,260,624,283)+line(48,565,1152,565)+
     txt(48,602,'Compare professions   /   Trace every measured point to a public table',16,palette.muted)+
+    txt(1152,602,new URL(config.site).hostname,16,palette.teal,mono,'text-anchor="end"')+
     txt(48,326,'01    ORIGIN',20,palette.mint)+txt(48,389,'02    GATE',20,palette.teal)+txt(48,452,'03    TREND',20,palette.ink));
 }
 async function writeImage(svg,file) {
@@ -202,20 +204,20 @@ async function writeImage(svg,file) {
 }
 function sharePage(model,route,query) {
   const names=model.picked.map(p=>p.name).join(' / '), d=descriptor(model.chosen);
-  const title='Compare '+names+' · Pipeline Map';
+  const title='Compare '+names+' · '+brand;
   const desc=(d.years?d.title+' · '+d.years+'. ':'')+d.definition;
   const image=url(route+'og.png');
-  const alt=[names,d.title,d.years,d.definition,d.source].filter(Boolean).join('. ');
+  const alt=[brand+' comparison of '+names,d.title,d.years,d.definition,d.source].filter(Boolean).join('. ');
   const attr=s=>safe(s);
   const ids=[...new Set(model.chosen?.rows.map(r=>r.source_id)||[])];
   const refs=ids.map(id=>'<li><a href="/sources/#'+attr(id)+'">'+attr(sourceIndex.get(id)?.table_name||id)+'</a></li>').join('');
   return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+attr(title)+'</title>'+
     '<meta name="description" content="'+attr(desc)+'"><link rel="canonical" href="'+attr(url(route))+'">'+
-    '<meta property="og:type" content="website"><meta property="og:title" content="'+attr(title)+'"><meta property="og:description" content="'+attr(desc)+'"><meta property="og:url" content="'+attr(url(route))+'">'+
+    '<meta property="og:type" content="website"><meta property="og:site_name" content="'+attr(brand)+'"><meta property="og:title" content="'+attr(title)+'"><meta property="og:description" content="'+attr(desc)+'"><meta property="og:url" content="'+attr(url(route))+'">'+
     '<meta property="og:image" content="'+attr(image)+'"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'+
     '<meta property="og:image:alt" content="'+attr(alt)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+attr(title)+'"><meta name="twitter:image" content="'+attr(image)+'">'+
-    '<meta name="twitter:image:alt" content="'+attr(alt)+'"><meta name="theme-color" content="'+palette.bg+'">'+
-    '<script>location.replace('+JSON.stringify(query)+')</script></head><body><main><h1>'+attr(names)+'</h1><p>'+attr(desc)+'</p><p><a href="'+attr(query)+'">Open this comparison</a></p>'+
+    '<meta name="twitter:image:alt" content="'+attr(alt)+'"><meta name="twitter:description" content="'+attr(desc)+'"><meta name="theme-color" content="'+palette.bg+'"><link rel="icon" href="/mark.svg">'+
+    '<script>location.replace('+JSON.stringify(query)+')</script></head><body><main><a href="/" aria-label="'+attr(brand)+' home">'+attr(brand)+'</a><h1>'+attr(names)+'</h1><p>'+attr(desc)+'</p><p><a href="'+attr(query)+'">Open this comparison</a></p>'+
     '<p>'+attr(model.unavailable.length?'No comparable series for '+model.unavailable.map(p=>p.name).join(', ')+'.':'')+'</p>'+
     '<details><summary>Exact definitions and source tables</summary>'+[...new Set(model.chosen?.rows.map(r=>r.definition)||[])].map(s=>'<p>'+attr(s)+'</p>').join('')+'<ul>'+refs+'</ul></details></main></body></html>';
 }

@@ -3,7 +3,7 @@ import Layout from '../components/Layout.astro';
 import {professions} from '../lib/model';
 ---
 <Layout title="Compare professions" active="Compare"><div class="frame"><div class="page-head"><div class="eyebrow"><i></i> COMPARISON <b>/</b> SHARED MEASURES</div><h1>Compare professions</h1><p>Choose up to three professions. The chart uses one measure and source family across all selections.</p></div>
-<div class="subbody"><div class="comparison-controls">{[0,1,2].map(i=><label>Profession 0{i+1}<select class="fieldselect" data-pick={i}><option value="">Choose a profession</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select></label>)}<button class="primary" id="share-comparison">Copy comparison link</button></div><output id="compare-message" aria-live="polite"></output><div id="compare-results" class="compare-result" aria-live="polite">Loading the data…</div><noscript>Turn on JavaScript to compare professions, or open <a href="/">the profession index</a> for static cards.</noscript></div></div></Layout>
+<div class="subbody"><div class="comparison-controls">{[0,1,2].map(i=><label>Profession 0{i+1}<select class="fieldselect" data-pick={i}><option value="">Choose a profession</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select></label>)}<button class="primary" id="share-comparison" data-site={Astro.site.href}>Copy comparison link</button></div><output id="compare-message" aria-live="polite"></output><div id="compare-results" class="compare-result" aria-live="polite">Loading the data…</div><noscript>Turn on JavaScript to compare professions, or open <a href="/">the profession index</a> for static cards.</noscript></div></div></Layout>
 <script>
 import {compareModel} from '../lib/compare';
 import {chartSVG,safe} from '../lib/plot';
@@ -31,5 +31,5 @@ function render(){
 }
 async function init(){try{const response=await fetch('/data/compare.json');if(!response.ok)throw Error();data=await response.json();syncFromURL()}catch{result.textContent='The comparison data could not load. Refresh this page to try again.';share.disabled=true}}
 picks.forEach(p=>p.addEventListener('change',()=>{if(!data)return;const ids=selected();history.pushState(null,'',previewPath(ids));msg.textContent='';render()}));window.addEventListener('popstate',()=>data&&syncFromURL());
-share.addEventListener('click',async()=>{const ids=selected().sort();if(!ids.length)return;const url=new URL('/comparisons/'+ids.join('~')+'/',location.origin).href;try{await navigator.clipboard.writeText(url);msg.textContent='Comparison link copied.'}catch{msg.textContent=url}});init();
+share.addEventListener('click',async()=>{const ids=selected().sort();if(!ids.length)return;const url=new URL(previewPath(ids),share.dataset.site).href;try{await navigator.clipboard.writeText(url);msg.textContent='Comparison link copied.'}catch{msg.textContent=url}});init();
 </script>

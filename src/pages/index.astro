@@ -5,7 +5,7 @@ import {professions,idFor} from '../lib/model';
 const filters=[...new Set(professions.map(p=>p.sector))];
 const searchIndex=professions.map(({slug,name,aliases,sector})=>({slug,name,aliases,sector}));
 ---
-<Layout title="Trace your Black career pathway" active="Index"><div class="frame">
+<Layout title="Who opened the door to your career?" active="Index"><div class="frame">
 <TraceStart/>
 <section class="directory" id="directory"><div class="section-head"><div><div class="eyebrow">DIRECTORY <b>/</b> 01</div><h2>Profession index</h2></div><span class="indexcount" aria-live="polite" id="result-count">{professions.length} professions</span></div>
 <div class="searchwrap"><label for="occupation" class="sr">Search the profession index</label><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="occupation" type="search" autocomplete="off" placeholder="Search the profession index" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions"/><kbd>/</kbd><div id="suggestions" class="suggestions" role="listbox" hidden></div></div>

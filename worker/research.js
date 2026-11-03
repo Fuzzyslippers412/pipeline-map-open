@@ -30,7 +30,7 @@ export async function handleResearch(request,search=discoverSources){
   if(request.method!=='POST')return json({error:'Use POST for a workplace search.'},405);
   const origin=request.headers.get('Origin');
   if((origin&&origin!==new URL(request.url).origin)||request.headers.get('Sec-Fetch-Site')==='cross-site')
-    return json({error:'Use the search on Pipeline Map.'},403);
+    return json({error:'Use the search on Door Notes.'},403);
   if(!/^application\/json(?:$|\s*;)/i.test(request.headers.get('content-type')||''))
     return json({error:'Send JSON search fields.'},415);
   if(active>=12)return json({error:'Search is busy. Try again shortly.'},429);

@@ -17,7 +17,7 @@ const publicTrace=demo && {workplace:demo.workplace,title:demo.title,slug:demo.s
   <div class="personal-trace__foot">
     <a href="#trend">See Black representation in this profession ↓</a>
     <span data-share-note>Shared links open the public profession card.</span>
-    {demo && <a data-example-link hidden href={'/p/'+p.slug+'/?example=1#decisions'}>Public link to this example ↗</a>}
+    {demo && <a data-example-link hidden href={new URL('/p/'+p.slug+'/?example=1#decisions',Astro.site).href}>Public link to this example ↗</a>}
   </div>
 </section>
 <script>

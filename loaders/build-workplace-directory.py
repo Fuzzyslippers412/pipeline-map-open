@@ -18,7 +18,7 @@ import urllib.request
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-USER_AGENT = 'PipelineMap/1.0 (+https://pipeline-map.fuzzyslipper.chatgpt.site/method/)'
+USER_AGENT = 'DoorNotes/1.0 (+https://doornotes.org/method/)'
 EDGE = 'https://nces.ed.gov/programs/edge/data/'
 HRSA = 'https://gisportal.hrsa.gov/server/rest/services/HealthCareFacilities/'
 CLINICS = HRSA+'PrimaryHealthCareFacilities_FS/MapServer/0'
