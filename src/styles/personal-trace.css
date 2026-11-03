@@ -5,3 +5,6 @@
 .personal-trace__foot{display:flex;justify-content:space-between;gap:5px 15px;flex-wrap:wrap;margin-top:18px}
 .personal-trace__foot span{font-size:11px;color:var(--muted)}
 @media(max-width:680px){.personal-trace{margin:14px 0}.personal-trace__tools{float:none;justify-content:flex-end;margin:-2px 0 8px}.personal-trace__tools button,.personal-trace__tools a{min-height:30px}}
+
+.personal-trace__tools .example-copy-status { color:var(--muted); font-size:.82rem; }
+.example-copy-status:empty { display:none; }

@@ -12,7 +12,7 @@ const districts={
 };
 export function currentDecisionRecord(context,matches){
   if(context.profession==='registered-nurse' && matches.some(r=>r.workplace==='Howard University Hospital'))return nursing;
-  if(context.profession==='electrician' && matches.some(r=>r.workplace.endsWith(', Chicago, IL')))return chicago;
+  if(context.profession==='electrician' && matches.some(r=>r.workplace.endsWith(', Chicago, IL') || r.workplace==='IBEW-NECA Technical Institute, Alsip, IL'))return chicago;
   if(context.profession==='k12-teacher'){
     const district=matches.find(r=>r.scope==='district')?.workplace ??
       matches.find(r=>r.site)?.site.parent ??

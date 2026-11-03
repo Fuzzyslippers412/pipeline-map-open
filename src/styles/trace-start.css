@@ -144,3 +144,5 @@
   .paper-edition .trace-box { margin-top: 18px; padding: 17px 0 0; border-inline-start: 0; border-top: 1px solid var(--edge); }
   .paper-edition .trace-box form { gap: 13px; }
 }
+
+.paper-edition .library-link { display:flex; align-items:center; gap:8px; width:fit-content; min-height:44px; color:var(--action); font-size:.95rem; font-weight:650; text-decoration:underline; text-underline-offset:.18em; }

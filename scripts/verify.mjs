@@ -76,11 +76,11 @@ async function verifyImage(route) {
   assert.ok(!pngHashes.has(hash),'Unexpected identical social images: '+route);
   pngHashes.add(hash);
 }
-function metadata(list,route,imagePath) {
+function metadata(list,route,imagePath,{canonicalRoute=route,socialRoute=route}={}) {
   const meta=(key)=>val(list.find(n=>n.tagName==='meta'&&(val(n,'property')===key||val(n,'name')===key)),'content');
   const canonical=val(list.find(n=>n.tagName==='link'&&val(n,'rel')==='canonical'),'href');
-  assert.equal(canonical,new URL(route,site).href,route+' canonical');
-  assert.equal(meta('og:url'),canonical,route+' og:url');
+  assert.equal(canonical,new URL(canonicalRoute,site).href,route+' canonical');
+  assert.equal(meta('og:url'),new URL(socialRoute,site).href,route+' og:url');
   const expectedImage=new URL(imagePath,site);
   if(['/cover.png','/p/k12-teacher/og.png'].includes(imagePath)) expectedImage.searchParams.set('edition','paper');
   assert.equal(meta('og:image'),expectedImage.href,route+' image URL');
@@ -116,7 +116,20 @@ for(const page of [classicHome,classicTeacher]) {
 assert.equal(expectEl(classicHome,'id','try-teacher').tagName,'button');
 assert.equal(val(expectEl(docHome,'id','try-teacher'),'href'),'/p/k12-teacher/?example=1#path-preview');
 assert.ok(docHome.some(n=>n.tagName==='body' && val(n,'class')?.includes('paper-edition')),'Missing paper homepage');
-await readPage('/try/');
+const paths=await readPage('/paths/');
+const readerTest=await readPage('/try/');
+for (const slug of ['registered-nurse','electrician']) {
+  const sampleRoute='/preview/p/'+slug+'/';
+  const sampleLink=sampleRoute+'?example=1#path-preview';
+  assert.ok(hasHref(paths,sampleLink),'Paths directory missing '+sampleLink);
+  assert.ok(hasHref(readerTest,sampleLink),'Reader test missing '+sampleLink);
+  const preview=await readPage(sampleRoute);
+  const imagePath=sampleRoute+'sample.png';
+  const {meta}=metadata(preview,sampleRoute,imagePath,{canonicalRoute:'/p/'+slug+'/',socialRoute:sampleRoute+'?example=1'});
+  assert.equal(meta('twitter:image'),new URL(imagePath,site).href);
+  assert.equal(meta('twitter:image:alt'),meta('og:image:alt'));
+  await verifyImage(imagePath);
+}
 const registry=await readPage('/sources/');
 const sourceIds=new Set(sources.map(s=>s.id));
 assert.equal(sourceIds.size,sources.length);

@@ -2,22 +2,27 @@
 import CareerTimeline from './CareerTimeline.astro';
 import SourceLookup from './SourceLookup.astro';
 import '../styles/personal-trace.css';
-import {pathExamples} from '../lib/path-examples.js';
+import {pathExamples,examplePath,readingPreviewSlugs} from '../lib/path-examples.js';
 const {p}=Astro.props;
 const demo=pathExamples.find(row=>row.slug===p.slug);
+const preview=Astro.url.pathname.startsWith('/preview/p/');
+const alternate=readingPreviewSlugs.includes(p.slug) ? (preview ? '/p/' : '/preview/p/') + p.slug + '/' : null;
 const publicTrace=demo && {workplace:demo.workplace,title:demo.title,slug:demo.slug,match:'title',workplaceInfo:demo.site &&
   {workplace:demo.workplace,location:demo.site.location,parent:demo.site.parent,relation:demo.site.relation}};
 ---
 <section class="personal-trace" id="personal-trace" data-timeline-scope data-profession={p.slug} data-public-example={publicTrace && JSON.stringify(publicTrace)} aria-label="Your career timeline" hidden>
   <div class="personal-trace__tools">
     <a href={Astro.url.pathname.startsWith('/study/original/') ? '/study/original/#trace' : '/#trace'} data-edit-trace>Edit details</a><button type="button" data-clear-trace>Clear trace</button>
+    {demo && !Astro.url.pathname.startsWith('/study/original/') && <button type="button" data-copy-example hidden data-url={new URL(examplePath(p.slug),Astro.site).href}>Copy example link</button>}
+    <span data-copy-status role="status" class="example-copy-status"></span>
   </div>
   <CareerTimeline profession={p.slug}/>
   <SourceLookup/>
   <div class="personal-trace__foot">
+    {alternate && <a data-switch-edition data-route={alternate} href={alternate+'#path-preview'}>{preview?'Open the original layout':'Try the new reading layout'} <span aria-hidden="true">→</span></a>}
     <a href="#trend">See Black representation in this profession ↓</a>
     <span data-share-note>Shared links open the public profession card.</span>
-    {demo && <a data-example-link hidden href={new URL('/p/'+p.slug+'/?example=1#decisions',Astro.site).href}>Public link to this example ↗</a>}
+    {demo && <a data-example-link hidden href={new URL(examplePath(p.slug).replace('#path-preview','#decisions'),Astro.site).href}>Public link to this example ↗</a>}
   </div>
 </section>
 <script>
@@ -29,6 +34,18 @@ if(panel){
   const lookup=panel.querySelector('pipeline-source-lookup');
   const sample=panel.dataset.publicExample ? JSON.parse(panel.dataset.publicExample) : null;
   const isExample=!!sample && new URL(location.href).searchParams.get('example')==='1';
+  const switchLink=panel.querySelector<HTMLAnchorElement>('[data-switch-edition]');
+  if(switchLink) switchLink.href=switchLink.dataset.route+(isExample?'?example=1':'')+'#path-preview';
+  const copyExample=panel.querySelector<HTMLButtonElement>('[data-copy-example]');
+  const copyStatus=panel.querySelector<HTMLElement>('[data-copy-status]')!;
+  if(copyExample){
+    copyExample.hidden=!isExample;
+    copyExample.addEventListener('click',async()=>{
+      const url=copyExample.dataset.url!;
+      try { await navigator.clipboard.writeText(url); copyStatus.textContent='Link copied.'; }
+      catch { const link=document.createElement('a'); link.href=url; link.textContent='Public example link'; copyStatus.replaceChildren(link); }
+    });
+  }
   const render=()=>{
     const trace=isExample ? sample : readTrace();
     panel.hidden=!trace||trace.slug!==panel.dataset.profession;

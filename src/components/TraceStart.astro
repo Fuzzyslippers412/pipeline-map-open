@@ -1,7 +1,7 @@
 ---
 import {professions} from '../lib/model';
 import workplaces from '../../data/workplace-directory.json';
-import {pathExamples} from '../lib/path-examples.js';
+import {pathExamples,examplePath} from '../lib/path-examples.js';
 import {normalizeEmployerText} from '../lib/employer-key.js';
 const featured=workplaces.records.filter(row=>row.source?.startsWith('verified-'));
 const featuredParents=new Set(featured.filter(row=>row.parent).map(row=>normalizeEmployerText(row.parent)));
@@ -57,13 +57,14 @@ import '../styles/trace-combobox.css';
     </form>
     <a id="try-teacher" class="featured-example" href="/p/k12-teacher/?example=1#path-preview">Try the Atlanta teacher example <span aria-hidden="true">→</span></a>
     <details class="other-examples">
-      <summary>More examples</summary>
+      <summary>Nursing and electrical examples</summary>
       <div class="other-example-links">
         {pathExamples.filter(example => example.slug !== 'k12-teacher').map(example => (
-          <a id={example.id} href={'/p/'+example.slug+'/?example=1#path-preview'}>{example.label} <span aria-hidden="true">→</span></a>
+          <a id={example.id} href={examplePath(example.slug)}>{example.label} <span aria-hidden="true">→</span></a>
         ))}
       </div>
     </details>
+    <a class="library-link" href="/paths/">Explore the workplace library <span aria-hidden="true">→</span></a>
     <p class="privacy-line">Typing stays in this tab. You can use your own wording.</p>
     <details id="more-workplaces" class="more-workplaces" data-contextual hidden>
       <summary>Look for this workplace in federal records</summary>

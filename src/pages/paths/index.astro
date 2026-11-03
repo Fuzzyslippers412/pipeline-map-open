@@ -1,0 +1,136 @@
+---
+import Layout from '../../components/Layout.astro';
+import {pathExamples, examplePath} from '../../lib/path-examples.js';
+import {howardNursingDecisions} from '../../lib/howard-nursing-decisions.js';
+import workplaces from '../../../data/workplace-links.json';
+
+const teacher = workplaces.find(row => row.site?.id === 'nces-school-130012004174' && row.professions.includes('k12-teacher'))!;
+const colesSource = howardNursingDecisions.find(row => row.actor.startsWith('Anna B. Coles'))!.sources[0];
+const records = [
+  {
+    slug: 'k12-teacher',
+    year: teacher.eventDateLabel,
+    workplace: teacher.site!.name,
+    place: 'Atlanta, Georgia',
+    note: 'As the school’s first principal, Charles Lincoln Harper hired teachers for Atlanta’s first public high school for Black students.',
+    gap: 'The connection between teacher training in Marion, Alabama, and this school in Atlanta.',
+    sources: [{title:'School nomination, page 7', url:teacher.url}],
+    linkLabel: 'Read the teacher path'
+  },
+  {
+    slug: 'registered-nurse',
+    year: '1968',
+    workplace: 'Howard University Hospital',
+    place: 'Washington, DC',
+    note: 'Anna B. Coles trained as a nurse at Freedmen’s Hospital and became the first dean of Howard’s College of Nursing.',
+    gap: 'How any one nurse trained or was hired at Howard.',
+    sources: [colesSource],
+    linkLabel: 'Read the nursing path'
+  },
+  {
+    slug: 'electrician',
+    year: '1922',
+    workplace: 'Taylor Electric Company',
+    place: 'Chicago, Illinois',
+    note: 'Sam Taylor founded an electrical contracting company in Chicago. Its project records later name Soldier Field as one of its jobsites.',
+    gap: 'Which electricians worked at Soldier Field and how they joined the crew.',
+    sources: [
+      {title:'Company history', url:'https://taylorelectricco.com/about/'},
+      {title:'Soldier Field project', url:'https://taylorelectricco.com/portfolio-item/soldier-field/'}
+    ],
+    linkLabel: 'Read the electrician path'
+  }
+];
+const entries = records.map(record => {
+  const example = pathExamples.find(item => item.slug === record.slug)!;
+  return {...record, title: example.title, href: examplePath(example.slug)};
+});
+---
+<Layout title="Explore public paths" active="Paths" desc="Read three workplace histories of Black teachers, nurses, and electricians. Follow each source and see which connections are still unknown.">
+  <div class="frame collection">
+    <header class="collection-head">
+      <div>
+        <p class="section-label">Workplace histories</p>
+        <h1>Explore public paths</h1>
+        <p class="intro">Three workplaces. Start with a person who opened a door for Black workers. Follow the records to see how far that history reaches.</p>
+        <a class="own-path" href="/#trace">Trace your own job <span aria-hidden="true">→</span></a>
+      </div>
+      <figure class="frontispiece">
+        <a class="plate-thumb" href={examplePath('registered-nurse')} aria-label="Read the Howard nursing path"><img src="/archive/freedmens-hospital-training-1943-320.webp" alt="An instructor demonstrates a nursing task to a volunteer aide." width="320" height="383"/></a>
+        <figcaption><span class="plate-number">From the archive · 1943</span><strong>A lesson at Freedmen’s Hospital</strong>
+          <span>Thelma Harris instructs volunteer aide Maxine Jackson in Washington, D.C.</span>
+          <a href="https://www.loc.gov/item/2017696521/">Library of Congress ↗</a>
+        </figcaption>
+      </figure>
+    </header>
+
+    <ol class="record-list" aria-label="Workplace paths">
+      {entries.map(entry => (
+        <li>
+          <article class="record">
+            <p class="year"><span class="sr">Record year </span>{entry.year}</p>
+            <div class="identity">
+              <h2>{entry.title}</h2>
+              <p class="workplace">{entry.workplace}</p>
+              <p class="place">{entry.place}</p>
+              <a class="read" href={entry.href}>{entry.linkLabel} <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="evidence">
+              <p>{entry.note}</p>
+              <div class="sources">{entry.sources.map(source => <a class="source" href={source.url} target="_blank" rel="noopener noreferrer">{source.title} <span aria-hidden="true">↗</span></a>)}</div>
+              <p class="question"><span>Still open</span> {entry.gap}</p>
+            </div>
+          </article>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Layout>
+<style>
+.collection { padding-block: clamp(30px,5vw,72px) clamp(38px,6vw,78px); }
+.collection-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; border-bottom: 1px solid var(--text); padding-bottom: clamp(24px,4vw,42px); }
+.section-label, .question span { color: var(--soft); font: 650 .75rem/1.4 var(--sans); }
+.section-label { text-transform: uppercase; letter-spacing: .12em; }
+.collection h1, .record h2, .year { font-family: var(--serif); font-weight: 500; }
+.collection h1 { margin: 12px 0 8px; font-size: clamp(45px,6vw,77px); line-height: 1; letter-spacing: -.055em; }
+.intro { max-width: 49ch; color: var(--muted); font-size: 1.06rem; line-height: 1.5; }
+.collection a { color: var(--action, var(--teal)); text-decoration: underline; text-underline-offset: .18em; }
+.own-path, .read, .source { display: inline-flex; gap: 7px; align-items: center; min-height: 44px; font-weight: 650; }
+.own-path { margin-top: 8px; }
+
+.frontispiece { flex:0 1 370px; display:grid; grid-template-columns:minmax(82px,132px) minmax(0,1fr); gap:16px; align-items:center; margin:0; }
+.frontispiece img { width:100%; height:auto; display:block; }
+.frontispiece figcaption { display:grid; line-height:1.4; font-size:.88rem; }
+.frontispiece strong { font:500 1.48rem/1.05 var(--serif); margin:6px 0; }
+.frontispiece .plate-number { color:var(--rust); font:500 .72rem/1.3 var(--mono); }
+.frontispiece figcaption a { display:inline-flex; align-items:center; min-height:44px; font-weight:650; width:fit-content; }
+
+.record-list { list-style: none; margin: 0; padding: 0; }
+.record { display: grid; grid-template-columns: minmax(70px,.5fr) minmax(0,1.5fr) minmax(0,2.1fr); gap: 26px; padding-block: clamp(20px,3vw,35px); border-bottom: 1px solid var(--edge); }
+.year { color: var(--rust, var(--lime)); font-size: clamp(28px,3.2vw,45px); letter-spacing: -.035em; line-height: 1.1; font-variant-numeric: lining-nums; }
+.identity { min-width: 0; }
+.record h2 { margin: 0 0 4px; font-size: clamp(27px,3.25vw,43px); letter-spacing: -.04em; line-height: 1.12; }
+.workplace { font-weight: 650; line-height: 1.4; }
+.place { color: var(--muted); font-size: .94rem; }
+.read { margin-top: 5px; }
+.evidence { max-width: 58ch; }
+.evidence > p { line-height: 1.48; }
+.sources { display: flex; flex-wrap: wrap; column-gap: 15px; }
+.source { font-size: .94rem; }
+.question { color: var(--muted); }
+.question span { display: block; margin-bottom: 2px; color: var(--rust, var(--lime)); }
+@media(max-width:740px) {
+  .collection-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .frontispiece { flex-basis:auto; max-width:420px; width:100%; margin-top:12px; padding-top:12px; border-top:1px solid var(--edge); grid-template-columns:80px minmax(0,1fr); gap:14px; }
+  .frontispiece strong { font-size:1.13rem; }
+  .frontispiece figcaption { font-size:.82rem; }
+  .record { grid-template-columns: 62px minmax(0,1fr); column-gap: 14px; row-gap: 2px; }
+  .evidence { grid-column: 2; }
+  .record h2 { font-size: 29px; }
+  .read { margin-top: 0; }
+}
+@media(max-width:420px) {
+  .record { grid-template-columns: 4.15rem minmax(0,1fr); gap: 6px 12px; }
+  .evidence { grid-column: 1/-1; }
+}
+</style>

@@ -8,8 +8,9 @@ import '@fontsource/ibm-plex-mono/latin-400.css';
 const brand = 'Door Notes';
 const studyPath = '/study/original/';
 const original = Astro.url.pathname.startsWith(studyPath);
-const readerPath = original ? '/' + Astro.url.pathname.slice(studyPath.length) : Astro.url.pathname;
-const paper = !original && ['/', '/p/k12-teacher/', '/try/'].includes(readerPath);
+const preview = Astro.url.pathname.startsWith('/preview/p/');
+const readerPath = original ? '/' + Astro.url.pathname.slice(studyPath.length) : preview ? Astro.url.pathname.slice('/preview'.length) : Astro.url.pathname;
+const paper = !original && (preview || ['/', '/p/k12-teacher/', '/try/', '/paths/'].includes(readerPath));
 const home = original ? studyPath : '/';
 const mark = paper ? '/mark-paper.svg' : '/mark.svg';
 const {
@@ -21,15 +22,18 @@ const {
 } = Astro.props;
 const pageTitle = title + ' · ' + brand;
 const canonicalURL = new URL(canonical, Astro.site).href;
-const imageAsset = new URL(og, Astro.site);
+const imageAsset = new URL(preview ? Astro.url.pathname + 'sample.png' : og, Astro.site);
 if (['/cover.png', '/p/k12-teacher/og.png'].includes(og)) imageAsset.searchParams.set('edition', 'paper');
 const imageURL = imageAsset.href;
-const imageAlt = og === '/cover.png'
+const imageAlt = preview
+  ? (readerPath.includes('registered-nurse') ? 'Anna B. Coles became Howard’s first nursing dean in 1968. Howard University Hospital succeeded Freedmen’s in 1975. An individual nurse’s route into a job is unknown.' : 'Sam Taylor started his Chicago company in 1922. Taylor Electric listed Soldier Field in its portfolio in 2017. The crew and hiring route are unknown.')
+  : og === '/cover.png'
   ? 'Door Notes. Who opened the door to your career?'
   : og === '/p/k12-teacher/og.png'
     ? 'Door Notes. Atlanta teacher example with two independent records, from 1867 and 1924. Their connection is unknown.'
     : brand + ' research card for ' + title;
-const navItems = [['Index', home], ['Compare', '/compare/'], ['Sources', '/sources/'], ['Method', '/method/']];
+const previewTitle = preview ? (readerPath.includes('registered-nurse') ? 'The Howard nursing path' : 'The Taylor Electric path') + ' · ' + brand : pageTitle;
+const navItems = [['Index', home], ...(paper ? [['Paths', '/paths/']] : []), ['Compare', '/compare/'], ['Sources', '/sources/'], ['Method', '/method/']];
 ---
 <!doctype html>
 <html lang="en" class:list={[paper && 'paper-page']}>
@@ -41,20 +45,20 @@ const navItems = [['Index', home], ['Compare', '/compare/'], ['Sources', '/sourc
     <meta name="application-name" content={brand}/>
     <link rel="canonical" href={canonicalURL}/>
     <link rel="icon" href={mark}/>
-    {original && <meta name="robots" content="noindex,follow"/>}
+    {(original || preview) && <meta name="robots" content="noindex,follow"/>}
     <meta name="theme-color" content={paper ? '#f8f5ef' : '#101716'}/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content={brand}/>
-    <meta property="og:title" content={pageTitle}/>
+    <meta property="og:title" content={previewTitle}/>
     <meta property="og:description" content={desc}/>
-    <meta property="og:url" content={canonicalURL}/>
+    <meta property="og:url" content={preview ? new URL(Astro.url.pathname + '?example=1',Astro.site).href : canonicalURL}/>
     <meta property="og:image" content={imageURL}/>
     <meta property="og:image:type" content="image/png"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     <meta property="og:image:alt" content={imageAlt}/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content={pageTitle}/>
+    <meta name="twitter:title" content={previewTitle}/>
     <meta name="twitter:description" content={desc}/>
     <meta name="twitter:image" content={imageURL}/>
     <meta name="twitter:image:alt" content={imageAlt}/>
@@ -80,6 +84,7 @@ const navItems = [['Index', home], ['Compare', '/compare/'], ['Sources', '/sourc
       <a class="wordmark" href={home} aria-label={brand + ' home'}><img src={mark} alt="" width="24" height="24"/>{brand}</a>
       <span>Black professional pathways in the U.S.</span>
       <a href="https://github.com/Fuzzyslippers412/pipeline-map-open">Code &amp; data ↗</a>
+      {!original && <a href="/paths/">Explore paths</a>}
       <a href="/method/">Methodology ↗</a>
     </footer>
   </body>

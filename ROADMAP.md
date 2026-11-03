@@ -1,0 +1,13 @@
+# Door Notes: the next three releases
+
+The useful test is personal: can someone name a person who opened access for Black workers, find the record, and tell how far it reaches toward the job they have today?
+
+| Priority | What to build or learn | Ready to advance when |
+| --- | --- | --- |
+| 1. Read the three workplace histories on a phone | Use the Atlanta teacher, Howard nurse, and Chicago electrician examples. Give five readers a link, no tour. Ask them to name someone, say what changed, open the source, and say what the source cannot tell them. Have each try an unlisted workplace, too. | At least four of five can complete those four tasks without prompting, and nobody mistakes a field milestone or a project listing for proof of their own hiring. Record where they hesitate; revise that step before promoting the previews. |
+| 2. Close the gaps readers care about | Invite readers to nominate workplaces, without names of individual employees. Research the two most requested. For each, check the exact site, its parent or district, and a dated decision with a named decision-maker. Put the primary source beside the sentence it supports. Identify a useful next record when the claim remains open. | Each new case either has a reviewed local record with the correct scope, or a clearly labeled gap. A similarly named workplace in another city never inherits its neighbor’s history. An unavailable lookup never means “nothing happened.” |
+| 3. Explain where workers can look today | Add one small “Who decides today?” entry per supported case: the institution, what it actually decides (training admission, licensing, school hiring, or crew assignment), and the official public record. Keep the employer, union, program, school district, and legislature distinct. | A reader can identify the responsible body and reach its official record without inferring a hiring decision or being told whom to vote for. Date the source review. Use the published corrections process when authority changes. |
+
+At every release: test widths of 320 and 375 pixels, keyboard navigation, long employer names, missing records, and sharing. A public example link must never contain what a visitor typed. Prefer photographs, excerpts, and diagrams that help someone read an actual source; credit them where they appear.
+
+**Reader session:** start at [the library](https://doornotes.org/paths/) for a workplace case, or use [the existing reader test](https://doornotes.org/try/) for the original/updated Atlanta comparison. Capture the reader’s own words and device size. Do not collect an employer or a personal hiring history to score the session. The pass criteria above are targets, not reported results.

@@ -25,9 +25,9 @@ const fontFiles = [], satoriFonts = [];
 const brandMark = (await fs.readFile('public/mark.svg','utf8')).replace('<svg ','<svg x="48" y="28" ');
 const paperMark = (await fs.readFile('public/mark-paper.svg','utf8')).replace('<svg ', '<svg x="48" y="28" ');
 const schoolHistory = JSON.parse(await fs.readFile('data/timeline-health-education.json', 'utf8'));
-const schoolRecords = JSON.parse(await fs.readFile('data/workplace-links.json', 'utf8'));
+const workplaceRecords = JSON.parse(await fs.readFile('data/workplace-links.json', 'utf8'));
 const teacherOpening = schoolHistory['k12-teacher'][0];
-const atlanta = schoolRecords.find(row => row.site?.id === 'nces-school-130012004174');
+const atlanta = workplaceRecords.find(row => row.site?.id === 'nces-school-130012004174');
 
 // Resvg accepts OpenType files. Reconstruct the SFNT directory of the same bundled
 // WOFF fonts used by Satori so the host's installed fonts cannot change the image.
@@ -209,17 +209,54 @@ function coverImage() {
     txt(200,526,teacherOpening.place+'  /  '+teacherOpening.sourceTitle.split(' · ')[0],16,paper.muted)+
     paperFooter('A field guide for Black professionals'));
 }
-function teacherImage() {
-  const record = (y, year, heading, place, source) =>
-    txt(48,y,year,54,paper.rust,serif)+txt(220,y-5,heading,36,paper.ink,serif)+
-    txt(220,y+30,place+'  /  '+source.split(' · ')[0],18,paper.muted);
-  return wrap(paperHeader('PUBLIC EXAMPLE  /  ATLANTA, GEORGIA')+
-    txt(48,180,'Public school teacher',76,paper.ink,serif)+
-    txt(50,222,'Booker T. Washington High School',25,paper.muted)+paperRule(248)+
-    record(322,teacherOpening.dateLabel,teacherOpening.title,teacherOpening.place,teacherOpening.sourceTitle)+paperRule(385)+
-    record(454,atlanta.eventDateLabel,atlanta.headline,atlanta.site.location,atlanta.sourceTitle)+
-    paperFooter('Still unknown: whether these records connect.'));
+function paperWorkplaceImage({location, title, workplace, records, gap}) {
+  const entries = records.map(([year, heading, place, publisher], index) => {
+    const y = 322 + index * 132;
+    return txt(48, y, year, 54, paper.rust, serif) +
+      txt(220, y - 5, heading, 36, paper.ink, serif) +
+      txt(220, y + 30, place + '  /  ' + publisher, 18, paper.muted);
+  });
+  return wrap(paperHeader('PUBLIC EXAMPLE  /  ' + location.toUpperCase()) +
+    txt(48, 180, title, 76, paper.ink, serif) +
+    txt(50, 222, workplace, 25, paper.muted) + paperRule(248) +
+    entries.join(paperRule(385)) + paperFooter(gap));
 }
+function teacherImage() {
+  return paperWorkplaceImage({
+    location: 'Atlanta, Georgia',
+    title: 'Public school teacher',
+    workplace: 'Booker T. Washington High School',
+    records: [
+      [teacherOpening.dateLabel, teacherOpening.title, teacherOpening.place, teacherOpening.sourceTitle.split(' · ')[0]],
+      [atlanta.eventDateLabel, atlanta.headline, atlanta.site.location, atlanta.sourceTitle.split(' · ')[0]]
+    ],
+    gap: 'Still unknown: whether these records connect.'
+  });
+}
+// These illustrations belong to fixed, public examples. General profession
+// cards continue to describe their profession even when a reader shares one.
+const publicSampleCards = {
+  'registered-nurse': {
+    location: 'Washington, DC',
+    title: 'Registered nurse',
+    workplace: 'Howard University Hospital',
+    records: [
+      ['1968', 'Anna B. Coles becomes the first nursing dean at Howard', 'Washington, DC', 'Freedmen’s nursing alumni history'],
+      ['1975', 'Howard University Hospital succeeds Freedmen’s', 'Washington, DC', 'Howard University College of Medicine']
+    ],
+    gap: 'Still unknown: an individual nurse’s route into a job.'
+  },
+  electrician: {
+    location: 'Chicago, Illinois',
+    title: 'Electrician',
+    workplace: 'Taylor Electric Company',
+    records: [
+      ['1922', 'Sam Taylor starts his electrical contracting company', 'Chicago, Illinois', 'The HistoryMakers'],
+      ['2017', 'Taylor lists Soldier Field in its project portfolio', 'Portfolio posted March 9', 'Taylor Electric Company']
+    ],
+    gap: 'Still unknown: who worked on the crew and how they were hired.'
+  }
+};
 async function writeImage(svg,file) {
   const image = new Resvg(svg,resvgOptions).render();
   const png = await sharp(image.pixels,{raw:{width:WIDTH,height:HEIGHT,channels:4}})
@@ -259,6 +296,9 @@ async function render() {
   let bytes=await writeImage(coverImage(),path.join(out,'cover.png'));
   const all=sample?professions.slice(0,1):professions;
   for(const [i,p] of all.entries()) bytes+=await writeImage(p.slug === 'k12-teacher' ? teacherImage() : await professionImage(p,i),path.join(out,'p',p.slug,'og.png'));
+  for (const [slug, record] of Object.entries(publicSampleCards)) {
+    bytes += await writeImage(paperWorkplaceImage(record), path.join(out, 'preview', 'p', slug, 'sample.png'));
+  }
   const sorted=professions.map(p=>p.slug).sort();
   const picks=sample?[['engineer','physician','registered-nurse']]:combinations(sorted);
   let count=0;
@@ -269,6 +309,6 @@ async function render() {
     await fs.writeFile(path.join(dir,'index.html'),sharePage(model,route,query));
     count++;
   }
-  console.log('Rendered '+all.length+' profession images, '+count+' comparison images and the cover ('+(bytes/1048576).toFixed(1)+' MiB of PNGs).');
+  console.log('Rendered '+all.length+' profession images, '+count+' comparison images, two workplace examples and the cover ('+(bytes/1048576).toFixed(1)+' MiB of PNGs).');
 }
 try { await render(); } finally { await fs.rm(fontDir,{recursive:true,force:true}); }

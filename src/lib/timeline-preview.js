@@ -42,7 +42,7 @@ function reviewedWorkplace(step,matches) {
     Number.isFinite(row.order) && row.order<step.order &&
     (' '+normalizeEmployerText(row.title+' '+row.detail)+' ').includes(' '+predecessor+' '));
   const sources=prior ? [...new Map([...step.sources,...prior.sources].map(source=>[source.url,source])).values()] : step.sources;
-  return {title:step.title,detail:firstSentence(prior ? prior.detail : step.detail),date:step.date,place:step.place,scope:step.scope,sources};
+  return {title:step.title,detail:firstSentence(prior ? prior.detail : step.detail),date:step.date,place:step.place,scope:step.scope,sourceNote:step.sourceNote,dated:Number.isFinite(step.order),sources};
 }
 
 function workplacePreview(steps,context,loadFailed,report) {
@@ -54,7 +54,7 @@ function workplacePreview(steps,context,loadFailed,report) {
     if(step.type==='employer')return reviewedWorkplace(step,matches);
     // Keep the date-basis and index/retrieval label of any cited funding
     // record. The date of an index edition cannot be used to date an award.
-    return {title:step.title,detail:'Workplace funding · '+step.meta,date:step.date,sources:step.sources};
+    return {title:step.title,detail:'Workplace funding · '+step.meta,date:step.date,dated:Number.isFinite(step.order),sources:step.sources};
   }
   const leadCount=(report?.results||[]).filter(row=>row.kind==='lead').length;
   let detail='Check workplace sources for published evidence.';
@@ -67,8 +67,15 @@ function workplacePreview(steps,context,loadFailed,report) {
 }
 
 export function buildTimelinePreview({steps,context,loadFailed=false,report=null}) {
-  const opening=openingPreview(steps,context,loadFailed);
-  const workplace=workplacePreview(steps,context,loadFailed,report);
+  const localOpening=steps.find(step=>step.paperRole==='opening');
+  const localWorkplace=steps.find(step=>step.paperRole==='workplace');
+  const localPair=Boolean(localOpening && localWorkplace);
+  const opening=localPair ? {
+    title:localOpening.title,detail:localOpening.previewDetail,date:localOpening.date,
+    place:localOpening.place,sources:localOpening.sources,
+  } : openingPreview(steps,context,loadFailed);
+  const workplace=localPair ? reviewedWorkplace(localWorkplace,steps.filter(step=>step.type==='employer')) :
+    workplacePreview(steps,context,loadFailed,report);
   const gaps={};
   if(!opening.sources.length)gaps.opening=loadFailed?'Field history could not be checked.':'An opening for this job title is undocumented.';
   if(!context.employer)gaps.workplace='No workplace was entered for this trace.';
@@ -79,7 +86,7 @@ export function buildTimelinePreview({steps,context,loadFailed=false,report=null
     gaps.route='How you personally trained or were hired.';
   }
   const items=Object.values(gaps);
-  return {opening,workplace,gaps:{
+  return {opening,workplace,localPair,gaps:{
     title:items.length+(items.length===1?' gap':' gaps')+' in the record',
     detail:'',items,kinds:Object.keys(gaps),
   }};
@@ -111,5 +118,59 @@ export function schoolRecordPreview(preview,context,{report=null,loadFailed=fals
       showSearch:hasGap && !loadFailed,
     },
     gaps:{...gaps,items:gaps.items.map((item,index)=>statements[gaps.kinds[index]]??item)}
+  };
+}
+
+
+const workplaceLabels = {
+  hospital: 'At your hospital',
+  contractor: 'Contractor record',
+  union: 'Union local record',
+  jobsite: 'Jobsite record',
+  program: 'Training program record',
+};
+
+export function paperRecordPreview(preview, context, {report=null, loadFailed=false}={}) {
+  if (context.profession==='k12-teacher') return schoolRecordPreview(preview, context, {report,loadFailed});
+  if (context.related || !['registered-nurse','electrician'].includes(context.profession)) return preview;
+
+  const {opening,workplace,gaps} = preview;
+  const hasWorkplace = Boolean(context.employer);
+  const nursing = context.profession==='registered-nurse';
+  const documented = workplace.sources.length>0;
+  const missing = hasWorkplace && !documented;
+  const label = workplaceLabels[workplace.scope] || (documented ? 'Workplace funding' : 'Your workplace');
+  let title = workplace.title;
+  if (missing) title = loadFailed ? 'Workplace records unavailable' : 'We haven’t found a record connecting this history to your workplace.';
+  let workplaceGap = 'A record naming this workplace could establish a connection.';
+  if (!hasWorkplace) workplaceGap='No workplace was entered.';
+  else if (loadFailed && !documented) workplaceGap='The workplace records could not be checked.';
+  else if (preview.localPair) {
+    workplaceGap=nursing ? 'No placement record here shows which graduates joined the hospital.' :
+      'The project records do not name the crew assigned to Soldier Field.';
+  } else if (documented) {
+    if (workplace.scope==='hospital' && opening.place==='Tuskegee, Alabama' && workplace.place==='Washington, D.C.')
+      workplaceGap='No record here connects Tuskegee’s school to Howard’s nursing program.';
+    else if (opening.place==='New York City' && ['contractor','union','jobsite','program'].includes(workplace.scope))
+      workplaceGap='No source here connects the New York recruitment decision to this Illinois record.';
+    else workplaceGap=workplace.scope ? 'The connection between these two records is still unknown.' : 'The funding record leaves its connection to field history unknown.';
+  } else if (nursing) workplaceGap='A hospital training agreement could help establish the workplace connection.';
+  else workplaceGap='A union agreement or contractor record naming this workplace could establish the connection.';
+
+  const routeGap = {
+    program:'Your admission, training and hiring route are still unknown.',
+    union:'Your union membership and hiring route are still unknown.',
+    jobsite:'Your work assignment and crew are still unknown.',
+    contractor:'Your own training and hiring route is still unknown.',
+    hospital:'Your own training and hiring route is still unknown.',
+  }[workplace.scope] || 'Your own training and hiring route is still unknown.';
+  const statements = {workplace:workplaceGap,route:routeGap};
+  return {
+    opening:{...opening, detail:opening.place && !preview.localPair ? '' : opening.detail},
+    workplace:{
+      ...workplace, label:preview.localPair && workplace.scope==='contractor'?'Your employer’s project':label, title, showSearch:missing && !loadFailed,
+      detail: workplace.sourceNote || (missing && !report && !loadFailed) ? '' : workplace.detail,
+    },
+    gaps:{...gaps,items:gaps.items.map((item,index)=>statements[gaps.kinds[index]] ?? item)},
   };
 }

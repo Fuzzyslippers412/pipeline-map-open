@@ -1,0 +1,10 @@
+---
+import Profession from '../../p/[slug].astro';
+import {professions} from '../../../lib/model';
+import {readingPreviewSlugs} from '../../../lib/path-examples.js';
+export function getStaticPaths() {
+  return professions.filter(p => readingPreviewSlugs.includes(p.slug)).map(p => ({params:{slug:p.slug},props:{p}}));
+}
+const {p}=Astro.props;
+---
+<Profession p={p}/>

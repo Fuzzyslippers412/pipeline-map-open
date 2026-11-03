@@ -1,6 +1,6 @@
 ---
 import Layout from '../../components/Layout.astro';
-import {pathExamples} from '../../lib/path-examples.js';
+import {pathExamples,examplePath} from '../../lib/path-examples.js';
 
 const questions = [
   'Who opened a door, and what did they do?',
@@ -14,17 +14,17 @@ const steps = ['First', 'Second'];
     <div class="eyebrow"><i></i> READER TEST</div>
     <section id="single-path" aria-labelledby="single-title">
       <h1 id="single-title">Try a path.</h1>
-      <p>Pick one example. Give yourself a minute to find a person, a decision and a missing link. The example opens in a new tab.</p>
+      <p>Pick one example. Give yourself a minute to find a person, open a source, and explain what it proves. The example opens in a new tab.</p>
       <nav class="examples" aria-label="Public examples">
         {pathExamples.map(example => (
-          <a target="_blank" rel="noopener" href={'/p/' + example.slug + '/?example=1#path-preview'}>
+          <a target="_blank" rel="noopener" href={examplePath(example.slug)} data-public-label={example.label}>
             {example.label}<span aria-hidden="true">↗</span>
           </a>
         ))}
       </nav>
       <h2>What did you find?</h2>
       <p>Write your answers here, then copy them back to whoever sent you this test. Your notes stay in this tab.</p>
-      {questions.map((question, i) => (
+      {[...questions, 'Where, if anywhere, did you get stuck? (Optional)'].map((question, i) => (
         <label class="answer"><span>{i + 1}. {question}</span><textarea rows="2" maxlength="1400" data-answer={question}></textarea></label>
       ))}
     </section>
@@ -100,6 +100,10 @@ if (isStudy) {
   });
 }
 
+const openedExamples = new Set<string>();
+single.querySelectorAll<HTMLAnchorElement>('[data-public-label]').forEach(link=>{
+  link.addEventListener('click',()=>openedExamples.add(link.dataset.publicLabel!));
+});
 const container = isStudy ? study : single;
 const fields = [...container.querySelectorAll<HTMLTextAreaElement>('[data-answer]')];
 const copy = document.querySelector<HTMLButtonElement>('[data-copy]')!;
@@ -144,7 +148,11 @@ function studyAnswers() {
 }
 
 copy.addEventListener('click', async () => {
-  const note = isStudy ? studyAnswers() : answersFrom(single);
+  const note = isStudy ? studyAnswers() : [
+    'Door Notes · Workplace reader test',
+    openedExamples.size ? 'Examples opened: ' + [...openedExamples].join('; ') : '',
+    answersFrom(single)
+  ].filter(Boolean).join('\n\n');
   try {
     await navigator.clipboard.writeText(note);
     status.textContent = 'Answers copied.';

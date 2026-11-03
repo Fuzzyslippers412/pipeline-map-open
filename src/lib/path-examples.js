@@ -8,3 +8,8 @@ export const pathExamples=[
   {slug:'k12-teacher',id:'try-teacher',label:'Teacher at Booker T. Washington High, Atlanta',workplace:school.name,title:'Public school teacher',site:school},
   {slug:'electrician',id:'try-electrician',label:'Electrician at Taylor Electric, Chicago',workplace:'Taylor Electric Company, Chicago, IL',title:'Electrician'},
 ];
+
+export const readingPreviewSlugs=['registered-nurse','electrician'];
+export function examplePath(slug) {
+  return (readingPreviewSlugs.includes(slug) ? '/preview/p/' : '/p/') + slug + '/?example=1#path-preview';
+}

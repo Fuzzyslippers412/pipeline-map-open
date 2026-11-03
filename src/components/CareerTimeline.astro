@@ -32,7 +32,11 @@ const {profession}=Astro.props;
             <div data-correction-links></div>
           </details>
         </>:<div class="path-preview-source" data-preview-sources></div>}
-        {part==='workplace' && <a class="record-search" href="#workplace-lookup" data-school-search hidden>Look for a workplace source <span aria-hidden="true">↓</span></a>}
+        {part==='workplace' && <details class="source-note" data-source-note hidden>
+          <summary>What the source shows</summary>
+          <p data-source-explanation></p>
+        </details>}
+        {part==='workplace' && <a class="record-search" href="#workplace-lookup" data-workplace-search hidden>Look for a workplace source <span aria-hidden="true">↓</span></a>}
       </section>)}
     </div>
     <p class="path-preview-status" data-status role="status"></p>
@@ -54,7 +58,7 @@ const {profession}=Astro.props;
 
 <script>
 import {buildCareerTimeline} from '../lib/career-timeline.js';
-import {buildTimelinePreview,schoolRecordPreview} from '../lib/timeline-preview.js';
+import {buildTimelinePreview,paperRecordPreview} from '../lib/timeline-preview.js';
 import {gapSourceLink} from '../lib/gap-source-link.js';
 import {findWorkplaceLinks} from '../lib/trace-context.js';
 import {teacherSchoolConnection} from '../lib/teacher-school-connection.js';
@@ -114,8 +118,10 @@ class CareerTimeline extends HTMLElement{
   };
   reset(){
     this.context=null;this.field=null;this.report=null;this.loading=false;this.failed=false;this.hidden=true;
+    this.removeAttribute('data-record-edition');
     this.removeAttribute('data-school-edition');
     this.querySelector<HTMLDetailsElement>('[data-gap-options]')!.open=false;
+    this.querySelector<HTMLDetailsElement>('[data-source-note]')!.open=false;
     const excerpt=this.querySelector<HTMLDetailsElement>('[data-school-excerpt]');
     if(excerpt)excerpt.open=false;
     this.querySelector('[data-person]')!.textContent='';
@@ -133,12 +139,14 @@ class CareerTimeline extends HTMLElement{
     if(!next?.title){this.reset();return}
     if(this.context && ['title','employer','profession','related'].every(k=>this.context![k as keyof Context]===next[k as keyof Context])&&JSON.stringify(this.context.workplaceInfo)===JSON.stringify(next.workplaceInfo))return;
     this.reset();this.context={...next};this.hidden=false;
-    const schoolEdition=next.profession==='k12-teacher' && !next.related && !!this.closest('body.paper-edition');
-    this.toggleAttribute('data-school-edition',schoolEdition);
-    this.querySelector('[data-preview-kicker]')!.textContent=schoolEdition?'YOUR PATH AT A GLANCE':'CAREER PATH';
-    this.querySelector('#path-preview-heading')!.textContent=schoolEdition?next.title:'Your path at a glance';
+    const paperEdition = ['k12-teacher','registered-nurse','electrician'].includes(next.profession || '') &&
+      !next.related && !!this.closest('body.paper-edition');
+    this.toggleAttribute('data-record-edition',paperEdition);
+    this.toggleAttribute('data-school-edition',paperEdition && next.profession==='k12-teacher');
+    this.querySelector('[data-preview-kicker]')!.textContent=paperEdition?'YOUR PATH AT A GLANCE':'CAREER PATH';
+    this.querySelector('#path-preview-heading')!.textContent=paperEdition?next.title:'Your path at a glance';
     this.querySelector<HTMLElement>('[data-search-jump]')!.hidden=!next.employer;
-    this.querySelector('[data-person]')!.textContent=schoolEdition?(next.employer||'No school entered'):next.title+(next.employer?' at '+next.employer:'');
+    this.querySelector('[data-person]')!.textContent=paperEdition?(next.employer || (next.profession==='k12-teacher'?'No school entered':'No workplace entered')):next.title+(next.employer?' at '+next.employer:'');
     const hint=this.querySelector<HTMLElement>('[data-workplace-info]')!;
     const info=next.workplaceInfo?.workplace===next.employer?next.workplaceInfo:null;
     hint.textContent=info?[info.parent?(info.relation||'Parent organization')+': '+info.parent:'',info.location].filter(Boolean).join(' · '):'';
@@ -175,33 +183,40 @@ class CareerTimeline extends HTMLElement{
     this.querySelector<HTMLButtonElement>('[data-retry]')!.hidden=!this.failed;
     list.setAttribute('aria-busy',String(this.loading));
     if(this.loading){list.replaceChildren();status.textContent='Loading the field history…';return}
-    const steps=buildCareerTimeline({context:this.context,field:this.field,report:this.report,loadFailed:this.failed});
+    const paperEdition=this.hasAttribute('data-record-edition');
+    const steps=buildCareerTimeline({context:this.context,field:this.field,report:this.report,loadFailed:this.failed,paper:paperEdition});
     const basePreview=buildTimelinePreview({steps,context:this.context,loadFailed:this.failed,report:this.report});
-    const schoolEdition=this.hasAttribute('data-school-edition');
-    const preview=schoolEdition?schoolRecordPreview(basePreview,this.context,{report:this.report,loadFailed:this.failed}):basePreview;
+    const preview=paperEdition?paperRecordPreview(basePreview,this.context,{report:this.report,loadFailed:this.failed}):basePreview;
     const sections=this.querySelector<HTMLElement>('[data-preview-sections]')!;
-    const schoolSearch=sections.querySelector<HTMLAnchorElement>('[data-school-search]')!;
-    const showSchoolSearch=schoolEdition && 'showSearch' in preview.workplace && preview.workplace.showSearch;
-    schoolSearch.hidden=!showSchoolSearch;
-    this.querySelector<HTMLElement>('[data-search-jump]')!.hidden=!this.context.employer || !!showSchoolSearch;
+    const workplaceSearch=sections.querySelector<HTMLAnchorElement>('[data-workplace-search]')!;
+    const showWorkplaceSearch=paperEdition && 'showSearch' in preview.workplace && preview.workplace.showSearch;
+    workplaceSearch.hidden=!showWorkplaceSearch;
+    const sourceNote=sections.querySelector<HTMLDetailsElement>('[data-source-note]')!;
+    const explanation=paperEdition && 'sourceNote' in preview.workplace ? preview.workplace.sourceNote : '';
+    sourceNote.hidden=!explanation;
+    sourceNote.querySelector('[data-source-explanation]')!.textContent=explanation || '';
+    if (!explanation) sourceNote.open=false;
+    this.querySelector<HTMLElement>('[data-search-jump]')!.hidden=!this.context.employer || !!showWorkplaceSearch;
     sections.querySelector('[data-part="workplace"] .path-preview-label')!.textContent=
       'label' in preview.workplace?preview.workplace.label:'Your workplace connection';
-    sections.querySelector('[data-part="gaps"] .path-preview-label')!.textContent=schoolEdition?'What we still don’t know':'What’s still unknown';
+    sections.querySelector('[data-part="gaps"] .path-preview-label')!.textContent=paperEdition?'What we still don’t know':'What’s still unknown';
     for(const key of ['opening','workplace','gaps'] as const){
       const cell=sections.querySelector<HTMLElement>('[data-part="'+key+'"]')!;
       const entry=preview[key];
       const date='date' in entry?entry.date:'';
       const headline=cell.querySelector<HTMLElement>('[data-headline]')!;
-      headline.textContent=(!schoolEdition && date ? date+' · ':'')+entry.title;
-      headline.hidden=schoolEdition && key==='gaps';
+      headline.textContent=(!paperEdition && date ? date+' · ':'')+entry.title;
+      headline.hidden=paperEdition && key==='gaps';
       const year=cell.querySelector<HTMLElement>('[data-record-year]');
       if(year){
         year.textContent=date;
-        year.hidden=!schoolEdition || !date;
-        cell.toggleAttribute('data-dated',!year.hidden);
+        year.hidden=!paperEdition || !date;
+        const undated = 'dated' in entry && entry.dated===false;
+        cell.toggleAttribute('data-dated',!year.hidden && !undated);
+        year.classList.toggle('record-date-unknown', undated);
         const place=cell.querySelector<HTMLElement>('[data-record-place]')!;
         place.textContent='place' in entry ? entry.place||'' : '';
-        place.hidden=!schoolEdition || !place.textContent;
+        place.hidden=!paperEdition || !place.textContent;
       }
       const copy=cell.querySelector<HTMLElement>('[data-copy]')!;
       copy.textContent=entry.detail;copy.hidden=!entry.detail;
@@ -227,14 +242,14 @@ class CareerTimeline extends HTMLElement{
             link.className='gap-source-link';link.href=suggestion.href;link.target='_blank';link.rel='noopener noreferrer';
             link.textContent='Suggest a source ↗';link.setAttribute('aria-label',suggestion.label);
             link.title='Open a public GitHub draft with this gap prefilled';
-            if(schoolEdition){
-              link.textContent=({opening:'Field history',workplace:'School connection',route:'Hiring or training route'})[entry.kinds[index]]+' ↗';
+            if(paperEdition){
+              link.textContent=({opening:'Field history',workplace:this.context!.profession==='k12-teacher'?'School connection':'Workplace connection',route:'Hiring or training route'})[entry.kinds[index]]+' ↗';
               links.append(link);
             } else item.append(' ',link);
           }
           return item;
         }));
-        options.hidden=!schoolEdition || !links.childElementCount;
+        options.hidden=!paperEdition || !links.childElementCount;
       }
     }
     sections.hidden=false;
@@ -280,7 +295,7 @@ class CareerTimeline extends HTMLElement{
         }else link.removeAttribute('href');
         const excerpt=panel.querySelector<HTMLDetailsElement>('[data-school-excerpt]');
         if(excerpt){
-          const record=schoolEdition && info.record?.scope==='school'?info.record:null;
+          const record=paperEdition && info.record?.scope==='school'?info.record:null;
           excerpt.hidden=!record?.excerpt || !record.excerptLocator;
           if(!excerpt.hidden){
             excerpt.querySelector('[data-excerpt-text]')!.textContent='“'+record.excerpt+'”';
