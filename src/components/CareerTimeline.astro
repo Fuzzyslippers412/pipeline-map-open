@@ -82,11 +82,27 @@ class CareerTimeline extends HTMLElement{
     this.scope=this.closest('[data-timeline-scope]');
     this.scope?.addEventListener('pipeline:research-results',this.onReport);
     this.querySelector('[data-retry]')?.addEventListener('click',this.retry);
+    window.addEventListener('hashchange',this.followFragment);
   }
   disconnectedCallback(){
     this.scope?.removeEventListener('pipeline:research-results',this.onReport);
     this.querySelector('[data-retry]')?.removeEventListener('click',this.retry);
+    window.removeEventListener('hashchange',this.followFragment);
   }
+  private followFragment=()=>{
+    if(!this.context || this.hidden) return;
+    if(location.hash==='#path-preview'){this.focusPreview();return}
+    if(location.hash!=='#decisions') return;
+    const panel=this.querySelector<HTMLDetailsElement>('#decisions:not([hidden])');
+    if(!panel)return;
+    panel.open=true;
+    requestAnimationFrame(()=>{
+      if(!panel.hidden && panel.open && location.hash==='#decisions'){
+        panel.querySelector('summary')?.focus({preventScroll:true});
+        panel.scrollIntoView({block:'start',behavior:'instant'});
+      }
+    });
+  };
   reset(){
     this.context=null;this.field=null;this.report=null;this.loading=false;this.failed=false;this.hidden=true;
     this.querySelector('[data-person]')!.textContent='';
@@ -193,14 +209,7 @@ class CareerTimeline extends HTMLElement{
           const more=panel.querySelector<HTMLAnchorElement>('[data-today-link]')!;
           more.href=today.url;more.textContent=today.label+' ↗';
         }
-        if(firstRender && location.hash==='#decisions'){
-          panel.open=true;
-          requestAnimationFrame(()=>{
-            if(!panel.hidden && panel.open){
-              panel.querySelector('summary')?.focus({preventScroll:true});panel.scrollIntoView({block:'start',behavior:'instant'});
-            }
-          });
-        }
+        if(firstRender && location.hash==='#decisions') this.followFragment();
       }
       if(panel.dataset.decisionsFor==='k12-teacher' || panel.dataset.decisionsFor==='electrician'){
         const info=panel.dataset.decisionsFor==='electrician' ? electricianConnection(this.context,matches,this.failed) :
