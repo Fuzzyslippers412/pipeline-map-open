@@ -14,7 +14,7 @@ const titles = {
   pastor: ['senior pastor', 'associate pastor', 'assistant pastor', 'youth pastor', 'lead pastor'],
   'military-officer': ['air force officer', 'marine officer', 'commissioned military officer', 'navy officer'],
   'police-officer': ['patrol officer', 'police detective', 'police sergeant', 'police lieutenant', 'deputy sheriff'],
-  electrician: ['journeyworker electrician', 'journeyman electrician', 'master electrician', 'apprentice electrician', 'licensed electrician'],
+  electrician: ['journeyworker electrician', 'journeyman electrician', 'master electrician', 'apprentice electrician', 'electrical apprentice', 'electrician apprentice', 'licensed electrician', 'inside wireman', 'journeyman wireman', 'journeywoman electrician'],
   'software-engineer': ['SWE', 'SDE', 'software development engineer', 'computer programmer', 'web developer', 'backend engineer', 'back end engineer', 'frontend engineer', 'front end engineer', 'full stack engineer', 'full stack developer', 'backend developer', 'frontend developer', 'mobile developer', 'application software developer', 'iOS developer', 'Android developer', 'platform software engineer'],
   'corporate-executive': ['corporate chief executive officer', 'corporate CEO', 'company chief executive'],
   entrepreneur: ['cofounder', 'co-founder', 'startup founder', 'company founder', 'owner operator', 'business proprietor'],

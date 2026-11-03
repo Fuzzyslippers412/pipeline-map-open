@@ -69,17 +69,18 @@ function workplacePreview(steps,context,loadFailed,report) {
 export function buildTimelinePreview({steps,context,loadFailed=false,report=null}) {
   const opening=openingPreview(steps,context,loadFailed);
   const workplace=workplacePreview(steps,context,loadFailed,report);
-  const items=[];
-  if(!opening.sources.length)items.push(loadFailed?'Field history could not be checked.':'An opening for this job title is undocumented.');
-  if(!context.employer)items.push('No workplace was entered for this trace.');
+  const gaps={};
+  if(!opening.sources.length)gaps.opening=loadFailed?'Field history could not be checked.':'An opening for this job title is undocumented.';
+  if(!context.employer)gaps.workplace='No workplace was entered for this trace.';
   else{
-    items.push(workplace.sources.length?
-      'Whether the earlier opening led to this workplace connection.':
-      'Whether this workplace connects to the field’s earlier institutions.');
-    items.push('How you personally trained or were hired.');
+    gaps.workplace=workplace.sources.length?
+      'Whether the field and workplace records connect.':
+      'Whether this workplace connects to the field’s history.';
+    gaps.route='How you personally trained or were hired.';
   }
+  const items=Object.values(gaps);
   return {opening,workplace,gaps:{
     title:items.length+(items.length===1?' gap':' gaps')+' in the record',
-    detail:'',items,
+    detail:'',items,kinds:Object.keys(gaps),
   }};
 }

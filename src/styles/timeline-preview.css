@@ -84,6 +84,15 @@
   color: var(--muted);
   font: 13px/1.4 var(--sans);
 }
+.path-preview-gap-list .gap-source-link {
+  display: inline-block;
+  min-height: 24px;
+  color: var(--teal);
+  font: 12px/1.5 var(--sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
 .path-preview-gap-list li::marker { color: var(--soft); }
 .path-preview-status {
   margin: 8px 0 0;
@@ -143,11 +152,13 @@
 
 /* Keep the decision disclosure in reach beneath the three answers on a phone. */
 @media(max-width:480px) {
-  .career-timeline:has([data-decisions-for]:not([hidden])) .path-preview {
+  .career-timeline:has([data-decisions-for]) .path-preview {
     scroll-margin-block-start: 0;
   }
   .career-timeline:has([data-decisions-for]:not([hidden])) .path-preview-header { margin-bottom: 6px; }
   .career-timeline:has([data-decisions-for]:not([hidden])) .path-preview-cell { padding-block: 6px; }
+  .personal-trace:has([data-decisions-for]:not([hidden])) { padding-inline: 12px; }
+  .career-timeline:has([data-decisions-for]:not([hidden])) [data-part="gaps"] .path-preview-headline,
   .career-timeline:has([data-decisions-for]:not([hidden])) .path-preview-status {
     position: absolute;
     width: 1px;

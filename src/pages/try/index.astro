@@ -1,0 +1,48 @@
+---
+import Layout from '../../components/Layout.astro';
+import {pathExamples} from '../../lib/path-examples.js';
+const questions=['Who opened a door, and what did they do?', 'Which decision changed something for workers? Which source shows it?', 'Where does the evidence stop?'];
+---
+<Layout title="Try a path" desc="Test a public career path and compare what the sources establish with what remains unknown.">
+<div class="frame trial">
+  <div class="eyebrow"><i></i> READER TEST</div>
+  <h1>Try a path.</h1>
+  <p>Pick one example. Give yourself a minute to find a person, a decision and a missing link. The example opens in a new tab.</p>
+  <nav aria-label="Public examples">
+    {pathExamples.map(example=><a target="_blank" rel="noopener" href={'/p/'+example.slug+'/?example=1#path-preview'}>{example.label} <span aria-hidden="true">↗</span></a>)}
+  </nav>
+  <h2>What did you find?</h2>
+  <p>Write your answers here, then copy them back to whoever sent you this test. Your notes stay in this tab.</p>
+  {questions.map((question,i)=><label><span>{i+1}. {question}</span><textarea rows="2" maxlength="1400" data-answer={question}></textarea></label>)}
+  <button type="button" class="secondary" data-copy disabled>Copy my answers</button>
+  <span role="status" data-copy-status></span>
+  <textarea readonly hidden aria-label="Answers ready to copy" data-copy-fallback></textarea>
+</div>
+</Layout>
+<script>
+const fields=[...document.querySelectorAll<HTMLTextAreaElement>('[data-answer]')];
+const copy=document.querySelector<HTMLButtonElement>('[data-copy]')!;
+const status=document.querySelector<HTMLElement>('[data-copy-status]')!;
+const fallback=document.querySelector<HTMLTextAreaElement>('[data-copy-fallback]')!;
+const changed=()=>{copy.disabled=fields.every(f=>!f.value.trim());status.textContent='';fallback.hidden=true;};
+fields.forEach(f=>f.addEventListener('input',changed));
+changed();
+copy.addEventListener('click',async()=>{
+  const note=fields.filter(f=>f.value.trim()).map(f=>f.dataset.answer+'\n'+f.value.trim()).join('\n\n');
+  try{await navigator.clipboard.writeText(note);status.textContent='Answers copied.';}
+  catch{fallback.hidden=false;fallback.value=note;fallback.focus();fallback.select();status.textContent='Select Copy to copy your answers.';}
+});
+</script>
+<style>
+.trial{max-width:680px;padding-block:clamp(24px,5vw,58px);color:var(--text)}
+.trial h1{font:500 clamp(42px,6vw,65px)/1.03 var(--serif);margin:10px 0}
+.trial h2{font:600 24px/1.2 var(--sans);margin:24px 0 6px}
+.trial p{color:var(--muted);max-width:56ch;margin:0 0 13px}
+.trial nav{display:grid;border-block:1px solid var(--edge);margin:17px 0 10px}
+.trial nav a{display:flex;justify-content:space-between;gap:8px;padding:12px 0;min-height:44px;align-items:center;color:var(--teal);font-weight:650}
+.trial nav a+a{border-top:1px solid var(--edge)}
+.trial label{display:grid;gap:5px;font-size:14px;font-weight:650;margin:15px 0}
+.trial textarea{width:100%;min-height:54px;resize:vertical;border:1px solid var(--edge);border-radius:4px;background:var(--panel);color:var(--text);font:16px/1.4 var(--sans);padding:8px}
+.trial [role=status]{font-size:13px;color:var(--muted);margin-left:8px}
+.trial button:disabled{opacity:.55}
+</style>

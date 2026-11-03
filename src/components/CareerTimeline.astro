@@ -2,6 +2,7 @@
 import PathDecisions from './PathDecisions.astro';
 import {howardNursingDecisions} from '../lib/howard-nursing-decisions.js';
 import {teacherDecisions} from '../lib/teacher-decisions.js';
+import {electricianDecisions} from '../lib/electrician-decisions.js';
 import '../styles/career-timeline.css';
 import '../styles/timeline-preview.css';
 const {profession}=Astro.props;
@@ -28,8 +29,9 @@ const {profession}=Astro.props;
     <p class="path-preview-status" data-status role="status"></p>
     <button class="secondary timeline-retry" data-retry type="button" hidden>Retry profession history</button>
   </section>
-  {(!profession || profession==='registered-nurse') && <PathDecisions profession="registered-nurse" workplace="Howard University Hospital" subtitle="Anna B. Coles, Howard’s trustees and Congress" label="Decisions and leadership in Howard nursing" records={howardNursingDecisions}/>}
-  {(!profession || profession==='k12-teacher') && <PathDecisions profession="k12-teacher" subtitle="Black teacher training, pay and your school" label="Decisions in Black public-school teaching" records={teacherDecisions}/>}
+  {(!profession || profession==='registered-nurse') && <PathDecisions anchor={!!profession} profession="registered-nurse" workplace="Howard University Hospital" subtitle="Anna B. Coles, Howard’s trustees and Congress" label="Decisions and leadership in Howard nursing" records={howardNursingDecisions}/>}
+  {(!profession || profession==='k12-teacher') && <PathDecisions anchor={!!profession} profession="k12-teacher" subtitle="Black teacher training, pay and your school" label="Decisions in Black public-school teaching" records={teacherDecisions}/>}
+  {(!profession || profession==='electrician') && <PathDecisions anchor={!!profession} profession="electrician" subtitle="Apprenticeships, contractors and jobsites" label="Decisions in the electrical trade" records={electricianDecisions}/>}
   <details class="path-full-timeline" data-full hidden>
     <summary>Explore the full timeline and sources</summary>
     <div class="path-full-timeline-body">
@@ -44,8 +46,11 @@ const {profession}=Astro.props;
 <script>
 import {buildCareerTimeline} from '../lib/career-timeline.js';
 import {buildTimelinePreview} from '../lib/timeline-preview.js';
+import {gapSourceLink} from '../lib/gap-source-link.js';
 import {findWorkplaceLinks} from '../lib/trace-context.js';
 import {teacherSchoolConnection} from '../lib/teacher-school-connection.js';
+import {electricianConnection} from '../lib/electrician-connection.js';
+import {currentDecisionRecord} from '../lib/decision-today.js';
 
 type Context={employer:string,title:string,profession?:string,related?:boolean,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string}|null};
 const cache=new Map<string,Promise<any>>();
@@ -92,7 +97,7 @@ class CareerTimeline extends HTMLElement{
     const full=this.querySelector<HTMLDetailsElement>('[data-full]')!;
     full.open=false;full.hidden=true;
     for(const panel of this.querySelectorAll<HTMLDetailsElement>('[data-decisions-for]')){
-      panel.open=false;panel.hidden=true;
+      panel.open=false;panel.hidden=true;panel.removeAttribute('id');
     }
   }
   setContext(next:Context){
@@ -158,22 +163,63 @@ class CareerTimeline extends HTMLElement{
           return link;
         }));
       }else{
-        cell.querySelector('[data-gap-items]')!.replaceChildren(...entry.items.map((text:string)=>part('li','',text)));
+        cell.querySelector('[data-gap-items]')!.replaceChildren(...entry.items.map((text:string,index:number)=>{
+          const item=part('li','',text);
+          const suggestion=gapSourceLink(entry.kinds[index],this.field?.name);
+          if(suggestion){
+            const link=document.createElement('a');
+            link.className='gap-source-link';link.href=suggestion.href;link.target='_blank';link.rel='noopener noreferrer';
+            link.textContent='Suggest a source ↗';link.setAttribute('aria-label',suggestion.label);
+            link.title='Open a public GitHub draft with this gap prefilled';
+            item.append(' ',link);
+          }
+          return item;
+        }));
       }
     }
     sections.hidden=false;
     const panel=this.querySelector<HTMLDetailsElement>('[data-decisions-for="'+(this.context.profession||'')+'"]');
     if(panel && !this.context.related){
       const matches=findWorkplaceLinks(this.context.employer,this.context.profession,this.field?.reviewers,this.context.workplaceInfo);
+      const firstRender=panel.hidden;
       panel.hidden=!!panel.dataset.workplace && !matches.some(row=>row.workplace===panel.dataset.workplace);
-      if(panel.dataset.decisionsFor==='k12-teacher'){
-        const info=teacherSchoolConnection(this.context,this.field?.reviewers,matches,this.failed);
-        panel.querySelector('[data-school-label]')!.textContent=info.label;
-        panel.querySelector('[data-school-name]')!.textContent=info.name;
-        panel.querySelector('[data-school-gap]')!.textContent=info.gap;
-        const change=panel.querySelector<HTMLElement>('[data-school-change]')!;
+      if(!panel.hidden){
+        panel.id='decisions';
+        const today=currentDecisionRecord(this.context,matches);
+        panel.querySelector<HTMLElement>('[data-today]')!.hidden=!today;
+        if(today){
+          panel.querySelector('[data-today-title]')!.textContent=today.title;
+          panel.querySelector('[data-today-detail]')!.textContent=today.detail;
+          const more=panel.querySelector<HTMLAnchorElement>('[data-today-link]')!;
+          more.href=today.url;more.textContent=today.label+' ↗';
+        }
+        if(firstRender && location.hash==='#decisions'){
+          panel.open=true;
+          requestAnimationFrame(()=>{
+            if(!panel.hidden && panel.open){
+              panel.querySelector('summary')?.focus({preventScroll:true});panel.scrollIntoView({block:'start',behavior:'instant'});
+            }
+          });
+        }
+      }
+      if(panel.dataset.decisionsFor==='k12-teacher' || panel.dataset.decisionsFor==='electrician'){
+        const info=panel.dataset.decisionsFor==='electrician' ? electricianConnection(this.context,matches,this.failed) :
+          teacherSchoolConnection(this.context,this.field?.reviewers,matches,this.failed);
+        panel.querySelector('[data-local-label]')!.textContent=info.label;
+        panel.querySelector('[data-local-name]')!.textContent=info.name;
+        panel.querySelector('[data-local-gap]')!.textContent=info.gap;
+        const bridge=panel.querySelector<HTMLElement>('[data-site-bridge]');
+        if(bridge){
+          const source='bridge' in info && info.bridge;
+          bridge.hidden=!source;
+          if(source){
+            bridge.querySelector('p')!.textContent=source.detail;
+            const to=bridge.querySelector('a')!;to.href=source.url;to.textContent=source.label+' ↗';
+          }
+        }
+        const change=panel.querySelector<HTMLElement>('[data-local-change]')!;
         change.textContent=info.record?.description||'';change.hidden=!info.record;
-        const link=panel.querySelector<HTMLAnchorElement>('[data-school-source]')!;
+        const link=panel.querySelector<HTMLAnchorElement>('[data-local-source]')!;
         link.hidden=!info.record;
         if(info.record){
           link.href=info.record.url;link.textContent=info.record.sourceTitle.split(' · ').at(-1)+' ↗';
@@ -203,7 +249,7 @@ class CareerTimeline extends HTMLElement{
     const workplaceIndex=steps.findIndex(step=>step.type==='employer'||step.type==='award');
     const gapIndex=steps.findIndex((step,i)=>i>0&&step.type==='gap');
     const targets={
-      'timeline-history':rows[0],
+      'timeline-history':rows[Math.max(0,steps.findIndex(step=>step.type==='history'))],
       'timeline-workplace':rows[workplaceIndex>=0?workplaceIndex:gapIndex],
       'timeline-today':rows.at(-1)
     };

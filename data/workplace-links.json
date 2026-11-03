@@ -134,5 +134,43 @@
     "url": "https://npgallery.nps.gov/GetAsset/9814b816-e5bd-4513-8b58-415d397c5297#page=7",
     "eventDateLabel": "1924",
     "eventYear": 1924
+  },
+  {
+    "workplace": "Taylor Electric Company, Chicago, IL",
+    "aliases": ["Taylor Electric Company, Chicago", "Taylor Electric Company, Chicago, Illinois", "Taylor Electric Co., Chicago, IL", "Taylor Electric, Chicago, IL", "Taylor Electric Chicago"],
+    "scope": "contractor",
+    "professions": ["electrician"],
+    "headline": "Sam Taylor starts an electrical contracting company",
+    "description": "Sam Taylor and Charles Vernon Stewart III studied the trade together when publishers refused to send electrical lessons to Black readers. Stewart helped Taylor start the company in Chicago in 1922.",
+    "sourceTitle": "The HistoryMakers · Charles Stewart’s oral history",
+    "url": "https://www.thehistorymakers.org/sites/default/files/A2004_256_EAC.pdf#page=1",
+    "eventDateLabel": "1922",
+    "eventYear": 1922
+  },
+  {
+    "workplace": "IBEW Local 134, Chicago, IL",
+    "aliases": ["IBEW Local 134", "IBEW Local 134, Chicago", "IBEW Local 134, Chicago, Illinois", "Local Union 134 IBEW Chicago", "International Brotherhood of Electrical Workers Local 134, Chicago, IL"],
+    "scope": "union",
+    "professions": ["electrician"],
+    "headline": "Black electricians gain full membership in Local 134",
+    "description": "Charles Stewart recalled that Black electricians in Chicago first received work permits and later gained full union membership. He went on to help other Black electricians enter Local 134.",
+    "sourceTitle": "The HistoryMakers · Charles Stewart’s interview guide",
+    "url": "https://www.thehistorymakers.org/sites/default/files/A2004_256_EAD.pdf",
+    "eventDateLabel": "1943",
+    "eventYear": 1943
+  },
+  {
+    "workplace": "Soldier Field, Chicago, IL",
+    "aliases": ["Soldier Field, Chicago", "Soldier Field, Chicago, Illinois"],
+    "scope": "jobsite",
+    "professions": ["electrician"],
+    "headline": "Taylor Electric takes on stadium maintenance",
+    "description": "Taylor Electric, the Black-owned Chicago contractor, took over electrical maintenance at Soldier Field in the early 1990s. The union’s account names the company but does not identify individual workers on the job.",
+    "sourceTitle": "IBEW · Taylor Electric’s Chicago projects",
+    "url": "https://ibew.org/wp-content/uploads/2025/05/IBEW-EW-V19-N02.pdf#page=7",
+    "eventDateLabel": "Early 1990s",
+    "eventYear": 1990,
+    "fromInstitution": "Taylor Electric Company",
+    "toInstitution": "Soldier Field"
   }
 ]

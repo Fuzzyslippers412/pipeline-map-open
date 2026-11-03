@@ -26,7 +26,8 @@ function historyStep(item){
 }
 function workplaceStep(row){
   const bridge=row.fromInstitution&&row.toInstitution?row.fromInstitution+' → '+row.toInstitution:'';
-  return {type:'employer',label:'Workplace history',date:row.eventDateLabel||'Date undocumented',order:dateKey(row.eventYear),
+  const label=({contractor:'Contractor history',union:'Union history',jobsite:'Jobsite record',program:'Training program'})[row.scope] || 'Workplace history';
+  return {type:'employer',label,date:row.eventDateLabel||'Date undocumented',order:dateKey(row.eventYear),
     title:row.headline,detail:row.description,bridge,sources:sources([{title:row.sourceTitle,url:row.url}])};
 }
 function awardStep(row){
@@ -71,12 +72,12 @@ export function buildCareerTimeline({context,field,report=null,loadFailed=false}
   if(employer){
     const bridge=employerEvents.find(step=>step.bridge)?.bridge;
     const reason=bridge?
-      'The workplace source documents '+bridge+'. Whether the earlier field openings led to that specific institutional connection is undocumented.':
-      hasWorkplace?'A record names this employer, but the sources here do not establish how the earlier field history led to this workplace.':
-      'No source in this timeline establishes a connection between this workplace and the field’s earlier institutions.';
+      'The workplace source documents '+bridge+'. Its link to the field history is still unknown.':
+      hasWorkplace?'A source names this workplace. The evidence here does not connect its history to the field milestones.':
+      'No source in this timeline connects the field history to this workplace.';
     const extra=leadCount?' The search returned '+leadCount+(leadCount===1?' lead':' leads')+' to investigate below.':'';
     const position=events.findIndex(s=>s.type==='award'||s.type==='employer');
-    const heading=bridge?'From the field’s openings to this workplace':'How the path reached '+employer;
+    const heading='The field and '+employer;
     events.splice(position<0?events.length:position,0,gap(heading,reason+extra));
   }else if(!employer){
     events.push(gap('Which workplace connects to this history?','No workplace was entered. Add an employer to check for a documented institutional connection.'));

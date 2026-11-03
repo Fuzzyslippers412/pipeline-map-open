@@ -2,17 +2,22 @@
 import CareerTimeline from './CareerTimeline.astro';
 import SourceLookup from './SourceLookup.astro';
 import '../styles/personal-trace.css';
+import {pathExamples} from '../lib/path-examples.js';
 const {p}=Astro.props;
+const demo=pathExamples.find(row=>row.slug===p.slug);
+const publicTrace=demo && {workplace:demo.workplace,title:demo.title,slug:demo.slug,match:'title',workplaceInfo:demo.site &&
+  {workplace:demo.workplace,location:demo.site.location,parent:demo.site.parent,relation:demo.site.relation}};
 ---
-<section class="personal-trace" id="personal-trace" data-timeline-scope data-profession={p.slug} aria-label="Your career timeline" hidden>
+<section class="personal-trace" id="personal-trace" data-timeline-scope data-profession={p.slug} data-public-example={publicTrace && JSON.stringify(publicTrace)} aria-label="Your career timeline" hidden>
   <div class="personal-trace__tools">
-    <a href="/#trace">Edit details</a><button type="button" data-clear-trace>Clear trace</button>
+    <a href="/#trace" data-edit-trace>Edit details</a><button type="button" data-clear-trace>Clear trace</button>
   </div>
   <CareerTimeline profession={p.slug}/>
   <SourceLookup/>
   <div class="personal-trace__foot">
     <a href="#trend">See Black representation in this profession ↓</a>
-    <span>Shared links open the public profession card.</span>
+    <span data-share-note>Shared links open the public profession card.</span>
+    {demo && <a data-example-link hidden href={'/p/'+p.slug+'/?example=1#decisions'}>Public link to this example ↗</a>}
   </div>
 </section>
 <script>
@@ -22,10 +27,17 @@ const panel=document.querySelector<HTMLElement>('#personal-trace');
 if(panel){
   const timeline=panel.querySelector('pipeline-career-timeline');
   const lookup=panel.querySelector('pipeline-source-lookup');
+  const sample=panel.dataset.publicExample ? JSON.parse(panel.dataset.publicExample) : null;
+  const isExample=!!sample && new URL(location.href).searchParams.get('example')==='1';
   const render=()=>{
-    const trace=readTrace();
+    const trace=isExample ? sample : readTrace();
     panel.hidden=!trace||trace.slug!==panel.dataset.profession;
     if(!trace||panel.hidden){bindLookup(timeline,null);bindLookup(lookup,null);return}
+    panel.querySelector('[data-edit-trace]')!.textContent=isExample?'Trace your own job':'Edit details';
+    panel.querySelector<HTMLElement>('[data-clear-trace]')!.hidden=isExample;
+    panel.querySelector('[data-share-note]')!.textContent=isExample?'Public example · anyone can open this link.':'Shared links open the public profession card.';
+    const sampleLink=panel.querySelector<HTMLElement>('[data-example-link]');
+    if(sampleLink)sampleLink.hidden=isExample || trace.workplace!==sample.workplace || trace.title!==sample.title;
     const context={employer:trace.workplace,title:trace.title,profession:trace.slug,related:trace.match==='related',workplaceInfo:trace.workplaceInfo};
     bindLookup(timeline,context);
     bindLookup(lookup,{...context,profession:context.related?'':trace.slug});
