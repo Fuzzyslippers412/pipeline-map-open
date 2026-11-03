@@ -3,7 +3,7 @@ import {groups,measures,isPct,amount,variants,src} from '../lib/model';
 import {chartSVG,colours} from '../lib/plot';
 const {p,rows}=Astro.props;
 const choices=variants(rows);
-const paper = Astro.url.pathname === '/p/k12-teacher/' || Astro.url.pathname.startsWith('/preview/p/');
+const paper = !Astro.url.pathname.startsWith('/study/original/');
 const seriesColours = paper ? ['#293d80', '#874536'] : colours;
 const optionLabel=(v)=>v.rows[0].measure_label||measures[v.measure];
 ---

@@ -8,7 +8,8 @@ import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
       <div>
         <p class="map-label">Career map <span aria-hidden="true">/</span> Information technology</p>
         <h1>What’s your next move in IT?</h1>
-        <p class="map-deck">Start with the work you do. Compare a route into deeper technical work with one into managing people.</p>
+        <p class="map-deck">Compare two directions from the work you do now. Pick a move and take a question to your next workplace conversation.</p>
+        <a class="history-jump" href="#door-note">Meet Joseph Thompson, a computer operator in 1951 <span aria-hidden="true">↓</span></a>
       </div>
       <figure class="fork" aria-label="One starting role can lead toward technical work or people management">
         <div class="fork-root">Your work</div>
@@ -51,37 +52,53 @@ import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
       </div>
 
       <div id="compare-moves" class="comparison">
-        <p class="map-label">Possible moves</p>
+        <p class="map-label">Two directions</p>
         <h2>Compare the work</h2>
-        <noscript><p>Explore both starting roles below.</p></noscript>
         <div role="status" aria-live="polite" class="sr" data-start-status></div>
         {startingPoints.map(start=><section class="route" data-start={start.id} aria-labelledby={'from-'+start.id}>
           <div class="route-from"><h3 id={'from-'+start.id}>From {start.name.toLowerCase()}</h3>
             <a href={start.source.url}>{start.source.label} <span aria-hidden="true">↗</span></a></div>
+          <fieldset class="move-choices" hidden>
+            <legend>Choose a move to see it up close</legend>
+            <div class="direction-options">
+              {start.moves.map((move,i)=><label>
+                <input type="radio" name={'move-'+start.id} value={move.id} checked={i===0} aria-controls={'detail-'+start.id+'-'+move.id} />
+                <span><small>{move.branch}</small><strong>{move.name}</strong><span class="direction-caption">{move.preview}</span></span>
+              </label>)}
+            </div>
+          </fieldset>
           <div class="routes">
-            {start.moves.map((move,i)=><article class="move" data-branch={i}>
+            {start.moves.map(move=><article class="move" id={'detail-'+start.id+'-'+move.id} data-move={move.id}>
               <p class="branch"><span class="line" aria-hidden="true"></span>{move.branch}</p>
               <h4>{move.name}</h4>
-              <dl>
-                <dt>What changes</dt><dd>{move.change}</dd>
-                <dt>Try a small assignment</dt><dd>{move.practice}</dd>
-                <dt>Ask at your workplace</dt><dd>{move.local}</dd>
-              </dl>
+              <p class="move-change">{move.change}</p>
               <a href={move.evidence.url}>{move.evidence.label} <span aria-hidden="true">↗</span></a>
+              <a class="note-jump" href="#next-move-note" hidden>Get my next step and questions <span aria-hidden="true">↓</span></a>
+              <noscript><p><strong>Try this:</strong> {move.practice}</p><p>{move.local}</p></noscript>
             </article>)}
           </div>
-          <p class="transition-source">The U.S. Bureau of Labor Statistics describes both possible moves from this kind of work. <a href={start.transition.url}>{start.transition.label} <span aria-hidden="true">↗</span></a></p>
+          <p class="transition-source">Why this move appears: <a href={start.transition.url}>{start.transition.label} <span aria-hidden="true">↗</span></a></p>
         </section>)}
       </div>
 
-      <aside class="workplace-question" aria-labelledby="local-criteria">
-        <p class="map-label">At your workplace</p>
-        <h2 id="local-criteria">Who can open the next door?</h2>
-        <p>Look for an internal posting, job description or union agreement that names the requirements and who decides. Your employer’s grade, pay and promotion process are still open.</p>
-        {responsibilities.map(role=><p class="conversation" data-level={role.id} hidden={role.id!=='unsure'}><strong>A question to take with you</strong>{role.question}</p>)}
-        <a href="/#trace">Trace my actual job <span aria-hidden="true">→</span></a>
+      <aside id="next-move-note" class="action-note" aria-labelledby="note-title" tabindex="-1" hidden>
+        <div class="note-head"><p class="map-label">Door Notes <span aria-hidden="true">/</span> Conversation note</p>
+          <span class="note-stamp">Take to work</span></div>
+        <h2 id="note-title">My next move</h2>
+        <p class="note-route"><span data-note-start></span> <span aria-hidden="true">→</span> <strong data-note-title></strong></p>
+        <dl class="note-lines">
+          <div><dt>One thing to try</dt><dd data-note-practice></dd></div>
+          <div><dt>Ask someone who assigns the work</dt><dd data-note-question></dd></div>
+          <div><dt>About the responsibility <span data-note-level></span></dt><dd data-note-responsibility></dd></div>
+        </dl>
+        <p class="note-gap"><strong>What still needs a local record</strong> Check an internal posting, job description or union agreement for the decision-maker, requirements and pay at your workplace.</p>
+        <div class="note-records"><a data-note-source href={startingPoints[0].moves[0].evidence.url}>Read about the work ↗</a><a data-note-transition href={startingPoints[0].transition.url}>Read about the move ↗</a></div>
+        <div class="note-actions"><button type="button" class="primary" data-note-copy>Copy my note</button><button type="button" class="secondary" data-note-print>Print my note</button></div>
+        <p role="status" class="note-status"></p>
+        <textarea data-note-manual aria-label="Conversation note ready to copy" rows="6" readonly hidden></textarea>
       </aside>
 
+      <p class="return-trace"><a href="/#trace">Trace my actual job <span aria-hidden="true">→</span></a></p>
       <article id="door-note" class="door-note" aria-labelledby="archive-title">
         <div class="note-year"><p class="map-label">Door Note</p><time datetime="1951">1951</time></div>
         <div>
@@ -99,33 +116,82 @@ import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
   </div>
 </Layout>
 <script>
+  import { startingPoints, responsibilities } from '../../lib/it-career-moves.js';
+
   const map = document.querySelector<HTMLElement>('.career-map')!;
   const controls = map.querySelector<HTMLElement>('#responsibility')!;
   const level = controls.querySelector<HTMLSelectElement>('#map-level')!;
   const status = map.querySelector<HTMLElement>('[data-start-status]')!;
+  const note = map.querySelector<HTMLElement>('#next-move-note')!;
+  const source = note.querySelector<HTMLAnchorElement>('[data-note-source]')!;
+  const transition = note.querySelector<HTMLAnchorElement>('[data-note-transition]')!;
+  const noteStatus = note.querySelector<HTMLElement>('.note-status')!;
+  const manual = note.querySelector<HTMLTextAreaElement>('[data-note-manual]')!;
+  let noteText = '';
+
   function renderSelection(announce=false) {
     const work = controls.querySelector<HTMLInputElement>('input[name="work"]:checked')!.value;
-    for (const route of map.querySelectorAll<HTMLElement>('[data-start]')) {
-      route.hidden=route.dataset.start!==work;
-      if (!route.hidden && announce) status.textContent=route.querySelector('h3')!.textContent+'. Two possible moves shown.';
-    }
-    for (const example of controls.querySelectorAll<HTMLElement>('[data-work-example]')) {
-      example.hidden=example.dataset.workExample!==work;
-    }
-    for (const note of map.querySelectorAll<HTMLElement>('[data-level]')) {
-      note.hidden=note.dataset.level!==level.value;
-    }
+    const start = startingPoints.find(item => item.id === work)!;
+    const responsibility = responsibilities.find(item => item.id === level.value)!;
+    const route = map.querySelector<HTMLElement>('[data-start="'+start.id+'"]')!;
+    const selected = route.querySelector<HTMLInputElement>('input:checked')!.value;
+    const move = start.moves.find(item => item.id === selected)!;
+    for (const el of map.querySelectorAll<HTMLElement>('[data-start]')) el.hidden = el !== route;
+    for (const el of route.querySelectorAll<HTMLElement>('[data-move]')) el.hidden = el.dataset.move !== move.id;
+    for (const example of controls.querySelectorAll<HTMLElement>('[data-work-example]')) example.hidden = example.dataset.workExample !== work;
+    for (const el of controls.querySelectorAll<HTMLElement>('[data-level]')) el.hidden = el.dataset.level !== level.value;
+    const fields = {
+      start:start.name, title:move.name, practice:move.practice, question:move.local,
+      level: responsibility.id === 'unsure' ? '' : '· '+responsibility.name,
+      responsibility:responsibility.question
+    };
+    for (const [key,value] of Object.entries(fields)) note.querySelector<HTMLElement>('[data-note-'+key+']')!.textContent = value;
+    source.href = move.evidence.url;
+    source.textContent = move.evidence.label+' ↗';
+    transition.href = start.transition.url;
+    transition.textContent = start.transition.label+' ↗';
+    noteText = [
+      'Door Notes · My next move', start.name+' → '+move.name, 'One thing to try: '+move.practice,
+      'Ask someone who assigns the work: '+move.local, 'About the responsibility ('+responsibility.name+'): '+responsibility.question,
+      note.querySelector('.note-gap')!.textContent?.trim(), move.evidence.label+' · '+source.href,
+      start.transition.label+' · '+transition.href, 'Read the history: https://doornotes.org/career-map/#door-note'
+    ].join('\n\n');
+    manual.hidden = true;
+    noteStatus.textContent = '';
+    if (announce) status.textContent = start.name+'. Showing '+move.name+'. Conversation note updated.';
   }
-  controls.addEventListener('change',event=>renderSelection(event.target instanceof HTMLInputElement));
-  function restore() { renderSelection(); controls.hidden=false; }
-  restore();
-  window.addEventListener('pageshow',restore);
+  const requested = new URLSearchParams(location.search).get('work');
+  for (const radio of controls.querySelectorAll<HTMLInputElement>('input[name="work"]')) {
+    if (radio.value === requested) radio.checked = true;
+  }
+  for (const el of map.querySelectorAll<HTMLElement>('.move-choices,.note-jump')) el.hidden = false;
+  controls.hidden = false;
+  note.hidden = false;
+  map.classList.add('note-ready');
+  map.addEventListener('change',() => renderSelection(true));
+  renderSelection();
+  window.addEventListener('pageshow',() => renderSelection());
+
+  note.querySelector('[data-note-copy]')!.addEventListener('click',async () => {
+    try {
+      await navigator.clipboard.writeText(noteText);
+      noteStatus.textContent = 'Conversation note copied.';
+    } catch {
+      manual.value = noteText;
+      manual.hidden = false;
+      manual.focus();
+      manual.select();
+      noteStatus.textContent = 'Use Copy to take the selected text.';
+    }
+  });
+  note.querySelector('[data-note-print]')!.addEventListener('click',() => window.print());
 </script>
 <style>
 .career-map { padding-block: clamp(26px,5vw,64px) clamp(44px,7vw,92px); }
 .map-label { color:var(--muted); font:650 .74rem/1.4 var(--sans); letter-spacing:.1em; text-transform:uppercase; }
 .map-label span { margin-inline:.3em; color:var(--rust,var(--lime)); }
 .map-intro { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(220px,.9fr); gap:30px; align-items:center; padding-bottom:clamp(24px,4vw,48px); border-bottom:1px solid var(--text); }
+.history-jump { display:inline-flex; align-items:center; gap:7px; min-height:44px; font-size:.89rem; font-weight:650; color:var(--action); text-decoration:underline; text-underline-offset:.18em; }
 .map-intro h1,.work-bench h2,.work-bench h3,.work-bench h4 { font-family:var(--serif); font-weight:500; }
 .map-intro h1 { margin:11px 0; font-size:clamp(42px,6.4vw,76px); line-height:1; letter-spacing:-.055em; max-width:15ch; }
 .map-deck { max-width:46ch; font-size:clamp(1.02rem,1.4vw,1.2rem); color:var(--muted); line-height:1.5; }
@@ -159,19 +225,35 @@ import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
 .route-from { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0 18px; margin-top:8px; }
 .route-from h3 { margin:0; font-size:clamp(21px,2.3vw,28px); line-height:1.2; }
 .route-from a,.transition-source a,.move > a { font-size:.9rem; }
-.routes { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(14px,2.8vw,32px); }
-.move { display:flex; flex-direction:column; align-items:flex-start; padding:16px clamp(14px,2.2vw,27px) 8px; border:1px solid var(--edge); border-top:2px solid var(--action,var(--teal)); background:var(--panel); }
-.move[data-branch="1"] { border-top-color:var(--rust,var(--lime)); }
-.branch { display:flex; align-items:center; gap:7px; font:650 .8rem/1.4 var(--sans); color:var(--action,var(--teal)); }
-.move[data-branch="1"] .branch { color:var(--rust,var(--lime)); }
-.line { width:18px; border-top:2px solid currentColor; }.move[data-branch="1"] .line { border-top-style:dashed; }
+.move-choices { margin:8px 0; padding:0; border:0; min-width:0; }
+.move-choices legend { padding:0; margin:0 0 8px; font-size:.94rem; font-weight:650; }
+.direction-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+.direction-options label { display:flex; gap:8px; align-items:baseline; min-width:0; padding:12px; border:1px solid var(--edge); cursor:pointer; border-radius:3px; }
+.direction-options label:has(:checked) { border-color:var(--action); box-shadow:inset 0 -2px 0 var(--action); background:var(--panel); }
+.direction-options label:focus-within { outline:2px solid var(--action); outline-offset:2px; }
+.direction-options input { flex:none; accent-color:var(--action); margin:0; }
+.direction-options strong,.direction-options small,.direction-caption { display:block; }
+.direction-options small { font-size:.75rem; color:var(--soft); }.direction-options strong { margin-top:3px; font-size:clamp(.99rem,1.5vw,1.15rem); line-height:1.3; }
+.direction-caption { margin-top:3px; color:var(--muted); font-size:.9rem; }
+.routes { display:grid; gap:10px; }.move { padding:16px clamp(14px,2.2vw,27px) 10px; border-left:3px solid var(--action); background:var(--panel); }
+.move[data-move="people"] { border-color:var(--rust); }
+.branch { display:flex; align-items:center; gap:7px; margin:0; font:650 .8rem/1.4 var(--sans); color:var(--action); }
+.move[data-move="people"] .branch { color:var(--rust); }.line { width:18px; border-top:2px solid currentColor; }
+.move[data-move="people"] .line { border-top-style:dashed; }
 .move h4 { margin:5px 0; font-size:clamp(27px,3vw,38px); line-height:1.1; letter-spacing:-.035em; }
-.move dl { margin:0; }.move dt,.conversation strong { display:block; margin:12px 0 2px; font-size:.77rem; font-weight:700; }
-.move dd { margin:0; line-height:1.5; }.move > a { margin-top:auto; }
-.transition-source { margin:6px 0 16px; }.transition-source a { margin-left:4px; }
-.workplace-question { margin-block:26px; padding-block:20px; border-block:1px solid var(--edge); }
-.workplace-question > p:not(.map-label),.door-note p:not(.map-label) { max-width:65ch; line-height:1.55; margin:7px 0; }
-.conversation { border-left:2px solid var(--rust,var(--lime)); padding:3px 12px; }.conversation strong { margin:0 0 2px; }
+.move-change { max-width:60ch; margin:7px 0 0; }
+.move .note-jump { margin-inline:12px 0; }.transition-source { margin:6px 0 16px; }.transition-source a { margin-left:4px; }
+.action-note { max-width:790px; margin-block:24px 12px; padding:clamp(18px,3.4vw,34px); background:var(--panel); border:1px solid var(--edge); border-top:3px solid var(--action); }
+.note-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }.note-head p { margin:0; }
+.note-stamp { color:var(--rust); font:500 italic 1.05rem var(--serif); }
+.action-note h2 { margin:12px 0 4px; }.note-route { margin:0; color:var(--muted); }.note-route strong { color:var(--text); }
+.note-lines { margin:14px 0; }.note-lines div { display:grid; grid-template-columns:minmax(120px,.85fr) minmax(0,2fr); gap:16px; padding:10px 0; border-top:1px solid var(--edge); }
+.note-lines dt,.note-gap strong { font-weight:700; font-size:.86rem; }.note-lines dt span { display:block; color:var(--muted); }
+.note-lines dd { margin:0; }.note-gap { border-left:2px solid var(--rust); padding-left:12px; font-size:.93rem; color:var(--muted); }.note-gap strong { display:block; color:var(--text); }
+.note-records,.note-actions { display:flex; flex-wrap:wrap; gap:0 14px; }.note-records a { font-size:.86rem; }.note-actions { gap:8px; margin-top:10px; }.note-actions button { min-height:44px; cursor:pointer; }
+.note-status { color:var(--action); margin:6px 0 0; font-size:.9rem; }.note-status:empty { margin:0; }
+.action-note textarea { width:100%; min-height:96px; font:inherit; border:1px solid var(--soft); color:var(--text); background:var(--panel); padding:10px; }
+.return-trace { margin-block:6px 16px; }.door-note p:not(.map-label) { max-width:65ch; line-height:1.55; margin:7px 0; }
 .door-note { display:grid; grid-template-columns:minmax(92px,.35fr) minmax(0,2fr); gap:18px; padding-block:14px; }
 .note-year time { display:block; font:500 clamp(35px,5vw,66px)/1.05 var(--serif); color:var(--rust,var(--lime)); }
 .note-links { display:flex; flex-wrap:wrap; gap:0 18px; }.note-links a { font-size:.92rem; }
@@ -183,8 +265,17 @@ import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
 @media(max-width:600px) {
   .career-map { padding-block:24px 40px; }.map-intro { padding-bottom:15px; }.map-intro h1 { font-size:clamp(40px,9.2vw,54px); }
   .fork { display:none; }.controls { padding-block:19px; }.work-options label { padding:8px 6px; gap:4px; }.work-options small { font-size:.8rem; }
-  .routes { grid-template-columns:minmax(0,1fr); gap:12px; }.move { padding:12px 14px 6px; }
+  .direction-options { gap:6px; }.direction-options label { padding:9px 6px; gap:5px; }.direction-caption { display:none; }
+  .move { padding:12px 14px 6px; }.move .note-jump { margin-left:0; display:flex; width:fit-content; }
+  .note-lines div { grid-template-columns:1fr; gap:3px; }.note-lines dt span { display:inline; }
+  .note-stamp { font-size:.9rem; }.action-note { padding:14px; }
   .door-note { grid-template-columns:minmax(0,1fr); gap:6px; }.note-year { display:flex; align-items:baseline; gap:12px; }.note-year time { font-size:30px; }
   .route-from { margin-bottom:6px; }.transition-source a { margin-left:0; }
+}
+@media print {
+  :global(body:has(.career-map.note-ready) .mast),:global(body:has(.career-map.note-ready) .foot),:global(body:has(.career-map.note-ready) .skip),.note-ready > header,.note-ready .work-bench > :not(.action-note),.note-actions,.note-status,.action-note textarea { display:none!important; }
+  .career-map.note-ready { padding:0; }
+  .action-note { margin:0; max-width:none; background:white; color:black; border:1px solid #aaa; }
+  .action-note,.note-lines div { break-inside:avoid; }.note-records { display:block; }.note-records a { display:block; min-height:0; margin-bottom:5px; }.note-records a::after { content:" · " attr(href); font-weight:400; overflow-wrap:anywhere; }
 }
 </style>

@@ -31,6 +31,12 @@ const roleRecords = {
     publisher: 'U.S. Bureau of Labor Statistics · Computer support',
     url: 'https://www.bls.gov/ooh/computer-and-information-technology/computer-support-specialists.htm',
   },
+  networkSupport: {
+    heading: 'Network support today',
+    detail: 'Network support specialists test connections, look for the cause of outages, and maintain networks so people can keep using them.',
+    publisher: 'U.S. Bureau of Labor Statistics · Computer network support',
+    url: 'https://www.bls.gov/ooh/computer-and-information-technology/computer-support-specialists.htm#tab-2',
+  },
   security: {
     heading: 'A role in digital security',
     detail: 'Information security analysts watch for breaches and investigate incidents affecting computer systems. Security teams use a range of job titles for this work.',
@@ -44,6 +50,25 @@ const roleRecords = {
     url: 'https://www.onetonline.org/link/summary/15-1252.00',
   },
 };
+
+// Only these published starting points travel in a link. A neighboring
+// occupation gets an invitation to explore, never an implied promotion path.
+export function careerGuideFor(resolution) {
+  if (!resolution?.computing) return null;
+  const systems = '/career-map/?work=systems#compare-moves';
+  switch (resolution.contextKey) {
+    case 'support':
+      return {href:'/career-map/?work=support#compare-moves', label:'Compare next moves from user support'};
+    case 'systems':
+      return {href:systems, label:'Compare next moves from systems and networks'};
+    case 'networkSupport':
+    case 'sre':
+    case 'devops':
+      return {href:systems, label:'Explore related systems and network roles'};
+    default:
+      return {href:'/career-map/', label:'Explore the IT support and systems career map'};
+  }
+}
 
 export function showComputingContext(panel, context) {
   if (!panel) return;

@@ -1,4 +1,4 @@
-import {colours} from './plot.js';
+import {paperColours as colours} from './plot.js';
 export function compareModel(ids, data){
  const picked=[...ids].sort().map(id=>data.professions.find(p=>p.slug===id)).filter(Boolean);
  const rows=data.series.filter(p=>ids.includes(p.profession_id)&&['black_male','black_female'].includes(p.group));

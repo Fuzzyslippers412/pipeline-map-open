@@ -10,7 +10,7 @@ const studyPath = '/study/original/';
 const original = Astro.url.pathname.startsWith(studyPath);
 const preview = Astro.url.pathname.startsWith('/preview/p/');
 const readerPath = original ? '/' + Astro.url.pathname.slice(studyPath.length) : preview ? Astro.url.pathname.slice('/preview'.length) : Astro.url.pathname;
-const paper = !original && (preview || ['/', '/p/k12-teacher/', '/try/', '/try/routes/', '/paths/', '/suggest/', '/explore/', '/career-map/'].includes(readerPath));
+const paper = !original;
 const home = original ? studyPath : '/';
 const mark = paper ? '/mark-paper.svg' : '/mark.svg';
 const {
@@ -27,7 +27,7 @@ const guideCard = {
   '/career-map/': {file:'/career-map/cover.png', alt:'Door Notes IT career map. From computer support, explore systems work or leading a support team.'},
 }[readerPath];
 const imageAsset = new URL(preview ? Astro.url.pathname + 'sample.png' : guideCard?.file || og, Astro.site);
-if (!guideCard && ['/cover.png', '/p/k12-teacher/og.png'].includes(og)) imageAsset.searchParams.set('edition', 'paper');
+if (!preview && !guideCard && (og === '/cover.png' || og.endsWith('/og.png'))) imageAsset.searchParams.set('edition', 'paper');
 const imageURL = imageAsset.href;
 const imageAlt = preview
   ? (readerPath.includes('registered-nurse') ? 'Anna B. Coles became Howard’s first nursing dean in 1968. Howard University Hospital succeeded Freedmen’s in 1975. An individual nurse’s route into a job is unknown.' : 'Sam Taylor started his Chicago company in 1922. Taylor Electric listed Soldier Field in its portfolio in 2017. The crew and hiring route are unknown.')
@@ -37,7 +37,12 @@ const imageAlt = preview
     ? 'Door Notes. Atlanta teacher example with two independent records, from 1867 and 1924. Their connection is unknown.'
     : brand + ' research card for ' + title;
 const previewTitle = preview ? (readerPath.includes('registered-nurse') ? 'The Howard nursing path' : 'The Taylor Electric path') + ' · ' + brand : pageTitle;
-const navItems = [['Index', home], ...(paper ? [['Explore','/explore/'], ['Career map','/career-map/'], ['Paths', '/paths/']] : []), ['Compare', '/compare/'], ['Sources', '/sources/'], ['Method', '/method/']];
+const navItems = paper ? [
+  ['Index','Trace a job','/#trace'], ['Explore','Explore careers','/explore/'],
+  ['Career map','IT career map','/career-map/'], ['Paths','Workplace histories','/paths/'],
+  ['Compare','Compare','/compare/'], ['Sources','Sources','/sources/'],
+] : [['Index','Index',home], ['Compare','Compare','/compare/'], ['Sources','Sources','/sources/'], ['Method','Method','/method/']];
+const mobileItems = paper ? [...navItems, ['Method','How we use evidence','/method/']] : navItems;
 ---
 <!doctype html>
 <html lang="en" class:list={[paper && 'paper-page']}>
@@ -73,12 +78,12 @@ const navItems = [['Index', home], ...(paper ? [['Explore','/explore/'], ['Caree
       <div class="frame mastrow">
         <a class="wordmark" href={home} aria-label={brand + ' home'}><img src={mark} width="33" height="33" alt=""/>{brand}</a>
         <nav class="desk-nav" aria-label="Primary">
-          {navItems.map(([label, href]) => <a href={href} aria-current={active === label ? 'page' : undefined}>{label}</a>)}
+          {navItems.map(([key, label, href]) => <a href={href} aria-current={active === key ? 'page' : undefined}>{label}</a>)}
         </nav>
         {paper && <details class="paper-nav">
           <summary>Browse</summary>
           <nav aria-label="Browse Door Notes">
-            {navItems.map(([label, href]) => <a href={href} aria-current={active === label ? 'page' : undefined}>{label}</a>)}
+            {mobileItems.map(([key, label, href]) => <a href={href} aria-current={active === key ? 'page' : undefined}>{label}</a>)}
           </nav>
         </details>}
       </div>

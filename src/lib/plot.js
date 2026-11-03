@@ -1,4 +1,5 @@
 export const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export const paperColours=['#293d80','#874536','#365d62'];
 export const colours=['#d6ec8c','#75c5bc','#e7a68b'];
 function singleChart(traces,{percent=true,title='Representation by year',showBreak=true,width=650,height=235,paper=false}={}){
  const rows=traces.flatMap(t=>t.rows);

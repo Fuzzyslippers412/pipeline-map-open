@@ -82,7 +82,7 @@ function metadata(list,route,imagePath,{canonicalRoute=route,socialRoute=route}=
   assert.equal(canonical,new URL(canonicalRoute,site).href,route+' canonical');
   assert.equal(meta('og:url'),new URL(socialRoute,site).href,route+' og:url');
   const expectedImage=new URL(imagePath,site);
-  if(['/cover.png','/p/k12-teacher/og.png'].includes(imagePath)) expectedImage.searchParams.set('edition','paper');
+  if(imagePath==='/cover.png'||imagePath.endsWith('/og.png')) expectedImage.searchParams.set('edition','paper');
   assert.equal(meta('og:image'),expectedImage.href,route+' image URL');
   assert.equal(meta('og:image:width'),'1200'); assert.equal(meta('og:image:height'),'630');
   assert.ok(meta('og:title')?.trim()&&meta('og:description')?.trim()&&meta('og:image:alt')?.trim(),route+' social copy');
@@ -170,6 +170,7 @@ assert.equal(sourceIds.size,sources.length);
 for(const s of sources) {
   const row=expectEl(registry,'id',s.id);
   assert.equal(row.tagName,'tr',s.id);
+  if(s.locator) assert.ok(text(row).includes(s.locator),s.id+' source locator');
   assert.ok(hasHref([...nodes(row)],s.url),s.id+' publisher URL');
   assert.ok(text(row).includes(s.table_name)&&text(row).includes(s.definition)&&text(row).includes(s.retrieved_on),s.id+' source details');
 }
@@ -190,6 +191,7 @@ assert.deepEqual(compareData.professions.map(p=>p.slug),slugs);
 for(const p of professions) {
   const route='/p/'+p.slug+'/', list=await readPage(route), imagePath=route+'og.png';
   metadata(list,route,imagePath); await verifyImage(imagePath);
+  assert.ok(list.some(n=>n.tagName==='body'&&val(n,'class')?.includes('paper-edition'))&&hasHref(list,'/explore/')&&hasHref(list,'/career-map/'),route+' guide navigation');
   const heading=list.find(n=>n.tagName==='h1');
   assert.equal(text(heading),p.name,route+' title');
   const parts=['origin','gate','trend','role'].map(k=>expectEl(list,'id',k));
@@ -232,7 +234,7 @@ for(const ids of combos) {
   const route='/comparisons/'+ids.join('~')+'/',img=route+'og.png',query='/compare/?p='+ids.join(',');
   const list=await readPage(route);
   const {meta}=metadata(list,route,img);
-  assert.equal(meta('twitter:image'),new URL(img,site).href); assert.ok(meta('twitter:image:alt')?.trim());
+  assert.equal(meta('twitter:image'),new URL(img+'?edition=paper',site).href); assert.ok(meta('twitter:image:alt')?.trim());
   await verifyImage(img);
   assert.ok(hasHref(list,query),'Missing exact fallback link '+route);
   assert.ok(list.some(n=>n.tagName==='script'&&text(n)==='location.replace('+JSON.stringify(query)+')'),'Missing exact redirect '+route);

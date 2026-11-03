@@ -18,6 +18,11 @@ Show two possible directions from computer support: specialize in networks or sy
 
 The pilot now includes the [activity explorer](https://doornotes.org/explore/) and [IT career map](https://doornotes.org/career-map/). Use the [reader exercises](https://doornotes.org/try/routes/) to run the proposed sessions.
 
+## What a reader can take away
+Workers can follow a computing match into a relevant guide, compare a technical and a people-management direction, and copy or print a conversation note. The note carries its occupational sources and a question about what still needs verification at the reader’s workplace. The student explorer now has five individual job activity cards. A shared card contains only a public job identifier.
+
+A citation to the source register now opens that record on its own, with the table link, the population definition and a row locator where available. The rest of the register can be filtered by profession and publisher or title. Next reader test: can someone get from their own title to a question they would actually ask, or from an activity to a record they would share? The worker and student exercises above ask both. Real participant results are still needed.
+
 ## Matching the job people actually type
 
 One reader reported trouble tracing DevOps, site reliability, IT, and systems administration. On November 3, 2026, the live index returned zero professions for “devops eng”, “Site Reliability engineer”, and “system admin”. “IT” returned six unrelated profession cards. The job form suggested “Site Reliability Engineer”, then displayed “No field matched this job title” after selection. The index found the software card for “software Eng”, while the submitted abbreviation alone did not resolve.

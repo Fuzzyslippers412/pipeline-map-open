@@ -83,6 +83,14 @@ function itChoices(title) {
     alternative('Something else', {kind:'unknown', title}),
   ]);
 }
+function supportChoices(title) {
+  return clarify(title, 'Support', 'What do you help with most often?', [
+    alternative('People using computers or software', computingResult(title,'Computer user support','support')),
+    alternative('Keeping computer networks working', computingResult(title,'Computer network support','networkSupport')),
+    alternative('Customer orders or service questions', {kind:'recognized', title, occupation:'Customer service'}),
+    alternative('Something else', {kind:'unknown', title}),
+  ]);
+}
 function adminChoices(title) {
   return clarify(title,'Systems administrator','What do you primarily administer?', [
     alternative('Systems and networks', computingResult(title,'Systems and network administration','systems')),
@@ -121,6 +129,7 @@ export const commonComputingTitles = [
 ];
 function commonResolution(title, key, professions) {
   if (/^(?:regular )?(?:it|information technology)$/.test(key)) return itChoices(title);
+  if (['support','tech support','technical support'].includes(key)) return supportChoices(title);
   if (/^(?:systems? admin(?:istrator)?|sys ?admins?)$/.test(key)) return adminChoices(title);
   if (/^(?:cloud )?site reliability (?:engineer|eng)$/.test(key) || key === 'sre')
     return reliabilityChoices(title, key === 'sre');
@@ -135,20 +144,26 @@ function commonResolution(title, key, professions) {
     return computingResult(title,'Systems and network administration','systems');
   if (/^(?:database admin(?:istrator)?|dba)$/.test(key))
     return computingResult(title,'Database administration','database');
-  if (/^(?:it support(?: specialist| technician)?|(?:it )?help ?desk(?: technician| specialist| analyst| tech)?)$/.test(key))
+  if (/^(?:it support(?: specialist| technician)?|(?:it )?help ?desk(?: technician| specialist| analyst| associate| tech)?|desktop support|computer user support specialist)$/.test(key))
     return computingResult(title,'IT support','support');
   if (/^(?:information security|cybersecurity|cyber security|it security) (?:analyst|engineer|eng)$/.test(key))
     return computingResult(title,'Information security','security');
   if (key === 'physical security engineer') return {kind:'recognized',title,occupation:'Physical security engineering'};
   return null;
 }
+const computingOccupations = {
+  '11-3021.00':'computing', '15-1212.00':'security',
+  '15-1231.00':'networkSupport', '15-1232.00':'support',
+  '15-1242.00':'database', '15-1244.00':'systems',
+  '15-1252.00':'software', '15-1299.05':'security',
+};
 function fromOccupation(title, record, professions) {
   const slug = relatedFields[record.code];
   const published = slug && professions.some(p=>p.slug===slug);
-  const computing = record.code.startsWith('15-12');
+  const contextKey = computingOccupations[record.code] || (record.code.startsWith('15-12') ? 'computing' : null);
   return {kind:published ? 'related' : 'recognized', title, occupation:record.name,
     occupations:[record], ...(published ? {slug} : {}),
-    ...(computing ? {computing:true, contextKey:slug===software ? 'software' : 'computing'} : {})};
+    ...(contextKey ? {computing:true, contextKey} : {})};
 }
 
 export function resolveTitle(input, professions, directory = null) {

@@ -55,3 +55,15 @@
 @media (hover: hover) {
   .paper-edition .trace-combobox-option:hover { background: #eef1f8; }
 }
+
+/* Keep the next field and Trace button reachable while suggestions are open. */
+.paper-edition .trace-box .trace-combobox-popup {
+  position:relative;
+  inset:auto;
+  margin-top:4px;
+  /* A late directory response may add rows. Keep the submit target still. */
+  height:min(10rem,32vh);
+  max-height:none;
+  box-shadow:none;
+  border-inline-start:3px solid var(--action);
+}

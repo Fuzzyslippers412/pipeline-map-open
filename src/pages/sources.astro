@@ -1,11 +1,99 @@
 ---
 import Layout from '../components/Layout.astro';
 import {sources,professions} from '../lib/model';
+const nameFor = new Map(professions.map(p=>[p.slug,p.name]));
 ---
-<Layout title="Source register" active="Sources"><div class="frame"><div class="page-head"><div class="eyebrow"><i></i> EVIDENCE <b>/</b> TABLE REGISTER</div><h1>Sources</h1><p>Follow an observation to its original table. Expand any entry for the population definition, usage terms and profession cards.</p></div><div class="subbody"><div class="exports"><a class="secondary" href="/data/observations.csv" download>Download observations ↓</a><a class="secondary" href="/data/sources.csv" download>Download source tables ↓</a></div><label class="sr" for="source-search">Find a source</label><input class="textfilter" type="search" placeholder="Filter by publisher, table or profession…" id="source-search"/><div class="tablewrap"><table class="source-table"><thead><tr><th><button class="sort" data-col="publisher">Publisher ↕</button></th><th><button class="sort" data-col="table">Table and definition ↕</button></th><th><button class="sort" data-col="date">Last checked ↕</button></th></tr></thead><tbody>{sources.map(s=><tr id={s.id} data-publisher={s.publisher} data-table={s.table_name} data-date={s.retrieved_on}><td>{s.publisher}</td><td><a href={s.url}>{s.table_name} ↗</a><details class="reading"><summary>Definition & coverage</summary><p>{s.definition}</p>{s.data_url&&<p><a href={s.data_url}>National person file (ZIP) ↗</a></p>}{s.dictionary_url&&<p><a href={s.dictionary_url}>Occupation codes and data dictionary ↗</a></p>}{s.limits&&<p>{s.limits}</p>}<small>{s.license}</small><p>{(s.professions||[]).map(slug=><a style="margin-right:8px" href={'/p/'+slug+'/'}>{professions.find(p=>p.slug===slug)?.name}</a>)}</p></details></td><td>{s.retrieved_on}</td></tr>)}</tbody></table></div><p id="no-sources" hidden>No source tables match that search.</p></div></div></Layout>
+<Layout title="Source register" active="Sources" desc="Find the public table behind a Door Notes chart. Read what was counted, where to look in the original, and which profession the evidence covers.">
+<div class="frame register">
+  <header>
+    <p class="section-tag">Field guide / Evidence</p>
+    <h1>Sources</h1>
+    <p>Follow a chart to the table behind it. Each record tells you what was counted and where to look in the original.</p>
+  </header>
+  <section aria-label="Source register">
+    <div id="cited-banner" hidden>
+      <div><span class="section-tag">Cited record</span><p>This is the source linked from the chart or profession record.</p></div>
+      <a href="/sources/" id="browse-register">Browse all sources <span aria-hidden="true">→</span></a>
+    </div>
+    <form id="source-filters" role="search" aria-label="Find a source" hidden>
+      <label><span>Find a source</span><input type="search" id="source-search" placeholder="Publisher, table title or year"/></label>
+      <label><span>Profession</span><select id="source-profession"><option value="">All professions</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select></label>
+      <label><span>Order by</span><select id="source-order"><option value="catalog">Catalog order</option><option value="publisher">Publisher (A–Z)</option><option value="table">Table title (A–Z)</option><option value="date">Last checked (newest)</option></select></label>
+    </form>
+    <div class="source-count"><p id="source-count" role="status">{sources.length} source tables</p><button type="button" id="source-clear" hidden>Clear filters</button></div>
+    <table class="source-records"><caption class="sr">Source tables and definitions</caption><thead><tr><th scope="col">Publisher</th><th scope="col">Source table</th><th scope="col">Last checked</th></tr></thead>
+    <tbody>{sources.map(s=><tr id={s.id} data-publisher={s.publisher} data-table={s.table_name} data-date={s.retrieved_on} data-fields={s.professions.join(' ')}>
+      <td class="publisher">{s.publisher}</td>
+      <td class="table-info"><a class="source-title" href={s.url}>{s.table_name} <span aria-hidden="true">↗</span></a>
+        <details><summary>What this table covers</summary><div class="source-inside">
+          {s.locator && <p class="locator"><strong>Where to look</strong>{s.locator}</p>}
+          <p><strong>Who and what was counted</strong>{s.definition}</p>
+          {s.limits&&<p><strong>Limits</strong>{s.limits}</p>}
+          {s.data_url&&<a href={s.data_url}>National person file (ZIP) ↗</a>}
+          {s.dictionary_url&&<a href={s.dictionary_url}>Occupation codes and data dictionary ↗</a>}
+          <p class="fields"><strong>Used in</strong>{s.professions.map(slug=><a href={'/p/'+slug+'/'}>{nameFor.get(slug)}</a>)}</p>
+          <small>{s.license}</small>
+        </div></details>
+      </td>
+      <td class="checked"><span class="compact-label">Checked </span><time datetime={s.retrieved_on}>{s.retrieved_on}</time></td>
+    </tr>)}</tbody></table>
+    <div id="no-sources" hidden><h2>No tables match these filters.</h2><p>Try a publisher or year, or clear the filters to see the full register.</p></div>
+    <button type="button" class="secondary" id="more-sources" hidden>Show more sources</button>
+  </section>
+  <aside class="source-download"><div><p class="section-tag">Data downloads</p><h2>Use the data yourself</h2><p>Download the observations or the records that identify each source.</p></div>
+    <div><a href="/data/observations.csv" download>Observations (CSV) ↓</a><a href="/data/sources.csv" download>Source tables (CSV) ↓</a></div>
+  </aside>
+</div></Layout>
 <script>
-const tbody=document.querySelector('tbody')!, rows=[...tbody.querySelectorAll('tr')];let asc=1,last='';
-document.querySelectorAll<HTMLButtonElement>('[data-col]').forEach(b=>b.addEventListener('click',()=>{const col=b.dataset.col!;asc=last===col?-asc:1;last=col;rows.sort((a,b)=>asc*(a.dataset[col]||'').localeCompare(b.dataset[col]||''));rows.forEach(r=>tbody.append(r));document.querySelectorAll('th').forEach(th=>th.removeAttribute('aria-sort'));b.parentElement?.setAttribute('aria-sort',asc===1?'ascending':'descending')}));
-const search=document.querySelector<HTMLInputElement>('#source-search')!;search.addEventListener('input',()=>{const q=search.value.toLowerCase();rows.forEach(r=>r.hidden=!r.textContent?.toLowerCase().includes(q));(document.querySelector('#no-sources') as HTMLElement).hidden=rows.some(r=>!r.hidden)});
-function reveal(){const target=document.getElementById(location.hash.slice(1));if(target){search.value='';rows.forEach(r=>r.hidden=false);const details=target.querySelector('details');if(details)details.open=true;target.scrollIntoView()}}window.addEventListener('hashchange',reveal);if(location.hash)reveal();
+  import {bindSourceRegister} from '../lib/source-register.js';
+  bindSourceRegister(document);
 </script>
+<style>
+.register { padding-block:clamp(24px,4vw,54px) 54px; max-width:1070px; }
+.register header { padding-bottom:clamp(18px,3vw,36px); border-bottom:1px solid var(--text); }
+.section-tag {font:500 .74rem/1.4 var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--rust)}
+h1,h2 {font-family:var(--serif);font-weight:500;letter-spacing:-.04em}
+h1 {font-size:clamp(46px,7vw,76px);margin:8px 0 5px}
+h2 {font-size:clamp(25px,3vw,34px);margin:5px 0}
+header > p:last-child,.source-download p:not(.section-tag),#no-sources p {color:var(--muted);max-width:59ch}
+#source-filters {display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;margin:22px 0 12px}
+#source-filters label {display:grid;gap:4px;min-width:0;font-size:.88rem;font-weight:650}
+#source-filters input,#source-filters select {border:1px solid var(--soft);background:var(--panel);border-radius:3px;min-width:0;width:100%;min-height:44px;padding:8px 10px;color:var(--text);font:400 1rem var(--sans)}
+.source-count,#cited-banner {display:flex;align-items:center;justify-content:space-between;gap:12px}
+.source-count {min-height:44px;color:var(--muted);font-size:.9rem}
+#cited-banner {margin:20px 0 0;border-inline-start:3px solid var(--rust);padding:10px 16px;background:var(--lift)}
+.register a,#source-clear {color:var(--action);text-decoration:underline;text-underline-offset:.17em}
+#source-clear,#browse-register {min-height:44px;display:inline-flex;align-items:center;text-align:left}
+.source-records {border-collapse:collapse;width:100%;min-width:0}
+.source-records th {border-block:1px solid var(--edge);color:var(--soft);padding:10px 12px;text-align:left}
+.source-records td {padding:16px 12px;vertical-align:top;border-bottom:1px solid var(--edge);font-size:.96rem}
+.publisher {width:21%;font-weight:650}
+.source-records .checked {white-space:nowrap;font-size:.84rem;color:var(--soft)}
+.compact-label {display:none}
+.table-info {overflow-wrap:anywhere}
+.source-title {font:500 clamp(1.18rem,2.2vw,1.42rem)/1.14 var(--serif)}
+.source-records details {margin:3px 0 0}
+.source-records summary {min-height:44px;align-content:center;font-size:.9rem;color:var(--action)}
+.source-inside {color:var(--muted);padding:0 0 6px;max-width:65ch}
+.source-inside > * {margin:0 0 10px;display:block}
+.source-inside strong {display:block;color:var(--text);font-size:.83rem;margin-bottom:2px}
+.locator {padding:10px 12px;background:var(--lift)}
+.fields a {display:inline-block;min-height:36px;margin-right:12px;align-content:center}
+#no-sources {margin:20px 0}
+#more-sources {margin-block:14px;min-height:44px}
+.source-download {margin-top:34px;padding-top:22px;border-top:1px solid var(--text);display:flex;gap:20px;align-items:center;justify-content:space-between}
+.source-download a {display:block;min-height:40px;align-content:center}
+@media(max-width:700px){
+  #source-filters {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  #source-filters label:first-child {grid-column:1/-1}
+  .source-records,.source-records tbody,.source-records tr,.source-records td {display:block}
+  .source-records thead {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .source-records tr {border-top:1px solid var(--edge);padding:13px 0}
+  .source-records td {border:0;padding:2px 0}
+  .source-records .publisher {width:auto;color:var(--soft);font-size:.84rem}
+  .source-title {display:inline-block;padding-block:4px;font-size:1.32rem}
+  .compact-label {display:inline}
+  #cited-banner,.source-download {display:block}
+  #cited-banner p:not(.section-tag) {font-size:.94rem}
+}
+</style>

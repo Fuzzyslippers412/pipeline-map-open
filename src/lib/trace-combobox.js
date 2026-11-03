@@ -170,6 +170,11 @@ export function attachTraceCombobox({input, popup, status, getOptions, onPick, g
     const row = e.target.closest?.('[role="option"]');
     if (row && popup.contains(row)) choose(Number(row.dataset.index));
   });
+  // With the list in normal flow, blurring here could move the submit button
+  // between the pointer press and release. Let its click submit first.
+  listen(input.form?.querySelector('button[type="submit"]'), 'pointerdown', event => {
+    if (!popup.hidden && event.button === 0) event.preventDefault();
+  });
   listen(input.form, 'submit', close);
   listen(input.form, 'reset', () => { selected = null; close(); });
   listen(win, 'resize', fitPopup);

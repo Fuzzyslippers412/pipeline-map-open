@@ -3,6 +3,7 @@ import {readFileSync} from 'node:fs';
 import test from 'node:test';
 import {resolveTitle} from '../src/lib/title-resolver.js';
 import {suggestJobTitles} from '../src/lib/title-suggestions.js';
+import {careerGuideFor} from '../src/lib/computing-context.js';
 
 const load = path => JSON.parse(readFileSync(new URL(path,import.meta.url),'utf8'));
 const catalog = load('../data/professions.json');
@@ -77,4 +78,29 @@ test('matches a catalog title containing “at” while accepting a role followe
   assert.equal(sergeant.kind,'recognized');
   assert.ok(sergeant.occupations.length);
   assert.equal(resolveTitle('Software engineer at Example Foods',catalog,directory).slug,'software-engineer');
+});
+
+test('the selected work opens the corresponding IT guide without sending the private title or workplace', () => {
+  function guide(title, answer) {
+    const resolved = resolveTitle(title, catalog, directory);
+    const choice = answer ? resolved.choices.find(row => row.label === answer).result : resolved;
+    return careerGuideFor(choice);
+  }
+  const support = '/career-map/?work=support#compare-moves';
+  const systems = '/career-map/?work=systems#compare-moves';
+  assert.equal(guide('Desktop Support Technician at Private Employer').href, support);
+  assert.equal(guide('IT', 'Supporting people with technology').href, support);
+  assert.equal(guide('sysadmin', 'Systems and networks').href, systems);
+  assert.equal(guide('sysadmin', 'Databases').href, '/career-map/');
+  assert.equal(guide('Network Manager','Network and Computer Systems Administrators').href, systems);
+  assert.equal(guide('Network Manager','Computer and Information Systems Managers').href, '/career-map/');
+  for (const option of [guide('DevOps Engineer'), guide('SRE','Keeping software services reliable'), guide('Computer Network Support Specialist')]) {
+    assert.equal(option.href, systems);
+    assert.match(option.label, /related/);
+  }
+  assert.equal(guide('technical support', 'People using computers or software').href, support);
+  assert.equal(guide('support', 'Keeping computer networks working').href, systems);
+  assert.equal(guide('support', 'Customer orders or service questions'), null);
+  assert.equal(guide('SRE', 'Validating products or equipment'), null);
+  assert.equal(guide('Registered Nurse'), null);
 });

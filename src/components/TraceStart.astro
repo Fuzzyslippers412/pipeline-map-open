@@ -90,6 +90,7 @@ import '../styles/trace-combobox.css';
   <p id="match-site" hidden></p>
   <p id="match-message"></p>
   <div id="suggested-paths"></div>
+  <button type="button" id="change-duty" class="edit-trace-entry" hidden>Change my answer</button>
   <ComputingContext/>
   <CareerTimeline/>
   <SourceLookup/>
@@ -106,7 +107,7 @@ import '../styles/trace-combobox.css';
 import {setupTraceEntryFields} from '../lib/trace-entry-fields.js';
 import {bindLookup,revealTimelinePreview} from '../lib/bind-lookup.js';
 import {resolveTitle,loadTitleDirectory} from '../lib/title-resolver.js';
-import {showComputingContext} from '../lib/computing-context.js';
+import {careerGuideFor,showComputingContext} from '../lib/computing-context.js';
 import {saveTrace,readTrace,clearTrace} from '../lib/trace-context.js';
 const catalog=JSON.parse(document.querySelector('#search-index')!.textContent!);
 const form=document.querySelector<HTMLFormElement>('#job-trace-form')!;
@@ -117,6 +118,7 @@ const result=document.querySelector<HTMLElement>('#match-result')!;
 const heading=document.querySelector<HTMLHeadingElement>('#match-heading')!;
 const message=document.querySelector<HTMLElement>('#match-message')!;
 const choices=document.querySelector<HTMLElement>('#suggested-paths')!;
+const changeDuty=document.querySelector<HTMLButtonElement>('#change-duty')!;
 const lookup=result.querySelector('pipeline-source-lookup');
 const timeline=result.querySelector('pipeline-career-timeline');
 const quickWorkplaces=JSON.parse(document.querySelector('#quick-workplaces')!.textContent!);
@@ -153,6 +155,7 @@ function clearResults() {
   select.value = '';
   manualOpen.disabled = true;
   choices.replaceChildren();
+  changeDuty.hidden = true;
   result.querySelector('[data-match-gap]')?.remove();
   job.setCustomValidity('');
 }
@@ -221,6 +224,7 @@ function openRecord(draft:Draft, slug:string, match='title') {
 function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, directoryUnavailable=false) {
   clearResults();
   activeDraft = draft;
+  changeDuty.hidden = !draft.choicePath.length;
   if(focus) remember(draft);
   const workplace = employer.value.trim();
   const context = contextFor(draft);
@@ -249,6 +253,14 @@ function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, dir
       const detail = record ? 'Explore '+fieldName+' as a related field.' : 'Door Notes hasn’t published a history specific to this role yet.';
       showResult(draft,'Occupation recognized',occupation + '. ' + detail,focus);
       if(record) addChoice('Read the '+fieldName+' history →',()=>openRecord(draft,record.slug,'related'));
+      const guide = careerGuideFor(resolution);
+      if(guide) {
+        const link = document.createElement('a');
+        link.className = 'trace-choice';
+        link.href = guide.href;
+        link.textContent = guide.label+' →';
+        choices.append(link);
+      }
       if(resolution.computing) {
         showComputingContext(note,{...context,computing:true,contextKey:resolution.contextKey,canonicalTitle:resolution.title,occupation});
       } else if(workplace) {
@@ -316,6 +328,11 @@ form.addEventListener('submit',event=>{
   void resolveDraft(currentDraft());
 });
 select.addEventListener('change',()=>manualOpen.disabled=!select.value);
+changeDuty.addEventListener('click',()=>{
+  if(activeDraft?.choicePath.length) {
+    void resolveDraft({...activeDraft,choicePath:activeDraft.choicePath.slice(0,-1)});
+  }
+});
 manualOpen.addEventListener('click',()=>openRecord(activeDraft || currentDraft(),select.value,'related'));
 form.addEventListener('input',()=>{
   clearResults();
@@ -357,3 +374,6 @@ form.querySelector<HTMLButtonElement>('.trace-submit')!.disabled=false;
 window.addEventListener('pageshow',event=>{if(event.persisted){clearResults();savedFields(true)}});
 
 </script>
+<style>
+  #change-duty { min-height:44px; margin-top:2px; padding-inline:0; }
+</style>

@@ -19,17 +19,17 @@ export const startingPoints = [
     transition:supportOutlook,
     moves:[
       {
-        branch:'Technical work', name:'Systems administrator',
+        id:'technical', branch:'Technical work', name:'Systems administrator', preview:'Keep shared systems running.',
         change:'You move from fixing an individual user’s problem to maintaining the systems and networks many people depend on.',
         practice:'Pick a recurring support problem. Sketch which devices and services it touches, then write down what you would check first.',
-        local:'Ask who assigns systems work and which skills a support specialist needs to demonstrate.',
+        local:'Who assigns systems work here, and which skills would I need to demonstrate?',
         evidence:{label:'BLS · Systems administrator duties',url:'https://www.bls.gov/ooh/computer-and-information-technology/network-and-computer-systems-administrators.htm#tab-2'}
       },
       {
-        branch:'People management', name:'Support team manager',
+        id:'people', branch:'People management', name:'Support team manager', preview:'Coach the people on the service desk.',
         change:'You shift from resolving your own requests to coordinating the people and resources that keep support running.',
         practice:'Draft a plan for a busy shift. Decide which requests need attention first, who could handle them, and when someone should escalate.',
-        local:'Ask who selects team managers and whether coaching, scheduling or staff reviews are part of the role.',
+        local:'Who selects team managers here? Would I coach staff, schedule shifts or review people’s work?',
         evidence:managerTasks
       }
     ]
@@ -40,17 +40,17 @@ export const startingPoints = [
     transition:systemsOutlook,
     moves:[
       {
-        branch:'Technical work', name:'Network architect',
+        id:'technical', branch:'Technical work', name:'Network architect', preview:'Design how networks fit together.',
         change:'You move from maintaining a network to designing the connections, capacity and reliability it will need in the future.',
         practice:'Sketch a network for a small office. Explain one design choice and how people would stay connected if a component failed.',
-        local:'Ask who reviews network designs and what a first design assignment looks like.',
+        local:'Who reviews our network designs, and what would be a good first design assignment?',
         evidence:{label:'BLS · Network architecture duties',url:'https://www.bls.gov/ooh/computer-and-information-technology/computer-network-architects.htm#tab-2'}
       },
       {
-        branch:'People management', name:'IT manager',
+        id:'people', branch:'People management', name:'IT manager', preview:'Set priorities and staff projects.',
         change:'You help decide which technology projects a team undertakes, how to staff them, and what resources it needs.',
         practice:'Outline a system upgrade in one page. Name the users affected, people needed, tradeoffs and decision to make.',
-        local:'Ask who approves projects, who manages staff and who controls the budget for this position.',
+        local:'Who approves projects here, and which staffing and budget decisions would I make in this role?',
         evidence:managerTasks
       }
     ]

@@ -14,7 +14,7 @@ const questions = [
     <header class="explore-head">
       <div><p class="explore-kicker">Career explorer</p>
         <h1>Explore what I could do</h1>
-        <p>Start with something familiar. Find a few jobs to explore, a Black worker’s story, and a ten-minute activity you can try.</p>
+        <p>Start with something familiar. Choose a job to try on paper. Each activity comes with a story from Black history and the record behind it.</p>
       </div>
       <p class="explore-aside">Already working?<br/><a href="/career-map/">Explore a career move <span aria-hidden="true">→</span></a></p>
     </header>
@@ -41,41 +41,57 @@ const questions = [
           </div>
         </div>
       </section>)}
-      <p class="explore-privacy">Your choices stay in this tab.</p>
+      <div class="explore-form-foot"><p class="explore-privacy">Your choices stay in this tab.</p><a href="#all-jobs">Browse all {explorerRecords.length} jobs</a></div>
     </form>
 
     <section id="explore-results" aria-labelledby="result-heading">
-      <div class="results-head">
+      <div class="results-head" id="all-jobs">
         <div><p class="explore-kicker">Paths to explore</p>
           <h2 id="result-heading" tabindex="-1">Jobs you can try</h2>
           <p id="result-subtitle">Open a job to see the work and a Door Note.</p></div>
         <button type="button" id="change-answers" class="explore-text" hidden>Change my activities</button>
       </div>
-      <div class="explore-paths">{explorerRecords.map(record => <details class="explore-path" data-path={record.id} data-tags={record.tags.join(' ')}>
-        <summary>
-          <span class="path-identity"><strong>{record.title}</strong><span class="suggestion-why" data-why></span><span class="task-preview">{record.task}</span></span>
-          <span class="open-sign" aria-hidden="true"></span>
-        </summary>
-        <div class="path-body">
-          <div class="path-duties">
-            <h3>Explore the work</h3>
-            <a class="record-source" href={record.taskSource.url} target="_blank" rel="noopener noreferrer">{record.taskSource.title} <span aria-hidden="true">↗</span></a>
-            <div class="try-it"><h3>Try it in 10 minutes</h3><p>{record.experiment}</p></div>
-          </div>
-          <div class="explore-door">
-            <p class="note-kicker">A Door Note</p>
-            <h3>{record.door.person}</h3><p class="door-year">{record.door.year}</p>
-            <p>{record.door.story}</p>
-            <a class="record-source" href={record.door.source.url} target="_blank" rel="noopener noreferrer">{record.door.source.title} <span aria-hidden="true">↗</span></a>
-            {record.door.artifact && <a class="record-source" href={record.door.artifact.url} target="_blank" rel="noopener noreferrer">{record.door.artifact.title} <span aria-hidden="true">↗</span></a>}
-            <p class="door-limit"><strong>Still open</strong> {record.door.limit}</p>
-          </div>
-          <div class="path-next"><h3>One step further</h3><p>{record.next}</p>
-            {record.pathUrl && <a href={record.pathUrl}>{record.pathUrl === '/career-map/' ? 'Open the IT career map' : 'Read the workplace record'} <span aria-hidden="true">→</span></a>}
-          </div>
-        </div>
-      </details>)}</div>
+      <div class="explore-paths">{explorerRecords.map((record,index) => <a class="explore-path" href={'#try-'+record.id} aria-label={'Open activity: '+record.title} aria-describedby={'summary-'+record.id} data-path={record.id} data-tags={record.tags.join(' ')}>
+        <span class="result-row"><span class="slot-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
+          <span class="path-identity"><strong>{record.title}</strong><span id={'summary-'+record.id}><span class="task-preview">{record.task}</span><span class="suggestion-why" data-why></span></span></span>
+          <span class="open-sign" aria-hidden="true">→</span></span>
+        <span class="result-action">Open activity <span aria-hidden="true">↗</span></span>
+      </a>)}</div>
+      <a class="results-all" id="more-jobs" href="#all-jobs" hidden>See all {explorerRecords.length} jobs</a>
     </section>
+    {explorerRecords.map(record => <article id={'try-'+record.id} class="activity-sheet" aria-labelledby={'sheet-'+record.id}>
+      <a href="#all-jobs" class="sheet-back" data-return>← Back to jobs</a>
+      <header class="sheet-head">
+        <p class="explore-kicker">Door Notes · Activity card</p>
+        <h1 id={'sheet-'+record.id} tabindex="-1">{record.title}</h1>
+        <p>{record.task}</p>
+        <a href={record.taskSource.url} target="_blank" rel="noopener noreferrer">{record.taskSource.title} <span aria-hidden="true">↗</span></a>
+      </header>
+      <div class="sheet-columns">
+        <section class="activity-experiment">
+          <p class="sheet-meta">10 minutes · Pencil &amp; paper</p>
+          <h2>Try the work</h2><p>{record.experiment}</p>
+          <h3>When you’re done</h3><p>{record.reflect}</p>
+        </section>
+        <section class="sheet-note">
+          <p class="sheet-meta">A Door Note · {record.door.year}</p>
+          <h2>{record.door.person}</h2><p>{record.door.story}</p>
+          <a href={record.door.source.url} target="_blank" rel="noopener noreferrer">{record.door.source.title} <span aria-hidden="true">↗</span></a>
+          {record.door.artifact && <a href={record.door.artifact.url} target="_blank" rel="noopener noreferrer">{record.door.artifact.title} <span aria-hidden="true">↗</span></a>}
+          <p class="door-limit"><strong>What’s still open:</strong> {record.door.limit}</p>
+        </section>
+      </div>
+      <div class="sheet-further"><h2>Go further</h2><p>{record.next}</p>
+        {record.pathUrl && <a href={record.pathUrl}>{record.pathUrl==='/career-map/' ? 'Explore the IT career map' : 'Read the workplace record'} <span aria-hidden="true">→</span></a>}
+      </div>
+      <div class="sheet-tools" hidden>
+        <button class="explore-primary" type="button" data-copy>Copy activity link</button>
+        <button class="explore-text" type="button" data-print>Print this card</button>
+        <span class="sheet-notice" role="status"></span>
+        <label class="sheet-fallback" hidden>Copy this activity link<input type="text" readonly/></label>
+      </div>
+      <p class="print-address">doornotes.org/explore/#try-{record.id}</p>
+    </article>)}
     <footer class="explore-foot"><a href="/paths/">Explore workplace histories <span aria-hidden="true">→</span></a></footer>
   </div>
 </Layout>
@@ -86,52 +102,102 @@ const form = document.querySelector<HTMLFormElement>('#explore-form')!;
 const steps = [...form.querySelectorAll<HTMLElement>('[data-step]')];
 const results = document.querySelector<HTMLElement>('#explore-results')!;
 const heading = results.querySelector<HTMLElement>('#result-heading')!;
-const cards = [...results.querySelectorAll<HTMLDetailsElement>('[data-path]')];
+const cards = [...results.querySelectorAll<HTMLAnchorElement>('[data-path]')];
+const sheets = [...document.querySelectorAll<HTMLElement>('.activity-sheet')];
 const change = results.querySelector<HTMLButtonElement>('#change-answers')!;
+const more = results.querySelector<HTMLAnchorElement>('#more-jobs')!;
+const mast = document.querySelector<HTMLElement>('.explore-head')!;
 const records = cards.map(card => ({id:card.dataset.path!,tags:card.dataset.tags!.split(' ')}));
 const selected = (name:string) => [...form.querySelectorAll<HTMLInputElement>('input[name="'+name+'"]:checked')].map(input => input.value);
-function focusPanel(panel:HTMLElement, title:HTMLElement) {
+let cameFrom='all-jobs';
+function focusPanel(panel:HTMLElement,title:HTMLElement,move:boolean) {
+  if(!move) return;
   title.focus({preventScroll:true});
   panel.scrollIntoView({block:'start',behavior:'instant'});
 }
-function showStep(index:number) {
-  results.hidden = true;
-  form.hidden = false;
-  steps.forEach((step,i) => { step.hidden = i !== index; });
-  focusPanel(form,steps[index].querySelector('h2')!);
+function go(route:string) {
+  if(location.hash === '#'+route) render(true);
+  else location.hash = route;
 }
-function showPaths() {
-  const known = selected('known');
-  const curious = selected('curious');
-  const picks = exploreActivities(records,known,curious);
-  for (const card of cards) { card.open=false; card.hidden=true; }
-  const parent = results.querySelector('.explore-paths')!;
-  for (const item of picks) {
-    const card = cards.find(card => card.dataset.path===item.id)!;
-    card.querySelector('[data-why]')!.textContent=item.why;
-    card.hidden=false;
-    parent.append(card);
+function render(move:boolean) {
+  const route=location.hash.slice(1);
+  const sheet=sheets.find(item=>item.id===route);
+  const list=route==='all-jobs' || route==='suggestions';
+  steps.forEach((step,index)=>{step.hidden=index !== Number(route==='interests');});
+  form.hidden = Boolean(sheet) || list;
+  results.hidden = !list;
+  mast.hidden = Boolean(sheet);
+  for(const item of sheets) item.hidden=item!==sheet;
+  if(sheet) {
+    const back=sheet.querySelector<HTMLAnchorElement>('[data-return]')!;
+    back.href='#'+cameFrom;
+    back.textContent=cameFrom==='suggestions'?'← Back to my suggestions':'← Browse all jobs';
+    sheet.querySelector<HTMLElement>('.sheet-tools')!.hidden=false;
+    focusPanel(sheet,sheet.querySelector('h1')!,move);
+    return;
   }
-  heading.textContent = picks.length===2 ? 'Two paths to try' : 'Three paths to try';
-  results.querySelector('#result-subtitle')!.textContent = known.length || curious.length
-    ? 'Open a job to see how the work connects, read its Door Note, and try an activity.'
-    : 'Here are different kinds of work you can sample. Open one, or go back to choose activities.';
-  form.hidden = true;
-  change.hidden = false;
-  results.hidden = false;
-  focusPanel(results,heading);
+  if(list) {
+    cameFrom=route;
+    const all=route==='all-jobs';
+    const picks = all ? records.map(r=>({id:r.id,why:''})) : exploreActivities(records,selected('known'),selected('curious'));
+    for(const card of cards) card.hidden=true;
+    const parent=results.querySelector('.explore-paths')!;
+    picks.forEach((pick,index)=>{
+      const card=cards.find(c=>c.dataset.path===pick.id)!;
+      card.querySelector('[data-why]')!.textContent=pick.why;
+      card.querySelector('.slot-number')!.textContent=String(index+1).padStart(2,'0');
+      card.hidden=false;
+      parent.append(card);
+    });
+    heading.textContent=all?'All jobs to try':picks.length===2?'Two paths to try':'Three paths to try';
+    results.querySelector('#result-subtitle')!.textContent=all?'Pick a job to open its ten-minute activity and Door Note.':'Pick a job to try. Its activity card includes the work, a Door Note, and the sources.';
+    more.hidden=all;
+    change.textContent=all?'Choose activities':'Change my activities';
+    change.hidden=false;
+    focusPanel(results,heading,move);
+  } else {
+    const index=Number(route==='interests');
+    focusPanel(form,steps[index].querySelector('h2')!,move);
+  }
 }
-steps.forEach((step,index) => {
-  function advance() { if(index===0) showStep(1); else showPaths(); }
-  step.querySelector('[data-next]')!.addEventListener('click', advance);
+steps.forEach((step,index)=>{
+  function advance() {go(index===0?'interests':'suggestions');}
+  step.querySelector('[data-next]')!.addEventListener('click',advance);
   step.querySelector('[data-skip]')!.addEventListener('click',()=>{
     for(const input of step.querySelectorAll<HTMLInputElement>('input')) input.checked=false;
     advance();
   });
-  step.querySelector('[data-back]')?.addEventListener('click',()=>showStep(0));
+  step.querySelector('[data-back]')?.addEventListener('click',()=>go('activities'));
 });
-change.addEventListener('click',()=>showStep(0));
+change.addEventListener('click',()=>go('activities'));
 form.addEventListener('submit',event=>event.preventDefault());
-results.hidden = true;
-form.hidden = false;
+for (const sheet of sheets) {
+  sheet.querySelector('[data-print]')!.addEventListener('click',()=>window.print());
+  sheet.querySelector('[data-copy]')!.addEventListener('click',async()=>{
+    // The share address only carries the published job identifier.
+    const url=new URL('/explore/#'+sheet.id,location.origin).href;
+    const status=sheet.querySelector<HTMLElement>('.sheet-notice')!;
+    try {
+      await navigator.clipboard.writeText(url);
+      status.textContent='Activity link copied.';
+    } catch {
+      const fallback=sheet.querySelector<HTMLElement>('.sheet-fallback')!;
+      fallback.hidden=false;
+      const input=fallback.querySelector('input')!;
+      input.value=url; input.focus(); input.select();
+      status.textContent='Select and copy the link below.';
+    }
+  });
+}
+// The global skip link should advance focus without leaving the current activity.
+document.querySelector<HTMLAnchorElement>('a.skip')?.addEventListener('click', event=>{
+  const section = sheets.find(item=>!item.hidden) || (!results.hidden ? results : form);
+  const title = section.querySelector<HTMLElement>('[tabindex="-1"]:not([hidden])');
+  if(title) {
+    event.preventDefault();
+    focusPanel(section, section===form ? steps.find(step=>!step.hidden)!.querySelector('h2')! : title, true);
+  }
+});
+window.addEventListener('hashchange',()=>render(true));
+render(Boolean(location.hash && location.hash!=='#content'));
 </script>

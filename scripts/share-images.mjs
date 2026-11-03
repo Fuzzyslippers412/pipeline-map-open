@@ -7,13 +7,13 @@ import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 import sharp from 'sharp';
 import { professions, sources, series, roleFor, labelList, isPct, variants } from '../src/lib/model.js';
-import { singleChart, colours, safe } from '../src/lib/plot.js';
+import { singleChart, paperColours as colours, safe } from '../src/lib/plot.js';
 import { compareModel } from '../src/lib/compare.js';
 import config from '../astro.config.mjs';
 
 const require = createRequire(import.meta.url);
 const WIDTH = 1200, HEIGHT = 630;
-const palette = { bg:'#101614', panel:'#18221d', mint:'#d6ec8c', teal:'#75c5bc', ink:'#f1f3e6', muted:'#b2c0b4', line:'#38483b' };
+const palette = { bg:'#f8f5ef', panel:'#eee9df', mint:'#293d80', teal:'#874536', ink:'#202124', muted:'#545354', line:'#cdc6ba' };
 const url = route => new URL(route,config.site).href;
 const brand = 'Door Notes';
 const sourceIndex = new Map(sources.map(s => [s.id,s]));
@@ -22,7 +22,6 @@ const fontDir = await fs.mkdtemp(path.join(tmpdir(),'door-notes-fonts-'));
 const mono = 'IBM Plex Mono', serif = 'Newsreader';
 const fontSpec = [[mono,'ibm-plex-mono',400],[serif,'newsreader',500]];
 const fontFiles = [], satoriFonts = [];
-const brandMark = (await fs.readFile('public/mark.svg','utf8')).replace('<svg ','<svg x="48" y="28" ');
 const paperMark = (await fs.readFile('public/mark-paper.svg','utf8')).replace('<svg ', '<svg x="48" y="28" ');
 const schoolHistory = JSON.parse(await fs.readFile('data/timeline-health-education.json', 'utf8'));
 const workplaceRecords = JSON.parse(await fs.readFile('data/workplace-links.json', 'utf8'));
@@ -89,7 +88,7 @@ function words(body,limit) {
 }
 const contentLines = (body,{x,y,limit,step,size,colour,face=mono}) => words(body,limit).map((part,i)=>txt(x,y+i*step,part,size,colour,face)).join('');
 function framing(tag) {
-  return '<rect width="1200" height="630" fill="'+palette.bg+'"/>'+brandMark+
+  return '<rect width="1200" height="630" fill="'+palette.bg+'"/>'+paperMark+
     txt(103,57,brand,34,palette.ink,serif)+
     txt(1152,53,tag,16,palette.muted,mono,'text-anchor="end" letter-spacing="1.4"')+
     line(48,88,1152,88);
@@ -150,7 +149,7 @@ function pointChart(traces,x,y,w,h,unit,title) {
       txt(x+18,y+h/2,'No matched race-by-sex series',21,palette.muted,serif)+
       txt(x+18,y+h/2+30,'A missing estimate is not zero.',16,palette.muted);
   }
-  const svg=singleChart(traces,{title,percent:isPct(unit),width:w,height:h});
+  const svg=singleChart(traces,{paper:true,title,percent:isPct(unit),width:w,height:h});
   return nested(svg,x,y,w,h);
 }
 async function professionImage(p,index) {
@@ -295,7 +294,7 @@ function sharePage(model,route,query) {
   const names=model.picked.map(p=>p.name).join(' / '), d=descriptor(model.chosen);
   const title='Compare '+names+' · '+brand;
   const desc=(d.years?d.title+' · '+d.years+'. ':'')+d.definition;
-  const image=url(route+'og.png');
+  const image=url(route+'og.png?edition=paper');
   const alt=[brand+' comparison of '+names,d.title,d.years,d.definition,d.source].filter(Boolean).join('. ');
   const attr=s=>safe(s);
   const ids=[...new Set(model.chosen?.rows.map(r=>r.source_id)||[])];
@@ -305,7 +304,7 @@ function sharePage(model,route,query) {
     '<meta property="og:type" content="website"><meta property="og:site_name" content="'+attr(brand)+'"><meta property="og:title" content="'+attr(title)+'"><meta property="og:description" content="'+attr(desc)+'"><meta property="og:url" content="'+attr(url(route))+'">'+
     '<meta property="og:image" content="'+attr(image)+'"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'+
     '<meta property="og:image:alt" content="'+attr(alt)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+attr(title)+'"><meta name="twitter:image" content="'+attr(image)+'">'+
-    '<meta name="twitter:image:alt" content="'+attr(alt)+'"><meta name="twitter:description" content="'+attr(desc)+'"><meta name="theme-color" content="'+palette.bg+'"><link rel="icon" href="/mark.svg">'+
+    '<meta name="twitter:image:alt" content="'+attr(alt)+'"><meta name="twitter:description" content="'+attr(desc)+'"><meta name="theme-color" content="'+palette.bg+'"><link rel="icon" href="/mark-paper.svg">'+
     '<script>location.replace('+JSON.stringify(query)+')</script></head><body><main><a href="/" aria-label="'+attr(brand)+' home">'+attr(brand)+'</a><h1>'+attr(names)+'</h1><p>'+attr(desc)+'</p><p><a href="'+attr(query)+'">Open this comparison</a></p>'+
     '<p>'+attr(model.unavailable.length?'No comparable series for '+model.unavailable.map(p=>p.name).join(', ')+'.':'')+'</p>'+
     '<details><summary>Exact definitions and source tables</summary>'+[...new Set(model.chosen?.rows.map(r=>r.definition)||[])].map(s=>'<p>'+attr(s)+'</p>').join('')+'<ul>'+refs+'</ul></details></main></body></html>';

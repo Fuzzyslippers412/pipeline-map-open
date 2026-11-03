@@ -11,6 +11,7 @@ export const explorerRecords = [
       url: 'https://www.onetonline.org/link/summary/15-1232.00'
     },
     experiment: 'Imagine a phone plays music but makes no sound. On paper, list three questions you would ask its owner. Pick one answer and write the next thing you would check.',
+    reflect: 'Which question helped you narrow down the problem?',
     door: {
       person: 'Joseph Thompson',
       year: '1951',
@@ -34,6 +35,7 @@ export const explorerRecords = [
       url: 'https://www.onetonline.org/link/details/27-3042.00'
     },
     experiment: 'Draw a shape made of four squares. Hide it and write instructions for drawing it. Ask someone to follow only your words, or follow them yourself on fresh paper. Rewrite the first confusing step.',
+    reflect: 'What did you change so another person could follow your instructions?',
     door: {
       person: 'Katherine Johnson',
       year: '1960',
@@ -60,6 +62,7 @@ export const explorerRecords = [
       url: 'https://www.onetonline.org/link/summary/47-2111.00'
     },
     experiment: 'On paper, sketch a reading room with two lamps and two switches. Invent a symbol for each. Use a legend to show which switch controls each lamp, then ask someone to read the plan.',
+    reflect: 'What would make your drawing easier for the next person to read?',
     door: {
       person: 'Sam Taylor and Charles Vernon Stewart III',
       year: '1922',
@@ -83,6 +86,7 @@ export const explorerRecords = [
       url: 'https://www.onetonline.org/link/summary/29-1141.00'
     },
     experiment: 'A fictional patient named Alex says, “My room is noisy and I feel worried.” On paper, write two questions you would ask Alex. Write a handoff note that separates what Alex said from what you still need to ask.',
+    reflect: 'Which part of your note came from Alex, and what would you still need to ask?',
     door: {
       person: 'Anna B. Coles',
       year: '1968',
@@ -106,6 +110,7 @@ export const explorerRecords = [
       url: 'https://www.onetonline.org/link/summary/25-2031.00'
     },
     experiment: 'Choose a rule from a game you know. Teach it with one example and one drawing on paper. Ask a learner when the rule would apply, or write the question you would use to check their understanding.',
+    reflect: 'What would you change if someone misunderstood the rule?',
     door: {
       person: 'Charles Lincoln Harper',
       year: '1924',

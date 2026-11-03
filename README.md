@@ -4,6 +4,8 @@
 
 The public source release is [available on GitHub](https://github.com/Fuzzyslippers412/pipeline-map-open). The application code and loaders use the [MIT License](LICENSE). Original editorial content and the project’s compilation use [CC BY 4.0](data/RIGHTS.md). Read the [data rights and publisher credits](data/RIGHTS.md) before reusing material from another publisher.
 
+The [student explorer](https://doornotes.org/explore/) turns familiar activities and interests into five possible jobs with printable, shareable activity cards. The [IT career map](https://doornotes.org/career-map/) compares technical and people-management directions and prepares a question for a workplace conversation. Neither guide asks for an account. A shared activity link identifies only a public job; links into the IT guide carry only a public work category.
+
 ## Build locally
 
 Use Node 22.23 or compatible, npm, and Python 3.12+. From a clean checkout run:
