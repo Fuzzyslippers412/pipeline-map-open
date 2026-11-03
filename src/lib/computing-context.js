@@ -66,7 +66,7 @@ export function careerGuideFor(resolution) {
     case 'devops':
       return {href:systems, label:'Explore related systems and network roles'};
     default:
-      return {href:'/career-map/', label:'Explore the IT support and systems career map'};
+      return {href:'/career-map/', label:'Explore more careers'};
   }
 }
 

@@ -82,7 +82,8 @@ const questions = [
         </section>
       </div>
       <div class="sheet-further"><h2>Go further</h2><p>{record.next}</p>
-        {record.pathUrl && <a href={record.pathUrl}>{record.pathUrl==='/career-map/' ? 'Explore the IT career map' : 'Read the workplace record'} <span aria-hidden="true">→</span></a>}
+        <a href={record.id==='computer-support'?'/career-map/?work=support#compare-moves':'/career-map/'+(record.id==='public-school-teacher'?'k12-teacher':record.id)+'/'}>Explore this career map <span aria-hidden="true">→</span></a>
+        {record.pathUrl && record.id!=='computer-support' && <a href={record.pathUrl}>Read the workplace record <span aria-hidden="true">→</span></a>}
       </div>
       <div class="sheet-tools" hidden>
         <button class="explore-primary" type="button" data-copy>Copy activity link</button>

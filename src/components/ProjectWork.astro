@@ -1,0 +1,31 @@
+---
+import {projectStories,projectSectors,sectorQuestions} from '../lib/project-work.js';
+const {inTrace=false}=Astro.props;
+---
+<section class="project-work" data-project-work hidden={inTrace} aria-label="Project management history">
+  <p class="eyebrow">Black project management history</p>
+  <label>What kinds of projects do you lead?
+    <select data-project-sector>{projectSectors.map(([id,label])=><option value={id}>{label}</option>)}</select>
+  </label>
+  <div aria-live="polite">{Object.entries(projectStories).map(([id,s])=><article data-story={id} hidden={id!=='general'}>
+    <small>{s.year} · {s.place}</small><h2>{s.person}</h2><p>{s.story}</p><p>{s.connection}</p>
+    <a href={s.url}>{s.source} ↗</a>
+  </article>)}</div>
+  <p data-pm-scope hidden>This record covers project management across fields. A historical connection to this sector is still open.</p>
+  <a href="https://www.onetonline.org/link/details/13-1082.00">O*NET · project management duties ↗</a>
+  <p class="gap"><strong data-pm-workplace>Still open at your workplace</strong><span data-pm-question>{sectorQuestions.general}</span></p>
+  {inTrace && <a data-pm-map href="/career-map/project-manager/">Explore project management responsibilities →</a>}
+</section>
+<style>
+.project-work {border-block:1px solid var(--edge);padding:16px 0;max-width:70ch;margin-block:14px}
+label {display:grid;gap:5px;font-weight:650;margin-block:10px}
+select {font:inherit;color:var(--text);background:var(--panel);min-height:44px;padding:6px 10px;border:1px solid var(--soft);max-width:100%}
+article {padding:12px 14px;background:var(--panel);border-left:3px solid var(--rust)}
+article small {color:var(--rust)} article h2 {font:500 clamp(25px,4vw,36px)/1.1 var(--serif);margin:6px 0}
+article p,.gap {margin:8px 0}.gap strong,.gap span {display:block}
+a {color:var(--action);display:inline-block;align-content:center;min-height:44px;text-decoration:underline}
+</style>
+<script>
+  import {bindProjectPanel} from '../lib/project-panel.js';
+  document.querySelectorAll('[data-project-work]').forEach(panel=>bindProjectPanel(panel));
+</script>

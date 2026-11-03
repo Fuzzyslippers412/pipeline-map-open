@@ -1,0 +1,72 @@
+---
+import Layout from '../../components/Layout.astro';
+import ProjectWork from '../../components/ProjectWork.astro';
+import {professions} from '../../lib/model.js';
+import {guides,questions} from '../../lib/field-guides.js';
+import {explorerRecords} from '../../lib/explorer-records.js';
+import credentials from '../../../data/credential-records.json';
+export function getStaticPaths(){
+  return [...professions.map(p=>p.slug),'project-manager','technical-writing'].map(field=>({params:{field}}));
+}
+const field=Astro.params.field;
+const profession=professions.find(p=>p.slug===field);
+const guide=guides[field];
+const explorer=explorerRecords.find(e=>e.id===(field==='k12-teacher'?'public-school-teacher':field));
+const credential=credentials.find(c=>c.slug===field);
+const name=guide?.name||profession?.name||explorer?.title||'Technical writer';
+---
+<Layout title={name+' career map'} active="Career map" desc={'Explore the history of '+name.toLowerCase()+', the responsibilities people take on and the evidence behind possible next steps.'}>
+<div class="frame field-map"><a href="/career-map/">← All careers</a>
+<header><p class="eyebrow">Career map</p><h1>{name}</h1><p>{guide?.intro||explorer?.task||'Explore the published field record and identify a question about the work you want to take on.'}</p></header>
+{field==='project-manager'? <ProjectWork/> :
+<section class="field-history"><p class="eyebrow">Field history</p>
+{explorer?<><h2>{explorer.door.person}</h2><p>{explorer.door.story}</p><a href={explorer.door.source.url}>{explorer.door.source.title} ↗</a><p>{explorer.door.limit}</p><a href={explorer.taskSource.url}>{explorer.taskSource.title} ↗</a></> :
+ credential?<><h2>{credential.name}</h2><p>{credential.record}</p><a href={credential.sources[0].url}>{credential.sources[0].label} ↗</a></> :
+ <><h2>Who shaped entry into this field?</h2><p>{profession?.origin.rationale}</p>{profession?.origin.citations.slice(0,1).map(s=><a href={s.url}>{s.title} ↗</a>)}</>}
+{profession && <a href={'/p/'+field+'/'}>Open the full profession record →</a>}
+{explorer?.pathUrl?.startsWith('/preview/')||field==='k12-teacher'?<a href={explorer.pathUrl}>Read the workplace example →</a>:null}
+</section>}
+<section class="next" id="next-steps"><h2>{guide?'Possible next steps':'Explore responsibilities'}</h2>
+{guide?<><p>Choose a direction to prepare a question for work.</p>{guide.moves.map(([title,change,practice,question],i)=><label class="move"><input type="radio" name="direction" value={i} checked={i===0} data-title={title} data-practice={practice} data-question={question}/><span><strong>{title}</strong><small>{change}</small></span></label>)}<a href={guide.source}>Bureau of Labor Statistics · advancement in this field ↗</a></>:
+<p>A specific transition for this field still needs a reviewed source. Choose the responsibility you want to ask about.</p>}
+<label for="responsibility">Which responsibility interests you?</label><select id="responsibility">{questions.map(([label,value])=><option value={value}>{label}</option>)}</select>
+</section>
+<section class="conversation" id="conversation" tabindex="-1"><p class="eyebrow">Take to work · {name}</p><h2>My conversation note</h2>
+<div aria-live="polite"><h3 data-destination>{guide?.moves[0][0]||'Explore an assignment'}</h3><p><strong>Try this</strong><span data-practice>{guide?.moves[0][2]||'Find a local job posting or assignment description and mark the decisions the role owns.'}</span></p>
+<p><strong>Ask at work</strong><span data-question>{guide?.moves[0][3]||'What requirements are documented for this assignment?'}</span></p>
+<p><strong>About the responsibility</strong><span data-level>{questions[0][1]}</span></p></div>
+<p>Check the local posting, contract or assignment record for the actual requirements and decision-maker.</p>
+<button class="primary" type="button" data-copy>Copy my note</button> <button class="secondary" type="button" data-print>Print my note</button><p data-feedback role="status"></p><textarea aria-label="Note ready to copy" readonly hidden></textarea>
+</section><a href="/#trace">Trace my actual job →</a></div></Layout>
+<script>
+const root=document.querySelector<HTMLElement>('.field-map')!;
+const note=root.querySelector<HTMLElement>('.conversation')!;
+const level=root.querySelector<HTMLSelectElement>('#responsibility')!;
+const text=(sel:string)=>note.querySelector<HTMLElement>(sel)!;
+function update(){
+ const selected=root.querySelector<HTMLInputElement>('input[name=direction]:checked');
+ if(selected){for(const [target,key] of [['destination','title'],['practice','practice'],['question','question']])text('[data-'+target+']').textContent=selected.dataset[key]!}
+ text('[data-level]').textContent=level.value;text('[data-feedback]').textContent='';
+ note.querySelector('textarea')!.hidden=true;
+}
+root.addEventListener('change',update);update();window.addEventListener('pageshow',update);
+text('[data-copy]').addEventListener('click',async()=>{
+ const source=root.querySelector<HTMLAnchorElement>('.next a');
+ const body=[root.querySelector('h1')!.innerText,note.querySelector('[aria-live]')!.innerText,note.querySelector('[aria-live] + p')!.textContent,source?.href].filter(Boolean).join('\n\n');
+ try{await navigator.clipboard.writeText(body);text('[data-feedback]').textContent='Note copied.'}
+ catch{const fallback=note.querySelector('textarea')!;fallback.hidden=false;fallback.value=body;fallback.focus();fallback.select();text('[data-feedback]').textContent='Select Copy to keep this note.'}
+});text('[data-print]').addEventListener('click',()=>window.print());
+</script>
+<style>
+.field-map{max-width:870px;padding-block:24px 60px}.field-map>a,.field-map section a{display:inline-flex;align-items:center;min-height:44px;color:var(--action);text-decoration:underline;text-underline-offset:.18em;margin-right:12px}
+header{padding:18px 0}h1,h2{font-family:var(--serif);font-weight:500}
+h1{font-size:clamp(42px,7vw,70px);letter-spacing:-.04em;margin:6px 0}h2{font-size:clamp(26px,4vw,36px);margin:5px 0}
+.field-history,.next,.conversation{border-top:1px solid var(--edge);padding:16px 0}
+.field-map p {max-width:65ch;margin:7px 0}
+.move{display:flex;gap:9px;align-items:baseline;padding:10px 8px;min-height:44px;border:1px solid var(--edge);margin:6px 0}
+.move small,.conversation span,.conversation strong{display:block}
+input{accent-color:var(--action)}.next>label[for]{display:block;font-weight:650}
+select,textarea{font:inherit;border:1px solid var(--soft);background:var(--panel);padding:9px;color:var(--text);min-height:44px;max-width:100%}
+.conversation{border-top:3px solid var(--action);background:var(--panel);padding:18px;margin-block:14px}.conversation p{margin:10px 0}
+@media print{:global(.mast),:global(.foot),.field-map>:not(.conversation),.conversation button,.conversation textarea{display:none!important}.conversation{border:0;padding:0}.field-map{padding:0}}
+</style>

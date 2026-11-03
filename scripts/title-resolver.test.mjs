@@ -104,3 +104,15 @@ test('the selected work opens the corresponding IT guide without sending the pri
   assert.equal(guide('SRE', 'Validating products or equipment'), null);
   assert.equal(guide('Registered Nurse'), null);
 });
+
+test('project managers get a sector history, independently of title directory availability',()=>{
+  for(const index of [null,directory]){
+    for(const [input,sector] of [['project manager','general'],['Project Manager (PM)','general'],['construction PM','construction'],['clinical project manager','health'],['IT project manager','technology']]){
+      assert.equal(resolveTitle(input,catalog,index).projectSector,sector,input);
+    }
+    const initials=resolveTitle('PM',catalog,index);
+    assert.equal(initials.kind,'choices');
+    assert.deepEqual(initials.choices.slice(0,3).map(row=>row.label),['Project manager','Product manager','Program manager']);
+    for(const other of ['Product manager','Program manager','Project manager recruiter'])assert.equal(resolveTitle(other,catalog,index).projectSector,undefined);
+  }
+});

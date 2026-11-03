@@ -1,0 +1,78 @@
+---
+import {questions} from '../lib/field-guides.js';
+import {professions} from '../lib/model.js';
+import directory from '../../public/data/job-occupations.json';
+const featured=[['project-manager','Project management','Schedules, budgets and delivery'],['k12-teacher','Teaching','Classrooms and mentoring'],['registered-nurse','Nursing','Patient care and unit leadership'],['electrician','Electrical trades','Licensing and crew leadership'],['support','Computer user support','Helping people use technology'],['systems','Systems and networks','Operating shared infrastructure']];
+---
+<div class="frame hub" id="career-hub">
+  <header><p class="eyebrow">Door Notes / Career map</p><h1>Where could your work take you?</h1><p>Choose your work to find a Door Note, explore responsibilities and bring a question back to your workplace.</p></header>
+  <nav class="featured" aria-label="Reviewed career guides">{featured.map(([id,name,brief])=><a href={['support','systems'].includes(id)?'/career-map/?work='+id+'#compare-moves':'/career-map/'+id+'/'}><span>{name}<small>{brief}</small></span><b aria-hidden="true">→</b></a>)}</nav>
+  <form id="guide-find" action="/career-map/"><h2>Find another career</h2>
+    <label>Filter by name <input type="search" id="guide-filter" placeholder="e.g. designer"/></label>
+    <label>Choose a field or occupation<select name="occupation" id="guide-choice" required><option value="">Choose your work</option>
+    <optgroup label="Door Notes fields">{professions.map(p=><option value={p.slug}>{p.name}</option>)}</optgroup>
+    <optgroup label="Occupation directory">{directory.occupations.map(([code,name])=><option value={code}>{name}</option>)}</optgroup></select></label>
+    <button class="primary">Open career guide</button>
+    <p id="guide-count" role="status"></p>
+  </form>
+  <section id="occupation-guide" hidden aria-labelledby="occ-name"><p class="eyebrow">Occupation record</p><h2 id="occ-name"></h2>
+    <a id="occ-source">See published duties and preparation at O*NET ↗</a>
+    <p>Door Notes has not yet reviewed a Black career history or a next move specific to this occupation.</p>
+    <label>Responsibility to explore<select id="occ-level">{questions.map(([label,value])=><option value={value}>{label}</option>)}</select></label>
+    <p><strong>Take this question to work</strong><br/><span aria-live="polite" id="occ-question">{questions[0][1]}</span></p>
+    <p>Look for the job posting or assignment policy that names who decides.</p>
+    <a href="/suggest/">Suggest a workplace to research →</a>
+  </section>
+  <p>Prefer your own job title? <a href="/#trace">Trace my job →</a></p>
+</div>
+<script>
+  const box=document.querySelector<HTMLInputElement>('#guide-filter')!;
+  const select=document.querySelector<HTMLSelectElement>('#guide-choice')!;
+  const entries=[...select.options].filter(o=>o.value);
+  const groups=[...select.querySelectorAll('optgroup')].map(group=>[group,[...group.querySelectorAll('option')]] as const);
+  const status=document.querySelector('#guide-count')!;
+  box.addEventListener('input',()=>{
+    const query=box.value.trim().toLowerCase();select.value='';
+    let count=0;
+    for(const [group,items] of groups){const hits=items.filter(o=>o.text.toLowerCase().includes(query));group.replaceChildren(...hits);count+=hits.length}
+    status.textContent=count?count+' matches':'No matching occupation. You can still trace your typed title.';
+  });
+  const level=document.querySelector<HTMLSelectElement>('#occ-level')!;
+  level.addEventListener('change',()=>{document.querySelector('#occ-question')!.textContent=level.value});
+  const picked=new URLSearchParams(location.search).get('occupation');
+  const record=entries.find(o=>o.value===picked);
+  const reviewed:Record<string,string>={'13-1082.00':'project-manager','25-2031.00':'k12-teacher','25-2022.00':'k12-teacher','25-2021.00':'k12-teacher','23-1011.00':'lawyer','29-1051.00':'pharmacist','29-1021.00':'dentist','15-1252.00':'software-engineer','27-3042.00':'technical-writing','29-1141.00':'registered-nurse','47-2111.00':'electrician','15-1232.00':'support','15-1244.00':'systems'};
+  function route(value:string){
+    const slug=reviewed[value] || (!/^\d/.test(value)?value:'');
+    if(!slug)return '';
+    return ['systems','support'].includes(slug)?'/career-map/?work='+slug+'#compare-moves':'/career-map/'+slug+'/';
+  }
+  document.querySelector('#guide-find')!.addEventListener('submit',event=>{
+    const target=route(select.value);
+    if(target){event.preventDefault();location.assign(target)}
+  });
+  if(record){
+    const target=route(record.value);
+    if(target)location.replace(target);
+    else{
+      select.value=record.value;
+      const section=document.querySelector<HTMLElement>('#occupation-guide')!;
+      section.hidden=false;
+      document.querySelector('#occ-name')!.textContent=record.text;
+      document.querySelector<HTMLAnchorElement>('#occ-source')!.href='https://www.onetonline.org/link/summary/'+record.value;
+      requestAnimationFrame(()=>section.scrollIntoView());
+    }
+  }
+</script>
+<style>
+.hub {max-width:960px;padding-block:clamp(30px,6vw,68px) 60px}
+h1,h2 {font-family:var(--serif);font-weight:500}h1 {max-width:16ch;font-size:clamp(43px,6vw,74px);letter-spacing:-.045em;margin:10px 0}header>p:last-child {max-width:55ch;color:var(--muted)}
+.featured {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin:24px 0}
+.featured a {display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--edge);text-decoration:none;font:500 1.45rem/1.15 var(--serif)}
+.featured small {display:block;color:var(--muted);font:400 .87rem/1.5 var(--sans);margin-top:4px}
+.hub a {color:var(--action)}form,section {border-top:1px solid var(--edge);padding:18px 0}h2 {font-size:1.8rem;margin-bottom:10px}
+label {display:grid;gap:3px;margin:8px 0;font-weight:650}
+input,select {width:100%;max-width:38rem;border:1px solid var(--soft);color:var(--text);background:var(--panel);font:inherit;padding:8px;min-height:44px}
+section p {margin:10px 0}
+@media(max-width:550px){.featured{grid-template-columns:1fr}.featured a{min-height:52px}}
+</style>

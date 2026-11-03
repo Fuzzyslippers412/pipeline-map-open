@@ -1,9 +1,12 @@
 ---
 import Layout from '../../components/Layout.astro';
 import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
+import CareerHub from '../../components/CareerHub.astro';
 ---
-<Layout title="IT career map" active="Career map" desc="Compare technical and people-management moves from IT support and systems work. See what changes, read the sources and identify a next step at your workplace.">
-  <div class="frame career-map">
+<Layout title="Career map" active="Career map" desc="Explore your career, the Black workers who helped open it, and the responsibilities you could take on next.">
+  <CareerHub/>
+  <div id="computing-guide" class="frame career-map" hidden>
+    <a href="/career-map/">← All careers</a>
     <header class="map-intro">
       <div>
         <p class="map-label">Career map <span aria-hidden="true">/</span> Information technology</p>
@@ -161,6 +164,11 @@ import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
     if (announce) status.textContent = start.name+'. Showing '+move.name+'. Conversation note updated.';
   }
   const requested = new URLSearchParams(location.search).get('work');
+  const legacyAnchors = ['#responsibility','#compare-moves','#next-move-note','#door-note'];
+  const useIT = startingPoints.some(item=>item.id===requested) || (!location.search && legacyAnchors.includes(location.hash));
+  map.hidden=!useIT;
+  document.querySelector<HTMLElement>('#career-hub')!.hidden=useIT;
+  if(useIT && legacyAnchors.includes(location.hash)) requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView());
   for (const radio of controls.querySelectorAll<HTMLInputElement>('input[name="work"]')) {
     if (radio.value === requested) radio.checked = true;
   }
@@ -273,7 +281,7 @@ import {startingPoints, responsibilities} from '../../lib/it-career-moves.js';
   .route-from { margin-bottom:6px; }.transition-source a { margin-left:0; }
 }
 @media print {
-  :global(body:has(.career-map.note-ready) .mast),:global(body:has(.career-map.note-ready) .foot),:global(body:has(.career-map.note-ready) .skip),.note-ready > header,.note-ready .work-bench > :not(.action-note),.note-actions,.note-status,.action-note textarea { display:none!important; }
+  :global(body:has(.career-map.note-ready:not([hidden])) .mast),:global(body:has(.career-map.note-ready:not([hidden])) .foot),:global(body:has(.career-map.note-ready:not([hidden])) .skip),.note-ready > header,.note-ready .work-bench > :not(.action-note),.note-actions,.note-status,.action-note textarea { display:none!important; }
   .career-map.note-ready { padding:0; }
   .action-note { margin:0; max-width:none; background:white; color:black; border:1px solid #aaa; }
   .action-note,.note-lines div { break-inside:avoid; }.note-records { display:block; }.note-records a { display:block; min-height:0; margin-bottom:5px; }.note-records a::after { content:" · " attr(href); font-weight:400; overflow-wrap:anywhere; }

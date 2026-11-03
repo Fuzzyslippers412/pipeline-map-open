@@ -1,3 +1,4 @@
+import {projectTitle} from './project-work.js';
 import {matchJobTitle, normalizeJobTitle} from './job-match.js';
 
 let pendingDirectory;
@@ -172,7 +173,7 @@ export function resolveTitle(input, professions, directory = null) {
   const raw = normalizeJobTitle(role);
   const key = raw.replace(/^(?:(?:senior|sr|junior|jr|lead|principal|staff) )+/, '')
     .replace(/ (?:i{1,3}|iv|[1-5])$/, '');
-  const common = commonResolution(title, key, professions);
+  const common = projectTitle(title,key) || commonResolution(title, key, professions);
   if (common) return common;
   const matches = matchJobTitle(title, professions);
   if (matches.length === 1) return {kind:'exact', title, slug:matches[0].slug, occupation:matches[0].name};

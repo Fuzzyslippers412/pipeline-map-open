@@ -24,7 +24,7 @@ const pageTitle = title + ' · ' + brand;
 const canonicalURL = new URL(canonical, Astro.site).href;
 const guideCard = {
   '/explore/': {file:'/explore/cover.png', alt:'Door Notes career explorer. Start with something you enjoy and discover jobs to try.'},
-  '/career-map/': {file:'/career-map/cover.png', alt:'Door Notes IT career map. From computer support, explore systems work or leading a support team.'},
+  '/career-map/': {file:'/career-map/cover.png', alt:'Door Notes Career map. Explore your field, the people who shaped it and possible next steps.'},
 }[readerPath];
 const imageAsset = new URL(preview ? Astro.url.pathname + 'sample.png' : guideCard?.file || og, Astro.site);
 if (!preview && !guideCard && (og === '/cover.png' || og.endsWith('/og.png'))) imageAsset.searchParams.set('edition', 'paper');
@@ -39,7 +39,7 @@ const imageAlt = preview
 const previewTitle = preview ? (readerPath.includes('registered-nurse') ? 'The Howard nursing path' : 'The Taylor Electric path') + ' · ' + brand : pageTitle;
 const navItems = paper ? [
   ['Index','Trace a job','/#trace'], ['Explore','Explore careers','/explore/'],
-  ['Career map','IT career map','/career-map/'], ['Paths','Workplace histories','/paths/'],
+  ['Career map','Career map','/career-map/'], ['Paths','Workplace histories','/paths/'],
   ['Compare','Compare','/compare/'], ['Sources','Sources','/sources/'],
 ] : [['Index','Index',home], ['Compare','Compare','/compare/'], ['Sources','Sources','/sources/'], ['Method','Method','/method/']];
 const mobileItems = paper ? [...navItems, ['Method','How we use evidence','/method/']] : navItems;

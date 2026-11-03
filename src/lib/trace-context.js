@@ -19,6 +19,7 @@ function cleanTrace(value) {
     workplace,parent:boundedText(info.parent,200),relation:boundedText(info.relation,70),location:boundedText(info.location,160)
   } : null;
   const trace = {title, workplace, slug, match, workplaceInfo};
+  if(typeof value.projectSector==='string' && /^[a-z]{1,16}$/.test(value.projectSector)) trace.projectSector=value.projectSector;
   const lookupTitle = boundedText(value.lookupTitle, 120);
   if (lookupTitle && lookupTitle !== title) trace.lookupTitle = lookupTitle;
   if (Array.isArray(value.choicePath)) {

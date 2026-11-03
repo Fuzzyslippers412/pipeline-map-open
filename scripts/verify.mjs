@@ -140,6 +140,16 @@ expectEl(explorer,'id','explore-results');
 expectEl(careerMap,'id','responsibility');
 expectEl(careerMap,'id','compare-moves');
 expectEl(careerMap,'id','door-note');
+expectEl(careerMap,'id','career-hub');
+for(const slug of [...slugs,'project-manager','technical-writing']){
+  const guide=await readPage('/career-map/'+slug+'/');
+  expectEl(guide,'id','conversation');
+  if(slug==='project-manager'){
+    for(const person of ['Asya Watkins','Zena Howard','Joseph Hunt','Bayard Rustin']){
+      assert.ok(guide.some(node=>node.tagName==='h2' && text(node)===person),'Missing PM history: '+person);
+    }
+  }
+}
 assert.ok(hasHref(readerTest,'/try/routes/') && hasHref(pilotTest,'/explore/') && hasHref(pilotTest,'/career-map/'),'Missing pilot feedback route');
 
 const nomination=await readPage('/suggest/');

@@ -12,7 +12,7 @@ const commonTitles = [
   'Pharmacy technician','Medical assistant','Physician assistant','Security officer',
   'Warehouse associate','Bench technician','Administrative assistant','Shift supervisor',
   'Operations analyst','HR specialist','Customer service representative','Executive director',
-  'Chief executive officer','Officer','Clinical research coordinator','Project manager',
+  'Chief executive officer','Officer','Clinical research coordinator','PM','Project manager','Product manager','Program manager',
 ];
 const specialties = [
   ['ICU registered nurse','ICU nurse'], ['Intensive care registered nurse','intensive care nurse'],
@@ -108,6 +108,6 @@ export function suggestJobTitles(value, professions, supplementalTitles=EMPTY, l
       recognized:'Occupation recognized · workplace research available',
       unknown:'Workplace research available',
     };
-    return {title,label:title,subtitle:labels[result.kind],slug:result.kind==='exact' ? result.slug : null};
+    return {title,label:title,subtitle:result.projectSector?'Black project management history available':labels[result.kind],slug:result.kind==='exact' ? result.slug : null};
   });
 }

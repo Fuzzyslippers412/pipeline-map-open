@@ -2,6 +2,41 @@
 
 The useful test is personal: can someone name a person who opened access for Black workers, find the record, and tell how far it reaches toward the job they have today?
 
+## Career map release · One career map, starting with project managers
+
+**Reader outcome.** A Black worker can enter a real title in any field, find a person or institution whose record speaks to that work, understand what changed, and take away one useful question. A field milestone, an example of similar duties and a verified connection to the reader’s employer each need their own evidence. The shared map, project manager history and reviewed field guides are implemented. The five-worker reader study is still pending.
+
+### 1. Fix the project manager result before expanding the directory
+
+The shipped resolver offers three database labels for “project manager.” Engineering is first, followed by a catch-all and IT. The general Project Management Specialists occupation is missing from those choices. Plain “PM” and the suggestion “Project Manager (PM)” resolve only to IT. The quoted engineering result is reproducible through the first choice. A database alias describes a possible match and supplies no historical evidence.
+
+Use “Project manager” as the working title and offer “What kinds of projects do you lead?” with construction or design, technology, healthcare or research, business or operations, community programs, and “Across fields / skip.” Let readers see the general PM record immediately. For the initials alone, confirm the title first (including product manager, program manager, and another meaning). Retain the exact typed title, workplace and answers for editing within the tab. Use Project Management Specialists as the occupational reference for general coordination and check sector-specific duties before assigning another occupation. Leading a project does not imply personnel management. [O*NET occupational tasks](https://www.onetonline.org/link/details/13-1082.00)
+
+### 2. Write the first project management Door Notes
+
+| Who and what the source documents | Where it belongs in the result |
+| --- | --- |
+| A. Philip Randolph entrusted daily planning of the 1963 March on Washington to Bayard Rustin. Rustin coordinated staff, transport, training and logistics. [National Park Service](https://home.nps.gov/articles/march-on-washington.htm) | Community projects. Show the assignment and the actual organizing work under Rustin’s historical title. Its relevance to modern PM duties is an editorial comparison. |
+| In 2009 Zena Howard became senior project manager for the Smithsonian’s National Museum of African American History and Culture. She and lead architect Phil Freelon led a team with more than 30 consultants. [Design team’s project chronology](https://perkinswill.com/celebrating-nmaahcs-ten-year-anniversary/) | Design and construction. Name the team that won the commission and Howard’s project role. Avoid attributing her appointment to someone the source does not name. |
+| Joseph Hunt describes managing NASA’s Mars Odyssey extended mission, including oversight of the spacecraft and responsibility for mission activities. [NASA interview](https://science.nasa.gov/people/joseph-hunt/) | Aerospace and engineering. A named project manager explains what he owned. A dated appointment and the person who authorized it require additional records. |
+| In 2015 Asya Watkins founded Women Of Project Management. The organization describes its professional network, development opportunities and conference for Black women. [Organization’s account](https://womenofpm.com/about) | General PM record. Lead with an access decision, what became available to other workers, and who created it. The source establishes the program, not individual hiring or promotion outcomes. |
+
+On a phone, show one relevant name, their decision or assignment, what it enabled, its source and the workplace gap before optional detail. Present the rows as independent records with dates where documented. For an unlisted hospital, for example, show general PM history and identify a hospital project charter, team announcement or appointment record as the next evidence needed. Do not infer a healthcare-specific milestone from a shared job title.
+
+### 3. Turn the IT pilot into Career map
+
+Use the same /career-map/ address for all careers. Update both navigation menus, homepage prompts, student cards, Method, reader exercises and share graphics. Keep existing systems/support links and note anchors opening the same selected work. Enter through title, activity, or profession. Bring the field over from a trace, with an option to change it. Shared addresses carry public identifiers only.
+
+Offer every recognized occupation a starting view with supported occupational tasks, relevant reviewed history, explicit gaps, and one question about local entry or advancement. For an unknown title, preserve the wording and offer the general or research path. Distinguish assisting, owning assignments, leading projects or specialist work, supervising staff and directing departments. Render lateral and specialist options as well as management. Publish a career transition only with a source for the transition itself. Use distinct flags for reviewed occupation tasks, field history, supported moves and exact workplace evidence so partial coverage is legible.
+
+Start with project management and the existing computing guide. Expand detailed maps next into education, healthcare and trades, building on reviewed workplace records. Then review the remaining profession cards. The student explorer should send readers into the same map from an activity, including non-IT activities.
+
+### 4. Release checks
+
+- Test typed and selected Project manager, PM, Project Manager (PM), construction PM, clinical PM, IT project manager, product manager and program manager. Test changing an answer, skipping sector and loading without the full directory. A generic PM must never silently become an engineering or IT manager.
+- A teacher, nurse, electrician, project manager and systems administrator must each have a useful entry. Unsupported moves must display a specific research gap. An unlisted workplace gets no borrowed hiring history.
+- Check old deep links, browser Back, keyboard suggestions, copy/print and 320-pixel screens. Ask five workers in different fields to name a person, open the citation, identify an unknown and choose a useful next question. Target four of five completing the tasks unaided. This is a proposed test.
+
 ## Pilot: explore roles and the doors people opened
 
 Offer two starting points on the homepage: **Trace my job** and **Explore what I could do**. Both lead to the same public workplace records, historical sources and open questions.

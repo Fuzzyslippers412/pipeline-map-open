@@ -11,6 +11,7 @@ import SourceLookup from './SourceLookup.astro';
 import ClassicTraceEntry from './ClassicTraceEntry.astro';
 const originalEdition = Astro.url.pathname.startsWith('/study/original/');
 import CareerTimeline from './CareerTimeline.astro';
+import ProjectWork from './ProjectWork.astro';
 import ComputingContext from './ComputingContext.astro';
 import '../styles/trace-start.css';
 import '../styles/trace-combobox.css';
@@ -72,7 +73,7 @@ import '../styles/trace-combobox.css';
     </details>
     <div class="trace-guides">
       <a class="library-link" href="/paths/">Explore the workplace library <span aria-hidden="true">→</span></a>
-      <a class="library-link" href="/career-map/">Compare next moves in IT <span aria-hidden="true">→</span></a>
+      <a class="library-link" href="/career-map/">Explore the Career map <span aria-hidden="true">→</span></a>
     </div>
     <p class="privacy-line">Typing stays in this tab. You can use your own wording.</p>
     <details id="more-workplaces" class="more-workplaces" data-contextual hidden>
@@ -91,6 +92,7 @@ import '../styles/trace-combobox.css';
   <p id="match-message"></p>
   <div id="suggested-paths"></div>
   <button type="button" id="change-duty" class="edit-trace-entry" hidden>Change my answer</button>
+  <ProjectWork inTrace/>
   <ComputingContext/>
   <CareerTimeline/>
   <SourceLookup/>
@@ -104,6 +106,7 @@ import '../styles/trace-combobox.css';
 </section>
 <script type="application/json" id="quick-workplaces" set:html={JSON.stringify(quickWorkplaces).replace(/</g,'\\u003c')}></script>
 <script>
+import {setProjectSector} from '../lib/project-panel.js';
 import {setupTraceEntryFields} from '../lib/trace-entry-fields.js';
 import {bindLookup,revealTimelinePreview} from '../lib/bind-lookup.js';
 import {resolveTitle,loadTitleDirectory} from '../lib/title-resolver.js';
@@ -128,6 +131,8 @@ type Resolution = {
   title: string;
   slug?: string;
   occupation?: string;
+  projectSector?: string;
+  occupations?: {code:string}[];
   computing?: boolean;
   contextKey?: string;
   question?: string;
@@ -149,6 +154,7 @@ function clearResults() {
   bindLookup(timeline,null);
   bindLookup(lookup,null);
   showComputingContext(note,null);
+  result.querySelector<HTMLElement>('[data-project-work]')!.hidden=true;
   result.hidden = true;
   manual.hidden = true;
   manual.open = false;
@@ -247,6 +253,13 @@ function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, dir
     }
     case 'related':
     case 'recognized': {
+      if(resolution.projectSector) {
+        showResult(draft,'Career path','Project managers coordinate schedules, resources and delivery across fields.',focus);
+        const panel=result.querySelector<HTMLElement>('[data-project-work]')!;
+        panel.hidden=false;
+        setProjectSector(panel,(!focus && readTrace()?.projectSector) || resolution.projectSector,workplace);
+        break;
+      }
       const occupation = resolution.occupation || resolution.title;
       const record = catalog.find((row:{slug:string}) => row.slug===resolution.slug);
       const fieldName = record?.slug==='software-engineer' ? 'software engineering' : record?.name.toLowerCase();
@@ -257,8 +270,17 @@ function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, dir
       if(guide) {
         const link = document.createElement('a');
         link.className = 'trace-choice';
-        link.href = guide.href;
+        const code=resolution.occupations?.[0]?.code;
+        link.href = guide.href==='/career-map/' && code ? '/career-map/?occupation='+encodeURIComponent(code) : guide.href;
         link.textContent = guide.label+' →';
+        choices.append(link);
+      }
+      if(!guide) {
+        const link=document.createElement('a');
+        const code=resolution.occupations?.[0]?.code;
+        link.href=code?'/career-map/?occupation='+encodeURIComponent(code):'/career-map/';
+        link.className='trace-choice';
+        link.textContent='Explore this work in Career map →';
         choices.append(link);
       }
       if(resolution.computing) {
@@ -276,6 +298,8 @@ function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, dir
       showResult(draft,'Your job title',directoryUnavailable
         ? 'The full title directory is unavailable. You can still use your wording, search workplace sources, or select a related field.'
         : 'Door Notes hasn’t matched this title to a reviewed history. You can explore a related field or look for a workplace source.',focus);
+      const mapLink=document.createElement('a');
+      mapLink.href='/career-map/';mapLink.className='trace-choice';mapLink.textContent='Browse the Career map →';choices.append(mapLink);
       bindLookup(timeline,context);
   }
 

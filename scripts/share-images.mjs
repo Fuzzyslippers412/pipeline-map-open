@@ -211,10 +211,10 @@ function coverImage() {
 const guideIllustrations = [
   {
     route: 'career-map',
-    label: 'IT CAREER MAP',
-    title: 'Where could I go from support?',
+    label: 'CAREER MAP',
+    title: 'Where could my work lead?',
     description: 'See how the daily work and responsibility can change.',
-    start: 'Computer support', upper: 'Run systems and networks', lower: 'Lead a support team',
+    start: 'Your work', upper: 'Explore the field’s history', lower: 'Choose a next step',
     footer: 'Possible moves from one kind of work'
   },
   {

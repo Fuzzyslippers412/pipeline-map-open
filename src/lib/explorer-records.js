@@ -22,7 +22,7 @@ export const explorerRecords = [
       },
       limit: 'Thompson worked in computer operations at MIT. How Black workers first entered a particular help desk is a separate question.'
     },
-    next: 'Compare the hands-on and team leadership directions on the IT career map. Which daily task would you like to try?',
+    next: 'Compare the hands-on and team leadership directions for computer support. Which daily task would you like to try?',
     pathUrl: '/career-map/'
   },
   {
