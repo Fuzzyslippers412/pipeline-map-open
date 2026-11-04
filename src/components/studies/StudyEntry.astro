@@ -1,0 +1,10 @@
+---
+const {compact=false}=Astro.props;
+---
+<aside class:list={['system-entry',compact&&'compact']} aria-labelledby={compact?'medicine-study-entry':'systems-entry'}>
+ <div><p>INSIDE THE PROFESSION · MEDICINE PILOT</p><h2 id={compact?'medicine-study-entry':'systems-entry'}>{compact?'Go inside the medical system.':'A career sits inside a system.'}</h2><p class="entry-copy">Who built it? Who pays? Who decides? Explore medicine in the United States and Cameroon.</p></div>
+ <div class="entry-links"><a href="/systems/physician/">Explore the medicine study <span aria-hidden="true">→</span></a><a href="/systems/">Browse the research by topic →</a></div>
+</aside>
+<style>
+.system-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;padding:28px 0;border-block:1px solid var(--edge);margin:28px 0 32px}.system-entry p:first-child{font:12px/1.6 var(--mono);color:var(--rust);letter-spacing:.05em}.system-entry h2{font:500 clamp(28px,4vw,43px)/1.1 var(--serif);margin:8px 0}.entry-copy{max-width:52ch;color:var(--muted);line-height:1.6}.entry-links{display:grid;gap:8px;max-width:270px}.entry-links a{display:flex;min-height:44px;align-items:center;color:var(--action);font-weight:650;text-decoration:underline;text-underline-offset:4px}.compact{padding:20px 0}.compact h2{font-size:30px}@media(max-width:680px){.system-entry{grid-template-columns:1fr;gap:10px;margin:20px 0}.entry-links{max-width:none}}
+</style>

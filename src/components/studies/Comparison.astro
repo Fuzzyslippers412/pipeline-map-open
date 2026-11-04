@@ -1,0 +1,14 @@
+---
+import Evidence from './Evidence.astro';
+import {sourceRefs} from '../../lib/institutional-studies.js';
+const {study}=Astro.props;
+---
+<section class="study-comparison" id="different-systems" aria-labelledby="comparison-title">
+ <header class="study-section-head"><p class="study-kicker">Two countries · One profession</p><h2 id="comparison-title">The same profession,<br/>different systems.</h2><p>A medical qualification is not a universal permission to practise. Compare the institutions and ask which authority governs the place you want to work.</p></header>
+ <p class="study-limit">This is a comparison of selected records, not a ranking of countries or an individual eligibility assessment. National rules and local practice can differ; the source date and gaps matter.</p>
+ <div class="comparison-head" aria-hidden="true"><span>Question</span><strong>United States</strong><strong>Cameroon</strong></div>
+ {study.comparison.map(row=><section class="comparison-row" aria-labelledby={'compare-'+row.id}>
+  <h3 id={'compare-'+row.id}>{row.label}</h3>
+  {['us','cm'].map(country=><div class="comparison-country"><h4>{country==='us'?'United States':'Cameroon'}</h4><p>{row[country].text}</p><details><summary>Source &amp; limits</summary><p class="study-limit">{row[country].limit}</p><Evidence sources={sourceRefs(study,row[country].sourceIds)}/></details></div>)}
+ </section>)}
+</section>

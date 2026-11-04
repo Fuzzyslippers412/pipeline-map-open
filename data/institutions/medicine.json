@@ -1,0 +1,1328 @@
+{
+  "schemaVersion": 1,
+  "slug": "physician",
+  "name": "Medicine",
+  "checkedOn": "2026-11-04",
+  "countries": [
+    "us",
+    "cm"
+  ],
+  "sources": [
+    {
+      "id": "hist-nyam-egyptian-papyrus",
+      "title": "Edwin Smith Surgical Papyrus",
+      "publisher": "New York Academy of Medicine",
+      "publishedOn": null,
+      "url": "https://nyam.org/library-resources/library-collections/edwin-smith-surgical-papyrus/",
+      "type": "Holding institution collection description",
+      "locator": "Opening paragraphs: approximate manuscript date, Egyptian hieratic script, and 48 wound and trauma cases",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-nlm-islamic-medicine",
+      "title": "Islamic Medical Manuscripts: Medieval Islam",
+      "publisher": "National Library of Medicine",
+      "publishedOn": null,
+      "url": "https://www.nlm.nih.gov/hmd/arabic/med_islam.html",
+      "type": "Government library historical exhibit",
+      "locator": "Discussion of Arabic translations, new medical knowledge, encyclopedias and the Latin reception of Avicenna's Canon",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-nlm-chinese-medicine",
+      "title": "Traditional Chinese Medicine",
+      "publisher": "National Library of Medicine",
+      "publishedOn": null,
+      "url": "https://www.nlm.nih.gov/hmd/topics/chinese-traditional/index.html",
+      "type": "Government library historical exhibit",
+      "locator": "Early Influences; Ancient Texts at NLM",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-penn-medical-school",
+      "title": "Penn in the 18th Century: School of Medicine",
+      "publisher": "University of Pennsylvania Archives and Records Center",
+      "publishedOn": "2004",
+      "url": "https://archives.upenn.edu/exhibits/penn-history/18th-century/medical-school/",
+      "type": "University archive historical exhibit",
+      "locator": "Founding and Early Years; exhibit by Mary D. McConaghy, Michael Silberman and Irina Kalashnikova",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-meharry-methodist-support",
+      "title": "Meharry Medical College arose from freed slaves' kindness",
+      "publisher": "United Methodist Communications",
+      "publishedOn": null,
+      "url": "https://www.umc.org/en/content/meharry-medical-college-arose-from-freed-slaves-kindness",
+      "type": "Founding religious organization's historical account",
+      "locator": "Tom Gillem's account of the 1876 pledge and Methodist Freedman's Aid Society support; origin anecdote is not used as independently verified evidence",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-meharry-college-history",
+      "title": "History",
+      "publisher": "Meharry Medical College",
+      "publishedOn": null,
+      "url": "https://meharry.edu/meet-meharry/history/",
+      "type": "Institutional history",
+      "locator": "1876 medical department; first eleven students; William J. Snead and George W. Hubbard; Clark Memorial church basement",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-howard-appropriations",
+      "title": "A National School to Meet a National Need",
+      "publisher": "Howard University Office of the Secretary",
+      "publishedOn": "2023-04-07",
+      "url": "https://secretary.howard.edu/articles/national-school-meet-national-need",
+      "type": "University governance office historical account",
+      "locator": "December 13, 1928 amendment authorizing annual appropriations; Mordecai Wyatt Johnson's presidency",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-taborian-national-register",
+      "title": "Taborian Hospital: National Register of Historic Places registration form",
+      "publisher": "Mississippi Department of Archives and History; National Park Service",
+      "publishedOn": "1996",
+      "url": "https://npgallery.nps.gov/GetAsset/2360090c-7ff0-469d-86c9-d2f248b33571/",
+      "type": "Government historic-property nomination",
+      "locator": "Statement of Significance, PDF pages 5–6; form prepared March 8, 1996 by Michelle Weaver",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-flexner-original",
+      "title": "Medical Education in the United States and Canada",
+      "publisher": "Carnegie Foundation for the Advancement of Teaching",
+      "publishedOn": "1910",
+      "url": "https://archive.carnegiefoundation.org/publications/pdfs/elibrary/Carnegie_Flexner_Report.pdf",
+      "type": "Primary historical report by Abraham Flexner",
+      "locator": "Chapter XIV, printed pages 180–181; PDF pages 198–199 visually inspected",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-flexner-causation-study",
+      "title": "Revisiting black medical school extinctions in the Flexner era",
+      "publisher": "Journal of the History of Medicine and Allied Sciences; abstract indexed by PubMed",
+      "publishedOn": "2012-04",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21296769/",
+      "type": "Scholarly article abstract; full article not reviewed",
+      "locator": "Abstract by Lynn E. Miller and Richard M. Weiss; published online February 4, 2011; journal volume 67(2), pages 217–243",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-ssa-medicare-participation",
+      "title": "History of SSA During the Johnson Administration 1963–1968: Providers of Services",
+      "publisher": "Social Security Administration",
+      "publishedOn": null,
+      "url": "https://www.ssa.gov/history/ssa/lbjmedicare4.html",
+      "type": "Agency administrative history, archival document",
+      "locator": "Applicability of Title VI of the Civil Rights Act; participation conditions and July 1967 compliance exclusions",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-ssa-desegregation-team",
+      "title": "How Social Security Helped Desegregate America's Hospitals",
+      "publisher": "Social Security Administration",
+      "publishedOn": "2021-02-19",
+      "url": "https://www.ssa.gov/blog/en/posts/2021-02-19.html",
+      "type": "Agency historical account by Andrew Saul, citing Robert M. Ball's oral history",
+      "locator": "July 1, 1966 implementation; federal employees and grassroots volunteers; hospital inspections",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "hist-harvard-financial-ties",
+      "title": "Financial Ties: Harvard and the Slavery Economy",
+      "publisher": "Harvard University, Presidential Committee on Harvard and the Legacy of Slavery",
+      "publishedOn": "2022-04",
+      "url": "https://legacyofslaveryreport.harvard.edu/report/financial-ties-harvard-and-the-slavery-economy",
+      "type": "University historical investigation with archival citations",
+      "locator": "Opening financial discussion; The Perkins Brothers section, especially notes 200–205 on wealth, organizing and hospital donations",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-lcme",
+      "title": "Medical School Accreditation",
+      "publisher": "Association of American Medical Colleges",
+      "publishedOn": null,
+      "url": "https://www.aamc.org/medical-school-accreditation",
+      "type": "Institutional description",
+      "locator": "Opening paragraphs: LCME recognition, standards and independent accreditation decisions.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-coca",
+      "title": "Commission on Osteopathic College Accreditation",
+      "publisher": "American Osteopathic Association / COCA",
+      "publishedOn": null,
+      "url": "https://osteopathic.org/accreditation/",
+      "type": "Accreditor description",
+      "locator": "Opening description of COCA recognition and United States scope.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-acgme",
+      "title": "ACGME Frequently Asked Questions",
+      "publisher": "Accreditation Council for Graduate Medical Education",
+      "publishedOn": null,
+      "url": "https://www.acgme.org/about/acgme-frequently-asked-questions/",
+      "type": "Accreditor guidance",
+      "locator": "Accreditation questions 1–4: programs, sponsoring institutions and individuals.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-fsmb-license",
+      "title": "About Physician Licensure",
+      "publisher": "Federation of State Medical Boards",
+      "publishedOn": null,
+      "url": "https://www.fsmb.org/guide-to-medical-regulation-in-the-united-states/about-physician-licensure",
+      "type": "Regulatory overview",
+      "locator": "How Physicians Gain Licenses; Medical Education; state-board credential review. School counts are not used.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-hospital-governance",
+      "title": "42 CFR 482.12 · Governing body",
+      "publisher": "Office of the Federal Register / Centers for Medicare & Medicaid Services",
+      "publishedOn": null,
+      "url": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-482/subpart-B/section-482.12",
+      "type": "Federal regulation",
+      "locator": "Paragraphs (a)(1)–(7), (c): appointments, privileges and patient care; displayed current through November 2, 2026.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-insurance-basics",
+      "title": "Health Insurance Basics",
+      "publisher": "Centers for Medicare & Medicaid Services",
+      "publishedOn": "2023-09",
+      "url": "https://www.cms.gov/files/document/nsa-health-insurance-basics.pdf",
+      "type": "Government educational guidance",
+      "locator": "Pages 1–3: coverage, fully insured versus self-insured plans, premiums and cost sharing. Revised September 2023.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-medicare-payment",
+      "title": "Physician Fee Schedule",
+      "publisher": "Centers for Medicare & Medicaid Services",
+      "publishedOn": null,
+      "url": "https://www.cms.gov/cms-guide-medical-technology-companies-and-other-interested-parties/payment/physician-fee-schedule",
+      "type": "Government payment-system explanation",
+      "locator": "Physician Fee Schedule section; annual rulemaking and office/facility differences. Page modified September 29, 2026.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-practice-ownership",
+      "title": "Physician Practice Characteristics in 2024",
+      "publisher": "Carol K. Kane / American Medical Association",
+      "publishedOn": "2025",
+      "url": "https://www.ama-assn.org/system/files/2024-prp-pp-characteristics.pdf",
+      "type": "Original survey report",
+      "locator": "Printed pages 1–4: eligibility, ownership and employment-status definitions; 2024 survey, published 2025.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-california-control",
+      "title": "Information Pertaining to the Practice of Medicine",
+      "publisher": "Medical Board of California",
+      "publishedOn": null,
+      "url": "https://www.mbc.ca.gov/Licensing/Physicians-and-Surgeons/Practice-Information/default.aspx",
+      "type": "State regulator guidance",
+      "locator": "Corporate Practice of Medicine: clinical and management decisions, MSOs and prohibited structures.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-practice-start",
+      "title": "Starting a Solo Medical Practice",
+      "publisher": "American Osteopathic Association",
+      "publishedOn": null,
+      "url": "https://osteopathic.org/practicing-medicine/business-of-medicine/starting-a-practice/",
+      "type": "Professional practice guidance",
+      "locator": "Prepare financially; Craft a practice plan; Secure a location; Hire staff; Enroll with payers. Publicly readable text.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-community-board",
+      "title": "Health Center Program Compliance Manual · Chapter 20",
+      "publisher": "Health Resources and Services Administration",
+      "publishedOn": null,
+      "url": "https://bphc.hrsa.gov/compliance/compliance-manual/chapter20",
+      "type": "Federal program guidance",
+      "locator": "Requirements; waiver provision; footnotes 1–2 for tribal and public-agency exceptions. Last reviewed November 2025.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "us-research-training",
+      "title": "NIGMS · Institutional Training",
+      "publisher": "National Institutes of Health / NIGMS",
+      "publishedOn": null,
+      "url": "https://grants.nih.gov/funding/find-a-fit-for-your-research/nih-institutes-centers-offices/NIGMS",
+      "type": "Federal program description",
+      "locator": "Institutional Training table: Medical Scientist Training Program and its dual-degree goal.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-colonial",
+      "title": "Sleeping Sickness Epidemic in British Southern Cameroons 1922–1961: The History of a Colonial Medical Response",
+      "publisher": "Michael Kpughe Lang, Afrika Zamani / CODESRIA",
+      "publishedOn": null,
+      "url": "https://www.journals.codesria.org/index.php/az/article/download/1777/1836/2000",
+      "type": "Research article",
+      "locator": "Full article, issue 25 (2017), pp. 21–40; especially 29–37 and archival notes.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-cuss",
+      "title": "Historique",
+      "publisher": "Cameroon Ministry of Public Health",
+      "publishedOn": null,
+      "url": "https://www.minsante.cm/site/?q=fr/content/historique",
+      "type": "Official institutional history",
+      "locator": "CUSS paragraph and January 1993 university reform paragraph.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-mbingo",
+      "title": "Mbingo Baptist Hospital",
+      "publisher": "Cameroon Baptist Convention Health Services",
+      "publishedOn": null,
+      "url": "https://cbchealthservices.org/hospitals/mbingo-baptist-hospital/",
+      "type": "Institutional account",
+      "locator": "Overview; historical dates and PAACS/CIMS training.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-maternity",
+      "title": "Mbingo Baptist Hospital, 40 Years Old",
+      "publisher": "Eric Mangek Ngum, Baptist Herald / North American Baptist Conference",
+      "publishedOn": "1993-04",
+      "url": "https://www.nabarchives.org/wp-content/uploads/2021/03/BapHer1993Apr.pdf",
+      "type": "Contemporary institutional report",
+      "locator": "April 1993 issue, pages 16–17. PDF downloaded and text reviewed.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-admissions",
+      "title": "National aptitude examination for medical training, 2026–2027",
+      "publisher": "Cameroon Ministry of Higher Education",
+      "publishedOn": "2026-07-06",
+      "url": "https://www.minesup.gov.cm/wp-content/uploads/2026/07/National-aptitude-examination-for-medical-training-2026-2027.pdf",
+      "type": "Official admissions order",
+      "locator": "Articles 1–6 and 14–20; four scanned pages reviewed using OCR.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-registration",
+      "title": "Frequently asked questions",
+      "publisher": "Ordre National des Médecins du Cameroun (ONMC)",
+      "publishedOn": null,
+      "url": "https://onmc.cm/f-a-q/",
+      "type": "Professional regulator guidance",
+      "locator": "Devenir membre; validation; provisional and definitive registration.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-law",
+      "title": "Textes juridiques — profession de médecin",
+      "publisher": "Ordre National des Médecins du Cameroun (ONMC)",
+      "publishedOn": null,
+      "url": "https://onmc.cm/wp-content/uploads/2026/05/ONMC_Textes_Juridiques-_Version-Francaise_2026.pdf",
+      "type": "Official legal compilation",
+      "locator": "Law 90/036 arts. 2–8, 19; Decrees 92/265 arts. 21,30 and 92/252 arts. 1–6.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-accounts",
+      "title": "Implementing updated health accounts to reduce financial hardship in Cameroon’s healthcare system",
+      "publisher": "World Health Organization",
+      "publishedOn": null,
+      "url": "https://www.who.int/about/accountability/results/who-results-report-2022-2023/country-story/2023/implementing-updated-health-accounts-to-reduce-financial-hardship-in-cameroon-s-healthcare-system",
+      "type": "Official health-accounts summary",
+      "locator": "Results report 2022–2023; findings for expenditure in 2018–2019.",
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "cm-hesp",
+      "title": "Increasing Regional Collaboration to Strengthen Health Systems across Central Africa",
+      "publisher": "World Bank",
+      "publishedOn": "2025-10-30",
+      "url": "https://www.worldbank.org/en/news/press-release/2025/10/30/increasing-regional-collaboration-to-strengthen-health-systems-across-central-africa",
+      "type": "Financing approval announcement",
+      "locator": "HeSP Phase III approval; Cameroon-specific GFF grant.",
+      "checkedOn": "2026-11-04"
+    }
+  ],
+  "claims": [
+    {
+      "id": "hist-many-medical-traditions",
+      "section": "origins",
+      "title": "Medical knowledge has many histories",
+      "body": "Egypt's Edwin Smith papyrus, dated about 1600 BCE by its custodian, records 48 injury cases. NLM describes Chinese knowledge circulating in East Asia and Arabic-language scholars developing and transmitting Greco-Roman work. U.S. medical schools belong to a later institutional history.",
+      "period": "Multiple periods, before modern U.S. medical schools",
+      "status": "documented",
+      "sourceIds": [
+        "hist-nyam-egyptian-papyrus",
+        "hist-nlm-islamic-medicine",
+        "hist-nlm-chinese-medicine"
+      ],
+      "limit": "These are selective examples, not a single birthplace, proof of treatment effectiveness or a demonstrated direct route to modern medicine.",
+      "young": "People in Egypt and many other places studied health long before today’s medical schools.",
+      "teen": "Ancient Egyptian case records, East Asian texts and Arabic scholarship show several histories. Their existence alone does not prove a direct chain to your job.",
+      "country": "global"
+    },
+    {
+      "id": "hist-penn-institution-1765",
+      "section": "origins",
+      "title": "A medical faculty takes shape in Philadelphia",
+      "body": "In 1765, the College of Philadelphia organized a separate medical faculty. John Morgan and colleagues brought experience from Edinburgh and London. Their program combined lectures with hospital learning, including a year attending practice at Pennsylvania Hospital.",
+      "period": "1765–1768",
+      "status": "documented",
+      "sourceIds": [
+        "hist-penn-medical-school"
+      ],
+      "limit": "This explains one colonial institution's training model, not the origin of medicine worldwide or a modern license requirement.",
+      "young": "A Philadelphia school joined classroom learning with learning at a hospital.",
+      "teen": "A profession needs institutions as well as knowledge. This school connected teachers, degrees and hospital experience using models its faculty studied abroad.",
+      "country": "us"
+    },
+    {
+      "id": "hist-meharry-funding-1876",
+      "section": "builders",
+      "title": "Donors and a church network helped build Meharry",
+      "body": "In 1876, Samuel Meharry and his brothers pledged $30,000 in money and property for a medical department at Methodist-founded Central Tennessee College. Methodist aid also supported it. Eleven students began with William J. Snead and George W. Hubbard in a church basement.",
+      "period": "1876",
+      "status": "documented",
+      "sourceIds": [
+        "hist-meharry-methodist-support",
+        "hist-meharry-college-history"
+      ],
+      "limit": "A pledge is not an audited receipt. These accounts do not trace every donor's fortune or every later operating payment.",
+      "young": "Gifts, teachers and a church helped create a place where Black students could study medicine.",
+      "teen": "Meharry grew through donations, religious support and teaching. Naming those contributions helps explain how a training institution could open.",
+      "country": "us"
+    },
+    {
+      "id": "hist-howard-federal-authorization-1928",
+      "section": "builders",
+      "title": "Congress authorized continuing support for Howard",
+      "body": "On December 13, 1928, Congress amended Howard's charter to authorize annual federal appropriations for the university's development and maintenance. The change came during Mordecai Wyatt Johnson's presidency, when he made the university's finances a priority.",
+      "period": "1928",
+      "status": "documented",
+      "sourceIds": [
+        "hist-howard-appropriations"
+      ],
+      "limit": "The authorization concerns the university. It does not establish a medical-school payment amount, federal ownership or one person's sole responsibility.",
+      "young": "Congress authorized yearly support for Howard University.",
+      "teen": "Government support can help sustain educational institutions. Here the evidence is an appropriation authorization, not a ledger of every medical-school expense.",
+      "country": "us"
+    },
+    {
+      "id": "hist-taborian-community-hospital-1942",
+      "section": "doors",
+      "title": "A Black fraternal community chose to build a hospital",
+      "body": "The Knights and Daughters of Tabor voted to build a hospital rather than a headquarters temple in Mound Bayou, Mississippi. Black-owned McKissack and McKissack constructed Taborian Hospital, which opened on February 12, 1942, serving Black residents in a segregated region.",
+      "period": "1940–1942",
+      "status": "documented",
+      "sourceIds": [
+        "hist-taborian-national-register"
+      ],
+      "limit": "The nomination documents the community decision and builder. It does not provide a complete financing ledger or establish present ownership.",
+      "young": "A Black community organization chose a hospital and hired a Black building firm to create it.",
+      "teen": "Opening a door could mean building an institution people controlled. Tabor's membership made the choice; a Black-owned firm carried out the construction.",
+      "country": "us"
+    },
+    {
+      "id": "hist-flexner-recommendation-1910",
+      "section": "access",
+      "title": "A reform report also imposed racial limits",
+      "body": "Abraham Flexner's 1910 Carnegie report recommended concentrating Black medical education at Howard and Meharry and assigned Black physicians a restricted role in a segregated system. That recommendation is directly documented; the causes of each school's subsequent closure require separate evidence.",
+      "period": "1910; subsequent closure histories vary",
+      "status": "documented",
+      "sourceIds": [
+        "hist-flexner-original",
+        "hist-flexner-causation-study"
+      ],
+      "limit": "Miller and Weiss emphasize licensing decisions and unequal premedical opportunities in their published abstract. The report alone does not prove each closure's cause.",
+      "young": "A school reviewer promoted unfair limits on what Black doctors should learn and where they should work.",
+      "teen": "Read the recommendation separately from later decisions. A report, a licensing board and a funding decision are different links in a historical explanation.",
+      "country": "us"
+    },
+    {
+      "id": "hist-medicare-enforcement-1966",
+      "section": "doors",
+      "title": "Federal payment created a practical desegregation lever",
+      "body": "As Medicare began in 1966, participating hospitals had to meet Title VI nondiscrimination requirements. Federal employees and grassroots volunteers inspected hospitals. The program linked payment to compliance, giving civil-rights requirements an enforcement mechanism beyond a statement of principle.",
+      "period": "1966–1967",
+      "status": "documented",
+      "sourceIds": [
+        "hist-ssa-medicare-participation",
+        "hist-ssa-desegregation-team"
+      ],
+      "limit": "Participation and inspections do not prove all discrimination ended. A particular employer's compliance and hiring history still need local records.",
+      "young": "Hospitals seeking Medicare money had to follow rules against racial discrimination, and people checked them.",
+      "teen": "A legal right can need enforcement. Medicare combined funding conditions and inspections; that does not establish equal treatment at every hospital afterward.",
+      "country": "us"
+    },
+    {
+      "id": "hist-wealth-evidence-scope",
+      "section": "builders",
+      "title": "Trace wealth to the institution the record actually names",
+      "body": "Harvard's 2022 report documents university income and gifts tied to enslavement. It identifies James and Thomas Handasyd Perkins, whose family built wealth through slave trading, as Massachusetts General Hospital organizers and $5,000 donors each. These are named contributions, not a funding history for all medicine.",
+      "period": "Eighteenth and nineteenth centuries; investigated in 2022",
+      "status": "documented",
+      "sourceIds": [
+        "hist-harvard-financial-ties"
+      ],
+      "limit": "The report does not identify which trading proceeds funded those gifts or trace a payment to a medical-school building.",
+      "young": "Some institutions received wealth connected to slavery. We must show the record for each connection.",
+      "teen": "Ask whose money, which payment and which institution. Evidence about a university or donor cannot automatically be assigned to every hospital or medical school.",
+      "country": "us"
+    },
+    {
+      "id": "us-program-accreditation",
+      "section": "authority",
+      "title": "Different bodies review different training stages",
+      "body": "LCME accredits MD programs; COCA accredits U.S. osteopathic medical programs. ACGME accredits residency and fellowship programs and their sponsoring institutions. These are reviews of educational programs, not ownership of the schools or a doctor’s individual license.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-lcme",
+        "us-coca",
+        "us-acgme"
+      ],
+      "limit": "Accreditation does not guarantee admission, completion or a job.",
+      "young": "Schools and training programs have outside checks. These checks are different from a doctor’s permission to work.",
+      "teen": "Medical-school and postgraduate-training accreditors assess programs. They do not own every school or license individual doctors.",
+      "country": "us"
+    },
+    {
+      "id": "us-physician-license",
+      "section": "authority",
+      "title": "A degree and permission to practise are separate",
+      "body": "State medical boards grant medical licenses after reviewing qualifications. An MD or DO alone is not a license. Requirements include education, training and examinations; the applicable state’s rules determine eligibility.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-fsmb-license"
+      ],
+      "limit": "International credentials require separate assessment; no automatic cross-border permission is implied.",
+      "young": "Finishing medical school does not automatically give someone permission to work as a doctor.",
+      "teen": "A medical degree is an educational qualification. The state board separately decides whether the applicant qualifies for a license.",
+      "country": "us"
+    },
+    {
+      "id": "us-hospital-privileges",
+      "section": "authority",
+      "title": "Hospital authority is another decision",
+      "body": "Under these federal hospital rules, governing bodies appoint medical staff after considering staff recommendations, approve bylaws and take responsibility for care quality. A license alone does not establish permission to perform every procedure.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-hospital-governance"
+      ],
+      "limit": "This describes the federal hospital rule, not a particular institution’s hiring record.",
+      "young": "A hospital checks which work a doctor may do there. A license is not the same decision.",
+      "teen": "Hospital appointment and clinical privileges are separate from state licensure. The governing body and medical staff have defined responsibilities.",
+      "country": "us"
+    },
+    {
+      "id": "us-care-payment",
+      "section": "authority",
+      "title": "Coverage, payment and care are different",
+      "body": "Insurance helps pay covered care. Private plans and public programs coexist, while patients may still share costs. Coverage is not ownership of a hospital.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-insurance-basics"
+      ],
+      "limit": "Benefits and patient costs depend on the plan.",
+      "young": "A health plan can help pay a medical bill. That does not make it the clinic’s owner.",
+      "teen": "Who pays for care is a different question from who owns the clinic or treats the patient.",
+      "country": "us"
+    },
+    {
+      "id": "us-public-payment-rules",
+      "section": "authority",
+      "title": "Public payment rules shape practice income",
+      "body": "Medicare pays physicians’ services through its Physician Fee Schedule. Rates account for resources and geography and are updated through rulemaking. Office and facility payments differ. These payment rules affect revenue without making CMS the owner of every practice.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-medicare-payment"
+      ],
+      "limit": "This is the fee-schedule model, not a quote for a particular service or all insurance arrangements.",
+      "young": "Government insurance programs have rules about paying for care. Payment does not mean ownership.",
+      "teen": "A public payer can influence practice revenue through payment rules without owning the practice.",
+      "country": "us"
+    },
+    {
+      "id": "us-employee-owner",
+      "section": "ownership",
+      "title": "Working in a practice does not mean owning it",
+      "body": "The AMA’s 2024 survey distinguishes practice ownership from a physician’s status as owner, employee or contractor. Its categories include physician-owned, hospital-owned and other arrangements. An employee can work in a physician-owned practice without holding an ownership stake.",
+      "period": "United States · 2024 survey, published 2025",
+      "status": "documented",
+      "sourceIds": [
+        "us-practice-ownership"
+      ],
+      "limit": "Survey scope: nonfederal physicians, residency completed, at least 20 weekly patient-care hours; not all doctors.",
+      "young": "A doctor may work in a clinic without owning any part of it.",
+      "teen": "The employer’s ownership and your own employment status are separate. Working in private practice does not automatically make you an owner.",
+      "country": "us"
+    },
+    {
+      "id": "us-ownership-state-rules",
+      "section": "ownership",
+      "title": "Ownership does not erase professional responsibility",
+      "body": "California’s medical board distinguishes administrative services from control over medical decisions. Its guidance limits unlicensed control and reserves specified clinical and management decisions to licensed physicians. This state example shows why a business structure alone cannot settle who may control care.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-california-control"
+      ],
+      "limit": "California example only. Other jurisdictions and exceptions require their own review.",
+      "young": "In California, someone managing a clinic cannot simply take over decisions reserved for licensed doctors.",
+      "teen": "California separates administrative support from decisions that must remain with licensed physicians. The business and professional rules interact.",
+      "country": "us"
+    },
+    {
+      "id": "us-build-practice",
+      "section": "build",
+      "title": "A practice needs an operating plan as well as clinical skill",
+      "body": "The AOA’s practice guide identifies startup resources, premises, equipment, staffing, insurance, billing and payer enrollment as planning tasks. It warns that early cash flow can be negative. Employment and ownership carry different responsibilities; neither is a universally better choice.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-practice-start"
+      ],
+      "limit": "No local cost estimate, funding offer or complete legal checklist is established here.",
+      "young": "Running a clinic also means planning for its rooms, supplies, team and bills.",
+      "teen": "Starting a practice adds operating and financial responsibilities to clinical work. Compare those demands with employed practice before choosing.",
+      "country": "us"
+    },
+    {
+      "id": "us-build-community",
+      "section": "build",
+      "title": "Community leadership can include patients",
+      "body": "HRSA’s Health Center Program generally requires a patient majority on the governing board. Specified waivers and exemptions apply. This offers a documented example of community governance, distinct from a physician personally owning the clinic.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-community-board"
+      ],
+      "limit": "Program-specific rule; approved waivers and tribal exemptions mean it does not describe every clinic.",
+      "young": "At many health centers in this program, patients help lead through the governing board.",
+      "teen": "Patient-majority governance is one route to community voice. It differs from ownership by one doctor and has defined program exceptions.",
+      "country": "us"
+    },
+    {
+      "id": "us-build-research",
+      "section": "build",
+      "title": "Clinical work can connect to research",
+      "body": "NIH’s Medical Scientist Training Program supports integrated clinical and research doctoral training. It is one route toward producing new knowledge alongside clinical expertise, rather than requiring someone to own a practice.",
+      "period": "United States · current framework, reviewed November 4, 2026",
+      "status": "documented",
+      "sourceIds": [
+        "us-research-training"
+      ],
+      "limit": "Program availability, admission and support require checking with the institution; funding is not promised.",
+      "young": "Some people train to care for patients and investigate scientific questions.",
+      "teen": "Dual-degree clinician-scientist training connects medicine and research. It is one possible route, not a requirement for every research career.",
+      "country": "us"
+    },
+    {
+      "id": "cm-colonial-rule",
+      "section": "origins",
+      "title": "Care also carried colonial power",
+      "body": "Historian Michael Kpughe Lang describes sleeping-sickness controls in British Southern Cameroons as coercive measures that disrupted livelihoods and overlooked local responses. This is a history of authority over care, not a claim that medicine began with colonial rule.",
+      "period": "1922–1961",
+      "status": "interpretation",
+      "sourceIds": [
+        "cm-colonial"
+      ],
+      "limit": "Interpretation of this regional campaign; underlying archival files were not independently reviewed.",
+      "young": "People need care that respects them. Colonial officials sometimes used force.",
+      "teen": "This historian connects disease control with colonial authority and restrictions on everyday life.",
+      "country": "cm"
+    },
+    {
+      "id": "cm-cuss-route",
+      "section": "builders",
+      "title": "Cameroon built a university training route",
+      "body": "The Ministry of Public Health dates CUSS to 1969. Its medical training combined preventive and curative responsibilities. The January 1993 university reform turned it into the Faculty of Medicine and Biomedical Sciences.",
+      "period": "1969–1993",
+      "status": "documented",
+      "sourceIds": [
+        "cm-cuss"
+      ],
+      "limit": "An institutional milestone; the founding budget and individual financing contributions are not established here.",
+      "young": "Cameroon built a university route for training doctors.",
+      "teen": "CUSS linked university training with prevention and treatment; its institutional form changed in 1993.",
+      "country": "cm"
+    },
+    {
+      "id": "cm-mbingo-route",
+      "section": "doors",
+      "title": "A hospital can also train specialists",
+      "body": "CBC Health Services dates Mbingo’s leprosy settlement to 1952 and its general hospital to 1965. It identifies PAACS surgical training and CIMS internal-medicine training at the hospital.",
+      "period": "1952–1965; institutional training account reviewed 2026",
+      "status": "documented",
+      "sourceIds": [
+        "cm-mbingo"
+      ],
+      "limit": "This account does not establish current admissions, accreditation portability, fees or vacancies.",
+      "young": "At Mbingo, caring for patients and training doctors share a place.",
+      "teen": "Hospital-based specialist training is another institution to investigate after medical school.",
+      "country": "cm"
+    },
+    {
+      "id": "cm-staff-built",
+      "section": "builders",
+      "title": "Staff helped fund a maternity building",
+      "body": "A contemporary report says Mbingo staff started a maternity project with one million francs. The Cameroon Baptist Convention Medical Board funded the remainder. It names Abraham B. Chiamba as the Cameroonian builder. The block was dedicated in January 1993.",
+      "period": "1993",
+      "status": "documented",
+      "sourceIds": [
+        "cm-maternity"
+      ],
+      "limit": "An institutional report, not an audited ledger; this concerns one building, not the hospital’s entire funding.",
+      "young": "Hospital workers helped pay for a new place for mothers and babies.",
+      "teen": "Local staff, a medical board and a named builder contributed different things to one project.",
+      "country": "cm"
+    },
+    {
+      "id": "cm-national-entry",
+      "section": "access",
+      "title": "Medical-school entry has a national gate",
+      "body": "The 2026–2027 order organized a national examination for approved public and private medical schools. It specified science qualifications, institution quotas and an examination date of 4 September 2026.",
+      "period": "2026–2027 admissions cycle",
+      "status": "documented",
+      "sourceIds": [
+        "cm-admissions"
+      ],
+      "limit": "That examination date has passed. The next cycle, personal eligibility and costs require a fresh official check.",
+      "young": "Science study can prepare you for medical-school entry. There are also entry rules.",
+      "teen": "For this cycle, academic qualifications and a national examination controlled entry into approved programs.",
+      "country": "cm"
+    },
+    {
+      "id": "cm-registration-gate",
+      "section": "authority",
+      "title": "A degree and permission to practise are separate",
+      "body": "ONMC describes an application and Council review before registration. Its guidance asks for equivalence for foreign qualifications outside CAMES and additional documents for foreign-national doctors, including reciprocity evidence and an employment contract.",
+      "period": "Guidance checked 4 November 2026",
+      "status": "documented",
+      "sourceIds": [
+        "cm-registration"
+      ],
+      "limit": "Recognition of an individual qualification or eligibility for registration is not confirmed by this page.",
+      "young": "Finishing medical school is not the only step before treating patients.",
+      "teen": "A foreign degree does not automatically become permission to practise in Cameroon.",
+      "country": "cm"
+    },
+    {
+      "id": "cm-practice-ownership",
+      "section": "ownership",
+      "title": "Permission to practise is not facility ownership",
+      "body": "Law 90/036 separates registration from private-practice authorization. Decree 92/265 describes a personal, nontransferable permission. Decree 92/252 provides separate facility rules for other promoters and expressly excludes physicians and their professional civil companies.",
+      "period": "1990–1992 texts; ONMC compilation reviewed 2026",
+      "status": "documented",
+      "sourceIds": [
+        "cm-law"
+      ],
+      "limit": "Educational overview; applicable amendments, individual permissions and current administrative steps need confirmation.",
+      "young": "Being a doctor and opening a health facility involve different permissions.",
+      "teen": "Ask whose permission is required: the clinician’s, the promoter’s or the facility’s.",
+      "country": "cm"
+    },
+    {
+      "id": "cm-household-financing",
+      "section": "authority",
+      "title": "Who pays changes access",
+      "body": "WHO reports that direct household payments accounted for 72% of current health expenditure in Cameroon’s 2018–2019 accounts. That describes the financing burden in those years, not who owns hospitals.",
+      "period": "2018–2019 expenditure; WHO 2022–2023 reporting",
+      "status": "documented",
+      "sourceIds": [
+        "cm-accounts"
+      ],
+      "limit": "This is not a 2026 expenditure estimate or a measure of every household’s bill.",
+      "young": "Families often paid for care themselves in these accounts.",
+      "teen": "Payment, ownership and regulation answer different questions about the health system.",
+      "country": "cm"
+    },
+    {
+      "id": "cm-public-building",
+      "section": "build",
+      "title": "Public financing can build shared capacity",
+      "body": "The World Bank’s 2025 announcement includes Cameroon in a regional health-security program and identifies a Cameroon-specific GFF grant for primary-care resilience. Planned work includes laboratory capacity, infrastructure and workforce skills.",
+      "period": "Approval announced October 2025",
+      "status": "documented",
+      "sourceIds": [
+        "cm-hesp"
+      ],
+      "limit": "Approval is not proof of disbursement, completed facilities, open jobs or accessible grants for individual applicants.",
+      "young": "Public programs can support laboratories, care facilities and people’s skills.",
+      "teen": "Follow the next evidence: budgets released, contracts awarded, work completed and services delivered.",
+      "country": "cm"
+    }
+  ],
+  "comparison": [
+    {
+      "id": "history",
+      "label": "Institutional history",
+      "us": {
+        "id": "history",
+        "text": "United States: the Philadelphia example shows a colonial medical faculty linking lectures, degrees and hospital practice. That is one institutional history within a longer global history of medical knowledge.",
+        "sourceIds": [
+          "hist-penn-medical-school"
+        ],
+        "limit": "This U.S. example does not establish Cameroon's institutional chronology or imply either country's system is superior."
+      },
+      "cm": {
+        "id": "history",
+        "text": "Cameroon’s post-independence university milestone here is CUSS in 1969, later FMSB. It is one institutional history, not the origin of all healing.",
+        "sourceIds": [
+          "cm-cuss"
+        ],
+        "limit": "Do not equate this sequence with the United States’ racial-exclusion timeline."
+      }
+    },
+    {
+      "id": "education",
+      "label": "Entering medical education",
+      "us": {
+        "id": "education",
+        "text": "Most U.S. MD/DO programs follow a bachelor’s degree and take four years; postgraduate training follows. Program accreditation and individual licensure are separate.",
+        "sourceIds": [
+          "us-fsmb-license",
+          "us-acgme"
+        ],
+        "limit": "Program formats and state requirements vary."
+      },
+      "cm": {
+        "id": "education",
+        "text": "The 2026–2027 national examination covered approved public and private medical-training institutions.",
+        "sourceIds": [
+          "cm-admissions"
+        ],
+        "limit": "This documents entry, not the full curriculum or postgraduate route."
+      }
+    },
+    {
+      "id": "licensing",
+      "label": "Permission to practise",
+      "us": {
+        "id": "licensing",
+        "text": "State boards assess medical qualifications. A medical degree earned abroad does not automatically authorize U.S. practice.",
+        "sourceIds": [
+          "us-fsmb-license"
+        ],
+        "limit": "Check the intended state and training route; immigration eligibility is separate."
+      },
+      "cm": {
+        "id": "licensing",
+        "text": "ONMC registration is distinct from graduating; foreign qualifications and nationality introduce additional review.",
+        "sourceIds": [
+          "cm-registration"
+        ],
+        "limit": "No automatic U.S.–Cameroon qualification transfer is established."
+      }
+    },
+    {
+      "id": "delivery",
+      "label": "How care is organized",
+      "us": {
+        "id": "delivery",
+        "text": "Hospital medical staff work within institutionally granted authority; community health centers can give patients formal governance roles.",
+        "sourceIds": [
+          "us-hospital-governance",
+          "us-community-board"
+        ],
+        "limit": "These are selected structures, not all providers."
+      },
+      "cm": {
+        "id": "delivery",
+        "text": "Mbingo provides a concrete example of faith-organized hospital care and medical training.",
+        "sourceIds": [
+          "cm-mbingo"
+        ],
+        "limit": "One institution does not represent the entire delivery system."
+      }
+    },
+    {
+      "id": "financing",
+      "label": "Who pays for care",
+      "us": {
+        "id": "financing",
+        "text": "Private health plans, Medicare, Medicaid and patients finance care through different arrangements.",
+        "sourceIds": [
+          "us-insurance-basics"
+        ],
+        "limit": "A payer is not necessarily a provider’s owner."
+      },
+      "cm": {
+        "id": "financing",
+        "text": "WHO’s 2018–2019 accounts place 72% of current health expenditure in household direct payments.",
+        "sourceIds": [
+          "cm-accounts"
+        ],
+        "limit": "Use the dated period; do not present it as today’s share."
+      }
+    },
+    {
+      "id": "employment",
+      "label": "Working as a physician",
+      "us": {
+        "id": "employment",
+        "text": "Physicians can be owners, employees or contractors across different practice ownership structures.",
+        "sourceIds": [
+          "us-practice-ownership"
+        ],
+        "limit": "The survey describes arrangements, not a job offer."
+      },
+      "cm": {
+        "id": "employment",
+        "text": "Law 90/036 addresses public and private medical practice.",
+        "sourceIds": [
+          "cm-law"
+        ],
+        "limit": "Hiring, pay and job availability were not verified."
+      }
+    },
+    {
+      "id": "ownership",
+      "label": "Owning or opening a practice",
+      "us": {
+        "id": "ownership",
+        "text": "State law matters: California restricts unlicensed control of medical practice.",
+        "sourceIds": [
+          "us-california-control"
+        ],
+        "limit": "Do not apply California’s rules nationally."
+      },
+      "cm": {
+        "id": "ownership",
+        "text": "Private-practice authorization and facility-promoter rules must be distinguished.",
+        "sourceIds": [
+          "cm-law"
+        ],
+        "limit": "An employment contract does not establish an ownership stake."
+      }
+    },
+    {
+      "id": "building",
+      "label": "Ways to contribute",
+      "us": {
+        "id": "building",
+        "text": "Options include employed clinical work, practice operations, community governance and clinician-scientist training.",
+        "sourceIds": [
+          "us-practice-ownership",
+          "us-practice-start",
+          "us-community-board",
+          "us-research-training"
+        ],
+        "limit": "Resources, selection and local rules still matter."
+      },
+      "cm": {
+        "id": "building",
+        "text": "Mbingo’s 1993 maternity project documents staff contributions, board funding and a named local builder.",
+        "sourceIds": [
+          "cm-maternity"
+        ],
+        "limit": "It establishes a historical project, not a current funding offer."
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "hist-penn-1765",
+      "year": 1765,
+      "date": "1765",
+      "title": "Philadelphia organizes a medical faculty",
+      "claimId": "hist-penn-institution-1765",
+      "category": "institution"
+    },
+    {
+      "id": "hist-meharry-1876",
+      "year": 1876,
+      "date": "1876",
+      "title": "Pledged gifts and Methodist support help start Meharry",
+      "claimId": "hist-meharry-funding-1876",
+      "category": "funding"
+    },
+    {
+      "id": "hist-flexner-1910",
+      "year": 1910,
+      "date": "1910",
+      "title": "Flexner recommends concentrating Black medical education",
+      "claimId": "hist-flexner-recommendation-1910",
+      "category": "exclusion"
+    },
+    {
+      "id": "hist-howard-1928",
+      "year": 1928,
+      "date": "1928-12-13",
+      "title": "Congress authorizes annual Howard appropriations",
+      "claimId": "hist-howard-federal-authorization-1928",
+      "category": "funding"
+    },
+    {
+      "id": "hist-taborian-1942",
+      "year": 1942,
+      "date": "1942-02-12",
+      "title": "Taborian Hospital opens after a community vote",
+      "claimId": "hist-taborian-community-hospital-1942",
+      "category": "organizing"
+    },
+    {
+      "id": "hist-medicare-1966",
+      "year": 1966,
+      "date": "1966-07-01",
+      "title": "Medicare begins with hospital nondiscrimination conditions",
+      "claimId": "hist-medicare-enforcement-1966",
+      "category": "rule"
+    },
+    {
+      "id": "cm-mbingo-1952",
+      "year": 1952,
+      "date": "1952",
+      "title": "Mbingo begins as a leprosy settlement",
+      "claimId": "cm-mbingo-route",
+      "category": "institution"
+    },
+    {
+      "id": "cm-cuss-1969",
+      "year": 1969,
+      "date": "1969",
+      "title": "CUSS creates a university medical-training route",
+      "claimId": "cm-cuss-route",
+      "category": "institution"
+    },
+    {
+      "id": "cm-law-1990",
+      "year": 1990,
+      "date": "1990–1992",
+      "title": "Medical practice and facility rules have distinct permissions",
+      "claimId": "cm-practice-ownership",
+      "category": "rule"
+    },
+    {
+      "id": "cm-mbingo-1993",
+      "year": 1993,
+      "date": "January 1993",
+      "title": "A staff-supported maternity building is dedicated",
+      "claimId": "cm-staff-built",
+      "category": "funding"
+    }
+  ],
+  "researchGaps": [
+    "Global context remains selective. Extend beyond this Egyptian manuscript to other African traditions and separately sourced South Asian, Indigenous and other histories.",
+    "The Perkins gifts to MGH are documented; specific trading proceeds behind them are not identified here. No medical-school construction payment is traced.",
+    "Meharry's donor pledge and religious support are documented; audited receipts and operating accounts would be needed for a full funding history.",
+    "Howard's 1928 authorization must not be presented as a medical-school-specific payment. Trace appropriations and disbursements before assigning amounts to a program.",
+    "For schools discussed in the Flexner report, examine individual closure, licensing, enrollment and funding records before attributing closure to the report.",
+    "Taborian's community decision and construction firm are documented. Membership dues, construction financing and changes in ownership need additional records.",
+    "Medicare participation rules do not establish when an individual hospital integrated clinical privileges, staffing or patient care. Preserve a workplace gap until local evidence is found.",
+    "No source here identifies the beneficial owners, lenders or operating contracts of the reader’s actual hospital or practice.",
+    "Startup costs, debt terms, local patient demand, staffing and payer contracts require a location-specific feasibility review.",
+    "The medical-board overview is not a state-by-state comparison of newer international-graduate licensing routes.",
+    "The research and community-governance examples do not establish individual admission, funding, employment or board eligibility.",
+    "Clinical knowledge can travel; this pilot has not established automatic license recognition or immigration rights between countries.",
+    "No full founding ledger or complete ownership chain was verified for CUSS/FMSB or Mbingo. Do not invent investors, donor amounts, shareholdings or title deeds.",
+    "The ministry history supports CUSS 1969 and the 1993 reform; founding personnel, curricula and financing require separate archive work.",
+    "Cameroon’s colonial and postcolonial history needs its own account. It must not be presented as an identical version of Black Americans’ professional exclusion.",
+    "The colonial-history article was reviewed in full. Its cited archival files remain unreviewed; present-day causal effects are not established here.",
+    "The medical-training order’s 2026 examination has passed. Current admission windows, costs, eligibility and next-cycle rules require a new check.",
+    "A current legal consolidation and rules for each promoter category remain unresolved.",
+    "Foreign-national eligibility, reciprocity agreements, individual degree equivalence and cross-border training recognition remain unresolved for any particular reader.",
+    "Current registration costs, insurance cost, facility capital requirements, lending terms, wages, public recruitment and private vacancies were not verified.",
+    "WHO’s 72% financing figure concerns 2018–2019. Newer accounts are a priority; this figure must retain its period.",
+    "The World Bank announcement establishes an approval, not spending or delivery. Project implementation records and procurement documents remain the next evidence.",
+    "Exact employers require their own archived records. A profession-level institution or financing link does not prove that it opened a specific reader’s workplace.",
+    "Medical school, hospital training, public service, research and facility creation can be explored as different directions; no individual admission, registration, financing or employment offer is implied."
+  ],
+  "map": {
+    "countryLabel": "United States & Cameroon",
+    "edges": [
+      {
+        "id": "us-relationship-1",
+        "country": "us",
+        "title": "LCME / COCA → Medical schools",
+        "from": "LCME / COCA",
+        "to": "Medical schools",
+        "kind": "authority",
+        "text": "Accredit MD and osteopathic medical programs.",
+        "sourceIds": [
+          "us-lcme",
+          "us-coca"
+        ],
+        "limit": "Accreditation is not school ownership."
+      },
+      {
+        "id": "us-relationship-2",
+        "country": "us",
+        "title": "ACGME → Residency programs",
+        "from": "ACGME",
+        "to": "Residency programs",
+        "kind": "authority",
+        "text": "Accredits programs and sponsoring institutions.",
+        "sourceIds": [
+          "us-acgme"
+        ],
+        "limit": "Does not license individual physicians."
+      },
+      {
+        "id": "us-relationship-3",
+        "country": "us",
+        "title": "State medical boards → Physicians",
+        "from": "State medical boards",
+        "to": "Physicians",
+        "kind": "authority",
+        "text": "Assess individual medical-license applications.",
+        "sourceIds": [
+          "us-fsmb-license"
+        ],
+        "limit": "Eligibility is jurisdiction-specific."
+      },
+      {
+        "id": "us-relationship-4",
+        "country": "us",
+        "title": "Hospital governing body → Hospital medical staff",
+        "from": "Hospital governing body",
+        "to": "Hospital medical staff",
+        "kind": "authority",
+        "text": "Appoints staff after recommendations; approves bylaws.",
+        "sourceIds": [
+          "us-hospital-governance"
+        ],
+        "limit": "Privileges do not establish employment or ownership."
+      },
+      {
+        "id": "us-relationship-5",
+        "country": "us",
+        "title": "Patients / plan sponsors → Private health plans",
+        "from": "Patients / plan sponsors",
+        "to": "Private health plans",
+        "kind": "money",
+        "text": "Pay premiums or contributions for coverage.",
+        "sourceIds": [
+          "us-insurance-basics"
+        ],
+        "limit": "Self-funded employers may pay claims directly."
+      },
+      {
+        "id": "us-relationship-6",
+        "country": "us",
+        "title": "Private health plans → Hospitals and medical practices",
+        "from": "Private health plans",
+        "to": "Hospitals and medical practices",
+        "kind": "money",
+        "text": "Pay or reimburse covered care.",
+        "sourceIds": [
+          "us-insurance-basics"
+        ],
+        "limit": "Coverage and contracts determine payment."
+      },
+      {
+        "id": "us-relationship-7",
+        "country": "us",
+        "title": "Medicare → Physicians and practices",
+        "from": "Medicare",
+        "to": "Physicians and practices",
+        "kind": "money",
+        "text": "Pays covered physician services under fee-schedule rules.",
+        "sourceIds": [
+          "us-medicare-payment"
+        ],
+        "limit": "Not a payment estimate or universal payer model."
+      },
+      {
+        "id": "us-relationship-8",
+        "country": "us",
+        "title": "Hospital medical staff → Patients and communities",
+        "from": "Hospital medical staff",
+        "to": "Patients and communities",
+        "kind": "care",
+        "text": "Provide hospital care within granted privileges.",
+        "sourceIds": [
+          "us-hospital-governance"
+        ],
+        "limit": "Care authority is distinct from ownership."
+      },
+      {
+        "id": "us-relationship-9",
+        "country": "us",
+        "title": "Patient board members → Health centers",
+        "from": "Patient board members",
+        "to": "Health centers",
+        "kind": "authority",
+        "text": "Hold a majority of board seats under the general HRSA rule.",
+        "sourceIds": [
+          "us-community-board"
+        ],
+        "limit": "Program exemptions and waivers apply."
+      },
+      {
+        "id": "us-relationship-10",
+        "country": "us",
+        "title": "NIH training programs → Research institutions",
+        "from": "NIH training programs",
+        "to": "Research institutions",
+        "kind": "money",
+        "text": "Support integrated clinical and research doctoral training.",
+        "sourceIds": [
+          "us-research-training"
+        ],
+        "limit": "Awards support eligible programs, not every applicant."
+      },
+      {
+        "id": "us-relationship-11",
+        "country": "us",
+        "title": "Patients and communities → Physicians and practices",
+        "from": "Patients and communities",
+        "to": "Physicians and practices",
+        "kind": "money",
+        "text": "Pay cost sharing for covered care.",
+        "sourceIds": [
+          "us-insurance-basics"
+        ],
+        "limit": "Costs vary by plan."
+      },
+      {
+        "id": "cm-relationship-1",
+        "country": "cm",
+        "title": "MINESUP → Medical-school applicants",
+        "from": "MINESUP",
+        "to": "Medical-school applicants",
+        "kind": "authority",
+        "text": "Sets the national entry examination and quotas for the documented 2026–2027 cycle.",
+        "sourceIds": [
+          "cm-admissions"
+        ],
+        "limit": "That cycle’s examination date has passed."
+      },
+      {
+        "id": "cm-relationship-2",
+        "country": "cm",
+        "title": "ONMC → Physicians",
+        "from": "ONMC",
+        "to": "Physicians",
+        "kind": "authority",
+        "text": "Reviews applications for professional registration.",
+        "sourceIds": [
+          "cm-registration"
+        ],
+        "limit": "Individual eligibility is not established here."
+      },
+      {
+        "id": "cm-relationship-3",
+        "country": "cm",
+        "title": "MINSANTE → ONMC and health facilities",
+        "from": "MINSANTE",
+        "to": "ONMC and health facilities",
+        "kind": "authority",
+        "text": "Has oversight under the reviewed legal texts.",
+        "sourceIds": [
+          "cm-law"
+        ],
+        "limit": "Current procedures require confirmation."
+      },
+      {
+        "id": "cm-relationship-4",
+        "country": "cm",
+        "title": "Households → Health-care spending",
+        "from": "Households",
+        "to": "Health-care spending",
+        "kind": "money",
+        "text": "Direct household payments represented 72% in the 2018–2019 accounts.",
+        "sourceIds": [
+          "cm-accounts"
+        ],
+        "limit": "Dated national expenditure share."
+      },
+      {
+        "id": "cm-relationship-5",
+        "country": "cm",
+        "title": "Mbingo staff and CBC Medical Board → Mbingo maternity project",
+        "from": "Mbingo staff and CBC Medical Board",
+        "to": "Mbingo maternity project",
+        "kind": "money",
+        "text": "Staff initiated funding; the board financed the remainder in 1993.",
+        "sourceIds": [
+          "cm-maternity"
+        ],
+        "limit": "Reported project contributions, not audited ownership records."
+      },
+      {
+        "id": "cm-relationship-6",
+        "country": "cm",
+        "title": "Mbingo Baptist Hospital → Patients and specialist trainees",
+        "from": "Mbingo Baptist Hospital",
+        "to": "Patients and specialist trainees",
+        "kind": "care",
+        "text": "Provides hospital care and identifies specialist-training programs.",
+        "sourceIds": [
+          "cm-mbingo"
+        ],
+        "limit": "Current training intake was not verified."
+      },
+      {
+        "id": "cm-relationship-7",
+        "country": "cm",
+        "title": "World Bank / GFF → Cameroon health-program capacity",
+        "from": "World Bank / GFF",
+        "to": "Cameroon health-program capacity",
+        "kind": "money",
+        "text": "The 2025 announcement includes a Cameroon-specific GFF financing approval.",
+        "sourceIds": [
+          "cm-hesp"
+        ],
+        "limit": "Does not establish disbursement or project completion."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "prompt": "A person earns a medical degree. Does that alone give permission to practise in another country?",
+      "options": [
+        {
+          "label": "The degree is enough",
+          "supported": false
+        },
+        {
+          "label": "The relevant authority still decides",
+          "supported": true
+        }
+      ],
+      "explanation": "A qualification and permission to practise are separate. Check the destination’s requirements.",
+      "claimId": "cm-registration-gate"
+    },
+    {
+      "prompt": "A doctor is employed by a physician-owned practice. Must that doctor also be an owner?",
+      "options": [
+        {
+          "label": "Yes, because the practice is physician-owned",
+          "supported": false
+        },
+        {
+          "label": "No, employment and ownership are separate",
+          "supported": true
+        }
+      ],
+      "explanation": "The practice’s ownership does not establish an individual employee’s ownership stake.",
+      "claimId": "us-employee-owner"
+    },
+    {
+      "prompt": "A financing announcement approves a project. Does that prove the building is complete?",
+      "options": [
+        {
+          "label": "Approval proves completion",
+          "supported": false
+        },
+        {
+          "label": "We need records of what happened next",
+          "supported": true
+        }
+      ],
+      "explanation": "Approval, spending and completion need different evidence.",
+      "claimId": "cm-public-building"
+    }
+  ]
+}

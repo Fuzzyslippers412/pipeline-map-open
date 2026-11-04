@@ -1,0 +1,7 @@
+---
+const {sources=[],compact=false}=Astro.props;
+---
+<ul class:list={['study-sources',compact&&'compact']} aria-label="Supporting sources">{sources.map(source=><li>
+ <a href={source.url}>{source.title} <span aria-hidden="true">↗</span></a>
+ {!compact&&<><p>{source.publisher} · {source.publishedOn||'Publication date not stated'}</p><p>{source.type} · Reviewed {source.checkedOn}</p><p><strong>Where to look:</strong> {source.locator}</p></>}
+</li>)}</ul>

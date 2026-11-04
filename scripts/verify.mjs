@@ -8,6 +8,8 @@ import {pmRoleRecords} from '../src/lib/pm-role-records.js';
 import {professions, sources, series, amount, roleFor} from '../src/lib/model.js';
 import {singleChart} from '../src/lib/plot.js';
 import {compareModel} from '../src/lib/compare.js';
+import {studies} from '../src/lib/institutional-studies.js';
+import {validateStudy} from '../src/lib/validate-study.js';
 
 const dist='dist', site=new URL(config.site);
 const slugs=professions.map(p=>p.slug);
@@ -192,6 +194,16 @@ for (const slug of ['registered-nurse','electrician']) {
   await verifyImage(imagePath);
 }
 const registry=await readPage('/sources/');
+await readPage('/systems/');
+for(const study of studies){
+  assert.deepEqual(validateStudy(study),[],'Institutional study evidence validation');
+  const route='/systems/'+study.slug+'/',list=await readPage(route);
+  metadata(list,route,'/cover.png');
+  for(const id of ['seven-questions','different-systems','power-map','study-timeline','try-thinking','study-evidence'])expectEl(list,'id',id);
+  for(const claim of study.claims)expectEl(list,'id','claim-'+claim.id);
+  for(const source of study.sources)assert.ok(hasHref(list,source.url),'Missing study source '+source.id);
+  assert.ok(files.has('/data/institutions/medicine.json'),'Missing reproducible study data');
+}
 const sourceIds=new Set(sources.map(s=>s.id));
 assert.equal(sourceIds.size,sources.length);
 for(const s of sources) {

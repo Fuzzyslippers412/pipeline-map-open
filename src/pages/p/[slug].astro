@@ -4,6 +4,7 @@ import CredentialRecord from '../../components/CredentialRecord.astro';
 import Trend from '../../components/Trend.astro';
 import PersonalTrace from '../../components/PersonalTrace.astro';
 import FieldHistory from '../../components/FieldHistory.astro';
+import StudyEntry from '../../components/studies/StudyEntry.astro';
 import {professions,idFor,labels,dataFor,roleFor} from '../../lib/model';
 export function getStaticPaths(){return professions.map(p=>({params:{slug:p.slug},props:{p}}))}
 const {p}=Astro.props;
@@ -13,6 +14,7 @@ const url=new URL('/p/'+p.slug+'/',Astro.site).href;
 <Layout title={p.name} desc={'Origin, entry and representation in the U.S. for '+p.name+'.'} og={'/p/'+p.slug+'/og.png'}><div class="frame cardframe"><div class="breadcrumb"><a href="/">Profession index</a><span>/</span>{p.sector}</div><div class="record-head"><div><div class="eyebrow"><i></i> PROFESSION <b>/</b> {idFor(p.slug)}</div><h1>{p.name}</h1></div><div class="actions"><button id="share" class="primary">Share card ↗</button><a href={'/compare/?p='+p.slug} class="secondary">Compare +</a></div></div>
 <a class="secondary" href={'/career-map/'+p.slug+'/'}>Explore this career map →</a>
 <PersonalTrace p={p}/>
+{p.slug==='physician'&&<StudyEntry compact/>}
 <FieldHistory p={p}/>
 <CredentialRecord slug={p.slug}/>
 <div class="recordbody"><aside class="aside"><div class="eyebrow">IN THIS RECORD</div>{['Institutions','Entry decisions','Representation','Next question'].map((t,i)=><a href={'#'+['origin','gate','trend','role'][i]}><small>0{i+1}</small>{t}<span>↓</span></a>)}{p.soc_code&&<div class="soc">SOC classification<br/><strong>{p.soc_code}</strong></div>}</aside><div class="panels">{panels.map((obj,i)=><section class="panel" id={obj.name.toLowerCase()}><div class="num">0{i+1}</div><div class="panelmain"><div class="paneltop"><div class="eyebrow">{obj.name.toUpperCase()} <b>/</b> {obj.tag}</div><span class="edit-tag">Context & scope</span></div><h2>{obj.d.headline}</h2><p class="era">{obj.d.era}</p><details class="reading"><summary>Context, scope & sources</summary><p>{obj.d.rationale}</p><ul>{obj.d.citations.map(c=><li><a href={c.url}>{c.title} ↗</a></li>)}</ul></details></div></section>)}

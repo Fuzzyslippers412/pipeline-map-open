@@ -10,6 +10,7 @@ const nameFor = new Map(professions.map(p=>[p.slug,p.name]));
     <h1>Sources</h1>
     <p>Follow a historical episode or a chart to its original source. Each record identifies where to look, what it supports and where its evidence stops.</p>
   </header>
+  <p class="source-study-link"><a href="/systems/physician/#study-evidence">New: medicine institutions, financing and U.S.–Cameroon study sources →</a></p>
   <section aria-label="Source register">
     <div id="cited-banner" hidden>
       <div><span class="section-tag">Cited record</span><p>This is the source linked from the chart or profession record.</p></div>
@@ -51,6 +52,7 @@ const nameFor = new Map(professions.map(p=>[p.slug,p.name]));
   bindSourceRegister(document);
 </script>
 <style>
+.source-study-link{padding:16px 0;border-bottom:1px solid var(--edge);font-size:14px}.source-study-link a{color:var(--action);text-decoration:underline}
 .register { padding-block:clamp(24px,4vw,54px) 54px; max-width:1070px; }
 .register header { padding-bottom:clamp(18px,3vw,36px); border-bottom:1px solid var(--text); }
 .section-tag {font:500 .74rem/1.4 var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--rust)}

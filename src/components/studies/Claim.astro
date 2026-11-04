@@ -1,0 +1,14 @@
+---
+import Evidence from './Evidence.astro';
+import {sourceRefs,evidenceLabels} from '../../lib/institutional-studies.js';
+const {claim,study}=Astro.props;
+---
+<article class="study-claim" id={'claim-'+claim.id}>
+ <div class="claim-meta"><span>{claim.country==='cm'?'Cameroon':claim.country==='global'?'Across societies':'United States'}</span><span>{claim.period}</span></div>
+ <h3>{claim.title}</h3>
+ <p data-copy="adult">{claim.body}</p><p data-copy="teen" hidden>{claim.teen}</p><p data-copy="young" hidden>{claim.young}</p>
+ <details class="claim-evidence"><summary><span>{evidenceLabels[claim.status]}</span><span>{claim.sourceIds.length} {claim.sourceIds.length===1?'source':'sources'}</span></summary>
+  <p class="study-limit"><strong>Where the evidence stops</strong>{claim.limit}</p>
+  <Evidence sources={sourceRefs(study,claim.sourceIds)}/>
+ </details>
+</article>

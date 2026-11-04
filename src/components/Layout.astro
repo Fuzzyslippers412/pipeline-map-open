@@ -40,7 +40,7 @@ const previewTitle = preview ? (readerPath.includes('registered-nurse') ? 'The H
 const navItems = paper ? [
   ['Index','Trace a job','/#trace'], ['Explore','Explore careers','/explore/'],
   ['Career map','Career map','/career-map/'], ['Paths','Workplace histories','/paths/'],
-  ['Compare','Compare','/compare/'], ['Sources','Sources','/sources/'],
+  ['Compare','Compare','/compare/'], ['Systems','Inside careers','/systems/'], ['Sources','Sources','/sources/'],
 ] : [['Index','Index',home], ['Compare','Compare','/compare/'], ['Sources','Sources','/sources/'], ['Method','Method','/method/']];
 const mobileItems = paper ? [...navItems, ['Method','How we use evidence','/method/']] : navItems;
 ---
@@ -91,7 +91,7 @@ const mobileItems = paper ? [...navItems, ['Method','How we use evidence','/meth
     <main id="content"><slot/></main>
     <footer class="frame foot">
       <a class="wordmark" href={home} aria-label={brand + ' home'}><img src={mark} alt="" width="24" height="24"/>{brand}</a>
-      <span>Black professional pathways in the U.S.</span>
+      <span>Black career histories. Institutions. Choices.</span>
       <a href="https://github.com/Fuzzyslippers412/pipeline-map-open">Code &amp; data ↗</a>
       {!original && <a href="/paths/">Explore paths</a>}
       <a href="/method/">Methodology ↗</a>

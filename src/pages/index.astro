@@ -2,6 +2,7 @@
 import Layout from '../components/Layout.astro';
 import TraceStart from '../components/TraceStart.astro';
 import HistoryStories from '../components/HistoryStories.astro';
+import StudyEntry from '../components/studies/StudyEntry.astro';
 import {historyFor} from '../lib/field-history.js';
 import {professions,idFor} from '../lib/model';
 const filters=[...new Set(professions.map(p=>p.sector))];
@@ -10,6 +11,7 @@ const searchIndex=professions.map(({slug,name,aliases,sector})=>({slug,name,alia
 <Layout title="Who opened the door to your career?" active="Index"><div class="frame">
 <TraceStart/>
 <HistoryStories/>
+<StudyEntry/>
 <section class="directory" id="directory"><div class="section-head"><div><div class="eyebrow">DIRECTORY <b>/</b> 01</div><h2>Profession index</h2></div><span class="indexcount" aria-live="polite" id="result-count">{professions.length} professions</span></div>
 <form class="index-search" id="index-search" autocomplete="off">
   <div class="searchwrap">

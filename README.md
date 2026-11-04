@@ -6,6 +6,16 @@ The public source release is [available on GitHub](https://github.com/Fuzzyslipp
 
 The [student explorer](https://doornotes.org/explore/) turns familiar activities and interests into five possible jobs with printable, shareable activity cards. The [career map](https://doornotes.org/career-map/) compares technical and people-management directions and prepares a question for a workplace conversation. Neither guide asks for an account. A shared activity link identifies only a public job; links into the career guide carry only a public work category.
 
+## Inside the profession
+
+The [medicine institutional study](https://doornotes.org/systems/physician/) extends the existing physician record with seven research sections, a U.S.–Cameroon comparison, 20 selectable historical milestones, and 18 source-linked relationships separating authority, money and care. Its 27 explanations draw on 34 source records with publishers, publication dates when known, historical periods, review dates, locators and evidence limits. These records are a separate institutional-study dataset, not additional workforce observations.
+
+Young, teen and career reading modes change the depth of the same sourced material. Three learning questions link back to the supporting explanations. The reading preference can be shared in the URL; no age, account or personal job information is collected. Source disclosures and chapter navigation remain readable HTML. The map and filters add client-side interaction without a visualization framework.
+
+The [research discovery page](https://doornotes.org/systems/) keeps all 22 career histories available and filters their documented coverage by industry, historical period, country, qualification records, institution type and ownership. Medicine is the first complete institutional-study pilot; other fields are explicitly marked as not yet reviewed at that level. These coverage filters do not establish all educational requirements or ownership opportunities in a profession.
+
+Read the [audit and extension model](docs/INSTITUTIONAL-STUDIES.md). The editable pilot data is in `data/institutions/medicine.json` and exported at `/data/institutions/medicine.json`. Validation rejects missing source references, unclassified claims, incomplete country comparisons and unsourced relationships. It does not replace expert historical, regulatory or educational review.
+
 ## Build locally
 
 Use Node 22.23 or compatible, npm, and Python 3.12+. From a clean checkout run:

@@ -1,0 +1,56 @@
+---
+import Layout from '../../components/Layout.astro';
+import Claim from '../../components/studies/Claim.astro';
+import Comparison from '../../components/studies/Comparison.astro';
+import InstitutionMap from '../../components/studies/InstitutionMap.astro';
+import StudyTimeline from '../../components/studies/StudyTimeline.astro';
+import Evidence from '../../components/studies/Evidence.astro';
+import {studies,sections,modes,sourceRefs} from '../../lib/institutional-studies.js';
+import {professions} from '../../lib/model.js';
+import {historyFor} from '../../lib/field-history.js';
+import '../../styles/institutional-studies.css';
+export function getStaticPaths(){return studies.map(study=>({params:{slug:study.slug},props:{study}}))}
+const {study}=Astro.props;
+const profession=professions.find(p=>p.slug===study.slug);
+const history=historyFor(profession);
+---
+<Layout title={study.name+' · Inside the profession'} active="Systems" desc="Who built medical institutions, who financed them, who changed the rules, and who decides today? A sourced study of medicine in the United States and Cameroon.">
+ <div class="frame study">
+  <div class="study-breadcrumb"><a href="/systems/">Inside the profession</a><span>/</span><a href={'/p/'+study.slug+'/'}>Existing career record</a></div>
+  <header class="study-hero"><div><p class="study-kicker">Door Notes · Institutional study 01</p><h1>Medicine.<br/><em>More than a job.</em></h1><p>A profession has a history, a way of paying for its work, and people who make the rules. Understand the system before deciding your place in it.</p></div><aside class="study-edition"><span>THE MEDICINE PILOT</span><strong>United States<br/><i>&amp;</i> Cameroon</strong><p>{study.sources.length} sources<br/>Reviewed {study.checkedOn}</p><a href="#study-evidence">Read the evidence notes ↓</a></aside></header>
+  <div class="reader-bar"><fieldset><legend>Choose your reading depth</legend><div class="reader-options">{modes.map(mode=><button type="button" data-reader={mode.id} aria-pressed={mode.id==='adult'?'true':'false'}><strong>{mode.label}</strong><span>{mode.ages}</span></button>)}</div></fieldset><p data-reader-status role="status">Full research summaries, requirements and limits.</p><p class="reader-privacy">Same facts, different depth. No age or account is collected.</p></div>
+  <nav class="study-jumps" aria-label="Explore this study"><a href="#seven-questions">Seven questions</a><a href="#different-systems">Compare countries</a><a href="#power-map">Institutional map</a><a href="#study-timeline">Timeline</a><a href="#try-thinking">Try a question</a></nav>
+  <noscript><p class="study-limit">The full research is readable below. Reading-depth buttons, map filters and learning questions need JavaScript. All chapter disclosures and source links still work.</p></noscript>
+  <details class="study-glossary"><summary>Words that help you read the system</summary><dl class="evidence-key"><div><dt>Authority</dt><dd>Who is allowed to make a particular decision.</dd></div><div><dt>Ownership</dt><dd>Who owns the organization or its assets. This is different from managing it.</dd></div><div><dt>Financing</dt><dd>How money is raised and used to pay for the work.</dd></div><div><dt>Licensing</dt><dd>Permission from the responsible authority to practise a profession.</dd></div><div><dt>Accreditation</dt><dd>A review of an institution or program against a set of standards.</dd></div><div><dt>Evidence gap</dt><dd>A question the records checked here cannot yet answer.</dd></div></dl></details>
+  <section id="seven-questions" class="study-chapters" aria-labelledby="chapters-title"><header class="study-section-head"><p class="study-kicker">Read the system</p><h2 id="chapters-title">Seven questions<br/>behind the job title.</h2><p>Start anywhere. Each section separates what the record shows from what remains unproved.</p></header>
+   {sections.map((section,index)=><details class="study-chapter" id={'chapter-'+section.id} open={index===0}>
+    <summary><span class="chapter-number">{String(index+1).padStart(2,'0')}</span><div><span class="study-kicker">{section.label}</span><h2>{section.title}</h2></div><span class="chapter-toggle" aria-hidden="true">+</span></summary>
+    <div class="chapter-body"><p class="chapter-question"><strong>A question to carry with you</strong>{section.question}</p><div class="study-claims">{study.claims.filter(claim=>claim.section===section.id).map(claim=><Claim claim={claim} study={study}/>)}</div>
+     {section.id==='doors'&&<div class="preserved-history"><h3>The people already in this record</h3><p>The original medicine history remains available, including Rebecca Lee Crumpler, Alexander Augusta, Charles Drew, Patricia Bath, Helen Dickens and Louis Sullivan.</p><a href="/p/physician/#field-history">Read all {history.events.length} existing historical episodes →</a><a href="/p/physician/#field-workplaces">See the reviewed workplace connections →</a></div>}
+     {section.id==='build'&&<p class="study-limit">Employment, professional expertise, research, public service, community leadership and ownership are different possibilities. This study does not rank them or promise a place, a license, a loan or a return on investment.</p>}
+    </div>
+   </details>)}
+  </section>
+  <Comparison study={study}/>
+  <InstitutionMap study={study}/>
+  <StudyTimeline study={study} history={history}/>
+  <section id="try-thinking" class="study-learning" aria-labelledby="learning-title"><header class="study-section-head"><p class="study-kicker">Pause &amp; investigate</p><h2 id="learning-title">What would you ask next?</h2><p>Use the evidence to test a distinction. This is an exercise, not a career score.</p></header>
+   {study.questions.map(question=><article data-learning-question class="learning-question"><h3>{question.prompt}</h3><div role="group" aria-label={question.prompt}>{question.options.map(option=><button type="button" data-answer={option.supported?'supported':'check'} aria-pressed="false">{option.label}</button>)}</div><div data-answer-note hidden role="status"><strong data-answer-result></strong><p>{question.explanation}</p><a href={'#claim-'+question.claimId}>Check the source-backed explanation ↑</a></div></article>)}
+   <aside class="build-notebook"><h3>Make a small institution notebook.</h3><p data-copy="young" hidden>Draw a clinic. Who works there? Who uses it? Who pays for the lights? Put a question mark beside anything you do not know. Ask a trusted adult to help you find one real source.</p><p data-copy="teen" hidden>Choose a medical school or clinic. Find its published owner, licensing authority and one funding source. Keep “not found” separate from “does not exist.” Record a question you would ask someone working there.</p><p data-copy="adult">Choose an institution and separately verify its legal entity, governing body, clinical authority and payer arrangements. Record the source and date for each. Identify one unresolved question before making an employment, training or ownership decision.</p><p class="reader-privacy">Use public institutional information. You do not need anyone’s personal or medical records.</p><a href="/suggest/?profession=Physician">Suggest an institutional record →</a></aside>
+  </section>
+  <section id="study-evidence" class="study-evidence-register" aria-labelledby="evidence-title"><header class="study-section-head"><p class="study-kicker">Research notes</p><h2 id="evidence-title">Check the record.</h2><p>“Documented” means the cited source supports the scoped claim. It does not turn a historical connection into proof of a reader’s own career path.</p></header>
+   <dl class="evidence-key"><div><dt>Documented record</dt><dd>A specific statement supported by the cited record.</dd></div><div><dt>Scholarly interpretation</dt><dd>An author’s historical analysis, attributed rather than presented as settled fact.</dd></div><div><dt>Disputed or conflicting</dt><dd>Accounts disagree; the disagreement remains visible.</dd></div><div><dt>Open research question</dt><dd>A connection or answer has not been established.</dd></div></dl>
+   <details><summary>What this pilot still cannot tell you</summary><ul>{study.researchGaps.map(gap=><li>{gap}</li>)}</ul></details>
+   <details><summary>All {study.sources.length} sources in this study</summary><Evidence sources={study.sources}/></details>
+   <p class="study-limit">A donor, investor or institution appearing in two records does not prove that profits from one activity financed another. A funding claim needs evidence of that transaction.</p>
+   <div class="study-tools"><button type="button" data-study-share>Copy this study link</button><span data-share-status role="status"></span><a href="/data/institutions/medicine.json">Download the research data ↗</a><a href="/method/">How Door Notes uses evidence →</a></div>
+  </section>
+  <footer class="study-next"><p>Keep your own questions.</p><h2>Know the history.<br/>Understand the choices.</h2><div><a href="/#trace">Trace your own workplace →</a><a href="/systems/">Explore another field →</a></div><h3 class="related-fields-title">Related career histories</h3><div>{professions.filter(p=>p.sector===profession.sector&&p.slug!==study.slug).map(p=><a href={'/p/'+p.slug+'/'}>{p.name} →</a>)}</div></footer>
+ </div>
+</Layout>
+<script>
+import {bindStudy} from '../../lib/study-interactions.js';
+bindStudy();
+function openLinkedChapter(){const id=decodeURIComponent(location.hash.slice(1));if(!id)return;const target=document.getElementById(id);const chapter=target?.closest<HTMLDetailsElement>('details.study-chapter');if(chapter){chapter.open=true;target?.scrollIntoView({block:'start',behavior:'instant'})}}
+window.addEventListener('hashchange',openLinkedChapter);openLinkedChapter();
+</script>

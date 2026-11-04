@@ -1,0 +1,21 @@
+---
+import Evidence from './Evidence.astro';
+import {sourceRefs} from '../../lib/institutional-studies.js';
+const {study}=Astro.props;
+const map=study.map;
+const kindNames={authority:'Authority',money:'Money',care:'Care & services'};
+---
+<section class="institution-map" id="power-map" aria-labelledby="map-title" data-map>
+ <header class="study-section-head"><p class="study-kicker">Institutional map · {map.countryLabel}</p><h2 id="map-title">Follow the decision.<br/>Follow the money.</h2><p>Select a connection to see what moves between institutions—and the evidence for that specific relationship.</p></header>
+ <div class="map-countries" role="group" aria-label="Choose the map country"><button type="button" data-map-country="us" aria-pressed="true">United States</button><button type="button" data-map-country="cm" aria-pressed="false">Cameroon</button></div>
+ <div class="map-kinds" role="group" aria-label="Show relationships"><button type="button" data-map-kind="" aria-pressed="true">All connections</button>{Object.entries(kindNames).map(([id,name])=><button type="button" data-map-kind={id} aria-pressed="false">{name}</button>)}</div>
+ <div class="map-canvas" aria-hidden="true">
+  {map.edges.map((edge,i)=><div class="map-connection" data-map-diagram={edge.id} data-kind={edge.kind} hidden={i>0}><span class="map-actor">{edge.from}</span><span class="map-direction"><small>{kindNames[edge.kind]}</small><svg viewBox="0 0 160 40" fill="none"><path d="M4 20H150M136 7L150 20L136 33" stroke="currentColor" stroke-width="2"/></svg><small>{edge.text}</small></span><span class="map-actor">{edge.to}</span></div>)}
+ </div>
+ <p data-map-status role="status">{map.edges.length} sourced relationships across both countries</p>
+ <div class="map-reader"><div class="map-links" role="group" aria-label="Choose an institutional relationship">{map.edges.map((edge,i)=><button type="button" data-relationship={edge.id} data-kind={edge.kind} data-country={edge.country} aria-label={(edge.country==='us'?'United States':'Cameroon')+' · '+kindNames[edge.kind]+': '+edge.from+' to '+edge.to} aria-controls={'relationship-'+edge.id} aria-pressed="false"><span>{edge.country==='us'?'U.S.':'Cameroon'} · {kindNames[edge.kind]}</span><strong>{edge.from}<span aria-hidden="true"> → </span>{edge.to}</strong></button>)}</div>
+ <div class="map-explanations" aria-live="polite" aria-atomic="true">{map.edges.map(edge=><article id={'relationship-'+edge.id} data-relationship-panel={edge.id}>
+  <p class="study-kicker">{kindNames[edge.kind]}</p><h3>{edge.title}</h3><p>{edge.text}</p><p class="study-limit"><strong>Limit of this connection</strong>{edge.limit}</p><Evidence sources={sourceRefs(study,edge.sourceIds)}/>
+ </article>)}</div></div>
+ <p class="map-note">Arrows describe the cited relationship. They do not mean one institution owns another. This map selects relationships; it does not show every actor or payment.</p>
+</section>

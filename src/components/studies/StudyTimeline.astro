@@ -1,0 +1,17 @@
+---
+import Evidence from './Evidence.astro';
+import {sourceRefs} from '../../lib/institutional-studies.js';
+const {study,history}=Astro.props;
+const milestones=[...history.events.map(event=>({id:'record-'+event.id,year:event.year,date:event.date,title:event.title,category:'people',href:'/p/'+study.slug+'/#history-'+event.id})),...study.milestones].sort((a,b)=>a.year-b.year);
+const categories={people:'People & access',institution:'Institutions',funding:'Funding & ownership',exclusion:'Exclusion',organizing:'Organizing',rule:'Rules & regulation'};
+---
+<section class="study-timeline" id="study-timeline" aria-labelledby="timeline-title" data-study-timeline>
+ <header class="study-section-head"><p class="study-kicker">Change over time</p><h2 id="timeline-title">Doors opened.<br/>Rules changed.</h2><p>Choose a milestone to follow its record. These are selected events, not a complete or inevitable story of progress.</p></header>
+ <fieldset class="timeline-filter"><legend>Show milestones about</legend><div><button type="button" data-timeline-filter="" aria-pressed="true">Everything</button>{Object.entries(categories).filter(([key])=>milestones.some(m=>m.category===key)).map(([key,label])=><button type="button" data-timeline-filter={key} aria-pressed="false">{label}</button>)}</div></fieldset>
+ <p data-timeline-count role="status">{milestones.length} milestones</p>
+ <ol class="study-milestones">{milestones.map(m=>{const claim=study.claims.find(c=>c.id===m.claimId);return <li data-milestone data-kind={m.category}>
+  <details><summary><span class="milestone-date">{m.date}</span><span>{m.title}<small>{categories[m.category]}</small></span></summary>
+  <div class="milestone-body">{claim?<><p class="study-limit">{claim.limit}</p><Evidence compact sources={sourceRefs(study,claim.sourceIds)}/><a href={'#claim-'+claim.id}>Read the explanation &amp; full evidence note ↑</a></>:<><p>This milestone is preserved in the original career history with its people, decision, outcome and source limits.</p><a href={m.href}>Read this historical record ↗</a></>}</div>
+  </details>
+ </li>})}</ol>
+</section>

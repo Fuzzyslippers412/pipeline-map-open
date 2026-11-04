@@ -1,0 +1,39 @@
+---
+import Layout from '../../components/Layout.astro';
+import {discoveryRecords} from '../../lib/institutional-studies.js';
+import '../../styles/institutional-studies.css';
+const records=discoveryRecords(),sectors=[...new Set(records.map(r=>r.sector))];
+---
+<Layout title="Inside the profession" active="Systems" desc="Explore career histories by industry, period, country, qualification evidence, institutions and ownership. Start the U.S.–Cameroon medicine study.">
+ <div class="frame system-discovery">
+  <header class="study-hero"><div><p class="study-kicker">Read the work. Understand the system.</p><h1>Inside the<br/><em>profession.</em></h1><p>Find the history behind a career—and the institutions, money and decisions around it.</p></div><aside class="study-edition"><span>START WITH MEDICINE</span><strong>One profession.<br/>Two countries.</strong><a href="/systems/physician/">Open the complete pilot →</a></aside></header>
+  <p class="discovery-scope">All 22 existing career histories remain available. Medicine is the first seven-part institutional study and U.S.–Cameroon comparison. Filters describe evidence in this edition, not every route or opportunity in a profession.</p>
+  <form class="study-filters" id="study-filters" role="search" aria-label="Browse research coverage">
+   <label class="discovery-search">Find a career<input type="search" name="query" placeholder="Medicine, teacher, engineering…" autocomplete="off"/></label>
+   <label>Industry<select name="sector"><option value="">All industries</option>{sectors.map(sector=><option>{sector}</option>)}</select></label>
+   <label>Historical period<select name="period"><option value="">Any period</option><option value="before1900">Before 1900</option><option value="1900-1964">1900–1964</option><option value="1965-today">1965 onward</option></select></label>
+   <label>Country covered<select name="country"><option value="">Any country</option><option value="us">United States</option><option value="cm">Cameroon · medicine pilot</option></select></label>
+   <label>Educational evidence<select name="education"><option value="">Any coverage</option><option value="credential">Named qualification record</option><option value="unreviewed">Qualification feature not yet reviewed</option></select></label>
+   <label>Institution in the record<select name="institution"><option value="">Any institution</option><option value="education">School or university</option><option value="health">Hospital, clinic or pharmacy</option><option value="public">Public institution</option><option value="business">Business</option><option value="union">Union</option></select></label>
+   <label class="discovery-check"><input type="checkbox" name="ownership"/> Records about ownership</label>
+   <button type="reset">Reset filters</button>
+  </form>
+  <noscript><p>The full directory is shown below. Filters need JavaScript; every history and study can still be opened.</p></noscript>
+  <div class="discovery-count"><p id="study-count" role="status">{records.length} careers</p><span>History coverage and system coverage are shown separately.</span></div>
+  <div class="study-directory">{records.map(record=><article data-study-record={record.slug}><div><span class="study-kicker">{record.sector}</span><h2><a href={record.study?'/systems/'+record.slug+'/':'/p/'+record.slug+'/'}>{record.name}</a></h2><p>{record.episodes} historical episodes · {record.study?'U.S. & Cameroon study':'U.S. history'}</p><small>{record.study?'Seven-part institutional study available':'Institutional study not yet reviewed'}</small></div><div class="directory-actions">{record.study&&<a href={'/systems/'+record.slug+'/'}>Inside the profession →</a>}<a href={'/p/'+record.slug+'/'}>History &amp; workplace records →</a><a href={'/career-map/'+record.slug+'/'}>Explore the career →</a></div></article>)}</div>
+  <div class="discovery-empty" id="study-empty" hidden><h2>No records fit this combination.</h2><p>That is a coverage gap in Door Notes, not evidence that the history or opportunity does not exist.</p><button type="button" id="reset-study-filters">Show all careers</button><a href="/suggest/">Suggest a record →</a></div>
+  <footer class="study-next"><p>Start with your own question.</p><h2>Where do you work?<br/>What do you want to understand?</h2><a href="/#trace">Trace a job—even if it isn’t listed →</a></footer>
+ </div>
+</Layout>
+<script type="application/json" id="study-directory-data" set:html={JSON.stringify(records).replace(/</g,'\\u003c')}></script>
+<script>
+import {filterDiscovery} from '../../lib/study-discovery.js';
+const form=document.querySelector<HTMLFormElement>('#study-filters')!;
+const records=JSON.parse(document.querySelector('#study-directory-data')!.textContent!);
+const cards=[...document.querySelectorAll<HTMLElement>('[data-study-record]')];
+function render(){const data=new FormData(form);const filters=Object.fromEntries(data.entries());const found=filterDiscovery(records,filters);const ids=new Set(found.map(record=>record.slug));cards.forEach(card=>{card.hidden=!ids.has(card.dataset.studyRecord)});document.querySelector('#study-count')!.textContent=found.length+(found.length===1?' career':' careers');document.querySelector<HTMLElement>('#study-empty')!.hidden=found.length>0;}
+form.addEventListener('input',render);form.addEventListener('change',render);form.addEventListener('submit',e=>e.preventDefault());form.addEventListener('reset',()=>queueMicrotask(render));document.querySelector('#reset-study-filters')!.addEventListener('click',()=>{form.reset();form.querySelector('input')!.focus()});
+</script>
+<style>
+.system-discovery{padding-bottom:48px}.discovery-scope{color:var(--muted);line-height:1.7;max-width:85ch;margin:24px 0}.study-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-block:1px solid var(--edge);padding:22px 0}.study-filters label{display:grid;gap:8px;font-size:12px;font-weight:650}.study-filters select,.study-filters input[type=search]{width:100%;background:var(--panel);border:1px solid #918c87;color:var(--text);border-radius:3px;padding:8px 10px;font-size:14px}.study-filters .discovery-check{display:flex;align-items:center;gap:10px;align-self:end;min-height:44px}.discovery-check input{min-height:20px;width:20px;flex-shrink:0}.study-filters button,.discovery-empty button{border:1px solid var(--action);color:var(--action);border-radius:3px;padding:8px 12px;align-self:end;justify-self:start;font-size:13px}.discovery-count{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;margin:24px 0 12px;font-size:12px;color:var(--muted)}.discovery-count>p{font-weight:650;color:var(--text)}.study-directory article{display:grid;grid-template-columns:1fr auto;gap:24px;border-bottom:1px solid var(--edge);padding:24px 0}.study-directory h2{font:500 32px/1.1 var(--serif);margin:7px 0}.study-directory h2 a{color:var(--text)}.study-directory p{font-size:14px;line-height:1.6}.study-directory small{display:block;font-size:12px;color:var(--soft);margin-top:6px}.directory-actions{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.directory-actions a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;text-decoration:underline}.discovery-empty{padding:30px 0}.discovery-empty h2{font:500 30px var(--serif)}.discovery-empty p{margin:12px 0}.discovery-empty a{margin-left:16px}@media(max-width:720px){.study-filters{grid-template-columns:1fr 1fr;gap:14px}.study-directory article{grid-template-columns:1fr;gap:8px}.directory-actions{flex-direction:row;gap:0 16px;flex-wrap:wrap}}@media(max-width:400px){.study-filters{grid-template-columns:1fr}.study-directory h2{font-size:28px}}
+</style>

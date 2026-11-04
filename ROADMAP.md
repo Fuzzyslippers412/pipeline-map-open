@@ -1,5 +1,17 @@
 # Door Notes: product roadmap
 
+## Institutional understanding and medicine pilot · November 4, 2026
+
+Implemented the first two phases of the enhancement brief, plus the reusable discovery and learning foundations. The audit is in `docs/INSTITUTIONAL-STUDIES.md`. Existing histories, traces, matching, workplace records and canonical career routes remain intact.
+
+The new `/systems/physician/` study has the seven requested research sections, 27 scoped explanations and 34 source records. Its U.S.–Cameroon comparison covers institutional development, education, registration/licensing, delivery, payment, employment, ownership and possibilities for building. Contemporary rules, dated observations, historical accounts and scholarly interpretation are identified separately. The financial examples distinguish a donor pledge, an appropriation authorization, a reported building project and a financing approval from receipts, operating accounts or completed work. No specific slavery-to-medical-school transaction is inferred from a donor connection alone.
+
+Interactive reading includes 20 timeline entries (10 preserved physician episodes plus 10 additional milestones), a country-selectable relationship explorer with 18 sourced edges, three reading depths, a glossary, three source-linked learning questions and related health-career navigation. The directory preserves all 22 careers, supports six coverage facets and makes the difference between a historical dossier and a completed institutional study visible.
+
+Automated evidence and discovery checks bring the suite to 95 passing tests. Browser checks exercise young-reading copy, country/category map selection, timeline filters, exercise feedback and evidence links, combined discovery filters and reset, and 375/320-pixel layouts. The final build validates new internal links and source references alongside the existing site. These checks do not establish a formal accessibility certification or learning outcomes with children.
+
+Next phases: independent subject review and worker/student comprehension sessions; refine the template from that evidence; research and extend the seven-part model to the other careers; add country comparisons only after their own institutions and requirements have been checked. Current admissions cycles, startup budgets, individual cross-border eligibility, beneficial ownership chains and local implementation remain unresolved where the pilot says so. No automatic historical publishing pipeline or recurring update job was introduced.
+
 ## Medicine, law, dentistry, pharmacy, engineering and academia · November 4, 2026
 
 This edition adds 33 episodes across six previously thin dossiers: medicine and law now have 10 each; dentistry 9; pharmacy 10; engineering 9; academia 10. The complete catalog has 166 episodes and 469 source references across 22 fields. Source disclosures specify what each reference supports, its type and locator. Archive leads identify underlying files or interviews that have not been reviewed.
