@@ -1,27 +1,33 @@
 {
   "slug": "professor",
-  "headline": "A doctorate could open study while faculty hiring remained closed",
-  "summary": "Black scholars created knowledge and helped lead institutions despite barriers between academic credentials and employment. These episodes distinguish doctoral education, research appointments, professorships and institutional leadership.",
-  "coverageNote": "Four episodes across physics, social science, college leadership and business education. A program for business faculty does not represent every discipline or prove access to tenure.",
+  "headline": "Getting a degree, a faculty job and authority to lead were different doors",
+  "summary": "Black scholars taught, produced knowledge and led departments while challenging exclusion. These records name people who made appointments—and people who reversed them. They distinguish graduate credentials, teaching rank, research posts and institutional leadership.",
+  "coverageNote": "Ten selected episodes in physics, chemistry, social science, mathematics, statistics, philosophy, theatre and business education. Named workplaces include Penn, Atlanta University, Howard, the College of Hawaiʻi, Chicago, Berkeley, Montana and UCLA. A documented appointment at one campus is not proof of access at another.",
   "question": "Which appointment, promotion or tenure record connects Black faculty to your department?",
   "events": [
     {
       "id": "bouchet-doctorate-1876",
       "date": "1876–1905",
       "year": 1876,
-      "title": "Edward Bouchet earns a doctorate without equal access to university hiring",
+      "title": "Edward Bouchet’s doctorate does not secure university employment",
       "people": "Edward Alexander Bouchet",
-      "decisionMaker": "Yale awarded the doctorate; the Institute for Colored Youth employed him; Yale later declined his teaching application.",
-      "barrier": "Yale Library reports that white colleges and universities did not hire him despite his scientific qualifications.",
-      "change": "He earned his physics PhD in 1876 and taught science at the Institute for Colored Youth for 26 years.",
-      "outcome": "His 1905 Yale teaching application was unsuccessful, even with a recommendation from a former teacher.",
-      "limit": "His credential is documented; it must not be presented as a faculty appointment or proof that a degree removed employment barriers.",
+      "decisionMaker": "Yale awarded his doctorate but later declined his teaching application.",
+      "barrier": "Yale Library records exclusion from white colleges despite his qualifications.",
+      "change": "His 1876 physics doctorate preceded 26 years teaching at the Institute for Colored Youth.",
+      "outcome": "A Yale teaching application failed in 1905.",
+      "limit": "A degree is not a faculty appointment or evidence of equal hiring.",
       "source": {
         "title": "Yale University Library · Edward Alexander Bouchet",
         "url": "https://onlineexhibits.library.yale.edu/s/early-black-yale-students/item/20594",
-        "locator": "Biography: 1876 doctorate, Institute for Colored Youth employment and unsuccessful 1905 Yale application",
-        "type": "University archival exhibit"
-      }
+        "locator": "Biography: doctorate, teaching and 1905 application",
+        "type": "University archival exhibit",
+        "supports": "Credential, teaching employment and unsuccessful Yale application."
+      },
+      "topics": [
+        "doctoral education",
+        "exclusion",
+        "employment"
+      ]
     },
     {
       "id": "dubois-research-1896",
@@ -32,14 +38,20 @@
       "decisionMaker": "Penn appointed him Assistant in Sociology; Atlanta University subsequently employed him as a professor.",
       "barrier": "Penn's research appointment was a specific post, not a general guarantee of faculty access for Black scholars.",
       "change": "His Philadelphia assignment centered on a study of Black residents of the Seventh Ward.",
-      "outcome": "He interviewed about 5,000 people, published The Philadelphia Negro, and became a professor at Atlanta University.",
+      "outcome": "He interviewed about 5,000 people, became a professor at Atlanta University, and published The Philadelphia Negro in 1899.",
       "limit": "The two appointments had different roles and institutions; neither establishes the hiring policy of your department.",
       "source": {
         "title": "University of Pennsylvania Archives · W. E. B. Du Bois",
         "url": "https://archives.upenn.edu/exhibits/penn-people/biography/william-edward-burghardt-du-bois/",
         "locator": "Paragraphs on the 1896 appointment, Seventh Ward study and Atlanta University professorship",
-        "type": "Institutional biography"
-      }
+        "type": "Institutional biography",
+        "supports": "Penn research role, Philadelphia study and subsequent Atlanta professorship."
+      },
+      "topics": [
+        "research appointments",
+        "faculty employment",
+        "social science"
+      ]
     },
     {
       "id": "john-hope-presidency-1906",
@@ -56,8 +68,179 @@
         "title": "Morehouse College · John Hope",
         "url": "https://morehouseathletics.com/honors/den-of-honor/john-hope/15",
         "locator": "Dr. John Hope biography: teaching, 1906 presidency and graduate/professional education",
-        "type": "Institutional biography"
-      }
+        "type": "Institutional biography",
+        "supports": "Teaching history, 1906 presidency and educational leadership."
+      },
+      "topics": [
+        "faculty employment",
+        "leadership",
+        "HBCUs"
+      ]
+    },
+    {
+      "id": "ball-hawaii-instructor-1915",
+      "date": "1915–1916",
+      "year": 1915,
+      "title": "Alice Ball moves from graduate study into chemistry teaching",
+      "people": "Alice Augusta Ball",
+      "decisionMaker": "The College of Hawaiʻi employed Ball as a chemistry instructor.",
+      "barrier": "UH identifies her as its first African American chemist, instructor and researcher.",
+      "change": "After her 1915 master’s degree, she taught and conducted chemistry research at the college, predecessor of UH Mānoa.",
+      "outcome": "Her work demonstrates an actual teaching appointment alongside scientific research.",
+      "limit": "Instructor is the documented rank: this record does not establish tenure, a full professorship or an appointment at another UH campus.",
+      "source": {
+        "title": "University of Hawaiʻi · Alice Ball scholarship honors pioneering chemist",
+        "url": "https://www.hawaii.edu/news/2017/02/23/alice-ball-scholarship-honors-pioneering-chemist-in-fight-against-hansens-disease/",
+        "locator": "2017 account: degree, instructor appointment and research",
+        "type": "Institutional history",
+        "supports": "College of Hawaiʻi teaching appointment, degree and scholarly work."
+      },
+      "topics": [
+        "chemistry",
+        "faculty employment",
+        "rank"
+      ]
+    },
+    {
+      "id": "locke-howard-dismissal-1925",
+      "date": "1925 and later reappointment",
+      "year": 1925,
+      "title": "Howard’s leadership closes—and later reopens—a faculty door",
+      "people": "Alain Locke and Thomas Montgomery Gregory",
+      "decisionMaker": "President J. Stanley Durkee dismissed Locke; his successor Mordecai Johnson later rehired him.",
+      "barrier": "Faculty appointments did not guarantee support for Black artistic scholarship.",
+      "change": "Howard’s account of Denise J. Hart’s research links Locke’s 1925 dismissal and Gregory’s departure to conflict over their theatre work.",
+      "outcome": "Locke returned under Johnson; Gregory did not. Their proposed drama department lost institutional support.",
+      "limit": "This institutional research account is not a reviewed personnel file and gives no precise reappointment date.",
+      "source": {
+        "title": "Howard Magazine · Howard and a new Black theatre tradition",
+        "url": "https://magazine.howard.edu/stories/howard-university-and-the-birth-of-a-new-black-theatre-tradition",
+        "locator": "Fall 2025: Durkee dismissals and Johnson reappointment paragraphs",
+        "type": "University account of faculty historical research",
+        "supports": "Named leaders, 1925 dismissal and later return; exact rehiring date remains open."
+      },
+      "topics": [
+        "humanities",
+        "dismissal",
+        "institutional leadership"
+      ]
+    },
+    {
+      "id": "allison-davis-chicago-faculty-1942",
+      "date": "1942–1948",
+      "year": 1942,
+      "title": "Allison Davis gains a faculty position through contested institutional support",
+      "people": "Allison Davis; W. Lloyd Warner, Ralph Tyler and Robert J. Havighurst",
+      "decisionMaker": "Chicago appointed Davis with colleagues’ support and financial backing from the Julius Rosenwald Fund.",
+      "barrier": "The library records racial resistance to his appointment and exclusion from the Quadrangle Club.",
+      "change": "He joined the Department of Education in 1942.",
+      "outcome": "He became a full professor in 1948, continuing research on education, class and racial inequality.",
+      "limit": "Appointment and promotion are distinct; neither proves equal treatment or a connection to another Chicago department.",
+      "source": {
+        "title": "University of Chicago Library · Allison Davis Papers",
+        "url": "https://www.lib.uchicago.edu/e/scrc/findingaids/view.php?eadid=ICU.SPCL.DAVISA",
+        "locator": "Biographical Note: appointment support and 1942–1948 faculty history",
+        "type": "Archival finding-aid biography",
+        "supports": "Named supporters, contested 1942 appointment and 1948 full professorship."
+      },
+      "topics": [
+        "education research",
+        "faculty employment",
+        "promotion"
+      ]
+    },
+    {
+      "id": "blackwell-berkeley-faculty-1954",
+      "date": "1954–1961",
+      "year": 1954,
+      "title": "David Blackwell’s Berkeley appointment leads to departmental authority",
+      "people": "David Blackwell and Jerzy Neyman",
+      "decisionMaker": "Neyman recruited Blackwell; Berkeley appointed him and later selected him as department chair.",
+      "barrier": "Racist objections had obstructed an earlier attempt to hire him.",
+      "change": "He arrived as a visiting professor in 1954, then became a full professor in the new statistics department in 1955.",
+      "outcome": "He chaired statistics from 1957 to 1961.",
+      "limit": "The visiting appointment and full professorship occurred in different years; this does not document access throughout the UC system.",
+      "source": {
+        "title": "UC Berkeley · David Blackwell faculty history",
+        "url": "https://news.berkeley.edu/2010/07/15/blackwell/",
+        "locator": "Early years: Neyman recruitment, 1954 arrival and 1955 appointment",
+        "type": "Employer history",
+        "supports": "Racial hiring objections, distinct appointment dates and chairmanship."
+      },
+      "topics": [
+        "statistics",
+        "faculty employment",
+        "promotion",
+        "leadership"
+      ]
+    },
+    {
+      "id": "hewitt-montana-faculty-1961",
+      "date": "1961–1999",
+      "year": 1961,
+      "title": "Gloria Hewitt enters mathematics teaching before completing her doctorate",
+      "people": "Gloria Conyers Hewitt and department chair Art Livingston",
+      "decisionMaker": "Hewitt’s oral history identifies Livingston as the person who offered her the job.",
+      "barrier": "Hiring, doctoral completion and department leadership were separate steps.",
+      "change": "Montana hired her as an assistant professor in fall 1961; her Washington doctorate followed in 1962.",
+      "outcome": "The department records graduate supervision, undergraduate mentorship and her chairmanship from 1995 to 1999.",
+      "limit": "This documents the Missoula department, not Montana State in Bozeman or every mathematics faculty appointment.",
+      "source": {
+        "title": "University of Montana · Mathematics newsletter, Fall 1999",
+        "url": "https://www.umt.edu/math/documents/newsletter/newsletter_1999_f.pdf",
+        "locator": "Printed page 4: Gloria C. Hewitt retirement profile",
+        "type": "Contemporary employer newsletter",
+        "supports": "1961 rank, 1962 doctorate, teaching and 1995–1999 chairmanship."
+      },
+      "topics": [
+        "mathematics",
+        "faculty employment",
+        "mentorship",
+        "leadership"
+      ],
+      "sources": [
+        {
+          "title": "University of Montana · Mathematics department oral history",
+          "url": "https://www.umt.edu/math/people/emeriti/department-history.pdf",
+          "locator": "Printed page 62: Hewitt interview with Johnny W. Lott, May 12, 2006",
+          "type": "Published oral-history transcript",
+          "supports": "Hewitt’s recollection that Art Livingston repeatedly offered her the position."
+        }
+      ]
+    },
+    {
+      "id": "angela-davis-ucla-appointment-1969",
+      "date": "1969–1970",
+      "year": 1969,
+      "title": "Angela Davis’s UCLA appointment shows a door can close again",
+      "people": "Angela Davis, Donald Kalish, Philip Levine and Charles E. Young",
+      "decisionMaker": "Kalish recruited her and Levine issued the offer; UC Regents later rejected renewal despite UCLA recommendations.",
+      "barrier": "Political scrutiny threatened a one-year acting assistant professorship.",
+      "change": "The philosophy appointment began in 1969; a court intervened after the Regents’ initial dismissal attempt.",
+      "outcome": "She taught the academic year, but the Regents voted against reappointment in June 1970.",
+      "limit": "This was an acting appointment, not tenure. The record shows contested employment, not a permanent opening for every Black scholar.",
+      "source": {
+        "title": "AAUP · The Angela Davis Case",
+        "url": "https://www.aaup.org/academe/issues/spring-2024/aaup-and-angela-davis-case",
+        "locator": "The Angela Davis Case: offer, departmental recommendation and June 1970 vote",
+        "type": "Professional association history based on its investigation",
+        "supports": "Named appointment authorities, term and nonrenewal decision."
+      },
+      "topics": [
+        "philosophy",
+        "faculty employment",
+        "academic freedom",
+        "dismissal"
+      ],
+      "sources": [
+        {
+          "title": "UCLA · Dancing to the words of Angela Davis",
+          "url": "https://newsroom.ucla.edu/stories/dancing-to-the-words-of-angela-davis",
+          "locator": "1969–1970 teaching and reinstatement paragraphs",
+          "type": "Employer historical account",
+          "supports": "Acting rank, court intervention and completion of the teaching year."
+        }
+      ]
     },
     {
       "id": "phd-project-business-1994",
@@ -74,27 +257,48 @@
         "title": "The PhD Project · Our History",
         "url": "https://phdproject.org/our-history/",
         "locator": "Timeline entries for 1994 and 2002",
-        "type": "Program provider history"
-      }
+        "type": "Program provider history",
+        "supports": "Founding partners, conference and participant milestones; not causal evaluation."
+      },
+      "topics": [
+        "doctoral education",
+        "mentorship",
+        "business faculty"
+      ]
     }
   ],
   "furtherResearch": [
-    "Trace degree completion, faculty appointment, rank, tenure and leadership separately at the exact institution.",
-    "Research differences between disciplines, teaching institutions and research universities rather than applying a single faculty pathway.",
-    "Include denied appointments and dismissals when documented; an early credential alone is not evidence that a faculty door stayed open."
+    "Find the original appointment, promotion and tenure records for the reader’s exact campus, department and faculty rank.",
+    "Resolve the 1947/1948 tenure-date discrepancy across Chicago’s institutional accounts for Allison Davis before assigning a precise tenure year; the 1942 hire and 1948 full professorship are distinct.",
+    "Use Locke’s papers to seek contemporary evidence of dismissal and reappointment, rather than treating the later institutional account as the personnel record.",
+    "Compare contingent, visiting, acting and tenure-line appointments without presenting them as equivalent job security.",
+    "Expand community-college, adjunct and discipline-specific histories; these selected careers do not establish nationwide faculty access."
   ],
   "credential": {
     "name": "Edward Alexander Bouchet",
     "year": 1876,
     "credential": "Doctorate in physics",
-    "record": "Yale records his 1876 physics doctorate and identifies him as the first Black person to earn a doctorate in the United States.",
-    "work": "He taught at the Institute for Colored Youth; Yale did not hire him when he applied in 1905.",
+    "record": "Yale identifies his 1876 physics PhD as the first U.S. doctorate earned by a Black person.",
+    "work": "He taught at the Institute for Colored Youth; Yale rejected his 1905 application.",
     "sources": [
       {
         "label": "Yale University Library · Edward Alexander Bouchet",
-        "url": "https://onlineexhibits.library.yale.edu/s/early-black-yale-students/item/20594"
+        "url": "https://onlineexhibits.library.yale.edu/s/early-black-yale-students/item/20594",
+        "locator": "Biography: doctorate and employment",
+        "type": "University archival exhibit",
+        "supports": "Doctorate milestone and distinction from Yale faculty employment.",
+        "title": "Yale University Library · Edward Alexander Bouchet"
       }
     ]
-  }
+  },
+  "checkedOn": "2026-11-04",
+  "researchLeads": [
+    {
+      "title": "Alain Locke’s papers and Howard faculty employment",
+      "url": "https://dh.howard.edu/finaid_manu/123/",
+      "locator": "Moorland-Spingarn Research Center; Alain Locke Papers, bulk 1898–1954; catalog description of correspondence and Howard materials",
+      "question": "Do the surviving papers identify the terms, timing and authorities behind his dismissal and reappointment?",
+      "status": "Catalog description reviewed; underlying correspondence and personnel records not reviewed"
+    }
+  ]
 }
-

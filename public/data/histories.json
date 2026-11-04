@@ -528,9 +528,9 @@
   },
   {
     "slug": "dentist",
-    "headline": "Dental credentials, independent practice and a professional community",
-    "summary": "Early Black dentists earned degrees, built practices and organized support beyond the schools that trained them. Admission, clinical education, licensure and professional membership are different kinds of access.",
-    "coverageNote": "Four episodes at Harvard, Howard, Michigan and Black dental associations. These sources do not establish every state's licensing history or a connection to an individual clinic.",
+    "headline": "Dental degrees, teaching authority and community practice",
+    "summary": "Black dentists earned credentials, built practices, challenged professional exclusion and led the institutions training the next generation. A degree, a faculty appointment, a clinic leadership role and an association decision each opened a different door.",
+    "coverageNote": "Nine episodes connect named dentists to Harvard, Howard, Michigan, Meharry and the USC–Watts program, alongside Black professional organizing. An institutional appointment is not proof of a connection to your clinic; licensing and current workplace links still require their own records.",
     "question": "Which school, licensing register, clinic or professional-association record connects Black dentists to your practice setting?",
     "events": [
       {
@@ -548,8 +548,32 @@
           "title": "Harvard School of Dental Medicine · Robert Tanner Freeman",
           "url": "https://www.hsdm.harvard.edu/news/portrait-dr-robert-freeman-honors-hsdm%E2%80%99s-first-african-american-graduate",
           "locator": "April 24, 2019; paragraphs on Freeman's 1869 graduation and founding dean Nathan Cooley Keep",
-          "type": "Institutional history"
+          "type": "Institutional history",
+          "supports": "Freeman’s 1869 DMD, first-class membership and Keep’s admissions principle."
         }
+      },
+      {
+        "id": "grant-harvard-dental-faculty-1871",
+        "date": "1871–1884",
+        "year": 1871,
+        "title": "George Franklin Grant moves from a dental degree into teaching",
+        "people": "George Franklin Grant",
+        "decisionMaker": "Harvard Dental School appointed Grant to its teaching staff.",
+        "barrier": "Graduation and appointment to a teaching post were separate thresholds.",
+        "change": "After his 1870 DMD, Grant became a mechanical-dentistry assistant in 1871.",
+        "outcome": "By 1884 he taught the treatment of cleft palate and related conditions as an instructor.",
+        "limit": "This documents Harvard appointments, not a nationwide opening of faculty jobs or present-day hiring.",
+        "source": {
+          "title": "Harvard School of Dental Medicine · George Grant",
+          "url": "https://www.hsdm.harvard.edu/news/trailblazer-inventor-scholar-dr-george-grant-takes-his-place-history",
+          "locator": "May 11, 2023; 1871 assistant and 1884 instructor paragraphs",
+          "type": "Institutional biography",
+          "supports": "Grant’s degree and two named Harvard teaching appointments."
+        },
+        "topics": [
+          "faculty",
+          "clinical education"
+        ]
       },
       {
         "id": "howard-dentistry-1881",
@@ -566,7 +590,8 @@
           "title": "Howard University College of Dentistry · About",
           "url": "https://dentistry.howard.edu/index.php/about",
           "locator": "About Us and Letter from the Dean: 1881 founding and teaching/patient-care mission",
-          "type": "Institutional history"
+          "type": "Institutional history",
+          "supports": "The 1881 founding and the college’s teaching and patient-care mission."
         }
       },
       {
@@ -584,7 +609,8 @@
           "title": "University of Michigan School of Dentistry · Ida Gray and diversity awards",
           "url": "https://dent.umich.edu/news-events/news/dental-students-faculty-staff-awarded-diversity-efforts",
           "locator": "Ida Gray biographical paragraph following the faculty award profile",
-          "type": "Institutional history"
+          "type": "Institutional history",
+          "supports": "Gray’s 1890 DDS and subsequent Cincinnati and Chicago practice."
         }
       },
       {
@@ -602,14 +628,110 @@
           "title": "National Dental Association · About Us",
           "url": "https://www.ndaonline.org/about/about-us",
           "locator": "Chronological history: 1913 Tri-State Dental Association, 1923 expansion and 1932 reorganization",
-          "type": "Institutional history"
+          "type": "Institutional history",
+          "supports": "Ferguson, the 1913 association, interstate growth and 1932 reorganization."
         }
+      },
+      {
+        "id": "dummett-meharry-dean-1947",
+        "date": "1947–1948",
+        "year": 1947,
+        "title": "Clifton Dummett secures authority over dental education at Meharry",
+        "people": "Clifton O. Dummett and president M. Don Clawson",
+        "decisionMaker": "Clawson relinquished the Director of Dental Education title after Dummett challenged the split authority.",
+        "barrier": "Dummett’s retrospective describes conflicting responsibilities between the dean and director.",
+        "change": "Appointed dean in 1947, he objected to continuing that arrangement after his first year.",
+        "outcome": "He became both dean and director, consolidating authority over dental education under a Black educator.",
+        "limit": "This is Dummett’s later account; appointment minutes and effects on individual faculty careers remain unreviewed.",
+        "source": {
+          "title": "Clifton O. Dummett · Celebrating a Centennial",
+          "url": "https://www.acd.org/wp-content/uploads/2018/10/1986_53_02.pdf",
+          "locator": "Journal of the American College of Dentists 53(2), 1986, printed pp. 22–23",
+          "type": "Participant’s published retrospective",
+          "supports": "The 1947 appointment and subsequent transfer of director responsibilities."
+        },
+        "topics": [
+          "academic leadership",
+          "institutional decisions"
+        ]
+      },
+      {
+        "id": "dummett-usc-community-dentistry-1966",
+        "date": "1966–1968",
+        "year": 1966,
+        "title": "Clifton Dummett leads dentistry in the USC–Watts health program",
+        "people": "Clifton O. Dummett",
+        "decisionMaker": "The Office of Economic Opportunity requested his selection for the USC School of Medicine’s Watts Health Services Center.",
+        "barrier": "This episode concerns community-service leadership, a different route from private dental practice.",
+        "change": "Dummett became dental director in 1966.",
+        "outcome": "A 1988 professional citation records his 1968 appointment as health-center director and creation of a community-dentistry section at USC.",
+        "limit": "The citation establishes roles, not measured patient outcomes or continuity to every current Los Angeles clinic.",
+        "source": {
+          "title": "American College of Dentists · Salute to Clifton O. Dummett",
+          "url": "https://www.acd.org/wp-content/uploads/2018/10/1988_55_04.pdf",
+          "locator": "1988, volume 55(4), printed p. 20 (PDF p. 22)",
+          "type": "Contemporary professional citation",
+          "supports": "Dummett’s 1966 dental-director role and subsequent USC community-dentistry leadership."
+        },
+        "topics": [
+          "community dentistry",
+          "public health",
+          "leadership"
+        ]
+      },
+      {
+        "id": "sinkford-howard-dean-1975",
+        "date": "1975–1991",
+        "year": 1975,
+        "title": "Jeanne Craig Sinkford leads Howard’s College of Dentistry",
+        "people": "Jeanne Craig Sinkford",
+        "decisionMaker": "Howard appointed Sinkford dean after she had served as associate dean.",
+        "barrier": "Howard identifies her appointment as the first woman’s deanship of a U.S. dental school.",
+        "change": "In 1975 a Black woman took charge of the college’s dental education.",
+        "outcome": "Howard records her service as dean through 1991, following her 1967 associate-dean appointment.",
+        "limit": "This establishes academic leadership at Howard; it does not document access to hospital privileges or a particular clinic’s hiring.",
+        "source": {
+          "title": "Howard University · Jeanne Sinkford receives ACD recognition",
+          "url": "https://thedig.howard.edu/all-stories/howard-university-dentistry-trailblazer-dr-jeanne-sinkford-receives-american-college-dentists",
+          "locator": "October 21, 2020; associate-dean and 1975–1991 dean chronology",
+          "type": "Institutional biography",
+          "supports": "Sinkford’s named Howard leadership appointments and dates."
+        },
+        "topics": [
+          "academic leadership",
+          "women in dentistry"
+        ]
+      },
+      {
+        "id": "henry-harvard-leadership-1975",
+        "date": "1975–1991",
+        "year": 1975,
+        "title": "Joseph Henry enters Harvard’s dental leadership and protects its teaching program",
+        "people": "Joseph L. Henry and dean Paul Goldhaber",
+        "decisionMaker": "Goldhaber recruited Henry in 1975 as professor, department chair and associate dean.",
+        "barrier": "This records a Black dentist’s move into authority over dental training.",
+        "change": "Henry led Oral Medicine and held responsibility for external affairs.",
+        "outcome": "Harvard’s memorial credits his 1990–1991 interim deanship with helping retain the threatened predoctoral program.",
+        "limit": "The memorial supports these Harvard roles; it is not evidence that Henry determined every admission or subsequent hiring decision.",
+        "source": {
+          "title": "Harvard Faculty of Medicine · Joseph L. Henry memorial minute",
+          "url": "https://news.harvard.edu/gazette/story/2013/06/joseph-l-henry/",
+          "locator": "June 4, 2013; 1975 recruitment and 1990–1991 interim-dean paragraphs",
+          "type": "Faculty memorial minute",
+          "supports": "Goldhaber’s recruitment, Henry’s posts and the memorial’s account of retaining the program."
+        },
+        "topics": [
+          "faculty",
+          "academic leadership",
+          "institutional decisions"
+        ]
       }
     ],
     "furtherResearch": [
-      "Link an early dental degree to the relevant state register and the dentist's actual practice.",
-      "Research hospital privileges and specialist training separately from general dental education.",
-      "Identify the exact clinic, school or employer before presenting an institutional connection."
+      "Pair early degrees with state license registers, hospital-privilege decisions and actual practice records.",
+      "Find Meharry appointment and governance minutes to test Dummett’s retrospective account.",
+      "Trace the historical USC–Watts program’s site and organizational continuity before assigning its history to a present-day clinic.",
+      "Research dental assistants, hygienists and other practice workers separately from dentists."
     ],
     "credential": {
       "name": "Ida Gray",
@@ -620,10 +742,23 @@
       "sources": [
         {
           "label": "University of Michigan School of Dentistry · Ida Gray and diversity awards",
-          "url": "https://dent.umich.edu/news-events/news/dental-students-faculty-staff-awarded-diversity-efforts"
+          "url": "https://dent.umich.edu/news-events/news/dental-students-faculty-staff-awarded-diversity-efforts",
+          "type": "Institutional history",
+          "locator": "Ida Gray biographical paragraph",
+          "supports": "Gray’s 1890 DDS and subsequent dental practice."
         }
       ]
-    }
+    },
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "Clifton O. Dummett’s professional papers",
+        "url": "https://oac.cdlib.org/findaid/ark:/13030/c84m9c6m",
+        "locator": "USC Wilson Dental Library, collection 925.001; unprocessed papers, 1941–2013",
+        "question": "Which administrative records document his educational and community-dentistry decisions and their effects on workers?",
+        "status": "Finding aid reviewed; underlying records not reviewed; advance notice required for access"
+      }
+    ]
   },
   {
     "slug": "elected-official",
@@ -826,11 +961,35 @@
   },
   {
     "slug": "engineer",
-    "headline": "From engineering education to projects, promotion and collective support",
-    "summary": "Black engineering careers include institution-building, technical qualifications, workplace training and student organizing. These examples concern particular disciplines; they do not make every engineering job the same path.",
-    "coverageNote": "Four episodes involving Howard, Iowa, NASA Langley and Purdue. Civil and aerospace engineering records are not automatically evidence for every specialty or engineering manager.",
+    "headline": "Engineering doors opened through jobs, projects, training and promotion",
+    "summary": "Black engineers designed infrastructure, changed aircraft production, led space projects and taught the next generation. These records separate earning a degree from getting hired, being assigned technical work and gaining authority to lead.",
+    "coverageNote": "Nine selected episodes across civil, mechanical, aerospace and systems engineering. Named employers include Michigan Central Railroad, Tennessee State, NASA Langley, Boeing, The Aerospace Corporation and NASA Goddard. Their records do not establish every engineering specialty or a reader’s own employment chain.",
     "question": "Which hiring, project assignment, qualification or promotion record connects Black engineers to your workplace?",
     "events": [
+      {
+        "id": "dammond-railroad-engineering-1893",
+        "date": "1893–1906",
+        "year": 1893,
+        "title": "William Hunter Dammond takes a winding route into railroad engineering",
+        "people": "William Hunter Dammond",
+        "decisionMaker": "Michigan Central Railroad employed him; the account does not name the hiring official.",
+        "barrier": "A civil-engineering degree did not lead directly to an engineering job.",
+        "change": "After graduating from Pitt in 1893, Dammond held other jobs and taught mathematics before becoming an assistant bridge engineer in Detroit.",
+        "outcome": "Railway-signal patents followed in 1903 and 1906; recognition for his inventions remained contested.",
+        "limit": "The biography does not date the railroad hire or establish continuity to a present-day railroad employer.",
+        "source": {
+          "title": "University of Pittsburgh · William Hunter Dammond",
+          "url": "https://www.innovation.pitt.edu/william-hunter-dammond-a-man-of-firsts/",
+          "locator": "Employment and railway-patent paragraphs",
+          "type": "University history",
+          "supports": "Degree, intervening jobs, Michigan Central employment and patents."
+        },
+        "topics": [
+          "civil engineering",
+          "employment",
+          "invention"
+        ]
+      },
       {
         "id": "howard-engineering-1907",
         "date": "1907–1911",
@@ -844,46 +1003,111 @@
         "limit": "Program creation establishes education, not an employer's hiring practices or every graduate's placement.",
         "source": {
           "title": "Howard University College of Engineering and Architecture · Our History",
-          "url": "https://cea.howard.edu/index.php/about-us/our-history",
+          "url": "https://cea.howard.edu/about-us/our-history",
           "locator": "1907 trustees' approval; 1907–1910 curriculum and 1911 four-year program paragraphs",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Trustee approval, discipline-specific curricula and the four-year degree program."
+        },
+        "topics": [
+          "education",
+          "institution building"
+        ]
       },
       {
         "id": "alexander-civil-engineering-1912",
         "date": "1912–1929",
         "year": 1912,
-        "title": "Archibald Alexander moves from a degree into engineering work and ownership",
-        "people": "Archibald A. Alexander, George F. Higbee and Maurice A. Repass",
-        "decisionMaker": "Iowa awarded Alexander's degree; Marsh Engineering employed him; Alexander later founded his own firm.",
+        "title": "Archibald Alexander enters civil engineering and starts a firm",
+        "people": "Archibald A. Alexander",
+        "decisionMaker": "Marsh Engineering hired Alexander; he later established his own company.",
         "barrier": "Iowa identifies him as its first Black civil-engineering graduate.",
-        "change": "After graduating in 1912, Alexander joined Marsh Engineering and established his own company in 1914.",
-        "outcome": "His later firm built projects including Iowa's power plant and tunnels and the Moton Airfield used by Tuskegee Airmen.",
-        "limit": "This documents his employment and business projects, not an industry-wide end to exclusion.",
+        "change": "After graduating in 1912, he joined Marsh and founded a company in 1914.",
+        "outcome": "His later firm’s projects included Iowa’s power plant and Moton Airfield.",
+        "limit": "These are individual employment and project records, not evidence of industry-wide access.",
         "source": {
           "title": "University of Iowa College of Engineering · Archibald A. Alexander",
           "url": "https://engineering.uiowa.edu/alumni/alumni-awards/distinguished-engineering-alumni-academy-members/archibald-alexander",
-          "locator": "Biography: 1912 graduation, Marsh Engineering employment and Alexander & Repass projects",
-          "type": "Institutional history"
-        }
+          "locator": "Biography: graduation, Marsh employment and later projects",
+          "type": "Institutional history",
+          "supports": "Degree, engineering employment and firm ownership."
+        },
+        "topics": [
+          "civil engineering",
+          "employment",
+          "business ownership"
+        ]
+      },
+      {
+        "id": "clark-tsu-engineering-1956",
+        "date": "1956–2011",
+        "year": 1956,
+        "title": "Yvonne Young Clark teaches engineers and leads a department",
+        "people": "Yvonne Young Clark",
+        "decisionMaker": "Tennessee Agricultural & Industrial State University, now Tennessee State, hired her as an instructor.",
+        "barrier": "TSU identifies Clark as the first woman on its engineering faculty.",
+        "change": "Her 1956 appointment put a Black woman in a paid engineering teaching role.",
+        "outcome": "She advanced to associate professor, twice chaired mechanical engineering and retired in 2011 after decades of mentoring students.",
+        "limit": "Faculty employment and mentorship are documented; this source does not measure graduates’ hiring outcomes.",
+        "source": {
+          "title": "Tennessee State University · Remembering Yvonne Young Clark",
+          "url": "https://tnstatenewsroom.com/dr-yvonne-young-y-y-clark-tsu-lady-engineer-remembered/",
+          "locator": "2019 remembrance: appointment, department leadership and retirement",
+          "type": "Employer history",
+          "supports": "1956 instructor hire, later rank and leadership, and student recollections."
+        },
+        "topics": [
+          "mechanical engineering",
+          "faculty employment",
+          "mentorship"
+        ]
       },
       {
         "id": "mary-jackson-engineer-1958",
         "date": "1958",
         "year": 1958,
-        "title": "Mary Jackson gets permission to train and earns an engineering promotion",
-        "people": "Mary W. Jackson and engineer Kazimierz Czarnecki",
-        "decisionMaker": "The City of Hampton permitted her attendance; Langley promoted her after she completed the required courses.",
-        "barrier": "Graduate-level classes needed for the training program met at segregated Hampton High School.",
-        "change": "With Czarnecki's encouragement, Jackson requested access, attended the classes and completed the training.",
-        "outcome": "NASA records her 1958 promotion and subsequent research on supersonic aerodynamic effects.",
-        "limit": "A documented promotion at Langley does not prove equal access to engineering advancement at other employers.",
+        "title": "Mary Jackson trains and earns promotion at Langley",
+        "people": "Mary W. Jackson and Kazimierz Czarnecki",
+        "decisionMaker": "Hampton permitted her attendance; Langley promoted her after training.",
+        "barrier": "Required graduate classes met at segregated Hampton High School.",
+        "change": "Encouraged by Czarnecki, Jackson obtained permission and completed the classes.",
+        "outcome": "NASA records her 1958 engineering promotion and supersonic-aerodynamics research.",
+        "limit": "This establishes advancement at Langley, not equal promotion opportunities across NASA or other employers.",
         "source": {
           "title": "NASA · Mary W. Jackson",
           "url": "https://www.nasa.gov/history/mary-w-jackson/",
-          "locator": "Biography: Supersonic Pressure Tunnel, permission for Hampton classes and 1958 engineering promotion",
-          "type": "Institutional history"
-        }
+          "locator": "Biography: Hampton classes and 1958 promotion",
+          "type": "Institutional history",
+          "supports": "Training access, Langley promotion and subsequent engineering work."
+        },
+        "topics": [
+          "aerospace engineering",
+          "workplace training",
+          "promotion"
+        ]
+      },
+      {
+        "id": "braithwaite-boeing-engineer-1966",
+        "date": "1966–2003",
+        "year": 1966,
+        "title": "Walt Braithwaite helps change how Boeing designs aircraft",
+        "people": "Walt W. Braithwaite",
+        "decisionMaker": "Boeing hired Braithwaite as a tool engineer in 1966.",
+        "barrier": "Entry into engineering, control of technical projects and corporate leadership were separate career stages.",
+        "change": "He later introduced networked design and manufacturing systems while supervising Central Engineering.",
+        "outcome": "The museum’s interview-based biography documents technical leadership before his later presidency of Boeing Africa.",
+        "limit": "The record identifies Boeing, not a particular factory or a policy that guaranteed other Black engineers promotion.",
+        "source": {
+          "title": "The Museum of Flight · Walt W. Braithwaite",
+          "url": "https://archives.museumofflight.org/agents/people/5271",
+          "locator": "Biographical note: hiring, Central Engineering and Boeing Africa",
+          "type": "Archive biography based on participant interview",
+          "supports": "1966 engineering hire and subsequent design-system and leadership responsibilities."
+        },
+        "topics": [
+          "aerospace engineering",
+          "employment",
+          "technical leadership"
+        ]
       },
       {
         "id": "nsbe-national-1975",
@@ -900,28 +1124,116 @@
           "title": "National Society of Black Engineers · Convention media kit",
           "url": "https://convention.nsbe.org/wp-content/uploads/2025/03/NSBE_mediakit_V3-2.pdf",
           "locator": "PDF page 6: History, 1971, 1973 and 1974–1975",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Purdue student organizing and the dated national founding meeting."
+        },
+        "topics": [
+          "student organizing",
+          "education",
+          "professional networks"
+        ]
+      },
+      {
+        "id": "austin-aerospace-engineering-1979",
+        "date": "1979–2008",
+        "year": 1979,
+        "title": "Wanda Austin moves from engineering work into organization leadership",
+        "people": "Wanda M. Austin",
+        "decisionMaker": "The Aerospace Corporation employed Austin from 1979 and appointed her president and CEO in 2008.",
+        "barrier": "A technical job and authority to direct engineering teams require different appointments.",
+        "change": "Her roles included leading military-satellite communications and the Engineering and Technology Group.",
+        "outcome": "USC records her as the company’s first Black and first woman president.",
+        "limit": "Her advancement is documented; these biographies do not establish company-wide promotion rates or a route into a reader’s team.",
+        "source": {
+          "title": "USC Industrial and Systems Engineering · Wanda Austin",
+          "url": "https://ise.usc.edu/about/keynote-lecture-series/dr-wanda-austin/",
+          "locator": "September 25, 2008 lecture biography",
+          "type": "University lecture biography",
+          "supports": "1979 employment, technical leadership roles and 2008 appointment."
+        },
+        "topics": [
+          "systems engineering",
+          "promotion",
+          "leadership"
+        ],
+        "sources": [
+          {
+            "title": "USC Board of Trustees · Wanda Austin",
+            "url": "https://boardoftrustees.usc.edu/wanda-austin/",
+            "locator": "Biography: Aerospace presidency, 2008–2016",
+            "type": "Institutional biography",
+            "supports": "The explicitly scoped Black and woman leadership milestones at Aerospace."
+          }
+        ]
+      },
+      {
+        "id": "ericsson-goddard-engineer-1992",
+        "date": "1992–2022",
+        "year": 1992,
+        "title": "Aprille Ericsson builds a career on Goddard spacecraft instruments",
+        "people": "Aprille Joy Ericsson",
+        "decisionMaker": "NASA Goddard employed Ericsson as an engineer in 1992; the newsletter does not name the hiring official.",
+        "barrier": "Engineering employment, instrument assignments and project management are different steps.",
+        "change": "NASA’s dated account follows her from engineering entry through work on several space missions.",
+        "outcome": "It credits contributions to Webb, the Advanced Topographic Laser Altimeter System and the Lunar Reconnaissance Orbiter.",
+        "limit": "This is Goddard employment and project evidence through 2022, not proof of her current role or a connection to every NASA center.",
+        "source": {
+          "title": "NASA Goddard · Innovation Catalyst, June 2022",
+          "url": "https://partnerships.gsfc.nasa.gov/wp-content/uploads/Innovation_Catalyst_June.pdf",
+          "locator": "Printed page 4: Celebrating a Goddard African American Innovator; indexed text reviewed",
+          "type": "Employer newsletter",
+          "supports": "1992 engineer hire and named mission contributions."
+        },
+        "topics": [
+          "aerospace engineering",
+          "employment",
+          "project assignments"
+        ],
+        "sources": [
+          {
+            "title": "NASA Goddard · Aprille Joy Ericsson lecture biography",
+            "url": "https://earth.gsfc.nasa.gov/maniac/ericsson",
+            "locator": "Speaker biography: instrument project manager and technologist",
+            "type": "Employer biography",
+            "supports": "Corroborates Goddard instrument-engineering and project-management work; not current employment status."
+          }
+        ]
       }
     ],
     "furtherResearch": [
-      "Research licensing and supervised practice separately where a particular engineering discipline requires them.",
-      "Find dated appointments, project credits and promotion policies at the reader's actual employer.",
-      "Add separately supported histories for electrical, mechanical, chemical and other engineering specialties."
+      "Find dated hiring, project-credit and promotion records for the reader’s exact facility and engineering specialty; a parent organization alone may be insufficient.",
+      "Research professional licensure and supervised practice separately where the particular discipline requires them.",
+      "Read Braithwaite’s interview and contemporary Boeing project records to identify when design systems were adopted, by whom and at which sites.",
+      "Trace historical company names, reorganizations and facilities before connecting Dammond or Alexander to a modern employer.",
+      "Expand chemical, industrial, electrical and environmental engineering with their own employment evidence; the examples here do not substitute for those histories."
     ],
     "credential": {
       "name": "Archibald A. Alexander",
       "year": 1912,
       "credential": "Civil engineering degree",
-      "record": "Iowa identifies Alexander as its first Black graduate in civil engineering in 1912.",
-      "work": "He joined Marsh Engineering, then founded his own company in 1914.",
+      "record": "Iowa identifies Alexander as its first Black civil-engineering graduate in 1912.",
+      "work": "Marsh employed him before he established a company in 1914.",
       "sources": [
         {
           "label": "University of Iowa College of Engineering · Archibald A. Alexander",
-          "url": "https://engineering.uiowa.edu/alumni/alumni-awards/distinguished-engineering-alumni-academy-members/archibald-alexander"
+          "url": "https://engineering.uiowa.edu/alumni/alumni-awards/distinguished-engineering-alumni-academy-members/archibald-alexander",
+          "locator": "Biography: degree and early employment",
+          "type": "Institutional history",
+          "supports": "1912 degree and subsequent engineering work.",
+          "title": "University of Iowa College of Engineering · Archibald A. Alexander"
         }
       ]
-    }
+    },
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "Walt Braithwaite’s account of Boeing engineering decisions",
+        "url": "https://archives.museumofflight.org/repositories/2/archival_objects/17104",
+        "locator": "Museum of Flight Oral History Collection, 2019-00-00-100; interview August 16, 2022",
+        "question": "Which managers, project dates and Boeing sites does the full interview identify, and can contemporary records corroborate them?",
+        "status": "Catalog record reviewed; underlying interview and transcript not reviewed"
+      }
+    ]
   },
   {
     "slug": "entrepreneur",
@@ -1788,8 +2100,8 @@
   {
     "slug": "lawyer",
     "headline": "Legal education, the right to practice and the work of challenging exclusion",
-    "summary": "Black lawyers built institutions, secured credentials and challenged exclusion through litigation. A law degree, bar admission and access to clients or employment are separate steps.",
-    "coverageNote": "Four episodes in U.S. legal education and practice, with specific records for Howard, Pennsylvania and Texas. These are not a complete history of every bar, firm or legal specialty.",
+    "summary": "Black lawyers built schools and professional networks, practiced privately, joined government legal offices and challenged exclusion in court. These records separate a degree and bar admission from paid work, promotion and judicial appointment.",
+    "coverageNote": "Ten selected episodes across legal education, professional organizing, private practice, civil-rights litigation and public service. Named workplaces include Howard, the Interior Department, New York City’s Law Department, LDF and the Southern District of New York; they do not establish access at every firm or court.",
     "question": "Which bar, firm, court or legal department record establishes Black access to the work you do?",
     "events": [
       {
@@ -1807,8 +2119,13 @@
           "title": "Howard University School of Law · Our History",
           "url": "https://law.howard.edu/about/our-history",
           "locator": "History paragraphs covering January 1869, February 1871 and Charlotte E. Ray in 1872",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Howard’s opening, Langston’s leadership and the first graduates’ reported entry into practice."
+        },
+        "topics": [
+          "legal education",
+          "credentials"
+        ]
       },
       {
         "id": "charlotte-ray-law-1872",
@@ -1816,17 +2133,45 @@
         "year": 1872,
         "title": "Charlotte E. Ray earns a degree and admission to practice",
         "people": "Charlotte E. Ray",
-        "decisionMaker": "Howard awarded the degree; the District of Columbia Supreme Court admitted her.",
-        "barrier": "Her record concerns racial and gender access.",
-        "change": "Her degree preceded admission to District practice.",
-        "outcome": "Howard identifies her as that court's first woman admitted to practice.",
-        "limit": "Admission does not establish a sustainable practice or equal access to clients.",
+        "decisionMaker": "Howard awarded her degree; she was admitted to the District of Columbia bar.",
+        "barrier": "Racial and gender barriers continued after the credential.",
+        "change": "She earned her Howard law degree and entered District of Columbia practice in 1872.",
+        "outcome": "She opened a law office, but the District’s Attorney General records that she could not obtain enough business to sustain it.",
+        "limit": "Her admission opened a legal right to practice; it did not ensure clients or a durable livelihood.",
         "source": {
-          "title": "Howard University School of Law · Our History",
-          "url": "https://law.howard.edu/about/our-history",
-          "locator": "History paragraphs covering January 1869, February 1871 and Charlotte E. Ray in 1872",
-          "type": "Institutional history"
-        }
+          "title": "District of Columbia OAG · Charlotte E. Ray",
+          "url": "https://oag.dc.gov/blog/black-history-month-celebrating-charlotte-e-ray",
+          "locator": "February 26, 2019; Charlotte E. Ray biography, degree and private-practice paragraph",
+          "type": "Government historical profile",
+          "supports": "Her 1872 credential, District practice and business closure."
+        },
+        "topics": [
+          "credentials",
+          "private practice"
+        ]
+      },
+      {
+        "id": "national-bar-organizing-1925",
+        "date": "August 1, 1925",
+        "year": 1925,
+        "title": "Black lawyers establish their own national professional network",
+        "people": "George H. Woodson, Gertrude E. Rush and fellow founders",
+        "decisionMaker": "Twelve founders incorporated the National Bar Association in Des Moines; Woodson became its first president.",
+        "barrier": "Some founders had been denied American Bar Association membership.",
+        "change": "They built a national association for professional cooperation and the defense of civil rights.",
+        "outcome": "The association’s early agenda included exclusion of Black lawyers from law libraries and efforts to extend legal services.",
+        "limit": "Association membership did not confer a law license or guarantee employment. Its founding is a professional-organizing record, not evidence about every bar or firm.",
+        "source": {
+          "title": "National Bar Association · History",
+          "url": "https://members.nationalbar.org/history",
+          "locator": "Timeline: 1925 incorporation and 1930 library access; founders and past presidents lists",
+          "type": "Professional association history",
+          "supports": "The incorporation date, founders, Woodson’s presidency and early access concerns."
+        },
+        "topics": [
+          "professional organizing",
+          "institution building"
+        ]
       },
       {
         "id": "sadie-alexander-law-1927",
@@ -1843,8 +2188,124 @@
           "title": "University of Pennsylvania Archives · Sadie Tanner Mossell Alexander",
           "url": "https://archives.upenn.edu/exhibits/penn-people/biography/sadie-tanner-mossell-alexander/",
           "locator": "Biographical paragraphs covering employment after her doctorate and law study, bar admission and practice",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Alexander’s degree, bar admission, earlier employment difficulty and estate/family-law practice."
+        },
+        "topics": [
+          "credentials",
+          "private practice"
+        ]
+      },
+      {
+        "id": "houston-howard-curriculum-1929",
+        "date": "1929–1931",
+        "year": 1929,
+        "title": "Charles Hamilton Houston strengthens Howard’s civil-rights training",
+        "people": "Charles Hamilton Houston and Howard law students, including Thurgood Marshall",
+        "decisionMaker": "Howard appointed Houston vice-dean; he directed the curriculum changes.",
+        "barrier": "Howard had offered law courses part-time in the evening.",
+        "change": "After his 1929 appointment, Houston developed an accredited, full-time program with stronger civil-rights instruction.",
+        "outcome": "A 1931 memorandum documents his curriculum review. The school trained lawyers who went on to challenge racial exclusion.",
+        "limit": "This connects an academic appointment to legal training, not every graduate’s later hiring or a reader’s present employer.",
+        "source": {
+          "title": "Smithsonian · Howard Law: Preparing for Struggle",
+          "url": "https://www.americanhistory.si.edu/brown/history/3-organized/hu-law-school.html",
+          "locator": "Opening paragraph and 1931 course-syllabus memorandum caption",
+          "type": "Museum exhibition with archival document",
+          "supports": "Houston’s appointment, curriculum changes and the dated memorandum."
+        },
+        "topics": [
+          "legal education",
+          "academic leadership"
+        ]
+      },
+      {
+        "id": "hastie-interior-law-1933",
+        "date": "1933–1937 · start year differs by source",
+        "year": 1933,
+        "title": "William Hastie practices law inside the Interior Department",
+        "people": "William Henry Hastie, Nathan Margold and Harold Ickes",
+        "decisionMaker": "Hastie recalled that Secretary Ickes gave Solicitor Margold discretion to select his legal staff.",
+        "barrier": "This opening depended on an appointment to a federal legal office, beyond obtaining a degree or bar admission.",
+        "change": "Hastie served as assistant solicitor at the U.S. Department of the Interior.",
+        "outcome": "His assignments included legal work on a corporate structure for the Virgin Islands’ sugar and rum industries.",
+        "limit": "The Federal Judicial Center dates service from 1933; Hastie recalled 1934. A personnel record is needed to resolve that difference. Neither source establishes all departmental hiring practices.",
+        "source": {
+          "title": "Truman Library · William Hastie oral history",
+          "url": "https://www.trumanlibrary.gov/library/oral-histories/hastie",
+          "locator": "January 5, 1972 interview; transcript pages 2–3",
+          "type": "First-person oral history",
+          "supports": "Hastie’s account of selection authority, legal assignments and a 1934 start."
+        },
+        "topics": [
+          "government practice",
+          "appointments"
+        ],
+        "sources": [
+          {
+            "title": "Federal Judicial Center · William Henry Hastie",
+            "url": "https://www.fjc.gov/history/judges/hastie-william-henry",
+            "locator": "Professional Career: assistant solicitor, 1933–1937",
+            "type": "Official judicial biography",
+            "supports": "The official career chronology, which differs from his later recollection."
+          }
+        ]
+      },
+      {
+        "id": "bolin-nyc-law-department-1937",
+        "date": "1937",
+        "year": 1937,
+        "title": "Jane Bolin enters New York City’s legal department",
+        "people": "Jane Matilda Bolin",
+        "decisionMaker": "New York City appointed Bolin assistant corporation counsel; the cited account does not name the appointing official.",
+        "barrier": "The city identifies her as its first Black woman in this attorney role.",
+        "change": "Bolin joined the Law Department in 1937, after private practice.",
+        "outcome": "She represented the city in Domestic Relations Court matters before her separate judicial appointment in 1939.",
+        "limit": "This is an attorney appointment at a named employer. It does not establish access to every city legal position or the circumstances of a present employee’s hiring.",
+        "source": {
+          "title": "NYC Law Department · Law Day statement",
+          "url": "https://www.nyc.gov/site/law/news/041-20/statement-corporation-counsel-james-e-johnson-law-day",
+          "locator": "May 1, 2020; final paragraph on Jane Bolin",
+          "type": "Employer history",
+          "supports": "The 1937 assistant corporation counsel appointment and its institutional first."
+        },
+        "topics": [
+          "government practice",
+          "appointments"
+        ],
+        "sources": [
+          {
+            "title": "Historical Society of the New York Courts · Judge Jane Bolin",
+            "url": "https://history.nycourts.gov/judge-jane-bolin/",
+            "locator": "Early practice, corporation counsel and 1939 judicial appointment paragraphs",
+            "type": "Court historical society research",
+            "supports": "The transition from private practice and work before the Domestic Relations Court."
+          }
+        ]
+      },
+      {
+        "id": "motley-ldf-practice-1945",
+        "date": "1945–1949",
+        "year": 1945,
+        "title": "Constance Baker Motley moves from law clerk to civil-rights counsel",
+        "people": "Constance Baker Motley",
+        "decisionMaker": "The NAACP Legal Defense and Educational Fund hired and promoted Motley.",
+        "barrier": "Black women had little representation in the organization’s early legal staff.",
+        "change": "She started at LDF as a law clerk in 1945 and became assistant special counsel in 1949.",
+        "outcome": "She later led university-desegregation litigation, including the legal campaign for James Meredith’s admission to the University of Mississippi.",
+        "limit": "This establishes a career at LDF. It does not establish employment at the NAACP, its local branches or other law firms.",
+        "source": {
+          "title": "Legal Defense Fund · Life and Legacy of Constance Baker Motley",
+          "url": "https://www.naacpldf.org/naacp-publications/ldf-blog/cbm-100/",
+          "locator": "Life and Legacy biography and Desegregation Architect section",
+          "type": "Employer history",
+          "supports": "The 1945 entry, 1949 promotion and university-desegregation work."
+        },
+        "topics": [
+          "civil-rights practice",
+          "hiring",
+          "promotion"
+        ]
       },
       {
         "id": "sweatt-texas-1950",
@@ -1861,28 +2322,95 @@
           "title": "U.S. Supreme Court · Sweatt v. Painter, 339 U.S. 629 (1950)",
           "url": "https://www.govinfo.gov/content/pkg/USREPORTS-339/pdf/USREPORTS-339-629.pdf",
           "locator": "Syllabus, pp. 629–630; opinion, pp. 631–636",
-          "type": "Court opinion"
-        }
+          "type": "Court opinion",
+          "supports": "The exclusion challenged, unequal education finding and required admission."
+        },
+        "topics": [
+          "legal education",
+          "court decisions"
+        ]
+      },
+      {
+        "id": "motley-sdny-commission-1966",
+        "date": "August 30, 1966",
+        "year": 1966,
+        "title": "Constance Baker Motley receives a federal judicial commission",
+        "people": "Constance Baker Motley",
+        "decisionMaker": "President Lyndon B. Johnson nominated her; the U.S. Senate confirmed her.",
+        "barrier": "The Southern District identifies her appointment as the first lifetime federal judgeship held by a Black woman.",
+        "change": "Johnson nominated her on January 26, 1966; confirmation and her commission followed on August 30.",
+        "outcome": "She served on the U.S. District Court for the Southern District of New York and became chief judge in 1982.",
+        "limit": "A judicial appointment has a different route from an attorney, clerk or court-staff job. Her appointment does not prove the hiring history of those roles.",
+        "source": {
+          "title": "Federal Judicial Center · Constance Baker Motley",
+          "url": "https://www.fjc.gov/history/judges/motley-constance-baker",
+          "locator": "Federal Judicial Service: nomination, confirmation, commission and chief-judge dates",
+          "type": "Official judicial biography",
+          "supports": "The appointing authorities, exact 1966 dates and 1982 leadership role."
+        },
+        "topics": [
+          "judicial appointments",
+          "leadership"
+        ],
+        "sources": [
+          {
+            "title": "Southern District of New York · Court history",
+            "url": "https://nysd.uscourts.gov/about",
+            "locator": "Court-history paragraph on Motley’s August 30, 1966 appointment",
+            "type": "Court institutional history",
+            "supports": "The court’s identification of the historic appointment."
+          }
+        ]
       }
     ],
     "furtherResearch": [
-      "Trace firm, public-service and judicial appointments separately from education and bar admission.",
-      "Use client, practice and employment records to examine what happened after an early legal credential.",
-      "Verify the exact jurisdiction and date before applying a historical admission decision to a later workplace."
+      "Find appointment letters, payrolls, staff directories and partnership records for the reader’s exact legal employer.",
+      "Follow legal credentials into actual clients and work; Ray’s business closure demonstrates why admission alone is insufficient.",
+      "Resolve the 1933/1934 discrepancy in Hastie’s Interior start date from a contemporary personnel file.",
+      "Trace law-school training, civil-rights organizations, government practice and judicial appointments as separate routes.",
+      "Identify later hiring and promotion decisions at each named institution before claiming that one appointment opened every subsequent position.",
+      "Expand public defense, prosecution, corporate counsel and private-firm practice with employer-specific records."
     ],
     "credential": {
       "name": "Charlotte E. Ray",
       "year": 1872,
       "credential": "Law degree and admission to practice",
       "record": "Howard records Ray's law graduation and admission to District of Columbia practice in 1872.",
-      "work": "The account does not establish later employment outcomes.",
+      "work": "DC’s Attorney General records that she opened a practice but could not sustain it because she could not attract enough business as a woman of color.",
       "sources": [
         {
           "label": "Howard University School of Law · Our History",
-          "url": "https://law.howard.edu/about/our-history"
+          "url": "https://law.howard.edu/about/our-history",
+          "locator": "Charlotte E. Ray, 1872 paragraph",
+          "type": "Institutional history",
+          "supports": "Law graduation and admission to District practice."
+        },
+        {
+          "label": "District of Columbia OAG · Charlotte E. Ray",
+          "url": "https://oag.dc.gov/blog/black-history-month-celebrating-charlotte-e-ray",
+          "locator": "Degree and private-practice paragraph",
+          "type": "Government historical profile",
+          "supports": "The opening and closure of her own law practice."
         }
       ]
-    }
+    },
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "William Hastie’s professional and judicial papers",
+        "url": "https://hollisarchives.lib.harvard.edu/catalog/law00134",
+        "locator": "Harvard Law School, LAW.MMC.121; Series I, Administrative Matters; catalog describes law-clerk hiring correspondence and nonjudicial personnel",
+        "question": "What do the correspondence and appointment files show about access to legal work? Most papers date from 1937 onward and may not resolve his Interior start date.",
+        "status": "Indexed finding-aid description reviewed; underlying records not reviewed"
+      },
+      {
+        "title": "Constance Baker Motley’s public-service papers at Smith",
+        "url": "https://www.smith.edu/libraries/libs/ssc/agents/motley.html",
+        "locator": "Sophia Smith Collection exhibition: collection description, 5.5 linear feet; primarily state senate, borough presidency and early federal judgeship",
+        "question": "What do the early judicial records show about her workplace? The collection description warns that little material concerns her early civil-rights practice.",
+        "status": "Collection description reviewed; underlying records not reviewed"
+      }
+    ]
   },
   {
     "slug": "military-officer",
@@ -2238,9 +2766,9 @@
   },
   {
     "slug": "pharmacist",
-    "headline": "Pharmacy education, state credentials and community-owned practices",
-    "summary": "Black pharmacists gained qualifications, ran businesses and served communities while facing exclusion from schools and professional networks. These records distinguish a degree, a license and ownership.",
-    "coverageNote": "Four episodes in Washington, D.C., Connecticut, Pennsylvania, Ohio and Louisiana. Historical credentials are not instructions for obtaining a license today.",
+    "headline": "Pharmacy credentials, research, ownership and professional power",
+    "summary": "Black pharmacists built community businesses, entered pharmaceutical research and led the schools and associations shaping the profession. These records distinguish education, licensing, employment, invention and ownership.",
+    "coverageNote": "Ten episodes connect named people to pharmacy education, community businesses, research and professional leadership. Historical appointments and ownership do not establish a link to every current hospital, chain or pharmacy site.",
     "question": "Which licensing, employment or business record connects Black pharmacists to your pharmacy or institution?",
     "events": [
       {
@@ -2258,7 +2786,8 @@
           "title": "Howard University College of Pharmacy · About",
           "url": "https://pharmacy.howard.edu/about",
           "locator": "Howard University College of Pharmacy's History: 1868 evening instruction and James Thomas Wormley's 1870 degree",
-          "type": "Institutional history"
+          "type": "Institutional history",
+          "supports": "Evening instruction in 1868 and Wormley’s 1870 pharmacy degree."
         }
       },
       {
@@ -2276,14 +2805,16 @@
           "title": "Connecticut Museum of Culture and History · Anna Louise James",
           "url": "https://www.connecticutmuseum.org/research/wocvotes/",
           "locator": "Anna Louise James biography: education, professional-association rejection and pharmacy ownership",
-          "type": "Museum history"
+          "type": "Museum history",
+          "supports": "Professional-association rejection and James’s 1917 sole ownership in Old Saybrook."
         },
         "sources": [
           {
-            "title": "Schlesinger Library · Papers of Anna Louise James, MC 440",
-            "url": "https://hollisarchives.lib.harvard.edu/download_collection_pdf/sch00656.pdf",
-            "locator": "Biographical note: 1908 graduation and 1909 Connecticut license",
-            "type": "Archival finding aid"
+            "title": "Schlesinger Library · Anna Louise James collection guide",
+            "url": "https://guides.library.harvard.edu/c.php?g=1277971&p=9378305",
+            "locator": "Archival Collections — In-Person; Anna Louise James biography",
+            "type": "Archival collection guide",
+            "supports": "1908 graduation, 1909 Connecticut license and Hartford-to-Old-Saybrook business history."
           }
         ]
       },
@@ -2302,7 +2833,8 @@
           "title": "University of Pittsburgh · Ella P. Stewart",
           "url": "https://www.pittwire.pitt.edu/pittwire/features-articles/ella-p-stewart-first-black-woman-graduate-pitts-pharmacy-school",
           "locator": "Paragraphs covering segregated pharmacy classes, 1916 graduation and exam, and July 1922 pharmacy opening",
-          "type": "Institutional biography"
+          "type": "Institutional biography",
+          "supports": "Segregated training, 1916 qualification and the 1922 Toledo pharmacy."
         }
       },
       {
@@ -2320,14 +2852,164 @@
           "title": "Xavier University of Louisiana · College of Pharmacy Quick Facts",
           "url": "https://www.xula.edu/collegeofpharmacy/quick-facts.html",
           "locator": "Opening paragraph: 1927 founding and educational purpose",
-          "type": "Institutional history"
+          "type": "Institutional history",
+          "supports": "The 1927 founding and purpose of educating Black and other minority pharmacists."
         }
+      },
+      {
+        "id": "cooper-howard-leadership-1938",
+        "date": "1938–1972",
+        "year": 1938,
+        "title": "Chauncey Cooper gains authority to lead Howard’s pharmacy college",
+        "people": "Chauncey Ira Cooper",
+        "decisionMaker": "Howard appointed Cooper acting head in 1938 and dean in 1941.",
+        "barrier": "Howard identifies Cooper as the first Black leader of a U.S. pharmacy college.",
+        "change": "His appointment placed a Black educator in charge of professional training.",
+        "outcome": "He remained dean until retiring in 1972.",
+        "limit": "This is an academic appointment at Howard’s pharmacy college, not a hospital-pharmacist post or proof of graduates’ placement.",
+        "source": {
+          "title": "Howard University · Chauncey I. Cooper biography",
+          "url": "https://events.howard.edu/cooper-hall-chauncey-i-cooper-hall-college-of-pharmacy-587",
+          "locator": "About the Building’s Name: 1938, 1941 and 1972 appointments",
+          "type": "Institutional biography",
+          "supports": "Cooper’s acting-head appointment and service as dean."
+        },
+        "topics": [
+          "academic leadership",
+          "pharmacy education"
+        ]
+      },
+      {
+        "id": "cooper-npha-1947",
+        "date": "1947",
+        "year": 1947,
+        "title": "Cooper and fellow pharmacists build their own national organization",
+        "people": "Chauncey I. Cooper and 45 pharmacist members of the National Medical Association",
+        "decisionMaker": "The pharmacists established the National Pharmaceutical Association on May 30, 1947.",
+        "barrier": "NPhA traces its origins to exclusion from mainstream professional organizations.",
+        "change": "A distinct pharmacy organization gave minority practitioners a professional voice.",
+        "outcome": "Its stated purposes include continuing education, representation and communication among pharmacists.",
+        "limit": "The association’s history establishes organizing; it does not measure resulting hires, pay or equal membership elsewhere.",
+        "source": {
+          "title": "National Pharmaceutical Association · History",
+          "url": "https://npha.net/About-NPhA",
+          "locator": "History and Our Purpose sections",
+          "type": "Organization’s historical account",
+          "supports": "Cooper, the 45 founding pharmacists and the May 1947 formation."
+        },
+        "topics": [
+          "professional organizing",
+          "continuing education"
+        ]
+      },
+      {
+        "id": "robinson-uf-pharmacy-doctorate-1966",
+        "date": "1966",
+        "year": 1966,
+        "title": "Ira Robinson completes a research doctorate despite barriers at UF",
+        "people": "Ira C. Robinson Sr.",
+        "decisionMaker": "The University of Florida awarded Robinson a doctorate in industrial pharmacy.",
+        "barrier": "UF reports denial of campus housing and a teaching assistantship, alongside difficulty obtaining financial awards.",
+        "change": "He completed the PhD in 1966; UF identifies him as its first Black PhD graduate.",
+        "outcome": "His later career included research at Pfizer and pharmacy-school leadership at Florida A&M.",
+        "limit": "A research PhD is distinct from a pharmacist’s practice license. This account does not date those later job appointments.",
+        "source": {
+          "title": "University of Florida · GATORx centennial history",
+          "url": "https://pharmacy.ufl.edu/wordpress/files/2023/08/GATORx_2023_FINAL.pdf",
+          "locator": "GATORx 2023, printed p. 8 (PDF p. 10), Ira Robinson profile",
+          "type": "Institutional history",
+          "supports": "1966 doctorate, reported exclusions and later research and academic work."
+        },
+        "topics": [
+          "research education",
+          "industrial pharmacy"
+        ]
+      },
+      {
+        "id": "robinson-pfizer-tablet-patent-1971",
+        "date": "1968–1971",
+        "year": 1968,
+        "title": "Ira Robinson’s tablet research enters a named patent record",
+        "people": "Ira C. Robinson",
+        "decisionMaker": "The U.S. Patent Office granted patent 3,577,514; the document names Robinson as assignor to Pfizer.",
+        "barrier": "The record credits an individual’s technical work; it does not describe how he gained access to the research post.",
+        "change": "An application filed June 10, 1968 describes a sustained-release tablet formulation.",
+        "outcome": "The patent issued May 4, 1971 with Robinson’s name on the invention.",
+        "limit": "A patent is not evidence of drug approval, commercial use, a specific laboratory appointment or equal access to Pfizer jobs.",
+        "source": {
+          "title": "U.S. Patent 3,577,514 · Ira C. Robinson",
+          "url": "https://patentimages.storage.googleapis.com/ac/ba/20/4f7f0a080be6a2/US3577514.pdf",
+          "locator": "First page: inventor/assignor, filing date, grant date and abstract",
+          "type": "Issued patent",
+          "supports": "Robinson’s credited invention, Pfizer assignment and 1968–1971 dates."
+        },
+        "topics": [
+          "research",
+          "invention"
+        ]
+      },
+      {
+        "id": "runge-apha-leadership-1979",
+        "date": "1979–1981",
+        "year": 1979,
+        "title": "Mary Munson Runge brings Black women’s experience to APhA leadership",
+        "people": "Mary Munson Runge",
+        "decisionMaker": "APhA elected Runge president in 1979.",
+        "barrier": "The APhA Foundation identifies her as its first Black president and first woman president.",
+        "change": "A pharmacist with hospital and Oakland community-practice experience led the national association.",
+        "outcome": "Her presidency helped establish a Task Force on Women in Pharmacy and an Office of Women’s Affairs.",
+        "limit": "These organizational changes do not prove improved hiring or pay. The biography does not date her individual workplace appointments.",
+        "source": {
+          "title": "APhA Foundation · Mary Munson Runge",
+          "url": "https://www.aphafoundation.org/prev-prez/mary-munson-runge",
+          "locator": "1979–1981 presidency, practice history and women’s-affairs initiatives",
+          "type": "Organization’s historical biography",
+          "supports": "Runge’s election, practice settings and creation of professional-support structures."
+        },
+        "topics": [
+          "professional leadership",
+          "women in pharmacy"
+        ]
+      },
+      {
+        "id": "champion-memphis-pharmacy-1981",
+        "date": "1981–2017",
+        "year": 1981,
+        "title": "Charles Champion’s community pharmacy becomes a family workplace",
+        "people": "Charles, Carolyn and Carol Champion; Charita Champion Brookins",
+        "decisionMaker": "The Champion family built the business; Memphis and Shelby County’s EDGE approved a 2017 improvement loan.",
+        "barrier": "The local financing record describes a pharmacy serving mainly uninsured neighborhood patients.",
+        "change": "Champion opened the Memphis pharmacy in 1981, after hospital and chain-store work.",
+        "outcome": "By 2017 the record names four family operators at 2369 Elvis Presley Boulevard and a transition to the daughters.",
+        "limit": "The approved loan’s projected retained jobs are not verified outcomes. This evidence does not establish current staffing or a connection to another pharmacy.",
+        "source": {
+          "title": "EDGE Memphis and Shelby County · Champions Pharmacy loan",
+          "url": "https://database.edgemem.com/loans/loan/207/",
+          "locator": "Project ED20170201; February 1, 2017 approval; page’s embedded record 207, ProjectDescription",
+          "type": "Public economic-development record",
+          "supports": "Exact business/site, family operation, ownership transition and approved building-improvement loan."
+        },
+        "topics": [
+          "community pharmacy",
+          "ownership",
+          "workplace"
+        ],
+        "sources": [
+          {
+            "title": "Tennessee General Assembly · Charles A. Champion memorial resolution",
+            "url": "https://www.capitol.tn.gov/Bills/113/Bill/SJR0150.pdf",
+            "locator": "SJR 150, 113th General Assembly, p. 1",
+            "type": "Legislative biographical resolution",
+            "supports": "John Gaston Hospital and Katz employment before the pharmacy’s 1981 opening."
+          }
+        ]
       }
     ],
     "furtherResearch": [
-      "Find the actual license register and pharmacy employment record for a named practitioner.",
-      "Research retail, hospital, research and ownership routes separately; one setting does not stand for all pharmacy work.",
-      "Connect a school or scholarship to documented completion and placement instead of assuming a hiring outcome."
+      "Find original licensing registers and dated appointment records for hospital and community pharmacists.",
+      "Trace individual pharmacy locations through ownership changes before linking them to a present-day employer.",
+      "Find dated Pfizer and Florida A&M personnel records for Robinson; distinguish research employment from a patent assignment.",
+      "Test whether association initiatives changed hiring, pay or promotion using workplace records rather than inferring outcomes."
     ],
     "credential": {
       "name": "Ella P. Stewart",
@@ -2338,16 +3020,29 @@
       "sources": [
         {
           "label": "University of Pittsburgh · Ella P. Stewart",
-          "url": "https://www.pittwire.pitt.edu/pittwire/features-articles/ella-p-stewart-first-black-woman-graduate-pitts-pharmacy-school"
+          "url": "https://www.pittwire.pitt.edu/pittwire/features-articles/ella-p-stewart-first-black-woman-graduate-pitts-pharmacy-school",
+          "type": "Institutional biography",
+          "locator": "1916 graduation/state examination and 1922 business paragraphs",
+          "supports": "Stewart’s qualification and pharmacy ownership."
         }
       ]
-    }
+    },
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "Anna Louise James’s business and personal records",
+        "url": "https://guides.library.harvard.edu/c.php?g=1277971&p=9378305",
+        "locator": "Schlesinger Library; Archival Collections — In-Person; Anna Louise James papers",
+        "question": "What do the listed financial records, certificates and diaries show about licensing, ownership and daily pharmacy work?",
+        "status": "Collection guide reviewed; underlying records not reviewed"
+      }
+    ]
   },
   {
     "slug": "physician",
     "headline": "From a medical degree to the right to practice",
-    "summary": "Black physicians earned credentials, built teaching institutions and hospitals, and challenged restrictions on practice. These records separate education from access to clinical training and hospital privileges.",
-    "coverageNote": "Five selected episodes spanning individual credentials, Black institution-building and hospital-access decisions. A national rule or field example does not prove a connection to every medical workplace.",
+    "summary": "Black physicians earned credentials, built hospitals, trained specialists and took responsibility for recruiting the next generation. These records distinguish a medical degree from residency, a faculty appointment and permission to practice at a particular hospital.",
+    "coverageNote": "Ten selected episodes across medical education, surgical training, professional organizing, hospital access and academic leadership. Howard/Freedmen’s, Penn, UCLA/Drew and Morehouse have distinct records; none establishes every physician’s workplace connection.",
     "question": "What record shows when Black physicians gained training places, staff privileges or appointments at your hospital?",
     "events": [
       {
@@ -2365,8 +3060,13 @@
           "title": "Boston University · Rebecca Lee Crumpler",
           "url": "https://www.bumc.bu.edu/camed/about/history/rebecca-lee-crumpler-2/",
           "locator": "Opening biographical paragraphs",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Crumpler’s 1864 degree and later work in Richmond and Boston."
+        },
+        "topics": [
+          "credentials",
+          "community care"
+        ]
       },
       {
         "id": "howard-augusta-medical-class-1868",
@@ -2383,8 +3083,13 @@
           "title": "Howard University College of Medicine · History",
           "url": "https://medicine.howard.edu/about/history",
           "locator": "November 1868 opening and Alexander Thomas Augusta paragraphs",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Howard’s opening date, inaugural students and faculty, and Augusta’s educational background."
+        },
+        "topics": [
+          "training",
+          "faculty appointments"
+        ]
       },
       {
         "id": "williams-provident-1891",
@@ -2401,8 +3106,59 @@
           "title": "National Park Service · Daniel Hale Williams House historic nomination",
           "url": "https://npgallery.nps.gov/NRHP/GetAsset/NHLS/75000655_text",
           "locator": "Statement of significance, PDF pages 3 and 5",
-          "type": "Historical designation research"
-        }
+          "type": "Historical designation research",
+          "supports": "Provident’s incorporation, integrated operation and clinical opportunities."
+        },
+        "topics": [
+          "institution building",
+          "clinical access"
+        ]
+      },
+      {
+        "id": "nma-organizing-1895",
+        "date": "1895",
+        "year": 1895,
+        "title": "Black physicians organize a national professional association",
+        "people": "Robert F. Boyd, Miles V. Lynk and Daniel Hale Williams",
+        "decisionMaker": "The founding members elected Boyd president and Williams vice president.",
+        "barrier": "Segregated medicine and exclusion from professional societies restricted Black doctors’ opportunities.",
+        "change": "Boyd and Lynk convened physicians during Atlanta’s Cotton States exposition; they formed the National Medical Association.",
+        "outcome": "The association provided an organized forum for physician training, scientific exchange and challenges to unequal medical care.",
+        "limit": "Professional membership is not a medical license, residency appointment or grant of hospital privileges.",
+        "source": {
+          "title": "National Medical Association · NMA History",
+          "url": "https://nmanet.org/nma-history/",
+          "locator": "History, The Founders and The Early Years sections",
+          "type": "Professional association history",
+          "supports": "The 1895 founding, organizers, officers and professional objectives."
+        },
+        "topics": [
+          "professional organizing",
+          "institution building"
+        ]
+      },
+      {
+        "id": "drew-howard-surgery-1941",
+        "date": "October 1941–1948",
+        "year": 1941,
+        "title": "Charles Drew trains surgeons at Howard and Freedmen’s",
+        "people": "Charles Richard Drew and his surgical residents",
+        "decisionMaker": "Howard appointed Drew surgery chair and chief of surgery at its teaching hospital.",
+        "barrier": "Professional exclusions restricted Black physicians’ access to specialty training and hospital work.",
+        "change": "In October 1941, Drew took charge of surgery at Howard and Freedmen’s Hospital.",
+        "outcome": "He sought further training for residents and maintained an alumni network. His first resident group passed surgical board examinations in December 1948.",
+        "limit": "These are named training and leadership connections. They do not identify every graduate’s later employer or establish uninterrupted access at today’s hospital.",
+        "source": {
+          "title": "National Library of Medicine · Drew at Howard, 1941–1950",
+          "url": "https://www.nlm.nih.gov/exhibition/education/charlesdrew/pdf/MyChiefInterestWasandIsSurgeryBiography.pdf",
+          "locator": "Page 1: October appointment, resident training and December 1948 examinations; page 2: professional exclusion",
+          "type": "Archival exhibition biography",
+          "supports": "Drew’s appointments, mentoring and residents’ certification outcomes."
+        },
+        "topics": [
+          "specialty training",
+          "clinical leadership"
+        ]
       },
       {
         "id": "simkins-hospital-access-1963",
@@ -2419,8 +3175,13 @@
           "title": "Simkins v. Moses H. Cone Memorial Hospital · 323 F.2d 959",
           "url": "https://law.justia.com/cases/federal/appellate-courts/F2/323/959/150563/",
           "locator": "Opening statement of claims and majority opinion’s injunctive-relief holding",
-          "type": "Contemporary court opinion"
-        }
+          "type": "Contemporary court opinion",
+          "supports": "The named hospitals, exclusion challenged, constitutional holding and ordered relief."
+        },
+        "topics": [
+          "hospital privileges",
+          "court decisions"
+        ]
       },
       {
         "id": "hospital-federal-access-rules-1964",
@@ -2437,15 +3198,129 @@
           "title": "U.S. Commission on Civil Rights · Equal Opportunity in Hospitals and Health Facilities",
           "url": "https://www.nlm.nih.gov/exhibition/forallthepeople/img/1706.pdf",
           "locator": "Printed pages 3 and 6–9; March 1965 publication",
-          "type": "Contemporary federal guidance"
-        }
+          "type": "Contemporary federal guidance",
+          "supports": "Federal funding conditions and the guidance on practice privileges and training."
+        },
+        "topics": [
+          "hospital privileges",
+          "federal policy"
+        ]
+      },
+      {
+        "id": "dickens-penn-leadership-1965",
+        "date": "1965–1969",
+        "year": 1965,
+        "title": "Helen Dickens connects a Penn faculty post to medical-school recruitment",
+        "people": "Helen Octavia Dickens and Karen Hamilton",
+        "decisionMaker": "Penn appointed Dickens to its OB/GYN faculty and later made her associate dean.",
+        "barrier": "The medical school sought to expand the presence of students from underrepresented communities.",
+        "change": "Dickens joined Penn’s OB/GYN faculty in 1965 and became associate dean of minority affairs in 1969.",
+        "outcome": "She mentored students and residents; with Hamilton, she recruited Black, Hispanic and Native American medical students.",
+        "limit": "This documents faculty and admissions leadership, not an individual student’s acceptance or privileges at every Penn Medicine hospital.",
+        "source": {
+          "title": "Penn Medicine · Helen Octavia Dickens",
+          "url": "https://www.med.upenn.edu/evdresearch/helen-o-dickens.html",
+          "locator": "1965–1994: Three decades at Penn, faculty and associate-dean paragraphs",
+          "type": "Institutional history",
+          "supports": "The 1965 faculty appointment, 1969 leadership role and recruitment work with Hamilton."
+        },
+        "topics": [
+          "faculty appointments",
+          "recruitment",
+          "leadership"
+        ]
+      },
+      {
+        "id": "bath-ucla-drew-1974",
+        "date": "1974–1983",
+        "year": 1974,
+        "title": "Patricia Bath enters academic ophthalmology and leads residency training",
+        "people": "Patricia E. Bath",
+        "decisionMaker": "UCLA and Charles R. Drew appointed Bath; the sources do not identify each appointing official.",
+        "barrier": "Bath described racial and gender discrimination during her academic career.",
+        "change": "UCLA records an ophthalmology faculty appointment beginning in 1974, alongside Los Angeles County employment and a Drew faculty role.",
+        "outcome": "By 1983 she chaired the Drew-UCLA ophthalmology residency program, extending her work into specialist training.",
+        "limit": "Faculty affiliation, county employment and residency leadership are distinct. These records do not prove a connection to every current UCLA Health location or a successor hospital.",
+        "source": {
+          "title": "UCLA · Patricia Bath remembrance",
+          "url": "https://newsroom.ucla.edu/stories/dr-patricia-bath-physician-inventor",
+          "locator": "June 5, 2019; faculty appointment and county employment paragraphs",
+          "type": "Employer history",
+          "supports": "UCLA faculty service in 1974–1987, county employment and Drew roles."
+        },
+        "topics": [
+          "faculty appointments",
+          "specialty training",
+          "clinical leadership"
+        ],
+        "sources": [
+          {
+            "title": "National Library of Medicine · Patricia E. Bath",
+            "url": "https://www.nlm.nih.gov/exhibition/changing-the-face-of-medicine/physicians/biography_patricia-bath.html",
+            "locator": "Biography: UCLA/Drew appointments, discrimination and 1983 residency leadership",
+            "type": "Federal medical-history exhibition",
+            "supports": "Her account of discrimination and the dated residency leadership role."
+          }
+        ]
+      },
+      {
+        "id": "sullivan-morehouse-program-1975",
+        "date": "1975–1985",
+        "year": 1975,
+        "title": "Louis Sullivan helps build another route to a medical degree",
+        "people": "Louis W. Sullivan, Louis C. Brown and Hugh Gloster",
+        "decisionMaker": "Morehouse College established the program with Sullivan as founding dean; the LCME later approved its degree plans.",
+        "barrier": "A feasibility study identified a shortage of Black physicians and physicians serving underserved communities.",
+        "change": "The 1975 program initially taught basic sciences. Its first students entered in 1978 and transferred elsewhere for clinical education.",
+        "outcome": "Morehouse School of Medicine became independent in 1981 and graduated its first MD class on May 17, 1985.",
+        "limit": "Morehouse College and the independent medical school are distinct institutions. Training partnerships do not establish a graduate’s hospital employment.",
+        "source": {
+          "title": "Morehouse School of Medicine · Academic catalog history",
+          "url": "https://msm.smartcatalogiq.com/en/2025-2026/2025-2026-morehouse-school-of-medicine-academic-catalog/history",
+          "locator": "History paragraphs covering the feasibility study, 1975 program, 1978 class and 1981–1985 transition",
+          "type": "Institutional academic catalog",
+          "supports": "Program stages, initial transfer arrangement, independence and first MD graduation."
+        },
+        "topics": [
+          "institution building",
+          "medical education",
+          "credentials"
+        ],
+        "sources": [
+          {
+            "title": "Morehouse School of Medicine · Founders and anniversary",
+            "url": "https://www.msm.edu/RSSFeedArticles/April2015/40thCelebration.php",
+            "locator": "April 15, 2015 release; founding dean and April 2, 1975 paragraphs",
+            "type": "Institutional history",
+            "supports": "Sullivan’s founding role and Brown and Gloster’s planning work."
+          }
+        ]
       }
     ],
     "furtherResearch": [
-      "Find dated hospital staff rosters, residency appointments or privileges decisions for the reader’s exact institution.",
-      "Trace implementation after Simkins and federal funding rules, including resistance and unequal conditions that persisted.",
-      "Expand the record of Black medical schools, including Meharry and schools that closed, without attributing closures to a single cause without evidence.",
-      "Add specialty training, professional-association access, leadership and ownership records; a medical degree is only one stage of the path."
+      "Find dated staff rosters, residency offers, privileges decisions and promotion records for the reader’s exact hospital or department.",
+      "Trace implementation after Simkins and federal funding conditions, including resistance and unequal working conditions.",
+      "Use Drew’s resident and alumni records to follow particular surgeons from training to their next appointments.",
+      "Compare appointment, admissions and promotion files with institutional biographies; teaching, clinical employment and recruitment leadership are separate connections.",
+      "Document operator, campus and name changes before connecting Freedmen’s, King/Drew or other historical hospitals to a present workplace.",
+      "Expand Meharry, community practice, specialties and medical-school closures using institution-specific evidence."
+    ],
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "Patricia Bath’s UCLA and King/Drew promotion and residency files",
+        "url": "https://sirismm.si.edu/EADpdfs/NMAH.AC.1585.pdf",
+        "locator": "Smithsonian NMAH.AC.1585; Box 19, folders 6 and 8; promotion 1980–1986 and residency program 1981–1985; PDF page 24",
+        "question": "Which appointment and program decisions are documented, and what changed for particular trainees?",
+        "status": "Finding aid reviewed; underlying records not reviewed"
+      },
+      {
+        "title": "Helen Dickens’s Penn admissions and appointment records",
+        "url": "https://archives.upenn.edu/collections/finding-aid/upt50d548/",
+        "locator": "UPT 50 D548; Box 14, folders 29–30, admissions 1968–1985; Box 17, folders 17–18, reappointments and salary 1972–1994",
+        "question": "Which recruitment decisions and faculty appointments can be dated from the underlying records?",
+        "status": "Finding aid reviewed; underlying records not reviewed"
+      }
     ]
   },
   {
@@ -2622,28 +3497,34 @@
   },
   {
     "slug": "professor",
-    "headline": "A doctorate could open study while faculty hiring remained closed",
-    "summary": "Black scholars created knowledge and helped lead institutions despite barriers between academic credentials and employment. These episodes distinguish doctoral education, research appointments, professorships and institutional leadership.",
-    "coverageNote": "Four episodes across physics, social science, college leadership and business education. A program for business faculty does not represent every discipline or prove access to tenure.",
+    "headline": "Getting a degree, a faculty job and authority to lead were different doors",
+    "summary": "Black scholars taught, produced knowledge and led departments while challenging exclusion. These records name people who made appointments—and people who reversed them. They distinguish graduate credentials, teaching rank, research posts and institutional leadership.",
+    "coverageNote": "Ten selected episodes in physics, chemistry, social science, mathematics, statistics, philosophy, theatre and business education. Named workplaces include Penn, Atlanta University, Howard, the College of Hawaiʻi, Chicago, Berkeley, Montana and UCLA. A documented appointment at one campus is not proof of access at another.",
     "question": "Which appointment, promotion or tenure record connects Black faculty to your department?",
     "events": [
       {
         "id": "bouchet-doctorate-1876",
         "date": "1876–1905",
         "year": 1876,
-        "title": "Edward Bouchet earns a doctorate without equal access to university hiring",
+        "title": "Edward Bouchet’s doctorate does not secure university employment",
         "people": "Edward Alexander Bouchet",
-        "decisionMaker": "Yale awarded the doctorate; the Institute for Colored Youth employed him; Yale later declined his teaching application.",
-        "barrier": "Yale Library reports that white colleges and universities did not hire him despite his scientific qualifications.",
-        "change": "He earned his physics PhD in 1876 and taught science at the Institute for Colored Youth for 26 years.",
-        "outcome": "His 1905 Yale teaching application was unsuccessful, even with a recommendation from a former teacher.",
-        "limit": "His credential is documented; it must not be presented as a faculty appointment or proof that a degree removed employment barriers.",
+        "decisionMaker": "Yale awarded his doctorate but later declined his teaching application.",
+        "barrier": "Yale Library records exclusion from white colleges despite his qualifications.",
+        "change": "His 1876 physics doctorate preceded 26 years teaching at the Institute for Colored Youth.",
+        "outcome": "A Yale teaching application failed in 1905.",
+        "limit": "A degree is not a faculty appointment or evidence of equal hiring.",
         "source": {
           "title": "Yale University Library · Edward Alexander Bouchet",
           "url": "https://onlineexhibits.library.yale.edu/s/early-black-yale-students/item/20594",
-          "locator": "Biography: 1876 doctorate, Institute for Colored Youth employment and unsuccessful 1905 Yale application",
-          "type": "University archival exhibit"
-        }
+          "locator": "Biography: doctorate, teaching and 1905 application",
+          "type": "University archival exhibit",
+          "supports": "Credential, teaching employment and unsuccessful Yale application."
+        },
+        "topics": [
+          "doctoral education",
+          "exclusion",
+          "employment"
+        ]
       },
       {
         "id": "dubois-research-1896",
@@ -2654,14 +3535,20 @@
         "decisionMaker": "Penn appointed him Assistant in Sociology; Atlanta University subsequently employed him as a professor.",
         "barrier": "Penn's research appointment was a specific post, not a general guarantee of faculty access for Black scholars.",
         "change": "His Philadelphia assignment centered on a study of Black residents of the Seventh Ward.",
-        "outcome": "He interviewed about 5,000 people, published The Philadelphia Negro, and became a professor at Atlanta University.",
+        "outcome": "He interviewed about 5,000 people, became a professor at Atlanta University, and published The Philadelphia Negro in 1899.",
         "limit": "The two appointments had different roles and institutions; neither establishes the hiring policy of your department.",
         "source": {
           "title": "University of Pennsylvania Archives · W. E. B. Du Bois",
           "url": "https://archives.upenn.edu/exhibits/penn-people/biography/william-edward-burghardt-du-bois/",
           "locator": "Paragraphs on the 1896 appointment, Seventh Ward study and Atlanta University professorship",
-          "type": "Institutional biography"
-        }
+          "type": "Institutional biography",
+          "supports": "Penn research role, Philadelphia study and subsequent Atlanta professorship."
+        },
+        "topics": [
+          "research appointments",
+          "faculty employment",
+          "social science"
+        ]
       },
       {
         "id": "john-hope-presidency-1906",
@@ -2678,8 +3565,179 @@
           "title": "Morehouse College · John Hope",
           "url": "https://morehouseathletics.com/honors/den-of-honor/john-hope/15",
           "locator": "Dr. John Hope biography: teaching, 1906 presidency and graduate/professional education",
-          "type": "Institutional biography"
-        }
+          "type": "Institutional biography",
+          "supports": "Teaching history, 1906 presidency and educational leadership."
+        },
+        "topics": [
+          "faculty employment",
+          "leadership",
+          "HBCUs"
+        ]
+      },
+      {
+        "id": "ball-hawaii-instructor-1915",
+        "date": "1915–1916",
+        "year": 1915,
+        "title": "Alice Ball moves from graduate study into chemistry teaching",
+        "people": "Alice Augusta Ball",
+        "decisionMaker": "The College of Hawaiʻi employed Ball as a chemistry instructor.",
+        "barrier": "UH identifies her as its first African American chemist, instructor and researcher.",
+        "change": "After her 1915 master’s degree, she taught and conducted chemistry research at the college, predecessor of UH Mānoa.",
+        "outcome": "Her work demonstrates an actual teaching appointment alongside scientific research.",
+        "limit": "Instructor is the documented rank: this record does not establish tenure, a full professorship or an appointment at another UH campus.",
+        "source": {
+          "title": "University of Hawaiʻi · Alice Ball scholarship honors pioneering chemist",
+          "url": "https://www.hawaii.edu/news/2017/02/23/alice-ball-scholarship-honors-pioneering-chemist-in-fight-against-hansens-disease/",
+          "locator": "2017 account: degree, instructor appointment and research",
+          "type": "Institutional history",
+          "supports": "College of Hawaiʻi teaching appointment, degree and scholarly work."
+        },
+        "topics": [
+          "chemistry",
+          "faculty employment",
+          "rank"
+        ]
+      },
+      {
+        "id": "locke-howard-dismissal-1925",
+        "date": "1925 and later reappointment",
+        "year": 1925,
+        "title": "Howard’s leadership closes—and later reopens—a faculty door",
+        "people": "Alain Locke and Thomas Montgomery Gregory",
+        "decisionMaker": "President J. Stanley Durkee dismissed Locke; his successor Mordecai Johnson later rehired him.",
+        "barrier": "Faculty appointments did not guarantee support for Black artistic scholarship.",
+        "change": "Howard’s account of Denise J. Hart’s research links Locke’s 1925 dismissal and Gregory’s departure to conflict over their theatre work.",
+        "outcome": "Locke returned under Johnson; Gregory did not. Their proposed drama department lost institutional support.",
+        "limit": "This institutional research account is not a reviewed personnel file and gives no precise reappointment date.",
+        "source": {
+          "title": "Howard Magazine · Howard and a new Black theatre tradition",
+          "url": "https://magazine.howard.edu/stories/howard-university-and-the-birth-of-a-new-black-theatre-tradition",
+          "locator": "Fall 2025: Durkee dismissals and Johnson reappointment paragraphs",
+          "type": "University account of faculty historical research",
+          "supports": "Named leaders, 1925 dismissal and later return; exact rehiring date remains open."
+        },
+        "topics": [
+          "humanities",
+          "dismissal",
+          "institutional leadership"
+        ]
+      },
+      {
+        "id": "allison-davis-chicago-faculty-1942",
+        "date": "1942–1948",
+        "year": 1942,
+        "title": "Allison Davis gains a faculty position through contested institutional support",
+        "people": "Allison Davis; W. Lloyd Warner, Ralph Tyler and Robert J. Havighurst",
+        "decisionMaker": "Chicago appointed Davis with colleagues’ support and financial backing from the Julius Rosenwald Fund.",
+        "barrier": "The library records racial resistance to his appointment and exclusion from the Quadrangle Club.",
+        "change": "He joined the Department of Education in 1942.",
+        "outcome": "He became a full professor in 1948, continuing research on education, class and racial inequality.",
+        "limit": "Appointment and promotion are distinct; neither proves equal treatment or a connection to another Chicago department.",
+        "source": {
+          "title": "University of Chicago Library · Allison Davis Papers",
+          "url": "https://www.lib.uchicago.edu/e/scrc/findingaids/view.php?eadid=ICU.SPCL.DAVISA",
+          "locator": "Biographical Note: appointment support and 1942–1948 faculty history",
+          "type": "Archival finding-aid biography",
+          "supports": "Named supporters, contested 1942 appointment and 1948 full professorship."
+        },
+        "topics": [
+          "education research",
+          "faculty employment",
+          "promotion"
+        ]
+      },
+      {
+        "id": "blackwell-berkeley-faculty-1954",
+        "date": "1954–1961",
+        "year": 1954,
+        "title": "David Blackwell’s Berkeley appointment leads to departmental authority",
+        "people": "David Blackwell and Jerzy Neyman",
+        "decisionMaker": "Neyman recruited Blackwell; Berkeley appointed him and later selected him as department chair.",
+        "barrier": "Racist objections had obstructed an earlier attempt to hire him.",
+        "change": "He arrived as a visiting professor in 1954, then became a full professor in the new statistics department in 1955.",
+        "outcome": "He chaired statistics from 1957 to 1961.",
+        "limit": "The visiting appointment and full professorship occurred in different years; this does not document access throughout the UC system.",
+        "source": {
+          "title": "UC Berkeley · David Blackwell faculty history",
+          "url": "https://news.berkeley.edu/2010/07/15/blackwell/",
+          "locator": "Early years: Neyman recruitment, 1954 arrival and 1955 appointment",
+          "type": "Employer history",
+          "supports": "Racial hiring objections, distinct appointment dates and chairmanship."
+        },
+        "topics": [
+          "statistics",
+          "faculty employment",
+          "promotion",
+          "leadership"
+        ]
+      },
+      {
+        "id": "hewitt-montana-faculty-1961",
+        "date": "1961–1999",
+        "year": 1961,
+        "title": "Gloria Hewitt enters mathematics teaching before completing her doctorate",
+        "people": "Gloria Conyers Hewitt and department chair Art Livingston",
+        "decisionMaker": "Hewitt’s oral history identifies Livingston as the person who offered her the job.",
+        "barrier": "Hiring, doctoral completion and department leadership were separate steps.",
+        "change": "Montana hired her as an assistant professor in fall 1961; her Washington doctorate followed in 1962.",
+        "outcome": "The department records graduate supervision, undergraduate mentorship and her chairmanship from 1995 to 1999.",
+        "limit": "This documents the Missoula department, not Montana State in Bozeman or every mathematics faculty appointment.",
+        "source": {
+          "title": "University of Montana · Mathematics newsletter, Fall 1999",
+          "url": "https://www.umt.edu/math/documents/newsletter/newsletter_1999_f.pdf",
+          "locator": "Printed page 4: Gloria C. Hewitt retirement profile",
+          "type": "Contemporary employer newsletter",
+          "supports": "1961 rank, 1962 doctorate, teaching and 1995–1999 chairmanship."
+        },
+        "topics": [
+          "mathematics",
+          "faculty employment",
+          "mentorship",
+          "leadership"
+        ],
+        "sources": [
+          {
+            "title": "University of Montana · Mathematics department oral history",
+            "url": "https://www.umt.edu/math/people/emeriti/department-history.pdf",
+            "locator": "Printed page 62: Hewitt interview with Johnny W. Lott, May 12, 2006",
+            "type": "Published oral-history transcript",
+            "supports": "Hewitt’s recollection that Art Livingston repeatedly offered her the position."
+          }
+        ]
+      },
+      {
+        "id": "angela-davis-ucla-appointment-1969",
+        "date": "1969–1970",
+        "year": 1969,
+        "title": "Angela Davis’s UCLA appointment shows a door can close again",
+        "people": "Angela Davis, Donald Kalish, Philip Levine and Charles E. Young",
+        "decisionMaker": "Kalish recruited her and Levine issued the offer; UC Regents later rejected renewal despite UCLA recommendations.",
+        "barrier": "Political scrutiny threatened a one-year acting assistant professorship.",
+        "change": "The philosophy appointment began in 1969; a court intervened after the Regents’ initial dismissal attempt.",
+        "outcome": "She taught the academic year, but the Regents voted against reappointment in June 1970.",
+        "limit": "This was an acting appointment, not tenure. The record shows contested employment, not a permanent opening for every Black scholar.",
+        "source": {
+          "title": "AAUP · The Angela Davis Case",
+          "url": "https://www.aaup.org/academe/issues/spring-2024/aaup-and-angela-davis-case",
+          "locator": "The Angela Davis Case: offer, departmental recommendation and June 1970 vote",
+          "type": "Professional association history based on its investigation",
+          "supports": "Named appointment authorities, term and nonrenewal decision."
+        },
+        "topics": [
+          "philosophy",
+          "faculty employment",
+          "academic freedom",
+          "dismissal"
+        ],
+        "sources": [
+          {
+            "title": "UCLA · Dancing to the words of Angela Davis",
+            "url": "https://newsroom.ucla.edu/stories/dancing-to-the-words-of-angela-davis",
+            "locator": "1969–1970 teaching and reinstatement paragraphs",
+            "type": "Employer historical account",
+            "supports": "Acting rank, court intervention and completion of the teaching year."
+          }
+        ]
       },
       {
         "id": "phd-project-business-1994",
@@ -2696,28 +3754,50 @@
           "title": "The PhD Project · Our History",
           "url": "https://phdproject.org/our-history/",
           "locator": "Timeline entries for 1994 and 2002",
-          "type": "Program provider history"
-        }
+          "type": "Program provider history",
+          "supports": "Founding partners, conference and participant milestones; not causal evaluation."
+        },
+        "topics": [
+          "doctoral education",
+          "mentorship",
+          "business faculty"
+        ]
       }
     ],
     "furtherResearch": [
-      "Trace degree completion, faculty appointment, rank, tenure and leadership separately at the exact institution.",
-      "Research differences between disciplines, teaching institutions and research universities rather than applying a single faculty pathway.",
-      "Include denied appointments and dismissals when documented; an early credential alone is not evidence that a faculty door stayed open."
+      "Find the original appointment, promotion and tenure records for the reader’s exact campus, department and faculty rank.",
+      "Resolve the 1947/1948 tenure-date discrepancy across Chicago’s institutional accounts for Allison Davis before assigning a precise tenure year; the 1942 hire and 1948 full professorship are distinct.",
+      "Use Locke’s papers to seek contemporary evidence of dismissal and reappointment, rather than treating the later institutional account as the personnel record.",
+      "Compare contingent, visiting, acting and tenure-line appointments without presenting them as equivalent job security.",
+      "Expand community-college, adjunct and discipline-specific histories; these selected careers do not establish nationwide faculty access."
     ],
     "credential": {
       "name": "Edward Alexander Bouchet",
       "year": 1876,
       "credential": "Doctorate in physics",
-      "record": "Yale records his 1876 physics doctorate and identifies him as the first Black person to earn a doctorate in the United States.",
-      "work": "He taught at the Institute for Colored Youth; Yale did not hire him when he applied in 1905.",
+      "record": "Yale identifies his 1876 physics PhD as the first U.S. doctorate earned by a Black person.",
+      "work": "He taught at the Institute for Colored Youth; Yale rejected his 1905 application.",
       "sources": [
         {
           "label": "Yale University Library · Edward Alexander Bouchet",
-          "url": "https://onlineexhibits.library.yale.edu/s/early-black-yale-students/item/20594"
+          "url": "https://onlineexhibits.library.yale.edu/s/early-black-yale-students/item/20594",
+          "locator": "Biography: doctorate and employment",
+          "type": "University archival exhibit",
+          "supports": "Doctorate milestone and distinction from Yale faculty employment.",
+          "title": "Yale University Library · Edward Alexander Bouchet"
         }
       ]
-    }
+    },
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "Alain Locke’s papers and Howard faculty employment",
+        "url": "https://dh.howard.edu/finaid_manu/123/",
+        "locator": "Moorland-Spingarn Research Center; Alain Locke Papers, bulk 1898–1954; catalog description of correspondence and Howard materials",
+        "question": "Do the surviving papers identify the terms, timing and authorities behind his dismissal and reappointment?",
+        "status": "Catalog description reviewed; underlying correspondence and personnel records not reviewed"
+      }
+    ]
   },
   {
     "slug": "registered-nurse",

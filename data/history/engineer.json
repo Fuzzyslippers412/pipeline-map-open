@@ -1,10 +1,34 @@
 {
   "slug": "engineer",
-  "headline": "From engineering education to projects, promotion and collective support",
-  "summary": "Black engineering careers include institution-building, technical qualifications, workplace training and student organizing. These examples concern particular disciplines; they do not make every engineering job the same path.",
-  "coverageNote": "Four episodes involving Howard, Iowa, NASA Langley and Purdue. Civil and aerospace engineering records are not automatically evidence for every specialty or engineering manager.",
+  "headline": "Engineering doors opened through jobs, projects, training and promotion",
+  "summary": "Black engineers designed infrastructure, changed aircraft production, led space projects and taught the next generation. These records separate earning a degree from getting hired, being assigned technical work and gaining authority to lead.",
+  "coverageNote": "Nine selected episodes across civil, mechanical, aerospace and systems engineering. Named employers include Michigan Central Railroad, Tennessee State, NASA Langley, Boeing, The Aerospace Corporation and NASA Goddard. Their records do not establish every engineering specialty or a reader’s own employment chain.",
   "question": "Which hiring, project assignment, qualification or promotion record connects Black engineers to your workplace?",
   "events": [
+    {
+      "id": "dammond-railroad-engineering-1893",
+      "date": "1893–1906",
+      "year": 1893,
+      "title": "William Hunter Dammond takes a winding route into railroad engineering",
+      "people": "William Hunter Dammond",
+      "decisionMaker": "Michigan Central Railroad employed him; the account does not name the hiring official.",
+      "barrier": "A civil-engineering degree did not lead directly to an engineering job.",
+      "change": "After graduating from Pitt in 1893, Dammond held other jobs and taught mathematics before becoming an assistant bridge engineer in Detroit.",
+      "outcome": "Railway-signal patents followed in 1903 and 1906; recognition for his inventions remained contested.",
+      "limit": "The biography does not date the railroad hire or establish continuity to a present-day railroad employer.",
+      "source": {
+        "title": "University of Pittsburgh · William Hunter Dammond",
+        "url": "https://www.innovation.pitt.edu/william-hunter-dammond-a-man-of-firsts/",
+        "locator": "Employment and railway-patent paragraphs",
+        "type": "University history",
+        "supports": "Degree, intervening jobs, Michigan Central employment and patents."
+      },
+      "topics": [
+        "civil engineering",
+        "employment",
+        "invention"
+      ]
+    },
     {
       "id": "howard-engineering-1907",
       "date": "1907–1911",
@@ -18,46 +42,111 @@
       "limit": "Program creation establishes education, not an employer's hiring practices or every graduate's placement.",
       "source": {
         "title": "Howard University College of Engineering and Architecture · Our History",
-        "url": "https://cea.howard.edu/index.php/about-us/our-history",
+        "url": "https://cea.howard.edu/about-us/our-history",
         "locator": "1907 trustees' approval; 1907–1910 curriculum and 1911 four-year program paragraphs",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "Trustee approval, discipline-specific curricula and the four-year degree program."
+      },
+      "topics": [
+        "education",
+        "institution building"
+      ]
     },
     {
       "id": "alexander-civil-engineering-1912",
       "date": "1912–1929",
       "year": 1912,
-      "title": "Archibald Alexander moves from a degree into engineering work and ownership",
-      "people": "Archibald A. Alexander, George F. Higbee and Maurice A. Repass",
-      "decisionMaker": "Iowa awarded Alexander's degree; Marsh Engineering employed him; Alexander later founded his own firm.",
+      "title": "Archibald Alexander enters civil engineering and starts a firm",
+      "people": "Archibald A. Alexander",
+      "decisionMaker": "Marsh Engineering hired Alexander; he later established his own company.",
       "barrier": "Iowa identifies him as its first Black civil-engineering graduate.",
-      "change": "After graduating in 1912, Alexander joined Marsh Engineering and established his own company in 1914.",
-      "outcome": "His later firm built projects including Iowa's power plant and tunnels and the Moton Airfield used by Tuskegee Airmen.",
-      "limit": "This documents his employment and business projects, not an industry-wide end to exclusion.",
+      "change": "After graduating in 1912, he joined Marsh and founded a company in 1914.",
+      "outcome": "His later firm’s projects included Iowa’s power plant and Moton Airfield.",
+      "limit": "These are individual employment and project records, not evidence of industry-wide access.",
       "source": {
         "title": "University of Iowa College of Engineering · Archibald A. Alexander",
         "url": "https://engineering.uiowa.edu/alumni/alumni-awards/distinguished-engineering-alumni-academy-members/archibald-alexander",
-        "locator": "Biography: 1912 graduation, Marsh Engineering employment and Alexander & Repass projects",
-        "type": "Institutional history"
-      }
+        "locator": "Biography: graduation, Marsh employment and later projects",
+        "type": "Institutional history",
+        "supports": "Degree, engineering employment and firm ownership."
+      },
+      "topics": [
+        "civil engineering",
+        "employment",
+        "business ownership"
+      ]
+    },
+    {
+      "id": "clark-tsu-engineering-1956",
+      "date": "1956–2011",
+      "year": 1956,
+      "title": "Yvonne Young Clark teaches engineers and leads a department",
+      "people": "Yvonne Young Clark",
+      "decisionMaker": "Tennessee Agricultural & Industrial State University, now Tennessee State, hired her as an instructor.",
+      "barrier": "TSU identifies Clark as the first woman on its engineering faculty.",
+      "change": "Her 1956 appointment put a Black woman in a paid engineering teaching role.",
+      "outcome": "She advanced to associate professor, twice chaired mechanical engineering and retired in 2011 after decades of mentoring students.",
+      "limit": "Faculty employment and mentorship are documented; this source does not measure graduates’ hiring outcomes.",
+      "source": {
+        "title": "Tennessee State University · Remembering Yvonne Young Clark",
+        "url": "https://tnstatenewsroom.com/dr-yvonne-young-y-y-clark-tsu-lady-engineer-remembered/",
+        "locator": "2019 remembrance: appointment, department leadership and retirement",
+        "type": "Employer history",
+        "supports": "1956 instructor hire, later rank and leadership, and student recollections."
+      },
+      "topics": [
+        "mechanical engineering",
+        "faculty employment",
+        "mentorship"
+      ]
     },
     {
       "id": "mary-jackson-engineer-1958",
       "date": "1958",
       "year": 1958,
-      "title": "Mary Jackson gets permission to train and earns an engineering promotion",
-      "people": "Mary W. Jackson and engineer Kazimierz Czarnecki",
-      "decisionMaker": "The City of Hampton permitted her attendance; Langley promoted her after she completed the required courses.",
-      "barrier": "Graduate-level classes needed for the training program met at segregated Hampton High School.",
-      "change": "With Czarnecki's encouragement, Jackson requested access, attended the classes and completed the training.",
-      "outcome": "NASA records her 1958 promotion and subsequent research on supersonic aerodynamic effects.",
-      "limit": "A documented promotion at Langley does not prove equal access to engineering advancement at other employers.",
+      "title": "Mary Jackson trains and earns promotion at Langley",
+      "people": "Mary W. Jackson and Kazimierz Czarnecki",
+      "decisionMaker": "Hampton permitted her attendance; Langley promoted her after training.",
+      "barrier": "Required graduate classes met at segregated Hampton High School.",
+      "change": "Encouraged by Czarnecki, Jackson obtained permission and completed the classes.",
+      "outcome": "NASA records her 1958 engineering promotion and supersonic-aerodynamics research.",
+      "limit": "This establishes advancement at Langley, not equal promotion opportunities across NASA or other employers.",
       "source": {
         "title": "NASA · Mary W. Jackson",
         "url": "https://www.nasa.gov/history/mary-w-jackson/",
-        "locator": "Biography: Supersonic Pressure Tunnel, permission for Hampton classes and 1958 engineering promotion",
-        "type": "Institutional history"
-      }
+        "locator": "Biography: Hampton classes and 1958 promotion",
+        "type": "Institutional history",
+        "supports": "Training access, Langley promotion and subsequent engineering work."
+      },
+      "topics": [
+        "aerospace engineering",
+        "workplace training",
+        "promotion"
+      ]
+    },
+    {
+      "id": "braithwaite-boeing-engineer-1966",
+      "date": "1966–2003",
+      "year": 1966,
+      "title": "Walt Braithwaite helps change how Boeing designs aircraft",
+      "people": "Walt W. Braithwaite",
+      "decisionMaker": "Boeing hired Braithwaite as a tool engineer in 1966.",
+      "barrier": "Entry into engineering, control of technical projects and corporate leadership were separate career stages.",
+      "change": "He later introduced networked design and manufacturing systems while supervising Central Engineering.",
+      "outcome": "The museum’s interview-based biography documents technical leadership before his later presidency of Boeing Africa.",
+      "limit": "The record identifies Boeing, not a particular factory or a policy that guaranteed other Black engineers promotion.",
+      "source": {
+        "title": "The Museum of Flight · Walt W. Braithwaite",
+        "url": "https://archives.museumofflight.org/agents/people/5271",
+        "locator": "Biographical note: hiring, Central Engineering and Boeing Africa",
+        "type": "Archive biography based on participant interview",
+        "supports": "1966 engineering hire and subsequent design-system and leadership responsibilities."
+      },
+      "topics": [
+        "aerospace engineering",
+        "employment",
+        "technical leadership"
+      ]
     },
     {
       "id": "nsbe-national-1975",
@@ -74,27 +163,114 @@
         "title": "National Society of Black Engineers · Convention media kit",
         "url": "https://convention.nsbe.org/wp-content/uploads/2025/03/NSBE_mediakit_V3-2.pdf",
         "locator": "PDF page 6: History, 1971, 1973 and 1974–1975",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "Purdue student organizing and the dated national founding meeting."
+      },
+      "topics": [
+        "student organizing",
+        "education",
+        "professional networks"
+      ]
+    },
+    {
+      "id": "austin-aerospace-engineering-1979",
+      "date": "1979–2008",
+      "year": 1979,
+      "title": "Wanda Austin moves from engineering work into organization leadership",
+      "people": "Wanda M. Austin",
+      "decisionMaker": "The Aerospace Corporation employed Austin from 1979 and appointed her president and CEO in 2008.",
+      "barrier": "A technical job and authority to direct engineering teams require different appointments.",
+      "change": "Her roles included leading military-satellite communications and the Engineering and Technology Group.",
+      "outcome": "USC records her as the company’s first Black and first woman president.",
+      "limit": "Her advancement is documented; these biographies do not establish company-wide promotion rates or a route into a reader’s team.",
+      "source": {
+        "title": "USC Industrial and Systems Engineering · Wanda Austin",
+        "url": "https://ise.usc.edu/about/keynote-lecture-series/dr-wanda-austin/",
+        "locator": "September 25, 2008 lecture biography",
+        "type": "University lecture biography",
+        "supports": "1979 employment, technical leadership roles and 2008 appointment."
+      },
+      "topics": [
+        "systems engineering",
+        "promotion",
+        "leadership"
+      ],
+      "sources": [
+        {
+          "title": "USC Board of Trustees · Wanda Austin",
+          "url": "https://boardoftrustees.usc.edu/wanda-austin/",
+          "locator": "Biography: Aerospace presidency, 2008–2016",
+          "type": "Institutional biography",
+          "supports": "The explicitly scoped Black and woman leadership milestones at Aerospace."
+        }
+      ]
+    },
+    {
+      "id": "ericsson-goddard-engineer-1992",
+      "date": "1992–2022",
+      "year": 1992,
+      "title": "Aprille Ericsson builds a career on Goddard spacecraft instruments",
+      "people": "Aprille Joy Ericsson",
+      "decisionMaker": "NASA Goddard employed Ericsson as an engineer in 1992; the newsletter does not name the hiring official.",
+      "barrier": "Engineering employment, instrument assignments and project management are different steps.",
+      "change": "NASA’s dated account follows her from engineering entry through work on several space missions.",
+      "outcome": "It credits contributions to Webb, the Advanced Topographic Laser Altimeter System and the Lunar Reconnaissance Orbiter.",
+      "limit": "This is Goddard employment and project evidence through 2022, not proof of her current role or a connection to every NASA center.",
+      "source": {
+        "title": "NASA Goddard · Innovation Catalyst, June 2022",
+        "url": "https://partnerships.gsfc.nasa.gov/wp-content/uploads/Innovation_Catalyst_June.pdf",
+        "locator": "Printed page 4: Celebrating a Goddard African American Innovator; indexed text reviewed",
+        "type": "Employer newsletter",
+        "supports": "1992 engineer hire and named mission contributions."
+      },
+      "topics": [
+        "aerospace engineering",
+        "employment",
+        "project assignments"
+      ],
+      "sources": [
+        {
+          "title": "NASA Goddard · Aprille Joy Ericsson lecture biography",
+          "url": "https://earth.gsfc.nasa.gov/maniac/ericsson",
+          "locator": "Speaker biography: instrument project manager and technologist",
+          "type": "Employer biography",
+          "supports": "Corroborates Goddard instrument-engineering and project-management work; not current employment status."
+        }
+      ]
     }
   ],
   "furtherResearch": [
-    "Research licensing and supervised practice separately where a particular engineering discipline requires them.",
-    "Find dated appointments, project credits and promotion policies at the reader's actual employer.",
-    "Add separately supported histories for electrical, mechanical, chemical and other engineering specialties."
+    "Find dated hiring, project-credit and promotion records for the reader’s exact facility and engineering specialty; a parent organization alone may be insufficient.",
+    "Research professional licensure and supervised practice separately where the particular discipline requires them.",
+    "Read Braithwaite’s interview and contemporary Boeing project records to identify when design systems were adopted, by whom and at which sites.",
+    "Trace historical company names, reorganizations and facilities before connecting Dammond or Alexander to a modern employer.",
+    "Expand chemical, industrial, electrical and environmental engineering with their own employment evidence; the examples here do not substitute for those histories."
   ],
   "credential": {
     "name": "Archibald A. Alexander",
     "year": 1912,
     "credential": "Civil engineering degree",
-    "record": "Iowa identifies Alexander as its first Black graduate in civil engineering in 1912.",
-    "work": "He joined Marsh Engineering, then founded his own company in 1914.",
+    "record": "Iowa identifies Alexander as its first Black civil-engineering graduate in 1912.",
+    "work": "Marsh employed him before he established a company in 1914.",
     "sources": [
       {
         "label": "University of Iowa College of Engineering · Archibald A. Alexander",
-        "url": "https://engineering.uiowa.edu/alumni/alumni-awards/distinguished-engineering-alumni-academy-members/archibald-alexander"
+        "url": "https://engineering.uiowa.edu/alumni/alumni-awards/distinguished-engineering-alumni-academy-members/archibald-alexander",
+        "locator": "Biography: degree and early employment",
+        "type": "Institutional history",
+        "supports": "1912 degree and subsequent engineering work.",
+        "title": "University of Iowa College of Engineering · Archibald A. Alexander"
       }
     ]
-  }
+  },
+  "checkedOn": "2026-11-04",
+  "researchLeads": [
+    {
+      "title": "Walt Braithwaite’s account of Boeing engineering decisions",
+      "url": "https://archives.museumofflight.org/repositories/2/archival_objects/17104",
+      "locator": "Museum of Flight Oral History Collection, 2019-00-00-100; interview August 16, 2022",
+      "question": "Which managers, project dates and Boeing sites does the full interview identify, and can contemporary records corroborate them?",
+      "status": "Catalog record reviewed; underlying interview and transcript not reviewed"
+    }
+  ]
 }
-

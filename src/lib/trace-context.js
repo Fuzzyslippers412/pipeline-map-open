@@ -72,9 +72,10 @@ export function findWorkplaceLinks(workplace, slug, links, workplaceInfo = null,
     // A broad field may contain unrelated jobs. A role-scoped record can only
     // apply when the reader selected an occupation it actually documents.
     const selectedRole=item.contextKeys?.includes(contextKey);
+    const selectedOccupation=(item.occupationCodes||item.relatedOccupationCodes)?.includes(occupationCode);
     if(item.contextKeys && !selectedRole)return false;
     if(item.occupationCodes && !item.occupationCodes.includes(occupationCode))return false;
-    if(related && !item.occupationCodes?.includes(occupationCode) && !selectedRole)return false;
+    if(related && !selectedOccupation && !selectedRole)return false;
     const names = [item.workplace, ...(item.aliases||[])].map(workplaceKey);
     if (!item.site) return names.includes(key);
 

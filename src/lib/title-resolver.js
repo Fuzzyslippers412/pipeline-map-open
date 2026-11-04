@@ -169,7 +169,11 @@ const computingOccupations = {
 };
 function fromOccupation(title, record, professions) {
   const agriculture=/^(?:11-9013|17-2021|19-1013|19-4012|25-1041|25-9021|45-20)/.test(record.code);
-  const slug = agriculture ? 'agriculture' : relatedFields[record.code];
+  // Offer the published field without treating every specialty as the same
+  // history. In particular, 29-129x includes other licensed health professions.
+  const broadField=/^25-1/.test(record.code)?'professor':
+    /^29-12[124]/.test(record.code)?'physician':/^17-2/.test(record.code)?'engineer':null;
+  const slug = agriculture ? 'agriculture' : relatedFields[record.code] || broadField;
   const published = slug && professions.some(p=>p.slug===slug);
   const contextKey = computingOccupations[record.code] || (record.code.startsWith('15-12') ? 'computing' : null);
   return {kind:published ? 'related' : 'recognized', title, occupation:record.name,

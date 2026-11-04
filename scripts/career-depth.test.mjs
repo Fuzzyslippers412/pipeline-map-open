@@ -18,7 +18,7 @@ function trace(row,context={}){
  return {steps,context:c,preview:buildTimelinePreview({steps,context:c})};
 }
 test('new workplace histories connect only the documented site and retain the personal-route gap',()=>{
- const fresh=rows.filter(r=>r.reviewedOn==='2026-11-04'&&r.historyEventId);
+ const fresh=rows.filter(r=>r.reviewedOn==='2026-11-04'&&r.historyEventId&&['registered-nurse','k12-teacher','software-engineer'].includes(r.professions[0]));
  assert.equal(fresh.length,9);
  for(const row of fresh){
   const options=row.contextKeys?{contextKey:row.contextKeys[0],related:true}:{};

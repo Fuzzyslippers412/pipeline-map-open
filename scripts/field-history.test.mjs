@@ -26,7 +26,7 @@ test('no category pairing is returned as a claim about the reader',()=>{
 });
 
 test('claim-specific source explanations survive compilation and timeline export',()=>{
- for(const slug of ['agriculture','governor','registered-nurse','k12-teacher','software-engineer']){
+ for(const slug of ['agriculture','governor','registered-nurse','k12-teacher','software-engineer','physician','lawyer','dentist','pharmacist','engineer','professor']){
   const record=historyFor(professions.find(p=>p.slug===slug));
   const timeline=timelineHistory(professions.find(p=>p.slug===slug));
   for(const event of record.events){

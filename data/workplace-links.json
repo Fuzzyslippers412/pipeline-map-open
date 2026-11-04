@@ -82,7 +82,12 @@
     "eventDateLabel": "2026 program",
     "eventYear": 2026,
     "fromInstitution": "Partner HBCUs, including Tuskegee and North Carolina A&T",
-    "toInstitution": "Boeing–TMCF Scholar Program"
+    "toInstitution": "Boeing–TMCF Scholar Program",
+    "site": {
+      "id": "sec-12927"
+    },
+    "sourceNote": "This is a program description, not evidence of participation, completion or a permanent job.",
+    "scope": "program"
   },
   {
     "workplace": "Meharry Medical College",
@@ -98,7 +103,13 @@
     "sourceTitle": "Meharry School of Dentistry · Mission, vision and programs",
     "url": "https://meharry.edu/academics/schools/school-of-dentistry/about-us/",
     "eventDateLabel": "Start date undocumented",
-    "eventYear": null
+    "eventYear": null,
+    "site": {
+      "id": "ipeds-220792",
+      "location": "Nashville, TN"
+    },
+    "sourceNote": "The mission and program list do not establish when a person trained, qualified or was hired.",
+    "scope": "program"
   },
   {
     "workplace": "CommonSpirit Health",
@@ -990,5 +1001,501 @@
       "sre"
     ],
     "roleScope": "Reliability engineering"
+  },
+  {
+    "workplace": "Howard University Hospital",
+    "aliases": [
+      "Howard University Hospital, Washington DC"
+    ],
+    "professions": [
+      "physician"
+    ],
+    "scope": "appointment",
+    "headline": "Charles Drew leads surgery at Freedmen’s Hospital",
+    "description": "Drew became chief of surgery in October 1941. Howard identifies its present hospital as Freedmen’s successor, opened in 1975.",
+    "sourceTitle": "National Library of Medicine · Drew at Howard, 1941–1950",
+    "url": "https://www.nlm.nih.gov/exhibition/education/charlesdrew/pdf/MyChiefInterestWasandIsSurgeryBiography.pdf",
+    "eventDateLabel": "October 1941",
+    "eventYear": 1941,
+    "site": {
+      "id": "verified-huh",
+      "location": "Washington, DC",
+      "parent": "Howard University"
+    },
+    "historyEventId": "drew-howard-surgery-1941",
+    "sourceNote": "The institutional succession is documented. It does not establish a current clinician’s training, privileges or appointment.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Surgical leadership",
+    "relatedOccupationCodes": [
+      "29-1249.00"
+    ],
+    "moreSources": [
+      {
+        "title": "Howard University · Hospital succession in 1975",
+        "url": "https://medicine.howard.edu/about/howard-university-hospital"
+      }
+    ]
+  },
+  {
+    "workplace": "University of California-Los Angeles",
+    "aliases": [
+      "UCLA",
+      "University of California Los Angeles"
+    ],
+    "professions": [
+      "physician"
+    ],
+    "scope": "appointment",
+    "headline": "Patricia Bath’s UCLA ophthalmology faculty appointment",
+    "description": "UCLA records Bath’s ophthalmology faculty service from 1974 to 1987, alongside separate county employment and Drew affiliation.",
+    "sourceTitle": "UCLA · Patricia Bath remembrance",
+    "url": "https://newsroom.ucla.edu/stories/dr-patricia-bath-physician-inventor",
+    "eventDateLabel": "1974–1987",
+    "eventYear": 1974,
+    "site": {
+      "id": "ipeds-110662",
+      "location": "Los Angeles, CA",
+      "parent": "University of California"
+    },
+    "historyEventId": "bath-ucla-drew-1974",
+    "sourceNote": "This is a faculty record. It does not establish employment at a particular UCLA Health hospital.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Ophthalmology faculty",
+    "relatedOccupationCodes": [
+      "29-1241.00"
+    ]
+  },
+  {
+    "workplace": "University of Pennsylvania",
+    "aliases": [
+      "UPenn",
+      "University of Pennsylvania Philadelphia"
+    ],
+    "professions": [
+      "physician"
+    ],
+    "scope": "appointment",
+    "headline": "Helen Dickens joins Penn’s medical faculty",
+    "description": "Penn dates Dickens’ OB/GYN faculty appointment to 1965 and her associate-dean appointment to 1969.",
+    "sourceTitle": "Penn Medicine · Helen Octavia Dickens",
+    "url": "https://www.med.upenn.edu/evdresearch/helen-o-dickens.html",
+    "eventDateLabel": "1965–1969",
+    "eventYear": 1965,
+    "site": {
+      "id": "ipeds-215062",
+      "location": "Philadelphia, PA"
+    },
+    "historyEventId": "dickens-penn-leadership-1965",
+    "sourceNote": "These university roles do not establish hiring or clinical privileges at every Penn Medicine hospital.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "OB/GYN faculty and academic leadership",
+    "relatedOccupationCodes": [
+      "29-1218.00"
+    ]
+  },
+  {
+    "workplace": "Morehouse School of Medicine",
+    "aliases": [
+      "Morehouse School of Medicine Atlanta"
+    ],
+    "professions": [
+      "physician"
+    ],
+    "scope": "institution",
+    "headline": "The medical program becomes an independent institution",
+    "description": "The program led by Louis Sullivan at Morehouse College became the independent Morehouse School of Medicine in 1981.",
+    "sourceTitle": "Morehouse School of Medicine · Academic catalog history",
+    "url": "https://msm.smartcatalogiq.com/en/2025-2026/2025-2026-morehouse-school-of-medicine-academic-catalog/history",
+    "eventDateLabel": "1981 · independent institution",
+    "eventYear": 1981,
+    "site": {
+      "id": "ipeds-140562",
+      "location": "Atlanta, GA"
+    },
+    "historyEventId": "sullivan-morehouse-program-1975",
+    "sourceNote": "This connects the institutions’ history. Morehouse College, the medical school and affiliated hospitals remain distinct employers.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Medical education",
+    "fromInstitution": "Morehouse College’s medical program",
+    "toInstitution": "Morehouse School of Medicine",
+    "moreSources": [
+      {
+        "title": "Morehouse School of Medicine · 1975 and 1981 milestones",
+        "url": "https://www.msm.edu/about_us/msm-history.php"
+      }
+    ]
+  },
+  {
+    "workplace": "New York City Law Department",
+    "aliases": [
+      "NYC Law Department",
+      "New York City Corporation Counsel"
+    ],
+    "professions": [
+      "lawyer"
+    ],
+    "scope": "appointment",
+    "headline": "Jane Bolin enters New York City’s legal department",
+    "description": "The Law Department dates Bolin’s appointment as assistant corporation counsel to 1937.",
+    "sourceTitle": "NYC Law Department · Law Day statement",
+    "url": "https://www.nyc.gov/site/law/news/041-20/statement-corporation-counsel-james-e-johnson-law-day",
+    "eventDateLabel": "1937",
+    "eventYear": 1937,
+    "site": {
+      "id": "reviewed-nyc-law-department",
+      "location": "New York, NY",
+      "parent": "City of New York"
+    },
+    "historyEventId": "bolin-nyc-law-department-1937",
+    "sourceNote": "This identifies the city’s legal department, not every municipal employer or a present employee’s hiring route.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Municipal legal practice",
+    "relatedOccupationCodes": [
+      "23-1011.00"
+    ]
+  },
+  {
+    "workplace": "NAACP Legal Defense and Educational Fund",
+    "aliases": [
+      "Legal Defense Fund",
+      "LDF",
+      "NAACP LDF"
+    ],
+    "professions": [
+      "lawyer"
+    ],
+    "scope": "appointment",
+    "headline": "Constance Baker Motley advances at LDF",
+    "description": "Motley entered LDF as a law clerk in 1945 and became assistant special counsel in 1949.",
+    "sourceTitle": "Legal Defense Fund · Life and Legacy of Constance Baker Motley",
+    "url": "https://www.naacpldf.org/naacp-publications/ldf-blog/cbm-100/",
+    "eventDateLabel": "1945–1949",
+    "eventYear": 1945,
+    "site": {
+      "id": "reviewed-legal-defense-fund"
+    },
+    "historyEventId": "motley-ldf-practice-1945",
+    "sourceNote": "This is LDF’s employment record. It does not establish a connection to NAACP branches or other law firms.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Civil-rights legal practice",
+    "relatedOccupationCodes": [
+      "23-1011.00"
+    ]
+  },
+  {
+    "workplace": "Howard University",
+    "aliases": [
+      "Howard University Washington DC"
+    ],
+    "professions": [
+      "dentist"
+    ],
+    "scope": "appointment",
+    "headline": "Jeanne Sinkford leads Howard’s College of Dentistry",
+    "description": "Howard records Sinkford’s deanship from 1975 to 1991.",
+    "sourceTitle": "Howard University · Jeanne Sinkford receives ACD recognition",
+    "url": "https://thedig.howard.edu/all-stories/howard-university-dentistry-trailblazer-dr-jeanne-sinkford-receives-american-college-dentists",
+    "eventDateLabel": "1975–1991",
+    "eventYear": 1975,
+    "site": {
+      "id": "ipeds-131520",
+      "location": "Washington, DC"
+    },
+    "historyEventId": "sinkford-howard-dean-1975",
+    "sourceNote": "This is academic leadership in dentistry, not a hospital appointment or a claim about every Howard employee.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Dental education leadership",
+    "relatedOccupationCodes": [
+      "29-1021.00"
+    ]
+  },
+  {
+    "workplace": "Meharry Medical College",
+    "aliases": [
+      "Meharry School of Dentistry",
+      "Meharry Medical College School of Dentistry"
+    ],
+    "professions": [
+      "dentist"
+    ],
+    "scope": "appointment",
+    "headline": "Clifton Dummett consolidates Meharry’s dental leadership",
+    "description": "Dummett’s retrospective dates his deanship to 1947 and describes subsequently taking responsibility as director of dental education.",
+    "sourceTitle": "Clifton O. Dummett · Celebrating a Centennial",
+    "url": "https://www.acd.org/wp-content/uploads/2018/10/1986_53_02.pdf",
+    "eventDateLabel": "1947–1948",
+    "eventYear": 1947,
+    "site": {
+      "id": "ipeds-220792",
+      "location": "Nashville, TN"
+    },
+    "historyEventId": "dummett-meharry-dean-1947",
+    "sourceNote": "This is the participant’s published account. Board minutes and effects on individual faculty careers remain unreviewed.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Dental education leadership",
+    "relatedOccupationCodes": [
+      "29-1021.00"
+    ]
+  },
+  {
+    "workplace": "Harvard University",
+    "aliases": [
+      "Harvard University Cambridge MA"
+    ],
+    "professions": [
+      "dentist"
+    ],
+    "scope": "appointment",
+    "headline": "George Grant moves into Harvard dental teaching",
+    "description": "Harvard dates Grant’s mechanical-dentistry assistant appointment to 1871 and an instructor role to 1884.",
+    "sourceTitle": "Harvard School of Dental Medicine · George Grant",
+    "url": "https://www.hsdm.harvard.edu/news/trailblazer-inventor-scholar-dr-george-grant-takes-his-place-history",
+    "eventDateLabel": "1871–1884",
+    "eventYear": 1871,
+    "site": {
+      "id": "ipeds-166027",
+      "location": "Cambridge, MA"
+    },
+    "historyEventId": "grant-harvard-dental-faculty-1871",
+    "sourceNote": "These are dental-school appointments, not hospital privileges or a route into every Harvard department.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Dental faculty",
+    "relatedOccupationCodes": [
+      "29-1021.00"
+    ]
+  },
+  {
+    "workplace": "Howard University",
+    "aliases": [
+      "Howard University Washington DC"
+    ],
+    "professions": [
+      "pharmacist"
+    ],
+    "scope": "appointment",
+    "headline": "Chauncey Cooper leads Howard pharmacy education",
+    "description": "Cooper became acting department head in 1938 and dean in 1941, serving until 1972.",
+    "sourceTitle": "Howard University · Chauncey I. Cooper biography",
+    "url": "https://events.howard.edu/cooper-hall-chauncey-i-cooper-hall-college-of-pharmacy-587",
+    "eventDateLabel": "1938–1972",
+    "eventYear": 1938,
+    "site": {
+      "id": "ipeds-131520",
+      "location": "Washington, DC"
+    },
+    "historyEventId": "cooper-howard-leadership-1938",
+    "sourceNote": "This is an academic appointment, not employment in Howard’s hospital pharmacy or proof of graduate placement.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Pharmacy education leadership",
+    "relatedOccupationCodes": [
+      "29-1051.00"
+    ]
+  },
+  {
+    "workplace": "Champion’s Pharmacy and Herb Store, Memphis",
+    "aliases": [
+      "Champion's Pharmacy Memphis",
+      "Champions Pharmacy Memphis",
+      "Champion Pharmacy Memphis TN"
+    ],
+    "professions": [
+      "pharmacist"
+    ],
+    "scope": "ownership",
+    "headline": "Charles Champion builds a pharmacy in Memphis",
+    "description": "Champion opened his pharmacy in 1981 after hospital and chain-store work. The public 2017 record identifies the family-operated business.",
+    "sourceTitle": "Tennessee General Assembly · Charles A. Champion memorial resolution",
+    "url": "https://www.capitol.tn.gov/Bills/113/Bill/SJR0150.pdf",
+    "eventDateLabel": "1981–2017",
+    "eventYear": 1981,
+    "site": {
+      "id": "reviewed-champions-pharmacy-memphis",
+      "location": "Memphis, TN"
+    },
+    "historyEventId": "champion-memphis-pharmacy-1981",
+    "sourceNote": "The record does not establish current staffing or any reader’s hiring. It does not apply to another pharmacy.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Community pharmacy ownership",
+    "moreSources": [
+      {
+        "title": "EDGE Memphis and Shelby County · Champions Pharmacy loan",
+        "url": "https://database.edgemem.com/loans/loan/207/"
+      }
+    ],
+    "relatedOccupationCodes": [
+      "29-1051.00"
+    ]
+  },
+  {
+    "workplace": "NASA Langley Research Center",
+    "aliases": [
+      "NASA Langley",
+      "Langley Research Center Hampton VA"
+    ],
+    "professions": [
+      "engineer"
+    ],
+    "scope": "appointment",
+    "headline": "Mary Jackson earns an engineering promotion at Langley",
+    "description": "Jackson completed required training after obtaining permission to attend classes at segregated Hampton High School; Langley promoted her in 1958.",
+    "sourceTitle": "NASA · Mary W. Jackson",
+    "url": "https://www.nasa.gov/history/mary-w-jackson/",
+    "eventDateLabel": "1958",
+    "eventYear": 1958,
+    "site": {
+      "id": "reviewed-nasa-langley",
+      "location": "Hampton, VA",
+      "parent": "NASA"
+    },
+    "historyEventId": "mary-jackson-engineer-1958",
+    "sourceNote": "This documents a Langley promotion, not a route at another NASA center or equal access for all engineers.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Aeronautical engineering",
+    "relatedOccupationCodes": [
+      "17-2011.00"
+    ]
+  },
+  {
+    "workplace": "Boeing Co",
+    "aliases": [
+      "Boeing",
+      "The Boeing Company",
+      "Boeing Company"
+    ],
+    "professions": [
+      "engineer"
+    ],
+    "scope": "appointment",
+    "headline": "Walt Braithwaite joins Boeing as a tool engineer",
+    "description": "The museum’s interview-based biography dates Braithwaite’s Boeing hire to 1966 and records later design-system leadership.",
+    "sourceTitle": "The Museum of Flight · Walt W. Braithwaite",
+    "url": "https://archives.museumofflight.org/agents/people/5271",
+    "eventDateLabel": "1966–2003",
+    "eventYear": 1966,
+    "site": {
+      "id": "sec-12927"
+    },
+    "historyEventId": "braithwaite-boeing-engineer-1966",
+    "sourceNote": "This is a company-level record. It does not identify a particular factory or establish another engineer’s promotion route.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Engineering and design systems",
+    "relatedOccupationCodes": [
+      "17-2141.00",
+      "17-2112.00",
+      "17-2112.03"
+    ]
+  },
+  {
+    "workplace": "Tennessee State University",
+    "aliases": [
+      "Tennessee State University Nashville"
+    ],
+    "professions": [
+      "engineer"
+    ],
+    "scope": "appointment",
+    "headline": "Yvonne Young Clark joins Tennessee State’s engineering faculty",
+    "description": "Tennessee State records Clark’s 1956 instructor appointment and later mechanical-engineering leadership.",
+    "sourceTitle": "Tennessee State University · Remembering Yvonne Young Clark",
+    "url": "https://tnstatenewsroom.com/dr-yvonne-young-y-y-clark-tsu-lady-engineer-remembered/",
+    "eventDateLabel": "1956–2011",
+    "eventYear": 1956,
+    "site": {
+      "id": "ipeds-221838",
+      "location": "Nashville, TN"
+    },
+    "historyEventId": "clark-tsu-engineering-1956",
+    "sourceNote": "This is faculty employment, not evidence that a student gained a job or a role at another Tennessee university.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Engineering faculty",
+    "relatedOccupationCodes": [
+      "17-2141.00"
+    ]
+  },
+  {
+    "workplace": "University of California-Berkeley",
+    "aliases": [
+      "UC Berkeley",
+      "University of California Berkeley"
+    ],
+    "professions": [
+      "professor"
+    ],
+    "scope": "appointment",
+    "headline": "David Blackwell advances into Berkeley’s statistics faculty",
+    "description": "Blackwell arrived as a visiting professor in 1954 and became a full professor in the statistics department in 1955.",
+    "sourceTitle": "UC Berkeley · David Blackwell faculty history",
+    "url": "https://news.berkeley.edu/2010/07/15/blackwell/",
+    "eventDateLabel": "1954–1961",
+    "eventYear": 1954,
+    "site": {
+      "id": "ipeds-110635",
+      "location": "Berkeley, CA",
+      "parent": "University of California"
+    },
+    "historyEventId": "blackwell-berkeley-faculty-1954",
+    "sourceNote": "This documents Berkeley, not every University of California campus or a present-day appointment.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Statistics faculty",
+    "relatedOccupationCodes": [
+      "25-1022.00"
+    ]
+  },
+  {
+    "workplace": "University of Chicago",
+    "aliases": [
+      "UChicago",
+      "University of Chicago Illinois"
+    ],
+    "professions": [
+      "professor"
+    ],
+    "scope": "appointment",
+    "headline": "Allison Davis joins Chicago’s education faculty",
+    "description": "The university’s archival biography records Davis’ 1942 appointment and promotion to full professor in 1948.",
+    "sourceTitle": "University of Chicago Library · Allison Davis Papers",
+    "url": "https://www.lib.uchicago.edu/e/scrc/findingaids/view.php?eadid=ICU.SPCL.DAVISA",
+    "eventDateLabel": "1942–1948",
+    "eventYear": 1942,
+    "site": {
+      "id": "ipeds-144050",
+      "location": "Chicago, IL"
+    },
+    "historyEventId": "allison-davis-chicago-faculty-1942",
+    "sourceNote": "A finding-aid biography is not a review of personnel files. It does not establish another faculty member’s appointment.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Education faculty",
+    "relatedOccupationCodes": [
+      "25-1081.00"
+    ]
+  },
+  {
+    "workplace": "The University of Montana",
+    "aliases": [
+      "University of Montana",
+      "University of Montana Missoula"
+    ],
+    "professions": [
+      "professor"
+    ],
+    "scope": "appointment",
+    "headline": "Gloria Hewitt joins Montana’s mathematics faculty",
+    "description": "Montana’s departmental record dates Hewitt’s assistant-professor appointment to fall 1961.",
+    "sourceTitle": "University of Montana · Mathematics newsletter, Fall 1999",
+    "url": "https://www.umt.edu/math/documents/newsletter/newsletter_1999_f.pdf",
+    "eventDateLabel": "1961–1999",
+    "eventYear": 1961,
+    "site": {
+      "id": "ipeds-180489",
+      "location": "Missoula, MT",
+      "parent": "Montana University System"
+    },
+    "historyEventId": "hewitt-montana-faculty-1961",
+    "sourceNote": "This is the Missoula university, not Montana State or another system campus. Individual hiring routes remain unknown.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Mathematics faculty",
+    "relatedOccupationCodes": [
+      "25-1022.00"
+    ]
   }
 ]

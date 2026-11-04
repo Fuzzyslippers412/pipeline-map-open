@@ -1,8 +1,8 @@
 {
   "slug": "dentist",
-  "headline": "Dental credentials, independent practice and a professional community",
-  "summary": "Early Black dentists earned degrees, built practices and organized support beyond the schools that trained them. Admission, clinical education, licensure and professional membership are different kinds of access.",
-  "coverageNote": "Four episodes at Harvard, Howard, Michigan and Black dental associations. These sources do not establish every state's licensing history or a connection to an individual clinic.",
+  "headline": "Dental degrees, teaching authority and community practice",
+  "summary": "Black dentists earned credentials, built practices, challenged professional exclusion and led the institutions training the next generation. A degree, a faculty appointment, a clinic leadership role and an association decision each opened a different door.",
+  "coverageNote": "Nine episodes connect named dentists to Harvard, Howard, Michigan, Meharry and the USC–Watts program, alongside Black professional organizing. An institutional appointment is not proof of a connection to your clinic; licensing and current workplace links still require their own records.",
   "question": "Which school, licensing register, clinic or professional-association record connects Black dentists to your practice setting?",
   "events": [
     {
@@ -20,8 +20,32 @@
         "title": "Harvard School of Dental Medicine · Robert Tanner Freeman",
         "url": "https://www.hsdm.harvard.edu/news/portrait-dr-robert-freeman-honors-hsdm%E2%80%99s-first-african-american-graduate",
         "locator": "April 24, 2019; paragraphs on Freeman's 1869 graduation and founding dean Nathan Cooley Keep",
-        "type": "Institutional history"
+        "type": "Institutional history",
+        "supports": "Freeman’s 1869 DMD, first-class membership and Keep’s admissions principle."
       }
+    },
+    {
+      "id": "grant-harvard-dental-faculty-1871",
+      "date": "1871–1884",
+      "year": 1871,
+      "title": "George Franklin Grant moves from a dental degree into teaching",
+      "people": "George Franklin Grant",
+      "decisionMaker": "Harvard Dental School appointed Grant to its teaching staff.",
+      "barrier": "Graduation and appointment to a teaching post were separate thresholds.",
+      "change": "After his 1870 DMD, Grant became a mechanical-dentistry assistant in 1871.",
+      "outcome": "By 1884 he taught the treatment of cleft palate and related conditions as an instructor.",
+      "limit": "This documents Harvard appointments, not a nationwide opening of faculty jobs or present-day hiring.",
+      "source": {
+        "title": "Harvard School of Dental Medicine · George Grant",
+        "url": "https://www.hsdm.harvard.edu/news/trailblazer-inventor-scholar-dr-george-grant-takes-his-place-history",
+        "locator": "May 11, 2023; 1871 assistant and 1884 instructor paragraphs",
+        "type": "Institutional biography",
+        "supports": "Grant’s degree and two named Harvard teaching appointments."
+      },
+      "topics": [
+        "faculty",
+        "clinical education"
+      ]
     },
     {
       "id": "howard-dentistry-1881",
@@ -38,7 +62,8 @@
         "title": "Howard University College of Dentistry · About",
         "url": "https://dentistry.howard.edu/index.php/about",
         "locator": "About Us and Letter from the Dean: 1881 founding and teaching/patient-care mission",
-        "type": "Institutional history"
+        "type": "Institutional history",
+        "supports": "The 1881 founding and the college’s teaching and patient-care mission."
       }
     },
     {
@@ -56,7 +81,8 @@
         "title": "University of Michigan School of Dentistry · Ida Gray and diversity awards",
         "url": "https://dent.umich.edu/news-events/news/dental-students-faculty-staff-awarded-diversity-efforts",
         "locator": "Ida Gray biographical paragraph following the faculty award profile",
-        "type": "Institutional history"
+        "type": "Institutional history",
+        "supports": "Gray’s 1890 DDS and subsequent Cincinnati and Chicago practice."
       }
     },
     {
@@ -74,14 +100,110 @@
         "title": "National Dental Association · About Us",
         "url": "https://www.ndaonline.org/about/about-us",
         "locator": "Chronological history: 1913 Tri-State Dental Association, 1923 expansion and 1932 reorganization",
-        "type": "Institutional history"
+        "type": "Institutional history",
+        "supports": "Ferguson, the 1913 association, interstate growth and 1932 reorganization."
       }
+    },
+    {
+      "id": "dummett-meharry-dean-1947",
+      "date": "1947–1948",
+      "year": 1947,
+      "title": "Clifton Dummett secures authority over dental education at Meharry",
+      "people": "Clifton O. Dummett and president M. Don Clawson",
+      "decisionMaker": "Clawson relinquished the Director of Dental Education title after Dummett challenged the split authority.",
+      "barrier": "Dummett’s retrospective describes conflicting responsibilities between the dean and director.",
+      "change": "Appointed dean in 1947, he objected to continuing that arrangement after his first year.",
+      "outcome": "He became both dean and director, consolidating authority over dental education under a Black educator.",
+      "limit": "This is Dummett’s later account; appointment minutes and effects on individual faculty careers remain unreviewed.",
+      "source": {
+        "title": "Clifton O. Dummett · Celebrating a Centennial",
+        "url": "https://www.acd.org/wp-content/uploads/2018/10/1986_53_02.pdf",
+        "locator": "Journal of the American College of Dentists 53(2), 1986, printed pp. 22–23",
+        "type": "Participant’s published retrospective",
+        "supports": "The 1947 appointment and subsequent transfer of director responsibilities."
+      },
+      "topics": [
+        "academic leadership",
+        "institutional decisions"
+      ]
+    },
+    {
+      "id": "dummett-usc-community-dentistry-1966",
+      "date": "1966–1968",
+      "year": 1966,
+      "title": "Clifton Dummett leads dentistry in the USC–Watts health program",
+      "people": "Clifton O. Dummett",
+      "decisionMaker": "The Office of Economic Opportunity requested his selection for the USC School of Medicine’s Watts Health Services Center.",
+      "barrier": "This episode concerns community-service leadership, a different route from private dental practice.",
+      "change": "Dummett became dental director in 1966.",
+      "outcome": "A 1988 professional citation records his 1968 appointment as health-center director and creation of a community-dentistry section at USC.",
+      "limit": "The citation establishes roles, not measured patient outcomes or continuity to every current Los Angeles clinic.",
+      "source": {
+        "title": "American College of Dentists · Salute to Clifton O. Dummett",
+        "url": "https://www.acd.org/wp-content/uploads/2018/10/1988_55_04.pdf",
+        "locator": "1988, volume 55(4), printed p. 20 (PDF p. 22)",
+        "type": "Contemporary professional citation",
+        "supports": "Dummett’s 1966 dental-director role and subsequent USC community-dentistry leadership."
+      },
+      "topics": [
+        "community dentistry",
+        "public health",
+        "leadership"
+      ]
+    },
+    {
+      "id": "sinkford-howard-dean-1975",
+      "date": "1975–1991",
+      "year": 1975,
+      "title": "Jeanne Craig Sinkford leads Howard’s College of Dentistry",
+      "people": "Jeanne Craig Sinkford",
+      "decisionMaker": "Howard appointed Sinkford dean after she had served as associate dean.",
+      "barrier": "Howard identifies her appointment as the first woman’s deanship of a U.S. dental school.",
+      "change": "In 1975 a Black woman took charge of the college’s dental education.",
+      "outcome": "Howard records her service as dean through 1991, following her 1967 associate-dean appointment.",
+      "limit": "This establishes academic leadership at Howard; it does not document access to hospital privileges or a particular clinic’s hiring.",
+      "source": {
+        "title": "Howard University · Jeanne Sinkford receives ACD recognition",
+        "url": "https://thedig.howard.edu/all-stories/howard-university-dentistry-trailblazer-dr-jeanne-sinkford-receives-american-college-dentists",
+        "locator": "October 21, 2020; associate-dean and 1975–1991 dean chronology",
+        "type": "Institutional biography",
+        "supports": "Sinkford’s named Howard leadership appointments and dates."
+      },
+      "topics": [
+        "academic leadership",
+        "women in dentistry"
+      ]
+    },
+    {
+      "id": "henry-harvard-leadership-1975",
+      "date": "1975–1991",
+      "year": 1975,
+      "title": "Joseph Henry enters Harvard’s dental leadership and protects its teaching program",
+      "people": "Joseph L. Henry and dean Paul Goldhaber",
+      "decisionMaker": "Goldhaber recruited Henry in 1975 as professor, department chair and associate dean.",
+      "barrier": "This records a Black dentist’s move into authority over dental training.",
+      "change": "Henry led Oral Medicine and held responsibility for external affairs.",
+      "outcome": "Harvard’s memorial credits his 1990–1991 interim deanship with helping retain the threatened predoctoral program.",
+      "limit": "The memorial supports these Harvard roles; it is not evidence that Henry determined every admission or subsequent hiring decision.",
+      "source": {
+        "title": "Harvard Faculty of Medicine · Joseph L. Henry memorial minute",
+        "url": "https://news.harvard.edu/gazette/story/2013/06/joseph-l-henry/",
+        "locator": "June 4, 2013; 1975 recruitment and 1990–1991 interim-dean paragraphs",
+        "type": "Faculty memorial minute",
+        "supports": "Goldhaber’s recruitment, Henry’s posts and the memorial’s account of retaining the program."
+      },
+      "topics": [
+        "faculty",
+        "academic leadership",
+        "institutional decisions"
+      ]
     }
   ],
   "furtherResearch": [
-    "Link an early dental degree to the relevant state register and the dentist's actual practice.",
-    "Research hospital privileges and specialist training separately from general dental education.",
-    "Identify the exact clinic, school or employer before presenting an institutional connection."
+    "Pair early degrees with state license registers, hospital-privilege decisions and actual practice records.",
+    "Find Meharry appointment and governance minutes to test Dummett’s retrospective account.",
+    "Trace the historical USC–Watts program’s site and organizational continuity before assigning its history to a present-day clinic.",
+    "Research dental assistants, hygienists and other practice workers separately from dentists."
   ],
   "credential": {
     "name": "Ida Gray",
@@ -92,9 +214,21 @@
     "sources": [
       {
         "label": "University of Michigan School of Dentistry · Ida Gray and diversity awards",
-        "url": "https://dent.umich.edu/news-events/news/dental-students-faculty-staff-awarded-diversity-efforts"
+        "url": "https://dent.umich.edu/news-events/news/dental-students-faculty-staff-awarded-diversity-efforts",
+        "type": "Institutional history",
+        "locator": "Ida Gray biographical paragraph",
+        "supports": "Gray’s 1890 DDS and subsequent dental practice."
       }
     ]
-  }
+  },
+  "checkedOn": "2026-11-04",
+  "researchLeads": [
+    {
+      "title": "Clifton O. Dummett’s professional papers",
+      "url": "https://oac.cdlib.org/findaid/ark:/13030/c84m9c6m",
+      "locator": "USC Wilson Dental Library, collection 925.001; unprocessed papers, 1941–2013",
+      "question": "Which administrative records document his educational and community-dentistry decisions and their effects on workers?",
+      "status": "Finding aid reviewed; underlying records not reviewed; advance notice required for access"
+    }
+  ]
 }
-

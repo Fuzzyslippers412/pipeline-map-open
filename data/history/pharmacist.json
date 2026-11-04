@@ -1,8 +1,8 @@
 {
   "slug": "pharmacist",
-  "headline": "Pharmacy education, state credentials and community-owned practices",
-  "summary": "Black pharmacists gained qualifications, ran businesses and served communities while facing exclusion from schools and professional networks. These records distinguish a degree, a license and ownership.",
-  "coverageNote": "Four episodes in Washington, D.C., Connecticut, Pennsylvania, Ohio and Louisiana. Historical credentials are not instructions for obtaining a license today.",
+  "headline": "Pharmacy credentials, research, ownership and professional power",
+  "summary": "Black pharmacists built community businesses, entered pharmaceutical research and led the schools and associations shaping the profession. These records distinguish education, licensing, employment, invention and ownership.",
+  "coverageNote": "Ten episodes connect named people to pharmacy education, community businesses, research and professional leadership. Historical appointments and ownership do not establish a link to every current hospital, chain or pharmacy site.",
   "question": "Which licensing, employment or business record connects Black pharmacists to your pharmacy or institution?",
   "events": [
     {
@@ -20,7 +20,8 @@
         "title": "Howard University College of Pharmacy · About",
         "url": "https://pharmacy.howard.edu/about",
         "locator": "Howard University College of Pharmacy's History: 1868 evening instruction and James Thomas Wormley's 1870 degree",
-        "type": "Institutional history"
+        "type": "Institutional history",
+        "supports": "Evening instruction in 1868 and Wormley’s 1870 pharmacy degree."
       }
     },
     {
@@ -38,14 +39,16 @@
         "title": "Connecticut Museum of Culture and History · Anna Louise James",
         "url": "https://www.connecticutmuseum.org/research/wocvotes/",
         "locator": "Anna Louise James biography: education, professional-association rejection and pharmacy ownership",
-        "type": "Museum history"
+        "type": "Museum history",
+        "supports": "Professional-association rejection and James’s 1917 sole ownership in Old Saybrook."
       },
       "sources": [
         {
-          "title": "Schlesinger Library · Papers of Anna Louise James, MC 440",
-          "url": "https://hollisarchives.lib.harvard.edu/download_collection_pdf/sch00656.pdf",
-          "locator": "Biographical note: 1908 graduation and 1909 Connecticut license",
-          "type": "Archival finding aid"
+          "title": "Schlesinger Library · Anna Louise James collection guide",
+          "url": "https://guides.library.harvard.edu/c.php?g=1277971&p=9378305",
+          "locator": "Archival Collections — In-Person; Anna Louise James biography",
+          "type": "Archival collection guide",
+          "supports": "1908 graduation, 1909 Connecticut license and Hartford-to-Old-Saybrook business history."
         }
       ]
     },
@@ -64,7 +67,8 @@
         "title": "University of Pittsburgh · Ella P. Stewart",
         "url": "https://www.pittwire.pitt.edu/pittwire/features-articles/ella-p-stewart-first-black-woman-graduate-pitts-pharmacy-school",
         "locator": "Paragraphs covering segregated pharmacy classes, 1916 graduation and exam, and July 1922 pharmacy opening",
-        "type": "Institutional biography"
+        "type": "Institutional biography",
+        "supports": "Segregated training, 1916 qualification and the 1922 Toledo pharmacy."
       }
     },
     {
@@ -82,14 +86,164 @@
         "title": "Xavier University of Louisiana · College of Pharmacy Quick Facts",
         "url": "https://www.xula.edu/collegeofpharmacy/quick-facts.html",
         "locator": "Opening paragraph: 1927 founding and educational purpose",
-        "type": "Institutional history"
+        "type": "Institutional history",
+        "supports": "The 1927 founding and purpose of educating Black and other minority pharmacists."
       }
+    },
+    {
+      "id": "cooper-howard-leadership-1938",
+      "date": "1938–1972",
+      "year": 1938,
+      "title": "Chauncey Cooper gains authority to lead Howard’s pharmacy college",
+      "people": "Chauncey Ira Cooper",
+      "decisionMaker": "Howard appointed Cooper acting head in 1938 and dean in 1941.",
+      "barrier": "Howard identifies Cooper as the first Black leader of a U.S. pharmacy college.",
+      "change": "His appointment placed a Black educator in charge of professional training.",
+      "outcome": "He remained dean until retiring in 1972.",
+      "limit": "This is an academic appointment at Howard’s pharmacy college, not a hospital-pharmacist post or proof of graduates’ placement.",
+      "source": {
+        "title": "Howard University · Chauncey I. Cooper biography",
+        "url": "https://events.howard.edu/cooper-hall-chauncey-i-cooper-hall-college-of-pharmacy-587",
+        "locator": "About the Building’s Name: 1938, 1941 and 1972 appointments",
+        "type": "Institutional biography",
+        "supports": "Cooper’s acting-head appointment and service as dean."
+      },
+      "topics": [
+        "academic leadership",
+        "pharmacy education"
+      ]
+    },
+    {
+      "id": "cooper-npha-1947",
+      "date": "1947",
+      "year": 1947,
+      "title": "Cooper and fellow pharmacists build their own national organization",
+      "people": "Chauncey I. Cooper and 45 pharmacist members of the National Medical Association",
+      "decisionMaker": "The pharmacists established the National Pharmaceutical Association on May 30, 1947.",
+      "barrier": "NPhA traces its origins to exclusion from mainstream professional organizations.",
+      "change": "A distinct pharmacy organization gave minority practitioners a professional voice.",
+      "outcome": "Its stated purposes include continuing education, representation and communication among pharmacists.",
+      "limit": "The association’s history establishes organizing; it does not measure resulting hires, pay or equal membership elsewhere.",
+      "source": {
+        "title": "National Pharmaceutical Association · History",
+        "url": "https://npha.net/About-NPhA",
+        "locator": "History and Our Purpose sections",
+        "type": "Organization’s historical account",
+        "supports": "Cooper, the 45 founding pharmacists and the May 1947 formation."
+      },
+      "topics": [
+        "professional organizing",
+        "continuing education"
+      ]
+    },
+    {
+      "id": "robinson-uf-pharmacy-doctorate-1966",
+      "date": "1966",
+      "year": 1966,
+      "title": "Ira Robinson completes a research doctorate despite barriers at UF",
+      "people": "Ira C. Robinson Sr.",
+      "decisionMaker": "The University of Florida awarded Robinson a doctorate in industrial pharmacy.",
+      "barrier": "UF reports denial of campus housing and a teaching assistantship, alongside difficulty obtaining financial awards.",
+      "change": "He completed the PhD in 1966; UF identifies him as its first Black PhD graduate.",
+      "outcome": "His later career included research at Pfizer and pharmacy-school leadership at Florida A&M.",
+      "limit": "A research PhD is distinct from a pharmacist’s practice license. This account does not date those later job appointments.",
+      "source": {
+        "title": "University of Florida · GATORx centennial history",
+        "url": "https://pharmacy.ufl.edu/wordpress/files/2023/08/GATORx_2023_FINAL.pdf",
+        "locator": "GATORx 2023, printed p. 8 (PDF p. 10), Ira Robinson profile",
+        "type": "Institutional history",
+        "supports": "1966 doctorate, reported exclusions and later research and academic work."
+      },
+      "topics": [
+        "research education",
+        "industrial pharmacy"
+      ]
+    },
+    {
+      "id": "robinson-pfizer-tablet-patent-1971",
+      "date": "1968–1971",
+      "year": 1968,
+      "title": "Ira Robinson’s tablet research enters a named patent record",
+      "people": "Ira C. Robinson",
+      "decisionMaker": "The U.S. Patent Office granted patent 3,577,514; the document names Robinson as assignor to Pfizer.",
+      "barrier": "The record credits an individual’s technical work; it does not describe how he gained access to the research post.",
+      "change": "An application filed June 10, 1968 describes a sustained-release tablet formulation.",
+      "outcome": "The patent issued May 4, 1971 with Robinson’s name on the invention.",
+      "limit": "A patent is not evidence of drug approval, commercial use, a specific laboratory appointment or equal access to Pfizer jobs.",
+      "source": {
+        "title": "U.S. Patent 3,577,514 · Ira C. Robinson",
+        "url": "https://patentimages.storage.googleapis.com/ac/ba/20/4f7f0a080be6a2/US3577514.pdf",
+        "locator": "First page: inventor/assignor, filing date, grant date and abstract",
+        "type": "Issued patent",
+        "supports": "Robinson’s credited invention, Pfizer assignment and 1968–1971 dates."
+      },
+      "topics": [
+        "research",
+        "invention"
+      ]
+    },
+    {
+      "id": "runge-apha-leadership-1979",
+      "date": "1979–1981",
+      "year": 1979,
+      "title": "Mary Munson Runge brings Black women’s experience to APhA leadership",
+      "people": "Mary Munson Runge",
+      "decisionMaker": "APhA elected Runge president in 1979.",
+      "barrier": "The APhA Foundation identifies her as its first Black president and first woman president.",
+      "change": "A pharmacist with hospital and Oakland community-practice experience led the national association.",
+      "outcome": "Her presidency helped establish a Task Force on Women in Pharmacy and an Office of Women’s Affairs.",
+      "limit": "These organizational changes do not prove improved hiring or pay. The biography does not date her individual workplace appointments.",
+      "source": {
+        "title": "APhA Foundation · Mary Munson Runge",
+        "url": "https://www.aphafoundation.org/prev-prez/mary-munson-runge",
+        "locator": "1979–1981 presidency, practice history and women’s-affairs initiatives",
+        "type": "Organization’s historical biography",
+        "supports": "Runge’s election, practice settings and creation of professional-support structures."
+      },
+      "topics": [
+        "professional leadership",
+        "women in pharmacy"
+      ]
+    },
+    {
+      "id": "champion-memphis-pharmacy-1981",
+      "date": "1981–2017",
+      "year": 1981,
+      "title": "Charles Champion’s community pharmacy becomes a family workplace",
+      "people": "Charles, Carolyn and Carol Champion; Charita Champion Brookins",
+      "decisionMaker": "The Champion family built the business; Memphis and Shelby County’s EDGE approved a 2017 improvement loan.",
+      "barrier": "The local financing record describes a pharmacy serving mainly uninsured neighborhood patients.",
+      "change": "Champion opened the Memphis pharmacy in 1981, after hospital and chain-store work.",
+      "outcome": "By 2017 the record names four family operators at 2369 Elvis Presley Boulevard and a transition to the daughters.",
+      "limit": "The approved loan’s projected retained jobs are not verified outcomes. This evidence does not establish current staffing or a connection to another pharmacy.",
+      "source": {
+        "title": "EDGE Memphis and Shelby County · Champions Pharmacy loan",
+        "url": "https://database.edgemem.com/loans/loan/207/",
+        "locator": "Project ED20170201; February 1, 2017 approval; page’s embedded record 207, ProjectDescription",
+        "type": "Public economic-development record",
+        "supports": "Exact business/site, family operation, ownership transition and approved building-improvement loan."
+      },
+      "topics": [
+        "community pharmacy",
+        "ownership",
+        "workplace"
+      ],
+      "sources": [
+        {
+          "title": "Tennessee General Assembly · Charles A. Champion memorial resolution",
+          "url": "https://www.capitol.tn.gov/Bills/113/Bill/SJR0150.pdf",
+          "locator": "SJR 150, 113th General Assembly, p. 1",
+          "type": "Legislative biographical resolution",
+          "supports": "John Gaston Hospital and Katz employment before the pharmacy’s 1981 opening."
+        }
+      ]
     }
   ],
   "furtherResearch": [
-    "Find the actual license register and pharmacy employment record for a named practitioner.",
-    "Research retail, hospital, research and ownership routes separately; one setting does not stand for all pharmacy work.",
-    "Connect a school or scholarship to documented completion and placement instead of assuming a hiring outcome."
+    "Find original licensing registers and dated appointment records for hospital and community pharmacists.",
+    "Trace individual pharmacy locations through ownership changes before linking them to a present-day employer.",
+    "Find dated Pfizer and Florida A&M personnel records for Robinson; distinguish research employment from a patent assignment.",
+    "Test whether association initiatives changed hiring, pay or promotion using workplace records rather than inferring outcomes."
   ],
   "credential": {
     "name": "Ella P. Stewart",
@@ -100,9 +254,21 @@
     "sources": [
       {
         "label": "University of Pittsburgh · Ella P. Stewart",
-        "url": "https://www.pittwire.pitt.edu/pittwire/features-articles/ella-p-stewart-first-black-woman-graduate-pitts-pharmacy-school"
+        "url": "https://www.pittwire.pitt.edu/pittwire/features-articles/ella-p-stewart-first-black-woman-graduate-pitts-pharmacy-school",
+        "type": "Institutional biography",
+        "locator": "1916 graduation/state examination and 1922 business paragraphs",
+        "supports": "Stewart’s qualification and pharmacy ownership."
       }
     ]
-  }
+  },
+  "checkedOn": "2026-11-04",
+  "researchLeads": [
+    {
+      "title": "Anna Louise James’s business and personal records",
+      "url": "https://guides.library.harvard.edu/c.php?g=1277971&p=9378305",
+      "locator": "Schlesinger Library; Archival Collections — In-Person; Anna Louise James papers",
+      "question": "What do the listed financial records, certificates and diaries show about licensing, ownership and daily pharmacy work?",
+      "status": "Collection guide reviewed; underlying records not reviewed"
+    }
+  ]
 }
-

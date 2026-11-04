@@ -1,8 +1,8 @@
 {
   "slug": "lawyer",
   "headline": "Legal education, the right to practice and the work of challenging exclusion",
-  "summary": "Black lawyers built institutions, secured credentials and challenged exclusion through litigation. A law degree, bar admission and access to clients or employment are separate steps.",
-  "coverageNote": "Four episodes in U.S. legal education and practice, with specific records for Howard, Pennsylvania and Texas. These are not a complete history of every bar, firm or legal specialty.",
+  "summary": "Black lawyers built schools and professional networks, practiced privately, joined government legal offices and challenged exclusion in court. These records separate a degree and bar admission from paid work, promotion and judicial appointment.",
+  "coverageNote": "Ten selected episodes across legal education, professional organizing, private practice, civil-rights litigation and public service. Named workplaces include Howard, the Interior Department, New York City’s Law Department, LDF and the Southern District of New York; they do not establish access at every firm or court.",
   "question": "Which bar, firm, court or legal department record establishes Black access to the work you do?",
   "events": [
     {
@@ -20,8 +20,13 @@
         "title": "Howard University School of Law · Our History",
         "url": "https://law.howard.edu/about/our-history",
         "locator": "History paragraphs covering January 1869, February 1871 and Charlotte E. Ray in 1872",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "Howard’s opening, Langston’s leadership and the first graduates’ reported entry into practice."
+      },
+      "topics": [
+        "legal education",
+        "credentials"
+      ]
     },
     {
       "id": "charlotte-ray-law-1872",
@@ -29,17 +34,45 @@
       "year": 1872,
       "title": "Charlotte E. Ray earns a degree and admission to practice",
       "people": "Charlotte E. Ray",
-      "decisionMaker": "Howard awarded the degree; the District of Columbia Supreme Court admitted her.",
-      "barrier": "Her record concerns racial and gender access.",
-      "change": "Her degree preceded admission to District practice.",
-      "outcome": "Howard identifies her as that court's first woman admitted to practice.",
-      "limit": "Admission does not establish a sustainable practice or equal access to clients.",
+      "decisionMaker": "Howard awarded her degree; she was admitted to the District of Columbia bar.",
+      "barrier": "Racial and gender barriers continued after the credential.",
+      "change": "She earned her Howard law degree and entered District of Columbia practice in 1872.",
+      "outcome": "She opened a law office, but the District’s Attorney General records that she could not obtain enough business to sustain it.",
+      "limit": "Her admission opened a legal right to practice; it did not ensure clients or a durable livelihood.",
       "source": {
-        "title": "Howard University School of Law · Our History",
-        "url": "https://law.howard.edu/about/our-history",
-        "locator": "History paragraphs covering January 1869, February 1871 and Charlotte E. Ray in 1872",
-        "type": "Institutional history"
-      }
+        "title": "District of Columbia OAG · Charlotte E. Ray",
+        "url": "https://oag.dc.gov/blog/black-history-month-celebrating-charlotte-e-ray",
+        "locator": "February 26, 2019; Charlotte E. Ray biography, degree and private-practice paragraph",
+        "type": "Government historical profile",
+        "supports": "Her 1872 credential, District practice and business closure."
+      },
+      "topics": [
+        "credentials",
+        "private practice"
+      ]
+    },
+    {
+      "id": "national-bar-organizing-1925",
+      "date": "August 1, 1925",
+      "year": 1925,
+      "title": "Black lawyers establish their own national professional network",
+      "people": "George H. Woodson, Gertrude E. Rush and fellow founders",
+      "decisionMaker": "Twelve founders incorporated the National Bar Association in Des Moines; Woodson became its first president.",
+      "barrier": "Some founders had been denied American Bar Association membership.",
+      "change": "They built a national association for professional cooperation and the defense of civil rights.",
+      "outcome": "The association’s early agenda included exclusion of Black lawyers from law libraries and efforts to extend legal services.",
+      "limit": "Association membership did not confer a law license or guarantee employment. Its founding is a professional-organizing record, not evidence about every bar or firm.",
+      "source": {
+        "title": "National Bar Association · History",
+        "url": "https://members.nationalbar.org/history",
+        "locator": "Timeline: 1925 incorporation and 1930 library access; founders and past presidents lists",
+        "type": "Professional association history",
+        "supports": "The incorporation date, founders, Woodson’s presidency and early access concerns."
+      },
+      "topics": [
+        "professional organizing",
+        "institution building"
+      ]
     },
     {
       "id": "sadie-alexander-law-1927",
@@ -56,8 +89,124 @@
         "title": "University of Pennsylvania Archives · Sadie Tanner Mossell Alexander",
         "url": "https://archives.upenn.edu/exhibits/penn-people/biography/sadie-tanner-mossell-alexander/",
         "locator": "Biographical paragraphs covering employment after her doctorate and law study, bar admission and practice",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "Alexander’s degree, bar admission, earlier employment difficulty and estate/family-law practice."
+      },
+      "topics": [
+        "credentials",
+        "private practice"
+      ]
+    },
+    {
+      "id": "houston-howard-curriculum-1929",
+      "date": "1929–1931",
+      "year": 1929,
+      "title": "Charles Hamilton Houston strengthens Howard’s civil-rights training",
+      "people": "Charles Hamilton Houston and Howard law students, including Thurgood Marshall",
+      "decisionMaker": "Howard appointed Houston vice-dean; he directed the curriculum changes.",
+      "barrier": "Howard had offered law courses part-time in the evening.",
+      "change": "After his 1929 appointment, Houston developed an accredited, full-time program with stronger civil-rights instruction.",
+      "outcome": "A 1931 memorandum documents his curriculum review. The school trained lawyers who went on to challenge racial exclusion.",
+      "limit": "This connects an academic appointment to legal training, not every graduate’s later hiring or a reader’s present employer.",
+      "source": {
+        "title": "Smithsonian · Howard Law: Preparing for Struggle",
+        "url": "https://www.americanhistory.si.edu/brown/history/3-organized/hu-law-school.html",
+        "locator": "Opening paragraph and 1931 course-syllabus memorandum caption",
+        "type": "Museum exhibition with archival document",
+        "supports": "Houston’s appointment, curriculum changes and the dated memorandum."
+      },
+      "topics": [
+        "legal education",
+        "academic leadership"
+      ]
+    },
+    {
+      "id": "hastie-interior-law-1933",
+      "date": "1933–1937 · start year differs by source",
+      "year": 1933,
+      "title": "William Hastie practices law inside the Interior Department",
+      "people": "William Henry Hastie, Nathan Margold and Harold Ickes",
+      "decisionMaker": "Hastie recalled that Secretary Ickes gave Solicitor Margold discretion to select his legal staff.",
+      "barrier": "This opening depended on an appointment to a federal legal office, beyond obtaining a degree or bar admission.",
+      "change": "Hastie served as assistant solicitor at the U.S. Department of the Interior.",
+      "outcome": "His assignments included legal work on a corporate structure for the Virgin Islands’ sugar and rum industries.",
+      "limit": "The Federal Judicial Center dates service from 1933; Hastie recalled 1934. A personnel record is needed to resolve that difference. Neither source establishes all departmental hiring practices.",
+      "source": {
+        "title": "Truman Library · William Hastie oral history",
+        "url": "https://www.trumanlibrary.gov/library/oral-histories/hastie",
+        "locator": "January 5, 1972 interview; transcript pages 2–3",
+        "type": "First-person oral history",
+        "supports": "Hastie’s account of selection authority, legal assignments and a 1934 start."
+      },
+      "topics": [
+        "government practice",
+        "appointments"
+      ],
+      "sources": [
+        {
+          "title": "Federal Judicial Center · William Henry Hastie",
+          "url": "https://www.fjc.gov/history/judges/hastie-william-henry",
+          "locator": "Professional Career: assistant solicitor, 1933–1937",
+          "type": "Official judicial biography",
+          "supports": "The official career chronology, which differs from his later recollection."
+        }
+      ]
+    },
+    {
+      "id": "bolin-nyc-law-department-1937",
+      "date": "1937",
+      "year": 1937,
+      "title": "Jane Bolin enters New York City’s legal department",
+      "people": "Jane Matilda Bolin",
+      "decisionMaker": "New York City appointed Bolin assistant corporation counsel; the cited account does not name the appointing official.",
+      "barrier": "The city identifies her as its first Black woman in this attorney role.",
+      "change": "Bolin joined the Law Department in 1937, after private practice.",
+      "outcome": "She represented the city in Domestic Relations Court matters before her separate judicial appointment in 1939.",
+      "limit": "This is an attorney appointment at a named employer. It does not establish access to every city legal position or the circumstances of a present employee’s hiring.",
+      "source": {
+        "title": "NYC Law Department · Law Day statement",
+        "url": "https://www.nyc.gov/site/law/news/041-20/statement-corporation-counsel-james-e-johnson-law-day",
+        "locator": "May 1, 2020; final paragraph on Jane Bolin",
+        "type": "Employer history",
+        "supports": "The 1937 assistant corporation counsel appointment and its institutional first."
+      },
+      "topics": [
+        "government practice",
+        "appointments"
+      ],
+      "sources": [
+        {
+          "title": "Historical Society of the New York Courts · Judge Jane Bolin",
+          "url": "https://history.nycourts.gov/judge-jane-bolin/",
+          "locator": "Early practice, corporation counsel and 1939 judicial appointment paragraphs",
+          "type": "Court historical society research",
+          "supports": "The transition from private practice and work before the Domestic Relations Court."
+        }
+      ]
+    },
+    {
+      "id": "motley-ldf-practice-1945",
+      "date": "1945–1949",
+      "year": 1945,
+      "title": "Constance Baker Motley moves from law clerk to civil-rights counsel",
+      "people": "Constance Baker Motley",
+      "decisionMaker": "The NAACP Legal Defense and Educational Fund hired and promoted Motley.",
+      "barrier": "Black women had little representation in the organization’s early legal staff.",
+      "change": "She started at LDF as a law clerk in 1945 and became assistant special counsel in 1949.",
+      "outcome": "She later led university-desegregation litigation, including the legal campaign for James Meredith’s admission to the University of Mississippi.",
+      "limit": "This establishes a career at LDF. It does not establish employment at the NAACP, its local branches or other law firms.",
+      "source": {
+        "title": "Legal Defense Fund · Life and Legacy of Constance Baker Motley",
+        "url": "https://www.naacpldf.org/naacp-publications/ldf-blog/cbm-100/",
+        "locator": "Life and Legacy biography and Desegregation Architect section",
+        "type": "Employer history",
+        "supports": "The 1945 entry, 1949 promotion and university-desegregation work."
+      },
+      "topics": [
+        "civil-rights practice",
+        "hiring",
+        "promotion"
+      ]
     },
     {
       "id": "sweatt-texas-1950",
@@ -74,27 +223,93 @@
         "title": "U.S. Supreme Court · Sweatt v. Painter, 339 U.S. 629 (1950)",
         "url": "https://www.govinfo.gov/content/pkg/USREPORTS-339/pdf/USREPORTS-339-629.pdf",
         "locator": "Syllabus, pp. 629–630; opinion, pp. 631–636",
-        "type": "Court opinion"
-      }
+        "type": "Court opinion",
+        "supports": "The exclusion challenged, unequal education finding and required admission."
+      },
+      "topics": [
+        "legal education",
+        "court decisions"
+      ]
+    },
+    {
+      "id": "motley-sdny-commission-1966",
+      "date": "August 30, 1966",
+      "year": 1966,
+      "title": "Constance Baker Motley receives a federal judicial commission",
+      "people": "Constance Baker Motley",
+      "decisionMaker": "President Lyndon B. Johnson nominated her; the U.S. Senate confirmed her.",
+      "barrier": "The Southern District identifies her appointment as the first lifetime federal judgeship held by a Black woman.",
+      "change": "Johnson nominated her on January 26, 1966; confirmation and her commission followed on August 30.",
+      "outcome": "She served on the U.S. District Court for the Southern District of New York and became chief judge in 1982.",
+      "limit": "A judicial appointment has a different route from an attorney, clerk or court-staff job. Her appointment does not prove the hiring history of those roles.",
+      "source": {
+        "title": "Federal Judicial Center · Constance Baker Motley",
+        "url": "https://www.fjc.gov/history/judges/motley-constance-baker",
+        "locator": "Federal Judicial Service: nomination, confirmation, commission and chief-judge dates",
+        "type": "Official judicial biography",
+        "supports": "The appointing authorities, exact 1966 dates and 1982 leadership role."
+      },
+      "topics": [
+        "judicial appointments",
+        "leadership"
+      ],
+      "sources": [
+        {
+          "title": "Southern District of New York · Court history",
+          "url": "https://nysd.uscourts.gov/about",
+          "locator": "Court-history paragraph on Motley’s August 30, 1966 appointment",
+          "type": "Court institutional history",
+          "supports": "The court’s identification of the historic appointment."
+        }
+      ]
     }
   ],
   "furtherResearch": [
-    "Trace firm, public-service and judicial appointments separately from education and bar admission.",
-    "Use client, practice and employment records to examine what happened after an early legal credential.",
-    "Verify the exact jurisdiction and date before applying a historical admission decision to a later workplace."
+    "Find appointment letters, payrolls, staff directories and partnership records for the reader’s exact legal employer.",
+    "Follow legal credentials into actual clients and work; Ray’s business closure demonstrates why admission alone is insufficient.",
+    "Resolve the 1933/1934 discrepancy in Hastie’s Interior start date from a contemporary personnel file.",
+    "Trace law-school training, civil-rights organizations, government practice and judicial appointments as separate routes.",
+    "Identify later hiring and promotion decisions at each named institution before claiming that one appointment opened every subsequent position.",
+    "Expand public defense, prosecution, corporate counsel and private-firm practice with employer-specific records."
   ],
   "credential": {
     "name": "Charlotte E. Ray",
     "year": 1872,
     "credential": "Law degree and admission to practice",
     "record": "Howard records Ray's law graduation and admission to District of Columbia practice in 1872.",
-    "work": "The account does not establish later employment outcomes.",
+    "work": "DC’s Attorney General records that she opened a practice but could not sustain it because she could not attract enough business as a woman of color.",
     "sources": [
       {
         "label": "Howard University School of Law · Our History",
-        "url": "https://law.howard.edu/about/our-history"
+        "url": "https://law.howard.edu/about/our-history",
+        "locator": "Charlotte E. Ray, 1872 paragraph",
+        "type": "Institutional history",
+        "supports": "Law graduation and admission to District practice."
+      },
+      {
+        "label": "District of Columbia OAG · Charlotte E. Ray",
+        "url": "https://oag.dc.gov/blog/black-history-month-celebrating-charlotte-e-ray",
+        "locator": "Degree and private-practice paragraph",
+        "type": "Government historical profile",
+        "supports": "The opening and closure of her own law practice."
       }
     ]
-  }
+  },
+  "checkedOn": "2026-11-04",
+  "researchLeads": [
+    {
+      "title": "William Hastie’s professional and judicial papers",
+      "url": "https://hollisarchives.lib.harvard.edu/catalog/law00134",
+      "locator": "Harvard Law School, LAW.MMC.121; Series I, Administrative Matters; catalog describes law-clerk hiring correspondence and nonjudicial personnel",
+      "question": "What do the correspondence and appointment files show about access to legal work? Most papers date from 1937 onward and may not resolve his Interior start date.",
+      "status": "Indexed finding-aid description reviewed; underlying records not reviewed"
+    },
+    {
+      "title": "Constance Baker Motley’s public-service papers at Smith",
+      "url": "https://www.smith.edu/libraries/libs/ssc/agents/motley.html",
+      "locator": "Sophia Smith Collection exhibition: collection description, 5.5 linear feet; primarily state senate, borough presidency and early federal judgeship",
+      "question": "What do the early judicial records show about her workplace? The collection description warns that little material concerns her early civil-rights practice.",
+      "status": "Collection description reviewed; underlying records not reviewed"
+    }
+  ]
 }
-

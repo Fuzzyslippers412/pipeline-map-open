@@ -1,5 +1,19 @@
 # Door Notes: product roadmap
 
+## Medicine, law, dentistry, pharmacy, engineering and academia · November 4, 2026
+
+This edition adds 33 episodes across six previously thin dossiers: medicine and law now have 10 each; dentistry 9; pharmacy 10; engineering 9; academia 10. The complete catalog has 166 episodes and 469 source references across 22 fields. Source disclosures specify what each reference supports, its type and locator. Archive leads identify underlying files or interviews that have not been reviewed.
+
+Seventeen new workplace records bring the shared index to 54. Named people include Charles Drew at Freedmen's/Howard, Patricia Bath at UCLA, Helen Dickens at Penn, Louis Sullivan's Morehouse program, Jane Bolin in New York City's Law Department, Constance Baker Motley at LDF, Jeanne Sinkford at Howard, Clifton Dummett at Meharry, George Grant at Harvard, Chauncey Cooper at Howard, Charles Champion in Memphis, Mary Jackson at Langley, Walt Braithwaite at Boeing, Yvonne Clark at Tennessee State, David Blackwell at Berkeley, Allison Davis at Chicago and Gloria Hewitt at Montana.
+
+Dates distinguish institutional transitions and appointment ranks: Morehouse College's program and the independent medical school are separate employers; Blackwell's visiting and full professorships have different dates. Pharmacy ownership, legal practice, academic roles and clinical appointments retain their scopes. University records do not apply automatically to affiliated hospitals, system campuses or other departments. A company-level history does not prove employment at a particular factory. Conflicting accounts and unreviewed personnel/board files remain explicit gaps.
+
+The homepage features Bolin, Jackson and Champion and links to the other expanded fields. Named workplace episodes take priority over general training-program announcements. Recognized postsecondary specialties, medical specialties and engineering occupations can open related histories without changing the entered job title. Occupation-scoped workplace links prevent a chemistry professor from inheriting Berkeley's statistics appointment. Unknown employers retain the workplace gap; every employed reader retains the gap in their own training and hiring route.
+
+Validation: 90 automated tests pass, including exact-site conflicts, specialty boundaries, distinct hospital/university employers, institutional transitions, new workplace autocomplete, source-support propagation, preview ordering and preserved undated records. Browser checks verified a typed math-professor trace at Berkeley, preserved wording and its remaining hiring gap at 375 pixels; pharmacy workplace disclosures and source links fit a 320-pixel viewport without horizontal overflow. This is browser testing, not a physical-device study. The build verified 63 pages, 1,820 share images, 469 source references, 513 measurements and internal links.
+
+Still open: independent review of catalogued archive files, additional workplaces and clinical sites, the other thinner career dossiers, broader specialty coverage, and the planned worker/student comprehension studies. This edition does not establish readers' own hiring histories or equal access for everyone at a named institution.
+
 ## Nursing, teaching and computing depth · November 4, 2026
 
 This edition adds 21 researched episodes across nursing (13 total), teaching (12) and computing (12). The catalog now contains 133 episodes across 22 fields and 426 source references. New records distinguish named people, decision makers, changes for workers, evidence limits and source-specific support. Archive finding aids are identified as leads; their underlying files are not claimed reviewed. NYU's conflicting 1946/1947 Osborne appointment dates remain explicit.

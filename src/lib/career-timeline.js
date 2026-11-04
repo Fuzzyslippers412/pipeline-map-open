@@ -27,7 +27,7 @@ function historyStep(item){
 function workplaceStep(row, paper=false){
   const bridge=row.fromInstitution&&row.toInstitution?row.fromInstitution+' → '+row.toInstitution:'';
   const label=({contractor:'Contractor history',union:'Union history',jobsite:'Jobsite record',program:'Training program',appointment:'Appointment record',election:'Reported election result',office:'Public office record',institution:'Institutional record'})[row.scope] || 'Workplace history';
-  return {type:'employer',label,date:row.eventDateLabel||'Date undocumented',order:dateKey(row.eventYear),
+  return {type:'employer',label:row.roleScope?label+' · '+row.roleScope:label,date:row.eventDateLabel||'Date undocumented',order:dateKey(row.eventYear),
     title:(paper && row.paperTitle) || row.headline,detail:row.description,place:row.place || row.site?.location,scope:row.scope,
     paperRole:paper ? row.paperRole : undefined,previewDetail:row.previewDetail || '',sourceNote:row.sourceNote,bridge,historyEventId:row.historyEventId,
     sources:sources([{title:row.sourceTitle,url:row.url}, ...(row.moreSources || [])])};

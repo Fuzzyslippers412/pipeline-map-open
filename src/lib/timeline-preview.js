@@ -27,6 +27,9 @@ function firstSentence(paragraph) {
 
 function relevance(step) {
   const dated=Number.isFinite(step.order);
+  // A reviewed link to a named field episode is more useful than an unrelated
+  // employer announcement, even if that announcement describes a program bridge.
+  if(step.type==='employer' && step.connectsHistory && dated)return 6;
   if(step.type==='employer' && step.bridge && dated)return 5;
   if(step.type==='employer' && dated)return 4;
   if(step.type==='award' && dated)return 3;

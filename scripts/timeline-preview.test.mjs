@@ -71,7 +71,8 @@ test('unknown title, related field, employer omitted and load failure retain dis
 
 test('undated reviewed programs are preserved without inventing a start date',()=>{
  const context={title:'Dentist',employer:'Meharry Medical College',profession:'dentist'};
- const view=preview(context,{slug:'dentist',historical:history.dentist,reviewers,awards:[]});
+ const programs=reviewers.filter(row=>row.scope==='program');
+ const view=preview(context,{slug:'dentist',historical:history.dentist,reviewers:programs,awards:[]});
  assert.equal(view.workplace.date,'Start date undocumented');
  assert.equal(view.workplace.sources.length,1);
 });
