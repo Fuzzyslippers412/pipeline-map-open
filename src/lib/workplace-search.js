@@ -11,7 +11,7 @@ export function packDirectory(records, sources={}) {
   for(const item of records){
     if(typeof item.name!=='string'||!item.name.trim())continue;
     rows.push([item.name,intern(item.parent),intern(item.relation),intern(item.location),intern(item.kind),
-      item.aliases?.length?item.aliases:0,intern(item.source),item.priority??(item.reviewed?2:0)]);
+      item.aliases?.length?item.aliases:0,intern(item.source),item.priority??(item.reviewed?2:0),intern(item.id),intern(item.sourceUrl)]);
   }
   return {strings,sources,rows};
 }
@@ -40,7 +40,7 @@ export class WorkplaceSearch {
     return this.sharedTerms.get(value);
   }
   add({strings,rows,sources}){
-    for(const [name,parentId,relId,cityId,kindId,aliases,sourceId,featured] of rows){
+    for(const [name,parentId,relId,cityId,kindId,aliases,sourceId,featured,stableId,sourceUrlId] of rows){
       const parent=strings[parentId],location=strings[cityId],relation=strings[relId],kind=strings[kindId];
       const norm=normalizeEmployerText(name);
       const alt=(aliases||[]).map(normalizeEmployerText);
@@ -49,7 +49,7 @@ export class WorkplaceSearch {
       const tokens=words(norm),aliasWords=alt.map(words);
       const locationWords=this.terms(location).tokens;
       const record={name,parent,relation,location,kind,norm,alt,tokens,aliasWords,parentText,parentWords,locationWords,
-        priority:featured,sourceUrl:sources?.[strings[sourceId]]?.url||''};
+        priority:featured,id:strings[stableId]||'',sourceUrl:strings[sourceUrlId]||sources?.[strings[sourceId]]?.url||''};
       const id=this.records.push(record)-1;
       // The short prefix index avoids scanning the national directory for each letter.
       for(const prefix of new Set([...tokens,...aliasWords.flat(),...parentWords,...locationWords].filter(t=>t.length>=2).map(t=>t.slice(0,2)))){
@@ -90,7 +90,7 @@ export class WorkplaceSearch {
           (!r.location&&!r.parent&&prior.length) ||
           (prior.some(p=>normalizeEmployerText(p.location)===normalizeEmployerText(r.location)&&p.parent)&&!r.parent))continue;
       seen.set(r.norm,[...prior,r]);
-      out.push({key:r.norm+'|'+r.location+'|'+r.parent,value:r.name,label:r.name,parent:r.parent,
+      out.push({key:r.id||r.norm+'|'+r.location+'|'+r.parent,...(r.id?{id:r.id}:{}),value:r.name,label:r.name,parent:r.parent,
         relation:r.relation,detail:r.parent?(r.relation||'Parent organization')+': '+r.parent:r.kind,
         location:r.location,sourceUrl:r.sourceUrl});
       if(out.length>=limit)break;

@@ -11,8 +11,8 @@ import {compareModel} from '../src/lib/compare.js';
 
 const dist='dist', site=new URL(config.site);
 const slugs=professions.map(p=>p.slug);
-assert.equal(slugs.length,20);
-assert.equal(new Set(slugs).size,20);
+assert.ok(slugs.length>=20);
+assert.equal(new Set(slugs).size,slugs.length);
 assert.ok(slugs.every(s=>/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s)));
 
 function* nodes(node) {
@@ -111,7 +111,7 @@ assert.ok(files.has(directoryPath),'Missing job occupations in the published bui
 const occupationalData=JSON.parse(await fs.readFile(disk(directoryPath),'utf8'));
 assert.equal(occupationalData.version,1);
 assert.ok(occupationalData.entries.length>40000 && occupationalData.occupations.length>900,'Incomplete occupational directory');
-assert.equal(search.length,20);
+assert.equal(search.length,slugs.length);
 for(const p of professions) {
   assert.ok(hasHref(docHome,'/p/'+p.slug+'/'),p.slug+' missing index link');
   assert.deepEqual(search.find(s=>s.slug===p.slug)?.aliases,p.aliases);
@@ -260,7 +260,7 @@ function* selections(values,at=0,chosen=[]) {
 }
 const combos=[...selections([...slugs].sort())];
 const actual=[...files].filter(f=>/^\/comparisons\/[^/]+\/index\.html$/.test(f));
-assert.equal(combos.length,1350); assert.equal(actual.length,combos.length);
+assert.equal(combos.length,slugs.length+slugs.length*(slugs.length-1)/2+slugs.length*(slugs.length-1)*(slugs.length-2)/6); assert.equal(actual.length,combos.length);
 for(const ids of combos) {
   const route='/comparisons/'+ids.join('~')+'/',img=route+'og.png',query='/compare/?p='+ids.join(',');
   const list=await readPage(route);

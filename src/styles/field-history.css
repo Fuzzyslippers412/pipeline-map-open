@@ -5,3 +5,4 @@
 .history-scope summary{cursor:pointer;min-height:44px;align-content:center;color:var(--action);font-size:.85rem}.history-scope p{margin:4px 0 12px}.history-episodes{margin-top:12px}
 
 .history-boundary{font-size:.8rem;color:var(--muted);margin:8px 0 0;line-height:1.5}
+.history-updates{display:flex;align-items:center;flex-wrap:wrap;gap:4px 24px;border-block:1px solid var(--edge);padding:8px 0;margin:4px 0 24px}.history-updates span{font:.72rem var(--mono);color:var(--muted);text-transform:uppercase}.history-updates a{display:inline-flex;align-items:center;min-height:44px;font-size:.9rem;color:var(--action);text-decoration:underline;text-underline-offset:3px}.history-boundary a{color:var(--action);text-decoration:underline}.history-kicker{overflow-wrap:anywhere}

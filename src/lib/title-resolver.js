@@ -1,5 +1,6 @@
 import {projectTitle} from './project-work.js';
-import {matchJobTitle, normalizeJobTitle} from './job-match.js';
+import {matchJobTitle, normalizeJobTitle, jobTerms} from './job-match.js';
+import {everydayTitles,everydayOccupation,canonicalTitleForms,spellingSuggestions} from './title-language.js';
 
 let pendingDirectory;
 const directoryIndices = new WeakMap();
@@ -25,7 +26,7 @@ export function loadTitleDirectory() {
 
 function titleIndex(directory) {
   if (directoryIndices.has(directory)) return directoryIndices.get(directory);
-  const byTitle = new Map();
+  const byTitle = new Map(), canonical = new Map();
   function add(title, indices) {
     const key = normalizeJobTitle(title);
     let matches = byTitle.get(key);
@@ -40,14 +41,22 @@ function titleIndex(directory) {
     const parens = /^(.+?)\s+\(([^()]+)\)$/.exec(entry[0]);
     if (parens) { add(parens[1], indices); add(parens[2], indices); }
   }
-  for (const [index, [, name]] of directory.occupations.entries()) add(name, [index]);
-  directoryIndices.set(directory, byTitle);
-  return byTitle;
+  for (const [index, [, name]] of directory.occupations.entries()) {
+    for(const key of canonicalTitleForms(name)){
+      if(!canonical.has(key))canonical.set(key,new Set());
+      canonical.get(key).add(index);
+    }
+    add(name, [index]);
+  }
+  const value={byTitle,canonical};
+  directoryIndices.set(directory, value);
+  return value;
 }
 
 function occupationsFor(key, directory) {
   if (!Array.isArray(directory?.entries) || !Array.isArray(directory?.occupations)) return [];
-  const raw = titleIndex(directory).get(key) || [];
+  const {canonical,byTitle}=titleIndex(directory);
+  const raw = canonical.get(key) || byTitle.get(key) || [];
   return [...raw].map(index => {
     const [code, name] = directory.occupations[index];
     return {code, name};
@@ -159,7 +168,8 @@ const computingOccupations = {
   '15-1252.00':'software', '15-1299.05':'security',
 };
 function fromOccupation(title, record, professions) {
-  const slug = relatedFields[record.code];
+  const agriculture=/^(?:11-9013|17-2021|19-1013|19-4012|25-1041|25-9021|45-20)/.test(record.code);
+  const slug = agriculture ? 'agriculture' : relatedFields[record.code];
   const published = slug && professions.some(p=>p.slug===slug);
   const contextKey = computingOccupations[record.code] || (record.code.startsWith('15-12') ? 'computing' : null);
   return {kind:published ? 'related' : 'recognized', title, occupation:record.name,
@@ -167,14 +177,74 @@ function fromOccupation(title, record, professions) {
     ...(contextKey ? {computing:true, contextKey} : {})};
 }
 
-export function resolveTitle(input, professions, directory = null) {
+function dutiesResolution(title,key,professions){
+  const governor=professions.find(p=>p.slug==='governor');
+  const state='alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new hampshire|new jersey|new mexico|new york|north carolina|north dakota|ohio|oklahoma|oregon|pennsylvania|rhode island|south carolina|south dakota|tennessee|texas|utah|vermont|virginia|washington|west virginia|wisconsin|wyoming';
+  if(governor&&(new RegExp('^(?:'+state+') governor$').test(key)||new RegExp('^governor (?:of )?(?:'+state+')$').test(key)))return {kind:'exact',title,occupation:'Governor',slug:'governor'};
+  if(['politics','political work','government'].includes(key))return clarify(title,'Politics and public service','What kind of public work do you mean?',[
+    ...(governor?[alternative('State governor',{kind:'exact',title,occupation:'Governor',slug:'governor'})]:[]),
+    alternative('Another elected office',{kind:'exact',title,occupation:'Elected official',slug:'elected-official'}),
+    alternative('Campaign work or public-service staff',{kind:'unknown',title}),
+    alternative('Use my wording',{kind:'unknown',title})
+  ]);
+  const option=(label,code,name)=>alternative(label,fromOccupation(title,{code,name},professions));
+  const other=alternative('Use my wording',{kind:'unknown',title});
+  const groups={
+    'case manager':['What does your case management involve?',[
+      option('Coordinating care for patients','21-1022.00','Healthcare Social Workers'),
+      option('Helping people access social services','21-1093.00','Social and Human Service Assistants'),
+      option('Insurance claims','13-1031.00','Claims Adjusters, Examiners, and Investigators')]],
+    'data analyst':['What do you mainly analyze?',[
+      option('Business performance and reporting','15-2051.01','Business Intelligence Analysts'),
+      option('Statistical models and data science','15-2051.00','Data Scientists'),
+      option('Research surveys and responses','19-3022.00','Survey Researchers')]],
+    'warehouse associate':['What do you mainly do in the warehouse?',[
+      option('Pick orders and stock goods','53-7065.00','Stockers and Order Fillers'),
+      option('Move or load freight','53-7062.00','Laborers and Freight, Stock, and Material Movers, Hand'),
+      option('Operate a forklift','53-7051.00','Industrial Truck and Tractor Operators')]],
+    'truck driver':['What kind of vehicle do you drive?',[
+      option('Heavy trucks or tractor-trailers','53-3032.00','Heavy and Tractor-Trailer Truck Drivers'),
+      option('Delivery vans or light trucks','53-3033.00','Light Truck Drivers'),
+      option('Refuse or recycling vehicles','53-7081.00','Refuse and Recyclable Material Collectors')]],
+    'postal worker':['What do you do at the post office?',[
+      option('Deliver mail','43-5052.00','Postal Service Mail Carriers'),
+      option('Serve customers at the counter','43-5051.00','Postal Service Clerks'),
+      option('Sort, process or handle mail','43-5053.00','Postal Service Mail Sorters, Processors, and Processing Machine Operators')]],
+    'patient care technician':['Which work best describes your role?',[
+      option('Assist patients with day-to-day care','31-1131.00','Nursing Assistants'),
+      option('Move patients and equipment','31-1132.00','Orderlies'),
+      option('Help patients navigate services','29-2099.08','Patient Representatives')]],
+    'farmworker':['Which kind of agricultural work do you do?',[
+      option('Grow or harvest crops','45-2092.00','Farmworkers and Laborers, Crop, Nursery, and Greenhouse'),
+      option('Care for farm animals','45-2093.00','Farmworkers, Farm, Ranch, and Aquacultural Animals'),
+      option('Operate farm equipment','45-2091.00','Agricultural Equipment Operators')]],
+  };
+  const aliases={'case mgr':'case manager','warehouse worker':'warehouse associate','patient care tech':'patient care technician','pct':'patient care technician','farm worker':'farmworker','agricultural worker':'farmworker','agriculture worker':'farmworker'};
+  const group=groups[aliases[key]||key];
+  return group ? clarify(title,title,group[0],[...group[1],other]) : null;
+}
+
+function boundedChoices(title,records,professions){
+  const options=records.slice(0,3).map(record=>alternative(record.name,fromOccupation(title,record,professions)));
+  if(records.length>3)options.push(alternative('More kinds of work',boundedChoices(title,records.slice(3),professions)));
+  options.push(alternative('Use my wording',{kind:'unknown',title}));
+  return clarify(title,title,'Which occupation fits your work?',options);
+}
+export function correctionTitles(input,professions,directory){
+ const candidates=[...professions.flatMap(jobTerms),...everydayTitles.flatMap(([title,,,aliases])=>[title,...aliases]),...(directory?.occupations||[]).map(([,name])=>canonicalTitleForms(name).at(-1))];
+ return spellingSuggestions(input,candidates);
+}
+
+export function resolveTitle(input, professions, directory = null, allowCorrection = true) {
   const title = typeof input === 'string' ? input.trim() : '';
   const role = title.split(/\s+at\s+/i, 1)[0];
   const raw = normalizeJobTitle(role);
   const key = raw.replace(/^(?:(?:senior|sr|junior|jr|lead|principal|staff) )+/, '')
     .replace(/ (?:i{1,3}|iv|[1-5])$/, '');
-  const common = projectTitle(title,key) || commonResolution(title, key, professions);
+  const common = projectTitle(title,key) || commonResolution(title, key, professions) || dutiesResolution(title,key,professions);
   if (common) return common;
+  const everyday=everydayOccupation(key);
+  if(everyday)return fromOccupation(title,everyday,professions);
   const matches = matchJobTitle(title, professions);
   if (matches.length === 1) return {kind:'exact', title, slug:matches[0].slug, occupation:matches[0].name};
   if (matches.length > 1) return clarify(title, title, 'Which path fits your work?', matches.map(match =>
@@ -189,7 +259,12 @@ export function resolveTitle(input, professions, directory = null) {
   }
   const candidates = records.length || raw===key ? records : occupationsFor(key, directory);
   if (candidates.length === 1) return fromOccupation(title,candidates[0],professions);
-  if (candidates.length > 1) return clarify(title,title,'Which occupation fits your work?',candidates.map(record =>
-    alternative(record.name, fromOccupation(title,record,professions))));
+  if (candidates.length > 1) return boundedChoices(title,candidates,professions);
+  if(allowCorrection){
+    const corrections=correctionTitles(role,professions,directory).map(spelling=>({spelling,result:resolveTitle(spelling,professions,directory,false)})).filter(row=>row.result.kind!=='unknown');
+    if(corrections.length)return {...clarify(title,title,'Did you mean one of these titles?',[
+      ...corrections.map(({spelling,result})=>alternative(spelling,{...result,title})),
+      alternative('Use “'+title+'”',{kind:'unknown',title})]),correction:true};
+  }
   return {kind:'unknown',title};
 }

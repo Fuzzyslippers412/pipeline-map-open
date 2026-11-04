@@ -6,7 +6,7 @@ import {normalizeEmployerText} from '../lib/employer-key.js';
 const featured=workplaces.records.filter(row=>row.source?.startsWith('verified-'));
 const featuredParents=new Set(featured.filter(row=>row.parent).map(row=>normalizeEmployerText(row.parent)));
 const quickWorkplaces=workplaces.records.filter(row=>row.source?.startsWith('verified-')||featuredParents.has(normalizeEmployerText(row.name)))
-  .map(row=>({...row,priority:row.source?.startsWith('verified-')?2:1}));
+  .map(row=>({...row,sourceUrl:workplaces.sources[row.source]?.url,priority:row.source?.startsWith('verified-')?2:1}));
 import SourceLookup from './SourceLookup.astro';
 import ClassicTraceEntry from './ClassicTraceEntry.astro';
 const originalEdition = Astro.url.pathname.startsWith('/study/original/');
@@ -76,7 +76,7 @@ import '../styles/trace-combobox.css';
       <a class="library-link" href="/paths/">Explore the workplace library <span aria-hidden="true">→</span></a>
       <a class="library-link" href="/career-map/">Explore the Career map <span aria-hidden="true">→</span></a>
     </div>
-    <p class="privacy-line">Typing stays in this tab. You can use your own wording.</p>
+    <p class="privacy-line">Job or workplace not listed? Keep what you typed and trace it. Typing stays in this tab.</p>
     <details id="more-workplaces" class="more-workplaces" data-contextual hidden>
       <summary>Look for this workplace in federal records</summary>
       <p>Search the U.S. Treasury’s award recipient directory. Only the button below sends the workplace name to USAspending.</p>
@@ -144,7 +144,7 @@ type Resolution = {
   question?: string;
   choices?: {label:string;result:Resolution}[];
 };
-type Draft = {title:string;lookupTitle:string;choicePath:string[]};
+type Draft = {title:string;lookupTitle:string;choicePath:string[];occupationCode?:string};
 const kicker = document.querySelector<HTMLElement>('#match-kicker')!;
 const siteLabel = document.querySelector<HTMLElement>('#match-site')!;
 const manual = document.querySelector<HTMLDetailsElement>('#manual-choice')!;
@@ -181,7 +181,7 @@ function currentDraft(): Draft {
 }
 
 function contextFor(draft:Draft, profession='', related=false) {
-  return {title:draft.title, employer:employer.value.trim(), profession, related, workplaceInfo:entries.workplaceInfo};
+  return {title:draft.title,lookupTitle:draft.lookupTitle,occupationCode:draft.occupationCode, employer:employer.value.trim(), profession, related, workplaceInfo:entries.workplaceInfo};
 }
 
 function remember(draft:Draft, slug='', match='unmapped') {
@@ -237,6 +237,7 @@ function openRecord(draft:Draft, slug:string, match='title') {
 
 function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, directoryUnavailable=false) {
   clearResults();
+  if(resolution.occupations?.length===1)draft={...draft,occupationCode:resolution.occupations[0].code};
   activeDraft = draft;
   changeDuty.hidden = !draft.choicePath.length;
   if(focus) remember(draft);
@@ -306,7 +307,7 @@ function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, dir
       } else if(workplace) {
         const gap = document.createElement('p');
         gap.className = 'match-gap';
-        gap.textContent = 'A connection to '+workplace+' still needs a source.';
+        gap.textContent = record ? 'Open the field history to check reviewed workplace records and the remaining gaps.' : 'A connection to '+workplace+' still needs a source.';
         choices.after(gap);
         gap.dataset.matchGap = '';
       }

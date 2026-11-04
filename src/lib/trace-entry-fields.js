@@ -27,7 +27,8 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
   }
   function setWorkplace(option){
     selected=option&&option.value===fields.workplace.value?{
-      workplace:option.value,parent:option.parent||'',relation:option.relation||'',location:option.location||''
+      workplace:option.value,parent:option.parent||'',relation:option.relation||'',location:option.location||'',
+      ...(option.id?{id:option.id}:{}),...(option.sourceUrl?{sourceUrl:option.sourceUrl}:{}),...(option.entered?{entered:option.entered}:{})
     }:null;
     const text=selected?[selected.parent?(selected.relation||'Parent organization')+': '+selected.parent:'',selected.location].filter(Boolean).join(' · '):'';
     hint(workplaceHint,text);
@@ -73,14 +74,14 @@ export function setupTraceEntryFields(form,catalog,quickWorkplaces){
   for(const [field,input] of Object.entries(fields)){
     controls[field]=attachTraceCombobox({
       input,popup:form.querySelector('#'+field+'-suggestions'),status:form.querySelector('#'+field+'-announcements'),
+      preserveInput:field==='title',
       getOptions:text=>options(field,text),getState:()=>state[field],
       onPick:(option,committed,typed)=>{
-        if(field==='workplace')setWorkplace(option);
+        if(field==='workplace')setWorkplace(option && {...option,entered:typed.trim()});
         else {
           const original=typed.trim();
-          const recognized=option && resolveTitle(original,catalog,titleDirectory).kind!=='unknown';
-          selectedTitle=option ? {typed:recognized ? original : committed.trim(),lookup:committed.trim()} : null;
-          hint(titleHint,option?.detail||'');
+          selectedTitle=option ? {typed:original,lookup:committed.trim()} : null;
+          hint(titleHint,option?'Looking up: '+committed.trim()+'. Your wording is kept.':'');
         }
       },
     });

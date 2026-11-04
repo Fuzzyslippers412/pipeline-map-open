@@ -1,0 +1,146 @@
+{
+  "slug": "agriculture",
+  "headline": "Land, learning and the work of growing food",
+  "summary": "Black farmers, farmworkers, scientists and extension educators faced different barriers. These records follow access to agricultural education, shared land, practical instruction and fair treatment in farm programs.",
+  "coverageNote": "Six episodes across education, extension, cooperative farming and federal farm programs. Agriculture is a field containing distinct occupations: a farmer, hired farmworker and agricultural scientist do not share one hiring route.",
+  "question": "Which land, employment, training or program record connects this history to the farm or institution where you work?",
+  "events": [
+    {
+      "id": "agriculture-morrill-funding-1890",
+      "date": "1890–1893",
+      "year": 1890,
+      "title": "Federal funding reaches Black agricultural colleges through a segregated system",
+      "people": "Black agricultural students and educators; Senator Justin S. Morrill",
+      "decisionMaker": "Congress enacted the Second Morrill Act; state governments divided the funding between institutions.",
+      "barrier": "Black students were excluded from many existing land-grant colleges.",
+      "change": "The 1890 law required states receiving funds to admit without racial distinction or designate separate colleges for Black students.",
+      "outcome": "A surviving 1892–93 federal table records the division of agricultural funds between Black and white institutions.",
+      "limit": "The provision supported Black colleges while permitting segregation. A funding table does not establish equal resources, an individual admission or a graduate’s employment.",
+      "source": {
+        "title": "U.S. Capitol Visitor Center / National Archives · Division of agricultural funds, 1892–93",
+        "url": "https://www.visitthecapitol.gov/artifact/division-agricultural-fund-between-white-and-colored-schools-1892-93",
+        "locator": "African American Land-Grant Colleges; artifact description and funding table",
+        "type": "Federal archival exhibit"
+      }
+    },
+    {
+      "id": "agriculture-carver-tuskegee-1896",
+      "date": "October 8, 1896",
+      "year": 1896,
+      "title": "George Washington Carver becomes Tuskegee’s director of agriculture",
+      "people": "George Washington Carver",
+      "decisionMaker": "Tuskegee Institute appointed Carver to direct agriculture; this account does not identify the formal appointing document.",
+      "barrier": "An agricultural degree and access to an academic research appointment were separate stages of entry.",
+      "change": "After agricultural degrees at Iowa State in 1894 and 1896, Carver joined Tuskegee’s staff.",
+      "outcome": "The National Park Service dates his appointment as director of agriculture to October 8, 1896.",
+      "limit": "This establishes Carver’s education and appointment at Tuskegee. It does not establish a hiring pathway for farmworkers or for another institution’s scientists.",
+      "source": {
+        "title": "National Park Service · George Washington Carver at Tuskegee",
+        "url": "https://www.nps.gov/tuin/learn/historyculture/george-washington-carver.htm",
+        "locator": "Biography paragraph covering the 1894 and 1896 degrees and October 8, 1896 appointment",
+        "type": "Federal institutional history"
+      }
+    },
+    {
+      "id": "agriculture-campbell-jesup-1906",
+      "date": "1906",
+      "year": 1906,
+      "title": "Thomas Campbell takes Tuskegee’s agricultural teaching to farmers",
+      "people": "Thomas Monroe Campbell, George Washington Carver and Booker T. Washington",
+      "decisionMaker": "Washington and Carver developed the traveling school; Tuskegee assigned alumnus Campbell to operate it.",
+      "barrier": "Many rural farmers could not travel to Tuskegee’s campus for instruction.",
+      "change": "The Jesup Agricultural Wagon carried tools, seeds and demonstrations into farming communities.",
+      "outcome": "Campbell’s extension assignment connected a Black agricultural educator’s work to farmers in Macon County, Alabama.",
+      "limit": "This documents an educational service and a named assignment. It does not identify every participant or measure the program’s effect on each farm’s income.",
+      "source": {
+        "title": "Smithsonian NMAAHC · Tuskegee Institute’s Movable Schools",
+        "url": "https://www.searchablemuseum.com/teacher-training-and-vocational-education-at-hbcus/",
+        "locator": "Tuskegee Institute’s Movable Schools; From the Jesup Wagon to the School on Wheels",
+        "type": "Museum historical account"
+      }
+    },
+    {
+      "id": "agriculture-hamer-freedom-farm-1969",
+      "date": "1969–1970",
+      "year": 1969,
+      "title": "Fannie Lou Hamer organizes land and food through Freedom Farm",
+      "people": "Fannie Lou Hamer and Freedom Farm Cooperative members",
+      "decisionMaker": "Hamer founded the cooperative using a donation from Measure for Measure; members cultivated the land.",
+      "barrier": "Poor Black farmers and sharecroppers depended on landowners for access to land and livelihood.",
+      "change": "In 1969 Hamer purchased 40 acres in Mississippi’s Delta for collective cultivation.",
+      "outcome": "The cooperative grew cash crops for expenses and vegetables for participating workers, later expanding its land and adding a pig bank.",
+      "limit": "The cooperative did not sustain itself. This is a local shared-land and food-security record, not proof of a permanent wage job or a connection to another farm.",
+      "source": {
+        "title": "SNCC Digital Gateway · Fannie Lou Hamer founds Freedom Farm Cooperative",
+        "url": "https://snccdigital.org/events/fannie-lou-hamer-founds-freedom-farm-cooperative/",
+        "locator": "1969 timeline entry; founding, cultivation, expansion and sustainability paragraphs",
+        "type": "Movement and university history project"
+      }
+    },
+    {
+      "id": "agriculture-pigford-settlement-1999",
+      "date": "1999 · implementation reviewed in 2006",
+      "year": 1999,
+      "title": "Black farmers obtain a claims process for USDA discrimination",
+      "people": "Black farmer plaintiffs in Pigford v. Glickman",
+      "decisionMaker": "U.S. District Judge Paul L. Friedman approved the parties’ consent decree on April 14, 1999.",
+      "barrier": "Farmers challenged discriminatory denial and delay of USDA loans and benefits and failures to resolve their complaints.",
+      "change": "The settlement established procedures for deciding claims and reviewing errors.",
+      "outcome": "GAO reported that by January 2006 about 14,300 claims had been approved for payments and benefits exceeding $900 million; about 8,100 had been denied.",
+      "limit": "These are historical claims outcomes, not current eligibility guidance. The settlement did not compensate every farmer or prove access to any particular farm job.",
+      "source": {
+        "title": "U.S. GAO · Pigford Settlement: The Role of the Court-Appointed Monitor",
+        "url": "https://www.gao.gov/assets/a94099.html",
+        "locator": "GAO-06-469R, March 17, 2006; opening settlement chronology and January 2006 claims totals",
+        "type": "Federal oversight report"
+      }
+    },
+    {
+      "id": "agriculture-famu-agroecology-2022",
+      "date": "November 2022",
+      "year": 2022,
+      "title": "FAMU and Black food organizers open an agroecology center",
+      "people": "Lola Hampton and Frank Pinder, the center’s namesakes; co-directors Kwasi Densu and Jennifer Taylor",
+      "decisionMaker": "Florida A&M University and the National Black Food & Justice Alliance partnered to establish the center.",
+      "barrier": "The partners identified a need for research and training shaped by Black farmers and underserved land stewards.",
+      "change": "They created the Lola Hampton-Frank Pinder Center for Agroecology at FAMU.",
+      "outcome": "Local reporting documented the November opening at the Orange Avenue garden, with classroom, laboratory and community-garden uses.",
+      "limit": "The opening and named leadership are documented. The sources do not establish participant completion, paid placements or a particular reader’s employment.",
+      "source": {
+        "title": "National Black Food & Justice Alliance · FAMU agroecology center launch",
+        "url": "https://blackfoodjustice.org/media/nbfja-statement-how-the-inflation-reduction-act-falls-short-m22nw",
+        "locator": "October 20, 2022 release; partnership, research aims and November launch plans",
+        "type": "Partner organization announcement"
+      },
+      "sources": [
+        {
+          "title": "WFSU · Florida A&M University opens its new Agroecology Center",
+          "url": "https://news.wfsu.org/wfsu-local-news/2022-11-13/florida-a-m-university-opens-its-new-agroecology-center",
+          "locator": "Tom Flanigan, November 13, 2022; opening report and interviews with both co-directors",
+          "type": "Contemporary local reporting"
+        }
+      ]
+    }
+  ],
+  "furtherResearch": [
+    "Add farmworkers’ own accounts, wage and crew records, and organizing histories alongside farm ownership and agricultural science.",
+    "Check local land titles, cooperative membership and program records before connecting a person’s farm to Freedom Farm or another cooperative.",
+    "Locate the appointment and extension payroll records behind Carver’s and Campbell’s Tuskegee roles.",
+    "For a current farm, distinguish the landowner, operating business, labor contractor and person who hires or supervises workers.",
+    "For scientific or extension work, verify the employer, appointment criteria and actual training or placement outcomes."
+  ],
+  "credential": {
+    "name": "George Washington Carver",
+    "year": 1896,
+    "credential": "Agricultural degrees at Iowa State College, 1894 and 1896",
+    "record": "The National Park Service records Carver’s Bachelor of Agriculture in 1894 and Master of Science in Agriculture in 1896.",
+    "work": "He became Tuskegee Institute’s director of agriculture in October 1896. His academic appointment is distinct from a farmworker hiring route.",
+    "sources": [
+      {
+        "label": "National Park Service · Carver’s degrees and appointment",
+        "url": "https://www.nps.gov/tuin/learn/historyculture/george-washington-carver.htm"
+      }
+    ]
+  },
+  "checkedOn": "2026-11-04"
+}

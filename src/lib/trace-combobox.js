@@ -1,6 +1,6 @@
 // Manual-selection combobox. Moving through the list never rewrites the input;
 // only choosing a row commits a value. Ordinary submit always accepts free text.
-export function attachTraceCombobox({input, popup, status, getOptions, onPick, getState = () => 'ready'}) {
+export function attachTraceCombobox({input, popup, status, getOptions, onPick, preserveInput = false, getState = () => 'ready'}) {
   const doc = input.ownerDocument;
   const win = doc.defaultView;
   const listeners = new win.AbortController();
@@ -110,9 +110,9 @@ export function attachTraceCombobox({input, popup, status, getOptions, onPick, g
     if (index < 0 || index > matches.length || popup.hidden) return;
     const option = matches[index] || null;
     const previouslyTypedText = input.value;
-    if (option) input.value = option.value;
+    if (option && !preserveInput) input.value = option.value;
     selected = optionKey(option);
-    const exactText = input.value;
+    const exactText = option?.value || input.value;
     close();
     committing = true;
     try {

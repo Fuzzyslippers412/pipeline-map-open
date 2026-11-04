@@ -9,6 +9,8 @@ import '../styles/source-lookup.css';
   <p class="source-lookup__intro">
     Check current publisher records and previously indexed publications for Black professional pathways at <strong data-employer></strong>.
   </p>
+  <p data-site-detail class="source-lookup__coverage" hidden></p>
+  <a data-site-source target="_blank" rel="noopener noreferrer" hidden>Workplace directory source ↗</a>
   <dl class="source-lookup__terms">
     <div><dt>Employer sent to sources</dt><dd data-employer-term></dd></div>
     <div><dt>Role used by Door Notes</dt><dd data-title-term></dd></div>
@@ -25,7 +27,7 @@ import '../styles/source-lookup.css';
 </pipeline-source-lookup>
 
 <script>
-  type LookupContext = { employer: string; title: string; profession?: string };
+  type LookupContext = { employer: string; title: string; lookupTitle?:string; profession?: string;workplaceInfo?:{workplace:string,location?:string,parent?:string,relation?:string,id?:string,sourceUrl?:string}|null };
   type Result = {
     title: string; url: string; publisher: string; excerpt: string; kind: 'documented' | 'lead';
     mode?: 'live' | 'indexed'; indexedOn?: string; publishedOn?: string; dateBasis?: 'award'|'publication'|'unknown'; dateDetail?: string;
@@ -92,6 +94,8 @@ import '../styles/source-lookup.css';
       this.part('results').removeAttribute('aria-busy');
       this.part('results').replaceChildren();
       this.part('wider').hidden = true;
+      this.part('site-detail').hidden=true;this.part('site-detail').textContent='';
+      this.part('site-source').hidden=true;this.part('site-source').removeAttribute('href');
       for (const key of ['employer', 'employer-term', 'title-term', 'terms', 'copy-status']) {
         this.part(key).textContent = '';
       }
@@ -101,13 +105,19 @@ import '../styles/source-lookup.css';
       const employer = value?.employer?.trim() || '';
       const title = value?.title?.trim() || '';
       const profession = value?.profession?.trim() || '';
+      const lookupTitle=value?.lookupTitle?.trim()||title;
       if (!employer || !title) { this.reset(); return; }
-      if (this.context?.employer === employer && this.context.title === title && this.context.profession === profession) return;
+      if (this.context?.employer === employer && this.context.title === title && this.context.profession === profession && this.context.lookupTitle===lookupTitle && JSON.stringify(this.context.workplaceInfo)===JSON.stringify(value?.workplaceInfo)) return;
       this.reset();
-      this.context = { employer, title, profession };
+      this.context = { employer, title, lookupTitle, profession,workplaceInfo:value?.workplaceInfo };
       this.part('employer').textContent = employer;
       this.part('employer-term').textContent = employer;
-      this.part('title-term').textContent = title;
+      this.part('title-term').textContent = lookupTitle+(lookupTitle!==title?' · entered as “'+title+'”':'');
+      const info=value?.workplaceInfo?.workplace===employer?value.workplaceInfo:null;
+      const detail=info?[info.location,info.parent?(info.relation||'Organization')+': '+info.parent:'','The search uses this workplace, not its parent.'].filter(Boolean).join(' · '):'Using the workplace you entered. Its exact site and organization have not been confirmed.';
+      this.part('site-detail').textContent=detail;this.part('site-detail').hidden=false;
+      const url=info?.sourceUrl&&publicLink(info.sourceUrl);
+      if(url){this.part<HTMLAnchorElement>('site-source').href=url;this.part('site-source').hidden=false}
       this.hidden = false;
     }
 
@@ -126,7 +136,7 @@ import '../styles/source-lookup.css';
       this.part('status').textContent = 'Checking public records for ' + context.employer + '…';
       try {
         const { requestResearch } = await import('../lib/request-research.js');
-        const report: Report = await requestResearch({ ...context, signal: controller.signal });
+        const report: Report = await requestResearch({ ...context,title:context.lookupTitle||context.title, signal: controller.signal });
         if (controller.signal.aborted || this.pending !== controller) return;
         this.showReport(report);
       } catch {

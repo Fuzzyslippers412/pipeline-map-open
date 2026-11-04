@@ -1,6 +1,96 @@
 # Door Notes: product roadmap
 
-## Research depth and homepage evidence · current priority · November 3, 2026
+## Matching, workplace identity, agriculture and governors · November 4, 2026
+
+**Implemented for this release:** reviewed everyday occupation aliases, controlled canonical singular forms, reader-confirmed spelling corrections, shorter duty choices, and preservation of typed titles after selecting a suggestion. Unknown jobs and employers continue through the trace and source search. Stable workplace IDs and directory citations now reach the stored trace and identity-aware matching. Same-name ID conflicts do not fall back to another site. Occupation-specific workplace records can appear in a broader related history without being assigned to other jobs in that field.
+
+Agriculture and governor histories add 12 sourced episodes, bringing the catalog to 22 fields/offices and 99 episodes. Seven additional workplace records cover scoped agricultural appointments/programs and named state offices, for 25 reviewed records plus the existing separate PM entries. New governor election records are explicitly dated November 4 and distinguish reported wins, certification and inauguration. Agriculture distinguishes farmers, hired workers, scientists and educators. A duplicate field/workplace event is displayed only once in the chronological trace.
+
+**Validation:** 75 automated checks pass, including everyday occupations with the larger directory unavailable, distinct credentials, typo confirmation, unknown wording, short ambiguity choices, stable-ID persistence, wrong-site rejection, agricultural role boundaries and governor election status. Browser checks exercised an unlisted employer/title, a misspelling selected without rewriting the original title, an agricultural scientist at Tuskegee, and the governor record. Narrow-phone checks cover 375 and 320 pixels. This is browser viewport testing, not physical-device testing.
+
+**Still planned below:** the independent 200-input accuracy benchmark, five-worker comprehension study, healthcare-support/postal/accounting dossiers, and broader archive/local-record discovery. These are not claimed complete by the matching and two-field release.
+
+## More titles and real workplace connections · next build plan · November 3, 2026
+
+**Status: original work order; see the November 4 implementation update above.** Audit baseline: published version 25, source `c0cef479111f4b5758da52b0100a7da2d14d9d20`. This order supersedes the older work orders below. The aim is for a reader to recognize their actual work, learn a documented Black career history relevant to it, and see precisely how far the evidence reaches toward their workplace.
+
+### What the audit found
+
+- The O*NET 31.0 directory has 48,330 title spellings and 1,016 occupation entries. These are vocabulary counts, not historical coverage. The site has 20 expanded profession dossiers plus separately implemented project/product/program management records.
+- Reproduced through the shipped resolver: `home health aide`, `barber`, `respiratory therapist`, `patient care tech`, `postal worker` and `customer service rep` return unknown. The first three resolve when entered as official plural occupation names. `registerd nurse` gets no suggestions. `phlebotomist` selects Healthcare Support Workers, All Other, while `Phlebotomists` selects the dedicated occupation. This is a normalization and ranking problem, not an absent occupation in the directory.
+- Broad alternate titles overwhelm readers: `case manager` returns 12 choices, `data analyst` eight, `warehouse associate` five. These are reproducible audit cases, not measured visitor search frequencies.
+- The two workplace directories contain 160,551 records: 102,178 public schools, 19,636 education agencies and 38,737 other records, predominantly clinics, hospitals, colleges and SEC registrants. They do not represent 160,551 unique employers with historical evidence. Store branches, franchises, warehouses, transit depots, contractors and small businesses are weakly represented.
+- The reviewed workplace file contains 18 records; a separate PM module has six employer/role entries, including four histories and two descriptions of hiring processes. The present-day decision-authority component covers only three examples. Count records, sites, organizations and supported roles separately.
+- Discovery checks NSF, ERIC, USAspending and GDELT, plus health research for relevant roles and a limited Greenhouse check for PMs. Its 1,086 indexed records are 728 education research records, 280 NSF awards and 78 federal awards. This favors research institutions. Funding, a job advertisement and Black access to employment are different findings.
+- Stable directory IDs exist in source data but are dropped from the packed suggestion records and stored trace context. Preserve them end to end before expanding exact-site matching. Existing school location/district safeguards must remain.
+
+### 1. Repair title interpretation before adding another large vocabulary
+
+Keep the entered title visible and editable. Add tested singular/plural canonical forms, common abbreviations, ordinary spelling errors and contextual aliases. Prefer an appropriate canonical occupation over a catch-all alternate-title link, while retaining genuine ambiguity. Avoid blindly stripping suffixes or mapping different credentials together. CNA, LPN/LVN, RN and nurse practitioner remain distinct.
+
+Rank suggestions by title fit and occupational tasks, with provenance for the mapping. Use work setting only as a clue; a hospital employee could work in payroll or IT. Replace long taxonomic menus with a short duties question and two or three useful choices, plus “Something else / use my title.” A case manager might support patients, coordinate social services or handle insurance claims. An operations manager needs a question about the work and responsibility, not an automatic executive classification.
+
+Keep recognition, related field history and exact-role history separate. An uncertain spelling suggests a correction for the reader to confirm. Preserve free-text tracing, lookup failures, keyboard access, Back and edited answers. Evaluate O*NET's official keyword search as a fallback, not as evidence of a person's history; local resolution must still work without a live dependency. [Official service documentation](https://services.onetcenter.org/reference/start/overview) · [Dedicated phlebotomist occupation](https://www.onetonline.org/link/summary/31-9097.00).
+
+### 2. Expand histories around work that is presently underserved
+
+| Research order | Titles to support explicitly | Evidence to seek |
+| --- | --- | --- |
+| First: healthcare support | CNA, nursing assistant, patient care technician, LPN/LVN, home health aide, medical assistant; separate specialist records for respiratory therapy, radiology and phlebotomy | Aides' and technicians' own histories, training and credential rules, hospital assignments, pay disputes, organizing and documented changes. Do not substitute an RN's history for every healthcare role. |
+| First: postal and public-service work | Mail carrier, postal clerk, mail handler, postal supervisor; then sanitation workers, bus operators and dispatchers | Employment registers, postal and municipal archives, bargaining records, promotion criteria and implementation of local decisions. Postal history does not automatically cover trucking or warehouses. |
+| First: accounting | Accountant, CPA, accounting clerk, bookkeeper, payroll specialist; subsequent distinct HR and operations records | Experience requirements, licensing decisions, named Black accountants, firms that actually trained or hired people, and workplace advancement. A CPA milestone is only related context for an unlicensed payroll worker. |
+| Next: education and community services | Paraprofessional, teacher aide, school counselor, social worker, case manager | District job classifications, school-board decisions, credential rules, named workers and local programs with outcomes. Preserve the difference between teachers and other school staff. |
+| Next: trades, production and logistics | HVAC technician, plumber, welder, mechanic, production operator, warehouse associate, forklift operator, CDL driver | Apprenticeship admission, dispatch, specific plants and depots, contracts, seniority and promotion. Keep specialties and employer relationships distinct. |
+| Next: service, creative and small-business work | Retail associate, customer service representative, chef, cook, barber, hairstylist, shift supervisor | Local establishments, licensing, franchise and contractor identities, ownership and workplace organization. Give employed workers and self-employed people suitable separate routes. |
+
+Computing remains supported. Continue separate histories for support, security, data and systems work rather than attaching every title to software engineering. Browse by work area and responsibility, including experienced practitioners, supervisors and managers; responsibility is not a ranking of people's worth and is not a universal career ladder.
+
+Three concrete research starting points were checked during this audit:
+
+- **MUSC / Charleston hospital workers:** the institution identifies Mary Moultrie and other protesters, unequal pay and treatment at Medical College Hospital and Charleston County Hospital in 1969. Pair its retrospective with contemporary Waring Library documents and the workers' oral histories. Verify the settlement and which workers/sites it covered before stating outcomes. An institutional successor relationship does not prove coverage of every current MUSC location. [MUSC account](https://www.musc.edu/content-hub/News/2019/05/14/hospital-workers-strike-commemoration-program) · [Archival collection](https://waringlibrary.contentdm.oclc.org/digital/collection/1969strike) · [Oral-history catalog](https://citadeldigitalarchives.omeka.net/items/show/192).
+- **USPS / Charlotte:** USPS's history discusses Napoleon Chisholm's challenge to promotion discrimination at the Charlotte Post Office and the court-ordered changes, with a citation to the appellate case. Read the opinion and subsequent implementation records; preserve the distinction between a Charlotte case, national postal history and a reader's current facility. [USPS history, printed page 17](https://about.usps.com/who/profile/history/pdf/african-american-workers-20thc.pdf).
+- **Accounting / John Wesley Cromwell Jr.:** AICPA's Journal of Accountancy describes exclusion from the work experience needed for licensure, New Hampshire's changed requirement and Cromwell's qualification in 1921. It also identifies his comptroller work at Howard. Seek the licensing and employment records; no connection to another accounting firm follows from these facts alone. [Professional body's account](https://www.journalofaccountancy.com/news/2021/feb/first-black-cpa-john-cromwell-jr/).
+
+These are checked research leads for new dossiers, not completed new workplace traces. Publish depth when records support it; do not fill an episode quota with unrelated achievements.
+
+### 3. Connect the exact place, organization and role with separately sourced relationships
+
+Show the actual workplace first, with city and parent/operator beneath it. Carry stable public identifiers and source references through suggestions, selections, stored context, lookup and correction. Record historical names, mergers and ownership with dates and evidence. Separate a place of work from the employing company, school district, staffing agency, franchisee or contractor. Ask one optional clarification when that relationship matters; preserve “not sure.” Do not silently transfer a parent's history to every subsidiary or location.
+
+Use one shared evidence structure across all roles, extending the PM pilot. Each claim needs the person/organization, action, date, place, affected occupation, outcome, source title/publisher/URL, page or section, a short supporting passage, review date and limits. Relationship categories should distinguish:
+
+1. A documented Black worker, organizer or access decision in the field.
+2. A documented connection to the named employer or exact site.
+3. Evidence that this employer actually used a training, hiring, pay or promotion mechanism.
+4. The reader's own route, which remains unknown unless independently established and voluntarily supplied for that purpose.
+
+Distinguish a named person's employment from proof that access expanded for others. Each displayed connection needs its own source; chronological proximity is not a causal link. Separate verified history, current role/process evidence, institutional funding and an unreviewed research lead. No numerical confidence badge should turn weak evidence into a stronger claim.
+
+### 4. Broaden employer research beyond grants
+
+Generalize “Search employer records” to every recognized and free-text role. Resolve identity before searching. Query the official employer and relevant archives, union collections and agreements, public board minutes, court records, licensing bodies, apprenticeship programs and credible local reporting. Search historical employer names and work duties as well as modern titles. Use race/access terms thoughtfully; an HBCU-only query misses many workplaces and organizing histories.
+
+Fetch and read the relevant document, not only a headline or search snippet. Retain the passage and locator used to support the claim, the event date separately from publication date, the place/role scope, and whether the evidence is an order, reported outcome, recollection or promotional announcement. Job postings can document a role and requirements, never who was hired or who opened that role to Black workers. Grants document funding; seek completion, placement or employment records for outcomes.
+
+Reuse reviewed public records and deduplicate shared documents. New discoveries remain labeled leads until their employer, role and historical claims have been checked. AI may generate search variants and propose passage-backed connections; unsupported relationships must remain open. Add per-provider timeouts, cancellation, partial-result handling and a bounded search cost. State which sources were searched and distinguish “not researched,” “searched without a match,” “source unavailable” and “conflicting records.” Keep the existing disclosure before sending workplace terms to external sources and avoid recording personal traces in URLs or public analytics.
+
+### 5. Make the connection understandable on a phone
+
+The initial result should show the entered title and exact workplace, one relevant person or collective action, the documented change, what connects to the employer, and the remaining gap. Every claim should expose its source in one tap. Show site, parent-organization and wider-field labels in text, not color alone. Keep the best two records visible, then expandable detail. Put “Search this gap,” “Correct workplace” and “Suggest a public record” at the unresolved step. Preserve the user's typed title throughout.
+
+Extend the existing public-research request flow with title and evidence-gap categories, transparent queue status and an optional “wrong match” report. Do not require a GitHub account just to understand or copy a request. Do not silently upload personal work history. Maintain an editorial coverage table recording role recognition, history coverage, exact-site evidence, employer evidence and last review separately. Prioritize demonstrated failures and voluntary requests; the current audit is not usage analytics.
+
+### Build order and release gates
+
+**Release A — correct recognition and preserve workplace identity.** Fix the reproduced failures, rank canonical occupations properly, reduce ambiguous choices, retain directory IDs and preserve free-text entry. Assemble a reviewed benchmark of at least 200 realistic title inputs across sectors: ordinary spellings, abbreviations, mistakes, ambiguous roles, responsibility levels and deliberately unknown titles. Proposed target: the appropriate role or clarifying question in the first three choices for at least 95% of this benchmark, and no known unsafe credential substitutions or silent ambiguous matches. Report per-sector results and failures; this is a target, not a measured outcome.
+
+**Release B — three deeper histories and reusable workplace evidence.** Build healthcare support, postal work and accounting, alongside the shared claim model and result component. Research 12 concrete employer/role cases spanning new and existing fields. Publish verified connections where available and specific searched gaps elsewhere; 12 reviewed cases must not be described as 12 proven histories. Include same-name schools, a multi-site health system, a contractor, a franchise and an unlisted small business in identity tests.
+
+**Release C — broader source discovery and coverage-driven expansion.** Extend employer search to all roles, add the archive/local-record retrieval path, review the new source adapters and expose partial/failure states. Research education support, community services, trades/logistics and service work next, with later ordering informed by voluntary reader requests. Recheck changing employment rules and current-process sources; preserve historical evidence with its date and scope.
+
+Across releases, test mobile widths, keyboard/screen-reader labels, title editing, unknown workplaces, aborted searches, unavailable providers, wrong-city matches, parent-only evidence, stale postings and claims that a source contradicts. Retain the existing 67 checks, adding meaningful regressions for new behavior. Ask five workers in different fields to identify their role, name a historical actor, open the supporting source and explain the remaining workplace gap. Aim for four of five unaided; reader testing and independent historical review remain outstanding. Success is accurate, useful connections and understandable gaps, not a larger count of autocomplete entries.
+
+## Research depth and homepage evidence · completed version 25 · November 3, 2026
 
 **Implementation update.** All 20 profession pages now have expanded dossiers: 87 historical episodes with named actors, decision authority, outcomes and limits. The homepage previews three fields and gives every tile an episode and coverage count. Public history renders without a personal trace; the same episodes feed the trace API and career-map excerpts. Unsupported category-pair conclusions have been retired from pages, methodology and share graphics. Five additional credential profiles are available alongside the original five. The source register contains historical references with locators, a history/statistics filter and a JSON export. Selected workplace records now include the Dixie Hospital case, NYPD appointments and Xerox's board appointment, without claiming a personal hiring chain.
 

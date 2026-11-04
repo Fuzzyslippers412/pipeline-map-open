@@ -18,7 +18,13 @@ function cleanTrace(value) {
   const workplaceInfo=workplace && info?.workplace===workplace ? {
     workplace,parent:boundedText(info.parent,200),relation:boundedText(info.relation,70),location:boundedText(info.location,160)
   } : null;
+  if(workplaceInfo){
+    if(typeof info.id==='string'&&/^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,199}$/.test(info.id))workplaceInfo.id=info.id;
+    try{const url=new URL(info.sourceUrl);if(url.protocol==='https:'&&!url.username&&!url.password)workplaceInfo.sourceUrl=url.href}catch{}
+    if(info.entered&&info.entered!==workplace)workplaceInfo.entered=boundedText(info.entered,160);
+  }
   const trace = {title, workplace, slug, match, workplaceInfo};
+  if(typeof value.occupationCode==='string'&&/^\d{2}-\d{4}\.\d{2}$/.test(value.occupationCode))trace.occupationCode=value.occupationCode;
   if(typeof value.projectSector==='string' && /^[a-z]{1,16}$/.test(value.projectSector)) trace.projectSector=value.projectSector;
   const lookupTitle = boundedText(value.lookupTitle, 120);
   if (lookupTitle && lookupTitle !== title) trace.lookupTitle = lookupTitle;
@@ -57,17 +63,24 @@ function workplaceKey(value) {
     .replace(/&/g, ' and ').replace(/[’']/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 }
 
-export function findWorkplaceLinks(workplace, slug, links, workplaceInfo = null) {
+export function findWorkplaceLinks(workplace, slug, links, workplaceInfo = null, {related=false,occupationCode=''} = {}) {
   const key = workplaceKey(workplace);
   if (!key || !Array.isArray(links)) return [];
   return links.filter(item => {
     if (!item.professions.includes(slug)) return false;
-    const names = [item.workplace, ...item.aliases].map(workplaceKey);
+    // A broad field may contain unrelated jobs. A role-scoped record can only
+    // apply when the reader selected an occupation it actually documents.
+    if(item.occupationCodes && !item.occupationCodes.includes(occupationCode))return false;
+    if(related && !item.occupationCodes?.includes(occupationCode))return false;
+    const names = [item.workplace, ...(item.aliases||[])].map(workplaceKey);
     if (!item.site) return names.includes(key);
 
     // School names recur across districts. A selected directory row must match
     // both its location and its district. Bare free text cannot establish a site.
     const info = workplaceInfo?.workplace === workplace ? workplaceInfo : null;
+    // A selected identifier outranks a name. A conflicting ID must never fall
+    // through to a same-name record in another town or organization.
+    if(info?.id && item.site.id)return info.id===item.site.id;
     if (info && (info.location || info.parent)) {
       const location = workplaceKey(item.site.location);
       if (workplaceKey(info.location) !== location ||

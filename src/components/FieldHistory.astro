@@ -11,6 +11,8 @@ const record=historyFor(p);
   <span class="history-edition">{record.expanded?'Expanded history':'Starting record'}<small>{record.events.length} sourced episodes</small></span>
  </header>
  <p class="history-intro">{record.summary}</p><p class="history-boundary">Field records. A connection to your workplace needs its own evidence.</p>
+ {p.slug==='governor' && <p class="history-boundary"><strong>Election update · November 4, 2026.</strong> The 2026 entries report race calls for governors-elect. Certification and taking office are separate steps. <a href="#history-bottoms-georgia-election-2026">Georgia</a> · <a href="#history-donalds-florida-election-2026">Florida</a></p>}
+ {p.slug==='elected-official' && <p class="history-boundary"><a href="/p/governor/#field-history">Governors: historical milestones and the 2026 election updates →</a></p>}
  <details class="history-scope"><summary>Scope &amp; research limits</summary><p>{record.coverageNote}</p></details>
  {p.slug==='registered-nurse' && <details class="history-scope"><summary>A training scene from Freedmen’s Hospital, 1943</summary><ArchivePlate/><p>This photograph records a volunteer aide’s lesson. It does not establish an RN credential or a hiring route.</p></details>}
  <ol class="history-episodes">
@@ -18,6 +20,7 @@ const record=historyFor(p);
    <div class="history-date"><span>{event.date}</span><small>{String(i+1).padStart(2,'0')}</small></div>
    <article>
     <h3>{event.title}</h3>
+    {event.evidenceStatus && <p class="history-kicker">{event.evidenceStatus} · checked {event.checkedOn}</p>}
     {event.people && <p class="history-people">{event.people}</p>}
     <p class="history-change">{event.outcome || event.change}</p>
     <a class="history-source" href={event.source.url}>{event.source.title} <span aria-hidden="true">↗</span></a>

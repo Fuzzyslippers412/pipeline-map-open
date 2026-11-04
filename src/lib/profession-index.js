@@ -86,14 +86,14 @@ export function bindProfessionIndex() {
 
   const combo = attachTraceCombobox({
     input, popup: form.querySelector('#suggestions'), status: form.querySelector('#index-announcements'),
+    preserveInput:true,
     getState: () => directoryState,
     getOptions: text => suggestJobTitles(text, catalog, directory || undefined).map(row => ({
       key:row.title, value:row.title, label:row.title, detail:row.subtitle
     })),
     onPick(option, committed, typed) {
       const original = typed?.trim() || committed;
-      const recognized = resolveTitle(original, catalog, directory).kind !== 'unknown';
-      startTrace(recognized ? original : committed, option?.value);
+      startTrace(original, option?.value);
     }
   });
   input.addEventListener('input', () => { update(); loadOnDemand(); });

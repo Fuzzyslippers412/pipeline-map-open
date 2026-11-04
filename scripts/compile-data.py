@@ -11,7 +11,7 @@ DATA = ROOT / 'data'
 load = lambda path: json.loads(path.read_text())
 professions = load(DATA / 'professions.json')
 roles = load(DATA / 'roles.json')
-assert len(professions) == len({p['slug'] for p in professions}) == 20
+assert len(professions) == len({p['slug'] for p in professions}) and len(professions) >= 20
 enums = set('hbcu military black_church market union_or_trade civil_rights_law foundation_nonprofit university_dei legacy_media licensing_board electorate nation_of_islam fraternal_order other'.split())
 dbfile = DATA / 'pipeline.sqlite'
 db = sqlite3.connect(':memory:')
@@ -37,7 +37,7 @@ for p in professions:
             key = 'editorial-' + sha256(address.encode()).hexdigest()[:16]
             editorial_references.setdefault(key, {
                 'id': key, 'publisher': urlparse(address).hostname, 'table_name': citation['title'],
-                'url': address, 'retrieved_on': '2026-11-03', 'license': 'Link to original publisher',
+                'url': address, 'retrieved_on': p.get('reviewedOn','2026-11-03'), 'license': 'Link to original publisher',
                 'definition': 'Institutional reference for an editorial classification.', 'kind':'editorial'
             })
             citation_ids.append(key)
@@ -64,7 +64,7 @@ for history in histories:
                 'id': 'history-' + history['slug'] + '-' + event['id'] + '-' + str(i),
                 'publisher': urlparse(reference['url']).hostname,
                 'table_name': reference['title'], 'url': reference['url'],
-                'retrieved_on': '2026-11-03', 'license': 'Link to original; publisher rights apply',
+                'retrieved_on': history.get('checkedOn','2026-11-03'), 'license': 'Link to original; publisher rights apply',
                 'definition': 'Referenced for: ' + event['title'] + '. Read the episode for the specific claim.',
                 'locator': reference['locator'], 'limits': event['limit'],
                 'professions': [history['slug']], 'kind': 'history',

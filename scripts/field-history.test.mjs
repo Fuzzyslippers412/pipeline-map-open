@@ -4,7 +4,7 @@ import {professions,roleFor} from '../src/lib/model.js';
 import {historyFor,timelineHistory,dossiers} from '../src/lib/field-history.js';
 
 test('every published field has a sourced history with separately stated consequences and limits',()=>{
- assert.equal(dossiers.length,20);
+ assert.equal(dossiers.length,professions.length);
  for(const p of professions){
   const h=historyFor(p);assert.ok(h.expanded,p.slug);assert.ok(h.events.length>=4,p.slug);
   assert.equal(new Set(h.events.map(e=>e.id)).size,h.events.length,p.slug);

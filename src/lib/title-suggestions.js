@@ -1,5 +1,6 @@
 import {jobTerms, normalizeJobTitle} from './job-match.js';
-import {resolveTitle, commonComputingTitles} from './title-resolver.js';
+import {resolveTitle, commonComputingTitles,correctionTitles} from './title-resolver.js';
+import {everydayTitles,canonicalTitleForms} from './title-language.js';
 
 // Some profession-directory aliases are academic fields, credentials or organizations.
 // They can find a public card but should not replace the title a person enters.
@@ -45,6 +46,8 @@ function prepare(professions, officialTitles) {
   }
   for(const [title,alias] of specialties) add(title,[alias]);
   for(const title of commonComputingTitles) add(title,computingAliases[title]);
+  for(const [title,,,aliases] of everydayTitles) add(title,aliases);
+  for(const title of ['Patient care technician','Case manager','Data analyst','Farmworker','Postal worker','Governor','Politician'])add(title);
   for(const title of commonTitles) add(title);
   for(const p of professions){
     for(const term of jobTerms(p)){
@@ -55,7 +58,10 @@ function prepare(professions, officialTitles) {
     for(const title of officialTitles) add(title);
   } else {
     for(const row of officialTitles.entries) add(row[0]);
-    for(const [,occupation] of officialTitles.occupations) add(occupation);
+    for(const [,occupation] of officialTitles.occupations) {
+      add(occupation);
+      for(const form of canonicalTitleForms(occupation).slice(1))add(displayTerm(form));
+    }
   }
   return entries;
 }
@@ -96,8 +102,11 @@ export function suggestJobTitles(value, professions, supplementalTitles=EMPTY, l
     if(rank!==-1 && buckets[rank].length<count) buckets[rank].push(entry.title);
   }
   const candidates = buckets.flat().slice(0,count);
-  if (!candidates.length && resolveTitle(value,professions,supplementalTitles).kind!=='unknown') {
-    candidates.push(value.trim());
+  let corrected=false;
+  if(!candidates.length){
+    const resolution=resolveTitle(value,professions,supplementalTitles);
+    if(resolution.correction){candidates.push(...correctionTitles(value,professions,supplementalTitles));corrected=true}
+    else if(resolution.kind!=='unknown')candidates.push(value.trim());
   }
   return candidates.map(title=>{
     const result=resolveTitle(title,professions,supplementalTitles);
@@ -108,6 +117,6 @@ export function suggestJobTitles(value, professions, supplementalTitles=EMPTY, l
       recognized:'Occupation recognized · workplace research available',
       unknown:'Workplace research available',
     };
-    return {title,label:title,subtitle:result.pmRole?'Black '+result.occupation.toLowerCase()+' history available':result.projectSector?'Black project management history available':labels[result.kind],slug:result.kind==='exact' ? result.slug : null};
+    return {title,label:title,subtitle:(corrected?'Check spelling · ':'')+(result.pmRole?'Black '+result.occupation.toLowerCase()+' history available':result.projectSector?'Black project management history available':labels[result.kind]),slug:result.kind==='exact' ? result.slug : null};
   });
 }

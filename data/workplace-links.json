@@ -12,7 +12,12 @@
     "sourceTitle": "Howard University College of Medicine · History",
     "url": "https://medicine.howard.edu/about/history",
     "eventDateLabel": "Circa 1933",
-    "eventYear": 1933
+    "eventYear": 1933,
+    "site": {
+      "id": "verified-huh",
+      "location": "Washington, DC",
+      "parent": "Howard University"
+    }
   },
   {
     "workplace": "Howard University Hospital",
@@ -29,7 +34,12 @@
     "sourceTitle": "Howard University College of Medicine · History of Freedmen’s Hospital",
     "url": "https://medicine.howard.edu/about/history",
     "eventDateLabel": "1941",
-    "eventYear": 1941
+    "eventYear": 1941,
+    "site": {
+      "id": "verified-huh",
+      "location": "Washington, DC",
+      "parent": "Howard University"
+    }
   },
   {
     "workplace": "Google",
@@ -165,7 +175,12 @@
     "eventDateLabel": "Fall 1975",
     "eventYear": 1975,
     "fromInstitution": "Freedmen’s Hospital",
-    "toInstitution": "Howard University Hospital"
+    "toInstitution": "Howard University Hospital",
+    "site": {
+      "id": "verified-huh",
+      "location": "Washington, DC",
+      "parent": "Howard University"
+    }
   },
   {
     "workplace": "Atlanta Public Schools",
@@ -401,5 +416,179 @@
         "url": "https://nmaahc.si.edu/about/news/book-discussion-former-xerox-ceo-ursula-m-burns-headlines-july-programming-national"
       }
     ]
+  },
+  {
+    "workplace": "Tuskegee University",
+    "aliases": [
+      "Tuskegee Institute"
+    ],
+    "professions": [
+      "agriculture"
+    ],
+    "occupationCodes": [
+      "19-1013.00",
+      "25-1041.00"
+    ],
+    "headline": "George Washington Carver becomes Tuskegee’s director of agriculture",
+    "description": "After agricultural degrees at Iowa State in 1894 and 1896, Carver joined Tuskegee’s staff. The National Park Service dates his appointment as director of agriculture to October 8, 1896.",
+    "sourceTitle": "National Park Service · George Washington Carver at Tuskegee",
+    "url": "https://www.nps.gov/tuin/learn/historyculture/george-washington-carver.htm",
+    "eventDateLabel": "October 8, 1896",
+    "eventYear": 1896,
+    "site": {
+      "id": "ipeds-102377",
+      "location": "Tuskegee, AL",
+      "parent": ""
+    },
+    "sourceNote": "This establishes Carver’s education and appointment at Tuskegee. It does not establish a hiring pathway for farmworkers or for another institution’s scientists.",
+    "scope": "appointment"
+  },
+  {
+    "workplace": "Tuskegee University",
+    "aliases": [
+      "Tuskegee Institute"
+    ],
+    "professions": [
+      "agriculture"
+    ],
+    "occupationCodes": [
+      "25-9021.00"
+    ],
+    "headline": "Thomas Campbell takes Tuskegee’s agricultural teaching to farmers",
+    "description": "The Jesup Agricultural Wagon carried tools, seeds and demonstrations into farming communities. Campbell’s extension assignment connected a Black agricultural educator’s work to farmers in Macon County, Alabama.",
+    "sourceTitle": "Smithsonian NMAAHC · Tuskegee Institute’s Movable Schools",
+    "url": "https://www.searchablemuseum.com/teacher-training-and-vocational-education-at-hbcus/",
+    "eventDateLabel": "1906",
+    "eventYear": 1906,
+    "site": {
+      "id": "ipeds-102377",
+      "location": "Tuskegee, AL",
+      "parent": ""
+    },
+    "sourceNote": "This documents an educational service and a named assignment. It does not identify every participant or measure the program’s effect on each farm’s income.",
+    "scope": "appointment"
+  },
+  {
+    "workplace": "Florida Agricultural and Mechanical University",
+    "aliases": [
+      "Florida A&M University",
+      "FAMU"
+    ],
+    "professions": [
+      "agriculture"
+    ],
+    "occupationCodes": [
+      "19-1013.00",
+      "25-1041.00"
+    ],
+    "headline": "FAMU and Black food organizers open an agroecology center",
+    "description": "They created the Lola Hampton-Frank Pinder Center for Agroecology at FAMU. Local reporting documented the November opening at the Orange Avenue garden, with classroom, laboratory and community-garden uses.",
+    "sourceTitle": "National Black Food & Justice Alliance · FAMU agroecology center launch",
+    "url": "https://blackfoodjustice.org/media/nbfja-statement-how-the-inflation-reduction-act-falls-short-m22nw",
+    "eventDateLabel": "November 2022",
+    "eventYear": 2022,
+    "site": {
+      "id": "ipeds-133650",
+      "location": "Tallahassee, FL",
+      "parent": "State University System of Florida"
+    },
+    "sourceNote": "The opening and named leadership are documented. The sources do not establish participant completion, paid placements or a particular reader’s employment.",
+    "scope": "institution"
+  },
+  {
+    "workplace": "Virginia Governor’s Office",
+    "aliases": [
+      "Virginia Governors Office",
+      "Office of the Governor of Virginia",
+      "Virginia Governor Office"
+    ],
+    "professions": [
+      "governor"
+    ],
+    "headline": "L. Douglas Wilder wins Virginia’s governorship",
+    "description": "After serving in the state senate and as lieutenant governor, Wilder won the gubernatorial election in 1989. He began his term on January 14, 1990, and served through January 15, 1994.",
+    "sourceTitle": "National Governors Association · L. Douglas Wilder",
+    "url": "https://www.nga.org/governor/l-douglas-wilder/",
+    "eventDateLabel": "1989 election / January 14, 1990",
+    "eventYear": 1989,
+    "sourceNote": "This records one statewide electoral breakthrough. It does not establish that a particular earlier governor caused the victory, or that every public-sector career became accessible.",
+    "scope": "office",
+    "site": {
+      "id": "reviewed-governor-office-virginia",
+      "location": "Richmond, VA",
+      "parent": "State of Virginia"
+    }
+  },
+  {
+    "workplace": "Maryland Governor’s Office",
+    "aliases": [
+      "Maryland Governors Office",
+      "Office of the Governor of Maryland",
+      "Maryland Governor Office"
+    ],
+    "professions": [
+      "governor"
+    ],
+    "headline": "Wes Moore is sworn in as Maryland’s first Black governor",
+    "description": "Following the election, Moore took the oath of office on January 18, 2023. He entered service as Maryland’s 63rd governor, documented by the state biography and a same-day county statement from an attendee.",
+    "sourceTitle": "Maryland Office of the Governor · Wes Moore",
+    "url": "https://governor.maryland.gov/leadership/governor-wes-moore",
+    "eventDateLabel": "January 18, 2023",
+    "eventYear": 2023,
+    "sourceNote": "The officeholding record is established. Effects on a particular occupation, agency or worker require separate policies, appointment records and implementation evidence.",
+    "scope": "office",
+    "site": {
+      "id": "reviewed-governor-office-maryland",
+      "location": "Annapolis, MD",
+      "parent": "State of Maryland"
+    }
+  },
+  {
+    "workplace": "Georgia Governor’s Office",
+    "aliases": [
+      "Georgia Governors Office",
+      "Office of the Governor of Georgia",
+      "Georgia Governor Office"
+    ],
+    "professions": [
+      "governor"
+    ],
+    "headline": "Keisha Lance Bottoms wins Georgia’s election, according to an AP race call",
+    "description": "GPB reported on November 3 that Bottoms defeated Rick Jackson in Georgia’s gubernatorial election. The reported victory makes Bottoms governor-elect and marks a national first for a Black woman elected to the office.",
+    "sourceTitle": "Georgia Public Broadcasting · Keisha Lance Bottoms wins Georgia’s governor race",
+    "url": "https://www.gpb.org/news/2026/11/03/georgias-keisha-lance-bottoms-becomes-nations-first-black-female-governor",
+    "eventDateLabel": "November 3, 2026 · reported election win",
+    "eventYear": 2026,
+    "sourceNote": "Checked November 4, 2026. This is a reported election outcome, not independent confirmation of certification or inauguration. It establishes no completed policy change or workplace hiring outcome.",
+    "scope": "election",
+    "site": {
+      "id": "reviewed-governor-office-georgia",
+      "location": "Atlanta, GA",
+      "parent": "State of Georgia"
+    }
+  },
+  {
+    "workplace": "Florida Governor’s Office",
+    "aliases": [
+      "Florida Governors Office",
+      "Office of the Governor of Florida",
+      "Florida Governor Office"
+    ],
+    "professions": [
+      "governor"
+    ],
+    "headline": "Byron Donalds wins Florida’s election, according to an AP race call",
+    "description": "The public-radio report identifies Donalds as the winner over David Jolly in the November 3 election. Donalds is governor-elect; WUSF reports a January 5, 2027 start to his term.",
+    "sourceTitle": "WUSF · Byron Donalds wins Florida’s governor race",
+    "url": "https://www.wusf.org/politics-issues/2026-11-03/republican-byron-donalds-wins-florida-governors-race",
+    "eventDateLabel": "November 3, 2026 · reported election win",
+    "eventYear": 2026,
+    "sourceNote": "Checked November 4, 2026. Election reporting is not independent certification or a completed inauguration. This does not claim that Donalds is the first Black man elected governor anywhere in the United States.",
+    "scope": "election",
+    "site": {
+      "id": "reviewed-governor-office-florida",
+      "location": "Tallahassee, FL",
+      "parent": "State of Florida"
+    }
   }
 ]

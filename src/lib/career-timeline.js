@@ -26,9 +26,9 @@ function historyStep(item){
 }
 function workplaceStep(row, paper=false){
   const bridge=row.fromInstitution&&row.toInstitution?row.fromInstitution+' → '+row.toInstitution:'';
-  const label=({contractor:'Contractor history',union:'Union history',jobsite:'Jobsite record',program:'Training program'})[row.scope] || 'Workplace history';
+  const label=({contractor:'Contractor history',union:'Union history',jobsite:'Jobsite record',program:'Training program',appointment:'Appointment record',election:'Reported election result',office:'Public office record',institution:'Institutional record'})[row.scope] || 'Workplace history';
   return {type:'employer',label,date:row.eventDateLabel||'Date undocumented',order:dateKey(row.eventYear),
-    title:(paper && row.paperTitle) || row.headline,detail:row.description,place:row.site?.location || row.place,scope:row.scope,
+    title:(paper && row.paperTitle) || row.headline,detail:row.description,place:row.place || row.site?.location,scope:row.scope,
     paperRole:paper ? row.paperRole : undefined,previewDetail:row.previewDetail || '',sourceNote:row.sourceNote,bridge,
     sources:sources([{title:row.sourceTitle,url:row.url}, ...(row.moreSources || [])])};
 }
@@ -46,7 +46,7 @@ function gap(title,detail){
 export function buildCareerTimeline({context,field,report=null,loadFailed=false,paper=false}){
   const {employer='',title,related=false}=context;
   const history=(field?.historical||[]).map(historyStep).filter(step=>step.sources.length);
-  const verified=field&&!related?findWorkplaceLinks(employer,field.slug,field.reviewers||[],context.workplaceInfo):[];
+  const verified=field?findWorkplaceLinks(employer,field.slug,field.reviewers||[],context.workplaceInfo,{related,occupationCode:context.occupationCode}):[];
   const employerEvents=verified.flatMap(row=>{
     const events=[workplaceStep(row,paper)];
     if(paper && row.paperMilestone) {
@@ -69,7 +69,10 @@ export function buildCareerTimeline({context,field,report=null,loadFailed=false,
     }
   }
   const awards=[...funding.values()].map(awardStep).filter(step=>step.sources.length);
-  const events=[...history,...employerEvents,...awards].sort((a,b)=>
+  // The same appointment can appear in both the field dossier and workplace
+  // index. Show that event once, retaining the workplace-specific explanation.
+  const fieldEvents=history.filter(h=>!employerEvents.some(e=>e.title===h.title&&e.order===h.order&&e.sources.some(s=>h.sources.some(t=>s.url===t.url))));
+  const events=[...fieldEvents,...employerEvents,...awards].sort((a,b)=>
     (a.order??Infinity)-(b.order??Infinity)||a.title.localeCompare(b.title));
   if(!history.length){
     events.unshift(gap('The opening of this field is undocumented here',

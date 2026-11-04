@@ -88,7 +88,7 @@ const sourceDate = new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',
 type Authority = NonNullable<ReturnType<typeof findWorkplaceAuthority>>;
 
 
-type Context={employer:string,title:string,profession?:string,related?:boolean,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string}|null};
+type Context={employer:string,title:string,profession?:string,related?:boolean,occupationCode?:string,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string,id?:string,sourceUrl?:string}|null};
 const cache=new Map<string,Promise<any>>();
 function loadField(slug:string) {
   if(!/^[a-z0-9-]+$/.test(slug))return Promise.reject(new Error('Invalid profession'));
@@ -170,7 +170,7 @@ class CareerTimeline extends HTMLElement{
   }
   setContext(next:Context){
     if(!next?.title){this.reset();return}
-    if(this.context && ['title','employer','profession','related'].every(k=>this.context![k as keyof Context]===next[k as keyof Context])&&JSON.stringify(this.context.workplaceInfo)===JSON.stringify(next.workplaceInfo))return;
+    if(this.context && ['title','employer','profession','related','occupationCode'].every(k=>this.context![k as keyof Context]===next[k as keyof Context])&&JSON.stringify(this.context.workplaceInfo)===JSON.stringify(next.workplaceInfo))return;
     this.reset();this.context={...next};this.hidden=false;
     const paperEdition = ['k12-teacher','registered-nurse','electrician'].includes(next.profession || '') &&
       !next.related && !!this.closest('body.paper-edition');
@@ -322,7 +322,7 @@ class CareerTimeline extends HTMLElement{
       }
     }
     sections.hidden=false;
-    const matches=findWorkplaceLinks(this.context.employer,this.context.profession,this.field?.reviewers,this.context.workplaceInfo);
+    const matches=findWorkplaceLinks(this.context.employer,this.context.profession,this.field?.reviewers,this.context.workplaceInfo,this.context);
     const shortcut=this.querySelector<HTMLAnchorElement>('[data-authority-shortcut]');
     const record=findWorkplaceAuthority(this.context,matches);
     const authority=paperEdition && this.querySelector('#who-decides') ? record : null;

@@ -63,7 +63,7 @@ if(panel){
     panel.querySelector('[data-share-note]')!.textContent=isExample?'Public example · anyone can open this link.':'Shared links open the public profession card.';
     const sampleLink=panel.querySelector<HTMLElement>('[data-example-link]');
     if(sampleLink)sampleLink.hidden=isExample || trace.workplace!==sample.workplace || trace.title!==sample.title;
-    const context={employer:trace.workplace,title:trace.title,profession:trace.slug,related:trace.match==='related',workplaceInfo:trace.workplaceInfo};
+    const context={employer:trace.workplace,title:trace.title,lookupTitle:trace.lookupTitle,occupationCode:trace.occupationCode,profession:trace.slug,related:trace.match==='related',workplaceInfo:trace.workplaceInfo};
     bindLookup(timeline,context);
     bindLookup(lookup,{...context,profession:context.related?'':trace.slug});
   };

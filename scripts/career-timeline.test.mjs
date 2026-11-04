@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {buildCareerTimeline} from '../src/lib/career-timeline.js';
+import {timelineHistory} from '../src/lib/field-history.js';
 const read=name=>JSON.parse(readFileSync(new URL('../data/'+name,import.meta.url)));
 const jobs=read('professions.json'),historic={...read('timeline-health-education.json'),...read('timeline-civic-trades.json')};
 const reviewers=read('workplace-links.json');
@@ -9,11 +10,11 @@ const context={employer:'Howard University Hospital',title:'ICU registered nurse
 const field={slug:context.profession,name:'Registered nurse',historical:historic[context.profession],reviewers,awards:[]};
 test('every profession has dated, sourced openings and the hospital succession has its own date',()=>{
  for(const job of jobs){
-  for(const entry of historic[job.slug]){
+  for(const entry of timelineHistory(job)){
    assert.ok(entry.title&&entry.description&&entry.sourceTitle&&entry.dateLabel&&Number.isInteger(entry.sortYear));
    assert.equal(new URL(entry.url).protocol,'https:');
   }
-  assert.ok(historic[job.slug].length>0);
+  assert.ok(timelineHistory(job).length>0);
  }
  const rows=buildCareerTimeline({context,field});
  assert.deepEqual(rows.filter(r=>['employer','history'].includes(r.type)).map(r=>r.date),['1892','1901','1941','Fall 1975']);

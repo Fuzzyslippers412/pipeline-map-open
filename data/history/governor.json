@@ -1,0 +1,158 @@
+{
+  "slug": "governor",
+  "headline": "Black governors: succession, elections and new firsts",
+  "summary": "These selected records distinguish taking office through succession from winning a statewide election. The November 2026 updates cover reported victories by Keisha Lance Bottoms in Georgia and Byron Donalds in Florida, alongside earlier Black governors.",
+  "coverageNote": "Six selected episodes, not a complete list of Black governors. Election reporting checked November 4, 2026: Bottoms and Donalds are described as governors-elect, not sworn governors. Door Notes has not independently verified certification. Holding office does not by itself establish a change in another worker’s hiring, pay or promotion.",
+  "question": "Which election, succession rule and office record connect this history to the state or public office you mean?",
+  "checkedOn": "2026-11-04",
+  "events": [
+    {
+      "id": "pinchback-louisiana-succession-1872",
+      "date": "December 9, 1872",
+      "year": 1872,
+      "title": "P. B. S. Pinchback assumes Louisiana’s executive office",
+      "people": "Pinckney Benton Stewart Pinchback",
+      "decisionMaker": "Louisiana legislators impeached Governor Henry Warmoth; state succession rules placed Pinchback in charge",
+      "barrier": "Violence against Black voters and competing claims to the 1872 election unsettled Louisiana’s government.",
+      "change": "Warmoth’s suspension triggered succession by Lieutenant Governor Pinchback, according to the Senate’s historical account.",
+      "outcome": "Pinchback served as acting governor during the dispute over who would govern Louisiana.",
+      "limit": "This was succession to temporary executive authority, not a statewide election of Pinchback as governor. It does not show that access to other offices or public jobs was secure.",
+      "source": {
+        "title": "U.S. Senate · Reconstruction Louisiana and the Case of PBS Pinchback",
+        "url": "https://www.senate.gov/artandhistory/senate-stories/reconstruction-louisiana-and-the-case-of-pbs-pinchback.htm",
+        "locator": "Paragraph on December 9, 1872 impeachment and succession",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "wilder-virginia-election-1989",
+      "date": "1989 election / January 14, 1990",
+      "year": 1989,
+      "title": "L. Douglas Wilder wins Virginia’s governorship",
+      "people": "L. Douglas Wilder and Virginia voters",
+      "decisionMaker": "Virginia’s electorate",
+      "barrier": "The National Governors Association identifies Wilder as the first Black American elected governor of a U.S. state.",
+      "change": "After serving in the state senate and as lieutenant governor, Wilder won the gubernatorial election in 1989.",
+      "outcome": "He began his term on January 14, 1990, and served through January 15, 1994.",
+      "limit": "This records one statewide electoral breakthrough. It does not establish that a particular earlier governor caused the victory, or that every public-sector career became accessible.",
+      "source": {
+        "title": "National Governors Association · L. Douglas Wilder",
+        "url": "https://www.nga.org/governor/l-douglas-wilder/",
+        "locator": "Term dates and biography’s 1989 election paragraph",
+        "type": "Governors association history"
+      }
+    },
+    {
+      "id": "patrick-massachusetts-election-2006",
+      "date": "2006 election / January 4, 2007",
+      "year": 2006,
+      "title": "Deval Patrick enters Massachusetts’ executive office",
+      "people": "Deval Patrick and Massachusetts voters",
+      "decisionMaker": "Massachusetts’ electorate",
+      "barrier": "Patrick’s election made him the Commonwealth’s first Black governor, as identified in the contemporary congressional statement.",
+      "change": "Voters elected Patrick in 2006; state archives also document his reelection in 2010.",
+      "outcome": "Patrick took office January 4, 2007, and served two terms through January 8, 2015.",
+      "limit": "Election, inauguration and later appointments are separate records. This does not establish who gained employment in his administration or how a current employee joined it.",
+      "source": {
+        "title": "Massachusetts Archives · Office of the Governor records",
+        "url": "https://www.sec.state.ma.us/divisions/archives/collections/FA_GO.pdf",
+        "locator": "GO60 Patrick administration records; PDF page 57 and following",
+        "type": "State archival finding aid"
+      },
+      "sources": [
+        {
+          "title": "National Governors Association · Deval Patrick",
+          "url": "https://www.nga.org/governor/deval-patrick/",
+          "locator": "Term dates and opening paragraph on inauguration",
+          "type": "Governors association history"
+        },
+        {
+          "title": "Congressional statement · Patrick’s historic election, November 8, 2006",
+          "url": "https://www.markey.senate.gov/news/press-releases/november-8-2006-markey-congratulates-deval-patrick-on-historic-victory",
+          "locator": "Statement identifying Massachusetts’ first African American governor",
+          "type": "Contemporary congressional statement"
+        }
+      ]
+    },
+    {
+      "id": "moore-maryland-inauguration-2023",
+      "date": "January 18, 2023",
+      "year": 2023,
+      "title": "Wes Moore is sworn in as Maryland’s first Black governor",
+      "people": "Wes Moore and Maryland voters",
+      "decisionMaker": "Maryland’s electorate selected Moore; the inauguration completed entry into office",
+      "barrier": "Maryland’s governor’s office identifies Moore as the state’s first Black governor.",
+      "change": "Following the election, Moore took the oath of office on January 18, 2023.",
+      "outcome": "He entered service as Maryland’s 63rd governor, documented by the state biography and a same-day county statement from an attendee.",
+      "limit": "The officeholding record is established. Effects on a particular occupation, agency or worker require separate policies, appointment records and implementation evidence.",
+      "source": {
+        "title": "Maryland Office of the Governor · Wes Moore",
+        "url": "https://governor.maryland.gov/leadership/governor-wes-moore",
+        "locator": "Opening paragraph identifying the office and state first",
+        "type": "Official office biography"
+      },
+      "sources": [
+        {
+          "title": "Montgomery County · Statement on Moore and Miller’s inaugurations",
+          "url": "https://www2.montgomerycountymd.gov/mcgportalapps/Statement_Detail.aspx?id=1574",
+          "locator": "January 18, 2023 statement; opening account of attending the swearing-in",
+          "type": "Contemporary local-government record"
+        }
+      ]
+    },
+    {
+      "id": "bottoms-georgia-election-2026",
+      "date": "November 3, 2026 · reported election win",
+      "year": 2026,
+      "title": "Keisha Lance Bottoms wins Georgia’s election, according to an AP race call",
+      "people": "Keisha Lance Bottoms and Georgia voters",
+      "decisionMaker": "Georgia’s electorate; the Associated Press reported its race call",
+      "barrier": "Georgia Public Broadcasting reports that Bottoms will be the first Black woman to serve as a U.S. state governor.",
+      "change": "GPB reported on November 3 that Bottoms defeated Rick Jackson in Georgia’s gubernatorial election.",
+      "outcome": "The reported victory makes Bottoms governor-elect and marks a national first for a Black woman elected to the office.",
+      "limit": "Checked November 4, 2026. This is a reported election outcome, not independent confirmation of certification or inauguration. It establishes no completed policy change or workplace hiring outcome.",
+      "evidenceStatus": "Reported election result; not yet sworn",
+      "checkedOn": "2026-11-04",
+      "source": {
+        "title": "Georgia Public Broadcasting · Keisha Lance Bottoms wins Georgia’s governor race",
+        "url": "https://www.gpb.org/news/2026/11/03/georgias-keisha-lance-bottoms-becomes-nations-first-black-female-governor",
+        "locator": "November 3, 2026, 9:34 p.m. report; opening paragraphs citing AP’s race call",
+        "type": "Election-night reporting citing AP"
+      }
+    },
+    {
+      "id": "donalds-florida-election-2026",
+      "date": "November 3, 2026 · reported election win",
+      "year": 2026,
+      "title": "Byron Donalds wins Florida’s election, according to an AP race call",
+      "people": "Byron Donalds and Florida voters",
+      "decisionMaker": "Florida’s electorate; the Associated Press reported its race call",
+      "barrier": "WUSF reports that Donalds will become Florida’s first Black governor.",
+      "change": "The public-radio report identifies Donalds as the winner over David Jolly in the November 3 election.",
+      "outcome": "Donalds is governor-elect; WUSF reports a January 5, 2027 start to his term.",
+      "limit": "Checked November 4, 2026. Election reporting is not independent certification or a completed inauguration. This does not claim that Donalds is the first Black man elected governor anywhere in the United States.",
+      "evidenceStatus": "Reported election result; not yet sworn",
+      "checkedOn": "2026-11-04",
+      "source": {
+        "title": "WUSF · Byron Donalds wins Florida’s governor race",
+        "url": "https://www.wusf.org/politics-issues/2026-11-03/republican-byron-donalds-wins-florida-governors-race",
+        "locator": "November 3 report, updated 10:22 p.m.; governor-elect subheading and AP race-call paragraphs",
+        "type": "Election-night reporting citing AP"
+      },
+      "sources": [
+        {
+          "title": "Florida Legislature · Constitution, Article IV, Section 5",
+          "url": "https://www.leg.state.fl.us/statutes/index.cfm?submenu=3#A4S05",
+          "locator": "Article IV, Section 5(a): statewide election and January term start",
+          "type": "State constitution"
+        }
+      ]
+    }
+  ],
+  "furtherResearch": [
+    "Recheck the 2026 state canvass, certification and inauguration records before changing either governor-elect to serving governor.",
+    "Add other state examples and temporary officeholders; these six episodes are not a complete roster or a proven chain of influence.",
+    "For a specific governor’s office, distinguish the elected office from appointed staff, civil-service employees and contractors; use their own employment and appointment records.",
+    "Trace worker outcomes through an actual law, budget, appointment or administrative action and its implementation. A governor’s identity or election alone does not prove an employment effect."
+  ]
+}

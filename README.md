@@ -1,6 +1,6 @@
 # Door Notes
 
-[Door Notes](https://doornotes.org/) is a static, mobile-first guide to U.S. professional entry. A reader can search twenty professions, read sourced histories of people and decisions separately from population measurements, trace estimates to publisher tables and compare up to three fields.
+[Door Notes](https://doornotes.org/) is a mobile-first guide to U.S. professional entry. A reader can search 22 fields and offices, read sourced histories of people and decisions separately from population measurements, trace estimates to publisher tables and compare up to three fields.
 
 The public source release is [available on GitHub](https://github.com/Fuzzyslippers412/pipeline-map-open). The application code and loaders use the [MIT License](LICENSE). Original editorial content and the project’s compilation use [CC BY 4.0](data/RIGHTS.md). Read the [data rights and publisher credits](data/RIGHTS.md) before reusing material from another publisher.
 
@@ -21,6 +21,8 @@ The build validates five relational tables, writes a SQLite database and CSV, ge
 The trace form suggests exact worksites and job titles after two characters. It searches site-hosted directory snapshots in a Web Worker. Parent organizations, districts and systems are displayed only where identified by the source and are not substituted for the chosen employer in research. Keyboard or pointer selections are optional. Both fields accept the reader’s own words, including titles outside the profession index. A separate, explicitly requested federal-recipient search sends the workplace term to USAspending.
 
 The trace form and profession index use the same occupation resolver. The local O*NET title directory retains multiple occupation codes for one spelling. Recognized titles can open a published record, point to a related field, ask a clarifying question about duties, or show the limits of historical coverage. Computing results include a credited historical record and a source specific to the work selected. Personal entries and decisions stay in the tab.
+
+Reviewed everyday titles and canonical singular forms take priority over catch-all aliases. Misspellings offer a correction that the reader must select; the entered wording stays visible. Common ambiguous titles use short duty questions with a free-text option. Directory IDs and source links survive workplace selection and tab-local storage. A conflicting site ID never falls back to a same-name institution. Role-scoped workplace records require a matching occupation code, including when a reader chooses a broad related history.
 
 See [workplace directory sources](data/WORKPLACES.md) and [O*NET® job-title sources and attribution](data/JOB-TITLES.md).
 
@@ -64,3 +66,5 @@ Submit reader corrections through the [public correction form](https://github.co
 Every profession has a public historical record that renders without a stored trace. Dossiers separate actors, authority, action, outcome and source limits; the timeline API and career-map excerpts use the same records. Sources include a locator and evidence type, and the source register can filter historical records separately from statistical tables. `public/data/histories.json` is a reproducible export.
 
 Homepage examples and profession tiles link directly to these records. Evidence disclosures work without JavaScript. No historical episode alone establishes a visitor’s personal training or hiring route. Exact workplace records, where present, retain their own scope and source.
+
+The November 4, 2026 update adds agriculture and governor dossiers (six episodes each). Agriculture separates management, hired work, science and extension. The governor record distinguishes succession, elections and taking office; the Bottoms and Donalds entries are dated election reporting about governors-elect, not independently verified certification or completed inaugurations. Recheck official records before changing their status. Public-office guidance does not imply a promotion route for civil-service staff.

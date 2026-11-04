@@ -1195,5 +1195,128 @@
     },
     "researchQuestion": "Who controlled contracts, union membership, pay and ownership in each music setting?",
     "researchNote": "Field history is not proof of an individual hiring route."
+  },
+  {
+    "id": "agriculture",
+    "name": "Agriculture & farming",
+    "slug": "agriculture",
+    "soc_code": null,
+    "sector": "Agriculture & food",
+    "aliases": [
+      "agriculture",
+      "farming",
+      "agricultural work"
+    ],
+    "origin": {
+      "builder": [
+        "hbcu",
+        "other"
+      ],
+      "era": "1890–2022 records",
+      "rationale": "Black agricultural colleges, extension educators and cooperative farmers created different routes to knowledge, land and collective production. These selected records sit within a much older history of Black agricultural labor; they do not mark its beginning.",
+      "citations": [
+        {
+          "title": "U.S. Capitol Visitor Center / National Archives · Division of agricultural funds, 1892–93",
+          "url": "https://www.visitthecapitol.gov/artifact/division-agricultural-fund-between-white-and-colored-schools-1892-93"
+        },
+        {
+          "title": "SNCC Digital Gateway · Fannie Lou Hamer founds Freedom Farm Cooperative",
+          "url": "https://snccdigital.org/events/fannie-lou-hamer-founds-freedom-farm-cooperative/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": 1890,
+      "era_end": 2022,
+      "headline": "Land, agricultural education and cooperative work"
+    },
+    "gate": {
+      "gatekeeper": [
+        "other"
+      ],
+      "era": "Role and workplace specific",
+      "rationale": "Farm management, hired agricultural work and agricultural science are distinct occupations. Landowners, operating businesses and employers control different routes; training and appointment requirements depend on the work. Identify the actual farm, contractor or institution before claiming a local pathway.",
+      "citations": [
+        {
+          "title": "BLS · Farmers and agricultural managers",
+          "url": "https://www.bls.gov/ooh/management/farmers-ranchers-and-other-agricultural-managers.htm"
+        },
+        {
+          "title": "BLS · Agricultural workers",
+          "url": "https://www.bls.gov/ooh/farming-fishing-and-forestry/agricultural-workers.htm"
+        },
+        {
+          "title": "BLS · Agricultural and food scientists",
+          "url": "https://www.bls.gov/ooh/life-physical-and-social-science/agricultural-and-food-scientists.htm"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null,
+      "headline": "Land access, hiring and research appointments"
+    },
+    "researchQuestion": "Which land, employment, training or program record connects this history to the farm or institution where you work?",
+    "researchNote": "Field history is not proof of a particular farm, employer or hiring route.",
+    "reviewedOn": "2026-11-04"
+  },
+  {
+    "id": "governor",
+    "slug": "governor",
+    "name": "Governor",
+    "soc_code": null,
+    "sector": "Law & civic life",
+    "aliases": [
+      "state governor",
+      "U.S. state governor",
+      "governor elect"
+    ],
+    "origin": {
+      "builder": [
+        "electorate",
+        "other"
+      ],
+      "era": "Reconstruction through the 2026 elections",
+      "headline": "Succession and statewide electoral breakthroughs",
+      "rationale": "Black access to the governorship has included constitutional succession and election by state voters. Pinchback assumed acting authority in Louisiana in 1872; Wilder won Virginia’s election in 1989. These are distinct routes into office, not proof of a causal chain between officeholders.",
+      "citations": [
+        {
+          "title": "U.S. Senate · Reconstruction Louisiana and the Case of PBS Pinchback",
+          "url": "https://www.senate.gov/artandhistory/senate-stories/reconstruction-louisiana-and-the-case-of-pbs-pinchback.htm"
+        },
+        {
+          "title": "National Governors Association · L. Douglas Wilder",
+          "url": "https://www.nga.org/governor/l-douglas-wilder/"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "era_start": 1872,
+      "era_end": 2026
+    },
+    "gate": {
+      "gatekeeper": [
+        "electorate",
+        "other"
+      ],
+      "era": "State-specific election and succession rules",
+      "headline": "Voters, eligibility and state succession rules",
+      "rationale": "State constitutions distinguish elections, eligibility, terms and succession. Georgia Article V Section I and Florida Article IV Sections 3 and 5 illustrate why a race call, certification, inauguration and taking office by succession are separate facts. Requirements depend on the state and date.",
+      "citations": [
+        {
+          "title": "Georgia Constitution · Article V, Section I",
+          "url": "https://sos.ga.gov/sites/default/files/2023-08/Georgia%20Constitution%20-%20Electronic%20Version%20-%20January%2C%202023.pdf"
+        },
+        {
+          "title": "Florida Constitution · Article IV",
+          "url": "https://www.leg.state.fl.us/statutes/index.cfm?submenu=3#A4S05"
+        }
+      ],
+      "status": "supported",
+      "editorial": true,
+      "since_year": null
+    },
+    "researchQuestion": "Which election, succession rule and office record connect this history to the state or public office you mean?",
+    "researchNote": "Election to office is not proof of a hiring or policy outcome for other workers.",
+    "reviewedOn": "2026-11-04"
   }
 ]
