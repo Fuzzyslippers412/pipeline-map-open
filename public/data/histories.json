@@ -1515,11 +1515,39 @@
   },
   {
     "slug": "k12-teacher",
-    "headline": "Building schools. Challenging unequal pay.",
-    "summary": "Black communities created places to learn and train teachers. Educators then fought separate battles over public funding, control of schools, hiring and equal pay. These records follow particular institutions in Alabama, Georgia and Virginia.",
-    "coverageNote": "Five documented episodes: community institution-building, public funding, a school’s staffing and two pay disputes. They are not a complete national history or a proven chain to every school.",
-    "question": "Which school-board minutes, appointment records or salary schedules show how access changed at your school?",
+    "headline": "Building schools. Defending the right to teach.",
+    "summary": "Black educators built schools, led classrooms and fought for pay, professional authority and jobs. These records follow named people and institutions—and show that opening schools to Black pupils did not automatically protect Black teachers.",
+    "coverageNote": "Twelve documented episodes connect school founding, leadership, pay and desegregation to particular workplaces and decisions. Local victories and losses are distinguished from national rules; a reader’s own hiring history still needs evidence.",
+    "question": "Which appointment records, board minutes, salary schedules or court-compliance reports connect this history to your school?",
     "events": [
+      {
+        "id": "teacher-forten-penn-1862",
+        "date": "Fall 1862",
+        "year": 1862,
+        "title": "Charlotte Forten teaches newly freed people at Penn School",
+        "people": "Charlotte Forten; Penn School founders Laura Towne and Ellen Murray; St. Helena Island families",
+        "decisionMaker": "Towne and Murray organized Penn School with support from Philadelphia’s Port Royal Relief Committee.",
+        "barrier": "Enslaved South Carolinians had been denied lawful access to literacy; freedom and schooling remained uncertain during the war.",
+        "change": "Forten joined the school on St. Helena Island, South Carolina, as classes moved into Brick Baptist Church.",
+        "outcome": "A Black educator taught freedpeople at a named workplace and recorded the experience in journals and her 1864 published account.",
+        "limit": "Penn was a wartime school supported by a relief organization. This is not proof of employment by today’s Beaufort County school district.",
+        "source": {
+          "title": "National Park Service · Charlotte Forten Grimké",
+          "url": "https://www.nps.gov/people/charlotte-forten-grimke.htm",
+          "locator": "Paragraphs on the fall 1862 arrival, Brick Baptist Church and “Life on the Sea Islands”",
+          "type": "Federal historical biography",
+          "supports": "Forten’s arrival, teaching location and firsthand accounts."
+        },
+        "sources": [
+          {
+            "title": "National Park Service · Education during the Port Royal Experiment",
+            "url": "https://www.nps.gov/articles/000/education-during-the-port-royal-experiment.htm",
+            "locator": "Penn School paragraphs: Towne’s April 1862 arrival through Forten joining in the fall",
+            "type": "Federal historical interpretation",
+            "supports": "The founders, relief-committee backing, literacy restrictions and move to Brick Baptist Church."
+          }
+        ]
+      },
       {
         "id": "teacher-marion-nine-1867",
         "date": "November 13, 1867",
@@ -1535,7 +1563,8 @@
           "title": "Alabama State University · History & Traditions",
           "url": "https://www.alasu.edu/about/history-tradition.php",
           "locator": "The Marion Nine; Our Growth",
-          "type": "Institutional history"
+          "type": "Institutional history",
+          "supports": "The founders, fundraising, opening date and reported enrollment; the institution’s account of its predecessor."
         }
       },
       {
@@ -1553,7 +1582,46 @@
           "title": "Knight v. State of Alabama · historical findings",
           "url": "https://law.justia.com/cases/federal/district-courts/FSupp/787/1030/1945646/",
           "locator": "Findings 103–110, especially 108–110",
-          "type": "Court findings based on historical evidence"
+          "type": "Court findings based on historical evidence",
+          "supports": "Finley’s advocacy, the 1873 funding arrangement, transfer of property and change in governance."
+        }
+      },
+      {
+        "id": "teacher-baldwin-agassiz-1889",
+        "date": "1889",
+        "year": 1889,
+        "title": "Maria Baldwin moves from teacher to principal in Cambridge",
+        "people": "Maria Louise Baldwin",
+        "decisionMaker": "Cambridge’s School Committee urged Baldwin to accept the principalship of the Agassiz School.",
+        "barrier": "Baldwin had struggled to obtain teaching work in Cambridge after completing teacher training.",
+        "change": "Her 1889 appointment put a Black woman in charge of a public school attended mainly by white children.",
+        "outcome": "She led the Agassiz School. In 2002 the committee renamed its later building the Maria L. Baldwin School.",
+        "limit": "This documents a specific appointment and a school-name connection in Cambridge, Massachusetts. The present building is not the one where she began; it does not prove any current employee’s hiring route.",
+        "source": {
+          "title": "Cambridge Historical Commission · Maria Baldwin House evaluation",
+          "url": "https://www.cambridgema.gov/-/media/Files/historicalcommission/pdf/chcmeetingfiles/L142_eval2.pdf#page=6",
+          "locator": "February 25, 2022 report, pages 6–7; 1889 appointment and May 21, 2002 school renaming",
+          "type": "Municipal historical report",
+          "supports": "Training and employment obstacles, the principalship, and the Agassiz-to-Baldwin school connection across different buildings."
+        }
+      },
+      {
+        "id": "teacher-cooper-m-street-1906",
+        "date": "1906",
+        "year": 1906,
+        "title": "Anna Julia Cooper’s college-preparatory leadership meets a board’s opposition",
+        "people": "Anna Julia Cooper, teacher and principal at M Street High School in Washington, D.C.",
+        "decisionMaker": "Washington’s Board of Education dismissed Cooper as principal.",
+        "barrier": "Cooper defended Black students’ access to college preparation amid pressure to prioritize vocational education.",
+        "change": "Her dismissal removed a Black woman’s authority over the school’s educational direction.",
+        "outcome": "She taught elsewhere and later returned to M Street as a teacher, continuing her educational work after losing the principalship.",
+        "limit": "This records a contested leadership role, not uninterrupted advancement. The biography is not the board’s personnel file or proof of a present-day teacher’s appointment.",
+        "source": {
+          "title": "National Park Service · Dr. Anna Julia Cooper",
+          "url": "https://home.nps.gov/people/dr-anna-julia-cooper-1859-1964.htm",
+          "locator": "Early Life and Education, final paragraph; Women’s Clubs and Activism, final paragraph",
+          "type": "Federal historical biography with scholarly references",
+          "supports": "M Street teaching, the curriculum dispute, the 1906 dismissal and later return to teaching."
         }
       },
       {
@@ -1571,7 +1639,8 @@
           "title": "Booker T. Washington High School · National Register nomination",
           "url": "https://npgallery.nps.gov/GetAsset/9814b816-e5bd-4513-8b58-415d397c5297#page=6",
           "locator": "Historical Narrative, PDF pages 6–7",
-          "type": "Historic-property documentation"
+          "type": "Historic-property documentation",
+          "supports": "Community organizing, the opening of the Atlanta school and Harper’s recruitment of its faculty."
         }
       },
       {
@@ -1589,7 +1658,8 @@
           "title": "Alston v. School Board of City of Norfolk, 112 F.2d 992",
           "url": "https://law.justia.com/cases/federal/appellate-courts/F2/112/992/1498702/",
           "locator": "Opinion, pages 993–997; concluding reversal and remand",
-          "type": "Court opinion"
+          "type": "Court opinion",
+          "supports": "The teachers’ allegations, constitutional ruling and reversal; it does not document subsequent payroll compliance."
         }
       },
       {
@@ -1607,15 +1677,112 @@
           "title": "Cook v. Davis, 178 F.2d 595",
           "url": "https://openjurist.org/178/f2d/595/cook-v-davis",
           "locator": "Paragraphs 5–6 and 18–20",
-          "type": "Court opinion"
+          "type": "Court opinion",
+          "supports": "The 1942 policy change, Davis’s later challenge and the 1949 disposition; eventual equal pay is not established."
+        }
+      },
+      {
+        "id": "teacher-brown-pupil-access-1954",
+        "date": "May 17, 1954",
+        "year": 1954,
+        "title": "Brown changes pupils’ rights; teachers’ employment still needs its own evidence",
+        "people": "Black children and families challenging segregated schools in Kansas, South Carolina, Virginia and Delaware",
+        "decisionMaker": "The U.S. Supreme Court ruled unanimously, with Chief Justice Earl Warren writing the opinion.",
+        "barrier": "State-enforced segregation excluded Black children from schools on racial grounds.",
+        "change": "The Court held segregated public schooling unconstitutional under the Fourteenth Amendment.",
+        "outcome": "The decision rejected the legal basis for segregating pupils; the Court addressed implementation separately in 1955.",
+        "limit": "Brown is not proof that every Black teacher kept a job, gained a promotion or received equal pay. Chambers and Singleton below address staffing harms during desegregation.",
+        "source": {
+          "title": "National Archives · Brown v. Board of Education",
+          "url": "https://www.archives.gov/milestone-documents/brown-v-board-of-education",
+          "locator": "May 17, 1954 opinion transcript: syllabus and opening paragraphs; introductory account of Brown II",
+          "type": "Court opinion in federal archival custody",
+          "supports": "The pupil-access holding and separate implementation proceedings; no teacher-employment outcome is established here."
+        }
+      },
+      {
+        "id": "teacher-clark-dismissal-1956",
+        "date": "1956 · pension restored in 1976",
+        "year": 1956,
+        "title": "Septima Clark loses her teaching job for refusing to leave the NAACP",
+        "people": "Septima Poinsette Clark; Highlander Folk School director Myles Horton",
+        "decisionMaker": "South Carolina enacted an affiliation ban for public employees; Clark’s teaching contract was not renewed when she refused to resign from the NAACP.",
+        "barrier": "A public-school livelihood was made conditional on giving up civil-rights organizing.",
+        "change": "After losing her job, Clark became Highlander’s full-time workshop director and later led citizenship education at SCLC.",
+        "outcome": "She trained educators outside the public-school system. In 1976 South Carolina restored her teacher’s pension after recognizing her unjust termination.",
+        "limit": "This was a loss followed by work elsewhere and a later remedy. It does not identify every affected teacher, establish a current district’s liability or replace Clark’s personnel records.",
+        "source": {
+          "title": "Stanford King Institute · Septima Poinsette Clark",
+          "url": "https://kinginstitute.stanford.edu/clark-septima-poinsette",
+          "locator": "Paragraphs beginning “In 1956,” “By the time of her firing,” and “After retiring from SCLC”",
+          "type": "Research-institute biography citing oral history and personal papers",
+          "supports": "The nonrenewal, Highlander and SCLC employment, and 1976 pension restoration."
+        },
+        "sources": [
+          {
+            "title": "South Carolina General Assembly · H. 4026 honoring Septima Clark",
+            "url": "https://www.scstatehouse.gov/sess123_2019-2020/bills/4026.htm",
+            "locator": "2019 adopted resolution; clauses on the 1956 law, Highlander, SCLC and restored benefits",
+            "type": "Commemorative legislative record",
+            "supports": "The legislature’s retrospective account; this is not the original dismissal order or a payroll record."
+          }
+        ]
+      },
+      {
+        "id": "teacher-chambers-hendersonville-1966",
+        "date": "June 6, 1966",
+        "year": 1966,
+        "title": "Hendersonville teachers challenge dismissal during desegregation",
+        "people": "Black teacher plaintiffs, the North Carolina Teachers Association and attorney J. LeVonne Chambers",
+        "decisionMaker": "The Fourth Circuit reversed the dismissal of their case against Hendersonville’s city school board.",
+        "barrier": "After school integration, only 8 of 24 Black teachers were retained; all white teachers seeking reemployment kept their jobs.",
+        "change": "The court required the same objective employment standards for Black and white teachers and rejected a racial staffing quota.",
+        "outcome": "It directed reemployment for qualifying plaintiffs who wanted to return in 1966–67, assessment of damages and continuing court supervision.",
+        "limit": "The ruling orders relief; it does not prove compliance. This was Hendersonville’s historical city system, not an established link to every school in today’s Henderson County district.",
+        "source": {
+          "title": "Chambers v. Hendersonville City Board of Education, 364 F.2d 189",
+          "url": "https://openjurist.org/364/f2d/189/chambers-v-hendersonville-city-board-of-education",
+          "locator": "Majority opinion, paragraphs 6–12; counsel listed above the opinion",
+          "type": "Court opinion",
+          "supports": "Staffing losses, unequal selection standards and the ordered employment remedy; subsequent implementation remains unverified."
+        }
+      },
+      {
+        "id": "teacher-singleton-staffing-1969",
+        "date": "December 1, 1969",
+        "year": 1969,
+        "title": "Singleton requires safeguards when desegregation cuts or changes jobs",
+        "people": "Black educators affected by desegregation; student plaintiffs including Derek Jerome Singleton and their lawyers",
+        "decisionMaker": "The Fifth Circuit directed staffing provisions in consolidated school-desegregation cases.",
+        "barrier": "Staff reductions and demotions could remove Black educators while a district reorganized its schools.",
+        "change": "The court required nondiscriminatory employment decisions and objective criteria for reductions, with evaluations retained for review.",
+        "outcome": "The order protected qualified displaced staff when vacancies arose and treated lost responsibility or out-of-certification assignment as possible demotion—not just reduced pay.",
+        "limit": "These are historical requirements, not proof of a particular educator’s reinstatement or a rule automatically applicable to every district today. Local orders and compliance records remain necessary.",
+        "source": {
+          "title": "Singleton v. Jackson Municipal Separate School District, 419 F.2d 1211",
+          "url": "https://law.justia.com/cases/federal/appellate-courts/F2/419/1211/33615/",
+          "locator": "Opinion dated December 1, 1969 in the text; Part I, “Desegregation of Faculty and Other Staff,” paragraphs 2–3",
+          "type": "Court opinion",
+          "supports": "The historical staffing safeguards and demotion definition; the site’s February 1970 header differs from the opinion date."
         }
       }
     ],
     "furtherResearch": [
-      "Find Marion student registers and appointment records that connect teacher training to particular schools.",
-      "Check Norfolk and Atlanta payrolls and later proceedings for implementation of equal-pay decisions.",
-      "Review teacher oral histories alongside local records to document employment effects of desegregation, including displacement and promotion.",
-      "For a reader’s school, establish its exact city, district and former names before linking a historical decision."
+      "Read Penn School registers and Forten’s original writings to connect named students, teachers and teaching locations.",
+      "Check appointment and board records for Baldwin and Cooper; distinguish school continuity, renaming and replacement buildings from an individual’s employment history.",
+      "Find Norfolk and Atlanta payrolls and subsequent proceedings to establish when salary policies changed actual pay.",
+      "Read Hendersonville and other districts’ compliance reports, staffing lists and personnel files for reinstatement, displacement and promotion after court orders.",
+      "Establish your school’s exact city, district, former names and any merger before attaching a historical workplace connection."
+    ],
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "Septima Clark’s dismissal correspondence and oral histories",
+        "url": "https://crdl.usg.edu/record/sbm-avery_septima-clark-papers",
+        "locator": "Avery Research Center collection; affiliations series on Charleston schools and 1956 job loss; biographical oral-history transcripts",
+        "question": "What do Clark’s correspondence and firsthand accounts establish about the dismissal, employment consequences and later restoration of benefits?",
+        "status": "Catalog inspected; underlying records not reviewed"
+      }
     ]
   },
   {
@@ -2554,9 +2721,9 @@
   },
   {
     "slug": "registered-nurse",
-    "headline": "Training, recognition and rights at work",
-    "summary": "A nursing qualification, professional membership and fair treatment at work were separate battles. These records follow named nurses and collective efforts across training, military service, employment rights and university leadership.",
-    "coverageNote": "Six selected episodes, including records about Freedmen’s/Howard and Dixie Hospital in Hampton, Virginia. These are distinct histories, not a proven chain to every nursing workplace.",
+    "headline": "Training, leadership and the right to practice",
+    "summary": "Black nurses built training schools, cared for communities, won professional recognition and challenged unequal treatment at work. These records name the people, institutions and decisions behind those changes—and distinguish education from hiring, promotion and equal working conditions.",
+    "coverageNote": "Thirteen selected episodes across hospital training, community care, university leadership, military nursing and employment rights. Named workplaces include Provident in Chicago, Florida A&M, NYU, Freedmen’s/Howard, Dixie Hospital and Kaiser’s Oakland Medical Center. These are distinct histories, not a proven chain to every nursing job.",
     "question": "Which admission, appointment or employment record connects this history to your nursing workplace?",
     "events": [
       {
@@ -2574,8 +2741,101 @@
           "title": "American Nurses Association · Mary Eliza Mahoney",
           "url": "https://www.nursingworld.org/ana/about-ana/history/hall-of-fame/1976-1982-inductees/",
           "locator": "Mary Eliza Mahoney biography, graduation and 1909 conference paragraphs",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Mahoney’s 1879 graduation, the training institution and course length, and her 1909 conference address."
+        },
+        "topics": [
+          "training",
+          "credentials"
+        ]
+      },
+      {
+        "id": "provident-reynolds-training-1891",
+        "date": "1891",
+        "year": 1891,
+        "title": "Emma Reynolds’ exclusion helps spur a new nursing school",
+        "people": "Emma Reynolds, Reverend Louis Reynolds and Daniel Hale Williams",
+        "decisionMaker": "Williams and Provident’s organizers established a hospital and nurse training school in Chicago",
+        "barrier": "Chicago nursing schools denied Reynolds admission because she was Black.",
+        "change": "After efforts to win her admission elsewhere failed, the organizers founded Provident Hospital and its training school in 1891.",
+        "outcome": "Reynolds graduated from Provident’s early nursing class. Training capacity grew through an institution built in response to exclusion.",
+        "limit": "This is Chicago’s Provident, not another hospital with the same name. It closed in 1987 and reopened under Cook County in 1993; a current job needs its own appointment record.",
+        "source": {
+          "title": "Chicago History Museum · Provident Hospital",
+          "url": "https://www.chicagohistory.org/provident-hospital/",
+          "locator": "Brittany Hutchinson, July 29, 2020; paragraphs on Emma Reynolds, founding and the first graduating class",
+          "type": "Museum research",
+          "supports": "Reynolds’ exclusion, the founders’ response and her graduation from the new school."
+        },
+        "sources": [
+          {
+            "title": "Cook County Health · Provident’s 30th anniversary timeline",
+            "url": "https://cookcountyhealth.org/provident-hospital-30th-anniversary/",
+            "locator": "Timeline entries for 1889–1891, 1987 and 1993",
+            "type": "Institutional history",
+            "supports": "The founding context, closure and later county reopening; not continuous employment since 1891."
+          }
+        ],
+        "topics": [
+          "training",
+          "institution building"
+        ]
+      },
+      {
+        "id": "scales-community-nursing-1900",
+        "date": "1900–1901",
+        "year": 1900,
+        "title": "Jessie Sleet Scales takes nursing into Black households",
+        "people": "Jessie Sleet Scales",
+        "decisionMaker": "New York’s Charity Organization Society employed Scales for community nursing",
+        "barrier": "Black residents faced obstacles to hospital care and tuberculosis treatment; nursing work also faced racial restrictions.",
+        "change": "Scales began district nursing in 1900. The work connected home visits and practical health education with treatment for tuberculosis.",
+        "outcome": "A 1901 nursing-journal account records this work. Her reports also connected people’s health with housing and employment discrimination.",
+        "limit": "This was work for a private social-service organization in New York City. It is not proof of a city-government appointment, a modern RN license or a current home-care agency’s hiring route.",
+        "source": {
+          "title": "University of Rochester · A history of care exhibit",
+          "url": "https://libguides.urmc.rochester.edu/hom-exhibits/nursing-month",
+          "locator": "Item headed Jessie Sleet Scales, “A Successful Experiment,” American Journal of Nursing 1(10), 1901, pp. 729–31",
+          "type": "Library exhibition",
+          "supports": "The 1900 district-nursing appointment, tuberculosis work and an exhibited contemporary account."
+        },
+        "sources": [
+          {
+            "title": "University of Illinois Chicago · Black public health nurses",
+            "url": "https://mappingcare.digital.uic.edu/page/black-public-health-nurses-in-history",
+            "locator": "“Black public health nurses: skills & impact,” final paragraph on Scales and the Charity Organization Society; indexed page text",
+            "type": "University public-history research",
+            "supports": "Identifies her private employer and reports connecting home conditions and employment discrimination to health."
+          }
+        ],
+        "topics": [
+          "community care",
+          "employment",
+          "public health"
+        ]
+      },
+      {
+        "id": "franklin-nacgn-1908",
+        "date": "1908",
+        "year": 1908,
+        "title": "Martha Minerva Franklin turns exclusion into collective organizing",
+        "people": "Martha Minerva Franklin and the founding nurses of NACGN",
+        "decisionMaker": "Nurses meeting in New York formed the National Association of Colored Graduate Nurses and elected Franklin president",
+        "barrier": "Black nurses faced discrimination in professional opportunities and needed an organization able to act on their conditions.",
+        "change": "Franklin gathered information from Black nurses and called the founding meeting, sponsored by the Lincoln School for Nurses Alumnae Association.",
+        "outcome": "The new association set goals for professional standards, leadership and ending discrimination. Its surviving records describe later campaigns for jobs and military service.",
+        "limit": "Organizing created a vehicle for change; founding an association did not itself change a hospital’s hiring policy. The catalog description was reviewed, not the underlying meeting minutes.",
+        "source": {
+          "title": "NYPL Schomburg Center · NACGN records",
+          "url": "https://archives.nypl.org/scm/20744",
+          "locator": "Biographical/historical information, opening paragraph; indexed finding aid, collection Sc Micro R 6565",
+          "type": "Archival finding aid",
+          "supports": "Franklin’s survey, the sponsoring alumnae association, the 1908 founding and its stated goals."
+        },
+        "topics": [
+          "organizing",
+          "professional access"
+        ]
       },
       {
         "id": "staupers-military-1945",
@@ -2592,8 +2852,79 @@
           "title": "National Park Service · Places of Mabel Keaton Staupers",
           "url": "https://www.nps.gov/articles/000/places-of-mabel-keaton-staupers.htm",
           "locator": "Opening biography and section 3, Eleanor Roosevelt’s Apartment",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Staupers’ organizing, contact with Eleanor Roosevelt and the account’s 1945 military admission change."
+        },
+        "topics": [
+          "military service",
+          "organizing"
+        ]
+      },
+      {
+        "id": "carnegie-famu-education-1945",
+        "date": "1945–1953",
+        "year": 1945,
+        "title": "Mary Elizabeth Carnegie strengthens nursing education at Florida A&M",
+        "people": "Mary Elizabeth Carnegie and Florida A&M’s nursing faculty and students",
+        "decisionMaker": "Carnegie led the program; college administrators authorized its separate educational responsibilities and budget",
+        "barrier": "Nursing education operated within the hospital’s administration, limiting faculty control over students’ preparation.",
+        "change": "As dean, Carnegie reorganized faculty, secured a separate budget and strengthened clinical instruction. She also shortened students’ duty hours and improved textbooks and records.",
+        "outcome": "Nursing became a college division responsible for its curriculum and clinical arrangements, separating educational oversight from hospital service needs.",
+        "limit": "These are documented educational and administrative changes during her 1945–1953 tenure. They do not establish each graduate’s license, later employer or measured patient outcomes.",
+        "source": {
+          "title": "University of Virginia · Carnegie’s educational leadership",
+          "url": "https://history.nursing.virginia.edu/media/Windows-in-Time-Spring-2021.pdf",
+          "locator": "Windows in Time, Spring 2021, printed pages 14–15; Carnegie’s Florida A&M reforms",
+          "type": "Nursing-history research",
+          "supports": "The reorganization, budget, teaching resources, student duty hours and move to college oversight."
+        },
+        "sources": [
+          {
+            "title": "Nurses Educational Funds · Mary Elizabeth Carnegie",
+            "url": "https://n-e-f.org/about-us/news/mary-elizabeth-carnegie-dpa-rn-faan-1916-2008",
+            "locator": "Memorial biography; paragraph recording her Florida A&M deanship, 1945–1953",
+            "type": "Professional organization biography",
+            "supports": "The dates and institutional location of her deanship."
+          }
+        ],
+        "topics": [
+          "training",
+          "leadership",
+          "working conditions"
+        ]
+      },
+      {
+        "id": "osborne-nyu-faculty-1946",
+        "date": "1946–1947 · accounts differ",
+        "year": 1946,
+        "title": "Estelle Massey Osborne joins NYU’s nursing faculty",
+        "people": "Estelle Massey Osborne",
+        "decisionMaker": "New York University appointed Osborne; the reviewed accounts do not identify the appointing official",
+        "barrier": "Advanced nursing education and faculty positions were separate barriers for Black nurses.",
+        "change": "After earning a nursing master’s at Teachers College in 1931, Osborne became NYU’s first Black nursing faculty member, according to NYU’s institutional account.",
+        "outcome": "NYU describes eight years of teaching and mentoring Black students and nurses—a specific appointment and sustained work, not only an honorary recognition.",
+        "limit": "NYU’s account dates her arrival to 1946; NYPL’s finding aid says 1947. An appointment record is still needed to resolve that difference. This faculty role does not establish employment at an NYU hospital.",
+        "source": {
+          "title": "NYU Meyers · Estelle Osborne’s legacy",
+          "url": "https://nursing.nyu.edu/w/news/press-release/nyu-meyers-hosts-26th-annual-estelle-osborne-legacy-celebration",
+          "locator": "2017 legacy celebration account; paragraphs on the 1931 master’s and 1946 faculty appointment",
+          "type": "Institutional history",
+          "supports": "Her degree, NYU’s first-Black-faculty identification, its 1946 date and the mentoring described."
+        },
+        "sources": [
+          {
+            "title": "NYPL Schomburg Center · Estelle Massey Osborne papers",
+            "url": "https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/generated_finding_aids/scm20749.pdf",
+            "locator": "Creator History, printed page ii (PDF page 2), paragraph recording a 1947 NYU appointment",
+            "type": "Archival finding aid",
+            "supports": "An independent institutional account of the appointment with a conflicting year; underlying papers were not reviewed."
+          }
+        ],
+        "topics": [
+          "credentials",
+          "employment",
+          "leadership"
+        ]
       },
       {
         "id": "ana-membership-1948",
@@ -2610,8 +2941,13 @@
           "title": "American Nurses Association · Mabel Keaton Staupers",
           "url": "https://www.nursingworld.org/ana/about-ana/history/hall-of-fame/1996-1998-inductees/",
           "locator": "Mabel Keaton Staupers biography, membership restrictions and 1948 admission",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "The state-based membership exclusions and the 1948 admission of Black nurses to full ANA membership."
+        },
+        "topics": [
+          "professional access",
+          "organizing"
+        ]
       },
       {
         "id": "freedmens-staff-protection-1961",
@@ -2628,8 +2964,13 @@
           "title": "Public Law 87-262 · Transfer of Freedmen’s Hospital",
           "url": "https://www.govinfo.gov/content/pkg/STATUTE-75/pdf/STATUTE-75-Pg542.pdf",
           "locator": "Sections 1–2, 75 Stat. 542–543",
-          "type": "Contemporary statute"
-        }
+          "type": "Contemporary statute",
+          "supports": "The transfer authority, eligible employee categories, salary protection and specified benefit and seniority provisions."
+        },
+        "topics": [
+          "employment rights",
+          "institutional change"
+        ]
       },
       {
         "id": "dixie-nurses-reinstatement-1966",
@@ -2646,8 +2987,13 @@
           "title": "Smith v. Hampton Training School for Nurses · 360 F.2d 577",
           "url": "https://law.justia.com/cases/federal/appellate-courts/F2/360/577/390784/",
           "locator": "Opinion: opening facts and final reinstatement/back-pay paragraphs",
-          "type": "Contemporary court opinion"
-        }
+          "type": "Contemporary court opinion",
+          "supports": "The named nurses’ dismissal, their different nursing qualifications and the court’s reinstatement and back-pay directions."
+        },
+        "topics": [
+          "employment rights",
+          "legal challenge"
+        ]
       },
       {
         "id": "coles-howard-degree-1968",
@@ -2664,38 +3010,156 @@
           "title": "Howard University · College of Nursing and Allied Health history",
           "url": "https://cwggl.howard.edu/sites/cwggl.howard.edu/files/2023-11/WPS%20No%2018%20Obidiro%20Nursing%20Allied%20Health%20Nov%202023.pdf",
           "locator": "History of the college, PDF page 8; Appendix A, PDF page 18",
-          "type": "Institutional research"
+          "type": "Institutional research",
+          "supports": "Coles’ leadership and the nursing program’s development; the additional sources separate trustee approval from instruction and graduation."
         },
         "sources": [
           {
             "title": "Howard University President · Nursing program approval",
             "url": "https://president.howard.edu/from-the-president/viewpoints/celebrating-our-nurses",
             "locator": "Paragraph beginning ‘On April 23, 1968’ (board decision only)",
-            "type": "Institutional history"
+            "type": "Institutional history",
+            "supports": "The April 23, 1968 trustee decision establishing the baccalaureate program; cited for that decision only."
           },
           {
             "title": "Howard University · BSN program’s 50th anniversary",
             "url": "https://thedig.howard.edu/all-stories/howard-universitys-bachelor-science-nursing-program-celebrates-50th-anniversary-first-nursing-white",
-            "locator": "Paragraph beginning ‘The Bachelor of Science in Nursing program was introduced in 1969’",
-            "type": "Institutional history"
+            "locator": "September 16, 2019; paragraph beginning “The Bachelor of Science in Nursing program”; reproduced Coles account below",
+            "type": "Institutional history",
+            "supports": "Instruction beginning in 1969, the first cohort’s 1973 graduation and an excerpt of Coles’ 1969 account."
           }
+        ],
+        "topics": [
+          "training",
+          "leadership"
+        ]
+      },
+      {
+        "id": "nbna-local-workplaces-1971",
+        "date": "1971–1972",
+        "year": 1971,
+        "title": "Black nurses build a national voice from local workplaces",
+        "people": "Lauranne Sams, Betty Smith Williams, Jessie Cunningham and Dorothy Williams",
+        "decisionMaker": "Black nurse organizers founded NBNA and adopted its constitution and bylaws",
+        "barrier": "A nursing credential did not by itself secure professional influence or advancement.",
+        "change": "Sams and fellow nurses formed the National Black Nurses Association in Cleveland in 1971; its 1972 meeting established the organization’s governing structure.",
+        "outcome": "Kaiser’s history records Cunningham’s OB-GYN work and supervisory appointment at Oakland Medical Center in the 1960s. Cunningham and Williams also organized community health screenings through their local Black nurses’ association.",
+        "limit": "The records connect named nurses to Oakland and professional organizing. They do not identify who approved Cunningham’s promotion or prove a hiring pathway across every Kaiser facility.",
+        "source": {
+          "title": "National Black Nurses Association · Founding history",
+          "url": "https://nbna.org/about-us/history/",
+          "locator": "Founding account; 1970 California organizing, 1971 Cleveland meeting and 1972 constitution/bylaws",
+          "type": "Organization’s own history",
+          "supports": "The named organizers, founding meeting and adoption of the governing structure."
+        },
+        "sources": [
+          {
+            "title": "Kaiser Permanente · Jessie Cunningham’s nursing career",
+            "url": "https://about.kaiserpermanente.org/who-we-are/our-history/beloved-nurse-jessie-cunningham-earned-honored-place-in-kaiser-p",
+            "locator": "May 1, 2014; “A model student and mentor” and “Making connections with Black colleagues”",
+            "type": "Employer history with recollections",
+            "supports": "Cunningham’s Oakland nursing and supervision; Cunningham and Williams’ local organizing."
+          }
+        ],
+        "topics": [
+          "organizing",
+          "employment",
+          "leadership",
+          "community care"
+        ]
+      },
+      {
+        "id": "johnson-brown-army-chief-1979",
+        "date": "1979–1983",
+        "year": 1979,
+        "title": "Hazel Johnson-Brown leads the Army Nurse Corps",
+        "people": "Hazel W. Johnson-Brown",
+        "decisionMaker": "U.S. Army leadership appointed Johnson-Brown chief of the Army Nurse Corps",
+        "barrier": "Johnson-Brown’s path began with rejection from a nursing school because she was Black; senior military leadership presented another level of access.",
+        "change": "A Harlem Hospital School of Nursing graduate, she entered the Army in 1955 and became its nurse corps chief on September 1, 1979.",
+        "outcome": "She became the U.S. military’s first Black woman general officer. During her tenure, Army nursing practice standards were published as an official Department of the Army pamphlet.",
+        "limit": "The appointment and practice standards establish institutional leadership, not equal promotion outcomes for every Black nurse or a reader’s commission at a particular Army hospital.",
+        "source": {
+          "title": "U.S. Army Medical Department · Hazel W. Johnson",
+          "url": "https://achh.army.mil/history/superintendents-johnson16/",
+          "locator": "Sixteenth Chief profile; tenure dates, education, commission and Army Nurse Corps standards paragraphs",
+          "type": "Official military history",
+          "supports": "Her training, commission, chief appointment, general-officer first and publication of the practice standards."
+        },
+        "sources": [
+          {
+            "title": "National Museum of the U.S. Army · Hazel Johnson-Brown",
+            "url": "https://www.thenmusa.org/biographies/hazel-johnson-brown/",
+            "locator": "Biography; West Chester rejection, Harlem training and 1979 appointment paragraphs",
+            "type": "Military museum history",
+            "supports": "The discrimination she encountered before training and her later Army leadership."
+          }
+        ],
+        "topics": [
+          "military service",
+          "leadership",
+          "professional standards"
         ]
       }
     ],
     "furtherResearch": [
-      "Identify state licensure and first appointment records for nurses at the reader’s exact hospital or care setting.",
-      "Locate military admission orders and assignment records to distinguish policy change from actual appointments and working conditions.",
+      "Identify licensure, appointment and promotion records for the reader’s exact hospital, unit or community-care employer; education, employment and professional membership are different connections.",
+      "Read NACGN minutes and wartime correspondence to connect organizing to particular nursing-school admissions and military appointments.",
+      "Resolve the conflicting 1946 and 1947 dates for Osborne’s NYU appointment using university personnel or faculty records.",
       "Check implementation of the Dixie Hospital judgment and the Freedmen’s employee-transfer protections using employment and court records.",
-      "Expand beyond these examples to practical nursing, care support, community nursing and nursing leadership without treating their qualifications as interchangeable."
+      "Trace changes of building, operator and ownership before attaching an old hospital record to a modern health system.",
+      "Expand practical nursing, nurse anesthesia, nursing assistants and public-health pathways without treating their training or licenses as interchangeable."
+    ],
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "NACGN meeting minutes and military-admission correspondence",
+        "url": "https://archives.nypl.org/scm/20744",
+        "locator": "Schomburg Center, Sc Micro R 6565; minutes 1908–1937 and correspondence 1937–1951; microfilm access",
+        "question": "Which named hospitals, schools and military authorities responded, and what happened to individual nurses afterward?",
+        "status": "Indexed catalog description reviewed; underlying records not reviewed"
+      },
+      {
+        "title": "Estelle Massey Osborne’s correspondence and professional work",
+        "url": "https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/generated_finding_aids/scm20749.pdf",
+        "locator": "Schomburg Center, Sc MG 158; Box 1, folders 1–3; correspondence, programs and writings, 1943–1967",
+        "question": "What do her surviving papers document about professional access and leadership, and do they point to a contemporary NYU appointment record?",
+        "status": "Finding aid reviewed; underlying records not reviewed"
+      }
     ]
   },
   {
     "slug": "software-engineer",
     "headline": "Black people who built and ran computing",
-    "summary": "Black computing history includes operators, researchers, educators and professional networks. These records show different routes into technical work, including a training program with reported internship outcomes.",
-    "coverageNote": "Five documented episodes in U.S. computing. They establish particular jobs, credentials and programs, not an unbroken chain to every software, systems or reliability role.",
+    "summary": "Black computing history includes paid operators, scientific programmers, researchers, educators and technical leaders. These records name people and workplaces, explain what changed, and distinguish a documented appointment from a pathway that still needs evidence.",
+    "coverageNote": "Twelve selected episodes in U.S. computing, from Langley’s segregated computing unit to Google reliability engineering. Programming, hardware design, systems administration and reliability are different kinds of work. An institutional biography or first-person account does not establish equal access, an individual reader’s hiring history or an unbroken path between employers.",
     "question": "Which appointment, training or advancement record connects Black workers to your exact role and employer?",
     "events": [
+      {
+        "id": "vaughan-langley-leadership-1949",
+        "date": "1949–1958",
+        "year": 1949,
+        "title": "Dorothy Vaughan leads a computing unit, then moves into programming",
+        "people": "Dorothy Vaughan and Langley’s West Area Computers",
+        "decisionMaker": "NACA promoted Vaughan in 1949; its successor NASA ended the segregated computing units in 1958.",
+        "barrier": "Black women at Langley worked in a separate unit with segregated dining and bathrooms.",
+        "change": "Vaughan became West Area Computing’s section head—the first Black supervisor at NACA, according to NASA.",
+        "outcome": "After the unit closed, she joined the integrated Analysis and Computation Division and became an expert FORTRAN programmer.",
+        "limit": "NASA also records that she sought but did not receive another management position. Integration of the unit did not guarantee advancement; this is Langley’s history, not every NASA center’s.",
+        "topics": [
+          "leadership",
+          "programming",
+          "workplace-rights"
+        ],
+        "source": {
+          "title": "NASA · Dorothy Vaughan",
+          "url": "https://www.nasa.gov/people/dorothy-vaughan/",
+          "locator": "Biography paragraphs on the 1949 promotion, West Area conditions, 1958 reorganization and later management applications",
+          "type": "Federal institutional biography",
+          "supports": "The specific promotion, segregation, division transfer, programming work and later advancement limit."
+        },
+        "checkedOn": "2026-11-04"
+      },
       {
         "id": "thompson-whirlwind-1951",
         "date": "1951",
@@ -2711,8 +3175,117 @@
           "title": "Computer History Museum · Trailblazers and Change Agents",
           "url": "https://computerhistory.org/stories/trailblazers-and-change-agents/",
           "locator": "Joe Thompson: First Generation Programmer; museum account and linked collection",
-          "type": "Museum history"
-        }
+          "type": "Museum history",
+          "supports": "Thompson’s 1951 paid MIT work, programming and operations, later RAND work and career advancement."
+        },
+        "topics": [
+          "hiring",
+          "programming",
+          "operations"
+        ],
+        "checkedOn": "2026-11-04"
+      },
+      {
+        "id": "easley-lewis-programming-1955",
+        "date": "1955–1989",
+        "year": 1955,
+        "title": "Annie Easley moves from hand calculations into scientific code",
+        "people": "Annie Easley",
+        "decisionMaker": "NACA’s Cleveland laboratory hired Easley in 1955; the biography does not identify her appointing official.",
+        "barrier": "NASA records that she was one of four Black employees at the laboratory when hired.",
+        "change": "Initially a human computer, Easley adapted to electronic computing, using Fortran and Symbolic Optimal Assembly Program (SOAP).",
+        "outcome": "She wrote code for energy research and Centaur work, and later served as an equal-employment-opportunity counselor.",
+        "limit": "Her 2001 interview describes changing tools and addressing discrimination. It is personal testimony, not a payroll study or proof that every complaint was resolved. Her workplace was the Cleveland laboratory, not Langley.",
+        "topics": [
+          "hiring",
+          "programming",
+          "workplace-rights"
+        ],
+        "source": {
+          "title": "NASA · Annie Easley",
+          "url": "https://www.nasa.gov/people/annie-easley/",
+          "locator": "Biography paragraphs beginning with her 1955 hiring; electronic computing, Fortran/SOAP, energy research and EEO counseling",
+          "type": "Federal institutional biography",
+          "supports": "Her appointment, programming transition, research assignments and counseling role."
+        },
+        "sources": [
+          {
+            "title": "NASA · Annie Easley oral history",
+            "url": "https://www.nasa.gov/history/history-publications-and-resources/oral-histories/annie-easley-oral-history/",
+            "locator": "Sandra Johnson interview, Cleveland, August 21, 2001; published excerpts on human computing, computer programming and equality",
+            "type": "First-person oral-history excerpt",
+            "supports": "Easley’s recollection of moving from calculators to programs and of raising workplace inequality with management; the complete transcript was not reviewed."
+          }
+        ],
+        "checkedOn": "2026-11-04"
+      },
+      {
+        "id": "west-dahlgren-programming-1956",
+        "date": "1956–1980s",
+        "year": 1956,
+        "title": "Gladys West programs the models behind more accurate navigation",
+        "people": "Gladys Mae Brown West and her Dahlgren colleagues",
+        "decisionMaker": "The U.S. Navy hired West at the Naval Proving Ground in Dahlgren, Virginia, in 1956.",
+        "barrier": "The Smithsonian describes the segregated education and restricted employment choices she faced before entering federal scientific work.",
+        "change": "West entered mathematical programming at Dahlgren and later used satellite data and computer models to refine the shape of the Earth.",
+        "outcome": "The Defense Department identifies her IBM 7030 programming in the 1970s–1980s as work that contributed to the models used for GPS satellite orbits.",
+        "limit": "This was a team contribution to geodesy and navigation, not sole invention of GPS. It connects to Dahlgren scientific computing, not every Navy job, NASA or a modern cloud-operations title.",
+        "topics": [
+          "hiring",
+          "programming",
+          "research"
+        ],
+        "source": {
+          "title": "U.S. Department of Defense · Navy Scientist Helped Develop GPS",
+          "url": "https://www.defense.gov/News/Feature-Stories/Story/Article/3700859/",
+          "locator": "David Vergun, March 8, 2024; 1956 hiring and mid-1970s–1980s IBM 7030 paragraphs",
+          "type": "Federal institutional history",
+          "supports": "The appointment at Dahlgren and the computing contribution. Indexed article text reviewed; direct-page access was unavailable during this review."
+        },
+        "sources": [
+          {
+            "title": "Smithsonian National Air and Space Museum · Dr. Gladys Mae Brown West",
+            "url": "https://airandspace.si.edu/stories/editorial/gladys-mae-brown-west",
+            "locator": "Cathleen Lewis, February 25, 2026; segregated education, Navy hiring and geoid-model paragraphs",
+            "type": "Museum history",
+            "supports": "The discrimination context and the team’s scientific contribution; no claim that West alone invented GPS."
+          }
+        ],
+        "checkedOn": "2026-11-04"
+      },
+      {
+        "id": "clay-hp-software-1965",
+        "date": "1965–1966",
+        "year": 1965,
+        "title": "Roy Clay leads software work for Hewlett-Packard’s first computer",
+        "people": "Roy Clay and the HP 2116A design team",
+        "decisionMaker": "Dave Packard personally recruited Clay in 1965, according to the Hewlett-Packard Company Archives.",
+        "barrier": "The archive identifies Clay as HP’s highest-ranking Black employee for a period; it does not quantify Black hiring before or after his appointment.",
+        "change": "Clay helped establish HP’s first computer division, led the 2116A design team and wrote its software.",
+        "outcome": "HP introduced the computer in 1966. Clay’s documented role combines hands-on programming with technical leadership.",
+        "limit": "This is a specific appointment at the historical Hewlett-Packard company. A link to a present-day HP or HPE workplace needs its own organizational and employment records.",
+        "topics": [
+          "hiring",
+          "programming",
+          "leadership"
+        ],
+        "source": {
+          "title": "Hewlett-Packard Company Archives · Roy Clay",
+          "url": "https://www.hewlettpackardhistory.com/item/the-godfather-of-silicon-valley/",
+          "locator": "Main biographical paragraph; 1965 recruitment and 2116A team. The item’s 1968 date describes the photograph, not the hiring year.",
+          "type": "Corporate archive history",
+          "supports": "Packard’s recruitment, Clay’s team and software responsibilities, and the archive’s scoped seniority claim."
+        },
+        "sources": [
+          {
+            "title": "Hewlett-Packard Company Archives · The HP 2116",
+            "url": "https://www.hewlettpackardhistory.com/item/hewlett-packards-first-computer/",
+            "locator": "Opening paragraph: introduction in 1966; separate from the item’s 1969 photograph date",
+            "type": "Corporate product history",
+            "supports": "The computer’s 1966 introduction, not an employment outcome for other workers."
+          }
+        ],
+        "checkedOn": "2026-11-04"
       },
       {
         "id": "ellis-doctorate-1969",
@@ -2723,14 +3296,21 @@
         "decisionMaker": "University of Illinois, the degree-granting institution.",
         "barrier": "The university identifies Ellis as the first Black American to earn a computer-science PhD; it does not document a specific admissions rule he changed.",
         "change": "Ellis completed doctoral work while contributing to the ILLIAC IV supercomputer's hardware, software and applications.",
-        "outcome": "His subsequent work included leading the PARC group that developed Officetalk, a system for remote collaboration.",
-        "limit": "His credential and technical leadership are documented individual achievements, not proof that doctoral access or hiring became equal.",
+        "outcome": "From 1976 to 1984 he worked at Xerox PARC, leading the group that developed Officetalk for remote collaboration.",
+        "limit": "This documents a degree and a later research appointment. It does not establish equal access or connect another employer—or a later owner of PARC—to Ellis’s team.",
         "source": {
           "title": "University of Illinois · Clarence “Skip” Ellis",
           "url": "https://siebelschool.illinois.edu/about/awards/alumni-awards/alumni-awards-past-recipients/clarence-ellis",
           "locator": "2019 Distinguished Achievement Memorial Award biography, opening three paragraphs",
-          "type": "Institutional biography"
-        }
+          "type": "Institutional biography",
+          "supports": "The university’s scoped first-PhD claim, ILLIAC IV work and subsequent PARC leadership."
+        },
+        "topics": [
+          "training",
+          "research",
+          "leadership"
+        ],
+        "checkedOn": "2026-11-04"
       },
       {
         "id": "howard-computing-1970s",
@@ -2747,8 +3327,72 @@
           "title": "Howard University College of Engineering and Architecture · Our History",
           "url": "https://cea.howard.edu/index.php/about-us/our-history",
           "locator": "Paragraphs covering the 1970–1997 school structure and programs inaugurated in the 1970–1980 era",
-          "type": "Institutional history"
-        }
+          "type": "Institutional history",
+          "supports": "Howard’s program development within the stated decade, without a single founding year or placement figures."
+        },
+        "topics": [
+          "training"
+        ],
+        "checkedOn": "2026-11-04"
+      },
+      {
+        "id": "dean-ibm-pc-1981",
+        "date": "1981",
+        "year": 1981,
+        "title": "Mark Dean helps design the architecture of the IBM PC",
+        "people": "Mark Dean, Dennis Moeller and IBM’s PC development team",
+        "decisionMaker": "IBM CEO Frank Cary authorized the PC effort; Don Estridge led Project Chess after Bill Lowe’s initial proposal.",
+        "barrier": "A Black engineer’s documented product responsibility shows participation in technical decision-making; these sources do not identify a hiring rule changed by the project.",
+        "change": "Dean and Moeller developed the peripheral bus that allowed devices to connect to the computer.",
+        "outcome": "IBM released its PC in August 1981; Dean’s work is recognized in the National Inventors Hall of Fame’s account of the microcomputer bus-control system.",
+        "limit": "This is hardware and computer-architecture context. It does not establish a software, support or SRE hiring pathway, or connect the reader to the original PC team.",
+        "topics": [
+          "research",
+          "hardware",
+          "leadership"
+        ],
+        "source": {
+          "title": "IBM · The personal computer",
+          "url": "https://www.ibm.com/history/personal-computer",
+          "locator": "Project Chess, development-team and ISA-bus passages; August 12, 1981 launch",
+          "type": "Corporate institutional history",
+          "supports": "The project authorization, leadership, Dean–Moeller bus contribution and product launch."
+        },
+        "sources": [
+          {
+            "title": "National Inventors Hall of Fame · Mark Dean",
+            "url": "https://www.invent.org/inductees/mark-dean",
+            "locator": "Microcomputer System with Bus Control Means for Peripheral Processing Devices; biography and patent 4,528,626 listing",
+            "type": "Inventor recognition record",
+            "supports": "Dean and Moeller’s bus-control contribution. The 1981 product date is not presented as the patent issue date."
+          }
+        ],
+        "checkedOn": "2026-11-04"
+      },
+      {
+        "id": "croak-bell-labs-1982",
+        "date": "1982–2014",
+        "year": 1982,
+        "title": "Marian Croak helps move voice communications onto data networks",
+        "people": "Marian Croak and Bell Labs / AT&T engineering teams",
+        "decisionMaker": "Bell Labs hired Croak in 1982; the institutional biography does not name the hiring official.",
+        "barrier": "Entry into research and later authority over engineering programs were separate career steps; the source does not identify a formal racial hiring rule she overturned.",
+        "change": "Croak worked on technologies that allowed voice and data to share internet-based networks.",
+        "outcome": "Before leaving AT&T in 2014, she became senior vice president of Applications and Services Infrastructure, with responsibility for large scientific and engineering teams.",
+        "limit": "This documents telecommunications innovation and technical leadership. It is not a claim that she invented all VoIP technology, that every worker gained access, or that today’s Bell Labs and AT&T share one employment history.",
+        "topics": [
+          "hiring",
+          "research",
+          "leadership"
+        ],
+        "source": {
+          "title": "Lemelson-MIT · Marian Croak",
+          "url": "https://lemelson.mit.edu/resources/marian-croak",
+          "locator": "Biography paragraphs on 1982 Bell Labs entry, voice/data work and AT&T leadership before 2014",
+          "type": "Institutional inventor biography",
+          "supports": "The starting employer, technical field and subsequent AT&T leadership responsibilities."
+        },
+        "checkedOn": "2026-11-04"
       },
       {
         "id": "bdpa-student-programming-1986",
@@ -2765,8 +3409,14 @@
           "title": "BDPA · About Us",
           "url": "https://bdpa.org/about-us/",
           "locator": "Our History; What Does BDPA Offer? → High School Programs",
-          "type": "Program provider history"
-        }
+          "type": "Program provider history",
+          "supports": "The 1986 program, Bemley’s role and BDPA’s own account of educational reach."
+        },
+        "topics": [
+          "training",
+          "organizing"
+        ],
+        "checkedOn": "2026-11-04"
       },
       {
         "id": "howard-west-outcomes-2017",
@@ -2783,14 +3433,66 @@
           "title": "Google · Tech Exchange brings Black and Latinx students to Google",
           "url": "https://blog.google/company-news/outreach-and-initiatives/diversity/tech-exchange-brings-black-and-latinx-students-google/",
           "locator": "September 18, 2018; paragraph beginning 'The institutions sending students to Google this year'",
-          "type": "Program provider outcome report"
-        }
+          "type": "Program provider outcome report",
+          "supports": "Google’s September 2018 report of 26 pilot participants and internships across Google and other employers."
+        },
+        "topics": [
+          "training",
+          "hiring"
+        ],
+        "checkedOn": "2026-11-04"
+      },
+      {
+        "id": "croak-google-reliability-2020",
+        "date": "2020 · interview",
+        "year": 2020,
+        "title": "Marian Croak describes leading reliability engineering at Google",
+        "people": "Marian Croak",
+        "decisionMaker": "Google; the interview does not name the appointing official.",
+        "barrier": "Croak also described leading a Black employee group working on racial equity.",
+        "change": "She led engineering teams improving systems behind YouTube, advertising and other Google services.",
+        "outcome": "Her account documents Black leadership in reliability engineering itself.",
+        "limit": "This 2020 account is not her current job status, proof of equal access or evidence of the reader’s hiring route.",
+        "topics": [
+          "operations",
+          "leadership",
+          "organizing"
+        ],
+        "source": {
+          "title": "USPTO · Positively connected",
+          "url": "https://www.uspto.gov/learning-and-resources/journeys-innovation/audio-stories/positively-connected",
+          "locator": "Lauren Emanuel interview; question “What are you working on now?” and Croak’s next two answers",
+          "type": "First-person interview",
+          "supports": "Her reliability responsibilities and Black leadership role at the interview date."
+        },
+        "sources": [
+          {
+            "title": "USPTO · Marian Croak program announcement",
+            "url": "https://www.uspto.gov/subscription-center/2023/uspto-renames-visiting-scholars-program-after-pioneering-inventor",
+            "locator": "August 17, 2023 release; paragraph identifying the linked 2020 Journeys of Innovation profile",
+            "type": "Federal announcement",
+            "supports": "Dates the interview to 2020; it is not a new 2023 appointment record."
+          }
+        ],
+        "checkedOn": "2026-11-04"
       }
     ],
     "furtherResearch": [
-      "Locate appointment and advancement records for Black workers in systems administration, infrastructure and reliability; related computing history alone does not establish those specialties.",
-      "Follow the Howard West cohort beyond internships, using placement records rather than assuming permanent employment.",
-      "Identify the exact workplace and job duties before attaching a local hiring, training or promotion record."
+      "Inspect hiring, promotion and assignment records for specific laboratories and teams. Working for the same parent organization does not establish a connection to that workplace.",
+      "Expand histories of Black systems administrators, network staff, cybersecurity workers, support specialists and DevOps engineers. Earlier scientific programmers must not be relabeled with those modern job titles.",
+      "Follow Howard West participants beyond the reported internships; distinguish Google placements from those at other employers and internships from permanent employment.",
+      "Trace reorganizations and ownership separately from people’s careers, particularly historical Hewlett-Packard, Bell Labs and Xerox PARC.",
+      "Use appointment letters, staff rosters and first-person accounts together to test whether a documented individual achievement changed access for other workers."
+    ],
+    "checkedOn": "2026-11-04",
+    "researchLeads": [
+      {
+        "title": "Gladys West’s appointment and scientific-work records",
+        "url": "https://findingaids.loc.gov/repositories/19/resources/6417",
+        "locator": "Library of Congress Manuscript Division, MSS86589, Gladys B. West and Ira V. West Papers; Scope and Contents, appointment correspondence and career records",
+        "question": "What do the appointment letter and project records establish about her department, duties and advancement? The catalog describes a 1955 appointment letter; published histories date the start of work to 1956. Read the letter before reconciling those dates.",
+        "status": "Indexed catalog description reviewed; underlying records not reviewed"
+      }
     ]
   }
 ]

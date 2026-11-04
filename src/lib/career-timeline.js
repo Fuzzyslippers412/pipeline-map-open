@@ -21,7 +21,7 @@ function dateForAward(record){
   return {key,label:new Intl.DateTimeFormat('en-US',{year:'numeric',month:'short',...(m[3]?{day:'numeric'}:{}),timeZone:'UTC'}).format(value)};
 }
 function historyStep(item){
-  return {type:'history',label:'Field history',date:item.dateLabel,order:dateKey(item.sortYear),
+  return {type:'history',historyEventId:item.id,label:'Field history',date:item.dateLabel,order:dateKey(item.sortYear),
     title:item.title,detail:item.description,place:item.place,sources:sources(item.sources || [{title:item.sourceTitle,url:item.url}])};
 }
 function workplaceStep(row, paper=false){
@@ -29,7 +29,7 @@ function workplaceStep(row, paper=false){
   const label=({contractor:'Contractor history',union:'Union history',jobsite:'Jobsite record',program:'Training program',appointment:'Appointment record',election:'Reported election result',office:'Public office record',institution:'Institutional record'})[row.scope] || 'Workplace history';
   return {type:'employer',label,date:row.eventDateLabel||'Date undocumented',order:dateKey(row.eventYear),
     title:(paper && row.paperTitle) || row.headline,detail:row.description,place:row.place || row.site?.location,scope:row.scope,
-    paperRole:paper ? row.paperRole : undefined,previewDetail:row.previewDetail || '',sourceNote:row.sourceNote,bridge,
+    paperRole:paper ? row.paperRole : undefined,previewDetail:row.previewDetail || '',sourceNote:row.sourceNote,bridge,historyEventId:row.historyEventId,
     sources:sources([{title:row.sourceTitle,url:row.url}, ...(row.moreSources || [])])};
 }
 function awardStep(row){
@@ -46,7 +46,7 @@ function gap(title,detail){
 export function buildCareerTimeline({context,field,report=null,loadFailed=false,paper=false}){
   const {employer='',title,related=false}=context;
   const history=(field?.historical||[]).map(historyStep).filter(step=>step.sources.length);
-  const verified=field?findWorkplaceLinks(employer,field.slug,field.reviewers||[],context.workplaceInfo,{related,occupationCode:context.occupationCode}):[];
+  const verified=field?findWorkplaceLinks(employer,field.slug,field.reviewers||[],context.workplaceInfo,{related,occupationCode:context.occupationCode,contextKey:context.contextKey}):[];
   const employerEvents=verified.flatMap(row=>{
     const events=[workplaceStep(row,paper)];
     if(paper && row.paperMilestone) {
@@ -69,9 +69,15 @@ export function buildCareerTimeline({context,field,report=null,loadFailed=false,
     }
   }
   const awards=[...funding.values()].map(awardStep).filter(step=>step.sources.length);
+  for(const step of employerEvents){
+    const episode=step.historyEventId&&history.find(row=>row.historyEventId===step.historyEventId);
+    step.connectsHistory=Boolean(episode);
+    if(episode)step.fieldEpisode=episode;
+  }
   // The same appointment can appear in both the field dossier and workplace
   // index. Show that event once, retaining the workplace-specific explanation.
-  const fieldEvents=history.filter(h=>!employerEvents.some(e=>e.title===h.title&&e.order===h.order&&e.sources.some(s=>h.sources.some(t=>s.url===t.url))));
+  const fieldEvents=history.filter(h=>!employerEvents.some(e=>e.order===h.order&&
+    ((e.historyEventId&&e.historyEventId===h.historyEventId)||(e.title===h.title&&e.sources.some(s=>h.sources.some(t=>s.url===t.url))))));
   const events=[...fieldEvents,...employerEvents,...awards].sort((a,b)=>
     (a.order??Infinity)-(b.order??Infinity)||a.title.localeCompare(b.title));
   if(!history.length){
@@ -89,7 +95,10 @@ export function buildCareerTimeline({context,field,report=null,loadFailed=false,
     const extra=leadCount?' The search returned '+leadCount+(leadCount===1?' lead':' leads')+' to investigate below.':'';
     const position=events.findIndex(s=>s.type==='award'||s.type==='employer');
     const heading='The field and '+employer;
-    events.splice(position<0?events.length:position,0,gap(heading,reason+extra));
+    // A reviewed record can link one named episode to this exact workplace.
+    // Do not describe that established connection as unknown. The reader's
+    // personal training and hiring gap still appears below.
+    if(!employerEvents.some(step=>step.connectsHistory))events.splice(position<0?events.length:position,0,gap(heading,reason+extra));
   }else if(!employer){
     events.push(gap('Which workplace connects to this history?','No workplace was entered. Add an employer to check for a documented institutional connection.'));
   }

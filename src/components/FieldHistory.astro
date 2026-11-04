@@ -4,6 +4,12 @@ import '../styles/field-history.css';
 import ArchivePlate from './ArchivePlate.astro';
 const {p}=Astro.props;
 const record=historyFor(p);
+const workplaces=new Map();
+for(const row of record.workplaceRecords){
+ const key=row.site?.id||row.workplace;
+ if(!workplaces.has(key))workplaces.set(key,{name:row.workplace,location:row.site?.location||row.place,parent:row.site?.parent,rows:[]});
+ workplaces.get(key).rows.push(row);
+}
 ---
 <section class="field-history" id="field-history" aria-labelledby="field-history-title" data-history-depth={record.expanded?'expanded':'starting'}>
  <header class="history-heading">
@@ -14,6 +20,7 @@ const record=historyFor(p);
  {p.slug==='governor' && <p class="history-boundary"><strong>Election update · November 4, 2026.</strong> The 2026 entries report race calls for governors-elect. Certification and taking office are separate steps. <a href="#history-bottoms-georgia-election-2026">Georgia</a> · <a href="#history-donalds-florida-election-2026">Florida</a></p>}
  {p.slug==='elected-official' && <p class="history-boundary"><a href="/p/governor/#field-history">Governors: historical milestones and the 2026 election updates →</a></p>}
  <details class="history-scope"><summary>Scope &amp; research limits</summary><p>{record.coverageNote}</p></details>
+ {workplaces.size>0&&<a class="history-workplace-jump" href="#field-workplaces">See {workplaces.size} named workplaces &amp; the evidence ↓</a>}
  {record.events.length>=8 && <details class="history-index"><summary>Find a person or decision <span>{record.events.length} episodes</span></summary><nav aria-label="Jump to a historical episode"><ol>{record.events.map(event=><li><a href={'#history-'+event.id}><span>{event.date}</span>{event.title}</a></li>)}</ol></nav></details>}
  {p.slug==='registered-nurse' && <details class="history-scope"><summary>A training scene from Freedmen’s Hospital, 1943</summary><ArchivePlate/><p>This photograph records a volunteer aide’s lesson. It does not establish an RN credential or a hiring route.</p></details>}
  <ol class="history-episodes">
@@ -40,6 +47,16 @@ const record=historyFor(p);
    </article>
   </li>)}
  </ol>
+ {workplaces.size>0&&<section class="history-workplaces" id="field-workplaces" aria-labelledby="history-workplace-title">
+  <p class="history-kicker">PLACE BY PLACE</p><h3 id="history-workplace-title">At specific workplaces</h3>
+  <p>These records name an institution, school or employer. Open one to see what connects, what changed and what still needs evidence.</p>
+  {[...workplaces.values()].map(place=><details class="history-workplace"><summary><strong>{place.name}</strong><span>{[place.location,place.parent].filter(Boolean).join(' · ')}</span></summary><ul>{place.rows.map(row=><li>
+   <p class="history-workplace-date">{row.eventDateLabel||'Date undocumented'}{row.roleScope&&<> · {row.roleScope}</>}</p><h4>{row.headline}</h4><p>{row.description}</p>
+   <p class="history-workplace-limit"><strong>Where the connection stops</strong> {row.sourceNote||'This record names the workplace. It does not establish your own training, appointment or hiring route, or prove that every worker benefited.'}</p>
+   <a class="history-source" href={row.url}>{row.sourceTitle} ↗</a>{(row.moreSources||[]).filter(s=>s.url!==row.url).map(s=><a class="history-source" href={s.url}>{s.title} ↗</a>)}
+   {row.historyEventId&&<a class="history-source" href={'#history-'+row.historyEventId}>Read the person, decision &amp; full evidence ↑</a>}
+  </li>)}</ul></details>)}
+ </section>}
  <aside class="history-open" id="research-question">
   <p class="history-kicker">THE NEXT RECORD TO FIND</p><h3>{record.question}</h3>
   <p>{record.workplaceCount ? `${record.workplaceCount} selected workplace records are indexed for this field. A record still needs to match your actual workplace and role.` : 'No reviewed workplace record is indexed for this field yet. That is a research gap, not evidence that no history exists.'}</p>

@@ -1,8 +1,8 @@
 {
   "slug": "registered-nurse",
-  "headline": "Training, recognition and rights at work",
-  "summary": "A nursing qualification, professional membership and fair treatment at work were separate battles. These records follow named nurses and collective efforts across training, military service, employment rights and university leadership.",
-  "coverageNote": "Six selected episodes, including records about Freedmen’s/Howard and Dixie Hospital in Hampton, Virginia. These are distinct histories, not a proven chain to every nursing workplace.",
+  "headline": "Training, leadership and the right to practice",
+  "summary": "Black nurses built training schools, cared for communities, won professional recognition and challenged unequal treatment at work. These records name the people, institutions and decisions behind those changes—and distinguish education from hiring, promotion and equal working conditions.",
+  "coverageNote": "Thirteen selected episodes across hospital training, community care, university leadership, military nursing and employment rights. Named workplaces include Provident in Chicago, Florida A&M, NYU, Freedmen’s/Howard, Dixie Hospital and Kaiser’s Oakland Medical Center. These are distinct histories, not a proven chain to every nursing job.",
   "question": "Which admission, appointment or employment record connects this history to your nursing workplace?",
   "events": [
     {
@@ -20,8 +20,101 @@
         "title": "American Nurses Association · Mary Eliza Mahoney",
         "url": "https://www.nursingworld.org/ana/about-ana/history/hall-of-fame/1976-1982-inductees/",
         "locator": "Mary Eliza Mahoney biography, graduation and 1909 conference paragraphs",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "Mahoney’s 1879 graduation, the training institution and course length, and her 1909 conference address."
+      },
+      "topics": [
+        "training",
+        "credentials"
+      ]
+    },
+    {
+      "id": "provident-reynolds-training-1891",
+      "date": "1891",
+      "year": 1891,
+      "title": "Emma Reynolds’ exclusion helps spur a new nursing school",
+      "people": "Emma Reynolds, Reverend Louis Reynolds and Daniel Hale Williams",
+      "decisionMaker": "Williams and Provident’s organizers established a hospital and nurse training school in Chicago",
+      "barrier": "Chicago nursing schools denied Reynolds admission because she was Black.",
+      "change": "After efforts to win her admission elsewhere failed, the organizers founded Provident Hospital and its training school in 1891.",
+      "outcome": "Reynolds graduated from Provident’s early nursing class. Training capacity grew through an institution built in response to exclusion.",
+      "limit": "This is Chicago’s Provident, not another hospital with the same name. It closed in 1987 and reopened under Cook County in 1993; a current job needs its own appointment record.",
+      "source": {
+        "title": "Chicago History Museum · Provident Hospital",
+        "url": "https://www.chicagohistory.org/provident-hospital/",
+        "locator": "Brittany Hutchinson, July 29, 2020; paragraphs on Emma Reynolds, founding and the first graduating class",
+        "type": "Museum research",
+        "supports": "Reynolds’ exclusion, the founders’ response and her graduation from the new school."
+      },
+      "sources": [
+        {
+          "title": "Cook County Health · Provident’s 30th anniversary timeline",
+          "url": "https://cookcountyhealth.org/provident-hospital-30th-anniversary/",
+          "locator": "Timeline entries for 1889–1891, 1987 and 1993",
+          "type": "Institutional history",
+          "supports": "The founding context, closure and later county reopening; not continuous employment since 1891."
+        }
+      ],
+      "topics": [
+        "training",
+        "institution building"
+      ]
+    },
+    {
+      "id": "scales-community-nursing-1900",
+      "date": "1900–1901",
+      "year": 1900,
+      "title": "Jessie Sleet Scales takes nursing into Black households",
+      "people": "Jessie Sleet Scales",
+      "decisionMaker": "New York’s Charity Organization Society employed Scales for community nursing",
+      "barrier": "Black residents faced obstacles to hospital care and tuberculosis treatment; nursing work also faced racial restrictions.",
+      "change": "Scales began district nursing in 1900. The work connected home visits and practical health education with treatment for tuberculosis.",
+      "outcome": "A 1901 nursing-journal account records this work. Her reports also connected people’s health with housing and employment discrimination.",
+      "limit": "This was work for a private social-service organization in New York City. It is not proof of a city-government appointment, a modern RN license or a current home-care agency’s hiring route.",
+      "source": {
+        "title": "University of Rochester · A history of care exhibit",
+        "url": "https://libguides.urmc.rochester.edu/hom-exhibits/nursing-month",
+        "locator": "Item headed Jessie Sleet Scales, “A Successful Experiment,” American Journal of Nursing 1(10), 1901, pp. 729–31",
+        "type": "Library exhibition",
+        "supports": "The 1900 district-nursing appointment, tuberculosis work and an exhibited contemporary account."
+      },
+      "sources": [
+        {
+          "title": "University of Illinois Chicago · Black public health nurses",
+          "url": "https://mappingcare.digital.uic.edu/page/black-public-health-nurses-in-history",
+          "locator": "“Black public health nurses: skills & impact,” final paragraph on Scales and the Charity Organization Society; indexed page text",
+          "type": "University public-history research",
+          "supports": "Identifies her private employer and reports connecting home conditions and employment discrimination to health."
+        }
+      ],
+      "topics": [
+        "community care",
+        "employment",
+        "public health"
+      ]
+    },
+    {
+      "id": "franklin-nacgn-1908",
+      "date": "1908",
+      "year": 1908,
+      "title": "Martha Minerva Franklin turns exclusion into collective organizing",
+      "people": "Martha Minerva Franklin and the founding nurses of NACGN",
+      "decisionMaker": "Nurses meeting in New York formed the National Association of Colored Graduate Nurses and elected Franklin president",
+      "barrier": "Black nurses faced discrimination in professional opportunities and needed an organization able to act on their conditions.",
+      "change": "Franklin gathered information from Black nurses and called the founding meeting, sponsored by the Lincoln School for Nurses Alumnae Association.",
+      "outcome": "The new association set goals for professional standards, leadership and ending discrimination. Its surviving records describe later campaigns for jobs and military service.",
+      "limit": "Organizing created a vehicle for change; founding an association did not itself change a hospital’s hiring policy. The catalog description was reviewed, not the underlying meeting minutes.",
+      "source": {
+        "title": "NYPL Schomburg Center · NACGN records",
+        "url": "https://archives.nypl.org/scm/20744",
+        "locator": "Biographical/historical information, opening paragraph; indexed finding aid, collection Sc Micro R 6565",
+        "type": "Archival finding aid",
+        "supports": "Franklin’s survey, the sponsoring alumnae association, the 1908 founding and its stated goals."
+      },
+      "topics": [
+        "organizing",
+        "professional access"
+      ]
     },
     {
       "id": "staupers-military-1945",
@@ -38,8 +131,79 @@
         "title": "National Park Service · Places of Mabel Keaton Staupers",
         "url": "https://www.nps.gov/articles/000/places-of-mabel-keaton-staupers.htm",
         "locator": "Opening biography and section 3, Eleanor Roosevelt’s Apartment",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "Staupers’ organizing, contact with Eleanor Roosevelt and the account’s 1945 military admission change."
+      },
+      "topics": [
+        "military service",
+        "organizing"
+      ]
+    },
+    {
+      "id": "carnegie-famu-education-1945",
+      "date": "1945–1953",
+      "year": 1945,
+      "title": "Mary Elizabeth Carnegie strengthens nursing education at Florida A&M",
+      "people": "Mary Elizabeth Carnegie and Florida A&M’s nursing faculty and students",
+      "decisionMaker": "Carnegie led the program; college administrators authorized its separate educational responsibilities and budget",
+      "barrier": "Nursing education operated within the hospital’s administration, limiting faculty control over students’ preparation.",
+      "change": "As dean, Carnegie reorganized faculty, secured a separate budget and strengthened clinical instruction. She also shortened students’ duty hours and improved textbooks and records.",
+      "outcome": "Nursing became a college division responsible for its curriculum and clinical arrangements, separating educational oversight from hospital service needs.",
+      "limit": "These are documented educational and administrative changes during her 1945–1953 tenure. They do not establish each graduate’s license, later employer or measured patient outcomes.",
+      "source": {
+        "title": "University of Virginia · Carnegie’s educational leadership",
+        "url": "https://history.nursing.virginia.edu/media/Windows-in-Time-Spring-2021.pdf",
+        "locator": "Windows in Time, Spring 2021, printed pages 14–15; Carnegie’s Florida A&M reforms",
+        "type": "Nursing-history research",
+        "supports": "The reorganization, budget, teaching resources, student duty hours and move to college oversight."
+      },
+      "sources": [
+        {
+          "title": "Nurses Educational Funds · Mary Elizabeth Carnegie",
+          "url": "https://n-e-f.org/about-us/news/mary-elizabeth-carnegie-dpa-rn-faan-1916-2008",
+          "locator": "Memorial biography; paragraph recording her Florida A&M deanship, 1945–1953",
+          "type": "Professional organization biography",
+          "supports": "The dates and institutional location of her deanship."
+        }
+      ],
+      "topics": [
+        "training",
+        "leadership",
+        "working conditions"
+      ]
+    },
+    {
+      "id": "osborne-nyu-faculty-1946",
+      "date": "1946–1947 · accounts differ",
+      "year": 1946,
+      "title": "Estelle Massey Osborne joins NYU’s nursing faculty",
+      "people": "Estelle Massey Osborne",
+      "decisionMaker": "New York University appointed Osborne; the reviewed accounts do not identify the appointing official",
+      "barrier": "Advanced nursing education and faculty positions were separate barriers for Black nurses.",
+      "change": "After earning a nursing master’s at Teachers College in 1931, Osborne became NYU’s first Black nursing faculty member, according to NYU’s institutional account.",
+      "outcome": "NYU describes eight years of teaching and mentoring Black students and nurses—a specific appointment and sustained work, not only an honorary recognition.",
+      "limit": "NYU’s account dates her arrival to 1946; NYPL’s finding aid says 1947. An appointment record is still needed to resolve that difference. This faculty role does not establish employment at an NYU hospital.",
+      "source": {
+        "title": "NYU Meyers · Estelle Osborne’s legacy",
+        "url": "https://nursing.nyu.edu/w/news/press-release/nyu-meyers-hosts-26th-annual-estelle-osborne-legacy-celebration",
+        "locator": "2017 legacy celebration account; paragraphs on the 1931 master’s and 1946 faculty appointment",
+        "type": "Institutional history",
+        "supports": "Her degree, NYU’s first-Black-faculty identification, its 1946 date and the mentoring described."
+      },
+      "sources": [
+        {
+          "title": "NYPL Schomburg Center · Estelle Massey Osborne papers",
+          "url": "https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/generated_finding_aids/scm20749.pdf",
+          "locator": "Creator History, printed page ii (PDF page 2), paragraph recording a 1947 NYU appointment",
+          "type": "Archival finding aid",
+          "supports": "An independent institutional account of the appointment with a conflicting year; underlying papers were not reviewed."
+        }
+      ],
+      "topics": [
+        "credentials",
+        "employment",
+        "leadership"
+      ]
     },
     {
       "id": "ana-membership-1948",
@@ -56,8 +220,13 @@
         "title": "American Nurses Association · Mabel Keaton Staupers",
         "url": "https://www.nursingworld.org/ana/about-ana/history/hall-of-fame/1996-1998-inductees/",
         "locator": "Mabel Keaton Staupers biography, membership restrictions and 1948 admission",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "The state-based membership exclusions and the 1948 admission of Black nurses to full ANA membership."
+      },
+      "topics": [
+        "professional access",
+        "organizing"
+      ]
     },
     {
       "id": "freedmens-staff-protection-1961",
@@ -74,8 +243,13 @@
         "title": "Public Law 87-262 · Transfer of Freedmen’s Hospital",
         "url": "https://www.govinfo.gov/content/pkg/STATUTE-75/pdf/STATUTE-75-Pg542.pdf",
         "locator": "Sections 1–2, 75 Stat. 542–543",
-        "type": "Contemporary statute"
-      }
+        "type": "Contemporary statute",
+        "supports": "The transfer authority, eligible employee categories, salary protection and specified benefit and seniority provisions."
+      },
+      "topics": [
+        "employment rights",
+        "institutional change"
+      ]
     },
     {
       "id": "dixie-nurses-reinstatement-1966",
@@ -92,8 +266,13 @@
         "title": "Smith v. Hampton Training School for Nurses · 360 F.2d 577",
         "url": "https://law.justia.com/cases/federal/appellate-courts/F2/360/577/390784/",
         "locator": "Opinion: opening facts and final reinstatement/back-pay paragraphs",
-        "type": "Contemporary court opinion"
-      }
+        "type": "Contemporary court opinion",
+        "supports": "The named nurses’ dismissal, their different nursing qualifications and the court’s reinstatement and back-pay directions."
+      },
+      "topics": [
+        "employment rights",
+        "legal challenge"
+      ]
     },
     {
       "id": "coles-howard-degree-1968",
@@ -110,28 +289,121 @@
         "title": "Howard University · College of Nursing and Allied Health history",
         "url": "https://cwggl.howard.edu/sites/cwggl.howard.edu/files/2023-11/WPS%20No%2018%20Obidiro%20Nursing%20Allied%20Health%20Nov%202023.pdf",
         "locator": "History of the college, PDF page 8; Appendix A, PDF page 18",
-        "type": "Institutional research"
+        "type": "Institutional research",
+        "supports": "Coles’ leadership and the nursing program’s development; the additional sources separate trustee approval from instruction and graduation."
       },
       "sources": [
         {
           "title": "Howard University President · Nursing program approval",
           "url": "https://president.howard.edu/from-the-president/viewpoints/celebrating-our-nurses",
           "locator": "Paragraph beginning ‘On April 23, 1968’ (board decision only)",
-          "type": "Institutional history"
+          "type": "Institutional history",
+          "supports": "The April 23, 1968 trustee decision establishing the baccalaureate program; cited for that decision only."
         },
         {
           "title": "Howard University · BSN program’s 50th anniversary",
           "url": "https://thedig.howard.edu/all-stories/howard-universitys-bachelor-science-nursing-program-celebrates-50th-anniversary-first-nursing-white",
-          "locator": "Paragraph beginning ‘The Bachelor of Science in Nursing program was introduced in 1969’",
-          "type": "Institutional history"
+          "locator": "September 16, 2019; paragraph beginning “The Bachelor of Science in Nursing program”; reproduced Coles account below",
+          "type": "Institutional history",
+          "supports": "Instruction beginning in 1969, the first cohort’s 1973 graduation and an excerpt of Coles’ 1969 account."
         }
+      ],
+      "topics": [
+        "training",
+        "leadership"
+      ]
+    },
+    {
+      "id": "nbna-local-workplaces-1971",
+      "date": "1971–1972",
+      "year": 1971,
+      "title": "Black nurses build a national voice from local workplaces",
+      "people": "Lauranne Sams, Betty Smith Williams, Jessie Cunningham and Dorothy Williams",
+      "decisionMaker": "Black nurse organizers founded NBNA and adopted its constitution and bylaws",
+      "barrier": "A nursing credential did not by itself secure professional influence or advancement.",
+      "change": "Sams and fellow nurses formed the National Black Nurses Association in Cleveland in 1971; its 1972 meeting established the organization’s governing structure.",
+      "outcome": "Kaiser’s history records Cunningham’s OB-GYN work and supervisory appointment at Oakland Medical Center in the 1960s. Cunningham and Williams also organized community health screenings through their local Black nurses’ association.",
+      "limit": "The records connect named nurses to Oakland and professional organizing. They do not identify who approved Cunningham’s promotion or prove a hiring pathway across every Kaiser facility.",
+      "source": {
+        "title": "National Black Nurses Association · Founding history",
+        "url": "https://nbna.org/about-us/history/",
+        "locator": "Founding account; 1970 California organizing, 1971 Cleveland meeting and 1972 constitution/bylaws",
+        "type": "Organization’s own history",
+        "supports": "The named organizers, founding meeting and adoption of the governing structure."
+      },
+      "sources": [
+        {
+          "title": "Kaiser Permanente · Jessie Cunningham’s nursing career",
+          "url": "https://about.kaiserpermanente.org/who-we-are/our-history/beloved-nurse-jessie-cunningham-earned-honored-place-in-kaiser-p",
+          "locator": "May 1, 2014; “A model student and mentor” and “Making connections with Black colleagues”",
+          "type": "Employer history with recollections",
+          "supports": "Cunningham’s Oakland nursing and supervision; Cunningham and Williams’ local organizing."
+        }
+      ],
+      "topics": [
+        "organizing",
+        "employment",
+        "leadership",
+        "community care"
+      ]
+    },
+    {
+      "id": "johnson-brown-army-chief-1979",
+      "date": "1979–1983",
+      "year": 1979,
+      "title": "Hazel Johnson-Brown leads the Army Nurse Corps",
+      "people": "Hazel W. Johnson-Brown",
+      "decisionMaker": "U.S. Army leadership appointed Johnson-Brown chief of the Army Nurse Corps",
+      "barrier": "Johnson-Brown’s path began with rejection from a nursing school because she was Black; senior military leadership presented another level of access.",
+      "change": "A Harlem Hospital School of Nursing graduate, she entered the Army in 1955 and became its nurse corps chief on September 1, 1979.",
+      "outcome": "She became the U.S. military’s first Black woman general officer. During her tenure, Army nursing practice standards were published as an official Department of the Army pamphlet.",
+      "limit": "The appointment and practice standards establish institutional leadership, not equal promotion outcomes for every Black nurse or a reader’s commission at a particular Army hospital.",
+      "source": {
+        "title": "U.S. Army Medical Department · Hazel W. Johnson",
+        "url": "https://achh.army.mil/history/superintendents-johnson16/",
+        "locator": "Sixteenth Chief profile; tenure dates, education, commission and Army Nurse Corps standards paragraphs",
+        "type": "Official military history",
+        "supports": "Her training, commission, chief appointment, general-officer first and publication of the practice standards."
+      },
+      "sources": [
+        {
+          "title": "National Museum of the U.S. Army · Hazel Johnson-Brown",
+          "url": "https://www.thenmusa.org/biographies/hazel-johnson-brown/",
+          "locator": "Biography; West Chester rejection, Harlem training and 1979 appointment paragraphs",
+          "type": "Military museum history",
+          "supports": "The discrimination she encountered before training and her later Army leadership."
+        }
+      ],
+      "topics": [
+        "military service",
+        "leadership",
+        "professional standards"
       ]
     }
   ],
   "furtherResearch": [
-    "Identify state licensure and first appointment records for nurses at the reader’s exact hospital or care setting.",
-    "Locate military admission orders and assignment records to distinguish policy change from actual appointments and working conditions.",
+    "Identify licensure, appointment and promotion records for the reader’s exact hospital, unit or community-care employer; education, employment and professional membership are different connections.",
+    "Read NACGN minutes and wartime correspondence to connect organizing to particular nursing-school admissions and military appointments.",
+    "Resolve the conflicting 1946 and 1947 dates for Osborne’s NYU appointment using university personnel or faculty records.",
     "Check implementation of the Dixie Hospital judgment and the Freedmen’s employee-transfer protections using employment and court records.",
-    "Expand beyond these examples to practical nursing, care support, community nursing and nursing leadership without treating their qualifications as interchangeable."
+    "Trace changes of building, operator and ownership before attaching an old hospital record to a modern health system.",
+    "Expand practical nursing, nurse anesthesia, nursing assistants and public-health pathways without treating their training or licenses as interchangeable."
+  ],
+  "checkedOn": "2026-11-04",
+  "researchLeads": [
+    {
+      "title": "NACGN meeting minutes and military-admission correspondence",
+      "url": "https://archives.nypl.org/scm/20744",
+      "locator": "Schomburg Center, Sc Micro R 6565; minutes 1908–1937 and correspondence 1937–1951; microfilm access",
+      "question": "Which named hospitals, schools and military authorities responded, and what happened to individual nurses afterward?",
+      "status": "Indexed catalog description reviewed; underlying records not reviewed"
+    },
+    {
+      "title": "Estelle Massey Osborne’s correspondence and professional work",
+      "url": "https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/generated_finding_aids/scm20749.pdf",
+      "locator": "Schomburg Center, Sc MG 158; Box 1, folders 1–3; correspondence, programs and writings, 1943–1967",
+      "question": "What do her surviving papers document about professional access and leadership, and do they point to a contemporary NYU appointment record?",
+      "status": "Finding aid reviewed; underlying records not reviewed"
+    }
   ]
 }

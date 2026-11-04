@@ -24,6 +24,7 @@ function cleanTrace(value) {
     if(info.entered&&info.entered!==workplace)workplaceInfo.entered=boundedText(info.entered,160);
   }
   const trace = {title, workplace, slug, match, workplaceInfo};
+  if(['sre','devops','software','systems','database','security','support','networkSupport','computing'].includes(value.contextKey))trace.contextKey=value.contextKey;
   if(typeof value.occupationCode==='string'&&/^\d{2}-\d{4}\.\d{2}$/.test(value.occupationCode))trace.occupationCode=value.occupationCode;
   if(typeof value.projectSector==='string' && /^[a-z]{1,16}$/.test(value.projectSector)) trace.projectSector=value.projectSector;
   const lookupTitle = boundedText(value.lookupTitle, 120);
@@ -63,15 +64,17 @@ function workplaceKey(value) {
     .replace(/&/g, ' and ').replace(/[’']/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 }
 
-export function findWorkplaceLinks(workplace, slug, links, workplaceInfo = null, {related=false,occupationCode=''} = {}) {
+export function findWorkplaceLinks(workplace, slug, links, workplaceInfo = null, {related=false,occupationCode='',contextKey=''} = {}) {
   const key = workplaceKey(workplace);
   if (!key || !Array.isArray(links)) return [];
   return links.filter(item => {
     if (!item.professions.includes(slug)) return false;
     // A broad field may contain unrelated jobs. A role-scoped record can only
     // apply when the reader selected an occupation it actually documents.
+    const selectedRole=item.contextKeys?.includes(contextKey);
+    if(item.contextKeys && !selectedRole)return false;
     if(item.occupationCodes && !item.occupationCodes.includes(occupationCode))return false;
-    if(related && !item.occupationCodes?.includes(occupationCode))return false;
+    if(related && !item.occupationCodes?.includes(occupationCode) && !selectedRole)return false;
     const names = [item.workplace, ...(item.aliases||[])].map(workplaceKey);
     if (!item.site) return names.includes(key);
 

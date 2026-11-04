@@ -2,8 +2,9 @@ import {normalizeEmployerText} from './employer-key.js';
 
 // Summarize the same steps used by the full timeline. A first-in-time event is
 // the earliest one in this record; it is not necessarily the first in history.
-function openingPreview(steps,context,loadFailed) {
-  const opening=steps.find(step=>step.type==='history' && step.sources.length);
+function openingPreview(steps,context,loadFailed,preferredId) {
+  const candidate=(preferredId&&steps.find(step=>(step.type==='history'||step.connectsHistory)&&step.historyEventId===preferredId&&step.sources.length))||steps.find(step=>step.type==='history' && step.sources.length);
+  const opening=candidate?.fieldEpisode||candidate;
   if(!opening){
     if(loadFailed)return {title:'Field history unavailable',detail:'The profession record could not be loaded.',date:'',sources:[]};
     if(!context.profession)return {title:'A history for this title is still open',detail:'Door Notes hasn’t yet linked a published field history to your title.',date:'',sources:[]};
@@ -42,7 +43,7 @@ function reviewedWorkplace(step,matches) {
     Number.isFinite(row.order) && row.order<step.order &&
     (' '+normalizeEmployerText(row.title+' '+row.detail)+' ').includes(' '+predecessor+' '));
   const sources=prior ? [...new Map([...step.sources,...prior.sources].map(source=>[source.url,source])).values()] : step.sources;
-  return {title:step.title,detail:firstSentence(prior ? prior.detail : step.detail),date:step.date,place:step.place,scope:step.scope,sourceNote:step.sourceNote,dated:Number.isFinite(step.order),sources};
+  return {title:step.title,detail:firstSentence(prior ? prior.detail : step.detail),date:step.date,place:step.place,scope:step.scope,sourceNote:step.sourceNote,historyEventId:step.historyEventId,connectsHistory:step.connectsHistory,dated:Number.isFinite(step.order),sources};
 }
 
 function workplacePreview(steps,context,loadFailed,report) {
@@ -70,17 +71,17 @@ export function buildTimelinePreview({steps,context,loadFailed=false,report=null
   const localOpening=steps.find(step=>step.paperRole==='opening');
   const localWorkplace=steps.find(step=>step.paperRole==='workplace');
   const localPair=Boolean(localOpening && localWorkplace);
+  const workplace=localPair ? reviewedWorkplace(localWorkplace,steps.filter(step=>step.type==='employer')) :
+    workplacePreview(steps,context,loadFailed,report);
   const opening=localPair ? {
     title:localOpening.title,detail:localOpening.previewDetail,date:localOpening.date,
     place:localOpening.place,sources:localOpening.sources,
-  } : openingPreview(steps,context,loadFailed);
-  const workplace=localPair ? reviewedWorkplace(localWorkplace,steps.filter(step=>step.type==='employer')) :
-    workplacePreview(steps,context,loadFailed,report);
+  } : openingPreview(steps,context,loadFailed,workplace.connectsHistory?workplace.historyEventId:undefined);
   const gaps={};
   if(!opening.sources.length)gaps.opening=loadFailed?'Field history could not be checked.':'A source is still needed for who opened access to this role.';
   if(!context.employer)gaps.workplace='No workplace was entered for this trace.';
   else{
-    gaps.workplace=workplace.sources.length?
+    if(!workplace.connectsHistory)gaps.workplace=workplace.sources.length?
       'Whether the field and workplace records connect.':
       'Whether this workplace connects to the field’s history.';
     gaps.route='How you personally trained or were hired.';
@@ -128,6 +129,10 @@ const workplaceLabels = {
   union: 'Union local record',
   jobsite: 'Jobsite record',
   program: 'Training program record',
+  institution: 'Institutional record',
+  appointment: 'Appointment record',
+  'historical-record': 'Historical workplace record',
+  leadership: 'Technical leadership record',
 };
 
 export function paperRecordPreview(preview, context, {report=null, loadFailed=false}={}) {

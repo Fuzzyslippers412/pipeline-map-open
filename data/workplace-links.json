@@ -736,5 +736,259 @@
     },
     "moreSources": [],
     "place": "Louisiana executive office · 1872"
+  },
+  {
+    "workplace": "Provident Hospital of Chicago",
+    "aliases": [
+      "Provident Hospital Chicago",
+      "Provident Hospital of Cook County Chicago"
+    ],
+    "professions": [
+      "registered-nurse"
+    ],
+    "scope": "hospital",
+    "headline": "Provident reopens under Cook County",
+    "description": "Emma Reynolds trained at the hospital founded after her exclusion from other nursing schools. Cook County’s timeline links that institution to its 1993 reopening.",
+    "sourceTitle": "Cook County Health · Provident’s 30th anniversary timeline",
+    "url": "https://cookcountyhealth.org/provident-hospital-30th-anniversary/",
+    "eventDateLabel": "1993 · reopened",
+    "eventYear": 1993,
+    "site": {
+      "id": "cms-hospital-140300",
+      "location": "Chicago, IL"
+    },
+    "historyEventId": "provident-reynolds-training-1891",
+    "sourceNote": "The hospital closed in 1987. County ownership and reopening do not establish continuous staffing or any current nurse’s hiring route.",
+    "reviewedOn": "2026-11-04",
+    "moreSources": [
+      {
+        "title": "Chicago History Museum · Emma Reynolds and Provident",
+        "url": "https://www.chicagohistory.org/provident-hospital/"
+      }
+    ]
+  },
+  {
+    "workplace": "Kaiser Permanente Oakland Medical Center",
+    "aliases": [
+      "Kaiser Oakland",
+      "Kaiser Oakland Medical Center",
+      "Oakland Medical Center Kaiser"
+    ],
+    "professions": [
+      "registered-nurse"
+    ],
+    "scope": "hospital",
+    "headline": "Jessie Cunningham advances into nursing supervision at Oakland",
+    "description": "Jessie Cunningham worked in OB-GYN and became a nursing supervisor at Oakland Medical Center in the 1960s.",
+    "sourceTitle": "Kaiser Permanente · Jessie Cunningham’s nursing career",
+    "url": "https://about.kaiserpermanente.org/who-we-are/our-history/beloved-nurse-jessie-cunningham-earned-honored-place-in-kaiser-p",
+    "eventDateLabel": "1960s",
+    "eventYear": 1960,
+    "site": {
+      "id": "reviewed-kaiser-oakland",
+      "location": "Oakland, CA",
+      "parent": "Kaiser Permanente"
+    },
+    "historyEventId": "nbna-local-workplaces-1971",
+    "sourceNote": "This employer history identifies Oakland. It does not establish who approved her promotion or a route into another Kaiser facility.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Nursing supervision",
+    "moreSources": [
+      {
+        "title": "Kaiser Permanente · Current Oakland Medical Center",
+        "url": "https://healthy.kaiserpermanente.org/northern-california/facilities/oakland-medical-center-100344"
+      }
+    ]
+  },
+  {
+    "workplace": "Florida Agricultural and Mechanical University",
+    "aliases": [
+      "FAMU",
+      "Florida A&M University"
+    ],
+    "professions": [
+      "registered-nurse"
+    ],
+    "scope": "program",
+    "headline": "Mary Elizabeth Carnegie strengthens nursing education at Florida A&M",
+    "description": "Mary Elizabeth Carnegie led Florida A&M’s nursing program from 1945 to 1953, strengthening educational oversight.",
+    "sourceTitle": "University of Virginia · Carnegie’s educational leadership",
+    "url": "https://history.nursing.virginia.edu/media/Windows-in-Time-Spring-2021.pdf",
+    "eventDateLabel": "1945–1953",
+    "eventYear": 1945,
+    "site": {
+      "id": "ipeds-133650",
+      "location": "Tallahassee, FL"
+    },
+    "historyEventId": "carnegie-famu-education-1945",
+    "sourceNote": "This is a nursing-education leadership record. It does not prove admission, licensing or employment at a hospital.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Nursing education"
+  },
+  {
+    "workplace": "New York University",
+    "aliases": [
+      "NYU"
+    ],
+    "professions": [
+      "registered-nurse"
+    ],
+    "scope": "appointment",
+    "headline": "Estelle Massey Osborne joins NYU’s nursing faculty",
+    "description": "Estelle Massey Osborne joined NYU’s nursing faculty. NYU dates her appointment to 1946; the NYPL finding aid gives 1947.",
+    "sourceTitle": "NYU Meyers · Estelle Osborne’s legacy",
+    "url": "https://nursing.nyu.edu/w/news/press-release/nyu-meyers-hosts-26th-annual-estelle-osborne-legacy-celebration",
+    "eventDateLabel": "1946–1947 · accounts differ",
+    "eventYear": 1946,
+    "site": {
+      "id": "ipeds-193900",
+      "location": "New York, NY"
+    },
+    "historyEventId": "osborne-nyu-faculty-1946",
+    "sourceNote": "The year remains disputed. This is academic employment, not a record of nursing employment at NYU Langone or another hospital.",
+    "reviewedOn": "2026-11-04",
+    "roleScope": "Nursing faculty",
+    "moreSources": [
+      {
+        "title": "NYPL · Estelle Massey Osborne papers, PDF page 2",
+        "url": "https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/generated_finding_aids/scm20749.pdf"
+      }
+    ]
+  },
+  {
+    "workplace": "Maria L. Baldwin School, Cambridge, MA",
+    "aliases": [
+      "Maria L Baldwin Cambridge MA",
+      "Maria L. Baldwin School Cambridge MA",
+      "Agassiz School Cambridge MA"
+    ],
+    "professions": [
+      "k12-teacher"
+    ],
+    "scope": "school",
+    "headline": "Agassiz becomes the Maria L. Baldwin School",
+    "description": "Maria Baldwin became Agassiz School’s principal in 1889. Cambridge renamed its later building the Maria L. Baldwin School in 2002.",
+    "sourceTitle": "Cambridge Historical Commission · Maria Baldwin House evaluation",
+    "url": "https://www.cambridgema.gov/-/media/Files/historicalcommission/pdf/chcmeetingfiles/L142_eval2.pdf#page=6",
+    "eventDateLabel": "2002 · school renamed",
+    "eventYear": 2002,
+    "site": {
+      "id": "nces-school-250327000435",
+      "location": "Cambridge, MA",
+      "parent": "Cambridge"
+    },
+    "historyEventId": "teacher-baldwin-agassiz-1889",
+    "sourceNote": "The municipal record establishes the school-name connection across different buildings. It does not establish any current teacher’s appointment.",
+    "reviewedOn": "2026-11-04",
+    "place": "Cambridge, MA"
+  },
+  {
+    "workplace": "Massachusetts Institute of Technology",
+    "aliases": [
+      "MIT",
+      "M.I.T."
+    ],
+    "professions": [
+      "software-engineer"
+    ],
+    "scope": "program",
+    "headline": "MIT’s paid Whirlwind work-and-study route",
+    "description": "Joe Thompson combined study with paid operations and programming work on MIT’s Whirlwind project in 1951.",
+    "sourceTitle": "Computer History Museum · Trailblazers and Change Agents",
+    "url": "https://computerhistory.org/stories/trailblazers-and-change-agents/",
+    "eventDateLabel": "1951",
+    "eventYear": 1951,
+    "site": {
+      "id": "ipeds-166683",
+      "location": "Cambridge, MA"
+    },
+    "historyEventId": "thompson-whirlwind-1951",
+    "sourceNote": "This record concerns Whirlwind. It does not establish a modern SRE title, a route through every MIT program or your employment.",
+    "reviewedOn": "2026-11-04"
+  },
+  {
+    "workplace": "NASA Langley Research Center",
+    "aliases": [
+      "NASA Langley",
+      "Langley Research Center Hampton VA"
+    ],
+    "professions": [
+      "software-engineer"
+    ],
+    "scope": "historical-record",
+    "headline": "Langley’s segregated unit to integrated computation",
+    "description": "Dorothy Vaughan supervised computing at Langley and later programmed in its integrated computation division.",
+    "sourceTitle": "NASA · Dorothy Vaughan",
+    "url": "https://www.nasa.gov/people/dorothy-vaughan/",
+    "eventDateLabel": "1949–1958",
+    "eventYear": 1949,
+    "site": {
+      "id": "reviewed-nasa-langley",
+      "location": "Hampton, VA",
+      "parent": "NASA"
+    },
+    "historyEventId": "vaughan-langley-leadership-1949",
+    "sourceNote": "This identifies Langley’s predecessor NACA workplace. It does not establish access at other NASA centers or a current employee’s hiring route.",
+    "reviewedOn": "2026-11-04"
+  },
+  {
+    "workplace": "NASA Glenn Research Center",
+    "aliases": [
+      "NASA Glenn",
+      "Glenn Research Center Cleveland OH",
+      "NASA Lewis Research Center Cleveland OH"
+    ],
+    "professions": [
+      "software-engineer"
+    ],
+    "scope": "historical-record",
+    "headline": "From Lewis to Glenn: the same Cleveland center",
+    "description": "Annie Easley programmed at the Cleveland laboratory then known as Lewis. NASA’s center history documents the 1999 change to Glenn.",
+    "sourceTitle": "NASA · Annie Easley",
+    "url": "https://www.nasa.gov/people/annie-easley/",
+    "eventDateLabel": "1955–1989",
+    "eventYear": 1955,
+    "site": {
+      "id": "reviewed-nasa-glenn",
+      "location": "Cleveland, OH",
+      "parent": "NASA"
+    },
+    "historyEventId": "easley-lewis-programming-1955",
+    "sourceNote": "The name change links the Cleveland center, not every NASA location. Her career does not establish your appointment or a modern IT specialty.",
+    "reviewedOn": "2026-11-04",
+    "moreSources": [
+      {
+        "title": "NASA · Glenn center names and locations",
+        "url": "https://www.nasa.gov/glenn-history-fact-sheet/"
+      }
+    ]
+  },
+  {
+    "workplace": "Google",
+    "aliases": [
+      "Google LLC",
+      "Google Inc"
+    ],
+    "professions": [
+      "software-engineer"
+    ],
+    "scope": "leadership",
+    "headline": "Black leadership in Google’s reliability teams",
+    "description": "In a 2020 interview, Marian Croak described leading reliability-engineering teams at Google.",
+    "sourceTitle": "USPTO · Positively connected",
+    "url": "https://www.uspto.gov/learning-and-resources/journeys-innovation/audio-stories/positively-connected",
+    "eventDateLabel": "2020 · interview",
+    "eventYear": 2020,
+    "site": {
+      "id": "verified-google",
+      "parent": "Alphabet"
+    },
+    "historyEventId": "croak-google-reliability-2020",
+    "sourceNote": "The interview supports this specific technical leadership role. It does not establish her current position, a particular Google office or your hiring route.",
+    "reviewedOn": "2026-11-04",
+    "contextKeys": [
+      "sre"
+    ],
+    "roleScope": "Reliability engineering"
   }
 ]

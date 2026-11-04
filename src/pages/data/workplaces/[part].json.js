@@ -1,17 +1,20 @@
-import primary from '../../../../data/workplace-directory.json';
-import schools from '../../../../data/workplace-schools.json';
-import evidence from '../../../../data/discovery-index.json';
-import reviewed from '../../../../data/workplace-links.json';
+import primary from '../../../../data/workplace-directory.json' with {type:'json'};
+import schools from '../../../../data/workplace-schools.json' with {type:'json'};
+import evidence from '../../../../data/discovery-index.json' with {type:'json'};
+import reviewed from '../../../../data/workplace-links.json' with {type:'json'};
 import {normalizeEmployerText} from '../../../lib/employer-key.js';
 import {packDirectory} from '../../../lib/workplace-search.js';
 
 export function getStaticPaths(){return ['main','schools'].map(part=>({params:{part}}))}
 export function GET({params:{part}}){
+  const sites=new Map();
+  for(const row of reviewed.filter(row=>row.site)){
+    sites.set(row.site.id,[...(sites.get(row.site.id)||[]),row.workplace,...row.aliases]);
+  }
   if(part==='schools'){
-    const sites=new Map(reviewed.filter(row=>row.site).map(row=>[row.site.id,row]));
     const records=schools.records.map(school=>{
       const entry=sites.get(school.id);
-      return entry?{...school,priority:2,aliases:[entry.workplace,...entry.aliases]}:school;
+      return entry?{...school,priority:2,aliases:[...new Set([...(school.aliases||[]),...entry])]}:school;
     });
     return Response.json(packDirectory(records,schools.sources));
   }
@@ -21,8 +24,9 @@ export function GET({params:{part}}){
   const records=primary.records.map(row=>{
     const norm=normalizeEmployerText(row.name);
     known.add(norm);
-    const entry=verified.get(norm);
-    return {...row,priority:entry||row.source?.startsWith('verified-')?2:parentNames.has(norm)?1:0,aliases:entry?[...new Set([...(row.aliases||[]),...entry.aliases])]:row.aliases};
+    const entry=verified.get(norm), site=sites.get(row.id);
+    return {...row,priority:entry||site||row.source?.startsWith('verified-')?2:parentNames.has(norm)?1:0,
+      aliases:entry||site?[...new Set([...(row.aliases||[]),...(entry?.aliases||[]),...(site||[])])]:row.aliases};
   });
   for(const [key,row] of verified){
     if(!known.has(key)){records.push({name:row.workplace,aliases:row.aliases,reviewed:true});known.add(key)}

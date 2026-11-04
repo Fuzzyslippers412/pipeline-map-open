@@ -1,5 +1,17 @@
 # Door Notes: product roadmap
 
+## Nursing, teaching and computing depth · November 4, 2026
+
+This edition adds 21 researched episodes across nursing (13 total), teaching (12) and computing (12). The catalog now contains 133 episodes across 22 fields and 426 source references. New records distinguish named people, decision makers, changes for workers, evidence limits and source-specific support. Archive finding aids are identified as leads; their underlying files are not claimed reviewed. NYU's conflicting 1946/1947 Osborne appointment dates remain explicit.
+
+Nine new reviewed workplace records bring the shared index to 37. They cover Provident Chicago, Kaiser Oakland, Florida A&M nursing education, NYU nursing faculty, Cambridge's Maria L. Baldwin School, MIT's Whirlwind project, NASA Langley, NASA Glenn and Google reliability engineering. The Oakland entry does not inherit the combined Oakland/Richmond hospital identifier; NASA centers are distinct; historical HP and Bell Labs records are not automatically assigned to present corporate successors. Nursing faculty records do not imply hospital employment.
+
+The preview can connect a reviewed episode to an exact workplace and retains the reader's personal-route gap. The Cambridge preview distinguishes Baldwin's 1889 appointment from the school's 2002 renaming; Provident distinguishes its 1891 founding from the 1993 county reopening. SRE duty choices persist in the tab and select Croak's 2020 Google record without assigning it to unrelated tech roles. Home stories highlight Reynolds, Baldwin and Croak. Expandable workplace evidence is available on field pages.
+
+Validation: 83 automated tests passed, including site conflicts, occupational scope, selected-duty persistence, historical-name autocomplete, source propagation and unknown-workplace gaps. Mobile browser verification covers 375- and 320-pixel viewports, the Google SRE trace, Baldwin school matching and nursing evidence disclosures. This is viewport testing, not a physical-device study. Production assets and internal links are verified by the build.
+
+Still open: current employee hiring/admission routes, broader specialty-specific tech histories, additional schools and hospital sites, primary archive-file review, and the remaining thinner career dossiers. A documented person at an institution does not prove equal access for everyone or a causal route into a reader's job.
+
 ## Deeper agriculture and governor records · November 4, 2026
 
 The second research pass adds 13 episodes: agriculture now has 13, governors 12, and the catalog has 112 overall. The two dossiers contain 48 source references, compared with 17 before this pass. These are citation uses, not an independent-source quality score. New coverage includes agricultural wage protection and exclusions, Black labor organizing, women in extension, cooperative landholding, voting access, succession, and two governor decisions affecting workers. Historical enactment, program completion, reported elections and personal employment remain distinct claims.

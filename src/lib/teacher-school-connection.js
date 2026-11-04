@@ -13,8 +13,8 @@ export function teacherSchoolConnection(context, reviewers, matches, loadFailed=
     return {
       label:district?'District record · Campus unknown':'Documented at your school',
       name:record.workplace,record,
-      gap:district?'This source covers the district. The link to an individual campus is still unknown.':
-        'No record here links Marion’s teacher-training school to this campus.',
+      gap:record.historyEventId?record.sourceNote:district?'This source covers the district. The link to an individual campus is still unknown.':
+        'No record here links the broader teacher-training history to this campus.',
     };
   }
   const info=context.workplaceInfo;

@@ -1,10 +1,35 @@
 {
   "slug": "software-engineer",
   "headline": "Black people who built and ran computing",
-  "summary": "Black computing history includes operators, researchers, educators and professional networks. These records show different routes into technical work, including a training program with reported internship outcomes.",
-  "coverageNote": "Five documented episodes in U.S. computing. They establish particular jobs, credentials and programs, not an unbroken chain to every software, systems or reliability role.",
+  "summary": "Black computing history includes paid operators, scientific programmers, researchers, educators and technical leaders. These records name people and workplaces, explain what changed, and distinguish a documented appointment from a pathway that still needs evidence.",
+  "coverageNote": "Twelve selected episodes in U.S. computing, from Langley’s segregated computing unit to Google reliability engineering. Programming, hardware design, systems administration and reliability are different kinds of work. An institutional biography or first-person account does not establish equal access, an individual reader’s hiring history or an unbroken path between employers.",
   "question": "Which appointment, training or advancement record connects Black workers to your exact role and employer?",
   "events": [
+    {
+      "id": "vaughan-langley-leadership-1949",
+      "date": "1949–1958",
+      "year": 1949,
+      "title": "Dorothy Vaughan leads a computing unit, then moves into programming",
+      "people": "Dorothy Vaughan and Langley’s West Area Computers",
+      "decisionMaker": "NACA promoted Vaughan in 1949; its successor NASA ended the segregated computing units in 1958.",
+      "barrier": "Black women at Langley worked in a separate unit with segregated dining and bathrooms.",
+      "change": "Vaughan became West Area Computing’s section head—the first Black supervisor at NACA, according to NASA.",
+      "outcome": "After the unit closed, she joined the integrated Analysis and Computation Division and became an expert FORTRAN programmer.",
+      "limit": "NASA also records that she sought but did not receive another management position. Integration of the unit did not guarantee advancement; this is Langley’s history, not every NASA center’s.",
+      "topics": [
+        "leadership",
+        "programming",
+        "workplace-rights"
+      ],
+      "source": {
+        "title": "NASA · Dorothy Vaughan",
+        "url": "https://www.nasa.gov/people/dorothy-vaughan/",
+        "locator": "Biography paragraphs on the 1949 promotion, West Area conditions, 1958 reorganization and later management applications",
+        "type": "Federal institutional biography",
+        "supports": "The specific promotion, segregation, division transfer, programming work and later advancement limit."
+      },
+      "checkedOn": "2026-11-04"
+    },
     {
       "id": "thompson-whirlwind-1951",
       "date": "1951",
@@ -20,8 +45,117 @@
         "title": "Computer History Museum · Trailblazers and Change Agents",
         "url": "https://computerhistory.org/stories/trailblazers-and-change-agents/",
         "locator": "Joe Thompson: First Generation Programmer; museum account and linked collection",
-        "type": "Museum history"
-      }
+        "type": "Museum history",
+        "supports": "Thompson’s 1951 paid MIT work, programming and operations, later RAND work and career advancement."
+      },
+      "topics": [
+        "hiring",
+        "programming",
+        "operations"
+      ],
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "easley-lewis-programming-1955",
+      "date": "1955–1989",
+      "year": 1955,
+      "title": "Annie Easley moves from hand calculations into scientific code",
+      "people": "Annie Easley",
+      "decisionMaker": "NACA’s Cleveland laboratory hired Easley in 1955; the biography does not identify her appointing official.",
+      "barrier": "NASA records that she was one of four Black employees at the laboratory when hired.",
+      "change": "Initially a human computer, Easley adapted to electronic computing, using Fortran and Symbolic Optimal Assembly Program (SOAP).",
+      "outcome": "She wrote code for energy research and Centaur work, and later served as an equal-employment-opportunity counselor.",
+      "limit": "Her 2001 interview describes changing tools and addressing discrimination. It is personal testimony, not a payroll study or proof that every complaint was resolved. Her workplace was the Cleveland laboratory, not Langley.",
+      "topics": [
+        "hiring",
+        "programming",
+        "workplace-rights"
+      ],
+      "source": {
+        "title": "NASA · Annie Easley",
+        "url": "https://www.nasa.gov/people/annie-easley/",
+        "locator": "Biography paragraphs beginning with her 1955 hiring; electronic computing, Fortran/SOAP, energy research and EEO counseling",
+        "type": "Federal institutional biography",
+        "supports": "Her appointment, programming transition, research assignments and counseling role."
+      },
+      "sources": [
+        {
+          "title": "NASA · Annie Easley oral history",
+          "url": "https://www.nasa.gov/history/history-publications-and-resources/oral-histories/annie-easley-oral-history/",
+          "locator": "Sandra Johnson interview, Cleveland, August 21, 2001; published excerpts on human computing, computer programming and equality",
+          "type": "First-person oral-history excerpt",
+          "supports": "Easley’s recollection of moving from calculators to programs and of raising workplace inequality with management; the complete transcript was not reviewed."
+        }
+      ],
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "west-dahlgren-programming-1956",
+      "date": "1956–1980s",
+      "year": 1956,
+      "title": "Gladys West programs the models behind more accurate navigation",
+      "people": "Gladys Mae Brown West and her Dahlgren colleagues",
+      "decisionMaker": "The U.S. Navy hired West at the Naval Proving Ground in Dahlgren, Virginia, in 1956.",
+      "barrier": "The Smithsonian describes the segregated education and restricted employment choices she faced before entering federal scientific work.",
+      "change": "West entered mathematical programming at Dahlgren and later used satellite data and computer models to refine the shape of the Earth.",
+      "outcome": "The Defense Department identifies her IBM 7030 programming in the 1970s–1980s as work that contributed to the models used for GPS satellite orbits.",
+      "limit": "This was a team contribution to geodesy and navigation, not sole invention of GPS. It connects to Dahlgren scientific computing, not every Navy job, NASA or a modern cloud-operations title.",
+      "topics": [
+        "hiring",
+        "programming",
+        "research"
+      ],
+      "source": {
+        "title": "U.S. Department of Defense · Navy Scientist Helped Develop GPS",
+        "url": "https://www.defense.gov/News/Feature-Stories/Story/Article/3700859/",
+        "locator": "David Vergun, March 8, 2024; 1956 hiring and mid-1970s–1980s IBM 7030 paragraphs",
+        "type": "Federal institutional history",
+        "supports": "The appointment at Dahlgren and the computing contribution. Indexed article text reviewed; direct-page access was unavailable during this review."
+      },
+      "sources": [
+        {
+          "title": "Smithsonian National Air and Space Museum · Dr. Gladys Mae Brown West",
+          "url": "https://airandspace.si.edu/stories/editorial/gladys-mae-brown-west",
+          "locator": "Cathleen Lewis, February 25, 2026; segregated education, Navy hiring and geoid-model paragraphs",
+          "type": "Museum history",
+          "supports": "The discrimination context and the team’s scientific contribution; no claim that West alone invented GPS."
+        }
+      ],
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "clay-hp-software-1965",
+      "date": "1965–1966",
+      "year": 1965,
+      "title": "Roy Clay leads software work for Hewlett-Packard’s first computer",
+      "people": "Roy Clay and the HP 2116A design team",
+      "decisionMaker": "Dave Packard personally recruited Clay in 1965, according to the Hewlett-Packard Company Archives.",
+      "barrier": "The archive identifies Clay as HP’s highest-ranking Black employee for a period; it does not quantify Black hiring before or after his appointment.",
+      "change": "Clay helped establish HP’s first computer division, led the 2116A design team and wrote its software.",
+      "outcome": "HP introduced the computer in 1966. Clay’s documented role combines hands-on programming with technical leadership.",
+      "limit": "This is a specific appointment at the historical Hewlett-Packard company. A link to a present-day HP or HPE workplace needs its own organizational and employment records.",
+      "topics": [
+        "hiring",
+        "programming",
+        "leadership"
+      ],
+      "source": {
+        "title": "Hewlett-Packard Company Archives · Roy Clay",
+        "url": "https://www.hewlettpackardhistory.com/item/the-godfather-of-silicon-valley/",
+        "locator": "Main biographical paragraph; 1965 recruitment and 2116A team. The item’s 1968 date describes the photograph, not the hiring year.",
+        "type": "Corporate archive history",
+        "supports": "Packard’s recruitment, Clay’s team and software responsibilities, and the archive’s scoped seniority claim."
+      },
+      "sources": [
+        {
+          "title": "Hewlett-Packard Company Archives · The HP 2116",
+          "url": "https://www.hewlettpackardhistory.com/item/hewlett-packards-first-computer/",
+          "locator": "Opening paragraph: introduction in 1966; separate from the item’s 1969 photograph date",
+          "type": "Corporate product history",
+          "supports": "The computer’s 1966 introduction, not an employment outcome for other workers."
+        }
+      ],
+      "checkedOn": "2026-11-04"
     },
     {
       "id": "ellis-doctorate-1969",
@@ -32,14 +166,21 @@
       "decisionMaker": "University of Illinois, the degree-granting institution.",
       "barrier": "The university identifies Ellis as the first Black American to earn a computer-science PhD; it does not document a specific admissions rule he changed.",
       "change": "Ellis completed doctoral work while contributing to the ILLIAC IV supercomputer's hardware, software and applications.",
-      "outcome": "His subsequent work included leading the PARC group that developed Officetalk, a system for remote collaboration.",
-      "limit": "His credential and technical leadership are documented individual achievements, not proof that doctoral access or hiring became equal.",
+      "outcome": "From 1976 to 1984 he worked at Xerox PARC, leading the group that developed Officetalk for remote collaboration.",
+      "limit": "This documents a degree and a later research appointment. It does not establish equal access or connect another employer—or a later owner of PARC—to Ellis’s team.",
       "source": {
         "title": "University of Illinois · Clarence “Skip” Ellis",
         "url": "https://siebelschool.illinois.edu/about/awards/alumni-awards/alumni-awards-past-recipients/clarence-ellis",
         "locator": "2019 Distinguished Achievement Memorial Award biography, opening three paragraphs",
-        "type": "Institutional biography"
-      }
+        "type": "Institutional biography",
+        "supports": "The university’s scoped first-PhD claim, ILLIAC IV work and subsequent PARC leadership."
+      },
+      "topics": [
+        "training",
+        "research",
+        "leadership"
+      ],
+      "checkedOn": "2026-11-04"
     },
     {
       "id": "howard-computing-1970s",
@@ -56,8 +197,72 @@
         "title": "Howard University College of Engineering and Architecture · Our History",
         "url": "https://cea.howard.edu/index.php/about-us/our-history",
         "locator": "Paragraphs covering the 1970–1997 school structure and programs inaugurated in the 1970–1980 era",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "Howard’s program development within the stated decade, without a single founding year or placement figures."
+      },
+      "topics": [
+        "training"
+      ],
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "dean-ibm-pc-1981",
+      "date": "1981",
+      "year": 1981,
+      "title": "Mark Dean helps design the architecture of the IBM PC",
+      "people": "Mark Dean, Dennis Moeller and IBM’s PC development team",
+      "decisionMaker": "IBM CEO Frank Cary authorized the PC effort; Don Estridge led Project Chess after Bill Lowe’s initial proposal.",
+      "barrier": "A Black engineer’s documented product responsibility shows participation in technical decision-making; these sources do not identify a hiring rule changed by the project.",
+      "change": "Dean and Moeller developed the peripheral bus that allowed devices to connect to the computer.",
+      "outcome": "IBM released its PC in August 1981; Dean’s work is recognized in the National Inventors Hall of Fame’s account of the microcomputer bus-control system.",
+      "limit": "This is hardware and computer-architecture context. It does not establish a software, support or SRE hiring pathway, or connect the reader to the original PC team.",
+      "topics": [
+        "research",
+        "hardware",
+        "leadership"
+      ],
+      "source": {
+        "title": "IBM · The personal computer",
+        "url": "https://www.ibm.com/history/personal-computer",
+        "locator": "Project Chess, development-team and ISA-bus passages; August 12, 1981 launch",
+        "type": "Corporate institutional history",
+        "supports": "The project authorization, leadership, Dean–Moeller bus contribution and product launch."
+      },
+      "sources": [
+        {
+          "title": "National Inventors Hall of Fame · Mark Dean",
+          "url": "https://www.invent.org/inductees/mark-dean",
+          "locator": "Microcomputer System with Bus Control Means for Peripheral Processing Devices; biography and patent 4,528,626 listing",
+          "type": "Inventor recognition record",
+          "supports": "Dean and Moeller’s bus-control contribution. The 1981 product date is not presented as the patent issue date."
+        }
+      ],
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "croak-bell-labs-1982",
+      "date": "1982–2014",
+      "year": 1982,
+      "title": "Marian Croak helps move voice communications onto data networks",
+      "people": "Marian Croak and Bell Labs / AT&T engineering teams",
+      "decisionMaker": "Bell Labs hired Croak in 1982; the institutional biography does not name the hiring official.",
+      "barrier": "Entry into research and later authority over engineering programs were separate career steps; the source does not identify a formal racial hiring rule she overturned.",
+      "change": "Croak worked on technologies that allowed voice and data to share internet-based networks.",
+      "outcome": "Before leaving AT&T in 2014, she became senior vice president of Applications and Services Infrastructure, with responsibility for large scientific and engineering teams.",
+      "limit": "This documents telecommunications innovation and technical leadership. It is not a claim that she invented all VoIP technology, that every worker gained access, or that today’s Bell Labs and AT&T share one employment history.",
+      "topics": [
+        "hiring",
+        "research",
+        "leadership"
+      ],
+      "source": {
+        "title": "Lemelson-MIT · Marian Croak",
+        "url": "https://lemelson.mit.edu/resources/marian-croak",
+        "locator": "Biography paragraphs on 1982 Bell Labs entry, voice/data work and AT&T leadership before 2014",
+        "type": "Institutional inventor biography",
+        "supports": "The starting employer, technical field and subsequent AT&T leadership responsibilities."
+      },
+      "checkedOn": "2026-11-04"
     },
     {
       "id": "bdpa-student-programming-1986",
@@ -74,8 +279,14 @@
         "title": "BDPA · About Us",
         "url": "https://bdpa.org/about-us/",
         "locator": "Our History; What Does BDPA Offer? → High School Programs",
-        "type": "Program provider history"
-      }
+        "type": "Program provider history",
+        "supports": "The 1986 program, Bemley’s role and BDPA’s own account of educational reach."
+      },
+      "topics": [
+        "training",
+        "organizing"
+      ],
+      "checkedOn": "2026-11-04"
     },
     {
       "id": "howard-west-outcomes-2017",
@@ -92,13 +303,65 @@
         "title": "Google · Tech Exchange brings Black and Latinx students to Google",
         "url": "https://blog.google/company-news/outreach-and-initiatives/diversity/tech-exchange-brings-black-and-latinx-students-google/",
         "locator": "September 18, 2018; paragraph beginning 'The institutions sending students to Google this year'",
-        "type": "Program provider outcome report"
-      }
+        "type": "Program provider outcome report",
+        "supports": "Google’s September 2018 report of 26 pilot participants and internships across Google and other employers."
+      },
+      "topics": [
+        "training",
+        "hiring"
+      ],
+      "checkedOn": "2026-11-04"
+    },
+    {
+      "id": "croak-google-reliability-2020",
+      "date": "2020 · interview",
+      "year": 2020,
+      "title": "Marian Croak describes leading reliability engineering at Google",
+      "people": "Marian Croak",
+      "decisionMaker": "Google; the interview does not name the appointing official.",
+      "barrier": "Croak also described leading a Black employee group working on racial equity.",
+      "change": "She led engineering teams improving systems behind YouTube, advertising and other Google services.",
+      "outcome": "Her account documents Black leadership in reliability engineering itself.",
+      "limit": "This 2020 account is not her current job status, proof of equal access or evidence of the reader’s hiring route.",
+      "topics": [
+        "operations",
+        "leadership",
+        "organizing"
+      ],
+      "source": {
+        "title": "USPTO · Positively connected",
+        "url": "https://www.uspto.gov/learning-and-resources/journeys-innovation/audio-stories/positively-connected",
+        "locator": "Lauren Emanuel interview; question “What are you working on now?” and Croak’s next two answers",
+        "type": "First-person interview",
+        "supports": "Her reliability responsibilities and Black leadership role at the interview date."
+      },
+      "sources": [
+        {
+          "title": "USPTO · Marian Croak program announcement",
+          "url": "https://www.uspto.gov/subscription-center/2023/uspto-renames-visiting-scholars-program-after-pioneering-inventor",
+          "locator": "August 17, 2023 release; paragraph identifying the linked 2020 Journeys of Innovation profile",
+          "type": "Federal announcement",
+          "supports": "Dates the interview to 2020; it is not a new 2023 appointment record."
+        }
+      ],
+      "checkedOn": "2026-11-04"
     }
   ],
   "furtherResearch": [
-    "Locate appointment and advancement records for Black workers in systems administration, infrastructure and reliability; related computing history alone does not establish those specialties.",
-    "Follow the Howard West cohort beyond internships, using placement records rather than assuming permanent employment.",
-    "Identify the exact workplace and job duties before attaching a local hiring, training or promotion record."
+    "Inspect hiring, promotion and assignment records for specific laboratories and teams. Working for the same parent organization does not establish a connection to that workplace.",
+    "Expand histories of Black systems administrators, network staff, cybersecurity workers, support specialists and DevOps engineers. Earlier scientific programmers must not be relabeled with those modern job titles.",
+    "Follow Howard West participants beyond the reported internships; distinguish Google placements from those at other employers and internships from permanent employment.",
+    "Trace reorganizations and ownership separately from people’s careers, particularly historical Hewlett-Packard, Bell Labs and Xerox PARC.",
+    "Use appointment letters, staff rosters and first-person accounts together to test whether a documented individual achievement changed access for other workers."
+  ],
+  "checkedOn": "2026-11-04",
+  "researchLeads": [
+    {
+      "title": "Gladys West’s appointment and scientific-work records",
+      "url": "https://findingaids.loc.gov/repositories/19/resources/6417",
+      "locator": "Library of Congress Manuscript Division, MSS86589, Gladys B. West and Ira V. West Papers; Scope and Contents, appointment correspondence and career records",
+      "question": "What do the appointment letter and project records establish about her department, duties and advancement? The catalog describes a 1955 appointment letter; published histories date the start of work to 1956. Read the letter before reconciling those dates.",
+      "status": "Indexed catalog description reviewed; underlying records not reviewed"
+    }
   ]
 }

@@ -88,7 +88,7 @@ const sourceDate = new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',
 type Authority = NonNullable<ReturnType<typeof findWorkplaceAuthority>>;
 
 
-type Context={employer:string,title:string,profession?:string,related?:boolean,occupationCode?:string,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string,id?:string,sourceUrl?:string}|null};
+type Context={employer:string,title:string,profession?:string,related?:boolean,occupationCode?:string,contextKey?:string,workplaceInfo?:{workplace:string,parent?:string,location?:string,relation?:string,id?:string,sourceUrl?:string}|null};
 const cache=new Map<string,Promise<any>>();
 function loadField(slug:string) {
   if(!/^[a-z0-9-]+$/.test(slug))return Promise.reject(new Error('Invalid profession'));
@@ -261,7 +261,7 @@ class CareerTimeline extends HTMLElement{
     const showWorkplaceSearch=paperEdition && 'showSearch' in preview.workplace && preview.workplace.showSearch;
     workplaceSearch.hidden=!showWorkplaceSearch;
     const sourceNote=sections.querySelector<HTMLDetailsElement>('[data-source-note]')!;
-    const explanation=paperEdition && 'sourceNote' in preview.workplace ? preview.workplace.sourceNote : '';
+    const explanation='sourceNote' in preview.workplace ? preview.workplace.sourceNote : '';
     sourceNote.hidden=!explanation;
     sourceNote.querySelector('[data-source-explanation]')!.textContent=explanation || '';
     if (!explanation) sourceNote.open=false;
@@ -395,6 +395,7 @@ class CareerTimeline extends HTMLElement{
       const content=document.createElement('div');content.className='timeline-content';
       content.append(part('span','timeline-category',step.label),part('h3','',step.title),part('p','',step.detail));
       if(step.bridge)content.append(part('p','timeline-bridge',step.bridge));
+      if(step.sourceNote)content.append(part('p','timeline-evidence-limit','Where the connection stops: '+step.sourceNote));
       if(step.meta)content.append(part('small','timeline-meta',step.meta));
       if(step.sources.length){
         const refs=document.createElement('div');refs.className='timeline-sources';
@@ -440,4 +441,5 @@ if(!customElements.get('pipeline-career-timeline'))customElements.define('pipeli
 
 <style>
 .credential-jump {display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--action);text-decoration:underline;text-underline-offset:.18em}
+:global(.timeline-evidence-limit) {border-left:2px solid var(--rule,#d5d8d7);padding-left:12px;font-size:.9rem;line-height:1.55}
 </style>

@@ -2,13 +2,14 @@
 import {professions} from '../lib/model';
 import {historyFor} from '../lib/field-history.js';
 import '../styles/field-history.css';
-const stories=['k12-teacher','registered-nurse','electrician'].map(slug=>{const p=professions.find(p=>p.slug===slug);return {p,record:historyFor(p)}});
+const featured=[['k12-teacher','teacher-baldwin-agassiz-1889'],['registered-nurse','provident-reynolds-training-1891'],['software-engineer','croak-google-reliability-2020']];
+const stories=featured.map(([slug,id])=>{const p=professions.find(p=>p.slug===slug);const record=historyFor(p);return {p,event:record.events.find(event=>event.id===id)}});
 ---
 <section class="home-history" aria-labelledby="history-stories-title">
  <p class="history-kicker">BEHIND THE JOB TITLE</p>
  <div class="home-history-header"><h2 id="history-stories-title">A door opens when someone acts.</h2><a href="#directory">Browse all {professions.length} fields ↓</a></div>
  <nav class="history-updates" aria-label="Recently expanded histories"><span>Deeper in the record</span><a href="/p/agriculture/#field-history">Agriculture · land, labor & learning →</a><a href="/p/governor/#field-history">Governors · voting, office & worker decisions →</a></nav>
- <div class="history-stories">{stories.map(({p,record})=>{const event=record.events[0];return <article class="history-story">
+ <div class="history-stories">{stories.map(({p,event})=>{return <article class="history-story">
   <span class="history-story-year">{event.year}</span><span class="history-story-field">{p.name}</span>
   <h3><a href={'/p/'+p.slug+'/#field-history'}>{event.title}</a></h3>
   <p>{event.change}</p>

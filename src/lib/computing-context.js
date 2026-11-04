@@ -1,11 +1,14 @@
+import workplaceRecords from '../../data/workplace-links.json' with {type:'json'};
+import {findWorkplaceLinks} from './trace-context.js';
+
 // Each source describes the selected occupation or a particular employer’s
 // practice. The historical Whirlwind record is independent of these sources.
 const roleRecords = {
   sre: {
-    heading: 'Site reliability at Google',
-    detail: 'In 2003, Ben Treynor Sloss began running a production team at Google. He describes engineers writing software to automate the work of keeping services available.',
-    publisher: 'Google’s Site Reliability Engineering book',
-    url: 'https://sre.google/sre-book/introduction/',
+    heading: 'Marian Croak · reliability engineering at Google',
+    detail: 'In a 2020 interview, Croak described leading Google’s reliability-engineering teams. This records Black technical leadership in the specialty; it does not establish any reader’s hiring route.',
+    publisher: 'USPTO · Interview with Marian Croak',
+    url: 'https://www.uspto.gov/learning-and-resources/journeys-innovation/audio-stories/positively-connected',
   },
   devops: {
     heading: 'A DevOps practice today',
@@ -70,6 +73,11 @@ export function careerGuideFor(resolution) {
   }
 }
 
+export function computingWorkplaceRecord(context) {
+  return findWorkplaceLinks(context.employer,'software-engineer',workplaceRecords,context.workplaceInfo,
+    {related:true,contextKey:context.contextKey,occupationCode:context.occupationCode})[0] || null;
+}
+
 export function showComputingContext(panel, context) {
   if (!panel) return;
   panel.hidden = !context?.computing;
@@ -87,7 +95,9 @@ export function showComputingContext(panel, context) {
   }
 
   const workplace = context.employer?.trim();
-  panel.querySelector('[data-computing-gap]').textContent = workplace
+  const record=computingWorkplaceRecord(context);
+  panel.querySelector('.record-gap strong').textContent=record?'Where the connection stops':'The open question';
+  panel.querySelector('[data-computing-gap]').textContent = record?record.sourceNote:workplace
     ? 'Which people opened this specialty at ' + workplace + '? A training or hiring record from that workplace could connect it to the field history.'
     : 'Who opened this particular specialty to Black workers? Thompson’s account documents computer operations at MIT. A dated training or hiring record could establish the next step.';
 }
