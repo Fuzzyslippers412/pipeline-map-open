@@ -28,7 +28,8 @@ const nameFor = new Map(professions.map(p=>[p.slug,p.name]));
       <td class="table-info"><a class="source-title" href={s.url}>{s.table_name} <span aria-hidden="true">↗</span></a>
         <details><summary>{s.kind==='history'?'What this record supports':'What this table covers'}</summary><div class="source-inside">
           {s.locator && <p class="locator"><strong>Where to look</strong>{s.locator}</p>}
-          <p><strong>{s.kind==='history'?'Historical reference':'Who and what was counted'}</strong>{s.definition}</p>
+          {s.source_type&&<p><strong>Source type</strong>{s.source_type}</p>}
+          <p><strong>{s.kind==='history'?'What this source supports':'Who and what was counted'}</strong>{s.definition}</p>
           {s.limits&&<p><strong>Limits</strong>{s.limits}</p>}
           {s.data_url&&<a href={s.data_url}>National person file (ZIP) ↗</a>}
           {s.dictionary_url&&<a href={s.dictionary_url}>Occupation codes and data dictionary ↗</a>}

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {professions,roleFor} from '../src/lib/model.js';
+import {professions,roleFor,sources} from '../src/lib/model.js';
 import {historyFor,timelineHistory,dossiers} from '../src/lib/field-history.js';
 
 test('every published field has a sourced history with separately stated consequences and limits',()=>{
@@ -23,4 +23,20 @@ test('trace data retains every historical episode, source and limitation',()=>{
 test('no category pairing is returned as a claim about the reader',()=>{
  for(const p of professions){assert.match(roleFor(p),/not proof/);assert.ok(p.origin.headline&&p.gate.headline&&p.researchQuestion);assert.ok(!p.gate.gatekeeper.includes('university_dei'))}
  assert.ok(!professions.find(p=>p.slug==='corporate-executive').gate.gatekeeper.includes('foundation_nonprofit'));
+});
+
+test('claim-specific source explanations survive compilation and timeline export',()=>{
+ for(const slug of ['agriculture','governor']){
+  const record=historyFor(professions.find(p=>p.slug===slug));
+  const timeline=timelineHistory(professions.find(p=>p.slug===slug));
+  for(const event of record.events){
+   for(const [index,reference] of [event.source,...(event.sources||[])].entries()){
+    assert.ok(reference.supports?.trim(),event.id+' requires a source-specific claim');
+    const published=sources.find(s=>s.id==='history-'+slug+'-'+event.id+'-'+index);
+    assert.equal(published?.definition,reference.supports);
+    assert.equal(published?.locator,reference.locator);
+    assert.equal(timeline.find(row=>row.id===event.id).sources[index].supports,reference.supports);
+   }
+  }
+ }
 });

@@ -1,10 +1,48 @@
 {
   "slug": "agriculture",
   "headline": "Land, learning and the work of growing food",
-  "summary": "Black farmers, farmworkers, scientists and extension educators faced different barriers. These records follow access to agricultural education, shared land, practical instruction and fair treatment in farm programs.",
-  "coverageNote": "Six episodes across education, extension, cooperative farming and federal farm programs. Agriculture is a field containing distinct occupations: a farmer, hired farmworker and agricultural scientist do not share one hiring route.",
+  "summary": "Black farmworkers, farmers, scientists and extension educators faced different barriers. These records follow land, wages, organizing, education and cooperative institutions—and show where gains were restricted or reversed.",
+  "coverageNote": "Thirteen selected episodes, from the 1865 land allocation and reversal to the 2022 agroecology center. A farmer, hired farmworker and agricultural scientist do not share one hiring route. Institutional histories, legislation, participant accounts and archival catalogs answer different questions; none alone establishes a reader’s employment history.",
   "question": "Which land, employment, training or program record connects this history to the farm or institution where you work?",
   "events": [
+    {
+      "id": "agriculture-freedpeople-land-1865",
+      "date": "1865 · allocation and reversal",
+      "year": 1865,
+      "title": "Black leaders seek land to make freedom economically possible",
+      "people": "Garrison Frazier, Ulysses L. Houston and other Savannah Black church leaders; freed families",
+      "decisionMaker": "General William T. Sherman issued Special Field Orders No. 15; President Andrew Johnson’s later restoration policy reversed much of the allocation.",
+      "barrier": "Emancipation did not itself provide the land or capital needed to farm independently.",
+      "change": "After meeting Black leaders in Savannah, Sherman reserved coastal land for freed families in plots of up to 40 acres.",
+      "outcome": "Freedpeople occupied allotted land, but Johnson’s pardons and the Freedmen’s Bureau’s September 1865 circular returned much of it to former owners.",
+      "limit": "This was a geographically limited wartime order, not a national grant of permanent ownership. A family’s particular allotment and subsequent title require local records.",
+      "topics": [
+        "land"
+      ],
+      "source": {
+        "title": "Library of Congress · Sherman’s Special Order No. 15",
+        "url": "https://wwws.loc.gov/exhibits/civil-war-in-america/november-1863-april-1865.html#obj38",
+        "locator": "Sherman’s Special Order No. 15; January 16, 1865 manuscript and exhibit description",
+        "type": "Federal archival exhibit",
+        "supports": "The consultation, coastal allocation and military/congressional limits."
+      },
+      "sources": [
+        {
+          "title": "National Archives · Land allocation efforts stymied by the Johnson administration",
+          "url": "https://www.archives.gov/publications/prologue/2010/summer/slave-pension.html",
+          "locator": "Land Allocation Efforts Stymied by the Johnson Administration; May 29 amnesty and September 12 circular",
+          "type": "Federal archival history",
+          "supports": "The restoration policy and removal of freedpeople from allotted land."
+        },
+        {
+          "title": "Georgia Historical Society · Special Field Orders No. 15 marker",
+          "url": "https://www.georgiahistory.com/ghmi_marker_updated/history-of-emancipation-special-field-orders-no-15/",
+          "locator": "2011 marker text; January 12, 1865 meeting",
+          "type": "Historical marker",
+          "supports": "The names of Black church leaders at the Savannah meeting."
+        }
+      ]
+    },
     {
       "id": "agriculture-morrill-funding-1890",
       "date": "1890–1893",
@@ -20,8 +58,12 @@
         "title": "U.S. Capitol Visitor Center / National Archives · Division of agricultural funds, 1892–93",
         "url": "https://www.visitthecapitol.gov/artifact/division-agricultural-fund-between-white-and-colored-schools-1892-93",
         "locator": "African American Land-Grant Colleges; artifact description and funding table",
-        "type": "Federal archival exhibit"
-      }
+        "type": "Federal archival exhibit",
+        "supports": "The admission condition and state division of agricultural-college funding."
+      },
+      "topics": [
+        "training"
+      ]
     },
     {
       "id": "agriculture-carver-tuskegee-1896",
@@ -38,8 +80,13 @@
         "title": "National Park Service · George Washington Carver at Tuskegee",
         "url": "https://www.nps.gov/tuin/learn/historyculture/george-washington-carver.htm",
         "locator": "Biography paragraph covering the 1894 and 1896 degrees and October 8, 1896 appointment",
-        "type": "Federal institutional history"
-      }
+        "type": "Federal institutional history",
+        "supports": "Carver’s degrees and dated appointment at Tuskegee."
+      },
+      "topics": [
+        "training",
+        "research"
+      ]
     },
     {
       "id": "agriculture-campbell-jesup-1906",
@@ -56,8 +103,168 @@
         "title": "Smithsonian NMAAHC · Tuskegee Institute’s Movable Schools",
         "url": "https://www.searchablemuseum.com/teacher-training-and-vocational-education-at-hbcus/",
         "locator": "Tuskegee Institute’s Movable Schools; From the Jesup Wagon to the School on Wheels",
-        "type": "Museum historical account"
+        "type": "Museum historical account",
+        "supports": "Campbell’s assignment and the movable school’s teaching work."
+      },
+      "topics": [
+        "training"
+      ]
+    },
+    {
+      "id": "agriculture-elaine-organizing-1919",
+      "date": "1919 violence / 1923 ruling / 1925 release",
+      "year": 1919,
+      "title": "Elaine sharecroppers organize; survivors contest mob-dominated trials",
+      "people": "Black sharecroppers, Frank Moore and fellow defendants; attorney Scipio Africanus Jones",
+      "decisionMaker": "Local authorities prosecuted Black defendants after the violence; the U.S. Supreme Court required federal examination of their due-process claims.",
+      "barrier": "Debt tied Black sharecroppers to landowners. Organizing in Phillips County, Arkansas, was met by racial violence in 1919.",
+      "change": "The defendants and their lawyers challenged convictions reached under threats and intimidation. In Moore v. Dempsey (1923), the Court rejected dismissal of their federal challenge.",
+      "outcome": "The expected federal hearing never occurred. The governor commuted the sentences in 1923 and granted indefinite furloughs in January 1925.",
+      "limit": "This documented a route to challenge those convictions, not a farm-labor contract, recovered wages or protection against all later violence.",
+      "topics": [
+        "labor",
+        "land"
+      ],
+      "source": {
+        "title": "Federal Judicial Center · Moore v. Dempsey",
+        "url": "https://www.fjc.gov/history/cases/cases-that-shaped-the-federal-courts/moore-v-dempsey",
+        "locator": "The Case; The Supreme Court’s Ruling; Aftermath and Legacy; 1923 opinion excerpts",
+        "type": "Federal judicial history and primary opinion excerpts",
+        "supports": "The sharecropping context, court ruling and subsequent release process."
+      },
+      "sources": [
+        {
+          "title": "Arkansas State University · Southern Tenant Farmers Museum historical timeline",
+          "url": "https://www.astate.edu/outreach/history-and-heritage/heritage-sites/southern-tenant-farmers-museum/history.html",
+          "locator": "1882–1919: The Trials; 1925–1929: Released",
+          "type": "University museum history",
+          "supports": "Jones’s defense and fundraising work for the Elaine defendants."
+        }
+      ]
+    },
+    {
+      "id": "agriculture-boynton-extension-1929",
+      "date": "1929–1930s",
+      "year": 1929,
+      "title": "Amelia Boynton links agricultural education with land and civic independence",
+      "people": "Amelia Boynton Robinson and Samuel William Boynton",
+      "decisionMaker": "USDA employed Amelia as a home demonstration agent; the Boyntons organized teaching and registration efforts with rural communities.",
+      "barrier": "Black rural families faced limited resources and Jim Crow barriers to voting and economic independence.",
+      "change": "Amelia began home-demonstration work in Selma in 1929, teaching canning, nutrition and agricultural improvements.",
+      "outcome": "She and Samuel taught farming and home economics while encouraging land purchase and voter registration; they later joined the Dallas County Voters League.",
+      "limit": "The biography documents their work and aims, but does not provide an appointment letter, participant list or measured farm-income gains. This is not a claim that every extension position followed the same route.",
+      "topics": [
+        "training",
+        "land"
+      ],
+      "source": {
+        "title": "National Park Service · Amelia Boynton Robinson",
+        "url": "https://www.nps.gov/people/amelia-boynton-robinson.htm",
+        "locator": "Paragraphs on the 1929 USDA job, Samuel Boynton and rural teaching in the 1930s",
+        "type": "Federal biographical history",
+        "supports": "Her home-demonstration employment and the Boyntons’ combined teaching and organizing."
       }
+    },
+    {
+      "id": "agriculture-stfu-handcox-1934",
+      "date": "1934–1937",
+      "year": 1934,
+      "title": "Sharecroppers build an interracial union; John Handcox helps organize it",
+      "people": "Black and white tenant farmers and farmworkers; John Handcox, H. L. Mitchell and Henry Clay East",
+      "decisionMaker": "An interracial group formed the Southern Tenant Farmers’ Union in Arkansas; workers organized locals and collective action.",
+      "barrier": "Agricultural subsidy arrangements favored landowners while tenants and laborers faced eviction and low pay.",
+      "change": "The union began in 1934. Handcox, a Black sharecropper, used songs, travel and organizing to bring workers together.",
+      "outcome": "The university museum reports that the 1935 cotton-pickers’ strike increased pay per pound. Violence and persecution persisted; Handcox fled Arkansas in 1937.",
+      "limit": "Sources establish organizing and a reported wage gain, not a payroll audit for every plantation. Founding-day accounts differ, so this entry uses the year.",
+      "topics": [
+        "labor"
+      ],
+      "source": {
+        "title": "NYU Tamiment Library · Southern Tenant Farmers’ Union Collection",
+        "url": "https://findingaids.library.nyu.edu/tamwag/wag_329/",
+        "locator": "Historical/Biographical Note; founding, subsidy arrangements and persecution",
+        "type": "Archival finding aid",
+        "supports": "The union’s founding and labor context; the underlying collection was not inspected."
+      },
+      "sources": [
+        {
+          "title": "Arkansas State University · Southern Tenant Farmers Museum historical timeline",
+          "url": "https://www.astate.edu/outreach/history-and-heritage/heritage-sites/southern-tenant-farmers-museum/history.html",
+          "locator": "1930–1944: 1935 Strike",
+          "type": "University museum history",
+          "supports": "The museum’s account of the cotton-pickers’ wage gain."
+        },
+        {
+          "title": "University of Washington · Interview with historian Michael Honey on John Handcox",
+          "url": "https://www.washington.edu/news/2014/01/07/sharecroppers-troubadour-the-life-of-singer-union-organizer-john-handcox/",
+          "locator": "January 7, 2014; questions on the book’s concept and Handcox’s departure",
+          "type": "University interview with oral-history researcher",
+          "supports": "Handcox’s role in interracial organizing and flight from Arkansas."
+        }
+      ]
+    },
+    {
+      "id": "agriculture-flsa-expansion-1966",
+      "date": "1966 law / 1967 implementation",
+      "year": 1966,
+      "title": "Federal minimum-wage protection reaches some agricultural workers",
+      "people": "Black farmworkers and other hired agricultural workers",
+      "decisionMaker": "Congress amended the Fair Labor Standards Act; the federal Wage and Hour Division administers its protections.",
+      "barrier": "Agricultural labor had not shared the same federal wage protections as many other kinds of work.",
+      "change": "Public Law 89-601 narrowed the agricultural exemption and set a phased minimum wage for covered agricultural employees, starting at $1 an hour.",
+      "outcome": "The expansion reached some farmworkers but retained exclusions and an agricultural overtime exemption.",
+      "limit": "This was an occupation-wide change, not a race-specific award. Coverage and actual payment at a named farm need separate evidence; the historical rate is not today’s wage guidance.",
+      "topics": [
+        "labor"
+      ],
+      "source": {
+        "title": "U.S. Statutes at Large · Fair Labor Standards Amendments of 1966",
+        "url": "https://www.govinfo.gov/content/pkg/STATUTE-80/pdf/STATUTE-80-Pg830.pdf",
+        "locator": "Public Law 89-601, September 23, 1966; §203, pp.833–834, and §302, p.838",
+        "type": "Enacted federal law",
+        "supports": "The narrowed exemption, retained overtime exclusion and agricultural wage schedule."
+      },
+      "sources": [
+        {
+          "title": "U.S. Department of Labor · Agricultural employment under the FLSA",
+          "url": "https://www.dol.gov/agencies/whd/fact-sheets/12-agricultural-employment-flsa",
+          "locator": "Fact Sheet 12, January 2025; Coverage and Requirements",
+          "type": "Federal agency explanation",
+          "supports": "Why an agricultural job title alone does not establish minimum-wage or overtime coverage."
+        }
+      ]
+    },
+    {
+      "id": "agriculture-federation-cooperatives-1967",
+      "date": "1967 founding / 1985 merger",
+      "year": 1967,
+      "title": "Black farmers build a federation for cooperative business and land retention",
+      "people": "Black farmers and representatives of 22 founding cooperatives",
+      "decisionMaker": "Member organizations formed the Federation of Southern Cooperatives; it later merged with the Emergency Land Fund.",
+      "barrier": "Small Black farmers needed collective business support and help retaining their land.",
+      "change": "Founded in 1967, the Federation linked cooperative development with advocacy. The 1985 merger expanded its land-protection services.",
+      "outcome": "Its institutional record documents assistance with jointly owned businesses, farm enterprises and land retention.",
+      "limit": "The organization’s history establishes its services and institutional changes. It is not an independent measure of acres saved, wages earned or benefits received by a particular member farm.",
+      "topics": [
+        "cooperatives",
+        "land"
+      ],
+      "source": {
+        "title": "Federation of Southern Cooperatives/Land Assistance Fund · History",
+        "url": "https://www.federation.coop/history-archives",
+        "locator": "Timeline entries 1967 and 1985",
+        "type": "Organization’s institutional history",
+        "supports": "The founding, merger and stated land-retention work."
+      },
+      "sources": [
+        {
+          "title": "Federation of Southern Cooperatives/Land Assistance Fund · Cooperative development",
+          "url": "https://www.federation.coop/coop-development",
+          "locator": "Opening description of 22 founding cooperatives; services and cooperative principles",
+          "type": "Organization’s program description",
+          "supports": "The founding membership and forms of cooperative support."
+        }
+      ]
     },
     {
       "id": "agriculture-hamer-freedom-farm-1969",
@@ -69,13 +276,60 @@
       "barrier": "Poor Black farmers and sharecroppers depended on landowners for access to land and livelihood.",
       "change": "In 1969 Hamer purchased 40 acres in Mississippi’s Delta for collective cultivation.",
       "outcome": "The cooperative grew cash crops for expenses and vegetables for participating workers, later expanding its land and adding a pig bank.",
-      "limit": "The cooperative did not sustain itself. This is a local shared-land and food-security record, not proof of a permanent wage job or a connection to another farm.",
+      "limit": "The cooperative failed in 1976, according to the archival biography. This is a local shared-land and food-security record, not proof of a permanent wage job or a connection to another farm.",
       "source": {
         "title": "SNCC Digital Gateway · Fannie Lou Hamer founds Freedom Farm Cooperative",
         "url": "https://snccdigital.org/events/fannie-lou-hamer-founds-freedom-farm-cooperative/",
         "locator": "1969 timeline entry; founding, cultivation, expansion and sustainability paragraphs",
-        "type": "Movement and university history project"
-      }
+        "type": "Movement and university history project",
+        "supports": "Hamer’s purchase, cooperative farming and the limits of its sustainability."
+      },
+      "topics": [
+        "land",
+        "cooperatives"
+      ],
+      "sources": [
+        {
+          "title": "Mississippi Department of Archives & History · Fannie Lou Townsend Hamer Collection",
+          "url": "https://finding.mdah.ms.gov/manuscripts/t012",
+          "locator": "Biography: Freedom Farm; Series 3 Organizational Records, Box 1, folders 4–5",
+          "type": "Archival finding aid",
+          "supports": "The catalog’s founding/closure outline and location of membership and activity records; underlying documents were not reviewed."
+        }
+      ]
+    },
+    {
+      "id": "agriculture-new-communities-1969",
+      "date": "1969 founding / January 9, 1970 land purchase",
+      "year": 1969,
+      "title": "Shirley and Charles Sherrod help build New Communities on collectively held land",
+      "people": "Shirley Sherrod, Charles Sherrod, Slater King and New Communities participants",
+      "decisionMaker": "Movement participants formed New Communities; its board arranged a financed land purchase in Lee County, Georgia.",
+      "barrier": "Sharecroppers and tenants could lose homes and work when they participated in civil-rights organizing.",
+      "change": "New Communities used collective landholding to seek a more secure economic base. It closed on 5,735 acres in January 1970.",
+      "outcome": "The farm raised crops and livestock, but debt, drought and discriminatory lending contributed to the loss of its original land to foreclosure.",
+      "limit": "The corporation survived the land loss. Founding a land trust did not guarantee secure livelihoods for all participants; it is not evidence about another farm’s employment.",
+      "topics": [
+        "land",
+        "cooperatives",
+        "labor"
+      ],
+      "source": {
+        "title": "SNCC Digital Gateway · New Communities formed in Southwest Georgia",
+        "url": "https://snccdigital.org/events/new-communities-formed-in-southwest-georgia/",
+        "locator": "1969 timeline entry; incorporation, January 9, 1970 closing, farming and foreclosure paragraphs",
+        "type": "Movement and university history project",
+        "supports": "The founders, land purchase, farming activity and loss of the original land."
+      },
+      "sources": [
+        {
+          "title": "Maine Farmland Trust · A conversation with Shirley Sherrod",
+          "url": "https://www.mainefarmlandtrust.org/blogs/a-conversation-with-shirley-sherrod",
+          "locator": "Ellen Sabina interview, published February 29, 2024; discussion of eviction, landholding and committees",
+          "type": "Published participant interview",
+          "supports": "Sherrod’s account of why participants built the land trust and how they organized it."
+        }
+      ]
     },
     {
       "id": "agriculture-pigford-settlement-1999",
@@ -92,8 +346,12 @@
         "title": "U.S. GAO · Pigford Settlement: The Role of the Court-Appointed Monitor",
         "url": "https://www.gao.gov/assets/a94099.html",
         "locator": "GAO-06-469R, March 17, 2006; opening settlement chronology and January 2006 claims totals",
-        "type": "Federal oversight report"
-      }
+        "type": "Federal oversight report",
+        "supports": "The consent decree and claims outcomes reported by January 2006."
+      },
+      "topics": [
+        "land"
+      ]
     },
     {
       "id": "agriculture-famu-agroecology-2022",
@@ -110,24 +368,30 @@
         "title": "National Black Food & Justice Alliance · FAMU agroecology center launch",
         "url": "https://blackfoodjustice.org/media/nbfja-statement-how-the-inflation-reduction-act-falls-short-m22nw",
         "locator": "October 20, 2022 release; partnership, research aims and November launch plans",
-        "type": "Partner organization announcement"
+        "type": "Partner organization announcement",
+        "supports": "The partners’ announced center, research aims and planned launch."
       },
       "sources": [
         {
           "title": "WFSU · Florida A&M University opens its new Agroecology Center",
           "url": "https://news.wfsu.org/wfsu-local-news/2022-11-13/florida-a-m-university-opens-its-new-agroecology-center",
           "locator": "Tom Flanigan, November 13, 2022; opening report and interviews with both co-directors",
-          "type": "Contemporary local reporting"
+          "type": "Contemporary local reporting",
+          "supports": "The opening at the Orange Avenue site and the named co-directors’ explanations."
         }
+      ],
+      "topics": [
+        "research",
+        "training"
       ]
     }
   ],
   "furtherResearch": [
-    "Add farmworkers’ own accounts, wage and crew records, and organizing histories alongside farm ownership and agricultural science.",
-    "Check local land titles, cooperative membership and program records before connecting a person’s farm to Freedom Farm or another cooperative.",
-    "Locate the appointment and extension payroll records behind Carver’s and Campbell’s Tuskegee roles.",
-    "For a current farm, distinguish the landowner, operating business, labor contractor and person who hires or supervises workers.",
-    "For scientific or extension work, verify the employer, appointment criteria and actual training or placement outcomes."
+    "Inspect local wage sheets, crew rosters and contracts to identify the employer and any wage change for a particular farmworker.",
+    "Trace a farm’s land through allotment, deed, lease and foreclosure records; distinguish the landowner from the operating business and labor contractor.",
+    "Read archival membership and activity records before connecting a farm or person to Freedom Farm, New Communities or the Federation.",
+    "Compare extension agents’ appointment, payroll and county reports with participant records; an educational program is not proof of paid placement.",
+    "Add local cases from more regions and periods. These episodes do not cover every Black farming community or every form of agricultural work."
   ],
   "credential": {
     "name": "George Washington Carver",
@@ -142,5 +406,28 @@
       }
     ]
   },
-  "checkedOn": "2026-11-04"
+  "checkedOn": "2026-11-04",
+  "researchLeads": [
+    {
+      "title": "Freedom Farm membership and activity records",
+      "url": "https://finding.mdah.ms.gov/manuscripts/t012",
+      "locator": "Fannie Lou Townsend Hamer Collection T/012; Series 3, Box 1, folders 4–5; 1970–1976",
+      "question": "Which participants and activities are named, and can a particular farm or family be connected?",
+      "status": "Catalog inspected; underlying records not reviewed"
+    },
+    {
+      "title": "Black extension field-worker reports",
+      "url": "https://www.archives.gov/research/african-americans/record-groups/rg-033-extension-service",
+      "locator": "Record Group 33; Annual Narrative and Statistical Reports, 1911–1966, NAID 251659; selected women’s reports, 1928/1930, NAIDs 251665/251667",
+      "question": "Which agents, counties, demonstrations and participants can be documented beyond the published biographies?",
+      "status": "Catalog inspected; underlying records not reviewed"
+    },
+    {
+      "title": "Southern Tenant Farmers’ Union oral histories and documentary records",
+      "url": "https://findingaids.library.nyu.edu/tamwag/wag_329/",
+      "locator": "Tamiment Library, WAG.329; collection overview and Historical/Biographical Note",
+      "question": "What do members’ own accounts show about a named local, employer or wage dispute?",
+      "status": "Catalog inspected; underlying records not reviewed"
+    }
+  ]
 }

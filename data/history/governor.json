@@ -1,11 +1,34 @@
 {
   "slug": "governor",
-  "headline": "Black governors: succession, elections and new firsts",
-  "summary": "These selected records distinguish taking office through succession from winning a statewide election. The November 2026 updates cover reported victories by Keisha Lance Bottoms in Georgia and Byron Donalds in Florida, alongside earlier Black governors.",
-  "coverageNote": "Six selected episodes, not a complete list of Black governors. Election reporting checked November 4, 2026: Bottoms and Donalds are described as governors-elect, not sworn governors. Door Notes has not independently verified certification. Holding office does not by itself establish a change in another worker’s hiring, pay or promotion.",
+  "headline": "Black governors: voting access, officeholding and decisions affecting work",
+  "summary": "Follow the organizers and voting rules behind electoral access, the different routes into executive office, and specific decisions affecting workers. These records distinguish a legal change, an election, a succession and a measured or reported outcome.",
+  "coverageNote": "Twelve selected episodes, including voting-rights context, an adjacent lieutenant-governor milestone and two worker-policy examples—not a complete roster or a proven chain of influence. The November 2026 entries remain reported election results: Bottoms and Donalds are described as governors-elect, not sworn governors. Certification has not been independently verified.",
   "question": "Which election, succession rule and office record connect this history to the state or public office you mean?",
   "checkedOn": "2026-11-04",
   "events": [
+    {
+      "id": "fifteenth-amendment-voting-1870",
+      "date": "February 3, 1870",
+      "year": 1870,
+      "title": "The Fifteenth Amendment establishes a constitutional protection against racial exclusion from voting",
+      "people": "Black male voters and Reconstruction-era officeholders",
+      "decisionMaker": "Congress proposed the amendment in 1869; state legislatures supplied the ratifications that made it part of the Constitution.",
+      "barrier": "Racial exclusions had denied Black Americans a voice in choosing state governments.",
+      "change": "The amendment prohibited governments from denying voting rights because of race, color or previous enslavement and authorized congressional enforcement.",
+      "outcome": "The National Archives records Black voting and officeholding during Reconstruction, followed by renewed disenfranchisement through state restrictions.",
+      "limit": "This is constitutional context for electoral participation, not proof that the amendment caused any one gubernatorial victory. It did not itself enfranchise women or prevent later suppression.",
+      "evidenceStatus": "Constitutional context; not an individual election record",
+      "topics": [
+        "voting"
+      ],
+      "source": {
+        "title": "National Archives · Fifteenth Amendment and its aftermath",
+        "url": "https://www.archives.gov/milestone-documents/15th-amendment",
+        "locator": "Ratification introduction; Reconstruction and disenfranchisement paragraphs; transcript, Sections 1–2",
+        "type": "Constitutional text and archival interpretation",
+        "supports": "The ratification date, the constitutional prohibition, congressional enforcement power and the later erosion of voting access."
+      }
+    },
     {
       "id": "pinchback-louisiana-succession-1872",
       "date": "December 9, 1872",
@@ -21,8 +44,44 @@
         "title": "U.S. Senate · Reconstruction Louisiana and the Case of PBS Pinchback",
         "url": "https://www.senate.gov/artandhistory/senate-stories/reconstruction-louisiana-and-the-case-of-pbs-pinchback.htm",
         "locator": "Paragraph on December 9, 1872 impeachment and succession",
-        "type": "Institutional history"
-      }
+        "type": "Institutional history",
+        "supports": "The impeachment-triggered succession on December 9, 1872, during Louisiana’s disputed Reconstruction government."
+      },
+      "topics": [
+        "succession"
+      ]
+    },
+    {
+      "id": "selma-voting-rights-act-1965",
+      "date": "March–August 1965",
+      "year": 1965,
+      "title": "Selma organizers press for federal protection of Black voting rights",
+      "people": "Amelia Boynton, Marie Foster, John Lewis, Hosea Williams and local voting-rights organizers",
+      "decisionMaker": "Local organizers, SNCC and SCLC sustained the campaign; Congress passed the Voting Rights Act and President Lyndon B. Johnson signed it on August 6.",
+      "barrier": "Literacy tests, intimidation and violence blocked Black voter registration and participation in state elections.",
+      "change": "The 1965 act provided federal examiners and oversight in covered jurisdictions, alongside a nationwide prohibition on racial discrimination in voting.",
+      "outcome": "The National Archives reports about 250,000 new Black voter registrations by the end of 1965, with roughly one-third registered by federal examiners.",
+      "limit": "These are historical provisions and registration results. The act did not select a governor, establish an individual candidate’s route, or prove any worker’s employment outcome. This is not a statement of every voting rule in force today.",
+      "evidenceStatus": "Historical law and registration outcome",
+      "topics": [
+        "voting"
+      ],
+      "source": {
+        "title": "National Archives · Voting Rights Act of 1965",
+        "url": "https://www.archives.gov/milestone-documents/voting-rights-act",
+        "locator": "Introductory account, final paragraph on registration results, and statutory transcript Sections 2–6",
+        "type": "Historical statute and archival interpretation",
+        "supports": "The signing date, original enforcement tools and reported registration outcomes by the end of 1965."
+      },
+      "sources": [
+        {
+          "title": "National Archives · Selma Marches",
+          "url": "https://www.archives.gov/research/african-americans/vote/selma-marches",
+          "locator": "Dallas County Voters League’s Courageous Eight; March 7 march and August 6 enactment paragraphs",
+          "type": "Archival history with linked original records",
+          "supports": "Names the local organizers and organizations, describes the violence at Selma and connects the campaign to the legislation."
+        }
+      ]
     },
     {
       "id": "wilder-virginia-election-1989",
@@ -39,8 +98,44 @@
         "title": "National Governors Association · L. Douglas Wilder",
         "url": "https://www.nga.org/governor/l-douglas-wilder/",
         "locator": "Term dates and biography’s 1989 election paragraph",
-        "type": "Governors association history"
-      }
+        "type": "Governors association history",
+        "supports": "Wilder’s 1989 election, the national first for a Black governor elected by a state electorate, and his term dates."
+      },
+      "topics": [
+        "elections"
+      ]
+    },
+    {
+      "id": "bradley-ohio-lieutenant-governor-2003",
+      "date": "2002 election / January 2003",
+      "year": 2003,
+      "title": "Jennette Bradley enters Ohio’s lieutenant governor’s office",
+      "people": "Jennette Bradley and Ohio voters",
+      "decisionMaker": "Bob Taft selected Bradley as his running mate; Ohio voters elected the ticket in 2002.",
+      "barrier": "Black women had not previously held a U.S. state lieutenant governorship, according to the university histories.",
+      "change": "Bradley began serving in January 2003 as the country’s first Black woman lieutenant governor.",
+      "outcome": "She served in that office until 2005 and also directed Ohio’s Department of Commerce. Taft then appointed her state treasurer.",
+      "limit": "Lieutenant governor and governor are different offices. Bradley’s service demonstrates entry to a statewide executive role; it is not evidence that she became governor or caused a later candidate’s election.",
+      "evidenceStatus": "Adjacent executive office; not a governorship",
+      "topics": [
+        "elections"
+      ],
+      "source": {
+        "title": "Wittenberg University · Jennette Bradley’s executive offices",
+        "url": "https://www.wittenberg.edu/news/2004/12-22",
+        "locator": "December 22, 2004, Ground-Breaker; opening paragraphs on January 2003 service and the treasurer appointment",
+        "type": "Contemporary university account",
+        "supports": "Her January 2003 national first, concurrent Commerce role and announced January 2005 treasurer appointment."
+      },
+      "sources": [
+        {
+          "title": "Baldwin Wallace University · Women in Ohio Statewide Office",
+          "url": "https://www.bw.edu/centers/women-and-politics-of-ohio/statewide/",
+          "locator": "Lieutenant Governor section, Jennette Bradley profile",
+          "type": "University political-history project",
+          "supports": "The 2002 ticket election and the distinction between her elected lieutenant governorship and later treasurer appointment."
+        }
+      ]
     },
     {
       "id": "patrick-massachusetts-election-2006",
@@ -57,20 +152,97 @@
         "title": "Massachusetts Archives · Office of the Governor records",
         "url": "https://www.sec.state.ma.us/divisions/archives/collections/FA_GO.pdf",
         "locator": "GO60 Patrick administration records; PDF page 57 and following",
-        "type": "State archival finding aid"
+        "type": "State archival finding aid",
+        "supports": "Identifies the Patrick administration’s surviving gubernatorial records and their archival context."
       },
       "sources": [
         {
           "title": "National Governors Association · Deval Patrick",
           "url": "https://www.nga.org/governor/deval-patrick/",
           "locator": "Term dates and opening paragraph on inauguration",
-          "type": "Governors association history"
+          "type": "Governors association history",
+          "supports": "Patrick’s inauguration and term dates."
         },
         {
           "title": "Congressional statement · Patrick’s historic election, November 8, 2006",
           "url": "https://www.markey.senate.gov/news/press-releases/november-8-2006-markey-congratulates-deval-patrick-on-historic-victory",
           "locator": "Statement identifying Massachusetts’ first African American governor",
-          "type": "Contemporary congressional statement"
+          "type": "Contemporary congressional statement",
+          "supports": "A contemporary statement identifying Massachusetts’ first Black governor."
+        }
+      ],
+      "topics": [
+        "elections"
+      ]
+    },
+    {
+      "id": "paterson-new-york-succession-2008",
+      "date": "March 17, 2008",
+      "year": 2008,
+      "title": "David Paterson succeeds to New York’s governorship",
+      "people": "David A. Paterson",
+      "decisionMaker": "Governor Eliot Spitzer resigned; Lieutenant Governor Paterson succeeded him rather than winning a new election for governor.",
+      "barrier": "Paterson became the first Black governor of New York, as documented in a contemporary state-senator statement.",
+      "change": "After election as lieutenant governor in 2006, Paterson assumed the governorship on March 17, 2008.",
+      "outcome": "He completed Spitzer’s unexpired term; the National Governors Association lists service through January 1, 2011.",
+      "limit": "This is a documented succession at one state office. It does not establish appointment or employment of the reader, and an elected lieutenant governorship is not a separate gubernatorial election win.",
+      "evidenceStatus": "Documented succession and service",
+      "topics": [
+        "succession"
+      ],
+      "source": {
+        "title": "National Governors Association · David A. Paterson",
+        "url": "https://www.nga.org/governor/david-a-paterson/",
+        "locator": "Term dates and final biography sentences on the 2006 election and March 17, 2008 succession",
+        "type": "Governors association history",
+        "supports": "Paterson’s lieutenant-governor election, succession after Spitzer’s resignation and gubernatorial term dates."
+      },
+      "sources": [
+        {
+          "title": "New York Senate · Statement on Paterson’s inauguration",
+          "url": "https://www.nysenate.gov/newsroom/in-the-news/2008/jose-m-serrano/senator-serrano-looks-forward-working-new-governor",
+          "locator": "José M. Serrano statement, March 19, 2008; March 17 oath and first Black governor references",
+          "type": "Contemporary legislative statement",
+          "supports": "A contemporary account of the oath of office and identification of New York’s first Black governor."
+        }
+      ]
+    },
+    {
+      "id": "paterson-domestic-workers-rights-2010",
+      "date": "August 31 / November 29, 2010",
+      "year": 2010,
+      "title": "Domestic workers win new protections through New York’s legislature and governor",
+      "people": "Domestic Workers United organizers, including nanny Barbara Young; Governor David Paterson and legislative sponsors",
+      "decisionMaker": "Domestic workers organized for legislation; New York legislators passed it and Paterson signed Chapter 481 on August 31.",
+      "barrier": "Many domestic workers were a household’s sole employee and were excluded from protections available in larger workplaces.",
+      "change": "The law extended protections including overtime, weekly rest and protection from specified discrimination and harassment. After a year with an employer, it provided three paid days of rest annually.",
+      "outcome": "The Department of Labor documents a November 29, 2010 effective date for the paid-rest provision. Contemporary reporting records workers celebrating after six years of lobbying.",
+      "limit": "Enactment is a rule change, not proof that every employer complied or every worker received the benefits. This historical record does not determine an individual’s present legal coverage, pay recovery or hiring route.",
+      "evidenceStatus": "Enacted worker protections; individual enforcement unverified",
+      "topics": [
+        "worker-policy"
+      ],
+      "source": {
+        "title": "New York Senate · Paterson signs the Domestic Workers Bill of Rights",
+        "url": "https://www.nysenate.gov/newsroom/in-the-news/2010/diane-j-savino/governor-paterson-signs-domestic-workers-bill-rights",
+        "locator": "August 31, 2010 governor’s announcement reproduced by Senator Diane Savino; opening paragraph",
+        "type": "Contemporary executive announcement",
+        "supports": "Paterson’s signature and the law’s stated purpose of extending protections to domestic workers."
+      },
+      "sources": [
+        {
+          "title": "New York Department of Labor · Domestic workers legislation FAQ",
+          "url": "https://dol.ny.gov/system/files/documents/2021/12/domestic-workers-legislation-frequently-asked-questions.pdf",
+          "locator": "Page 1, Days of rest and paid time off; introduction and question 1",
+          "type": "Agency implementation guidance",
+          "supports": "Chapter 481’s November 29, 2010 effective date and the paid-rest entitlement after one year with an employer."
+        },
+        {
+          "title": "WNYC · Workers describe the new law and their organizing",
+          "url": "https://wnyc.org/story/93136-new-bill-gives-rights-domestic-workers-new-rights/",
+          "locator": "Cindy Rodriguez, August 31, 2010; protections, six years of lobbying and Barbara Young interview",
+          "type": "Contemporary reporting and worker interview",
+          "supports": "The protections reported at enactment, the organizing campaign and Barbara Young’s response; it does not measure later compliance."
         }
       ]
     },
@@ -89,14 +261,58 @@
         "title": "Maryland Office of the Governor · Wes Moore",
         "url": "https://governor.maryland.gov/leadership/governor-wes-moore",
         "locator": "Opening paragraph identifying the office and state first",
-        "type": "Official office biography"
+        "type": "Official office biography",
+        "supports": "Identifies Moore as Maryland’s 63rd and first Black governor."
       },
       "sources": [
         {
           "title": "Montgomery County · Statement on Moore and Miller’s inaugurations",
           "url": "https://www2.montgomerycountymd.gov/mcgportalapps/Statement_Detail.aspx?id=1574",
           "locator": "January 18, 2023 statement; opening account of attending the swearing-in",
-          "type": "Contemporary local-government record"
+          "type": "Contemporary local-government record",
+          "supports": "A dated account of attending the January 18, 2023 swearing-in."
+        }
+      ],
+      "topics": [
+        "elections"
+      ]
+    },
+    {
+      "id": "moore-serve-act-2023",
+      "date": "April 24, 2023 / July 16, 2024",
+      "year": 2023,
+      "title": "Maryland creates a paid service pathway and records its first graduating class",
+      "people": "Governor Wes Moore, Maryland legislators, service participants and host organizations",
+      "decisionMaker": "The Maryland General Assembly passed the administration’s SERVE Act; Moore approved Chapter 99 on April 24, 2023. The Department of Service and Civic Innovation administered the program.",
+      "barrier": "The law addressed access to paid service experience and routes into employment, education or apprenticeships.",
+      "change": "The 2023 law established service pathways with paid placements, training and completion awards, and directed outreach to HBCUs and other institutions.",
+      "outcome": "The governor’s office documented the first commencement in July 2024. Maryland Matters reported 231 graduates across Service Year Option and Maryland Corps, including participants describing their host-site work.",
+      "limit": "These programs were not limited to Black participants. A commencement count is not a long-term employment measure, proof of racial equity, or evidence that the reader worked at any host site. Current program terms require separate verification.",
+      "evidenceStatus": "Enacted program and reported completion; long-term outcomes open",
+      "topics": [
+        "worker-policy"
+      ],
+      "source": {
+        "title": "Maryland General Assembly · SERVE Act, Chapter 99 of 2023",
+        "url": "https://mgaleg.maryland.gov/2023RS/Chapters_noln/CH_99_sb0551e.pdf",
+        "locator": "Sections 21–204 to 21–206 (printed pages 15–25) and approval on page 39; distinguish inserted law from bracketed deletions",
+        "type": "Enacted state law",
+        "supports": "Departmental administration, paid placements and training, completion awards, HBCU outreach and the April 24 approval date."
+      },
+      "sources": [
+        {
+          "title": "Maryland Governor’s Office · Inaugural service commencement",
+          "url": "https://governor.maryland.gov/news/press-releases/governor-moore-attends-inaugural-service-year-option-and-maryland-corps-member-commencement",
+          "locator": "July 17, 2024 release; previous-day commencement, participant accounts and program descriptions",
+          "type": "Official implementation report",
+          "supports": "The first commencement occurred and participants described service work. The account is from the administering executive branch, not an independent impact evaluation."
+        },
+        {
+          "title": "Maryland Matters · First service class graduates",
+          "url": "https://marylandmatters.org/2024/07/16/service-year-program-graduates-first-class-of-workers-with-skills-experience/",
+          "locator": "Elijah Pittman, July 16, 2024; opening 231-graduate count and Justin Peleska’s Love Wins placement account",
+          "type": "Independent contemporary reporting",
+          "supports": "The combined graduating-class count and a named participant’s account of an actual host-site placement."
         }
       ]
     },
@@ -117,8 +333,21 @@
         "title": "Georgia Public Broadcasting · Keisha Lance Bottoms wins Georgia’s governor race",
         "url": "https://www.gpb.org/news/2026/11/03/georgias-keisha-lance-bottoms-becomes-nations-first-black-female-governor",
         "locator": "November 3, 2026, 9:34 p.m. report; opening paragraphs citing AP’s race call",
-        "type": "Election-night reporting citing AP"
-      }
+        "type": "Election-night reporting citing AP",
+        "supports": "Reports the AP race call and the national first for a Black woman elected governor; this is not a certification document."
+      },
+      "topics": [
+        "elections"
+      ],
+      "sources": [
+        {
+          "title": "WABE · Bottoms wins Georgia’s governor race",
+          "url": "https://www.wabe.org/bottoms-beats-jackson-in-georgia-governors-race/",
+          "locator": "Rahul Bali and DorMiya Vance, November 3, 2026, updated 9:45 p.m.; opening paragraphs and AP call",
+          "type": "Contemporary public-radio election reporting",
+          "supports": "Corroborates the reported win and distinguishes election from the January swearing-in. The outlet relies on the AP race call."
+        }
+      ]
     },
     {
       "id": "donalds-florida-election-2026",
@@ -137,22 +366,35 @@
         "title": "WUSF · Byron Donalds wins Florida’s governor race",
         "url": "https://www.wusf.org/politics-issues/2026-11-03/republican-byron-donalds-wins-florida-governors-race",
         "locator": "November 3 report, updated 10:22 p.m.; governor-elect subheading and AP race-call paragraphs",
-        "type": "Election-night reporting citing AP"
+        "type": "Election-night reporting citing AP",
+        "supports": "Reports the AP race call and Florida’s first Black governor-elect; this is not a certification document."
       },
       "sources": [
         {
           "title": "Florida Legislature · Constitution, Article IV, Section 5",
           "url": "https://www.leg.state.fl.us/statutes/index.cfm?submenu=3#A4S05",
           "locator": "Article IV, Section 5(a): statewide election and January term start",
-          "type": "State constitution"
+          "type": "State constitution",
+          "supports": "The state’s general rules for electing its executive officers and beginning their terms; it does not certify this race."
+        },
+        {
+          "title": "WUWF · Election-night results in Florida",
+          "url": "https://www.wuwf.org/local-news/2026-11-03/takeaways-from-election-night-in-the-panhandle?_amp=true",
+          "locator": "November 3, 2026; A new governor and Ashley Moody wins Senate seat section",
+          "type": "Contemporary public-radio election reporting",
+          "supports": "Additional reporting of Donalds’ win and Florida’s first Black governor; unofficial election-night results do not establish certification."
         }
+      ],
+      "topics": [
+        "elections"
       ]
     }
   ],
   "furtherResearch": [
     "Recheck the 2026 state canvass, certification and inauguration records before changing either governor-elect to serving governor.",
-    "Add other state examples and temporary officeholders; these six episodes are not a complete roster or a proven chain of influence.",
-    "For a specific governor’s office, distinguish the elected office from appointed staff, civil-service employees and contractors; use their own employment and appointment records.",
-    "Trace worker outcomes through an actual law, budget, appointment or administrative action and its implementation. A governor’s identity or election alone does not prove an employment effect."
+    "Read campaign and party-selection records before claiming how a particular candidate obtained a nomination; voting-rights history alone cannot establish that individual connection.",
+    "Locate domestic-worker enforcement, compliance and wage-recovery records to evaluate what changed after the 2010 New York law.",
+    "Locate independent follow-up evidence on Maryland service participants’ employment, education, pay and retention; distinguish Black participants’ results from aggregate results.",
+    "For a specific governor’s office, separate the elected office from appointed staff, civil-service employees and contractors, using their own appointment and employment records."
   ]
 }

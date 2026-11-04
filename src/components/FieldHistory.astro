@@ -14,26 +14,28 @@ const record=historyFor(p);
  {p.slug==='governor' && <p class="history-boundary"><strong>Election update · November 4, 2026.</strong> The 2026 entries report race calls for governors-elect. Certification and taking office are separate steps. <a href="#history-bottoms-georgia-election-2026">Georgia</a> · <a href="#history-donalds-florida-election-2026">Florida</a></p>}
  {p.slug==='elected-official' && <p class="history-boundary"><a href="/p/governor/#field-history">Governors: historical milestones and the 2026 election updates →</a></p>}
  <details class="history-scope"><summary>Scope &amp; research limits</summary><p>{record.coverageNote}</p></details>
+ {record.events.length>=8 && <details class="history-index"><summary>Find a person or decision <span>{record.events.length} episodes</span></summary><nav aria-label="Jump to a historical episode"><ol>{record.events.map(event=><li><a href={'#history-'+event.id}><span>{event.date}</span>{event.title}</a></li>)}</ol></nav></details>}
  {p.slug==='registered-nurse' && <details class="history-scope"><summary>A training scene from Freedmen’s Hospital, 1943</summary><ArchivePlate/><p>This photograph records a volunteer aide’s lesson. It does not establish an RN credential or a hiring route.</p></details>}
  <ol class="history-episodes">
   {record.events.map((event,i)=><li id={'history-'+event.id}>
    <div class="history-date"><span>{event.date}</span><small>{String(i+1).padStart(2,'0')}</small></div>
    <article>
     <h3>{event.title}</h3>
-    {event.evidenceStatus && <p class="history-kicker">{event.evidenceStatus} · checked {event.checkedOn}</p>}
+    {event.evidenceStatus && <p class="history-kicker">{event.evidenceStatus}{(event.checkedOn||record.checkedOn)&&<> · checked {event.checkedOn||record.checkedOn}</>}</p>}
     {event.people && <p class="history-people">{event.people}</p>}
     <p class="history-change">{event.outcome || event.change}</p>
     <a class="history-source" href={event.source.url}>{event.source.title} <span aria-hidden="true">↗</span></a>
     <details class="history-evidence">
-     <summary>Decision, outcome & evidence</summary>
+     <summary>Decision, outcome &amp; evidence <span class="history-reference-count">{1+(event.sources||[]).filter(s=>s.url!==event.source.url).length} {(event.sources||[]).filter(s=>s.url!==event.source.url).length?'sources':'source'}</span></summary>
      <dl>
       {event.barrier && <><dt>Barrier or decision at stake</dt><dd>{event.barrier}</dd></>}
       {event.decisionMaker && <><dt>Who made the decision</dt><dd>{event.decisionMaker}</dd></>}
       {event.outcome && <><dt>What changed</dt><dd>{event.change}</dd></>}
       <dt>Where the evidence stops</dt><dd>{event.limit}</dd>
-      <dt>Read the record</dt><dd>{event.source.type} · {event.source.locator}</dd>
      </dl>
-     {(event.sources||[]).filter(s=>s.url!==event.source.url).map(s=><a class="history-source" href={s.url}>{s.title} ↗</a>)}
+     <ul class="history-references" aria-label={'Sources for '+event.title}>
+      {[event.source,...(event.sources||[]).filter(s=>s.url!==event.source.url)].map(s=><li><a class="history-source" href={s.url}>{s.title} ↗</a><p class="history-reference-type">{s.type}</p>{s.supports&&<p><strong>Supports</strong> {s.supports}</p>}<p><strong>Where to look</strong> {s.locator}</p></li>)}
+     </ul>
     </details>
    </article>
   </li>)}
@@ -42,6 +44,7 @@ const record=historyFor(p);
   <p class="history-kicker">THE NEXT RECORD TO FIND</p><h3>{record.question}</h3>
   <p>{record.workplaceCount ? `${record.workplaceCount} selected workplace records are indexed for this field. A record still needs to match your actual workplace and role.` : 'No reviewed workplace record is indexed for this field yet. That is a research gap, not evidence that no history exists.'}</p>
   <details><summary>What still needs research</summary><ul>{record.furtherResearch.map(q=><li>{q}</li>)}</ul></details>
+  {record.researchLeads?.length>0 && <details class="history-research-leads"><summary>Follow the archive leads</summary><p>These catalogs identify records to investigate. A catalog description is not a review of the documents inside it.</p><ul>{record.researchLeads.map(lead=><li><a href={lead.url}>{lead.title} ↗</a><p>{lead.question}</p><p><strong>Where to look:</strong> {lead.locator}</p><small>{lead.status}</small></li>)}</ul></details>}
   <div class="history-actions"><a href="/#trace">Check my workplace →</a><a href={'/suggest/?profession='+encodeURIComponent(p.name)}>Suggest a record →</a></div>
  </aside>
 </section>

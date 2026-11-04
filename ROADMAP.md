@@ -1,5 +1,15 @@
 # Door Notes: product roadmap
 
+## Deeper agriculture and governor records · November 4, 2026
+
+The second research pass adds 13 episodes: agriculture now has 13, governors 12, and the catalog has 112 overall. The two dossiers contain 48 source references, compared with 17 before this pass. These are citation uses, not an independent-source quality score. New coverage includes agricultural wage protection and exclusions, Black labor organizing, women in extension, cooperative landholding, voting access, succession, and two governor decisions affecting workers. Historical enactment, program completion, reported elections and personal employment remain distinct claims.
+
+Every reference in the two expanded dossiers now states what it supports. Source type, claim and locator appear together in evidence disclosures and the source register; the JSON export retains them. Long dossiers have a person/decision index. Three agricultural archive catalogs are linked as leads with explicit unreviewed-document status. New York, Massachusetts and Louisiana governor-office records increase the reviewed workplace index to 28; they do not establish staff hiring routes. Existing agriculture/governor workplace entries retain their corroborating references.
+
+Validation: all 77 automated tests passed, including source-claim propagation and state-office scope. Browser checks at 375 and 320 pixels verified the episode index, multi-source evidence disclosure and catalog-only research leads without horizontal overflow. The production build verifies all 22 profession cards and their generated assets.
+
+Remaining research includes inspecting the catalogued documents, measuring actual workplace implementation, finding historical connections for additional employers, and the broader occupation coverage and reader study below. These tasks are not completed by this edition.
+
 ## Matching, workplace identity, agriculture and governors · November 4, 2026
 
 **Implemented for this release:** reviewed everyday occupation aliases, controlled canonical singular forms, reader-confirmed spelling corrections, shorter duty choices, and preservation of typed titles after selecting a suggestion. Unknown jobs and employers continue through the trace and source search. Stable workplace IDs and directory citations now reach the stored trace and identity-aware matching. Same-name ID conflicts do not fall back to another site. Occupation-specific workplace records can appear in a broader related history without being assigned to other jobs in that field.

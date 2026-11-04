@@ -441,7 +441,9 @@
       "parent": ""
     },
     "sourceNote": "This establishes Carver’s education and appointment at Tuskegee. It does not establish a hiring pathway for farmworkers or for another institution’s scientists.",
-    "scope": "appointment"
+    "scope": "appointment",
+    "historyEventId": "agriculture-carver-tuskegee-1896",
+    "moreSources": []
   },
   {
     "workplace": "Tuskegee University",
@@ -466,7 +468,9 @@
       "parent": ""
     },
     "sourceNote": "This documents an educational service and a named assignment. It does not identify every participant or measure the program’s effect on each farm’s income.",
-    "scope": "appointment"
+    "scope": "appointment",
+    "historyEventId": "agriculture-campbell-jesup-1906",
+    "moreSources": []
   },
   {
     "workplace": "Florida Agricultural and Mechanical University",
@@ -493,7 +497,17 @@
       "parent": "State University System of Florida"
     },
     "sourceNote": "The opening and named leadership are documented. The sources do not establish participant completion, paid placements or a particular reader’s employment.",
-    "scope": "institution"
+    "scope": "institution",
+    "historyEventId": "agriculture-famu-agroecology-2022",
+    "moreSources": [
+      {
+        "title": "WFSU · Florida A&M University opens its new Agroecology Center",
+        "url": "https://news.wfsu.org/wfsu-local-news/2022-11-13/florida-a-m-university-opens-its-new-agroecology-center",
+        "locator": "Tom Flanigan, November 13, 2022; opening report and interviews with both co-directors",
+        "type": "Contemporary local reporting",
+        "supports": "The opening at the Orange Avenue site and the named co-directors’ explanations."
+      }
+    ]
   },
   {
     "workplace": "Virginia Governor’s Office",
@@ -517,7 +531,9 @@
       "id": "reviewed-governor-office-virginia",
       "location": "Richmond, VA",
       "parent": "State of Virginia"
-    }
+    },
+    "historyEventId": "wilder-virginia-election-1989",
+    "moreSources": []
   },
   {
     "workplace": "Maryland Governor’s Office",
@@ -541,7 +557,17 @@
       "id": "reviewed-governor-office-maryland",
       "location": "Annapolis, MD",
       "parent": "State of Maryland"
-    }
+    },
+    "historyEventId": "moore-maryland-inauguration-2023",
+    "moreSources": [
+      {
+        "title": "Montgomery County · Statement on Moore and Miller’s inaugurations",
+        "url": "https://www2.montgomerycountymd.gov/mcgportalapps/Statement_Detail.aspx?id=1574",
+        "locator": "January 18, 2023 statement; opening account of attending the swearing-in",
+        "type": "Contemporary local-government record",
+        "supports": "A dated account of attending the January 18, 2023 swearing-in."
+      }
+    ]
   },
   {
     "workplace": "Georgia Governor’s Office",
@@ -565,7 +591,17 @@
       "id": "reviewed-governor-office-georgia",
       "location": "Atlanta, GA",
       "parent": "State of Georgia"
-    }
+    },
+    "historyEventId": "bottoms-georgia-election-2026",
+    "moreSources": [
+      {
+        "title": "WABE · Bottoms wins Georgia’s governor race",
+        "url": "https://www.wabe.org/bottoms-beats-jackson-in-georgia-governors-race/",
+        "locator": "Rahul Bali and DorMiya Vance, November 3, 2026, updated 9:45 p.m.; opening paragraphs and AP call",
+        "type": "Contemporary public-radio election reporting",
+        "supports": "Corroborates the reported win and distinguishes election from the January swearing-in. The outlet relies on the AP race call."
+      }
+    ]
   },
   {
     "workplace": "Florida Governor’s Office",
@@ -589,6 +625,116 @@
       "id": "reviewed-governor-office-florida",
       "location": "Tallahassee, FL",
       "parent": "State of Florida"
-    }
+    },
+    "historyEventId": "donalds-florida-election-2026",
+    "moreSources": [
+      {
+        "title": "Florida Legislature · Constitution, Article IV, Section 5",
+        "url": "https://www.leg.state.fl.us/statutes/index.cfm?submenu=3#A4S05",
+        "locator": "Article IV, Section 5(a): statewide election and January term start",
+        "type": "State constitution",
+        "supports": "The state’s general rules for electing its executive officers and beginning their terms; it does not certify this race."
+      },
+      {
+        "title": "WUWF · Election-night results in Florida",
+        "url": "https://www.wuwf.org/local-news/2026-11-03/takeaways-from-election-night-in-the-panhandle?_amp=true",
+        "locator": "November 3, 2026; A new governor and Ashley Moody wins Senate seat section",
+        "type": "Contemporary public-radio election reporting",
+        "supports": "Additional reporting of Donalds’ win and Florida’s first Black governor; unofficial election-night results do not establish certification."
+      }
+    ]
+  },
+  {
+    "workplace": "New York Governor’s Office",
+    "aliases": [
+      "New York Governors Office",
+      "Office of the Governor of New York",
+      "New York Governor Office"
+    ],
+    "professions": [
+      "governor"
+    ],
+    "headline": "David Paterson succeeds to New York’s governorship",
+    "description": "After election as lieutenant governor in 2006, Paterson assumed the governorship on March 17, 2008. He completed Spitzer’s unexpired term; the National Governors Association lists service through January 1, 2011.",
+    "sourceTitle": "National Governors Association · David A. Paterson",
+    "url": "https://www.nga.org/governor/david-a-paterson/",
+    "eventDateLabel": "March 17, 2008",
+    "eventYear": 2008,
+    "sourceNote": "This documents service in the state’s governor’s office, not a hiring or appointment route for staff. ",
+    "scope": "office",
+    "historyEventId": "paterson-new-york-succession-2008",
+    "site": {
+      "id": "reviewed-governor-office-new-york",
+      "location": "Albany, NY",
+      "parent": "State of New York"
+    },
+    "moreSources": [
+      {
+        "title": "New York Senate · Statement on Paterson’s inauguration",
+        "url": "https://www.nysenate.gov/newsroom/in-the-news/2008/jose-m-serrano/senator-serrano-looks-forward-working-new-governor"
+      }
+    ]
+  },
+  {
+    "workplace": "Massachusetts Governor’s Office",
+    "aliases": [
+      "Massachusetts Governors Office",
+      "Office of the Governor of Massachusetts",
+      "Massachusetts Governor Office"
+    ],
+    "professions": [
+      "governor"
+    ],
+    "headline": "Deval Patrick enters Massachusetts’ executive office",
+    "description": "Voters elected Patrick in 2006; state archives also document his reelection in 2010. Patrick took office January 4, 2007, and served two terms through January 8, 2015.",
+    "sourceTitle": "Massachusetts Archives · Office of the Governor records",
+    "url": "https://www.sec.state.ma.us/divisions/archives/collections/FA_GO.pdf",
+    "eventDateLabel": "2006 election / January 4, 2007",
+    "eventYear": 2006,
+    "sourceNote": "This documents service in the state’s governor’s office, not a hiring or appointment route for staff. ",
+    "scope": "office",
+    "historyEventId": "patrick-massachusetts-election-2006",
+    "site": {
+      "id": "reviewed-governor-office-massachusetts",
+      "location": "Boston, MA",
+      "parent": "Commonwealth of Massachusetts"
+    },
+    "moreSources": [
+      {
+        "title": "National Governors Association · Deval Patrick",
+        "url": "https://www.nga.org/governor/deval-patrick/"
+      },
+      {
+        "title": "Congressional statement · Patrick’s historic election, November 8, 2006",
+        "url": "https://www.markey.senate.gov/news/press-releases/november-8-2006-markey-congratulates-deval-patrick-on-historic-victory"
+      }
+    ]
+  },
+  {
+    "workplace": "Louisiana Governor’s Office",
+    "aliases": [
+      "Louisiana Governors Office",
+      "Office of the Governor of Louisiana",
+      "Louisiana Governor Office"
+    ],
+    "professions": [
+      "governor"
+    ],
+    "headline": "P. B. S. Pinchback assumes Louisiana’s executive office",
+    "description": "Warmoth’s suspension triggered succession by Lieutenant Governor Pinchback, according to the Senate’s historical account. Pinchback served as acting governor during the dispute over who would govern Louisiana.",
+    "sourceTitle": "U.S. Senate · Reconstruction Louisiana and the Case of PBS Pinchback",
+    "url": "https://www.senate.gov/artandhistory/senate-stories/reconstruction-louisiana-and-the-case-of-pbs-pinchback.htm",
+    "eventDateLabel": "December 9, 1872",
+    "eventYear": 1872,
+    "sourceNote": "This documents service in the state’s governor’s office, not a hiring or appointment route for staff. The named office continues; this is not a claim that the present address was the historical workplace.",
+    "scope": "office",
+    "historyEventId": "pinchback-louisiana-succession-1872",
+    "site": {
+      "id": "reviewed-governor-office-louisiana",
+      "location": "Baton Rouge, LA",
+      "parent": "State of Louisiana"
+    },
+    "moreSources": [],
+    "place": "Louisiana executive office · 1872"
   }
 ]

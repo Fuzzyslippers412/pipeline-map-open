@@ -84,3 +84,17 @@ test('the governor history dates election reporting and keeps officeholding sepa
  }
  assert.ok(g.events.some(e=>e.id.includes('wilder')&&e.year===1989));
 });
+
+test('new state office records stay with their exact office and do not become staff hiring evidence',()=>{
+ for(const state of ['New York','Massachusetts','Louisiana']){
+  const employer=state+' Governor’s Office', id='reviewed-governor-office-'+state.toLowerCase().replaceAll(' ','-');
+  const info={workplace:employer,id};
+  assert.equal(findWorkplaceLinks(employer,'governor',links,info).length,1);
+  assert.equal(findWorkplaceLinks(employer,'elected-official',links,info).length,0);
+  assert.equal(findWorkplaceLinks(employer,'governor',links,{...info,id:'different-public-office'}).length,0);
+  assert.equal(findWorkplaceLinks('State of '+state,'governor',links).length,0);
+  const timeline=buildCareerTimeline({context:{employer,title:'Governor',profession:'governor',workplaceInfo:info},field:{slug:'governor',name:'Governor',reviewers:links,historical:[]}});
+  assert.ok(timeline.some(row=>row.type==='employer'&&row.sourceNote.includes('not a hiring or appointment route for staff')));
+  assert.ok(timeline.some(row=>row.type==='gap'&&row.title==='Your route into this job'));
+ }
+});
