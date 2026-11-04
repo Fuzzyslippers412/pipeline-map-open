@@ -1,0 +1,105 @@
+{
+  "slug": "k12-teacher",
+  "headline": "Building schools. Challenging unequal pay.",
+  "summary": "Black communities created places to learn and train teachers. Educators then fought separate battles over public funding, control of schools, hiring and equal pay. These records follow particular institutions in Alabama, Georgia and Virginia.",
+  "coverageNote": "Five documented episodes: community institution-building, public funding, a school’s staffing and two pay disputes. They are not a complete national history or a proven chain to every school.",
+  "question": "Which school-board minutes, appointment records or salary schedules show how access changed at your school?",
+  "events": [
+    {
+      "id": "teacher-marion-nine-1867",
+      "date": "November 13, 1867",
+      "year": 1867,
+      "title": "The Marion Nine turn community money into a school",
+      "people": "The Marion Nine, including Alexander H. Curtis and Thomas Speed, and their community",
+      "decisionMaker": "Nine formerly enslaved founders organized the school in Marion, Alabama.",
+      "barrier": "After emancipation, Black Southerners had to build educational opportunities within a society that restricted them.",
+      "change": "The founders raised $500 to buy land for Lincoln Normal School.",
+      "outcome": "The school opened with 113 students and became the institution now known as Alabama State University.",
+      "limit": "The opening documents an educational institution, not a teaching appointment for every student or a national first in Black education.",
+      "source": {
+        "title": "Alabama State University · History & Traditions",
+        "url": "https://www.alasu.edu/about/history-tradition.php",
+        "locator": "The Marion Nine; Our Growth",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "teacher-marion-state-control-1873",
+      "date": "December 5, 1873",
+      "year": 1873,
+      "title": "State support for Black teacher education comes with a transfer of control",
+      "people": "Peyton Finley, Lincoln’s trustees and the American Missionary Association",
+      "decisionMaker": "Alabama’s State Board of Education passed the act accepting the Marion school.",
+      "barrier": "Financial difficulty threatened the institution; Finley had pressed for state support for Black higher education.",
+      "change": "The act provided a state normal school and university for Black teachers and students, conditional on transferring the buildings and grounds to state control.",
+      "outcome": "A state-appointed, majority-white commission took charge and replaced the school’s president.",
+      "limit": "Public funding expanded institutional support while reducing the founders’ control; it did not integrate Alabama’s white university.",
+      "source": {
+        "title": "Knight v. State of Alabama · historical findings",
+        "url": "https://law.justia.com/cases/federal/district-courts/FSupp/787/1030/1945646/",
+        "locator": "Findings 103–110, especially 108–110",
+        "type": "Court findings based on historical evidence"
+      }
+    },
+    {
+      "id": "teacher-atlanta-harper-1924",
+      "date": "September 8, 1924",
+      "year": 1924,
+      "title": "A community campaign creates a school and teaching posts in Atlanta",
+      "people": "Atlanta’s Black voters and organizers; principal Charles L. Harper and his faculty",
+      "decisionMaker": "Atlanta’s school board funded the school; Harper selected its teachers.",
+      "barrier": "Black Atlantans had pressed for public secondary education while the city withheld a high school for them.",
+      "change": "After voter organizing and a school-bond campaign, the board funded Booker T. Washington High School.",
+      "outcome": "The school opened in 1924; its historical nomination records Harper’s recruitment of the faculty.",
+      "limit": "This establishes a specific Atlanta workplace, not a connection to other schools with the same name or a list of every teacher hired.",
+      "source": {
+        "title": "Booker T. Washington High School · National Register nomination",
+        "url": "https://npgallery.nps.gov/GetAsset/9814b816-e5bd-4513-8b58-415d397c5297#page=6",
+        "locator": "Historical Narrative, PDF pages 6–7",
+        "type": "Historic-property documentation"
+      }
+    },
+    {
+      "id": "teacher-alston-pay-1940",
+      "date": "June 18, 1940",
+      "year": 1940,
+      "title": "Melvin Alston and Norfolk teachers challenge a racial pay schedule",
+      "people": "Melvin O. Alston, the Norfolk Teachers’ Association and lawyers including Thurgood Marshall and William H. Hastie",
+      "decisionMaker": "The Fourth Circuit, in an opinion by Judge John J. Parker, reviewed the district court’s dismissal.",
+      "barrier": "The teachers alleged that Norfolk paid Black teachers less despite equal qualifications, experience and duties.",
+      "change": "The court held that a race-based salary policy would violate equal protection and that signing a teaching contract did not waive the right to challenge it.",
+      "outcome": "The dismissal was reversed and the case returned for further proceedings.",
+      "limit": "The opinion describes the legal route to relief; it is not a payroll record proving when every Norfolk teacher received equal pay.",
+      "source": {
+        "title": "Alston v. School Board of City of Norfolk, 112 F.2d 992",
+        "url": "https://law.justia.com/cases/federal/appellate-courts/F2/112/992/1498702/",
+        "locator": "Opinion, pages 993–997; concluding reversal and remand",
+        "type": "Court opinion"
+      }
+    },
+    {
+      "id": "teacher-atlanta-pay-1942",
+      "date": "1942–1949",
+      "year": 1942,
+      "title": "Atlanta changes its pay policy, but teachers still contest the result",
+      "people": "Teachers William H. Reeves and Samuel Davis",
+      "decisionMaker": "Atlanta’s Board of Education changed its salary system; federal courts later reviewed Davis’s challenge.",
+      "barrier": "Separate salary schedules and disputed individual classifications left Black teachers challenging unequal pay.",
+      "change": "After Reeves sued in 1942, the board abolished its separate schedules and directed a single salary plan.",
+      "outcome": "Davis brought a further challenge in 1943; in 1949 the Fifth Circuit set aside a favorable decree pending exhaustion of administrative remedies.",
+      "limit": "A new policy did not settle whether teachers actually received equal pay; this decision does not establish the eventual payroll outcome.",
+      "source": {
+        "title": "Cook v. Davis, 178 F.2d 595",
+        "url": "https://openjurist.org/178/f2d/595/cook-v-davis",
+        "locator": "Paragraphs 5–6 and 18–20",
+        "type": "Court opinion"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Find Marion student registers and appointment records that connect teacher training to particular schools.",
+    "Check Norfolk and Atlanta payrolls and later proceedings for implementation of equal-pay decisions.",
+    "Review teacher oral histories alongside local records to document employment effects of desegregation, including displacement and promotion.",
+    "For a reader’s school, establish its exact city, district and former names before linking a historical decision."
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "musician",
+  "headline": "Black musicians created institutions and challenged who controlled the stage.",
+  "summary": "A recording contract, union card, opera engagement and music-director appointment are different forms of access. These examples show Black artists and organizers shaping those opportunities, with gains that were neither universal nor permanent.",
+  "coverageNote": "Four episodes in recording, Los Angeles union membership, opera and orchestral leadership. They do not represent the whole entertainment industry.",
+  "question": "Which booking, contract, union record or appointment shows who opened access in your part of music?",
+  "events": [
+    {
+      "id": "musician-black-swan-1921",
+      "date": "1921–1924",
+      "year": 1921,
+      "title": "Harry Pace builds a Black-owned recording company",
+      "people": "Harry Pace, Ethel Waters, Fletcher Henderson and other Black Swan artists",
+      "decisionMaker": "Pace founded and directed Black Swan, with a board that included W. E. B. Du Bois.",
+      "barrier": "Major record companies excluded or narrowly stereotyped Black performers and their music.",
+      "change": "Black Swan sought to record Black artists across genres, placing recording decisions within a Black-owned business.",
+      "outcome": "The company issued more than 180 recordings and helped launch several artists’ recording careers.",
+      "limit": "Competition and financial pressure overtook the venture; the 1924 Paramount arrangement ended its independent experiment rather than securing permanent control.",
+      "source": {
+        "title": "National Endowment for the Humanities · Black Swan Rising",
+        "url": "https://www.neh.gov/humanities/2010/novemberdecember/feature/black-swan-rising",
+        "locator": "David Suisman, November/December 2010; founding, recording output and 1924 outcome",
+        "type": "Historical research published by NEH"
+      }
+    },
+    {
+      "id": "musician-los-angeles-union-1953",
+      "date": "April 1, 1953",
+      "year": 1953,
+      "title": "Black and white musicians merge Los Angeles’s segregated union locals",
+      "people": "Marl Young, Buddy Collette, Bill Douglass, Estelle Edson and fellow musicians",
+      "decisionMaker": "Members and officers of Locals 767 and 47 approved the merger, later ratified by the AFM’s executive board.",
+      "barrier": "The white local negotiated studio contracts while Black musicians belonged to a separate local with less influence over that work.",
+      "change": "Organizers campaigned for one union and worked through membership votes and property-transfer agreements.",
+      "outcome": "Local 47 began accepting Local 767 members on April 1, ending the separate union structure in Los Angeles.",
+      "limit": "Shared membership did not automatically give every musician a studio call or equal earnings; hiring outcomes require additional records.",
+      "source": {
+        "title": "AFM Local 47 · Amalgamation of Local 47 and 767",
+        "url": "https://www.afm47.org/archives/amalgamation.html",
+        "locator": "Marl Young’s participant account; final merger and June 25, 1953 board minutes",
+        "type": "Participant account with union minutes"
+      }
+    },
+    {
+      "id": "musician-marian-anderson-met-1955",
+      "date": "January 7, 1955",
+      "year": 1955,
+      "title": "Marian Anderson gains a leading role at the Metropolitan Opera",
+      "people": "Marian Anderson and general manager Rudolf Bing",
+      "decisionMaker": "Bing made engaging Black artists a management priority at the Metropolitan Opera.",
+      "barrier": "An internationally established Black singer still faced exclusion from leading roles at this institution.",
+      "change": "The Met engaged Anderson as Ulrica in Verdi’s Un Ballo in Maschera.",
+      "outcome": "Her January 1955 performance became the first leading-role appearance by an African American artist identified in the Met’s history; Robert McFerrin debuted later that month.",
+      "limit": "This is a documented opening at the Met, not the first Black operatic performance anywhere or proof of equal engagement terms.",
+      "source": {
+        "title": "Metropolitan Opera · Black Voices at the Met",
+        "url": "https://www.metopera.org/discover/articles/black-voices-at-the-met/",
+        "locator": "Opening paragraphs on Anderson, Bing and McFerrin",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "musician-henry-lewis-nj-1968",
+      "date": "1968",
+      "year": 1968,
+      "title": "Henry Lewis takes artistic leadership of the New Jersey Symphony",
+      "people": "Henry Lewis and the New Jersey Symphony’s musicians",
+      "decisionMaker": "The New Jersey Symphony appointed Lewis as music director; its public history does not identify each participant in the selection.",
+      "barrier": "Black representation in orchestral artistic leadership was exceptionally limited; the Symphony identifies Lewis’s appointment as a major first.",
+      "change": "Lewis gained the music-director role rather than only a performing engagement.",
+      "outcome": "His tenure included the orchestra’s Carnegie Hall debut and 1968 Newark concerts dedicated to Martin Luther King Jr.",
+      "limit": "An individual leadership appointment does not establish equal access for other conductors or musicians; board and audition records would deepen the account.",
+      "source": {
+        "title": "New Jersey Symphony · Institutional history",
+        "url": "https://www.njsymphony.org/about-njso/njso-history",
+        "locator": "Henry Lewis’s 1968–1976 tenure",
+        "type": "Institutional history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Examine artist contracts and payment records to distinguish an opportunity from fair compensation or ownership.",
+    "Compare Los Angeles studio hiring before and after union amalgamation using session and payroll records.",
+    "Research concert, church, touring, popular-music and other entertainment careers on their own terms rather than applying one audition model to all."
+  ]
+}

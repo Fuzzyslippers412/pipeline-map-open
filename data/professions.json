@@ -31,15 +31,16 @@
       "status": "supported",
       "editorial": true,
       "era_start": 1868,
-      "era_end": null
+      "era_end": null,
+      "headline": "Medical schools built access"
     },
     "gate": {
       "gatekeeper": [
-        "university_dei",
+        "other",
         "licensing_board"
       ],
       "era": "Current U.S. entry pathway",
-      "rationale": "Medical schools select a class. State medical boards decide who can practice after training and examinations. The sources identify admissions committees and licensing boards as decision makers. A separate national role for diversity offices in selecting physicians is unverified.",
+      "rationale": "Medical schools select a class. State medical boards decide who can practice after training and examinations.",
       "citations": [
         {
           "title": "AAMC · How medical schools review applications",
@@ -52,8 +53,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "School admission and medical licensing"
+    },
+    "researchQuestion": "Which hospitals admitted Black physicians to training, practice and leadership?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "lawyer",
@@ -88,15 +92,16 @@
       "status": "supported",
       "editorial": true,
       "era_start": 1869,
-      "era_end": null
+      "era_end": null,
+      "headline": "Legal education and challenges to segregation"
     },
     "gate": {
       "gatekeeper": [
-        "university_dei",
+        "other",
         "licensing_board"
       ],
       "era": "Current U.S. entry pathway",
-      "rationale": "Law schools set their own application requirements. Each jurisdiction sets the conditions for admission to its bar. The proposed university label describes the education stage. The cited rules do not assign a national admissions or licensing power to diversity offices.",
+      "rationale": "Law schools set their own application requirements. Each jurisdiction sets the conditions for admission to its bar.",
       "citations": [
         {
           "title": "Law School Admission Council · JD application requirements",
@@ -109,8 +114,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Law school and bar admission"
+    },
+    "researchQuestion": "How did bar admission translate into clients, firm employment and judicial appointments?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "engineer",
@@ -145,14 +153,15 @@
       "status": "supported",
       "editorial": true,
       "era_start": 1907,
-      "era_end": null
+      "era_end": null,
+      "headline": "Engineering education and access protections"
     },
     "gate": {
       "gatekeeper": [
-        "university_dei"
+        "other"
       ],
       "era": "Current U.S. entry pathway",
-      "rationale": "A degree is the usual starting point for civil and electrical engineers. Employers hire graduates, and some work requires a professional license. University admissions shape access to those degrees. The proposed diversity-office label needs evidence about who actually selects applicants.",
+      "rationale": "A degree is the usual starting point for civil and electrical engineers. Employers hire graduates, and some work requires a professional license. University admissions shape access to those degrees.",
       "citations": [
         {
           "title": "Bureau of Labor Statistics · Civil engineers",
@@ -165,8 +174,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Education, employers and professional licensing"
+    },
+    "researchQuestion": "Which employers hired Black engineers, and who gained technical or management responsibility?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "dentist",
@@ -200,15 +212,16 @@
       "status": "supported",
       "editorial": true,
       "era_start": 1881,
-      "era_end": null
+      "era_end": null,
+      "headline": "Dental schools serving Black students"
     },
     "gate": {
       "gatekeeper": [
-        "university_dei",
+        "other",
         "licensing_board"
       ],
       "era": "Current U.S. entry pathway",
-      "rationale": "Dental schools evaluate applicants for admission. State boards separately determine eligibility to practice, including education and examination requirements. The evidence supports those two stages. The proposed role for diversity offices has not been established.",
+      "rationale": "Dental schools evaluate applicants for admission. State boards separately determine eligibility to practice, including education and examination requirements.",
       "citations": [
         {
           "title": "American Dental Education Association · Admissions process",
@@ -221,8 +234,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Dental education and state licensing"
+    },
+    "researchQuestion": "How did qualification lead to hospital privileges, paid work and practice ownership?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "pharmacist",
@@ -255,15 +271,16 @@
       "status": "supported",
       "editorial": true,
       "era_start": 1868,
-      "era_end": null
+      "era_end": null,
+      "headline": "Institutions that trained Black pharmacists"
     },
     "gate": {
       "gatekeeper": [
-        "university_dei",
+        "other",
         "licensing_board"
       ],
       "era": "Current U.S. entry pathway",
-      "rationale": "Pharmacy schools issue admissions offers. A state board then reviews a graduate’s qualifications for licensure, including examination requirements. Pennsylvania provides one worked example. The sources establish school and board decisions, while a separate diversity-office role remains unverified.",
+      "rationale": "Pharmacy schools issue admissions offers. A state board then reviews a graduate’s qualifications for licensure, including examination requirements. Pennsylvania provides one worked example.",
       "citations": [
         {
           "title": "American Association of Colleges of Pharmacy · Cooperative admissions guidelines",
@@ -276,8 +293,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Pharmacy education and state licensing"
+    },
+    "researchQuestion": "Who obtained licenses, owned pharmacies and entered hospital pharmacy in each state?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "registered-nurse",
@@ -294,10 +314,10 @@
     "origin": {
       "builder": [
         "hbcu",
-        "black_church"
+        "other"
       ],
       "era": "Late 19th and early 20th centuries",
-      "rationale": "Tuskegee trained Black nurses through a hospital school. In Jacksonville a Methodist church mission also founded a nursing school for Black women. The Jacksonville example documents church sponsorship, but it does not establish the proposed Black-church classification nationwide.",
+      "rationale": "Tuskegee trained Black nurses through a hospital school. In Jacksonville a Methodist church mission also founded a nursing school for Black women. The Jacksonville example documents church sponsorship, but it does not establish a nationwide Black-church origin.",
       "citations": [
         {
           "title": "Tuskegee University · Nursing student handbook, program history",
@@ -311,15 +331,16 @@
       "status": "draft",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Training, organizing and professional access"
     },
     "gate": {
       "gatekeeper": [
-        "university_dei",
+        "other",
         "licensing_board"
       ],
       "era": "Current U.S. entry pathway",
-      "rationale": "Students may qualify through bachelor’s, associate degree or diploma programs. State nursing regulators license graduates who meet their requirements and pass the examination. A university-only account would miss other routes, and the cited sources do not establish a diversity office as the licensing authority.",
+      "rationale": "Students may qualify through bachelor’s, associate degree or diploma programs. State nursing regulators license graduates who meet their requirements and pass the examination. An account limited to university degrees would miss other qualifying routes.",
       "citations": [
         {
           "title": "Bureau of Labor Statistics · Registered nurses",
@@ -332,8 +353,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Nurse training and state licensing"
+    },
+    "researchQuestion": "Which hospitals changed admission, hiring, assignments and promotion for Black nurses?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "k12-teacher",
@@ -368,15 +392,16 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Communities built teacher training"
     },
     "gate": {
       "gatekeeper": [
-        "university_dei",
+        "other",
         "licensing_board"
       ],
       "era": "Current public-school pathway",
-      "rationale": "Public-school teachers generally need state certification. Teacher preparation and alternative routes vary, and a school or district hires the teacher. University programs are one route. The evidence does not establish diversity offices as the authorities granting teaching credentials.",
+      "rationale": "Public-school teachers generally need state certification. Teacher preparation and alternative routes vary, and a school or district hires the teacher. University programs are one route.",
       "citations": [
         {
           "title": "Bureau of Labor Statistics · Kindergarten and elementary school teachers",
@@ -389,8 +414,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Preparation, certification and school hiring"
+    },
+    "researchQuestion": "What changed for Black teachers in hiring, pay and leadership at the individual school?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "professor",
@@ -426,14 +454,15 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Institutions sustained Black scholarship"
     },
     "gate": {
       "gatekeeper": [
-        "university_dei"
+        "other"
       ],
       "era": "Current academic hiring",
-      "rationale": "Colleges hire faculty by discipline and institution. Academic governance standards give faculty substantial responsibility for appointments. Graduate training and hiring are distinct decisions. The cited sources do not establish that a diversity office has final authority over faculty appointments.",
+      "rationale": "Colleges hire faculty by discipline and institution. Academic governance standards give faculty substantial responsibility for appointments. Graduate training and hiring are distinct decisions.",
       "citations": [
         {
           "title": "Bureau of Labor Statistics · Postsecondary teachers",
@@ -446,8 +475,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Graduate training and faculty appointments"
+    },
+    "researchQuestion": "Which appointments, tenure decisions and departments widened Black faculty access?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "journalist",
@@ -464,10 +496,10 @@
     ],
     "origin": {
       "builder": [
-        "civil_rights_law"
+        "other"
       ],
       "era": "Black press before the Civil War through the civil rights era",
-      "rationale": "Black communities published newspapers well before the modern civil rights movement. Publishers, editors and readers sustained that route into reporting. The proposed civil-rights-law category captures a later legal context but misses the Black press itself as an institution.",
+      "rationale": "Black communities published newspapers well before the modern civil rights movement. Publishers, editors and readers sustained that route into reporting.",
       "citations": [
         {
           "title": "Library of Congress · African American newspapers",
@@ -481,12 +513,12 @@
       "status": "draft",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Black publishers built their own press"
     },
     "gate": {
       "gatekeeper": [
-        "legacy_media",
-        "foundation_nonprofit"
+        "legacy_media"
       ],
       "era": "Current newsroom hiring",
       "rationale": "News organizations hire reporters. Foundation grants also support nonprofit newsrooms, a subset tracked by the Institute for Nonprofit News. A grant decision can affect whether a newsroom can afford a position. Editors and employers make the individual hiring decisions.",
@@ -502,8 +534,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Editors, publishers and newsroom hiring"
+    },
+    "researchQuestion": "Who controlled paid reporting and editorial authority, and when did that change?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "nonprofit-executive",
@@ -521,7 +556,7 @@
     "origin": {
       "builder": [
         "black_church",
-        "civil_rights_law"
+        "other"
       ],
       "era": "Mutual aid through the civil rights movement",
       "rationale": "Black communities organized mutual aid through churches and voluntary associations. Church networks later supported civil rights organizations with staff and elected leaders. The sources document organizing and leadership more directly than they establish civil rights law as the origin of nonprofit executive careers.",
@@ -538,14 +573,15 @@
       "status": "draft",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Community organizing and institution-building"
     },
     "gate": {
       "gatekeeper": [
         "foundation_nonprofit"
       ],
       "era": "Current nonprofit governance",
-      "rationale": "The nonprofit’s own board selects and oversees its chief executive. A grantmaker may support the organization financially. The proposed category groups funders and nonprofit boards together, although the authority to appoint usually sits with the board.",
+      "rationale": "The nonprofit’s own board selects and oversees its chief executive. A grantmaker may support the organization financially.",
       "citations": [
         {
           "title": "BoardSource · Board responsibilities and structures",
@@ -558,8 +594,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Nonprofit boards appoint executives"
+    },
+    "researchQuestion": "How did community leadership become paid executive work, and who made those appointments?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "elected-official",
@@ -595,7 +634,8 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Organizing, voting and holding office"
     },
     "gate": {
       "gatekeeper": [
@@ -615,8 +655,11 @@
       ],
       "status": "supported",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Voters, eligibility and nomination rules"
+    },
+    "researchQuestion": "Where did a legal voting right become practical access to office, and where was it reversed?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "pastor",
@@ -650,7 +693,8 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Congregations built ministerial institutions"
     },
     "gate": {
       "gatekeeper": [
@@ -670,8 +714,11 @@
       ],
       "status": "supported",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Ordination and denominational appointments"
+    },
+    "researchQuestion": "How did ordination and appointments differ across denominations and for Black women?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "military-officer",
@@ -705,7 +752,8 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Training, commissions and integration"
     },
     "gate": {
       "gatekeeper": [
@@ -725,8 +773,11 @@
       ],
       "status": "supported",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Service selection and commissioning"
+    },
+    "researchQuestion": "When did commissioning lead to assignments, promotion and command in each branch?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "police-officer",
@@ -760,15 +811,16 @@
       "status": "draft",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Local recruitment and employment protections"
     },
     "gate": {
       "gatekeeper": [
         "licensing_board",
-        "electorate"
+        "other"
       ],
       "era": "Current state and local hiring",
-      "rationale": "State standards bodies and employing agencies screen candidates. California, for example, sets minimum selection standards for peace officers. Some sheriffs stand for election. Most patrol officers are hired, so the proposed electorate label applies only indirectly to their entry.",
+      "rationale": "State standards bodies and employing agencies screen candidates. California, for example, sets minimum selection standards for peace officers. Some sheriffs stand for election. Patrol-officer hiring is a separate process from the election of a sheriff.",
       "citations": [
         {
           "title": "California Commission on Peace Officer Standards and Training · Candidate selection",
@@ -781,8 +833,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "State standards and agency hiring"
+    },
+    "researchQuestion": "Which local decisions changed hiring, assignments and promotion for Black officers?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "electrician",
@@ -816,7 +871,8 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Apprenticeships, organizing and Black enterprise"
     },
     "gate": {
       "gatekeeper": [
@@ -836,8 +892,11 @@
       ],
       "status": "supported",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Training sponsors, employers and licensing"
+    },
+    "researchQuestion": "Who entered the local apprenticeship, received job referrals and gained paid contracts?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "software-engineer",
@@ -871,7 +930,8 @@
       "status": "draft",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Education, research and employer opportunities"
     },
     "gate": {
       "gatekeeper": [
@@ -891,8 +951,11 @@
       ],
       "status": "supported",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Technical preparation and employer hiring"
+    },
+    "researchQuestion": "Which records connect Black technical work to a specific role, hiring route or promotion?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "corporate-executive",
@@ -926,14 +989,15 @@
       "status": "draft",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Employment protections and advancement"
     },
     "gate": {
       "gatekeeper": [
-        "foundation_nonprofit"
+        "other"
       ],
       "era": "Current corporate governance",
-      "rationale": "Corporate boards manage or oversee company affairs. Officers are selected under corporate bylaws or board decisions, as Delaware law illustrates. The proposed foundation label has no demonstrated appointment authority over corporate executives in these sources.",
+      "rationale": "Corporate boards manage or oversee company affairs. Officers are selected under corporate bylaws or board decisions, as Delaware law illustrates.",
       "citations": [
         {
           "title": "Delaware Code · Directors and officers",
@@ -946,8 +1010,11 @@
       ],
       "status": "draft",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Boards and company appointment rules"
+    },
+    "researchQuestion": "Who sponsored and appointed Black executives, and what authority did those roles carry?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "entrepreneur",
@@ -965,7 +1032,7 @@
     "origin": {
       "builder": [
         "market",
-        "nation_of_islam"
+        "other"
       ],
       "era": "Black business districts and 20th-century enterprises",
       "rationale": "Black-owned shops and firms supplied goods and services in urban business districts. The Nation of Islam later built businesses of its own, including enterprises in Chicago. These are distinct histories. Entrepreneurship among Black Americans long predates that organization.",
@@ -982,7 +1049,8 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Black enterprise across different eras"
     },
     "gate": {
       "gatekeeper": [
@@ -1002,8 +1070,11 @@
       ],
       "status": "supported",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Capital, permits and customers"
+    },
+    "researchQuestion": "How did Black founders obtain capital and contracts, and which barriers remained?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "pro-athlete",
@@ -1038,7 +1109,8 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Integration of professional football and basketball"
     },
     "gate": {
       "gatekeeper": [
@@ -1058,8 +1130,11 @@
       ],
       "status": "supported",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "League eligibility and team selection"
+    },
+    "researchQuestion": "How did roster access differ from pay, coaching and ownership in the NFL and NBA?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   },
   {
     "id": "musician",
@@ -1094,7 +1169,8 @@
       "status": "supported",
       "editorial": true,
       "era_start": null,
-      "era_end": null
+      "era_end": null,
+      "headline": "Black recording and performance institutions"
     },
     "gate": {
       "gatekeeper": [
@@ -1114,7 +1190,10 @@
       ],
       "status": "supported",
       "editorial": true,
-      "since_year": null
-    }
+      "since_year": null,
+      "headline": "Auditions, bookings and recording opportunities"
+    },
+    "researchQuestion": "Who controlled contracts, union membership, pay and ownership in each music setting?",
+    "researchNote": "Field history is not proof of an individual hiring route."
   }
 ]

@@ -1,0 +1,100 @@
+{
+  "slug": "professor",
+  "headline": "A doctorate could open study while faculty hiring remained closed",
+  "summary": "Black scholars created knowledge and helped lead institutions despite barriers between academic credentials and employment. These episodes distinguish doctoral education, research appointments, professorships and institutional leadership.",
+  "coverageNote": "Four episodes across physics, social science, college leadership and business education. A program for business faculty does not represent every discipline or prove access to tenure.",
+  "question": "Which appointment, promotion or tenure record connects Black faculty to your department?",
+  "events": [
+    {
+      "id": "bouchet-doctorate-1876",
+      "date": "1876–1905",
+      "year": 1876,
+      "title": "Edward Bouchet earns a doctorate without equal access to university hiring",
+      "people": "Edward Alexander Bouchet",
+      "decisionMaker": "Yale awarded the doctorate; the Institute for Colored Youth employed him; Yale later declined his teaching application.",
+      "barrier": "Yale Library reports that white colleges and universities did not hire him despite his scientific qualifications.",
+      "change": "He earned his physics PhD in 1876 and taught science at the Institute for Colored Youth for 26 years.",
+      "outcome": "His 1905 Yale teaching application was unsuccessful, even with a recommendation from a former teacher.",
+      "limit": "His credential is documented; it must not be presented as a faculty appointment or proof that a degree removed employment barriers.",
+      "source": {
+        "title": "Yale University Library · Edward Alexander Bouchet",
+        "url": "https://onlineexhibits.library.yale.edu/s/early-black-yale-students/item/20594",
+        "locator": "Biography: 1876 doctorate, Institute for Colored Youth employment and unsuccessful 1905 Yale application",
+        "type": "University archival exhibit"
+      }
+    },
+    {
+      "id": "dubois-research-1896",
+      "date": "1896–1897",
+      "year": 1896,
+      "title": "W. E. B. Du Bois receives a research appointment and moves into a professorship",
+      "people": "W. E. B. Du Bois",
+      "decisionMaker": "Penn appointed him Assistant in Sociology; Atlanta University subsequently employed him as a professor.",
+      "barrier": "Penn's research appointment was a specific post, not a general guarantee of faculty access for Black scholars.",
+      "change": "His Philadelphia assignment centered on a study of Black residents of the Seventh Ward.",
+      "outcome": "He interviewed about 5,000 people, published The Philadelphia Negro, and became a professor at Atlanta University.",
+      "limit": "The two appointments had different roles and institutions; neither establishes the hiring policy of your department.",
+      "source": {
+        "title": "University of Pennsylvania Archives · W. E. B. Du Bois",
+        "url": "https://archives.upenn.edu/exhibits/penn-people/biography/william-edward-burghardt-du-bois/",
+        "locator": "Paragraphs on the 1896 appointment, Seventh Ward study and Atlanta University professorship",
+        "type": "Institutional biography"
+      }
+    },
+    {
+      "id": "john-hope-presidency-1906",
+      "date": "1906",
+      "year": 1906,
+      "title": "John Hope advances from teaching to college leadership",
+      "people": "John Hope",
+      "decisionMaker": "Atlanta Baptist College, later named Morehouse, appointed Hope president; this biography does not name the appointing officials.",
+      "barrier": "A teaching position and authority to lead a college were separate forms of academic access.",
+      "change": "After teaching at Roger Williams University and Atlanta Baptist College, Hope became the latter's president.",
+      "outcome": "Morehouse identifies him as its first Black president and credits his work developing graduate and professional education for Black students.",
+      "limit": "This records his leadership; it does not measure changes in Black faculty hiring or tenure under his presidency.",
+      "source": {
+        "title": "Morehouse College · John Hope",
+        "url": "https://morehouseathletics.com/honors/den-of-honor/john-hope/15",
+        "locator": "Dr. John Hope biography: teaching, 1906 presidency and graduate/professional education",
+        "type": "Institutional biography"
+      }
+    },
+    {
+      "id": "phd-project-business-1994",
+      "date": "1994–2002",
+      "year": 1994,
+      "title": "The PhD Project develops a route into business-school faculties",
+      "people": "The PhD Project's doctoral participants and founding partners",
+      "decisionMaker": "The KPMG Foundation, Citi, AACSB and GMAC initiated the project.",
+      "barrier": "Completing a doctorate and entering a faculty career require distinct stages of support and selection.",
+      "change": "The first conference took place in 1994, followed by networks for doctoral students in different business disciplines.",
+      "outcome": "Its history records participant Alisha Malloy's 1996 conference attendance and later information-systems doctorate as a 2002 faculty milestone.",
+      "limit": "These are the provider's reported milestones, not independent evidence that the program caused an appointment or that every participant obtained tenure.",
+      "source": {
+        "title": "The PhD Project · Our History",
+        "url": "https://phdproject.org/our-history/",
+        "locator": "Timeline entries for 1994 and 2002",
+        "type": "Program provider history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Trace degree completion, faculty appointment, rank, tenure and leadership separately at the exact institution.",
+    "Research differences between disciplines, teaching institutions and research universities rather than applying a single faculty pathway.",
+    "Include denied appointments and dismissals when documented; an early credential alone is not evidence that a faculty door stayed open."
+  ],
+  "credential": {
+    "name": "Edward Alexander Bouchet",
+    "year": 1876,
+    "credential": "Doctorate in physics",
+    "record": "Yale records his 1876 physics doctorate and identifies him as the first Black person to earn a doctorate in the United States.",
+    "work": "He taught at the Institute for Colored Youth; Yale did not hire him when he applied in 1905.",
+    "sources": [
+      {
+        "label": "Yale University Library · Edward Alexander Bouchet",
+        "url": "https://onlineexhibits.library.yale.edu/s/early-black-yale-students/item/20594"
+      }
+    ]
+  }
+}
+

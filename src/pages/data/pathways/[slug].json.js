@@ -1,3 +1,4 @@
+import {timelineHistory} from '../../../lib/field-history.js';
 import {professions, labelList} from '../../../lib/model';
 import {matchIndex} from '../../../lib/discover-sources.js';
 import health from '../../../../data/timeline-health-education.json';
@@ -10,7 +11,7 @@ export function getStaticPaths(){
 }
 
 export function GET({props:{p}}){
-  const historical=health[p.slug] || civic[p.slug] || [];
+  const historical=timelineHistory(p);
   const reviewers=workplaces.filter(row=>row.professions.includes(p.slug));
   // Only exact recipient/field matches that meet the discovery engine's funded
   // program criteria are eligible for an initial timeline. Leads stay in search.
@@ -22,7 +23,7 @@ export function GET({props:{p}}){
       if(row.kind==='documented')awards.push({...row,issuer});
     }
   }
-  const gate={label:labelList(p.gate.gatekeeper),rationale:p.gate.rationale,
+  const gate={label:p.gate.headline,rationale:p.gate.rationale,
     status:p.gate.status,citations:p.gate.citations};
   return new Response(JSON.stringify({slug:p.slug,name:p.name,historical,reviewers,awards,gate}),
     {headers:{'Content-Type':'application/json; charset=utf-8'}});

@@ -1,0 +1,100 @@
+{
+  "slug": "lawyer",
+  "headline": "Legal education, the right to practice and the work of challenging exclusion",
+  "summary": "Black lawyers built institutions, secured credentials and challenged exclusion through litigation. A law degree, bar admission and access to clients or employment are separate steps.",
+  "coverageNote": "Four episodes in U.S. legal education and practice, with specific records for Howard, Pennsylvania and Texas. These are not a complete history of every bar, firm or legal specialty.",
+  "question": "Which bar, firm, court or legal department record establishes Black access to the work you do?",
+  "events": [
+    {
+      "id": "howard-law-opening-1869",
+      "date": "1869–1871",
+      "year": 1869,
+      "title": "John Mercer Langston leads a new route into law",
+      "people": "John Mercer Langston and Howard's first law students",
+      "decisionMaker": "Howard University opened its law department under Langston in January 1869.",
+      "barrier": "Howard's account describes a need for lawyers to protect Black Americans' rights after emancipation.",
+      "change": "Six students initially attended evening classes in instructors' homes and offices.",
+      "outcome": "Ten students graduated in February 1871; Howard records that eight entered District of Columbia practice the next day.",
+      "limit": "These are the institution's reported early outcomes, not evidence of equal access to every legal employer.",
+      "source": {
+        "title": "Howard University School of Law · Our History",
+        "url": "https://law.howard.edu/about/our-history",
+        "locator": "History paragraphs covering January 1869, February 1871 and Charlotte E. Ray in 1872",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "charlotte-ray-law-1872",
+      "date": "1872",
+      "year": 1872,
+      "title": "Charlotte E. Ray earns a degree and admission to practice",
+      "people": "Charlotte E. Ray",
+      "decisionMaker": "Howard awarded the degree; the District of Columbia Supreme Court admitted her.",
+      "barrier": "Her record concerns racial and gender access.",
+      "change": "Her degree preceded admission to District practice.",
+      "outcome": "Howard identifies her as that court's first woman admitted to practice.",
+      "limit": "Admission does not establish a sustainable practice or equal access to clients.",
+      "source": {
+        "title": "Howard University School of Law · Our History",
+        "url": "https://law.howard.edu/about/our-history",
+        "locator": "History paragraphs covering January 1869, February 1871 and Charlotte E. Ray in 1872",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "sadie-alexander-law-1927",
+      "date": "1927",
+      "year": 1927,
+      "title": "Sadie Alexander enters the Pennsylvania bar and a legal practice",
+      "people": "Sadie Tanner Mossell Alexander and Raymond Pace Alexander",
+      "decisionMaker": "Penn awarded her law degree; Pennsylvania admitted her to the bar; she joined Raymond Alexander's practice.",
+      "barrier": "Despite an earlier economics doctorate, she had struggled to find work in Philadelphia.",
+      "change": "She became Penn Law's first Black woman graduate and, according to Penn Archives, Pennsylvania's first Black woman admitted to the bar.",
+      "outcome": "She practiced estate and family law with her husband.",
+      "limit": "This documents her actual practice, not the hiring policies of other firms or current admission requirements.",
+      "source": {
+        "title": "University of Pennsylvania Archives · Sadie Tanner Mossell Alexander",
+        "url": "https://archives.upenn.edu/exhibits/penn-people/biography/sadie-tanner-mossell-alexander/",
+        "locator": "Biographical paragraphs covering employment after her doctorate and law study, bar admission and practice",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "sweatt-texas-1950",
+      "date": "June 5, 1950",
+      "year": 1950,
+      "title": "Heman Sweatt's challenge defeats separate law-school access",
+      "people": "Heman Marion Sweatt and his legal team",
+      "decisionMaker": "The U.S. Supreme Court; Chief Justice Fred Vinson delivered the opinion.",
+      "barrier": "Texas rejected Sweatt's application because he was Black and offered a separate law school.",
+      "change": "The Court found the separate education unequal, including its professional networks and standing, and required admission to the University of Texas Law School.",
+      "outcome": "The judgment reversed the denial of relief and established Sweatt's right to admission.",
+      "limit": "The opinion concerns this admission dispute; it is not evidence of degree completion, employment or equal access across all law schools.",
+      "source": {
+        "title": "U.S. Supreme Court · Sweatt v. Painter, 339 U.S. 629 (1950)",
+        "url": "https://www.govinfo.gov/content/pkg/USREPORTS-339/pdf/USREPORTS-339-629.pdf",
+        "locator": "Syllabus, pp. 629–630; opinion, pp. 631–636",
+        "type": "Court opinion"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Trace firm, public-service and judicial appointments separately from education and bar admission.",
+    "Use client, practice and employment records to examine what happened after an early legal credential.",
+    "Verify the exact jurisdiction and date before applying a historical admission decision to a later workplace."
+  ],
+  "credential": {
+    "name": "Charlotte E. Ray",
+    "year": 1872,
+    "credential": "Law degree and admission to practice",
+    "record": "Howard records Ray's law graduation and admission to District of Columbia practice in 1872.",
+    "work": "The account does not establish later employment outcomes.",
+    "sources": [
+      {
+        "label": "Howard University School of Law · Our History",
+        "url": "https://law.howard.edu/about/our-history"
+      }
+    ]
+  }
+}
+

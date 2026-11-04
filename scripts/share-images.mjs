@@ -159,9 +159,9 @@ async function professionImage(p,index) {
   const proposed=p.origin.status==='draft'||p.gate.status==='draft';
   return wrap(framing('PROFESSION INDEX     /     '+String(index+1).padStart(2,'0'))+
     nested(title,48,102,1080,78)+line(48,192,1152,192)+
-    panel(48,229,'01   Origin',labelList(p.origin.builder),p.origin.status)+line(48,313,524,313)+
-    panel(48,347,'02   Gate',labelList(p.gate.gatekeeper),p.gate.status)+line(48,435,524,435)+
-    txt(48,465,proposed?'ROLE  /  PROPOSED EDITORIAL PAIR':'ROLE  /  EDITORIAL READING',14,palette.teal)+nested(roleSvg,48,472,477,110)+
+    panel(48,229,'01   Historical context',p.origin.headline,'supported')+line(48,313,524,313)+
+    panel(48,347,'02   Entry decisions',p.gate.headline,'supported')+line(48,435,524,435)+
+    txt(48,465,'SCOPE  /  FIELD HISTORY',14,palette.teal)+nested(roleSvg,48,472,477,110)+
     line(555,211,555,570)+txt(583,229,'03   TREND / MEASURED',15,palette.teal)+
     txt(583,269,d.title,30,palette.ink,serif)+
     (chosen?keyLine(583,294,colours[0])+txt(618,300,'Black male',15,palette.ink)+keyLine(757,294,colours[1],true)+txt(792,300,'Black female',15,palette.ink):'')+

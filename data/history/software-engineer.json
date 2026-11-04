@@ -1,0 +1,104 @@
+{
+  "slug": "software-engineer",
+  "headline": "Black people who built and ran computing",
+  "summary": "Black computing history includes operators, researchers, educators and professional networks. These records show different routes into technical work, including a training program with reported internship outcomes.",
+  "coverageNote": "Five documented episodes in U.S. computing. They establish particular jobs, credentials and programs, not an unbroken chain to every software, systems or reliability role.",
+  "question": "Which appointment, training or advancement record connects Black workers to your exact role and employer?",
+  "events": [
+    {
+      "id": "thompson-whirlwind-1951",
+      "date": "1951",
+      "year": 1951,
+      "title": "Joe Thompson enters computing through paid work at MIT",
+      "people": "Joseph “Joe” Thompson",
+      "decisionMaker": "MIT's Whirlwind project; the museum account does not name the hiring official.",
+      "barrier": "The Computer History Museum identifies Thompson as the first Black employee on Whirlwind's early staff.",
+      "change": "MIT recruited him into a route combining study with paid nighttime work operating and programming Whirlwind.",
+      "outcome": "He later programmed SAGE at RAND and eventually advanced to branch leadership during his career.",
+      "limit": "This establishes operations and programming work, not a modern DevOps or SRE title or a direct connection to your employer.",
+      "source": {
+        "title": "Computer History Museum · Trailblazers and Change Agents",
+        "url": "https://computerhistory.org/stories/trailblazers-and-change-agents/",
+        "locator": "Joe Thompson: First Generation Programmer; museum account and linked collection",
+        "type": "Museum history"
+      }
+    },
+    {
+      "id": "ellis-doctorate-1969",
+      "date": "1969",
+      "year": 1969,
+      "title": "Clarence Ellis earns a computer-science doctorate",
+      "people": "Clarence “Skip” Ellis",
+      "decisionMaker": "University of Illinois, the degree-granting institution.",
+      "barrier": "The university identifies Ellis as the first Black American to earn a computer-science PhD; it does not document a specific admissions rule he changed.",
+      "change": "Ellis completed doctoral work while contributing to the ILLIAC IV supercomputer's hardware, software and applications.",
+      "outcome": "His subsequent work included leading the PARC group that developed Officetalk, a system for remote collaboration.",
+      "limit": "His credential and technical leadership are documented individual achievements, not proof that doctoral access or hiring became equal.",
+      "source": {
+        "title": "University of Illinois · Clarence “Skip” Ellis",
+        "url": "https://siebelschool.illinois.edu/about/awards/alumni-awards/alumni-awards-past-recipients/clarence-ellis",
+        "locator": "2019 Distinguished Achievement Memorial Award biography, opening three paragraphs",
+        "type": "Institutional biography"
+      }
+    },
+    {
+      "id": "howard-computing-1970s",
+      "date": "1970–1980",
+      "year": 1970,
+      "title": "Howard builds a formal computer-science route",
+      "people": "Howard University's students, faculty and academic leadership",
+      "decisionMaker": "Howard University; the college history does not name the approving official or a single founding year.",
+      "barrier": "Howard describes educating Black engineers as its institutional mission; this account does not document individual students' admissions barriers.",
+      "change": "The university inaugurated a computer-science program during the 1970–1980 period and integrated it into its engineering school.",
+      "outcome": "Computing became an established field of study within Howard's academic structure.",
+      "limit": "The history verifies program development, not graduate placement totals or a hiring relationship with a particular employer.",
+      "source": {
+        "title": "Howard University College of Engineering and Architecture · Our History",
+        "url": "https://cea.howard.edu/index.php/about-us/our-history",
+        "locator": "Paragraphs covering the 1970–1997 school structure and programs inaugurated in the 1970–1980 era",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "bdpa-student-programming-1986",
+      "date": "1986",
+      "year": 1986,
+      "title": "Jesse Bemley and BDPA create a student programming route",
+      "people": "Dr. Jesse Bemley and Black Data Processing Associates members",
+      "decisionMaker": "BDPA established its student education program; its history credits Bemley with founding the high-school computer competition.",
+      "barrier": "BDPA organized practical technical education and professional connections for aspiring students; this source does not measure each participant's prior access.",
+      "change": "Students could develop programming and application-building skills through chapter training and a national competition.",
+      "outcome": "BDPA reports that the program has exposed tens of thousands of high-school students to coding and offered routes to scholarships.",
+      "limit": "That is the organization's reported educational reach, not independently verified job-placement or promotion data.",
+      "source": {
+        "title": "BDPA · About Us",
+        "url": "https://bdpa.org/about-us/",
+        "locator": "Our History; What Does BDPA Offer? → High School Programs",
+        "type": "Program provider history"
+      }
+    },
+    {
+      "id": "howard-west-outcomes-2017",
+      "date": "2017–2018",
+      "year": 2017,
+      "title": "Howard West connects study with an engineering workplace",
+      "people": "Howard students, Howard faculty and Google engineers",
+      "decisionMaker": "Howard University and Google jointly ran the Howard West pilot.",
+      "barrier": "The partnership addressed access to applied computer-science study and professional experience for students from historically Black institutions.",
+      "change": "The 2017 pilot provided a three-month computer-science education program at Google.",
+      "outcome": "In September 2018, Google reported that 26 students completed the pilot and half had obtained engineering internships at Google or elsewhere in the industry.",
+      "limit": "This is Google's report of one cohort. Internships are not permanent jobs, and participation is not evidence of a connection to an individual reader.",
+      "source": {
+        "title": "Google · Tech Exchange brings Black and Latinx students to Google",
+        "url": "https://blog.google/company-news/outreach-and-initiatives/diversity/tech-exchange-brings-black-and-latinx-students-google/",
+        "locator": "September 18, 2018; paragraph beginning 'The institutions sending students to Google this year'",
+        "type": "Program provider outcome report"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Locate appointment and advancement records for Black workers in systems administration, infrastructure and reliability; related computing history alone does not establish those specialties.",
+    "Follow the Howard West cohort beyond internships, using placement records rather than assuming permanent employment.",
+    "Identify the exact workplace and job duties before attaching a local hiring, training or promotion record."
+  ]
+}

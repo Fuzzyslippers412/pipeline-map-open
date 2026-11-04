@@ -1,0 +1,16 @@
+---
+import {professions} from '../lib/model';
+import {historyFor} from '../lib/field-history.js';
+import '../styles/field-history.css';
+const stories=['k12-teacher','registered-nurse','electrician'].map(slug=>{const p=professions.find(p=>p.slug===slug);return {p,record:historyFor(p)}});
+---
+<section class="home-history" aria-labelledby="history-stories-title">
+ <p class="history-kicker">BEHIND THE JOB TITLE</p>
+ <div class="home-history-header"><h2 id="history-stories-title">A door opens when someone acts.</h2><a href="#directory">Browse all 20 fields ↓</a></div>
+ <div class="history-stories">{stories.map(({p,record})=>{const event=record.events[0];return <article class="history-story">
+  <span class="history-story-year">{event.year}</span><span class="history-story-field">{p.name}</span>
+  <h3><a href={'/p/'+p.slug+'/#field-history'}>{event.title}</a></h3>
+  <p>{event.change}</p>
+  <a href={'/p/'+p.slug+'/#history-'+event.id}>Read the decision & source →</a>
+ </article>})}</div>
+</section>

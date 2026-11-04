@@ -1,0 +1,44 @@
+---
+import {historyFor} from '../lib/field-history.js';
+import '../styles/field-history.css';
+import ArchivePlate from './ArchivePlate.astro';
+const {p}=Astro.props;
+const record=historyFor(p);
+---
+<section class="field-history" id="field-history" aria-labelledby="field-history-title" data-history-depth={record.expanded?'expanded':'starting'}>
+ <header class="history-heading">
+  <div><p class="history-kicker">THE PEOPLE & THE RECORD</p><h2 id="field-history-title">{record.headline}</h2></div>
+  <span class="history-edition">{record.expanded?'Expanded history':'Starting record'}<small>{record.events.length} sourced episodes</small></span>
+ </header>
+ <p class="history-intro">{record.summary}</p><p class="history-boundary">Field records. A connection to your workplace needs its own evidence.</p>
+ <details class="history-scope"><summary>Scope &amp; research limits</summary><p>{record.coverageNote}</p></details>
+ {p.slug==='registered-nurse' && <details class="history-scope"><summary>A training scene from Freedmen’s Hospital, 1943</summary><ArchivePlate/><p>This photograph records a volunteer aide’s lesson. It does not establish an RN credential or a hiring route.</p></details>}
+ <ol class="history-episodes">
+  {record.events.map((event,i)=><li id={'history-'+event.id}>
+   <div class="history-date"><span>{event.date}</span><small>{String(i+1).padStart(2,'0')}</small></div>
+   <article>
+    <h3>{event.title}</h3>
+    {event.people && <p class="history-people">{event.people}</p>}
+    <p class="history-change">{event.outcome || event.change}</p>
+    <a class="history-source" href={event.source.url}>{event.source.title} <span aria-hidden="true">↗</span></a>
+    <details class="history-evidence">
+     <summary>Decision, outcome & evidence</summary>
+     <dl>
+      {event.barrier && <><dt>Barrier or decision at stake</dt><dd>{event.barrier}</dd></>}
+      {event.decisionMaker && <><dt>Who made the decision</dt><dd>{event.decisionMaker}</dd></>}
+      {event.outcome && <><dt>What changed</dt><dd>{event.change}</dd></>}
+      <dt>Where the evidence stops</dt><dd>{event.limit}</dd>
+      <dt>Read the record</dt><dd>{event.source.type} · {event.source.locator}</dd>
+     </dl>
+     {(event.sources||[]).filter(s=>s.url!==event.source.url).map(s=><a class="history-source" href={s.url}>{s.title} ↗</a>)}
+    </details>
+   </article>
+  </li>)}
+ </ol>
+ <aside class="history-open" id="research-question">
+  <p class="history-kicker">THE NEXT RECORD TO FIND</p><h3>{record.question}</h3>
+  <p>{record.workplaceCount ? `${record.workplaceCount} selected workplace records are indexed for this field. A record still needs to match your actual workplace and role.` : 'No reviewed workplace record is indexed for this field yet. That is a research gap, not evidence that no history exists.'}</p>
+  <details><summary>What still needs research</summary><ul>{record.furtherResearch.map(q=><li>{q}</li>)}</ul></details>
+  <div class="history-actions"><a href="/#trace">Check my workplace →</a><a href={'/suggest/?profession='+encodeURIComponent(p.name)}>Suggest a record →</a></div>
+ </aside>
+</section>

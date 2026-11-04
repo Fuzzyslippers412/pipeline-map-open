@@ -7,6 +7,7 @@ import {professions} from '../../lib/model.js';
 import {guides,questions} from '../../lib/field-guides.js';
 import {explorerRecords} from '../../lib/explorer-records.js';
 import credentials from '../../../data/credential-records.json';
+import {historyFor} from '../../lib/field-history.js';
 export function getStaticPaths(){
   return [...professions.map(p=>p.slug),'project-manager','technical-writing',...Object.keys(pmRoleRecords)].map(field=>({params:{field}}));
 }
@@ -16,6 +17,8 @@ const guide=guides[field];
 const explorer=explorerRecords.find(e=>e.id===(field==='k12-teacher'?'public-school-teacher':field));
 const credential=credentials.find(c=>c.slug===field);
 const pm=pmRoleRecords[field];
+const historyRecord=profession && historyFor(profession);
+const opening=historyRecord?.events[0];
 const name=pm?.name||guide?.name||profession?.name||explorer?.title||'Technical writer';
 ---
 <Layout title={name+' career map'} active="Career map" desc={'Explore the history of '+name.toLowerCase()+', the responsibilities people take on and the evidence behind possible next steps.'}>
@@ -23,10 +26,10 @@ const name=pm?.name||guide?.name||profession?.name||explorer?.title||'Technical 
 <header><p class="eyebrow">Career map</p><h1>{name}</h1><p>{pm?.intro||guide?.intro||explorer?.task||'Explore the published field record and identify a question about the work you want to take on.'}</p></header>
 {pm ? <PmRoleHistory role={field}/> : field==='project-manager'? <ProjectWork/> :
 <section class="field-history"><p class="eyebrow">Field history</p>
-{explorer?<><h2>{explorer.door.person}</h2><p>{explorer.door.story}</p><a href={explorer.door.source.url}>{explorer.door.source.title} ↗</a><p>{explorer.door.limit}</p><a href={explorer.taskSource.url}>{explorer.taskSource.title} ↗</a></> :
+{opening?<><h2>{opening.title}</h2><p>{opening.change}</p><a href={opening.source.url}>{opening.source.title} ↗</a><p>{opening.limit}</p></>:explorer?<><h2>{explorer.door.person}</h2><p>{explorer.door.story}</p><a href={explorer.door.source.url}>{explorer.door.source.title} ↗</a><p>{explorer.door.limit}</p><a href={explorer.taskSource.url}>{explorer.taskSource.title} ↗</a></> :
  credential?<><h2>{credential.name}</h2><p>{credential.record}</p><a href={credential.sources[0].url}>{credential.sources[0].label} ↗</a></> :
  <><h2>Who shaped entry into this field?</h2><p>{profession?.origin.rationale}</p>{profession?.origin.citations.slice(0,1).map(s=><a href={s.url}>{s.title} ↗</a>)}</>}
-{profession && <a href={'/p/'+field+'/'}>Open the full profession record →</a>}
+{profession && <a href={'/p/'+field+'/#field-history'}>Read the people, decisions & sources →</a>}
 {explorer?.pathUrl?.startsWith('/preview/')||field==='k12-teacher'?<a href={explorer.pathUrl}>Read the workplace example →</a>:null}
 </section>}
 <section class="next" id="next-steps"><h2>{guide?'Possible next steps':'Explore responsibilities'}</h2>

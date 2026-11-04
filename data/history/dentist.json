@@ -1,0 +1,100 @@
+{
+  "slug": "dentist",
+  "headline": "Dental credentials, independent practice and a professional community",
+  "summary": "Early Black dentists earned degrees, built practices and organized support beyond the schools that trained them. Admission, clinical education, licensure and professional membership are different kinds of access.",
+  "coverageNote": "Four episodes at Harvard, Howard, Michigan and Black dental associations. These sources do not establish every state's licensing history or a connection to an individual clinic.",
+  "question": "Which school, licensing register, clinic or professional-association record connects Black dentists to your practice setting?",
+  "events": [
+    {
+      "id": "freeman-dental-degree-1869",
+      "date": "1869",
+      "year": 1869,
+      "title": "Robert Tanner Freeman graduates from Harvard's first dental class",
+      "people": "Robert Tanner Freeman and founding dean Nathan Cooley Keep",
+      "decisionMaker": "Harvard Dental School admitted and graduated Freeman; its history attributes a nondiscriminatory admissions principle to Keep.",
+      "barrier": "Harvard identifies Freeman as its first Black dental graduate.",
+      "change": "He completed the dental program alongside five other members of its first graduating class.",
+      "outcome": "Harvard awarded his DMD in 1869.",
+      "limit": "The degree is documented; this source does not establish later practice access or equal admissions elsewhere.",
+      "source": {
+        "title": "Harvard School of Dental Medicine · Robert Tanner Freeman",
+        "url": "https://www.hsdm.harvard.edu/news/portrait-dr-robert-freeman-honors-hsdm%E2%80%99s-first-african-american-graduate",
+        "locator": "April 24, 2019; paragraphs on Freeman's 1869 graduation and founding dean Nathan Cooley Keep",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "howard-dentistry-1881",
+      "date": "1881",
+      "year": 1881,
+      "title": "Howard establishes dental education and patient care",
+      "people": "Howard University's dental faculty and students",
+      "decisionMaker": "Howard University established its College of Dentistry.",
+      "barrier": "A dedicated institution created a sustained route into a profession for historically underrepresented students.",
+      "change": "The college combined teaching with patient care.",
+      "outcome": "Howard reports that it has trained thousands of dental professionals since its founding.",
+      "limit": "This institutional account does not provide the early cohorts' licensing or job-placement outcomes.",
+      "source": {
+        "title": "Howard University College of Dentistry · About",
+        "url": "https://dentistry.howard.edu/index.php/about",
+        "locator": "About Us and Letter from the Dean: 1881 founding and teaching/patient-care mission",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "ida-gray-dentistry-1890",
+      "date": "1890",
+      "year": 1890,
+      "title": "Ida Gray earns a dental degree and enters practice",
+      "people": "Ida Gray",
+      "decisionMaker": "The University of Michigan awarded her Doctor of Dental Surgery degree.",
+      "barrier": "Michigan identifies Gray as the first Black woman in the United States to earn a DDS.",
+      "change": "Her 1890 qualification was followed by dental practice in Cincinnati.",
+      "outcome": "She later moved to Chicago and practiced there, according to the dental school's account.",
+      "limit": "The evidence concerns her degree and practice; it does not show that other women obtained equal access.",
+      "source": {
+        "title": "University of Michigan School of Dentistry · Ida Gray and diversity awards",
+        "url": "https://dent.umich.edu/news-events/news/dental-students-faculty-staff-awarded-diversity-efforts",
+        "locator": "Ida Gray biographical paragraph following the faculty award profile",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "black-dental-associations-1913",
+      "date": "1913–1932",
+      "year": 1913,
+      "title": "Black dentists organize across state lines",
+      "people": "Dr. David A. Ferguson and Black dentists in Virginia, Maryland, Washington, D.C., and other states",
+      "decisionMaker": "Ferguson led the Tri-State association; constituent societies later reorganized the Interstate association as the NDA.",
+      "barrier": "The NDA describes exclusion from the established dental profession as the setting for this organizing.",
+      "change": "Twenty-nine dentists formed the Tri-State Dental Association in 1913 to sustain collective professional representation.",
+      "outcome": "Its successor represented 21 states by 1923; the National Dental Association name and structure followed in 1932.",
+      "limit": "These are the association's historical accounts, not proof of admission to every state board or other dental association.",
+      "source": {
+        "title": "National Dental Association · About Us",
+        "url": "https://www.ndaonline.org/about/about-us",
+        "locator": "Chronological history: 1913 Tri-State Dental Association, 1923 expansion and 1932 reorganization",
+        "type": "Institutional history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Link an early dental degree to the relevant state register and the dentist's actual practice.",
+    "Research hospital privileges and specialist training separately from general dental education.",
+    "Identify the exact clinic, school or employer before presenting an institutional connection."
+  ],
+  "credential": {
+    "name": "Ida Gray",
+    "year": 1890,
+    "credential": "Doctor of Dental Surgery",
+    "record": "Michigan records Gray's 1890 DDS and identifies her as the first Black woman in the United States to earn that degree.",
+    "work": "She practiced dentistry in Cincinnati and later Chicago.",
+    "sources": [
+      {
+        "label": "University of Michigan School of Dentistry · Ida Gray and diversity awards",
+        "url": "https://dent.umich.edu/news-events/news/dental-students-faculty-staff-awarded-diversity-efforts"
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,86 @@
+{
+  "slug": "pro-athlete",
+  "headline": "Roster access, coaching authority and bargaining power opened through different decisions.",
+  "summary": "Black athletes and their allies challenged exclusion from professional teams, then sought authority and better terms within those leagues. These episodes concern the NFL and NBA, not every sport or league.",
+  "coverageNote": "Four NFL/NBA episodes: a stadium condition and player contracts, a draft selection, a coaching appointment and a labor settlement.",
+  "question": "Which team contract, appointment or collective agreement establishes the connection to this role?",
+  "events": [
+    {
+      "id": "pro-athlete-rams-1946",
+      "date": "January–spring 1946",
+      "year": 1946,
+      "title": "Black newspaper editors press the Rams to open their roster",
+      "people": "Halley Harding, fellow Black sports editors, Kenny Washington and Woody Strode",
+      "decisionMaker": "The Los Angeles Coliseum Commission set a nondiscrimination condition; the Rams negotiated and signed player contracts.",
+      "barrier": "The Rams sought use of a publicly supported stadium while Black players remained excluded from the NFL.",
+      "change": "Harding brought the issue before the commission, which adopted a nondiscrimination resolution for professional teams using the venue.",
+      "outcome": "The Rams signed Washington on March 21 and subsequently signed Strode.",
+      "limit": "These contracts established access at one team; they did not guarantee playing time or simultaneous integration across the league.",
+      "source": {
+        "title": "Los Angeles Public Library · Los Angeles and the Reintegration of the NFL",
+        "url": "https://www.lapl.org/news-stories/articles/los-angeles-and-reintegration-nfl",
+        "locator": "January 26 commission meeting and March 21 Washington contract",
+        "type": "Library historical account"
+      }
+    },
+    {
+      "id": "pro-athlete-cooper-draft-1950",
+      "date": "April 25, 1950",
+      "year": 1950,
+      "title": "Boston selects Chuck Cooper in the NBA draft",
+      "people": "Chuck Cooper; Celtics owner Walter Brown and coach Red Auerbach",
+      "decisionMaker": "The Boston Celtics used their second-round pick to select Cooper.",
+      "barrier": "No Black player had previously been selected in the NBA draft.",
+      "change": "Boston drafted Cooper with the thirteenth overall pick.",
+      "outcome": "He played for the Celtics and later NBA teams during the league’s early integration period.",
+      "limit": "Being drafted, signing a contract and appearing in a game are different milestones; racial hostility in hotels and arenas continued.",
+      "source": {
+        "title": "Naismith Basketball Hall of Fame · Charles “Chuck” Cooper",
+        "url": "https://www.hoophall.com/hall-of-famers/charles-chuck-cooper",
+        "locator": "Biography: draft selection, NBA teams and discrimination",
+        "type": "Institutional biography"
+      }
+    },
+    {
+      "id": "pro-athlete-russell-coach-1966",
+      "date": "1966",
+      "year": 1966,
+      "title": "Bill Russell gains coaching authority as well as a playing role",
+      "people": "Bill Russell and Red Auerbach",
+      "decisionMaker": "The Boston Celtics appointed Russell after Auerbach retired from coaching.",
+      "barrier": "Black players had entered NBA rosters without yet holding a head-coaching position.",
+      "change": "Russell accepted the player-coach job, becoming the NBA’s first Black head coach.",
+      "outcome": "He led Boston to two further championships while serving in the combined role.",
+      "limit": "One appointment demonstrates access to authority at Boston, not equal coaching opportunities across teams or a route into ownership.",
+      "source": {
+        "title": "Naismith Basketball Hall of Fame · Bill Russell, Coach",
+        "url": "https://www.hoophall.com/hall-of-famers/bill-russell-1",
+        "locator": "Coaching biography: 1966 appointment and championships",
+        "type": "Institutional biography"
+      }
+    },
+    {
+      "id": "pro-athlete-robertson-settlement-1976",
+      "date": "1970–1976",
+      "year": 1970,
+      "title": "Oscar Robertson and the players challenge restrictions on changing teams",
+      "people": "Oscar Robertson, the players bringing suit and later NBPA president Paul Silas",
+      "decisionMaker": "Players pursued antitrust litigation; the NBPA and NBA owners negotiated the resulting agreement.",
+      "barrier": "Contract restrictions could bind players to a team, while an NBA–ABA merger threatened competition for their services.",
+      "change": "The players’ lawsuit blocked the merger pending resolution and strengthened their negotiating position.",
+      "outcome": "The 1976 settlement removed the option clause and introduced limited free agency, alongside compensation and benefit changes.",
+      "limit": "These labor gains covered NBA players broadly; limited free agency was not unrestricted mobility, nor proof of equal access to coaching or ownership.",
+      "source": {
+        "title": "National Basketball Players Association · Historical timeline",
+        "url": "https://www.nbpa.com/about",
+        "locator": "Robertson suit filed (settled in 1976) over NBA, ABA merger",
+        "type": "Union historical account"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Add team-level contract and roster records to distinguish a signing from sustained paid playing work.",
+    "Research coaching, front-office and ownership opportunities separately from player access.",
+    "Develop distinct histories for women’s leagues and other sports rather than extending NFL/NBA conclusions to them."
+  ]
+}

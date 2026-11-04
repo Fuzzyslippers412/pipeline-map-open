@@ -1,0 +1,94 @@
+{
+  "slug": "nonprofit-executive",
+  "headline": "Black leaders built organizations and challenged who could direct them",
+  "summary": "Community organizing, a professional staff position, a board seat and a foundation presidency are different forms of authority. These examples show institution-building, mentorship and changes in representation within specific organizations.",
+  "coverageNote": "Four selected episodes in community organizations and philanthropy. They do not establish a single route into all nonprofit leadership or a connection to an unresearched employer.",
+  "question": "Which board minutes, appointment record or organizational history documents Black leadership at your nonprofit?",
+  "events": [
+    {
+      "id": "bethune-ncnw-1935",
+      "date": "December 5, 1935",
+      "year": 1935,
+      "title": "Bethune and Black women organize a national council",
+      "people": "Mary McLeod Bethune and delegates representing Black women’s organizations",
+      "decisionMaker": "Bethune and the participating organizations established the National Council of Negro Women",
+      "barrier": "Bethune sought a stronger national voice for Black women on education, employment and public affairs.",
+      "change": "She and 20 other Black women representing 14 organizations founded NCNW in New York.",
+      "outcome": "The council developed a permanent headquarters and employed a full-time staff as its work expanded.",
+      "limit": "Organizational leadership and staffing are documented; this account does not establish that every elected or volunteer leadership role was paid.",
+      "source": {
+        "title": "National Park Service · Mary McLeod Bethune",
+        "url": "https://www.nps.gov/people/mary-mcleod-bethune.htm",
+        "locator": "NCNW founding, headquarters and staff paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "young-jordan-mentorship-1966",
+      "date": "1966–1971",
+      "year": 1966,
+      "title": "Whitney Young mentors a future nonprofit executive",
+      "people": "Whitney M. Young Jr. and Vernon E. Jordan Jr.",
+      "decisionMaker": "Young offered advice and recruitment; UNCF and the National Urban League made their own executive appointments",
+      "barrier": "Jordan’s account describes a move from southern civil-rights work into national nonprofit management.",
+      "change": "Young recruited and advised Jordan, including encouraging him to accept leadership of the United Negro College Fund.",
+      "outcome": "The Urban League’s chronology records Jordan as UNCF executive director in 1970 and its own leader in 1971.",
+      "limit": "Jordan’s testimony supports a personal mentoring relationship; it does not establish that Young controlled either organization’s appointing vote or that this route served all candidates.",
+      "source": {
+        "title": "National Urban League · Vernon Jordan’s tribute to Whitney Young",
+        "url": "https://nul.org/news/vernon-jordan-whitney-m-young-jr-one-visionary-warrior-pays-tribute-another",
+        "locator": "Jordan’s 2019 prepared remarks, recruitment and UNCF paragraphs",
+        "type": "Firsthand retrospective account"
+      },
+      "sources": [
+        {
+          "title": "National Urban League · State of Black America 2021",
+          "url": "https://nul.org/sites/default/files/2021-07/NUL-SOBA2021-ES-web.pdf",
+          "locator": "Vernon Jordan chronology, printed page 9",
+          "type": "Institutional chronology"
+        }
+      ]
+    },
+    {
+      "id": "abfe-board-election-1971",
+      "date": "1971",
+      "year": 1971,
+      "title": "Black foundation professionals organize for board representation",
+      "people": "The founding group of the Association of Black Foundation Executives",
+      "decisionMaker": "Council on Foundations members voted on an alternative slate presented by Black professionals",
+      "barrier": "Black foundation professionals sought greater representation in the organization governing their professional community.",
+      "change": "At the Council on Foundations meeting, the group presented an alternative slate of Black candidates.",
+      "outcome": "ABFE’s institutional account reports the election of five Black foundation executives to the Council’s board.",
+      "limit": "This is a particular association’s board election, not authority to appoint executives at corporations or every nonprofit; individual ballots are not reproduced in this account.",
+      "source": {
+        "title": "ABFE · Its beginnings at the 1971 Council on Foundations meeting",
+        "url": "https://www.abfe.org/news/podcast-spotlight-susan-taylor-batten-abfes-legacy-and-vision-equity-philanthropy",
+        "locator": "Paragraph describing the alternative slate and five board elections",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "lavizzo-mourey-rwjf-2003",
+      "date": "January 2003",
+      "year": 2003,
+      "title": "Risa Lavizzo-Mourey takes leadership of a health foundation",
+      "people": "Risa Lavizzo-Mourey",
+      "decisionMaker": "Robert Wood Johnson Foundation; the retrospective does not reproduce the appointing vote",
+      "barrier": "RWJF had not previously been led by a woman or an African American, according to the foundation’s account.",
+      "change": "Lavizzo-Mourey became president and chief executive officer in January 2003.",
+      "outcome": "Her tenure included leadership of grantmaking priorities and the redesign of leadership, fellowship and scholarship programs.",
+      "limit": "This establishes her leadership of RWJF, not a general hiring pathway for all nonprofits or proof that any particular grant created a reader’s job.",
+      "source": {
+        "title": "Robert Wood Johnson Foundation · Risa Lavizzo-Mourey leadership retrospective",
+        "url": "https://www.rwjf.org/en/about-rwjf/newsroom/2016/09/rlm-stepping-down.html",
+        "locator": "Opening tenure paragraphs and leadership-program discussion, September 13, 2016",
+        "type": "Institutional history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Find board appointment minutes, role descriptions and salary records at the reader’s organization; distinguish paid executive work from volunteer governance.",
+    "Document how Black-led organizations recruited, retained and promoted staff beyond their best-known founders.",
+    "Separate grantmaking decisions, operating revenue and the authority to select a nonprofit’s executive."
+  ]
+}

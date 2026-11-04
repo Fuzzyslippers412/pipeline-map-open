@@ -1,0 +1,86 @@
+{
+  "slug": "elected-official",
+  "headline": "Winning a seat and keeping access to the ballot were separate struggles",
+  "summary": "These selected records show an actual Senate seating decision, a reversal in Black congressional representation, federal voting protections and a Black woman’s election to the House. They describe historical institutions, not instructions about how to vote.",
+  "coverageNote": "Four episodes focused on U.S. congressional access and historical voting law. Local offices, jurisdictions and later legal changes require their own records.",
+  "question": "Which election return, district record or officeholding history establishes Black access to this particular public office?",
+  "events": [
+    {
+      "id": "revels-senate-1870",
+      "date": "February 25, 1870",
+      "year": 1870,
+      "title": "Hiram Revels takes a Senate seat after a contested vote",
+      "people": "Hiram R. Revels",
+      "decisionMaker": "Mississippi’s legislature elected him; the U.S. Senate voted to seat him",
+      "barrier": "Opponents challenged whether a Black man could satisfy the Senate’s citizenship requirement.",
+      "change": "After debate, the Senate voted 48–8 to accept Revels as a member.",
+      "outcome": "Revels was sworn in on February 25, 1870, and served the remainder of an unexpired term.",
+      "limit": "This was a legislature-selected Senate seat, not a direct popular election or evidence that access to every public office was secured.",
+      "source": {
+        "title": "U.S. Senate · Hiram Revels and his first Senate speech",
+        "url": "https://www.senate.gov/artandhistory/history/common/generic/Speeches_Revels.htm",
+        "locator": "Election, citizenship dispute and seating-vote paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "white-representation-reversal-1901",
+      "date": "1900–1901",
+      "year": 1900,
+      "title": "George Henry White’s departure marks a reversal",
+      "people": "George Henry White",
+      "decisionMaker": "North Carolina lawmakers restricted voter registration; White chose not to seek renomination",
+      "barrier": "White faced racist attacks, restrictive election laws and opposition within electoral coalitions.",
+      "change": "He announced in 1900 that he would not seek another term; his service ended March 3, 1901.",
+      "outcome": "The House’s history records that another Black member was not elected to Congress for 27 years.",
+      "limit": "The account identifies several causes behind White’s decision; it does not reduce that reversal to one law or imply that all Black local officeholding ended.",
+      "source": {
+        "title": "U.S. House History, Art & Archives · George Henry White",
+        "url": "https://history.house.gov/People/Detail/23657",
+        "locator": "Extended biography: 1900 renomination decision and 1901 departure",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "voting-rights-act-1965",
+      "date": "August 6, 1965",
+      "year": 1965,
+      "title": "Federal law challenges discriminatory registration barriers",
+      "people": "Black voters and civil-rights organizers pressing for voting access",
+      "decisionMaker": "U.S. Congress passed the act and President Lyndon B. Johnson signed it",
+      "barrier": "Literacy tests and other discriminatory practices obstructed Black voters’ registration and participation.",
+      "change": "The 1965 Voting Rights Act suspended specified tests and authorized federal registration examiners in covered jurisdictions.",
+      "outcome": "It created federal enforcement mechanisms affecting who could register and participate in choosing public officials.",
+      "limit": "A legal protection is not an election win or proof of implementation in a particular county; this episode describes the historical 1965 law.",
+      "source": {
+        "title": "National Archives · Voting Rights Act of 1965",
+        "url": "https://www.archives.gov/milestone-documents/voting-rights-act",
+        "locator": "Introductory historical account and act transcript",
+        "type": "Contemporary statute with archival context"
+      }
+    },
+    {
+      "id": "chisholm-house-1968",
+      "date": "November 1968 / January 1969",
+      "year": 1968,
+      "title": "Shirley Chisholm wins a congressional seat",
+      "people": "Shirley Anita Chisholm and voters in her Brooklyn district",
+      "decisionMaker": "District voters elected Chisholm to the U.S. House",
+      "barrier": "No Black woman had previously served in Congress, according to the House’s historical record.",
+      "change": "After service in New York’s legislature, Chisholm won election in November 1968 to a newly created Brooklyn district.",
+      "outcome": "She began House service on January 3, 1969, becoming the first Black woman in Congress.",
+      "limit": "This documents one election and actual service; it does not prove that a specific earlier law caused her victory or establish access to every office.",
+      "source": {
+        "title": "U.S. House History, Art & Archives · First African-American woman elected to Congress",
+        "url": "https://history.house.gov/historicalhighlight/detail/37113?ret=true",
+        "locator": "January 3, 1969 historical highlight",
+        "type": "Institutional history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Add state and local examples using election returns and jurisdiction-specific records rather than treating Congress as all elected work.",
+    "Trace candidate selection, ballot access, district boundaries and office authority separately from the right to register as a voter.",
+    "Document reversals and implementation; verify contemporary legal requirements independently before presenting them as current."
+  ]
+}

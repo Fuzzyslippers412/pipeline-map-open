@@ -3,12 +3,12 @@ import Layout from '../components/Layout.astro';
 import {sources,professions} from '../lib/model';
 const nameFor = new Map(professions.map(p=>[p.slug,p.name]));
 ---
-<Layout title="Source register" active="Sources" desc="Find the public table behind a Door Notes chart. Read what was counted, where to look in the original, and which profession the evidence covers.">
+<Layout title="Source register" active="Sources" desc="Check the original records behind Door Notes histories and charts, with claim scope and source locators.">
 <div class="frame register">
   <header>
     <p class="section-tag">Field guide / Evidence</p>
     <h1>Sources</h1>
-    <p>Follow a chart to the table behind it. Each record tells you what was counted and where to look in the original.</p>
+    <p>Follow a historical episode or a chart to its original source. Each record identifies where to look, what it supports and where its evidence stops.</p>
   </header>
   <section aria-label="Source register">
     <div id="cited-banner" hidden>
@@ -16,32 +16,33 @@ const nameFor = new Map(professions.map(p=>[p.slug,p.name]));
       <a href="/sources/" id="browse-register">Browse all sources <span aria-hidden="true">→</span></a>
     </div>
     <form id="source-filters" role="search" aria-label="Find a source" hidden>
-      <label><span>Find a source</span><input type="search" id="source-search" placeholder="Publisher, table title or year"/></label>
+      <label><span>Find a source</span><input type="search" id="source-search" placeholder="Person, publisher, record or year"/></label>
       <label><span>Profession</span><select id="source-profession"><option value="">All professions</option>{professions.map(p=><option value={p.slug}>{p.name}</option>)}</select></label>
-      <label><span>Order by</span><select id="source-order"><option value="catalog">Catalog order</option><option value="publisher">Publisher (A–Z)</option><option value="table">Table title (A–Z)</option><option value="date">Last checked (newest)</option></select></label>
+      <label><span>Evidence</span><select id="source-kind"><option value="">All records</option><option value="history">Historical records</option><option value="measurement">Statistical tables</option></select></label>
+      <label><span>Order by</span><select id="source-order"><option value="catalog">Catalog order</option><option value="publisher">Publisher (A–Z)</option><option value="table">Record title (A–Z)</option><option value="date">Last checked (newest)</option></select></label>
     </form>
-    <div class="source-count"><p id="source-count" role="status">{sources.length} source tables</p><button type="button" id="source-clear" hidden>Clear filters</button></div>
-    <table class="source-records"><caption class="sr">Source tables and definitions</caption><thead><tr><th scope="col">Publisher</th><th scope="col">Source table</th><th scope="col">Last checked</th></tr></thead>
-    <tbody>{sources.map(s=><tr id={s.id} data-publisher={s.publisher} data-table={s.table_name} data-date={s.retrieved_on} data-fields={s.professions.join(' ')}>
+    <div class="source-count"><p id="source-count" role="status">{sources.length} source records</p><button type="button" id="source-clear" hidden>Clear filters</button></div>
+    <table class="source-records"><caption class="sr">Historical and statistical source records</caption><thead><tr><th scope="col">Publisher</th><th scope="col">Source record</th><th scope="col">Last checked</th></tr></thead>
+    <tbody>{sources.map(s=><tr id={s.id} data-kind={s.kind==='history'?'history':'measurement'} data-publisher={s.publisher} data-table={s.table_name} data-date={s.retrieved_on} data-fields={s.professions.join(' ')}>
       <td class="publisher">{s.publisher}</td>
       <td class="table-info"><a class="source-title" href={s.url}>{s.table_name} <span aria-hidden="true">↗</span></a>
-        <details><summary>What this table covers</summary><div class="source-inside">
+        <details><summary>{s.kind==='history'?'What this record supports':'What this table covers'}</summary><div class="source-inside">
           {s.locator && <p class="locator"><strong>Where to look</strong>{s.locator}</p>}
-          <p><strong>Who and what was counted</strong>{s.definition}</p>
+          <p><strong>{s.kind==='history'?'Historical reference':'Who and what was counted'}</strong>{s.definition}</p>
           {s.limits&&<p><strong>Limits</strong>{s.limits}</p>}
           {s.data_url&&<a href={s.data_url}>National person file (ZIP) ↗</a>}
           {s.dictionary_url&&<a href={s.dictionary_url}>Occupation codes and data dictionary ↗</a>}
-          <p class="fields"><strong>Used in</strong>{s.professions.map(slug=><a href={'/p/'+slug+'/'}>{nameFor.get(slug)}</a>)}</p>
+          {s.episode && <a href={s.episode}>Read the episode and its evidence →</a>}<p class="fields"><strong>Used in</strong>{s.professions.map(slug=><a href={'/p/'+slug+'/'}>{nameFor.get(slug)}</a>)}</p>
           <small>{s.license}</small>
         </div></details>
       </td>
       <td class="checked"><span class="compact-label">Checked </span><time datetime={s.retrieved_on}>{s.retrieved_on}</time></td>
     </tr>)}</tbody></table>
-    <div id="no-sources" hidden><h2>No tables match these filters.</h2><p>Try a publisher or year, or clear the filters to see the full register.</p></div>
+    <div id="no-sources" hidden><h2>No records match these filters.</h2><p>Try a publisher or year, or clear the filters to see the full register.</p></div>
     <button type="button" class="secondary" id="more-sources" hidden>Show more sources</button>
   </section>
   <aside class="source-download"><div><p class="section-tag">Data downloads</p><h2>Use the data yourself</h2><p>Download the observations or the records that identify each source.</p></div>
-    <div><a href="/data/observations.csv" download>Observations (CSV) ↓</a><a href="/data/sources.csv" download>Source tables (CSV) ↓</a></div>
+    <div><a href="/data/observations.csv" download>Observations (CSV) ↓</a><a href="/data/histories.json" download>Historical episodes (JSON) ↓</a><a href="/data/sources.csv" download>Source records (CSV) ↓</a></div>
   </aside>
 </div></Layout>
 <script>
@@ -56,7 +57,7 @@ h1,h2 {font-family:var(--serif);font-weight:500;letter-spacing:-.04em}
 h1 {font-size:clamp(46px,7vw,76px);margin:8px 0 5px}
 h2 {font-size:clamp(25px,3vw,34px);margin:5px 0}
 header > p:last-child,.source-download p:not(.section-tag),#no-sources p {color:var(--muted);max-width:59ch}
-#source-filters {display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;margin:22px 0 12px}
+#source-filters {display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:16px;margin:22px 0 12px}
 #source-filters label {display:grid;gap:4px;min-width:0;font-size:.88rem;font-weight:650}
 #source-filters input,#source-filters select {border:1px solid var(--soft);background:var(--panel);border-radius:3px;min-width:0;width:100%;min-height:44px;padding:8px 10px;color:var(--text);font:400 1rem var(--sans)}
 .source-count,#cited-banner {display:flex;align-items:center;justify-content:space-between;gap:12px}

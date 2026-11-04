@@ -1,0 +1,86 @@
+{
+  "slug": "military-officer",
+  "headline": "A commission opened a door. Assignments and command could still be restricted.",
+  "summary": "Black Americans pressed for officer training, earned commissions and led units within segregated services. These Army and Marine Corps examples distinguish an individual commission from the later policy and work of service integration.",
+  "coverageNote": "Four episodes in Army and Marine Corps service and federal policy. They do not establish the commissioning, assignment or promotion history of every branch or unit.",
+  "question": "Which service orders and unit records show when this commission led to an assignment, promotion or command?",
+  "events": [
+    {
+      "id": "military-officer-des-moines-1917",
+      "date": "June–October 1917",
+      "year": 1917,
+      "title": "Advocacy secures an Army officer-training camp for Black candidates",
+      "people": "W. E. B. Du Bois, the NAACP, Howard University advocates and the Fort Des Moines candidates",
+      "decisionMaker": "The U.S. Army selected Fort Des Moines; the Adjutant General issued commissions to graduates.",
+      "barrier": "Black candidates faced restricted training and command opportunities in a segregated Army.",
+      "change": "Following advocacy, the Army admitted 1,250 Black candidates to training in June 1917.",
+      "outcome": "On October 15, 639 graduates received commissions and subsequently served in the United States and France.",
+      "limit": "Graduates could command Black infantry units only, received no artillery or cavalry training there, and were commissioned no higher than captain.",
+      "source": {
+        "title": "National Park Service · Fort Des Moines: A Series of Firsts in Wartime Service",
+        "url": "https://www.nps.gov/articles/000/fort-des-moines-a-series-of-firsts-in-wartime-service.htm",
+        "locator": "World War I African American Officer Training Center",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "military-officer-charity-adams-1942",
+      "date": "1942–1945",
+      "year": 1942,
+      "title": "Charity Adams moves from officer training to overseas command",
+      "people": "Charity Adams and the Black women in the first WAAC officer class",
+      "decisionMaker": "Army authorities selected and trained Women’s Army Auxiliary Corps officers, then assigned Adams leadership responsibilities.",
+      "barrier": "Adams and her Black classmates trained in a separate platoon even while much of their instruction was integrated.",
+      "change": "Adams completed officer training in August 1942 and commanded a company preparing Black women for service.",
+      "outcome": "She later led the 6888th Central Postal Directory Battalion overseas, directing its work on the European mail backlog.",
+      "limit": "The WAAC was initially auxiliary service; the later WAC and this documented command should not be read as unrestricted access for all Black women.",
+      "source": {
+        "title": "U.S. Army · Historical Sustainment Leaders Honored with Gregg-Adams Redesignation",
+        "url": "https://www.army.mil/article/267679/historical_sustainment_leaders_honored_with_gregg_adams_redesignation",
+        "locator": "Lt. Col. Charity Adams section: 1942 training and 6888th command",
+        "type": "Service historical account"
+      }
+    },
+    {
+      "id": "military-officer-frederick-branch-1945",
+      "date": "November 10, 1945",
+      "year": 1945,
+      "title": "Frederick Branch earns a Marine Corps commission after an earlier rejection",
+      "people": "Frederick Clinton Branch and the commanding officer who recommended him",
+      "decisionMaker": "Marine Corps authorities admitted Branch to Officer Candidates School and commissioned him.",
+      "barrier": "His initial officer-school application was denied after he entered through segregated training at Montford Point.",
+      "change": "A commanding officer’s recommendation gave Branch another route to officer training.",
+      "outcome": "He became a second lieutenant in 1945, the first Black Marine officer identified by the Corps, and later reached captain.",
+      "limit": "This individual commission did not end segregation or prove that other applicants received the same access.",
+      "source": {
+        "title": "Marine Corps Base Quantico · Celebrating the Contributions of Frederick Branch",
+        "url": "https://www.quantico.marines.mil/News/Article/654649/celebrating-the-contributions-of-frederick-branch/",
+        "locator": "Officer-school application, recommendation and November 10 commission",
+        "type": "Service historical account"
+      }
+    },
+    {
+      "id": "military-officer-order-9981-1948",
+      "date": "July 26, 1948",
+      "year": 1948,
+      "title": "Executive Order 9981 makes equal treatment a service-wide policy",
+      "people": "Black service members; President Harry S. Truman; committee chair Charles Fahy",
+      "decisionMaker": "Truman issued the order as president and commander in chief; the services were responsible for implementing it.",
+      "barrier": "Racially segregated service rules and practices continued after World War II.",
+      "change": "The order declared equal treatment and opportunity and established a committee to examine military rules and recommend changes.",
+      "outcome": "The committee reviewed service practices and submitted its final report, Freedom to Serve, in May 1950.",
+      "limit": "The order was a policy change, not immediate integration of every unit; actual assignments and promotions require branch and unit records.",
+      "source": {
+        "title": "National Archives · Executive Order 9981",
+        "url": "https://www.archives.gov/milestone-documents/executive-order-9981",
+        "locator": "Order transcript, sections 1–4; introduction on the Fahy Committee",
+        "type": "Executive order and archival context"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Compare commissioning records with branch-specific assignment, promotion and command orders.",
+    "Locate implementation records for a reader’s service and unit after Executive Order 9981.",
+    "Expand Navy, Air Force, Coast Guard and reserve-component histories without treating Army or Marine examples as interchangeable."
+  ]
+}

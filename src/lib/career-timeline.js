@@ -22,7 +22,7 @@ function dateForAward(record){
 }
 function historyStep(item){
   return {type:'history',label:'Field history',date:item.dateLabel,order:dateKey(item.sortYear),
-    title:item.title,detail:item.description,place:item.place,sources:sources([{title:item.sourceTitle,url:item.url}])};
+    title:item.title,detail:item.description,place:item.place,sources:sources(item.sources || [{title:item.sourceTitle,url:item.url}])};
 }
 function workplaceStep(row, paper=false){
   const bridge=row.fromInstitution&&row.toInstitution?row.fromInstitution+' → '+row.toInstitution:'';

@@ -1,0 +1,86 @@
+{
+  "slug": "police-officer",
+  "headline": "Hiring Black officers did not automatically mean equal assignments or advancement.",
+  "summary": "Local departments opened positions at different times and often retained segregation after hiring. Individual officers and professional associations challenged barriers inside those departments.",
+  "coverageNote": "Four episodes in New York, Miami and St. Louis. This is a workforce history of selected departments, not a claim about every department or the public effects of policing.",
+  "question": "Which civil-service, assignment and promotion records show what changed for Black officers in your department?",
+  "events": [
+    {
+      "id": "police-officer-samuel-battle-1911",
+      "date": "1911–1935",
+      "year": 1911,
+      "title": "Samuel Battle enters the NYPD and later reaches supervisory ranks",
+      "people": "Samuel J. Battle",
+      "decisionMaker": "The NYPD admitted Battle and later promoted him within its ranks.",
+      "barrier": "Battle faced a struggle for acceptance inside the department after joining.",
+      "change": "He was sworn in as a police officer in 1911.",
+      "outcome": "He became a sergeant in 1926 and a lieutenant in 1935, documenting advancement as well as entry.",
+      "limit": "His career establishes particular appointments; it does not explain the selection process or promotion chances for every Black officer.",
+      "source": {
+        "title": "NYC Department of Records · City Hall Library Notes, April 2016",
+        "url": "https://www.nyc.gov/assets/records/html/april2016.html",
+        "locator": "Spotlight on Black History Month and Women’s History Month; Samuel Battle profile",
+        "type": "Municipal historical account"
+      }
+    },
+    {
+      "id": "police-officer-miami-first-five-1944",
+      "date": "September 1944",
+      "year": 1944,
+      "title": "Miami hires five Black patrolmen under unequal working conditions",
+      "people": "Ralph White, John Milledge, Clyde Lee, Ed Kimble and Moody Hall",
+      "decisionMaker": "The Miami Police Department hired the five patrolmen.",
+      "barrier": "Departmental segregation left them without the facilities and equipment available through the main station.",
+      "change": "Black men gained patrol positions in the city’s police force.",
+      "outcome": "They worked without a station house, cars or radio contact until a separate Black precinct opened in 1950.",
+      "limit": "Entry into the workforce came with unequal conditions; hiring did not integrate the department.",
+      "source": {
+        "title": "Black Police Precinct and Courthouse Museum · Overview and History",
+        "url": "https://historicalblackprecinct.org/about_us/history/",
+        "locator": "The first five patrolmen and conditions before the 1950 precinct",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "police-officer-miami-precinct-1963",
+      "date": "1963",
+      "year": 1963,
+      "title": "Miami ends the separate Black precinct arrangement",
+      "people": "The Black precinct’s officers",
+      "decisionMaker": "The Miami Police Department integrated operations at its main station; the museum account does not name the authorizing official.",
+      "barrier": "Black officers had continued working within a separate departmental structure.",
+      "change": "The segregated precinct closed.",
+      "outcome": "The museum dates integration at the main MPD station to 1963.",
+      "limit": "Ending separate facilities does not establish equal assignments, discipline or promotion; those need personnel and policy records.",
+      "source": {
+        "title": "Black Police Precinct and Courthouse Museum · Overview and History",
+        "url": "https://historicalblackprecinct.org/about_us/history/",
+        "locator": "Opening history: the precinct’s closure and department integration in 1963",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "police-officer-esop-1972",
+      "date": "1972",
+      "year": 1972,
+      "title": "Black St. Louis officers organize against workplace discrimination",
+      "people": "The African American police officers who founded the Ethical Society of Police",
+      "decisionMaker": "The founding officers established their own professional association.",
+      "barrier": "Race-based discrimination remained a concern within policing after Black officers had entered the workforce.",
+      "change": "ESOP created a collective channel for advocacy on representation, fair treatment and accountability.",
+      "outcome": "The organization’s history dates its founding to 1972 and describes its continuing officer and community advocacy.",
+      "limit": "An association’s existence and stated mission are not evidence that a particular promotion or hiring policy changed.",
+      "source": {
+        "title": "Ethical Society of Police · Our Mission & Work",
+        "url": "https://esopstl.org/our-mission-work/",
+        "locator": "Founding statement and mission",
+        "type": "Organizational history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Find the local orders and civil-service rules authorizing initial Black recruitment and later integration.",
+    "Compare assignments, promotion examinations and outcomes rather than using hiring alone as a measure of equal access.",
+    "Identify specific ESOP-supported policy changes through agreements, court records and departmental documents."
+  ]
+}

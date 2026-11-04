@@ -1,0 +1,104 @@
+{
+  "slug": "journalist",
+  "headline": "Owning the press. Entering the newsroom.",
+  "summary": "The record includes independent publishing, reporting under threat, press credentials, newsroom training and ownership. Access to a newsroom did not automatically bring authority, safety or equal treatment.",
+  "coverageNote": "Five episodes centered on U.S. newspapers and White House reporting. These do not establish the history of every broadcast, digital, commentary or local newsroom role.",
+  "question": "What hiring, credentialing or promotion record connects Black journalists to your actual newsroom?",
+  "events": [
+    {
+      "id": "freedoms-journal-1827",
+      "date": "1827",
+      "year": 1827,
+      "title": "Cornish and Russwurm publish an independent Black newspaper",
+      "people": "Samuel E. Cornish, John Brown Russwurm and supporting free Black New Yorkers",
+      "decisionMaker": "Cornish and Russwurm, the newspaper's founders and editors.",
+      "barrier": "White newspapers and literature misrepresented Black Americans, according to the Library of Congress's account.",
+      "change": "Freedom's Journal created a Black-edited outlet for reporting, argument and community information.",
+      "outcome": "It published from 1827 to 1829, carried advertisements for Black businesses and schools, and used subscription agents in the United States and abroad.",
+      "limit": "The publication establishes an independent press institution, not broad entry into white-owned newsrooms; disputes later divided its editors.",
+      "source": {
+        "title": "Library of Congress · Freedom's Journal, 1827–1829",
+        "url": "https://www.loc.gov/item/sn83030455/",
+        "locator": "About this Newspaper; publication dates and historical description",
+        "type": "Archival catalog history"
+      }
+    },
+    {
+      "id": "wells-press-destruction-1892",
+      "date": "1892",
+      "year": 1892,
+      "title": "Ida B. Wells keeps reporting after her newspaper is attacked",
+      "people": "Ida B. Wells and New York Age publisher T. Thomas Fortune",
+      "decisionMaker": "Wells chose to investigate lynching; Fortune's newspaper provided an outlet after a mob destroyed her Memphis equipment.",
+      "barrier": "A white mob attacked her newspaper office, and threats made returning to Memphis dangerous.",
+      "change": "Wells continued the investigation from the North and published an extended account in the New York Age.",
+      "outcome": "Her reporting continued through another Black newspaper, despite the destruction of her own workplace.",
+      "limit": "This is a record of institutional support and survival under violence, not a policy victory that made journalism safe or equally accessible.",
+      "source": {
+        "title": "National Park Service · Ida B. Wells",
+        "url": "https://www.nps.gov/people/idabwells.htm",
+        "locator": "Biography paragraphs covering the 1892 lynchings, destruction of her office and New York Age reporting",
+        "type": "Public history biography"
+      }
+    },
+    {
+      "id": "dunnigan-credentials-1947",
+      "date": "1947",
+      "year": 1947,
+      "title": "Alice Dunnigan gains White House press credentials",
+      "people": "Alice Dunnigan of the Associated Negro Press; later, Ethel Payne of the Chicago Defender",
+      "decisionMaker": "White House press credentialing admitted Dunnigan; the WHCA account does not identify the individual approving official.",
+      "barrier": "The White House Correspondents' Association identifies her as the first Black woman credentialed to report there.",
+      "change": "Dunnigan could bring her news service's reporting and questions into presidential press conferences.",
+      "outcome": "She and Payne pressed President Eisenhower about civil rights; the association records that he eventually stopped calling on them.",
+      "limit": "A credential granted entry, not equal opportunity to question the president or control over a newsroom's hiring.",
+      "source": {
+        "title": "White House Correspondents' Association · Honoring Alice Dunnigan and Ethel Payne",
+        "url": "https://whca.press/2022/04/25/whca-to-honor-first-two-black-women-of-the-white-house-press-corps-with-the-creation-of-prize-for-lifetime-career-achievement/",
+        "locator": "April 25, 2022; paragraphs on 1947 credentialing and Eisenhower-era press conferences",
+        "type": "Professional association history"
+      }
+    },
+    {
+      "id": "maynard-training-1976",
+      "date": "1976–1977",
+      "year": 1976,
+      "title": "Journalists organize training and an institution to sustain it",
+      "people": "Robert C. Maynard and fellow Summer Program for Minority Journalists founders",
+      "decisionMaker": "The program founders established the Institute for Journalism Education in 1977.",
+      "barrier": "The institute's history describes severe underrepresentation in newsrooms and leadership.",
+      "change": "A Berkeley summer training program admitted its first class in 1976; the new institute sustained professional education.",
+      "outcome": "The institute later added editing and newsroom-management programs.",
+      "limit": "Program operation does not establish hiring or promotion at your newsroom.",
+      "source": {
+        "title": "Maynard Institute · Our History",
+        "url": "https://mije.org/about-us/our-work/",
+        "locator": "Our decades of impact: 1976, August 31, 1977, 1980 and 1985 entries",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "maynard-tribune-1983",
+      "date": "1983",
+      "year": 1983,
+      "title": "Robert and Nancy Maynard acquire the Oakland Tribune",
+      "people": "Robert C. Maynard and Nancy Hicks Maynard",
+      "decisionMaker": "The Maynards purchased the newspaper.",
+      "barrier": "Newsroom employment and newspaper ownership are different forms of access.",
+      "change": "The acquisition placed an established daily under Black ownership.",
+      "outcome": "The institute records the completed purchase in 1983.",
+      "limit": "Ownership alone does not establish particular hiring, pay or promotion outcomes.",
+      "source": {
+        "title": "Maynard Institute · Our History",
+        "url": "https://mije.org/about-us/our-work/",
+        "locator": "Our decades of impact: 1983 Oakland Tribune purchase entry",
+        "type": "Institutional history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Trace a named journalist's appointment and advancement at the reader's newsroom, separating employment from ownership and training.",
+    "Check training-program placement records and subsequent careers rather than treating enrollment as a job outcome.",
+    "Expand beyond newspaper history with separately sourced broadcast, digital and local newsroom records."
+  ]
+}

@@ -1,6 +1,6 @@
 # Door Notes
 
-[Door Notes](https://doornotes.org/) is a static, mobile-first guide to U.S. professional entry. A reader can search twenty professions, examine proposed institutional classifications separately from population measurements, trace estimates to publisher tables and compare up to three fields.
+[Door Notes](https://doornotes.org/) is a static, mobile-first guide to U.S. professional entry. A reader can search twenty professions, read sourced histories of people and decisions separately from population measurements, trace estimates to publisher tables and compare up to three fields.
 
 The public source release is [available on GitHub](https://github.com/Fuzzyslippers412/pipeline-map-open). The application code and loaders use the [MIT License](LICENSE). Original editorial content and the project’s compilation use [CC BY 4.0](data/RIGHTS.md). Read the [data rights and publisher credits](data/RIGHTS.md) before reusing material from another publisher.
 
@@ -26,7 +26,7 @@ See [workplace directory sources](data/WORKPLACES.md) and [O*NET® job-title sou
 
 ## Career timelines
 
-Entering a workplace and job title opens a three-part preview of the earliest sourced field opening in the record, the workplace connection, and the gaps. The full chronological trace and its citations expand below the preview. Field openings come from the cited event records in `data/timeline-health-education.json` and `data/timeline-civic-trades.json`. Reviewed workplace relationships and documented awards are dated separately. A source's publication date or the index refresh date cannot stand in for the date of an event. Gaps and self-reported details have explicit labels. Source lookup adds qualifying records to the current trace and keeps unverified leads below it. Personal entries remain out of shared links and preview images.
+Entering a workplace and job title opens a three-part preview of the earliest sourced field opening in the record, the workplace connection, and the gaps. The full chronological trace and its citations expand below the preview. Field episodes come from the expanded dossiers in `data/history/`, compiled into `data/history-index.json`. The older timeline snapshots are retained as historical source material. Reviewed workplace relationships and documented awards are dated separately. A source's publication date or the index refresh date cannot stand in for the date of an event. Gaps and self-reported details have explicit labels. Source lookup adds qualifying records to the current trace and keeps unverified leads below it. Personal entries remain out of shared links and preview images.
 
 The public workplace library at `/paths/` links directly to Atlanta teaching, Howard nursing and Chicago electrical work. Each public example uses published inputs. The two additional reading previews at `/preview/p/registered-nurse/` and `/preview/p/electrician/` show the fixed sample when opened with `?example=1`. Without that parameter, an existing personal trace stays in its tab. Their canonical records remain under `/p/`; fixed example images and copy links contain no personal inputs. The 1943 Freedmen’s photograph and its reuse information are documented in [the archive credits](data/ARCHIVE-ART.md).
 
@@ -58,3 +58,9 @@ The editor reviews classifications separately from the data refresh. Each panel 
 The research edition includes both source-supported and proposed editorial labels. Reviewer decisions, an authorized IPUMS extract, and source expansions belong in subsequent dated releases. No tracking identifiers or survey microdata are distributed.
 
 Submit reader corrections through the [public correction form](https://github.com/Fuzzyslippers412/pipeline-map-corrections/issues/new?template=correction.yml).
+
+## Historical records and homepage coverage
+
+Every profession has a public historical record that renders without a stored trace. Dossiers separate actors, authority, action, outcome and source limits; the timeline API and career-map excerpts use the same records. Sources include a locator and evidence type, and the source register can filter historical records separately from statistical tables. `public/data/histories.json` is a reproducible export.
+
+Homepage examples and profession tiles link directly to these records. Evidence disclosures work without JavaScript. No historical episode alone establishes a visitor’s personal training or hiring route. Exact workplace records, where present, retain their own scope and source.

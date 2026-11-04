@@ -50,6 +50,27 @@ for path in sorted((DATA / 'imports').glob('*.json')):
     sources.extend(snapshot['sources'])
     points.extend(snapshot['series'])
     notes.extend(snapshot.get('notes',[]))
+histories = [load(path) for path in sorted((DATA / 'history').glob('*.json'))]
+(DATA/'history-index.json').write_text(json.dumps(histories,ensure_ascii=False,separators=(',',':'))+'\n')
+for history in histories:
+    assert history['slug'] in {p['slug'] for p in professions}
+    ids = set()
+    for event in history['events']:
+        assert event['id'] not in ids and event['change'] and event['limit']
+        ids.add(event['id'])
+        for i, reference in enumerate([event['source'], *event.get('sources', [])]):
+            assert reference['url'].startswith('https://') and reference['locator']
+            sources.append({
+                'id': 'history-' + history['slug'] + '-' + event['id'] + '-' + str(i),
+                'publisher': urlparse(reference['url']).hostname,
+                'table_name': reference['title'], 'url': reference['url'],
+                'retrieved_on': '2026-11-03', 'license': 'Link to original; publisher rights apply',
+                'definition': 'Referenced for: ' + event['title'] + '. Read the episode for the specific claim.',
+                'locator': reference['locator'], 'limits': event['limit'],
+                'professions': [history['slug']], 'kind': 'history',
+                'episode': '/p/' + history['slug'] + '/#history-' + event['id'],
+                'source_type': reference['type']
+            })
 for s in [*sources,*editorial_references.values()]:
     assert s['url'].startswith('https://') and s['retrieved_on'] and s['definition'], s['id']
     db.execute('insert into source values(?,?,?,?,?,?,?,?)',tuple(s[k] for k in ('id','publisher','table_name','url','retrieved_on','license','definition'))+(s.get('kind','measurement'),))
@@ -79,5 +100,7 @@ compact_src=[{k:s[k] for k in ('id','table_name')} for s in sources]
 (client_dir/'compare.json').write_text(json.dumps({'professions':compact_prof,'sources':compact_src,'series':points},ensure_ascii=False,separators=(',',':')))
 (client_dir/'observations.csv').write_bytes((DATA/'series.csv').read_bytes())
 with (client_dir/'sources.csv').open('w',newline='') as f:
-    writer=csv.writer(f);cur=db.execute('select * from source order by publisher,table_name,id')
+    writer=csv.writer(f,lineterminator='\n');cur=db.execute('select * from source order by publisher,table_name,id')
     writer.writerow([c[0] for c in cur.description]);writer.writerows(cur)
+
+(client_dir/'histories.json').write_text(json.dumps(histories,ensure_ascii=False,indent=2)+'\n')

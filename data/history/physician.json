@@ -1,0 +1,105 @@
+{
+  "slug": "physician",
+  "headline": "From a medical degree to the right to practice",
+  "summary": "Black physicians earned credentials, built teaching institutions and hospitals, and challenged restrictions on practice. These records separate education from access to clinical training and hospital privileges.",
+  "coverageNote": "Five selected episodes spanning individual credentials, Black institution-building and hospital-access decisions. A national rule or field example does not prove a connection to every medical workplace.",
+  "question": "What record shows when Black physicians gained training places, staff privileges or appointments at your hospital?",
+  "events": [
+    {
+      "id": "crumpler-medical-degree-1864",
+      "date": "1864",
+      "year": 1864,
+      "title": "Rebecca Lee Crumpler earns a medical degree",
+      "people": "Rebecca Davis Lee Crumpler",
+      "decisionMaker": "New England Female Medical College awarded the degree",
+      "barrier": "Crumpler pursued medicine as a Black woman and encountered racial and gender prejudice in her work.",
+      "change": "She graduated in 1864; Boston University identifies her as the first Black American woman to earn a medical degree.",
+      "outcome": "She subsequently cared for formerly enslaved people in Richmond through the Freedmen’s Bureau and practiced family medicine in Boston.",
+      "limit": "Her credential and documented practice do not establish that other medical schools or hospitals opened admission because of her graduation.",
+      "source": {
+        "title": "Boston University · Rebecca Lee Crumpler",
+        "url": "https://www.bumc.bu.edu/camed/about/history/rebecca-lee-crumpler-2/",
+        "locator": "Opening biographical paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "howard-augusta-medical-class-1868",
+      "date": "November 9, 1868",
+      "year": 1868,
+      "title": "Howard opens medical classes with Black students and faculty",
+      "people": "Alexander Thomas Augusta and Howard’s first medical students",
+      "decisionMaker": "Howard University’s medical department and its founding faculty",
+      "barrier": "Augusta had been rejected by American medical schools and obtained his medical education in Toronto.",
+      "change": "Howard began instruction with eight students, seven of them Black, and five faculty members, including Augusta.",
+      "outcome": "Black students could study medicine at Howard, and a Black physician held a teaching role in the inaugural faculty.",
+      "limit": "An opened classroom and faculty appointment are documented; this account does not identify each student’s later license, residency or employer.",
+      "source": {
+        "title": "Howard University College of Medicine · History",
+        "url": "https://medicine.howard.edu/about/history",
+        "locator": "November 1868 opening and Alexander Thomas Augusta paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "williams-provident-1891",
+      "date": "January 23, 1891",
+      "year": 1891,
+      "title": "Daniel Hale Williams helps build a hospital for clinical opportunity",
+      "people": "Daniel Hale Williams and the Provident Hospital and Training School Association",
+      "decisionMaker": "Provident’s organizers and hospital leadership",
+      "barrier": "Black physicians, interns and nurses were commonly rejected by white-controlled hospitals.",
+      "change": "Following Williams’s organizing, the Provident Hospital and Training School Association was incorporated in Chicago.",
+      "outcome": "Provident operated with an integrated staff and patients and provided clinical opportunities for Black interns and nurses.",
+      "limit": "This is evidence about Provident, not proof of access at other hospitals; the cited historical nomination does not supply individual appointment records.",
+      "source": {
+        "title": "National Park Service · Daniel Hale Williams House historic nomination",
+        "url": "https://npgallery.nps.gov/NRHP/GetAsset/NHLS/75000655_text",
+        "locator": "Statement of significance, PDF pages 3 and 5",
+        "type": "Historical designation research"
+      }
+    },
+    {
+      "id": "simkins-hospital-access-1963",
+      "date": "November 1, 1963",
+      "year": 1963,
+      "title": "Black clinicians and patients challenge hospital exclusion",
+      "people": "G. C. Simkins Jr., A. W. Blount Jr. and fellow Black physician, dentist and patient plaintiffs",
+      "decisionMaker": "U.S. Court of Appeals for the Fourth Circuit; Chief Judge Simon Sobeloff wrote the majority opinion",
+      "barrier": "Moses H. Cone Memorial and Wesley Long Community hospitals in Greensboro restricted Black clinicians’ use of staff facilities and Black patients’ access.",
+      "change": "The court held that the hospitals’ participation in the Hill-Burton program brought their actions within constitutional prohibitions on racial discrimination.",
+      "outcome": "It directed the lower court to grant injunctive relief and invalidated the federal provisions authorizing the segregation at issue.",
+      "limit": "This judgment documents a legal opening at the named hospitals; it does not by itself verify each subsequent clinical appointment or nationwide compliance.",
+      "source": {
+        "title": "Simkins v. Moses H. Cone Memorial Hospital · 323 F.2d 959",
+        "url": "https://law.justia.com/cases/federal/appellate-courts/F2/323/959/150563/",
+        "locator": "Opening statement of claims and majority opinion’s injunctive-relief holding",
+        "type": "Contemporary court opinion"
+      }
+    },
+    {
+      "id": "hospital-federal-access-rules-1964",
+      "date": "1964–1965",
+      "year": 1964,
+      "title": "Federal hospital funding rules reach practice and training",
+      "people": "Black clinicians and patients seeking access to federally assisted hospitals",
+      "decisionMaker": "HEW Secretary Anthony Celebrezze and the Public Health Service; Congress enacted Title VI of the 1964 Civil Rights Act",
+      "barrier": "Earlier federal policy had permitted racial denial of staff privileges and some training opportunities even in facilities classified as nondiscriminatory.",
+      "change": "After Simkins, federal authorities changed funding requirements; Title VI and its implementing rules extended nondiscrimination obligations in covered programs.",
+      "outcome": "The March 1965 federal guidance prohibited covered facilities from denying qualified clinicians practice privileges or discriminating in training on racial grounds.",
+      "limit": "Coverage and effective dates differed; the guidance states requirements, not proof that any particular hospital immediately complied or hired a specific physician.",
+      "source": {
+        "title": "U.S. Commission on Civil Rights · Equal Opportunity in Hospitals and Health Facilities",
+        "url": "https://www.nlm.nih.gov/exhibition/forallthepeople/img/1706.pdf",
+        "locator": "Printed pages 3 and 6–9; March 1965 publication",
+        "type": "Contemporary federal guidance"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Find dated hospital staff rosters, residency appointments or privileges decisions for the reader’s exact institution.",
+    "Trace implementation after Simkins and federal funding rules, including resistance and unequal conditions that persisted.",
+    "Expand the record of Black medical schools, including Meharry and schools that closed, without attributing closures to a single cause without evidence.",
+    "Add specialty training, professional-association access, leadership and ownership records; a medical degree is only one stage of the path."
+  ]
+}

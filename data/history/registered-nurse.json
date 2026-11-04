@@ -1,0 +1,137 @@
+{
+  "slug": "registered-nurse",
+  "headline": "Training, recognition and rights at work",
+  "summary": "A nursing qualification, professional membership and fair treatment at work were separate battles. These records follow named nurses and collective efforts across training, military service, employment rights and university leadership.",
+  "coverageNote": "Six selected episodes, including records about Freedmen’s/Howard and Dixie Hospital in Hampton, Virginia. These are distinct histories, not a proven chain to every nursing workplace.",
+  "question": "Which admission, appointment or employment record connects this history to your nursing workplace?",
+  "events": [
+    {
+      "id": "mahoney-training-1879",
+      "date": "1879",
+      "year": 1879,
+      "title": "Mary Eliza Mahoney completes formal nurse training",
+      "people": "Mary Eliza Mahoney",
+      "decisionMaker": "New England Hospital for Women and Children Training School for Nurses",
+      "barrier": "Mahoney had to complete the hospital school’s demanding 16-month course.",
+      "change": "She graduated in 1879; the American Nurses Association identifies her as America’s first Black professional nurse.",
+      "outcome": "She worked as a nurse and later welcomed the first National Association of Colored Graduate Nurses conference in 1909.",
+      "limit": "This record establishes a training credential and professional participation, not a modern state RN license or nationwide access to hospital jobs.",
+      "source": {
+        "title": "American Nurses Association · Mary Eliza Mahoney",
+        "url": "https://www.nursingworld.org/ana/about-ana/history/hall-of-fame/1976-1982-inductees/",
+        "locator": "Mary Eliza Mahoney biography, graduation and 1909 conference paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "staupers-military-1945",
+      "date": "1945",
+      "year": 1945,
+      "title": "Staupers and Black nurses press for military admission",
+      "people": "Mabel Keaton Staupers and the National Association of Colored Graduate Nurses",
+      "decisionMaker": "Army and Navy nursing authorities; Staupers and NACGN advocated for the change",
+      "barrier": "Qualified Black nurses faced racial restrictions on military nursing service during World War II.",
+      "change": "Staupers organized a letter-writing campaign, met Eleanor Roosevelt and pressed officials to use Black nurses’ skills.",
+      "outcome": "The National Park Service account dates the military’s acceptance of qualified nurses regardless of race to 1945.",
+      "limit": "This institutional history describes an admission change; it does not establish equal assignments, promotion or the service record of an individual nurse.",
+      "source": {
+        "title": "National Park Service · Places of Mabel Keaton Staupers",
+        "url": "https://www.nps.gov/articles/000/places-of-mabel-keaton-staupers.htm",
+        "locator": "Opening biography and section 3, Eleanor Roosevelt’s Apartment",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "ana-membership-1948",
+      "date": "1948",
+      "year": 1948,
+      "title": "Black nurses gain full ANA membership",
+      "people": "Mabel Keaton Staupers and Black nurses organizing through NACGN",
+      "decisionMaker": "American Nurses Association; the biography does not identify the specific voting body",
+      "barrier": "ANA membership had been denied to Black nurses living in some states.",
+      "change": "Following years of organizing, Black nurses were admitted to full ANA membership in 1948.",
+      "outcome": "The professional association’s membership barrier changed; ANA’s own biography records this result.",
+      "limit": "Association membership is distinct from a nursing license, an employer’s hiring decision and equal treatment on the job.",
+      "source": {
+        "title": "American Nurses Association · Mabel Keaton Staupers",
+        "url": "https://www.nursingworld.org/ana/about-ana/history/hall-of-fame/1996-1998-inductees/",
+        "locator": "Mabel Keaton Staupers biography, membership restrictions and 1948 admission",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "freedmens-staff-protection-1961",
+      "date": "September 21, 1961",
+      "year": 1961,
+      "title": "Congress protects eligible staff during the Howard transfer",
+      "people": "Freedmen’s Hospital employees facing a change of employer",
+      "decisionMaker": "U.S. Congress, with transfer terms to be agreed by the HEW secretary and Howard’s trustees",
+      "barrier": "Transferring a federal hospital to a university put employees’ jobs, pay and benefits under a new employer.",
+      "change": "Public Law 87-262 required transfer opportunities for eligible staff and prohibited salary reductions for covered employees who transferred.",
+      "outcome": "The law also protected specified retirement, insurance and seniority arrangements.",
+      "limit": "The protections applied to defined employee categories, not every applicant or later hire; this statute alone does not verify an individual worker’s transfer or payroll.",
+      "source": {
+        "title": "Public Law 87-262 · Transfer of Freedmen’s Hospital",
+        "url": "https://www.govinfo.gov/content/pkg/STATUTE-75/pdf/STATUTE-75-Pg542.pdf",
+        "locator": "Sections 1–2, 75 Stat. 542–543",
+        "type": "Contemporary statute"
+      }
+    },
+    {
+      "id": "dixie-nurses-reinstatement-1966",
+      "date": "April 28, 1966",
+      "year": 1966,
+      "title": "Three nurses win a ruling against discriminatory dismissal",
+      "people": "Mildred M. Smith, Agnes L. Stokes and Patricia L. Taylor",
+      "decisionMaker": "U.S. Court of Appeals for the Fourth Circuit, with the opinion written by Judge Simon Sobeloff",
+      "barrier": "Dixie Hospital in Hampton, Virginia, fired the three Black nurses—two practical nurses and one RN—after they ate in its white employees’ cafeteria.",
+      "change": "They challenged their dismissal; the appeals court rejected the hospital’s defense and reversed the lower court.",
+      "outcome": "The court directed reinstatement offers and recognized entitlement to back pay, reduced by interim earnings.",
+      "limit": "The opinion establishes ordered relief at this hospital, not evidence that every remedy was carried out or that all nursing workplaces changed.",
+      "source": {
+        "title": "Smith v. Hampton Training School for Nurses · 360 F.2d 577",
+        "url": "https://law.justia.com/cases/federal/appellate-courts/F2/360/577/390784/",
+        "locator": "Opinion: opening facts and final reinstatement/back-pay paragraphs",
+        "type": "Contemporary court opinion"
+      }
+    },
+    {
+      "id": "coles-howard-degree-1968",
+      "date": "1968–1973",
+      "year": 1968,
+      "title": "Anna B. Coles leads Howard’s new nursing degree program",
+      "people": "Anna B. Coles, founding dean, and Howard’s first BSN cohort",
+      "decisionMaker": "Howard University Board of Trustees approved the program; Coles led the school",
+      "barrier": "Freedmen’s hospital-based diploma training and a university bachelor’s program were different educational routes.",
+      "change": "The trustees approved a baccalaureate nursing program on April 23, 1968; instruction began in 1969 under the new school’s leadership.",
+      "outcome": "Howard’s first BSN cohort graduated in 1973, documenting an implemented degree program rather than only an announcement.",
+      "limit": "This establishes Howard’s education pathway; graduation alone does not establish licensure or an appointment at Howard University Hospital or another employer.",
+      "source": {
+        "title": "Howard University · College of Nursing and Allied Health history",
+        "url": "https://cwggl.howard.edu/sites/cwggl.howard.edu/files/2023-11/WPS%20No%2018%20Obidiro%20Nursing%20Allied%20Health%20Nov%202023.pdf",
+        "locator": "History of the college, PDF page 8; Appendix A, PDF page 18",
+        "type": "Institutional research"
+      },
+      "sources": [
+        {
+          "title": "Howard University President · Nursing program approval",
+          "url": "https://president.howard.edu/from-the-president/viewpoints/celebrating-our-nurses",
+          "locator": "Paragraph beginning ‘On April 23, 1968’ (board decision only)",
+          "type": "Institutional history"
+        },
+        {
+          "title": "Howard University · BSN program’s 50th anniversary",
+          "url": "https://thedig.howard.edu/all-stories/howard-universitys-bachelor-science-nursing-program-celebrates-50th-anniversary-first-nursing-white",
+          "locator": "Paragraph beginning ‘The Bachelor of Science in Nursing program was introduced in 1969’",
+          "type": "Institutional history"
+        }
+      ]
+    }
+  ],
+  "furtherResearch": [
+    "Identify state licensure and first appointment records for nurses at the reader’s exact hospital or care setting.",
+    "Locate military admission orders and assignment records to distinguish policy change from actual appointments and working conditions.",
+    "Check implementation of the Dixie Hospital judgment and the Freedmen’s employee-transfer protections using employment and court records.",
+    "Expand beyond these examples to practical nursing, care support, community nursing and nursing leadership without treating their qualifications as interchangeable."
+  ]
+}

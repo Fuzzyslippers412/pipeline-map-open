@@ -1,0 +1,86 @@
+{
+  "slug": "pastor",
+  "headline": "Black congregations built authority, while ordination rules differed",
+  "summary": "Congregational independence, theological education and permission to hold ordained office are distinct. These episodes concern particular Christian denominations and do not represent every Black religious tradition.",
+  "coverageNote": "Four selected episodes involving AME institution-building, an interdenominational seminary and Episcopal ordination. They are not a universal clergy qualification or appointment system.",
+  "question": "What denominational rule, ordination register or congregational appointment record connects to your ministry?",
+  "events": [
+    {
+      "id": "allen-ame-1816",
+      "date": "1816",
+      "year": 1816,
+      "title": "Richard Allen and Black congregations form an independent denomination",
+      "people": "Richard Allen and Black congregations from Pennsylvania, Delaware, Maryland and New Jersey",
+      "decisionMaker": "The participating congregations organized the African Methodist Episcopal Church",
+      "barrier": "Allen and fellow worshippers had experienced segregation within Methodist worship and sought institutional independence.",
+      "change": "In 1816 they formed the independent African Methodist Episcopal denomination.",
+      "outcome": "Black congregations established a collective church institution through which to organize leadership and ministry.",
+      "limit": "AME independence does not describe appointment or ordination in every Black congregation, denomination or faith.",
+      "source": {
+        "title": "African Methodist Episcopal Church · Founder’s Day history",
+        "url": "https://www.ame-church.com/founders-day-2018/",
+        "locator": "Richard Allen, Bethel and 1816 denominational founding paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "itc-seminary-1958",
+      "date": "1958–1959",
+      "year": 1958,
+      "title": "Four seminaries combine theological education",
+      "people": "Harry Van Buren Richardson and the participating Black church seminaries",
+      "decisionMaker": "Morehouse School of Religion, Gammon, Turner and Phillips seminaries formed the Interdenominational Theological Center",
+      "barrier": "Separate denominational schools sought a shared setting for advanced theological education.",
+      "change": "The four seminaries founded ITC in 1958; Richardson became its first president.",
+      "outcome": "Instruction began in September 1959 with 21 faculty and 97 students, according to ITC’s history.",
+      "limit": "A seminary place or degree is not ordination or a congregational appointment; participating denominations retained distinct traditions and authorities.",
+      "source": {
+        "title": "Interdenominational Theological Center · About and founding history",
+        "url": "https://www.itc.edu/about/",
+        "locator": "Founding, first instruction and Harry Van Buren Richardson paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "episcopal-ordination-canon-1976",
+      "date": "1976",
+      "year": 1976,
+      "title": "The Episcopal Church changes its ordination canon",
+      "people": "Women seeking ordained ministry, including Black candidates such as Pauli Murray",
+      "decisionMaker": "The Episcopal Church’s General Convention adopted Resolution 1976-B005",
+      "barrier": "Ordination rules had not applied equally to men and women in this denomination.",
+      "change": "The adopted amendment made the candidate-admission and ordination provisions for bishops, priests and deacons equally applicable to men and women.",
+      "outcome": "The change was recorded in the General Convention’s official acts, creating a formal rule for access to those orders.",
+      "limit": "This was a denomination-specific change; it did not itself ordain anyone or determine appointments in other churches.",
+      "source": {
+        "title": "Episcopal General Convention · Resolution 1976-B005",
+        "url": "https://digitalarchives.episcopalarchives.org/cgi-bin/acts/acts_resolution.pl?resolution=1976-B005",
+        "locator": "Final text, Canon III.9, section 1; Journal p. C-52",
+        "type": "Contemporary church resolution"
+      }
+    },
+    {
+      "id": "pauli-murray-priest-1977",
+      "date": "1977",
+      "year": 1977,
+      "title": "Pauli Murray enters the Episcopal priesthood",
+      "people": "Pauli Murray",
+      "decisionMaker": "Episcopal ordaining authorities at Washington National Cathedral",
+      "barrier": "Murray entered ordained ministry after the denomination’s long dispute over women’s access to the priesthood.",
+      "change": "Murray was ordained at Washington National Cathedral in 1977; the church archives identify Murray as its first African American woman priest.",
+      "outcome": "The archives record subsequent service at Church of the Atonement in Washington and Holy Nativity in Baltimore.",
+      "limit": "Ordination and documented parish service establish Murray’s ministry; they do not establish unrestricted access across denominations or a connection to another congregation.",
+      "source": {
+        "title": "Archives of the Episcopal Church · The Reverend Pauli Murray",
+        "url": "https://exhibits.episcopalarchives.org/s/church-awakens/page/murray",
+        "locator": "Ordination and parish-service paragraphs",
+        "type": "Institutional history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Research denomination-specific ordination registers and congregational appointment decisions, including women’s access and local exceptions.",
+    "Add clergy histories beyond these AME and Episcopal examples, without importing one church’s governance into another.",
+    "Distinguish paid pastoral employment, volunteer ministry, theological education and ordination; trace the actual institution rather than assuming a universal ladder."
+  ]
+}

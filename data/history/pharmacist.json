@@ -1,0 +1,108 @@
+{
+  "slug": "pharmacist",
+  "headline": "Pharmacy education, state credentials and community-owned practices",
+  "summary": "Black pharmacists gained qualifications, ran businesses and served communities while facing exclusion from schools and professional networks. These records distinguish a degree, a license and ownership.",
+  "coverageNote": "Four episodes in Washington, D.C., Connecticut, Pennsylvania, Ohio and Louisiana. Historical credentials are not instructions for obtaining a license today.",
+  "question": "Which licensing, employment or business record connects Black pharmacists to your pharmacy or institution?",
+  "events": [
+    {
+      "id": "howard-pharmacy-1868",
+      "date": "1868–1870",
+      "year": 1868,
+      "title": "Howard's evening pharmacy instruction produces an early graduate",
+      "people": "James Thomas Wormley and Howard's pharmacy instructors",
+      "decisionMaker": "Howard University's Department of Medicine established the instruction and awarded the degree.",
+      "barrier": "The institutional account documents a new educational route but does not describe individual students' admissions barriers.",
+      "change": "Pharmacy instruction began in the evenings in 1868.",
+      "outcome": "Howard records that Wormley received a pharmacy degree in 1870, when the pharmacy program became distinct from medicine.",
+      "limit": "This establishes education at Howard; it does not document Wormley's later state license or employment.",
+      "source": {
+        "title": "Howard University College of Pharmacy · About",
+        "url": "https://pharmacy.howard.edu/about",
+        "locator": "Howard University College of Pharmacy's History: 1868 evening instruction and James Thomas Wormley's 1870 degree",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "anna-james-pharmacy-1909",
+      "date": "1909–1917",
+      "year": 1909,
+      "title": "Anna Louise James gains a license and builds a pharmacy business",
+      "people": "Anna Louise James and pharmacist Peter Lane",
+      "decisionMaker": "Connecticut licensed James; James later acquired her brother-in-law's pharmacy business.",
+      "barrier": "The Connecticut Museum records that the state pharmaceutical association rejected her and suggested its women's auxiliary instead.",
+      "change": "Following pharmacy graduation in 1908 and a Connecticut license in 1909, she ran a Hartford pharmacy.",
+      "outcome": "She later became sole owner of the Old Saybrook pharmacy in 1917 and continued operating it for decades.",
+      "limit": "A license and a viable practice did not guarantee equal standing within professional associations.",
+      "source": {
+        "title": "Connecticut Museum of Culture and History · Anna Louise James",
+        "url": "https://www.connecticutmuseum.org/research/wocvotes/",
+        "locator": "Anna Louise James biography: education, professional-association rejection and pharmacy ownership",
+        "type": "Museum history"
+      },
+      "sources": [
+        {
+          "title": "Schlesinger Library · Papers of Anna Louise James, MC 440",
+          "url": "https://hollisarchives.lib.harvard.edu/download_collection_pdf/sch00656.pdf",
+          "locator": "Biographical note: 1908 graduation and 1909 Connecticut license",
+          "type": "Archival finding aid"
+        }
+      ]
+    },
+    {
+      "id": "ella-stewart-pharmacy-1916",
+      "date": "1916–1922",
+      "year": 1916,
+      "title": "Ella Stewart qualifies and opens a pharmacy with her husband",
+      "people": "Ella P. Stewart and William Stewart",
+      "decisionMaker": "Pitt awarded her pharmacy qualification; she passed Pennsylvania's state examination; the Stewarts established their own business.",
+      "barrier": "Pitt's account describes an initial refusal and segregated classroom seating and access to resources.",
+      "change": "She graduated and passed the state examination in 1916.",
+      "outcome": "Ella and William opened their pharmacy in Toledo in July 1922.",
+      "limit": "This documents one qualification and business; it does not establish equal treatment by every pharmacy employer.",
+      "source": {
+        "title": "University of Pittsburgh · Ella P. Stewart",
+        "url": "https://www.pittwire.pitt.edu/pittwire/features-articles/ella-p-stewart-first-black-woman-graduate-pitts-pharmacy-school",
+        "locator": "Paragraphs covering segregated pharmacy classes, 1916 graduation and exam, and July 1922 pharmacy opening",
+        "type": "Institutional biography"
+      }
+    },
+    {
+      "id": "xavier-pharmacy-1927",
+      "date": "1927",
+      "year": 1927,
+      "title": "Xavier establishes a college to educate Black pharmacy professionals",
+      "people": "Xavier University's pharmacy educators and students",
+      "decisionMaker": "Xavier University of Louisiana established the college.",
+      "barrier": "The university explicitly identifies educating Black and other minority students as the college's founding purpose.",
+      "change": "A dedicated college added pharmacy to Xavier's professional education.",
+      "outcome": "The college became an ongoing institution for pharmacy study and qualification.",
+      "limit": "The founding overview does not establish early graduates' licensing, placement or advancement at a particular workplace.",
+      "source": {
+        "title": "Xavier University of Louisiana · College of Pharmacy Quick Facts",
+        "url": "https://www.xula.edu/collegeofpharmacy/quick-facts.html",
+        "locator": "Opening paragraph: 1927 founding and educational purpose",
+        "type": "Institutional history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Find the actual license register and pharmacy employment record for a named practitioner.",
+    "Research retail, hospital, research and ownership routes separately; one setting does not stand for all pharmacy work.",
+    "Connect a school or scholarship to documented completion and placement instead of assuming a hiring outcome."
+  ],
+  "credential": {
+    "name": "Ella P. Stewart",
+    "year": 1916,
+    "credential": "Pharmacy qualification and state examination",
+    "record": "Pitt records Stewart's 1916 graduation and successful Pennsylvania state examination, identifying her as the state's first licensed Black woman pharmacist.",
+    "work": "She and William Stewart opened a pharmacy in Toledo in 1922.",
+    "sources": [
+      {
+        "label": "University of Pittsburgh · Ella P. Stewart",
+        "url": "https://www.pittwire.pitt.edu/pittwire/features-articles/ella-p-stewart-first-black-woman-graduate-pitts-pharmacy-school"
+      }
+    ]
+  }
+}
+

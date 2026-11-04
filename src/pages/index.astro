@@ -1,12 +1,15 @@
 ---
 import Layout from '../components/Layout.astro';
 import TraceStart from '../components/TraceStart.astro';
+import HistoryStories from '../components/HistoryStories.astro';
+import {historyFor} from '../lib/field-history.js';
 import {professions,idFor} from '../lib/model';
 const filters=[...new Set(professions.map(p=>p.sector))];
 const searchIndex=professions.map(({slug,name,aliases,sector})=>({slug,name,aliases,sector}));
 ---
 <Layout title="Who opened the door to your career?" active="Index"><div class="frame">
 <TraceStart/>
+<HistoryStories/>
 <section class="directory" id="directory"><div class="section-head"><div><div class="eyebrow">DIRECTORY <b>/</b> 01</div><h2>Profession index</h2></div><span class="indexcount" aria-live="polite" id="result-count">{professions.length} professions</span></div>
 <form class="index-search" id="index-search" autocomplete="off">
   <div class="searchwrap">
@@ -24,7 +27,7 @@ const searchIndex=professions.map(({slug,name,aliases,sector})=>({slug,name,alia
   <button type="button" class="index-action"></button>
 </div>
 <div class="filters" aria-label="Filter professions"><button class="pill selected" data-sector="" aria-pressed="true">All fields</button>{filters.map(s=><button class="pill" data-sector={s} aria-pressed="false">{s}</button>)}</div>
-<div class="tiles" id="tiles">{professions.map(p=><a class="tile" data-id={p.slug} href={'/p/'+p.slug+'/'}><span class="tile-id">{idFor(p.slug)}</span><span class="tile-body"><strong>{p.name}</strong><small>{p.sector}</small></span><span class="tile-arrow" aria-hidden="true">↗</span></a>)}</div><div id="empty" hidden><p>No published profession cards fit these filters.</p><button id="reset" class="pill">Clear search and filters</button></div></section></div></Layout>
+<div class="tiles" id="tiles">{professions.map(p=><a class="tile" data-id={p.slug} href={'/p/'+p.slug+'/'}><span class="tile-id">{idFor(p.slug)}</span><span class="tile-body"><strong>{p.name}</strong><small>{p.sector}</small><span class="tile-evidence">{historyFor(p).events[0]?.title}</span><span class="tile-coverage">{historyFor(p).expanded?'EXPANDED HISTORY':'STARTING RECORD'} · {historyFor(p).events.length} EPISODES</span></span><span class="tile-arrow" aria-hidden="true">↗</span></a>)}</div><div id="empty" hidden><p>No published profession cards fit these filters.</p><button id="reset" class="pill">Clear search and filters</button></div></section></div></Layout>
 <script type="application/json" id="search-index" set:html={JSON.stringify(searchIndex).replace(/</g,'\\u003c')}></script>
 <script>
   import {bindProfessionIndex} from '../lib/profession-index.js';

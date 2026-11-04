@@ -227,11 +227,15 @@ for(const p of professions) {
     const panel=parts[i], desc=p[key], inside=[...nodes(panel)];
     assert.ok(text(panel).includes(desc.rationale)&&text(panel).includes(desc.era),p.slug+' '+key+' editorial rationale');
     const chip=inside.find(n=>(val(n,'class')||'').split(' ').includes('edit-tag'));
-    assert.equal(text(chip),desc.status==='draft'?'Editorial · proposed':'Editorial',p.slug+' '+key+' label');
+    assert.equal(text(chip),'Context & scope',p.slug+' '+key+' label');
+    assert.ok(text(panel).includes(desc.headline),p.slug+' precise heading');
     assert.ok(desc.citations.length>=2&&desc.citations.every(c=>hasHref(inside,c.url)),p.slug+' '+key+' citations');
   }
   assert.ok(text(parts[3]).includes(roleFor(p)),route+' matrix result');
-  if(p.origin.status==='draft'||p.gate.status==='draft') assert.ok(/proposed/i.test(text(parts[3])),route+' draft role');
+  assert.ok(text(parts[3]).includes(p.researchQuestion),route+' specific research question');
+  const history=expectEl(list,'id','field-history');
+  assert.ok(!val(history,'hidden'),'Field history must be available without a trace');
+  assert.ok(children(history,'li').length>=2,route+' historical episodes');
   assert.ok(hasHref(list,'/compare/?p='+p.slug)&&list.some(n=>n.tagName==='a'&&text(n).includes('Report an error')),route+' next actions');
   const observations=series.filter(r=>r.profession_id===p.slug&&['black_male','black_female'].includes(r.group));
   const measured=children(parts[2],'tr').map(row=>{

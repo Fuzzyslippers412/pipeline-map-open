@@ -1,0 +1,86 @@
+{
+  "slug": "entrepreneur",
+  "headline": "Black enterprise grew through craft, ownership and institutions built together",
+  "summary": "There is no single starting point for Black entrepreneurship. These records show a craft worker taking over a business, owners organizing nationally, a community creating a bank and a manufacturer building a workforce and sales network.",
+  "coverageNote": "Four selected business histories in Philadelphia, Richmond and Indianapolis, plus national trade-association records. They do not establish a connection to every business or later owner.",
+  "question": "Which business registration, ownership transfer, lending or employment record connects to your enterprise?",
+  "events": [
+    {
+      "id": "forten-sailmaking-1798",
+      "date": "1798",
+      "year": 1798,
+      "title": "James Forten moves from skilled work to business ownership",
+      "people": "James Forten and sailmaker Robert Bridges",
+      "decisionMaker": "Bridges transferred his sailmaking business to Forten",
+      "barrier": "Forten learned the craft as an apprentice and foreman while facing prejudice about a Black person’s ability to own and manage a business.",
+      "change": "He took over Bridges’s Philadelphia sailmaking company in 1798.",
+      "outcome": "Forten operated a successful sail loft employing Black and white workers, including young people and immigrants.",
+      "limit": "This documents one ownership transition and workplace; it does not establish equal access to credit, apprenticeships or ownership for Black Philadelphians generally.",
+      "source": {
+        "title": "Museum of the American Revolution · James Forten and entrepreneurs of African descent",
+        "url": "https://www.amrevmuseum.org/black-founders-big-idea-4-james-forten-and-entrepreneurs-of-african-descent",
+        "locator": "James Forten Becomes an Entrepreneur and business-operation sections",
+        "type": "Museum research"
+      }
+    },
+    {
+      "id": "national-business-league-1900",
+      "date": "1900–1923",
+      "year": 1900,
+      "title": "Black business owners organize a national and local network",
+      "people": "Booker T. Washington and National Negro Business League officers and members",
+      "decisionMaker": "League founders, national officers and local branch organizers",
+      "barrier": "The League’s stated purpose was to advance Black commercial and financial development.",
+      "change": "Founded in 1900, the League organized a network of business people and promoted local branches.",
+      "outcome": "A June 15, 1923 circular documents an operating national organization distributing branch guidance and arranging its annual meeting.",
+      "limit": "The circular shows organizing activity, not measured business survival, loan access or financial returns for members.",
+      "source": {
+        "title": "Library of Congress · National Negro Business League correspondence",
+        "url": "https://tile.loc.gov/storage-services/service/mss/amrlm/mss44669_10/mss44669_10.pdf#page=2",
+        "locator": "June 15, 1923 letter to editors, PDF page 2",
+        "type": "Contemporary organizational record"
+      }
+    },
+    {
+      "id": "walker-st-luke-bank-1903",
+      "date": "November 1903",
+      "year": 1903,
+      "title": "Maggie Walker and a mutual-aid order open a bank",
+      "people": "Maggie L. Walker and the Independent Order of St. Luke",
+      "decisionMaker": "Walker and the Independent Order of St. Luke organized the bank",
+      "barrier": "The Order sought to expand economic institutions serving its Richmond community.",
+      "change": "They opened the St. Luke Penny Savings Bank in St. Luke Hall.",
+      "outcome": "The National Park Service records more than $8,000 deposited by 280 people and organizations on opening day; the growing bank began moving to larger premises in 1905.",
+      "limit": "Deposits establish actual banking activity, not proof that every Black entrepreneur obtained credit or that a particular modern business descends from this bank.",
+      "source": {
+        "title": "National Park Service · St. Luke Hall",
+        "url": "https://www.nps.gov/places/st-luke-hall.htm",
+        "locator": "Uses of the St. Luke Hall, banking paragraph",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "madam-walker-indianapolis-1910",
+      "date": "1910",
+      "year": 1910,
+      "title": "Madam C. J. Walker expands manufacturing and sales work",
+      "people": "Madam C. J. Walker and the workers and agents of her company",
+      "decisionMaker": "Walker chose Indianapolis as headquarters and expanded the business",
+      "barrier": "Building a business required production, distribution and a market for products designed for Black women.",
+      "change": "Walker located her national headquarters and a factory in Indianapolis, alongside a wider network of trained sales agents.",
+      "outcome": "The factory employed local Black men and women, and the company distributed products through mail order and Walker Agents.",
+      "limit": "Factory employment, independent sales and ownership are different relationships; this account does not establish individual earnings or a route into every beauty business.",
+      "source": {
+        "title": "National Park Service · Two American Entrepreneurs",
+        "url": "https://home.nps.gov/articles/two-american-entrepreneurs-madam-c-j-walker-and-j-c-penney-teaching-with-historic-places.htm",
+        "locator": "Setting the Stage and Map 2: Indianapolis",
+        "type": "Historical education resource"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Research lenders, contract awards, ownership transfers and customers for the reader’s exact business, keeping those relationships separate.",
+    "Add records of business destruction, discriminatory lending and failed ventures so successful examples do not imply that access was secure or universal.",
+    "Expand across periods and sectors, including cooperative businesses, small local services and self-employment; distinguish ownership from employment or independent sales."
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "engineer",
+  "headline": "From engineering education to projects, promotion and collective support",
+  "summary": "Black engineering careers include institution-building, technical qualifications, workplace training and student organizing. These examples concern particular disciplines; they do not make every engineering job the same path.",
+  "coverageNote": "Four episodes involving Howard, Iowa, NASA Langley and Purdue. Civil and aerospace engineering records are not automatically evidence for every specialty or engineering manager.",
+  "question": "Which hiring, project assignment, qualification or promotion record connects Black engineers to your workplace?",
+  "events": [
+    {
+      "id": "howard-engineering-1907",
+      "date": "1907–1911",
+      "year": 1907,
+      "title": "Howard's trustees authorize engineering degree programs",
+      "people": "Howard's trustees, faculty and engineering students",
+      "decisionMaker": "Howard University's Board of Trustees approved the programs in 1907.",
+      "barrier": "The college identifies educating Black engineers as its institutional mission; this source does not describe each student's admissions barriers.",
+      "change": "Civil, electrical and mechanical engineering entered the curriculum over the following years.",
+      "outcome": "By 1911 Howard had established a four-year bachelor's curriculum and an equipped school building.",
+      "limit": "Program creation establishes education, not an employer's hiring practices or every graduate's placement.",
+      "source": {
+        "title": "Howard University College of Engineering and Architecture · Our History",
+        "url": "https://cea.howard.edu/index.php/about-us/our-history",
+        "locator": "1907 trustees' approval; 1907–1910 curriculum and 1911 four-year program paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "alexander-civil-engineering-1912",
+      "date": "1912–1929",
+      "year": 1912,
+      "title": "Archibald Alexander moves from a degree into engineering work and ownership",
+      "people": "Archibald A. Alexander, George F. Higbee and Maurice A. Repass",
+      "decisionMaker": "Iowa awarded Alexander's degree; Marsh Engineering employed him; Alexander later founded his own firm.",
+      "barrier": "Iowa identifies him as its first Black civil-engineering graduate.",
+      "change": "After graduating in 1912, Alexander joined Marsh Engineering and established his own company in 1914.",
+      "outcome": "His later firm built projects including Iowa's power plant and tunnels and the Moton Airfield used by Tuskegee Airmen.",
+      "limit": "This documents his employment and business projects, not an industry-wide end to exclusion.",
+      "source": {
+        "title": "University of Iowa College of Engineering · Archibald A. Alexander",
+        "url": "https://engineering.uiowa.edu/alumni/alumni-awards/distinguished-engineering-alumni-academy-members/archibald-alexander",
+        "locator": "Biography: 1912 graduation, Marsh Engineering employment and Alexander & Repass projects",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "mary-jackson-engineer-1958",
+      "date": "1958",
+      "year": 1958,
+      "title": "Mary Jackson gets permission to train and earns an engineering promotion",
+      "people": "Mary W. Jackson and engineer Kazimierz Czarnecki",
+      "decisionMaker": "The City of Hampton permitted her attendance; Langley promoted her after she completed the required courses.",
+      "barrier": "Graduate-level classes needed for the training program met at segregated Hampton High School.",
+      "change": "With Czarnecki's encouragement, Jackson requested access, attended the classes and completed the training.",
+      "outcome": "NASA records her 1958 promotion and subsequent research on supersonic aerodynamic effects.",
+      "limit": "A documented promotion at Langley does not prove equal access to engineering advancement at other employers.",
+      "source": {
+        "title": "NASA · Mary W. Jackson",
+        "url": "https://www.nasa.gov/history/mary-w-jackson/",
+        "locator": "Biography: Supersonic Pressure Tunnel, permission for Hampton classes and 1958 engineering promotion",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "nsbe-national-1975",
+      "date": "1971–1975",
+      "year": 1971,
+      "title": "Black engineering students turn local support into a national organization",
+      "people": "Edward Barnette Jr., Fred Cooper, Arthur Bond and Purdue's Chicago Six",
+      "decisionMaker": "Student organizers and their faculty adviser formed the local group; participating students established NSBE nationally.",
+      "barrier": "The organizers addressed Black engineering students' recruitment, retention and professional representation.",
+      "change": "The Purdue group invited students from other campuses to build a national organization.",
+      "outcome": "NSBE reports that 134 students from 28 schools gathered at Purdue on April 10–12, 1975.",
+      "limit": "The meeting and organization are documented; the source does not isolate their effect on a particular student's graduation or job.",
+      "source": {
+        "title": "National Society of Black Engineers · Convention media kit",
+        "url": "https://convention.nsbe.org/wp-content/uploads/2025/03/NSBE_mediakit_V3-2.pdf",
+        "locator": "PDF page 6: History, 1971, 1973 and 1974–1975",
+        "type": "Institutional history"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Research licensing and supervised practice separately where a particular engineering discipline requires them.",
+    "Find dated appointments, project credits and promotion policies at the reader's actual employer.",
+    "Add separately supported histories for electrical, mechanical, chemical and other engineering specialties."
+  ],
+  "credential": {
+    "name": "Archibald A. Alexander",
+    "year": 1912,
+    "credential": "Civil engineering degree",
+    "record": "Iowa identifies Alexander as its first Black graduate in civil engineering in 1912.",
+    "work": "He joined Marsh Engineering, then founded his own company in 1914.",
+    "sources": [
+      {
+        "label": "University of Iowa College of Engineering · Archibald A. Alexander",
+        "url": "https://engineering.uiowa.edu/alumni/alumni-awards/distinguished-engineering-alumni-academy-members/archibald-alexander"
+      }
+    ]
+  }
+}
+

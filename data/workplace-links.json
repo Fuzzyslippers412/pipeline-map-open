@@ -1,8 +1,12 @@
 [
   {
     "workplace": "Howard University Hospital",
-    "aliases": ["Howard University Hospital, Washington DC"],
-    "professions": ["physician"],
+    "aliases": [
+      "Howard University Hospital, Washington DC"
+    ],
+    "professions": [
+      "physician"
+    ],
     "headline": "Freedmen’s Hospital housed medical trainees",
     "description": "Around 1933, Freedmen’s Hospital built a residence for its interns and residents. It offered specialty training to Black physicians during segregation, when many hospitals excluded them. Howard University Hospital later replaced Freedmen’s as Howard’s teaching hospital.",
     "sourceTitle": "Howard University College of Medicine · History",
@@ -12,8 +16,12 @@
   },
   {
     "workplace": "Howard University Hospital",
-    "aliases": ["Howard University Hospital, Washington DC"],
-    "professions": ["registered-nurse"],
+    "aliases": [
+      "Howard University Hospital, Washington DC"
+    ],
+    "professions": [
+      "registered-nurse"
+    ],
     "scope": "hospital",
     "place": "Washington, D.C.",
     "headline": "Freedmen’s opens classrooms and housing for nursing students",
@@ -25,21 +33,38 @@
   },
   {
     "workplace": "Google",
-    "aliases": ["Google LLC", "Google Inc"],
-    "professions": ["software-engineer"],
+    "aliases": [
+      "Google LLC",
+      "Google Inc"
+    ],
+    "professions": [
+      "software-engineer"
+    ],
     "headline": "Howard West brought computer science students to Google",
-    "description": "In summer 2017, Howard University students studied at Google’s Silicon Valley headquarters. Howard faculty and a Google engineer taught subjects including software engineering and technical interview preparation.",
+    "description": "The 2017 pilot provided a three-month computer-science education program at Google. In September 2018, Google reported that 26 students completed the pilot and half had obtained engineering internships at Google or elsewhere in the industry.",
     "sourceTitle": "Howard University College of Engineering and Architecture · Howard West",
     "url": "https://cea.howard.edu/articles/howard-west-first-step-creating-more-opportunities-african-american-engineers",
     "eventDateLabel": "Summer 2017",
     "eventYear": 2017,
     "fromInstitution": "Howard University",
-    "toInstitution": "Google’s Howard West pilot"
+    "toInstitution": "Google’s Howard West pilot",
+    "sourceNote": "This is Google's report of one cohort. Internships are not permanent jobs, and participation is not evidence of a connection to an individual reader.",
+    "moreSources": [
+      {
+        "title": "Google · Tech Exchange brings Black and Latinx students to Google",
+        "url": "https://blog.google/company-news/outreach-and-initiatives/diversity/tech-exchange-brings-black-and-latinx-students-google/"
+      }
+    ]
   },
   {
     "workplace": "Boeing",
-    "aliases": ["The Boeing Company", "Boeing Company"],
-    "professions": ["engineer"],
+    "aliases": [
+      "The Boeing Company",
+      "Boeing Company"
+    ],
+    "professions": [
+      "engineer"
+    ],
     "headline": "Engineering internships for students at partner HBCUs",
     "description": "Boeing’s 2026 scholar program offered engineering internships to students at partner HBCUs, including Tuskegee University and North Carolina A&T State University. The program paired consecutive internships with scholarships and mentoring.",
     "sourceTitle": "Thurgood Marshall College Fund · Boeing Corporate Programs",
@@ -51,8 +76,13 @@
   },
   {
     "workplace": "Meharry Medical College",
-    "aliases": ["Meharry Medical College School of Dentistry", "Meharry School of Dentistry"],
-    "professions": ["dentist"],
+    "aliases": [
+      "Meharry Medical College School of Dentistry",
+      "Meharry School of Dentistry"
+    ],
+    "professions": [
+      "dentist"
+    ],
     "headline": "Dental education at Meharry",
     "description": "Meharry’s School of Dentistry identifies Black dental practitioners among those it seeks to mentor and train. Its current mission and program page lists general practice and pediatric dentistry residencies but does not date the start of those opportunities.",
     "sourceTitle": "Meharry School of Dentistry · Mission, vision and programs",
@@ -62,8 +92,14 @@
   },
   {
     "workplace": "CommonSpirit Health",
-    "aliases": ["CommonSpirit", "CHI St. Vincent Hot Springs", "CHI St. Vincent Hot Springs Hospital"],
-    "professions": ["physician"],
+    "aliases": [
+      "CommonSpirit",
+      "CHI St. Vincent Hot Springs",
+      "CHI St. Vincent Hot Springs Hospital"
+    ],
+    "professions": [
+      "physician"
+    ],
     "headline": "Morehouse and CommonSpirit announced a medical training partnership",
     "description": "The medical school and health system announced a partnership to expand training for underrepresented clinicians in December 2020. A later CommonSpirit account identifies Morehouse as academic sponsor of the internal medicine residency at CHI St. Vincent Hot Springs. The announcement date is for the partnership.",
     "sourceTitle": "CommonSpirit Health · St. Vincent Hot Springs training site",
@@ -75,8 +111,15 @@
   },
   {
     "workplace": "NBCUniversal",
-    "aliases": ["NBCUniversal Media LLC", "NBCUniversal News Group", "NBCU News Group", "NBC News"],
-    "professions": ["journalist"],
+    "aliases": [
+      "NBCUniversal Media LLC",
+      "NBCUniversal News Group",
+      "NBCU News Group",
+      "NBC News"
+    ],
+    "professions": [
+      "journalist"
+    ],
     "headline": "Howard’s journalism partnership with NBCU Academy",
     "description": "In 2022, Howard University’s communications school joined NBCU Academy, the NBCUniversal News Group’s journalism training program. The partnership connected Howard students with newsroom instruction and journalists across the network.",
     "sourceTitle": "Howard University · Howard joins NBCU Academy",
@@ -88,8 +131,13 @@
   },
   {
     "workplace": "Howard University Hospital",
-    "aliases": ["Howard University Hospital, Washington DC"],
-    "professions": ["registered-nurse","physician"],
+    "aliases": [
+      "Howard University Hospital, Washington DC"
+    ],
+    "professions": [
+      "registered-nurse",
+      "physician"
+    ],
     "scope": "hospital",
     "place": "Washington, D.C.",
     "headline": "Howard University Hospital replaces Freedmen’s Hospital",
@@ -103,7 +151,12 @@
       "eventYear": 1969,
       "sourceTitle": "Freedmen’s nursing alumni · The founding dean",
       "url": "https://www.fhsnac.org/about.html",
-      "moreSources": [{"title":"Howard University · First bachelor’s class","url":"https://thedig.howard.edu/all-stories/howard-universitys-bachelor-science-nursing-program-celebrates-50th-anniversary-first-nursing-white"}]
+      "moreSources": [
+        {
+          "title": "Howard University · First bachelor’s class",
+          "url": "https://thedig.howard.edu/all-stories/howard-universitys-bachelor-science-nursing-program-celebrates-50th-anniversary-first-nursing-white"
+        }
+      ]
     },
     "sourceNote": "Howard’s hospital history dates the opening of the successor hospital. Its medical school history separately describes training facilities for nurses at Freedmen’s.",
     "description": "Howard University Hospital opened as the successor to Freedmen’s Hospital. This is the documented institutional link between the earlier teaching hospital and the workplace you entered.",
@@ -116,9 +169,14 @@
   },
   {
     "workplace": "Atlanta Public Schools",
-    "aliases": ["Atlanta Public Schools, Atlanta, GA", "Atlanta Public Schools, Atlanta, Georgia"],
+    "aliases": [
+      "Atlanta Public Schools, Atlanta, GA",
+      "Atlanta Public Schools, Atlanta, Georgia"
+    ],
     "scope": "district",
-    "professions": ["k12-teacher"],
+    "professions": [
+      "k12-teacher"
+    ],
     "headline": "Atlanta’s school board replaces separate pay schedules",
     "description": "After William H. Reeves challenged teacher pay in 1942, Atlanta’s school board abolished its separate salary schedules and called for one plan. A later lawsuit challenged whether Black teachers actually received equal pay.",
     "sourceTitle": "Fifth Circuit · Cook v. Davis",
@@ -128,10 +186,21 @@
   },
   {
     "workplace": "Booker T. Washington High School, Norfolk, VA",
-    "aliases": ["Booker T Washington High, Norfolk, VA", "Booker T Washington High School, Norfolk, Virginia", "Booker T Washington High, Norfolk, Virginia"],
+    "aliases": [
+      "Booker T Washington High, Norfolk, VA",
+      "Booker T Washington High School, Norfolk, Virginia",
+      "Booker T Washington High, Norfolk, Virginia"
+    ],
     "scope": "school",
-    "site": {"id": "nces-school-510267001079", "name": "Booker T Washington High", "location": "Norfolk, VA", "parent": "Norfolk City Public Schools"},
-    "professions": ["k12-teacher"],
+    "site": {
+      "id": "nces-school-510267001079",
+      "name": "Booker T Washington High",
+      "location": "Norfolk, VA",
+      "parent": "Norfolk City Public Schools"
+    },
+    "professions": [
+      "k12-teacher"
+    ],
     "headline": "Melvin O. Alston challenges Norfolk’s racial pay gap",
     "description": "Alston taught at Norfolk’s Booker T. Washington High School and joined the Norfolk Teachers’ Association in challenging lower pay for Black teachers. The Fourth Circuit reversed the dismissal and sent the case back for further proceedings.",
     "sourceTitle": "Fourth Circuit · Alston v. School Board of City of Norfolk",
@@ -141,10 +210,21 @@
   },
   {
     "workplace": "Booker T. Washington High School, Atlanta, GA",
-    "aliases": ["Booker T Washington High, Atlanta, GA", "Booker T Washington High School, Atlanta, Georgia", "Booker T Washington High, Atlanta, Georgia"],
+    "aliases": [
+      "Booker T Washington High, Atlanta, GA",
+      "Booker T Washington High School, Atlanta, Georgia",
+      "Booker T Washington High, Atlanta, Georgia"
+    ],
     "scope": "school",
-    "site": {"id": "nces-school-130012004174", "name": "Booker T. Washington High School", "location": "Atlanta, GA", "parent": "Atlanta Public Schools"},
-    "professions": ["k12-teacher"],
+    "site": {
+      "id": "nces-school-130012004174",
+      "name": "Booker T. Washington High School",
+      "location": "Atlanta, GA",
+      "parent": "Atlanta Public Schools"
+    },
+    "professions": [
+      "k12-teacher"
+    ],
     "headline": "Charles Lincoln Harper hires the school’s teachers",
     "excerpt": "The first principal of Booker T. Washington High School was Charles L. Harper",
     "excerptLocator": "National Register nomination, PDF p. 7",
@@ -156,10 +236,16 @@
   },
   {
     "workplace": "IBEW-NECA Technical Institute, Alsip, IL",
-    "aliases": ["IN-Tech, Alsip, IL", "IN-Tech, Alsip, Illinois", "IBEW-NECA Technical Institute, Alsip, Illinois"],
+    "aliases": [
+      "IN-Tech, Alsip, IL",
+      "IN-Tech, Alsip, Illinois",
+      "IBEW-NECA Technical Institute, Alsip, Illinois"
+    ],
     "scope": "program",
     "place": "Alsip, Illinois",
-    "professions": ["electrician"],
+    "professions": [
+      "electrician"
+    ],
     "headline": "IN-Tech trains electrical apprentices",
     "sourceNote": "The institute describes its registration and selection process. The guide leaves individual admission and hiring decisions unknown.",
     "description": "The institute describes its communications and electrical construction apprenticeships and explains how candidates apply. Its public guide does not identify individual apprentices.",
@@ -170,10 +256,18 @@
   },
   {
     "workplace": "Taylor Electric Company, Chicago, IL",
-    "aliases": ["Taylor Electric Company, Chicago", "Taylor Electric Company, Chicago, Illinois", "Taylor Electric Co., Chicago, IL", "Taylor Electric, Chicago, IL", "Taylor Electric Chicago"],
+    "aliases": [
+      "Taylor Electric Company, Chicago",
+      "Taylor Electric Company, Chicago, Illinois",
+      "Taylor Electric Co., Chicago, IL",
+      "Taylor Electric, Chicago, IL",
+      "Taylor Electric Chicago"
+    ],
     "scope": "contractor",
     "place": "Chicago, Illinois",
-    "professions": ["electrician"],
+    "professions": [
+      "electrician"
+    ],
     "headline": "Sam Taylor starts an electrical contracting company",
     "paperRole": "opening",
     "paperTitle": "Sam Taylor and Charles Stewart start Taylor Electric",
@@ -186,7 +280,12 @@
       "eventYear": 1990,
       "sourceTitle": "Taylor Electric · Soldier Field project",
       "url": "https://taylorelectricco.com/portfolio-item/soldier-field/",
-      "moreSources": [{"title":"IBEW · Stadium maintenance, p. 7","url":"https://ibew.org/wp-content/uploads/2025/05/IBEW-EW-V19-N02.pdf#page=7"}]
+      "moreSources": [
+        {
+          "title": "IBEW · Stadium maintenance, p. 7",
+          "url": "https://ibew.org/wp-content/uploads/2025/05/IBEW-EW-V19-N02.pdf#page=7"
+        }
+      ]
     },
     "sourceNote": "The HistoryMakers’ biography describes a friend ordering lessons that publishers would not send to Black readers. Stewart and Taylor studied the trade before starting the company.",
     "description": "Sam Taylor and Charles Vernon Stewart III studied the trade together when publishers refused to send electrical lessons to Black readers. Stewart helped Taylor start the company in Chicago in 1922.",
@@ -197,10 +296,18 @@
   },
   {
     "workplace": "IBEW Local 134, Chicago, IL",
-    "aliases": ["IBEW Local 134", "IBEW Local 134, Chicago", "IBEW Local 134, Chicago, Illinois", "Local Union 134 IBEW Chicago", "International Brotherhood of Electrical Workers Local 134, Chicago, IL"],
+    "aliases": [
+      "IBEW Local 134",
+      "IBEW Local 134, Chicago",
+      "IBEW Local 134, Chicago, Illinois",
+      "Local Union 134 IBEW Chicago",
+      "International Brotherhood of Electrical Workers Local 134, Chicago, IL"
+    ],
     "scope": "union",
     "place": "Chicago, Illinois",
-    "professions": ["electrician"],
+    "professions": [
+      "electrician"
+    ],
     "headline": "Black electricians gain full membership in Local 134",
     "sourceNote": "Stewart’s interview guide distinguishes work permits from full union membership. It dates the change to 1943.",
     "description": "Charles Stewart recalled that Black electricians in Chicago first received work permits and later gained full union membership. He went on to help other Black electricians enter Local 134.",
@@ -211,10 +318,15 @@
   },
   {
     "workplace": "Soldier Field, Chicago, IL",
-    "aliases": ["Soldier Field, Chicago", "Soldier Field, Chicago, Illinois"],
+    "aliases": [
+      "Soldier Field, Chicago",
+      "Soldier Field, Chicago, Illinois"
+    ],
     "scope": "jobsite",
     "place": "Chicago, Illinois",
-    "professions": ["electrician"],
+    "professions": [
+      "electrician"
+    ],
     "headline": "Taylor Electric takes on stadium maintenance",
     "sourceNote": "The union identifies the contractor responsible for electrical maintenance. Its account leaves the names of individual crew members unknown.",
     "description": "Taylor Electric, the Black-owned Chicago contractor, took over electrical maintenance at Soldier Field in the early 1990s. The union’s account names the company but does not identify individual workers on the job.",
@@ -224,5 +336,70 @@
     "eventYear": 1990,
     "fromInstitution": "Taylor Electric Company",
     "toInstitution": "Soldier Field"
+  },
+  {
+    "workplace": "Dixie Hospital, Hampton, VA",
+    "aliases": [
+      "Dixie Hospital",
+      "Dixie Hospital, Hampton, Virginia",
+      "Hampton Training School for Nurses"
+    ],
+    "scope": "historical-record",
+    "place": "Hampton, Virginia",
+    "professions": [
+      "registered-nurse"
+    ],
+    "headline": "Three nurses win a ruling against discriminatory dismissal",
+    "description": "They challenged their dismissal; the appeals court rejected the hospital’s defense and reversed the lower court. The court directed reinstatement offers and recognized entitlement to back pay, reduced by interim earnings. The opinion establishes ordered relief at this hospital, not evidence that every remedy was carried out or that all nursing workplaces changed.",
+    "sourceNote": "The opinion establishes ordered relief at this hospital, not evidence that every remedy was carried out or that all nursing workplaces changed. This names the historical hospital; a connection to a renamed or successor employer needs a separate record.",
+    "sourceTitle": "Smith v. Hampton Training School for Nurses · 360 F.2d 577",
+    "url": "https://law.justia.com/cases/federal/appellate-courts/F2/360/577/390784/",
+    "eventDateLabel": "April 28, 1966",
+    "eventYear": 1966,
+    "moreSources": []
+  },
+  {
+    "workplace": "New York City Police Department",
+    "aliases": [
+      "NYPD",
+      "New York Police Department"
+    ],
+    "scope": "historical-record",
+    "place": "New York City, New York",
+    "professions": [
+      "police-officer"
+    ],
+    "headline": "Samuel Battle enters the NYPD and later reaches supervisory ranks",
+    "description": "He was sworn in as a police officer in 1911. He became a sergeant in 1926 and a lieutenant in 1935, documenting advancement as well as entry. His career establishes particular appointments; it does not explain the selection process or promotion chances for every Black officer.",
+    "sourceNote": "His career establishes particular appointments; it does not explain the selection process or promotion chances for every Black officer.",
+    "sourceTitle": "NYC Department of Records · City Hall Library Notes, April 2016",
+    "url": "https://www.nyc.gov/assets/records/html/april2016.html",
+    "eventDateLabel": "1911–1935",
+    "eventYear": 1911,
+    "moreSources": []
+  },
+  {
+    "workplace": "Xerox Corporation",
+    "aliases": [
+      "Xerox"
+    ],
+    "scope": "historical-record",
+    "place": "United States",
+    "professions": [
+      "corporate-executive"
+    ],
+    "headline": "Xerox’s board elects Ursula Burns chief executive",
+    "description": "On May 21, the board elected Burns CEO with an effective date of July 1, 2009. The company filed the decision publicly; Mulcahy was to remain board chair, distinguishing the two positions. The filing establishes an appointment decision at Xerox, not a change in hiring rules for every Black employee or an appointment at another employer.",
+    "sourceNote": "The filing establishes an appointment decision at Xerox, not a change in hiring rules for every Black employee or an appointment at another employer.",
+    "sourceTitle": "Xerox Corporation · May 21, 2009 Form 8-K",
+    "url": "https://investors.xerox.com/static-files/db54358f-6fd7-483c-a3da-31739e3def39",
+    "eventDateLabel": "May 21 / July 1, 2009",
+    "eventYear": 2009,
+    "moreSources": [
+      {
+        "title": "Smithsonian NMAAHC · Ursula Burns and her Xerox career",
+        "url": "https://nmaahc.si.edu/about/news/book-discussion-former-xerox-ceo-ursula-m-burns-headlines-july-programming-national"
+      }
+    ]
   }
 ]

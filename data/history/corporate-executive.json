@@ -1,0 +1,94 @@
+{
+  "slug": "corporate-executive",
+  "headline": "Networks prepared Black leaders; employers made the appointments",
+  "summary": "The record includes collective leadership development and specific corporate appointments. Mentorship, training, a board seat and the chief executive role are separate steps, with different decision-makers.",
+  "coverageNote": "Four selected episodes involving the Executive Leadership Council, TIAA-CREF and Xerox. No sequence here establishes that an ELC program caused either executive appointment.",
+  "question": "What appointment filing, succession record or leadership-program outcome connects this history to your company?",
+  "events": [
+    {
+      "id": "elc-founded-1986",
+      "date": "1986",
+      "year": 1986,
+      "title": "Black executives form a professional leadership network",
+      "people": "Alvaro L. Martins, Elynor Williams and fellow ELC founders",
+      "decisionMaker": "Nineteen corporate executives formed the Executive Leadership Council",
+      "barrier": "ELC’s history describes the limited routes available to Black executives reaching senior corporate leadership.",
+      "change": "Martins convened peers to support Bishop College; the group also formed a continuing network of Black executives.",
+      "outcome": "The Executive Leadership Council became an organization for supporting and developing Black corporate leadership.",
+      "limit": "A network’s existence does not establish appointment authority at member companies; the college they initially supported closed in 1988.",
+      "source": {
+        "title": "Executive Leadership Council · History",
+        "url": "https://www.elcinfo.com/about/history/",
+        "locator": "Alvaro Martins, Bishop College and nineteen founders paragraphs",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "wharton-tiaa-1987",
+      "date": "1987–1993",
+      "year": 1987,
+      "title": "Clifton Wharton leads TIAA-CREF",
+      "people": "Clifton R. Wharton Jr.",
+      "decisionMaker": "TIAA-CREF; the archival exhibit does not reproduce the appointment votes",
+      "barrier": "The reviewed exhibit documents the role and tenure but does not establish the company’s selection criteria or earlier candidate exclusions.",
+      "change": "After leading Michigan State and the State University of New York, Wharton became TIAA-CREF chairman and CEO.",
+      "outcome": "Michigan State’s archival exhibit records his service in those positions from 1987 to 1993.",
+      "limit": "This is a documented Black executive’s career, not proof of an organization-wide change in promotion or a direct path for another employee.",
+      "source": {
+        "title": "Michigan State University Archives · Clifton R. Wharton Jr.",
+        "url": "https://onthebanks.msu.edu/Exhibit/162-567-22/president-clifton-r-wharton-jr/",
+        "locator": "Closing biographical paragraph covering TIAA-CREF service",
+        "type": "Institutional history"
+      }
+    },
+    {
+      "id": "elc-strengthening-pipeline-2004",
+      "date": "2004",
+      "year": 2004,
+      "title": "A program prepares Black professionals for executive responsibility",
+      "people": "Black managers, directors, vice presidents and other participants in Strengthening the Pipeline",
+      "decisionMaker": "Executive Leadership Council; ELC members and employer HR leaders recommended participants",
+      "barrier": "The program addressed preparation for advancement through coaching, mentoring and access to experienced Black executives.",
+      "change": "ELC created Strengthening the Pipeline, with leadership training, assessments and career planning.",
+      "outcome": "A 2019 program profile reported 814 completions and promotions for 10% of participants within three months of finishing.",
+      "limit": "These are reported program outcomes, not a controlled estimate of its effect; completion did not guarantee promotion and employers retained hiring authority.",
+      "source": {
+        "title": "Center for Talent Innovation / ELC · Being Black in Corporate America",
+        "url": "https://www.elcinfo.com/wp-content/uploads/2020/01/BeingBlackInCorporateAmerica_Report-Dec2019-CTI.pdf#page=55",
+        "locator": "Strengthening the Pipeline profile, PDF page 55",
+        "type": "Program research report"
+      }
+    },
+    {
+      "id": "burns-xerox-board-2009",
+      "date": "May 21 / July 1, 2009",
+      "year": 2009,
+      "title": "Xerox’s board elects Ursula Burns chief executive",
+      "people": "Ursula M. Burns and outgoing CEO Anne M. Mulcahy",
+      "decisionMaker": "Xerox Corporation Board of Directors",
+      "barrier": "The transition from company president to chief executive required a board decision; a professional network could not confer the role.",
+      "change": "On May 21, the board elected Burns CEO with an effective date of July 1, 2009.",
+      "outcome": "The company filed the decision publicly; Mulcahy was to remain board chair, distinguishing the two positions.",
+      "limit": "The filing establishes an appointment decision at Xerox, not a change in hiring rules for every Black employee or an appointment at another employer.",
+      "source": {
+        "title": "Xerox Corporation · May 21, 2009 Form 8-K",
+        "url": "https://investors.xerox.com/static-files/db54358f-6fd7-483c-a3da-31739e3def39",
+        "locator": "Item 5.02, PDF page 2",
+        "type": "Contemporary corporate filing"
+      },
+      "sources": [
+        {
+          "title": "Smithsonian NMAAHC · Ursula Burns and her Xerox career",
+          "url": "https://nmaahc.si.edu/about/news/book-discussion-former-xerox-ceo-ursula-m-burns-headlines-july-programming-national",
+          "locator": "Opening paragraph and Historically Speaking program description, July 1, 2021",
+          "type": "Museum biographical context"
+        }
+      ]
+    }
+  ],
+  "furtherResearch": [
+    "Find appointment filings and board or succession records for the exact company and role; distinguish corporate officers, directors and line managers.",
+    "Check access to sponsorship, development programs and actual promotions using employer records, rather than inferring access from a prominent executive’s biography.",
+    "Research Black corporate leadership before these selected examples and document barriers and reversals alongside appointments."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "electrician",
+  "headline": "Training, contracts and a place in the trade",
+  "summary": "Learning the trade, holding a license, joining a union and obtaining paid work were separate hurdles. These records show Black contractors, apprentices and union organizers changing access in specific places.",
+  "coverageNote": "Five episodes across Chicago, New York and the Philadelphia area. Apprenticeship admission, contract requirements, union representation and an actual jobsite are kept separate.",
+  "question": "Which apprenticeship record, union agreement or contractor project file connects this history to your work?",
+  "events": [
+    {
+      "id": "electrician-taylor-company-1922",
+      "date": "1922",
+      "year": 1922,
+      "title": "Sam Taylor creates a Black-owned electrical contractor",
+      "people": "Sam Taylor and Charles Stewart",
+      "decisionMaker": "Taylor founded and directed the Chicago business, with Stewart assisting him.",
+      "barrier": "Racial exclusion restricted access to the trade and to full union membership.",
+      "change": "After correspondence training and a Chicago electrician’s license, Taylor established Taylor Electric Company.",
+      "outcome": "The company installed lights and doorbells and performed maintenance at Greer College.",
+      "limit": "Business ownership did not itself secure full union membership; this account does not identify every employee.",
+      "source": {
+        "title": "IBEW · Black Leadership From Chicago’s South Side to the Sears Tower",
+        "url": "https://ibew.org/wp-content/uploads/2025/05/IBEW-EW-V19-N02.pdf#page=7",
+        "locator": "The Electrical Worker, February 2025, page 7",
+        "type": "Union historical account"
+      }
+    },
+    {
+      "id": "electrician-local3-apprentices-1962",
+      "date": "1962",
+      "year": 1962,
+      "title": "Local 3 recruits beyond its traditional family route",
+      "people": "Edward Mays, Harry Van Arsdale Jr. and the new apprentice class",
+      "decisionMaker": "IBEW Local 3 broadened recruitment; a selection committee including Black electrician Edward Mays screened applicants.",
+      "barrier": "The New York local had traditionally recruited apprentices through father–son relationships.",
+      "change": "Recruitment letters reached civil-rights groups, employers and vocational schools, extending the pool of applicants.",
+      "outcome": "A 1967 Labor Department study counted 240 Black apprentices among the 1,020 trainees admitted in 1962.",
+      "limit": "Admission is documented; these figures do not prove that every trainee completed the program or secured continuing employment.",
+      "source": {
+        "title": "U.S. Department of Labor · Apprenticeship study (1967)",
+        "url": "https://files.eric.ed.gov/fulltext/ED019440.pdf#page=22",
+        "locator": "Local 3 case study, printed pages 19–20; PDF pages 21–22",
+        "type": "Contemporary research report"
+      },
+      "sources": [
+        {
+          "title": "Berkeley labor collection · Local 3 apprentice selection",
+          "url": "https://digicoll.lib.berkeley.edu/record/72132/files/lb001100.pdf#page=15",
+          "locator": "The 1962 Apprentice Class of IBEW Local 3, printed pages 6–7",
+          "type": "Contemporary research report"
+        }
+      ]
+    },
+    {
+      "id": "electrician-philadelphia-plan-1969",
+      "date": "June–September 1969",
+      "year": 1969,
+      "title": "Arthur Fletcher attaches minority hiring goals to federal construction contracts",
+      "people": "Arthur A. Fletcher and excluded minority construction workers",
+      "decisionMaker": "Assistant Secretary of Labor Fletcher issued the Philadelphia Plan orders under Executive Order 11246.",
+      "barrier": "The orders identified exclusionary union practices and contractors’ dependence on union hiring halls.",
+      "change": "Bidders on covered contracts exceeding $500,000 in five Philadelphia-area counties had to commit to minority employment goals, including for electrical workers.",
+      "outcome": "The Third Circuit upheld the plan in 1971 after contractors challenged its validity.",
+      "limit": "A contracting requirement and a court ruling do not establish how many workers a particular contractor hired or retained.",
+      "source": {
+        "title": "Contractors Association of Eastern Pennsylvania v. Secretary of Labor, 442 F.2d 159",
+        "url": "https://law.justia.com/cases/federal/appellate-courts/F2/442/159/97071/",
+        "locator": "Opening account of the June 27 and September 23, 1969 orders; concluding affirmance",
+        "type": "Court opinion"
+      }
+    },
+    {
+      "id": "electrician-ewmc-1974",
+      "date": "1974",
+      "year": 1974,
+      "title": "Black and Hispanic electrical workers organize for union leadership",
+      "people": "Leon Wilkerson, Johnny Walker and fellow minority IBEW delegates",
+      "decisionMaker": "The delegates formed the Electrical Workers Minority Caucus and selected representatives to meet IBEW leaders.",
+      "barrier": "Members challenged the limited representation of minorities on the union’s international staff.",
+      "change": "Organizing at the Kansas City convention secured meetings with International President Charles Pillard and Treasurer Harry Van Arsdale Jr.",
+      "outcome": "The caucus’s first executive committee met union leaders in September and November 1974, establishing an ongoing channel for advocacy.",
+      "limit": "The organizational history documents representation and meetings; it does not quantify their effect on hiring or promotions.",
+      "source": {
+        "title": "Electrical Workers Minority Caucus · EWMC History",
+        "url": "https://www.ibew-ewmc.com/?HomeID=681099&page=Founding20Members&zone=%2Funionactive%2Fview_article.cfm",
+        "locator": "Dorothy Fortier’s history, February 1, 2024; founding and 1974 meetings",
+        "type": "Organizational history"
+      }
+    },
+    {
+      "id": "electrician-taylor-stadiums-1990s",
+      "date": "Early 1990s",
+      "year": 1990,
+      "title": "Taylor Electric’s work reaches major Chicago stadiums",
+      "people": "Rufus Taylor, Jessie Taylor Dinkins and Taylor Electric’s workers",
+      "decisionMaker": "Taylor Electric’s leadership expanded the company into larger projects; the account does not identify the stadium contracting officials.",
+      "barrier": "Owning a contracting business and obtaining large projects are distinct stages of access.",
+      "change": "The Black-owned company moved from smaller commercial jobs into large construction and maintenance work.",
+      "outcome": "IBEW records electrical maintenance at Comiskey Park and Soldier Field beginning in the early 1990s.",
+      "limit": "The named contractor and jobsites are documented, but the crew, individual hiring decisions and a reader’s assignment remain unknown.",
+      "source": {
+        "title": "IBEW · Taylor Electric’s Chicago projects",
+        "url": "https://ibew.org/wp-content/uploads/2025/05/IBEW-EW-V19-N02.pdf#page=7",
+        "locator": "The Electrical Worker, February 2025, page 7; stadium maintenance paragraph",
+        "type": "Union historical account"
+      }
+    }
+  ],
+  "furtherResearch": [
+    "Locate apprenticeship completion and job-placement records for Local 3’s 1962 cohort.",
+    "Check contractor compliance and payroll records for the Philadelphia Plan’s actual employment effects.",
+    "Compare Local 134 membership registers with oral histories to establish the timing and terms of full membership for Black electricians.",
+    "For a reader’s jobsite, find the contractor, relevant union local, contract dates and training or hiring records without assuming that one identifies the others."
+  ]
+}

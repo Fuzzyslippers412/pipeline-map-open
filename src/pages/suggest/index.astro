@@ -82,6 +82,8 @@ const status = document.querySelector<HTMLElement>('#copy-status')!;
 const inputs = [...form.querySelectorAll('input')];
 let summary = '';
 const suggestion=takeSuggestionDraft();
+const publicProfession=new URLSearchParams(location.search).get('profession');
+if(!suggestion && publicProfession && publicProfession.length<=120) form.querySelector<HTMLInputElement>('#profession')!.value=publicProfession;
 if(suggestion){
   document.querySelector('[data-suggestion-title]')!.textContent='Suggest a source';
   document.querySelector('[data-suggestion-intro]')!.textContent='Add the exact location and a public record that could help connect this role to the workplace. Review the draft before sharing it.';

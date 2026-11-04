@@ -9,7 +9,7 @@ export const amount = p => Number(p.value).toLocaleString('en-US',{minimumFracti
 export const src = id => sources.find(s=>s.id===id);
 export const dataFor = slug => series.filter(r=>r.profession_id===slug);
 export const idFor = slug => String(professions.findIndex(p=>p.slug===slug)+1).padStart(2,'0');
-export const roleFor = p => roles[p.origin.builder[0]+':'+p.gate.gatekeeper[0]] || (p.origin.builder[0]===p.gate.gatekeeper[0]?'Origin and gate match':'Origin and gate differ');
+export const roleFor = p => p.researchNote || 'Field history is not proof of an individual hiring route.';
 export const labelList = values => values.map(v=>labels[v]).join(' + ');
 export const percentRows = r => ['black_male','black_female'].includes(r.group);
 export const variants = rows => {

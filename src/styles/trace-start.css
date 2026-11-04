@@ -140,7 +140,7 @@
   .paper-edition .trace-front { display: block; padding: 24px 0 20px; }
   .paper-edition .trace-lead h1 { font-size: clamp(43px, 9vw, 58px); max-width: 14.2ch; line-height: .98; margin: 10px 0 9px; }
   .paper-edition .trace-lead > p { font-size: 16px; line-height: 1.4; }
-  .paper-edition .field-note { display: none; }
+  .paper-edition .field-note { display: block; margin-top:18px; }
   .paper-edition .trace-box { margin-top: 18px; padding: 17px 0 0; border-inline-start: 0; border-top: 1px solid var(--edge); }
   .paper-edition .trace-box form { gap: 13px; }
 }
@@ -169,3 +169,14 @@
 @media (max-width:420px) { .paper-edition .start-options { gap:6px; } .paper-edition .start-options a { font-size:.87rem; padding:8px; gap:5px; } }
 
 .paper-edition .trace-guides { display:flex; flex-wrap:wrap; gap:0 16px; }
+
+@media(max-width:760px){
+ .paper-edition .trace-front{display:flex;flex-direction:column}
+ .paper-edition .trace-lead{display:contents}
+ .paper-edition .trace-lead>.eyebrow{order:0}
+ .paper-edition .trace-lead>h1{order:1}
+ .paper-edition .trace-lead>p{order:2}
+ .paper-edition .trace-lead>.start-options{order:3}
+ .paper-edition .trace-box{order:4;width:100%}
+ .paper-edition .trace-lead>.field-note{order:5;width:100%}
+}
