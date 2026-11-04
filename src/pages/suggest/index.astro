@@ -9,8 +9,8 @@ publicRequests.searchParams.set('q', 'is:issue in:title "[Workplace]"');
     <a class="back" href="/paths/"><span aria-hidden="true">←</span> Workplace library</a>
     <header>
       <p class="kicker">Research requests</p>
-      <h1>Suggest a workplace</h1>
-      <p>Which workplace should Door Notes research next? Name the exact site and the job you’d like to trace.</p>
+      <h1 data-suggestion-title>Suggest a workplace</h1>
+      <p data-suggestion-intro>Which workplace should Door Notes research next? Name the exact site and the job you’d like to trace.</p>
       <a class="requests" href={publicRequests.href} target="_blank" rel="noopener noreferrer">Browse public workplace requests <span aria-hidden="true">↗</span></a>
     </header>
 
@@ -71,6 +71,7 @@ publicRequests.searchParams.set('q', 'is:issue in:title "[Workplace]"');
 
 <script>
 import {prepareNomination} from '../../lib/workplace-nomination.js';
+import {takeSuggestionDraft} from '../../lib/nomination-draft.js';
 
 const form = document.querySelector<HTMLFormElement>('#workplace-form')!;
 const review = document.querySelector<HTMLElement>('#nomination-review')!;
@@ -80,6 +81,14 @@ const fallback = document.querySelector<HTMLTextAreaElement>('#copy-fallback')!;
 const status = document.querySelector<HTMLElement>('#copy-status')!;
 const inputs = [...form.querySelectorAll('input')];
 let summary = '';
+const suggestion=takeSuggestionDraft();
+if(suggestion){
+  document.querySelector('[data-suggestion-title]')!.textContent='Suggest a source';
+  document.querySelector('[data-suggestion-intro]')!.textContent='Add the exact location and a public record that could help connect this role to the workplace. Review the draft before sharing it.';
+  form.querySelector<HTMLInputElement>('#site')!.value=suggestion.site;
+  form.querySelector<HTMLInputElement>('#profession')!.value=suggestion.profession;
+}
+
 
 form.addEventListener('input', event => {
   if (event.target instanceof HTMLInputElement) event.target.setCustomValidity('');

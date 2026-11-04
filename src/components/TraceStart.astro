@@ -110,6 +110,7 @@ import '../styles/trace-combobox.css';
 <script type="application/json" id="quick-workplaces" set:html={JSON.stringify(quickWorkplaces).replace(/</g,'\\u003c')}></script>
 <script>
 import {showPmWorkplace} from '../lib/pm-role-panel.js';
+import {focusPmPath} from '../lib/pm-path-panel.js';
 import {setProjectSector} from '../lib/project-panel.js';
 import {setupTraceEntryFields} from '../lib/trace-entry-fields.js';
 import {bindLookup,revealTimelinePreview} from '../lib/bind-lookup.js';
@@ -266,6 +267,7 @@ function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, dir
         showPmWorkplace(panel,workplace);
         panel.querySelector<HTMLDetailsElement>(':scope > details')!.open=false;
         panel.hidden=false;
+        if(focus)focusPmPath(panel);
         manual.hidden=false;return;
       }
       if(resolution.projectSector) {
@@ -273,6 +275,7 @@ function renderResolution(resolution:Resolution, draft:Draft, focus:boolean, dir
         const panel=result.querySelector<HTMLElement>('[data-project-work]')!;
         panel.hidden=false;
         setProjectSector(panel,(!focus && readTrace()?.projectSector) || resolution.projectSector,workplace);
+        if(focus)focusPmPath(panel);
         manual.hidden=false;return;
       }
       const occupation = resolution.occupation || resolution.title;

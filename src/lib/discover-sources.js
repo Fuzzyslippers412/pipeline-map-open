@@ -1,4 +1,4 @@
-import {isPmRole,pmTitles,boardProvider,pmBoardSources,reviewedPmSources,describePmRecord} from './pm-employer-sources.js';
+import {isPmRole,pmTitles,boardProvider,pmBoardCheck,reviewedPmSources,describePmRecord} from './pm-employer-sources.js';
 import {sourceDate} from './source-date.js';
 import {employerKey as alias, normalizeEmployerText as normalize} from './employer-key.js';
 import { ericSources } from './eric-sources.js';
@@ -103,7 +103,8 @@ async function nsf(input){
 async function collect(group,input){
   const outcomes=await Promise.allSettled(group.tasks.map(task=>task(input)));
   if(input.parentSignal?.aborted)throw input.parentSignal.reason;
-  return {name:group.name,status:outcomes.every(x=>x.status==='fulfilled')?'ok':'unavailable',hadResponse:outcomes.some(x=>x.status==='fulfilled'),results:outcomes.flatMap(x=>x.status==='fulfilled'?x.value:[])};
+  const coverage=outcomes.find(x=>x.status==='fulfilled'&&x.value.coverage)?.value.coverage;
+  return {name:group.name,...(coverage?{coverage}:{}),status:outcomes.every(x=>x.status==='fulfilled')?'ok':'unavailable',hadResponse:outcomes.some(x=>x.status==='fulfilled'),results:outcomes.flatMap(x=>x.status==='fulfilled'?(Array.isArray(x.value)?x.value:x.value.results):[])};
 }
 export async function discoverSources({employer,title='',profession='',signal,fetchImpl=globalThis.fetch}){
   const name=String(employer||'').trim().replace(/\s+/g,' ').slice(0,160);
@@ -119,7 +120,7 @@ export async function discoverSources({employer,title='',profession='',signal,fe
   const pm=isPmRole(slug);
   if(pm){input.title=pmTitles[slug]; input.profession=slug;}
   const groups=[{name:ERIC,tasks:[ericSources]},{name:USA,tasks:[ctx=>usaSpendingSources(ctx,'grants'),ctx=>usaSpendingSources(ctx,'contracts')]},{name:NEWS,tasks:[newsSources]},{name:NSF,tasks:[nsf]}];
-  if(pm)groups.push({name:boardProvider,tasks:[pmBoardSources]});
+  if(pm)groups.push({name:boardProvider,tasks:[pmBoardCheck]});
   if(healthcare.includes(slug)||/\b(?:medical|physician|nurse|hospital|healthcare|clinical|pharmacist|dentist)\b/i.test(title))groups.push({name:'Europe PMC · health research',tasks:[europePmcSources]});
   try{
     const checked=await Promise.all(groups.map(group=>collect(group,input)));
@@ -151,7 +152,7 @@ export async function discoverSources({employer,title='',profession='',signal,fe
     }
     const n=shortlist.filter(r=>r.mode==='live').length;
     return {status:checked.every(c=>c.status==='ok')?'complete':checked.some(c=>c.hadResponse)?'partial':'unavailable',
-      results:shortlist,counts:{live:n,indexed:shortlist.filter(r=>r.mode==='indexed').length,...(pm?{reviewed:shortlist.filter(r=>r.mode==='reviewed').length}:{})},index,providers:checked.map(c=>({name:c.name,status:c.status,
+      results:shortlist,counts:{live:n,indexed:shortlist.filter(r=>r.mode==='indexed').length,...(pm?{reviewed:shortlist.filter(r=>r.mode==='reviewed').length}:{})},index,providers:checked.map(c=>({name:c.name,status:c.status,...(c.coverage?{coverage:c.coverage}:{}),
         ...(populated[c.name]?{indexedOn:catalog.records.find(r=>r.publisher===c.name)?.indexedOn||catalog.asOf,indexedDocuments:populated[c.name]}:{})}))};
   }finally{clearTimeout(timer);signal?.removeEventListener('abort',abort)}
 }

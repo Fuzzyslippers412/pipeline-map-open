@@ -1,0 +1,75 @@
+---
+import {pmPathStory,evidenceLabels} from '../lib/pm-path-model.js';
+const {role,sector='general',inTrace=false}=Astro.props;
+const story=pmPathStory(role,sector);
+---
+<section class="pm-path" data-pm-path data-role={role} aria-label="Your connection at a glance">
+  <header><h2 data-pm-preview-title tabindex="-1">Your connection at a glance</h2><p class="path-key"><span>● Sourced record</span><span>┄ Connection still open</span></p></header>
+  <ol>
+    <li data-stage="person">
+      <span class="stage">01 · Person / decision</span>
+      <h3 data-path-person>{story.person}</h3>
+      <small data-path-date>{story.date} · {story.place}</small>
+    </li>
+    <li data-stage="opportunity">
+      <span class="stage">02 · Opportunity / responsibility</span>
+      <strong data-path-opportunity>{story.opportunity}</strong>
+      <p data-path-change>{story.change}</p>
+      <span class="claim" data-path-evidence>{evidenceLabels[story.evidence]}</span>
+      <a data-path-source href={story.sources[0][1]} target="_blank" rel="noopener noreferrer">Source for these two steps ↗</a>
+    </li>
+    <li data-stage="role" data-open>
+      <span class="stage">03 · Your role today · comparison</span>
+      <strong data-path-role>{story.name}</strong>
+      <p data-path-comparison>{story.comparison}</p>
+    </li>
+    <li data-stage="workplace" data-open>
+      <span class="stage">04 · Your workplace · connection still open</span>
+      <strong data-path-workplace>Workplace not entered</strong>
+      <p data-path-gap>Add your exact workplace to look for a local record.</p>
+      <a data-path-workplace-source hidden target="_blank" rel="noopener noreferrer">Open workplace source ↗</a>
+    </li>
+  </ol>
+</section>
+<div class="pm-next" data-pm-next data-role={role}>
+  <div class="gap-actions">
+    <a data-refine href={inTrace?'#workplace-entry':'/#trace'}>Refine workplace</a>
+    <button type="button" data-next-toggle aria-controls={'pm-next-record-'+role} aria-expanded="false">Find the next record <span aria-hidden="true">↓</span></button>
+    <a data-suggest href="/suggest/">Suggest a source</a>
+  </div>
+  <section class="next-record" id={'pm-next-record-'+role} data-next-record hidden aria-label="Find the next record">
+    <strong>What would help establish the connection?</strong>
+    <p data-record-needed>{story.next}</p>
+    <p class="question"><span>A question to take to work</span><span data-record-question>{story.question}</span></p>
+    <button type="button" data-copy-question>Copy this question</button>
+    <p data-question-status role="status"></p>
+    <textarea data-question-fallback hidden readonly aria-label="Question ready to copy"></textarea>
+  </section>
+</div>
+<style>
+.pm-path{border:1px solid var(--edge);background:var(--panel);padding:14px 16px;margin:12px 0 4px;border-radius:5px;overflow-wrap:anywhere}
+header{margin-bottom:10px}h2{font:700 1rem/1.3 var(--sans);margin:0}.path-key{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.73rem;color:var(--muted);margin-top:4px}
+ol{list-style:none;margin:0;padding:0 0 0 10px}li{position:relative;border-left:2px solid var(--action);padding:0 0 12px 20px;min-width:0}
+li::before{content:'';position:absolute;left:-6px;top:2px;width:10px;height:10px;border-radius:50%;background:var(--action);border:2px solid var(--action)}
+li[data-stage="opportunity"]{border-left:2px dashed var(--rust)}
+li[data-open]{border-left-style:dashed;border-left-color:var(--rust)}
+li[data-open]::before{background:var(--panel);border-color:var(--rust)}
+li:last-child{padding-bottom:0;border-left-color:transparent}
+.stage{display:block;color:var(--muted);font:10px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.025em;margin-bottom:3px}
+h3{font:500 clamp(23px,4vw,30px)/1.12 var(--serif);margin:0}strong{display:block;font-size:1rem;line-height:1.3}
+p{margin:4px 0;font-size:.87rem;line-height:1.5}small{font-size:.78rem;color:var(--muted)}
+.claim{display:table;font-size:.73rem;font-weight:650;color:var(--action);margin-top:5px}
+a{color:var(--action);text-decoration:underline;text-underline-offset:.18em;min-height:44px;align-content:center;display:inline-block;font-size:.83rem}
+.pm-next{margin:4px 0 10px;overflow-wrap:anywhere}.gap-actions{display:flex;flex-wrap:wrap;gap:0 14px}
+.gap-actions a,.gap-actions button{font:650 .82rem/1.4 var(--sans);color:var(--action);min-height:44px;padding:5px 0;text-decoration:underline;text-underline-offset:.18em;cursor:pointer}
+.next-record{padding:14px;background:var(--lift);border-radius:3px;margin-bottom:12px}
+.question{margin:12px 0;padding-left:10px;border-left:2px solid var(--rust)}.question span{display:block}.question span:first-child{font-size:.75rem;font-weight:650;margin-bottom:4px}
+[data-copy-question]{min-height:44px;font-weight:650;padding:6px 10px;border:1px solid var(--action);border-radius:3px;color:var(--action)}
+textarea{font:inherit;width:100%;min-height:100px;background:var(--panel);color:var(--text);padding:8px}
+[data-question-status]:empty{display:none}
+@media(max-width:380px){.pm-path{padding:12px 10px}li{padding-left:15px}.stage{font-size:9px}.gap-actions{gap:0 12px}}
+</style>
+<script>
+import {bindPmNext} from '../lib/pm-path-panel.js';
+document.querySelectorAll('[data-pm-next]').forEach(bindPmNext);
+</script>

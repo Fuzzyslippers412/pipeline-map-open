@@ -1,4 +1,39 @@
-# Door Notes: the next three releases
+# Door Notes: product roadmap
+
+## Next releases after employer-record search · planned November 3, 2026
+
+**Current verified baseline.** Version 23 is live. Project, product and program manager results offer an explicit employer-record search, preserve the chosen meaning of PM, show what each source supports and retain unanswered questions. There are six reviewed employer/role entries. A live Greenhouse lookup validates the board and posting company against the entered employer; other publishers provide broader institutional records and leads. The live checks returned a reviewed Amazon account, Figma postings and an unresolved fictional employer. These are technical checks, not reader-study results. All 57 regression tests passed. Older release sections below preserve previous plans and rationale; this section is the current priority.
+
+**Product outcome.** A reader should understand who opened access, what changed, how much of the connection reaches their own work, and one useful thing to investigate or do next.
+
+### Release A · Make the evidence easy to follow — implemented
+
+1. Put one compact connection diagram above the result: **Person or decision → opportunity created → role today → your workplace**. Each segment gets its own source and scope. Use a broken connector and a short question for an unproved link. Keep independent historical examples separate; do not imply that one caused the next because their dates are ordered. On mobile use a vertical sequence, with source details expandable.
+2. Make the strongest claim legible before the full record. Distinguish **Black access documented**, **a Black professional's role documented**, **role advertised / hiring process described**, and **lead to check**. The Amazon account supports a person's product role and network leadership; it does not by itself prove that the network opened product hiring. Put the limitation beside the supported statement once, instead of repeating it in the gap and the card. Avoid numeric confidence scores.
+3. Give an unresolved workplace three actions: **Refine workplace**, **Find the next record**, and **Suggest a source**. Name the missing evidence: for example, a program charter, dated appointment, apprenticeship admission rule or cohort outcome. Show a question the reader can copy. Adapt the existing public correction flow so a reader sees exactly what will be submitted; do not silently publish employer searches or personal employment details.
+4. Explain partial searches in plain language. Identify whether a publisher failed, a workplace could not be identified, a role was found without access history, or no relevant record was returned. Preserve useful reviewed evidence during failures and keep retry and wider search available.
+
+**Acceptance:** after one phone screen and optional source expansion, a reader can name the person, explain the supported connection, identify the missing link and choose a next action. Verify all PM meanings, switching roles mid-search, long names, unknown employers, failed publishers, keyboard controls and 320/375-pixel screens. The public link must contain no entered workplace details.
+
+### Release B · Expand exact workplace coverage beyond the PM pilot
+
+1. Replace the guessed employer-to-job-board slug with verified employer identities and official careers/archive addresses. Maintain exact workplace, parent organization, previous names and dated relationships separately. Ask for city or location only when it resolves an ambiguity. Parent evidence can appear as broader context, with a visible label; it must not close the site's gap.
+2. Extend search to official employer newsrooms and archives, public board minutes, university and hospital collections, and union or apprenticeship records where accessible. Confirm access methods before implementation. Mark publication date, event date where known, and last review separately. Retrieved material begins as a lead; extracting a name and date must not turn a co-mention into a causal claim. AI may propose queries, extract evidence passages and draft summaries; claim promotion requires checking the cited passage and its scope.
+3. Start with a small cross-sector research queue: two education workplaces, two health workplaces, two trade or public-service workplaces and two business/product/program workplaces. Use voluntarily supplied reader requests to select exact institutions. Publish outcomes even when a researched gap remains. This is a research target, not a promise that every workplace has an accessible historical record.
+4. Bring the same source/claim/gap experience to teacher, nurse and electrician results, then to the remaining careers. Do not force all fields through a technology hiring model.
+
+**Acceptance:** distinguish similarly named schools and hospitals, subsidiaries and parents, renamed employers and ambiguous acronyms. For every published connection retain the exact institution, supported role, source passage or page locator, evidence type and review date. A current vacancy remains separate from historical Black access.
+
+### Release C · Make the result useful after reading
+
+1. Add a compact **Your next door** section with relevant work options: learning, working independently, specialist responsibility, project leadership, staff supervision and organizational direction. Source each proposed transition and label unknown local requirements. Include lateral and specialist options; do not rank workers' worth or imply that management is the only progression.
+2. Connect the existing student activities to the same history and career map. Offer two or three possibilities, a small activity, a named Door Note and an honest description of any qualification required. Treat activities as exploration, not predictions of a child's future.
+3. Offer a shareable or printable Door Note containing the supported claim, source, unresolved question and next action. Default to the public role example; including a workplace is an explicit previewed choice. Link back to the source record. Defer accounts and public personal profiles.
+4. Surface verified degree, license and appointment milestones within the appropriate path, reusing the credential records already shipped. State the scope of any first claim and use archival images only when attribution and reuse rights are established. Avoid making every useful historical figure compete for a universal first.
+
+**Acceptance:** a reader can take away one source and one practical question. Five workers across different sectors should try the experience without a tour; target four of five understanding what is established and what is open, with zero uncorrected misreadings of a posting as proof of Black access. Record observations separately from these proposed targets. Check student comprehension separately before expanding recommendations for children.
+
+**Next build:** the exact-workplace identity foundation in Release B. Release A now includes the four-step PM preview, distinct access/person/role evidence labels, explicit broken connections, next-record questions, copy fallback, a tab-local source suggestion draft, and provider/identity-specific search outcomes. Browser checks covered 320/375-pixel layouts, PM role switching and the source-request review; automated checks passed. The proposed five-reader study remains pending. Coverage and usability should advance together. Do not add an open-ended chatbot, automatic historical claims or accounts as substitutes for either.
 
 The useful test is personal: can someone name a person who opened access for Black workers, find the record, and tell how far it reaches toward the job they have today?
 

@@ -1,4 +1,5 @@
 ---
+import PmPathPreview from './PmPathPreview.astro';
 import PmEmployerSearch from './PmEmployerSearch.astro';
 import {pmRoleRecords} from '../lib/pm-role-records.js';
 const {role,inTrace=false}=Astro.props;
@@ -7,13 +8,15 @@ const {first,second}=record;
 ---
 <section class="role-history" data-pm-history={role} data-in-trace={inTrace?'true':'false'} hidden={inTrace} aria-label={record.name+' field history'}>
   <p class="eyebrow">Who opened the door · {record.name}</p>
+  <PmPathPreview role={role} inTrace={inTrace}/>
+  <PmEmployerSearch role={role}/>
+  <details data-history-detail><summary>Read the historical record · {first.person}</summary>
   <article>
     <small>{first.date} · {first.place}</small>
     <h2>{first.person}</h2><p>{first.story}</p><p>{first.opened}</p>
     <div class="sources">{first.sources.map(([label,url])=><a href={url}>{label} ↗</a>)}</div>
   </article>
-  <aside class="gap"><strong data-pm-gap-label>Workplace not entered</strong><p data-pm-gap-text>Add your workplace in the trace to check for a local connection.</p><p>{record.next}</p></aside>
-  <PmEmployerSearch role={role}/>
+  </details>
   <details><summary>Another Door Note · {second.place}</summary><small>{second.date}</small><h3>{second.person}</h3><p>{second.story}</p>
     <div class="sources">{second.sources.map(([label,url])=><a href={url}>{label} ↗</a>)}</div>
   </details>

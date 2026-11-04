@@ -146,6 +146,13 @@ for(const slug of [...slugs,'project-manager','technical-writing',...Object.keys
   const guide=await readPage('/career-map/'+slug+'/');
   expectEl(guide,'id','conversation');
   const role=pmRoleRecords[slug];
+  if(role||slug==='project-manager'){
+    assert.ok(guide.some(n=>val(n,'data-pm-path')!==undefined),'Missing connection preview: '+slug);
+    for(const stage of ['person','opportunity','role','workplace'])expectEl(guide,'data-stage',stage);
+    assert.ok(guide.some(n=>val(n,'data-stage')==='role'&&val(n,'data-open')!==undefined),'Personal route must stay open');
+    assert.ok(guide.some(n=>val(n,'data-stage')==='workplace'&&val(n,'data-open')!==undefined),'Workplace connector must stay open');
+    expectEl(guide,'data-next-toggle','');expectEl(guide,'data-suggest','');
+  }
   if(role){
     for(const record of [role.first,role.second]){
       for(const page of [guide,docHome]){

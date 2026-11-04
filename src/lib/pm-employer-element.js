@@ -1,12 +1,14 @@
 import {pmTitles,safeRecordUrl,reviewedPmSources} from './pm-employer-sources.js';
+import {evidenceLabel,pmResearchStatus,boardCoverage} from './pm-path-model.js';
 const scopes={history:'Workplace history',role:'Role at this employer',funding:'Institutional funding',lead:'Research lead'};
 const kinds={reviewed:'Reviewed source',live:'Retrieved live',indexed:'Indexed publication'};
 const node=(tag,text)=>{const el=document.createElement(tag);if(text)el.textContent=text;return el};
 function card(r){
   const article=node('article');article.className='pm-source';
   const link=node('a',r.title+' ↗');link.href=safeRecordUrl(r.url);link.target='_blank';link.rel='noopener noreferrer';
-  const stamp=[scopes[r.scope],r.publisher,kinds[r.mode],r.publishedOn].filter(Boolean).join(' · ');
-  article.append(node('small',stamp),link);
+  const stamp=[r.publisher,kinds[r.mode],r.publishedOn].filter(Boolean).join(' · ');
+  const badge=node('span',evidenceLabel(r));badge.className='pm-evidence';
+  article.append(badge,node('small',stamp),link);
   for(const [label,body] of [['What it connects',r.connection],['Still open',r.limit]]){
     const line=node('p');line.append(node('strong',label+'. '),body);article.append(line);
   }
@@ -25,21 +27,22 @@ class EmployerRecords extends HTMLElement{
     this.part('coverage').open=false;this.part('coverage').hidden=true;
     this.part('wider').hidden=true;this.part('wider').removeAttribute('href');
   }
-  setContext({employer}){
+  setContext({employer,sector='general'}){
     employer=employer.trim();
-    if(this.ctx?.employer===employer)return;
+    if(this.ctx?.employer===employer&&this.ctx.sector===sector)return;
     this.reset();if(!employer)return;
     const profession=this.dataset.role,title=pmTitles[profession];
-    this.ctx={employer,title,profession};
+    this.ctx={employer,title,profession,sector};
     this.part('disclosure').textContent='On tap, public sources receive the employer name. Door Notes checks for '+title.toLowerCase()+' records.';
     this.hidden=false;
   }
   notifyGap(ctx,records){
-    this.dispatchEvent(new CustomEvent('pm-record',{bubbles:true,detail:{employer:ctx.employer,historical:records.find(r=>r.scope==='history'&&r.mode==='reviewed')}}));
+    this.dispatchEvent(new CustomEvent('pm-record',{bubbles:true,detail:{employer:ctx.employer,records}}));
   }
   search=async()=>{
     if(!this.ctx||this.pending)return;
     const ctx=this.ctx,req=new AbortController();this.pending=req;
+    const deadline=setTimeout(()=>req.abort(new DOMException('Search timed out','TimeoutError')),14000);
     const button=this.part('find'),results=this.part('records'),status=this.part('status');
     button.setAttribute('aria-disabled','true');button.querySelector('span').textContent='Searching…';
     status.textContent='Checking records for '+ctx.employer+'…';
@@ -55,27 +58,25 @@ class EmployerRecords extends HTMLElement{
       const report=await requestResearch({...ctx,signal:req.signal});
       if(this.pending!==req)return;
       const matches=report.results.filter(r=>Object.hasOwn(scopes,r.scope)&&r.title&&r.connection&&r.limit&&safeRecordUrl(r.url));
-      status.textContent=matches.length?matches.length+' employer '+(matches.length===1?'record':'records')+' for '+ctx.employer+'.':
-        !report.providers.length?'Use a more specific workplace name to search.':
-        report.status==='unavailable'?'Live sources were unavailable; no matching indexed or reviewed record was found. The connection is still open.':
-        'No workplace connection found in the sources checked. The gap stays open.';
-      if(report.status==='partial')status.append(' Some live checks were incomplete.');
-      if(report.status==='unavailable'&&matches.length)status.append(' Live checks were unavailable.');
+      status.textContent=pmResearchStatus(report,ctx.employer,matches);
       results.replaceChildren();
       matches.slice(0,2).forEach(r=>results.append(card(r)));
       if(matches.length>2){const more=node('details');more.append(node('summary','See '+(matches.length-2)+' more '+(matches.length===3?'record':'records')));matches.slice(2).forEach(r=>more.append(card(r)));results.append(more)}
       if(report.providers.length){
         const ok=report.providers.filter(p=>p.status==='ok').map(p=>p.name),missing=report.providers.filter(p=>p.status!=='ok').map(p=>p.name);
         this.part('checked').textContent='Checked Door Notes’ reviewed records and publication index.'+(ok.length?' Live checks: '+ok.join('; ')+'.':'');
+        const board=report.providers.find(p=>p.coverage);
+        if(board&&boardCoverage[board.coverage])this.part('checked').append(' '+boardCoverage[board.coverage]);
         this.part('missing').textContent=missing.length?'Could not finish: '+missing.join('; ')+'.':'';
         this.part('coverage').hidden=false;
       }
-      // Only an explicitly reviewed historical record can change the workplace heading.
+      // Workplace evidence updates this step; it never closes the reader’s personal route.
       this.notifyGap(ctx,matches);
     }catch{
       if(this.pending!==req)return;
       status.textContent=reviewed.length?'The reviewed record is shown. The live search could not finish.':'The search could not finish. The workplace connection is still open. You can retry or search more widely.';
     }finally{
+      clearTimeout(deadline);
       if(this.pending===req){
         this.pending=null;results.removeAttribute('aria-busy');button.removeAttribute('aria-disabled');button.querySelector('span').textContent='Search again';
         const url=new URL('https://www.google.com/search');
